@@ -126,6 +126,10 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   agreement summaries. Current status is `blocked_no_completed_annotations`
   because no local annotations have been filled yet. The gate passed artifact
   hygiene and a synthetic double-annotation readiness test.
+- Clean GitHub publish workflow is now implemented. Future remote updates
+  should use `scripts/publish_clean_github_snapshot.py` and
+  `docs/github_publish_workflow.md`, so the old local `main` history is never
+  pushed directly.
 
 ## Orchestration Rules
 
@@ -208,8 +212,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   remote `main` root commit `a67cfdb`, created from a safe Git archive snapshot
   that excludes Phase 2 baseline result blobs, row-level predictions, model
   weights, embeddings, raw data, and plaintext credentials. Do not push the old
-  local `main` history directly; continue future remote updates from the clean
-  remote/main lineage or another verified clean publish path.
+  local `main` history directly; continue future remote updates with
+  `scripts/publish_clean_github_snapshot.py` or another verified clean publish
+  path.
 - GitHub CLI is authenticated for account `zwtbb` with token-based HTTPS Git
   operations. Never use plaintext passwords for remote operations or write them
   into files, memory, commands, or Git config.
@@ -229,4 +234,6 @@ full method work until minimal validation shows stronger positive
 cross-dataset/control evidence.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
-the old local `main` history directly.
+the old local `main` history directly. Run
+`scripts/publish_clean_github_snapshot.py` first as a dry run, then with
+`--push` only after reviewing the publish candidate.

@@ -33,6 +33,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_17_phase5_mv06_evidence_annotation_summary_gate.md`
   - `/root/autodl-tmp/memory/sessions/session_18_phase5_mv03b_eatd_text_semantic_stress.md`
   - `/root/autodl-tmp/memory/sessions/session_19_phase5_mv02b_pdch_text_semantic_measurement.md`
+  - `/root/autodl-tmp/memory/sessions/session_20_clean_github_publish_workflow.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -481,6 +482,14 @@ model weights, embeddings, raw data, or plaintext credentials. Continue future
 remote updates from the clean remote/main lineage or another verified clean
 publish path; do not push the old local `main` history directly.
 
+Clean GitHub publish workflow is documented at
+`/root/autodl-tmp/docs/github_publish_workflow.md` and implemented by
+`/root/autodl-tmp/scripts/publish_clean_github_snapshot.py`. Use this helper
+for future GitHub updates unless replacing it with an equivalently audited clean
+publish path. The helper is dry-run by default and checks the publish tree for
+banned Phase 2 baseline artifacts, bulky prediction/embedding/model paths, and
+plaintext credential-like content before committing on the clean remote lineage.
+
 ## Immediate Orchestration Plan
 
 1. Keep using the layered memory hierarchy for all future sessions.
@@ -492,8 +501,9 @@ publish path; do not push the old local `main` history directly.
    - MPDD individual-difference shortcut and subgroup calibration diagnostics:
      complete, with gender/health blocked by missing structured metadata.
    - Dataset-identity probes over reusable frozen representations: complete.
-3. Keep future GitHub updates on the clean remote/main lineage; do not push the
-   old local `main` history directly.
+3. Keep future GitHub updates on the clean remote/main lineage via
+   `scripts/publish_clean_github_snapshot.py`; do not push the old local
+   `main` history directly.
 4. Next, complete local MV06 annotations and rerun the summary gate, or
    continue stronger inference-compatible identity/protocol controls. Full
    method construction remains blocked until stronger positive

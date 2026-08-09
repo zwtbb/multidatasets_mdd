@@ -57,6 +57,7 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 - Research direction entrypoint: `docs/experiment_direction.md`
 - Main-agent control plan: `docs/master_experiment_plan.md`
 - Issue and decision log: `docs/experiment_issue_log.md`
+- GitHub publish workflow: `docs/github_publish_workflow.md`
 
 ## Rebuild Commands
 
@@ -101,3 +102,8 @@ stay local and are regenerated through scripts.
 
 Use `datasets/registry.yaml` and generated manifests as experiment inputs.
 Avoid ad hoc raw-directory scans in training code.
+
+The GitHub repository tracks only the clean reproducible experiment skeleton.
+Local `main` has historical server-working commits that must not be pushed
+directly. Use `scripts/publish_clean_github_snapshot.py` and the workflow in
+`docs/github_publish_workflow.md` for clean remote updates.
