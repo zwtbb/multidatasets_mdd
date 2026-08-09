@@ -1,6 +1,6 @@
 # Phase 5 Minimal Method-Validation Protocol
 
-Generated: `2026-08-09T05:48:55+00:00`
+Generated: `2026-08-09T07:30:59+00:00`
 
 ## Purpose
 
@@ -14,10 +14,10 @@ Minimal validation may begin only with subject-level splits, frozen or explicitl
 
 - `P5_MV01` `phq_core_construct_bridge` (complete_diagnostic_weak_asymmetric): shared construct heads plus PHQ-8/PHQ-9 scale-specific measurement heads
 - `P5_MV02` `hamd17_auxiliary_bridge` (complete_pdch_only_diagnostic): shared core construct heads with HAMD-specific auxiliary heads
-- `P5_MV03` `sds_total_external_stress` (complete_negative_sds_stress): scale-specific SDS total/severity head attached only for external validation
-- `P5_MV04` `dataset_protocol_control_ablation` (complete_diagnostic_identity_control): baseline shared heads versus dataset-balanced, protocol-balanced, or adversarial identity-control variants
+- `P5_MV03` `sds_total_external_stress` (complete_negative_sds_audio_text_stress): scale-specific SDS total/severity head attached only for external validation
+- `P5_MV04` `dataset_protocol_control_ablation` (complete_mixed_dataset_protocol_control): baseline shared heads versus dataset-balanced, protocol-balanced, or adversarial identity-control variants
 - `P5_MV05` `mpdd_context_calibration` (complete_negative_context_calibration): calibration/context module versus AV baseline and shuffled-personality controls
-- `P5_MV06` `construct_evidence_localization` (readiness_complete_ready_local_annotation): post-hoc evidence audit tied to construct predictions and protocol controls
+- `P5_MV06` `construct_evidence_localization` (summary_gate_blocked_no_completed_annotations): post-hoc evidence audit tied to construct predictions and protocol controls
 
 ## Mandatory Controls
 
@@ -37,4 +37,4 @@ Minimal validation may begin only with subject-level splits, frozen or explicitl
 
 ## Next Handoff
 
-`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have now run. `P5_MV06` readiness is complete and can proceed only as a local raw-text annotation workflow with tracked aggregate evidence summaries. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.
+`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation packet and aggregate summary gate, but evidence reporting is blocked until annotations are completed. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.

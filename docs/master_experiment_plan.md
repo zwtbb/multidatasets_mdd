@@ -1,6 +1,6 @@
 # Master Experiment Plan
 
-Last updated: 2026-08-05 UTC
+Last updated: 2026-08-09 UTC
 
 ## Principle
 
@@ -80,12 +80,38 @@ data audit
   prediction identity from `0.961` to `0.777` without using eval dataset labels,
   but feature identity remained high (`1.000` to `0.925`). This is a partial
   diagnostic success, not enough for a dataset-invariant representation claim.
+- Phase 5 `P5_MV04c protocol_task_valence_control`:
+  complete as a MODMA/EATD protocol-slice extension. MODMA task nuisance
+  projection passes diagnostically, reducing feature task identity from `0.762`
+  to `0.570` while preserving pooled Balanced Accuracy (`0.688` to `0.686`).
+  EATD valence control is blocked because the SDS total Ridge head stays far
+  below train mean (`28.810` versus `7.201` MAE) and valence identity is not
+  reduced.
 - Phase 5 `P5_MV03 sds_total_external_stress`:
   complete as an EATD SDS total/severity-only external stress row. Current
   cached frozen audio features did not beat the train-mean SDS total floor:
   best MAE `7.341` versus train mean `7.201`. No stronger healthy-negative
   shortcut than Phase 3 was observed. This is a runnable negative result, not
   positive cross-scale SDS evidence.
+- Phase 5 `P5_MV03b eatd_text_semantic_stress`:
+  complete and weak/negative. Character TF-IDF text heads improve EATD
+  validation MAE over train mean by only `0.00056`, below the meaningful
+  threshold.
+- Phase 5 `P5_MV02 hamd17_auxiliary_bridge`:
+  complete as a bounded PDCH-only diagnostic pass. Best PDCH item-derived total
+  MAE was `5.693` versus train-mean items `6.183`, but CMDC 25-subject HAMD
+  sanity remains negative and coverage-limited.
+- Phase 5 `P5_MV02b pdch_text_semantic_measurement`:
+  complete and weak/negative. Fixed character hashing over manifest text
+  improves item-derived total MAE by only `0.008` versus train-mean items.
+- Phase 5 `P5_MV05 mpdd_context_calibration`:
+  complete and negative. The proposed context calibrator does not improve the
+  required age/personality subgroup calibration gaps beyond AV-only
+  recalibration.
+- Phase 5 `P5_MV06 construct_evidence_localization`:
+  readiness, pilot packet, and aggregate summary gate are complete, but
+  evidence reporting is blocked because no local annotations or
+  double-annotation agreement have been completed.
 
 ## Current Method-Design Gate
 
@@ -93,9 +119,12 @@ Phase 2, planned Phase 3 diagnostics, Phase 4 ontology, Phase 5 protocol, and
 the first Phase 5 identity-control follow-ups are complete. Full method
 construction remains blocked because `P5_MV01` exposed weak/asymmetric bridge
 evidence, `P5_MV04` only validates a known-dataset diagnostic control, and
-`P5_MV04b` leaves feature-level dataset identity high. `P5_MV03` further shows
-that current frozen audio features do not provide positive EATD SDS total
-external generalization beyond train mean.
+`P5_MV04b` leaves feature-level dataset identity high. `P5_MV04c` adds a useful
+MODMA task-control pass, but the result is still mixed because EATD remains
+below train mean and does not support valence-control claims. `P5_MV02` gives
+bounded PDCH-only HAMD evidence, while `P5_MV03`, `P5_MV03b`, and `P5_MV05`
+are negative for SDS/context claims. `P5_MV06` still requires local annotation
+completion before evidence-localization claims.
 
 Phase 2 validation commands:
 
@@ -203,12 +232,19 @@ representation without those controls.
 - Source-agnostic P5_MV04b projection is complete. It reduces prediction
   identity without eval dataset labels, but residual feature identity remains
   too high for pooled shared-representation claims.
+- P5_MV04c protocol/task/valence projection is complete and mixed. MODMA
+  supports inference-compatible task nuisance control, but EATD remains a
+  negative stress result and should not drive a valence-adversarial component
+  under the current feature contract.
 - `P5_MV03 sds_total_external_stress` is complete and negative for current
   frozen audio features: EATD SDS total heads did not beat train mean. EATD
   remains total/severity-only and cannot support SDS item-level construct
   claims.
-- `P5_MV02 hamd17_auxiliary_bridge` is blocked until CMDC HAMD item/total
-  coverage is audited or PDCH-only mode is explicitly selected.
+- `P5_MV02 hamd17_auxiliary_bridge` is complete in PDCH-only mode. Treat it as
+  bounded PDCH evidence, not cross-dataset HAMD generalization.
+- `P5_MV06 construct_evidence_localization` has local annotation infrastructure
+  ready but is blocked as evidence until annotations and agreement summaries
+  are completed.
 - Pooled or cross-dataset claims require dataset-stratified metrics and
   dataset/protocol identity probes.
 - Protocol/task/subgroup metrics are mandatory before interpreting pooled
@@ -218,9 +254,9 @@ representation without those controls.
 
 ## Later Phases
 
-- Phase 5 execution: continue with MPDD context calibration, stronger
-  inference-compatible identity/protocol controls, or an explicitly audited EATD
-  text-feature variant before richer method work.
+- Phase 5 execution: continue with local MV06 annotations and summary-gate
+  rerun, or design a revised cross-dataset/shared-symptom feature contract that
+  can beat simple floors while preserving identity/protocol controls.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

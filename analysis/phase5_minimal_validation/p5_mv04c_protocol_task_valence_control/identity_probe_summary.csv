@@ -1,0 +1,25 @@
+domain,protocol_label,probe_layer,representation,metric,mean,std,seed_count,train_subjects_mean,eval_subjects_mean,subject_overlap_count_sum,ci95_low,ci95_high
+EATD,valence,feature,raw_egemaps_before_control,Balanced Accuracy,0.28270042194092826,0.0,5,83.0,79.0,0,0.28270042194092826,0.28270042194092826
+EATD,valence,feature,valence_projection_k1_after_control,Balanced Accuracy,0.3333333333333333,0.0,5,83.0,79.0,0,0.3333333333333333,0.3333333333333333
+EATD,valence,feature,valence_projection_k2_after_control,Balanced Accuracy,0.3417721518987342,0.0,5,83.0,79.0,0,0.3417721518987342,0.3417721518987342
+EATD,valence,feature,valence_projection_k3_after_control,Balanced Accuracy,0.3544303797468355,0.0,5,83.0,79.0,0,0.3544303797468355,0.3544303797468355
+EATD,valence,feature,valence_projection_k5_after_control,Balanced Accuracy,0.3628691983122363,0.0,5,83.0,79.0,0,0.3628691983122363,0.3628691983122363
+EATD,valence,feature,valence_projection_k8_after_control,Balanced Accuracy,0.3206751054852321,0.0,5,83.0,79.0,0,0.3206751054852321,0.3206751054852321
+EATD,valence,prediction,raw_pooled_valence_ridge_predictions,Balanced Accuracy,0.3544303797468354,0.0,5,83.0,79.0,0,0.3544303797468354,0.3544303797468354
+EATD,valence,prediction,valence_projection_k1_ridge_predictions,Balanced Accuracy,0.350210970464135,0.0,5,83.0,79.0,0,0.350210970464135,0.350210970464135
+EATD,valence,prediction,valence_projection_k2_ridge_predictions,Balanced Accuracy,0.3459915611814346,0.0,5,83.0,79.0,0,0.3459915611814346,0.3459915611814346
+EATD,valence,prediction,valence_projection_k3_ridge_predictions,Balanced Accuracy,0.350210970464135,0.0,5,83.0,79.0,0,0.350210970464135,0.350210970464135
+EATD,valence,prediction,valence_projection_k5_ridge_predictions,Balanced Accuracy,0.35021097046413496,0.0,5,83.0,79.0,0,0.35021097046413496,0.35021097046413496
+EATD,valence,prediction,valence_projection_k8_ridge_predictions,Balanced Accuracy,0.34177215189873417,0.0,5,83.0,79.0,0,0.34177215189873417,0.34177215189873417
+MODMA,task_type,feature,raw_egemaps_before_control,Balanced Accuracy,0.7619090909090909,0.0633627776994991,5,41.6,10.4,0,0.7063691674628101,0.8174490143553717
+MODMA,task_type,feature,task_projection_k1_after_control,Balanced Accuracy,0.7024545454545454,0.0586629314957959,5,41.6,10.4,0,0.6510342188416123,0.7538748720674786
+MODMA,task_type,feature,task_projection_k2_after_control,Balanced Accuracy,0.698,0.061721459537936334,5,41.6,10.4,0,0.6438987553546472,0.7521012446453527
+MODMA,task_type,feature,task_projection_k3_after_control,Balanced Accuracy,0.6231818181818182,0.07084751113984698,5,41.6,10.4,0,0.5610812366112325,0.6852823997524038
+MODMA,task_type,feature,task_projection_k5_after_control,Balanced Accuracy,0.6011818181818182,0.07036015182038288,5,41.6,10.4,0,0.5395084258898062,0.6628552104738301
+MODMA,task_type,feature,task_projection_k8_after_control,Balanced Accuracy,0.5695454545454546,0.0800686258685938,5,41.6,10.4,0,0.4993622095450424,0.6397286995458668
+MODMA,task_type,prediction,raw_pooled_task_logistic_predictions,Balanced Accuracy,0.26036363636363635,0.04607100909235525,5,41.6,10.4,0,0.2199806163796096,0.3007466563476631
+MODMA,task_type,prediction,task_projection_k1_logistic_predictions,Balanced Accuracy,0.26272727272727275,0.04982320672512616,5,41.6,10.4,0,0.2190553065062653,0.3063992389482802
+MODMA,task_type,prediction,task_projection_k2_logistic_predictions,Balanced Accuracy,0.26554545454545453,0.048179138004358045,5,41.6,10.4,0,0.22331457809681998,0.3077763309940891
+MODMA,task_type,prediction,task_projection_k3_logistic_predictions,Balanced Accuracy,0.26645454545454544,0.05009581040751487,5,41.6,10.4,0,0.22254363157056073,0.31036545933853016
+MODMA,task_type,prediction,task_projection_k5_logistic_predictions,Balanced Accuracy,0.2710909090909091,0.0450336574467398,5,41.6,10.4,0,0.23161716791498,0.3105646502668382
+MODMA,task_type,prediction,task_projection_k8_logistic_predictions,Balanced Accuracy,0.2789090909090909,0.04898909194378462,5,41.6,10.4,0,0.23596825853011333,0.32184992328806844

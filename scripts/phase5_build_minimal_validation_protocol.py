@@ -68,7 +68,7 @@ EXPERIMENT_MATRIX = [
         "phase4_source_id": "MV03",
         "rq": "RQ1/RQ2",
         "name": "sds_total_external_stress",
-        "status": "complete_negative_sds_stress",
+        "status": "complete_negative_sds_audio_text_stress",
         "train_scope": "no SDS item-level training; use shared representation trained elsewhere",
         "eval_scope": "EATD SDS total/severity with valence-stratified evaluation",
         "target_contract": "SDS total/severity only; no claim of SDS item-level supervision",
@@ -85,7 +85,7 @@ EXPERIMENT_MATRIX = [
         "phase4_source_id": "MV04",
         "rq": "RQ2",
         "name": "dataset_protocol_control_ablation",
-        "status": "complete_diagnostic_identity_control",
+        "status": "complete_mixed_dataset_protocol_control",
         "train_scope": "minimal shared model on audited item/total labels only",
         "eval_scope": "E-DAIC/CMDC protocol slices, MODMA task slices, EATD valence slices, dataset identity probes",
         "target_contract": "all available constructs/totals with dataset and protocol labels used only as controls",
@@ -119,7 +119,7 @@ EXPERIMENT_MATRIX = [
         "phase4_source_id": "MV06",
         "rq": "RQ4",
         "name": "construct_evidence_localization",
-        "status": "readiness_complete_ready_local_annotation",
+        "status": "summary_gate_blocked_no_completed_annotations",
         "train_scope": "not a separate trainer; consumes minimal model outputs",
         "eval_scope": "E-DAIC, CMDC, and PDCH item/construct predictions",
         "target_contract": "C01-C09 where item labels exist; C09 explicit-evidence-only",
@@ -267,7 +267,7 @@ def write_report(audit: dict[str, Any]) -> None:
             "",
             "## Next Handoff",
             "",
-            "`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have now run. `P5_MV06` readiness is complete and can proceed only as a local raw-text annotation workflow with tracked aggregate evidence summaries. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.",
+            "`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation packet and aggregate summary gate, but evidence reporting is blocked until annotations are completed. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.",
         ]
     )
     (OUT_DIR / "minimal_validation_protocol.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -1,0 +1,108 @@
+{
+  "artifact_hygiene": {
+    "artifact_hygiene_passed": true,
+    "audit_id": "P5_MV04c_protocol_task_valence_control_artifact_hygiene",
+    "files_checked": 10,
+    "generated_at": "2026-08-09T07:29:41+00:00",
+    "local_only_files": [
+      "p5_mv04c_local_predictions.csv"
+    ],
+    "local_only_patterns": [
+      "analysis/phase5_minimal_validation/**/*predictions*.csv",
+      "analysis/phase5_minimal_validation/**/*features*.csv",
+      "analysis/phase5_minimal_validation/**/*embeddings*.csv",
+      "analysis/phase5_minimal_validation/**/*model*.joblib",
+      "analysis/phase5_minimal_validation/**/*model*.pkl",
+      "analysis/phase5_minimal_validation/**/*weights*.csv"
+    ],
+    "violation_count": 0,
+    "violations": []
+  },
+  "feature_contract": {
+    "cached_features_read": true,
+    "eatd_feature_count": 88,
+    "eatd_rows": 486,
+    "eatd_subjects": 162,
+    "modma_feature_count": 352,
+    "modma_rows": 208,
+    "modma_subjects": 52,
+    "new_feature_extraction": false
+  },
+  "generated_at": "2026-08-09T07:29:41+00:00",
+  "local_only_files": [
+    "p5_mv04c_local_predictions.csv"
+  ],
+  "model_contract": {
+    "control_uses_eval_protocol_labels_at_transform": false,
+    "control_uses_eval_target_labels": false,
+    "projection_component_counts": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "projection_parameters_written": false,
+    "row_level_predictions": "local_only_ignored",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "transformed_features_written": false
+  },
+  "name": "protocol_task_valence_control",
+  "protocol_id": "P5_MV04c",
+  "split_audit": {
+    "rows": 30,
+    "subject_overlap_violations": 0
+  },
+  "status": "mixed_protocol_control",
+  "verdict": {
+    "domain_verdicts": [
+      {
+        "component_count": 8,
+        "domain": "MODMA",
+        "feature_identity_ba_after": 0.5695454545454546,
+        "feature_identity_reduced": true,
+        "floor_primary_metric_value": 0.5,
+        "main_signal_above_floor": true,
+        "main_task_within_5pct_all_slices": true,
+        "model": "task_projection_k8_logistic",
+        "pass_model": true,
+        "prediction_identity_ba_after": 0.2789090909090909,
+        "prediction_identity_not_worse": true,
+        "primary_metric_direction": "higher",
+        "raw_feature_identity_ba": 0.7619090909090909,
+        "raw_prediction_identity_ba": 0.26036363636363635,
+        "raw_primary_metric_value": 0.6881666666666666,
+        "residual_feature_identity_high": false,
+        "status": "pass_protocol_identity_control"
+      },
+      {
+        "component_count": 8,
+        "domain": "EATD",
+        "feature_identity_ba_after": 0.3206751054852321,
+        "feature_identity_reduced": false,
+        "floor_primary_metric_value": 7.200892176300139,
+        "main_signal_above_floor": false,
+        "main_task_within_5pct_all_slices": true,
+        "model": "valence_projection_k8_ridge",
+        "pass_model": false,
+        "prediction_identity_ba_after": 0.34177215189873417,
+        "prediction_identity_not_worse": true,
+        "primary_metric_direction": "lower",
+        "raw_feature_identity_ba": 0.28270042194092826,
+        "raw_prediction_identity_ba": 0.3544303797468354,
+        "raw_primary_metric_value": 28.81026559053685,
+        "residual_feature_identity_high": false,
+        "status": "blocked_main_task_below_floor"
+      }
+    ],
+    "pass_rule_status": "mixed_protocol_control",
+    "short_read": "P5_MV04c tests train-fold protocol-label nuisance projection on MODMA task slices and EATD valence slices. Treat passing rows as diagnostic controls only; no transformed features, projection parameters, or row-level predictions are exported.",
+    "subject_overlap_violations": 0
+  }
+}

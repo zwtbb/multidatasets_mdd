@@ -70,6 +70,13 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   but no eval target labels and no eval dataset labels. Best tested projection
   reduced prediction identity BA `0.961 -> 0.777`, preserved main-task MAE
   within tolerance, but left feature identity BA high at `0.925`.
+- Phase 5 `P5_MV04c protocol_task_valence_control` completed in the main
+  checkout. It extends MV04 to MODMA task slices and EATD valence slices using
+  local Phase 3 eGeMAPS caches. MODMA task nuisance projection passes
+  diagnostically (`0.762 -> 0.570` feature task-identity BA, pooled Balanced
+  Accuracy `0.688 -> 0.686`), but EATD is blocked because the raw SDS total
+  head is far below train mean (`28.810` vs `7.201` MAE) and valence identity
+  is not reduced. Treat overall status as `mixed_protocol_control`.
 - Phase 5 `P5_MV03 sds_total_external_stress` completed in the main checkout.
   It used existing cached frozen WavLM/eGeMAPS audio features and EATD SDS total
   labels only. Best all-valence MAE was `7.341` from eGeMAPS SVR, worse than
@@ -180,15 +187,16 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    and weak/asymmetric. `P5_MV04 dataset_protocol_control_ablation` is complete
    as a known-dataset diagnostic identity-control success. Full method work
    stays blocked because `P5_MV04b` source-agnostic projection only partially
-   reduces identity, `P5_MV03` and `P5_MV03b` do not show meaningful EATD SDS
-   total generalization, and `P5_MV05` does not show MPDD subgroup calibration
-   gain beyond AV-only recalibration. `P5_MV02` now gives a bounded PDCH-only
-   diagnostic pass, but CMDC sanity is negative and coverage-limited; `P5_MV02b`
-   shows the lightweight manifest-text hashing probe is weak. Full method work
-   still needs stronger cross-dataset/control evidence. `P5_MV06` now has a
-   local manual annotation packet and aggregate-only summary gate ready, but no
-   evidence-localization result should be claimed until local annotations are
-   completed and pass the gate.
+   reduces identity, `P5_MV04c` is mixed with MODMA positive but EATD blocked,
+   `P5_MV03` and `P5_MV03b` do not show meaningful EATD SDS total
+   generalization, and `P5_MV05` does not show MPDD subgroup calibration gain
+   beyond AV-only recalibration. `P5_MV02` now gives a bounded PDCH-only
+   diagnostic pass, but CMDC sanity is negative and coverage-limited;
+   `P5_MV02b` shows the lightweight manifest-text hashing probe is weak. Full
+   method work still needs stronger cross-dataset/control evidence. `P5_MV06`
+   now has a local manual annotation packet and aggregate-only summary gate
+   ready, but no evidence-localization result should be claimed until local
+   annotations are completed and pass the gate.
 
 ## Version Management Watchlist
 
@@ -228,9 +236,10 @@ Cross-session issues are tracked in:
 ## Next Handoff
 
 Continue Phase 5 by completing local MV06 annotations and rerunning the summary
-gate, or running stronger inference-compatible identity/protocol controls.
-Keep row-level predictions and learned embeddings local-only, and do not start
-full method work until minimal validation shows stronger positive
+gate, or designing a revised cross-dataset/shared-symptom feature contract that
+can beat simple floors while preserving the strongest identity/protocol
+controls. Keep row-level predictions and learned embeddings local-only, and do
+not start full method work until minimal validation shows stronger positive
 cross-dataset/control evidence.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push

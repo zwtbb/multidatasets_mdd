@@ -34,6 +34,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_18_phase5_mv03b_eatd_text_semantic_stress.md`
   - `/root/autodl-tmp/memory/sessions/session_19_phase5_mv02b_pdch_text_semantic_measurement.md`
   - `/root/autodl-tmp/memory/sessions/session_20_clean_github_publish_workflow.md`
+  - `/root/autodl-tmp/memory/sessions/session_21_phase5_mv04c_protocol_task_valence_control.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -165,6 +166,18 @@ MPDD 2025 is intentionally out of scope for current auditing.
   percent relative tolerance, but feature-layer identity remained high
   (`1.000` to `0.925`). Treat as a partial diagnostic control; full-method
   claims remain blocked.
+- Phase 5 `P5_MV04c protocol_task_valence_control`: MODMA/EATD protocol-slice
+  extension complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv04c_protocol_task_valence_control/`.
+  It used Phase 3 local eGeMAPS feature caches, five seeds, subject-level MODMA
+  folds, EATD official train/validation subjects, no raw audio scan, no encoder
+  fine-tuning, no eval target labels, no eval protocol labels at transform
+  time, zero subject-overlap violations, and `artifact_hygiene_passed=true`.
+  Treat as `mixed_protocol_control`: MODMA task nuisance projection passes
+  diagnostically, reducing feature task-identity BA `0.762 -> 0.570` while
+  preserving pooled Balanced Accuracy `0.688 -> 0.686`; EATD valence control is
+  blocked because raw SDS MAE stays below the train-mean floor (`28.810` vs
+  `7.201`) and valence identity is not reduced.
 - Phase 5 `P5_MV03 sds_total_external_stress`: EATD SDS total external stress
   complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv03_sds_total_external_stress/`.
@@ -348,6 +361,12 @@ Key Phase 2 outputs:
   than known-dataset centering and reduces prediction identity, but it does not
   remove feature-level dataset identity. Do not claim dataset-invariant shared
   representation from this feature contract yet.
+- P5_MV04c decision: MODMA task nuisance projection is the strongest
+  inference-compatible protocol-control signal so far, but it is task-specific
+  diagnostic evidence rather than a shared-symptom method. EATD remains
+  negative under eGeMAPS/Ridge: do not add a valence-adversarial method
+  component from current EATD evidence, and do not treat EATD SDS total as
+  positive cross-scale support.
 - P5_MV03 decision: current frozen audio features do not support EATD SDS total
   external generalization beyond train mean, and EATD still cannot provide SDS
   item-level supervision. Do not use this row as positive cross-scale evidence;
@@ -504,7 +523,8 @@ plaintext credential-like content before committing on the clean remote lineage.
 3. Keep future GitHub updates on the clean remote/main lineage via
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
-4. Next, complete local MV06 annotations and rerun the summary gate, or
-   continue stronger inference-compatible identity/protocol controls. Full
+4. Next, complete local MV06 annotations and rerun the summary gate, or design
+   a revised cross-dataset/shared-symptom feature contract that can beat simple
+   floors while preserving the strongest identity/protocol controls. Full
    method construction remains blocked until stronger positive
    cross-dataset/control evidence is accumulated.

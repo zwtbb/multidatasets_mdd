@@ -1,0 +1,3 @@
+domain,feature_space,rows,subjects,feature_count,cache_read,feature_cache_written
+MODMA,phase3_task_valence_egemaps_subject_task,208,52,352,analysis/phase3_diagnostics/task_valence/modma_egemaps_subject_task_features.csv,False
+EATD,phase3_task_valence_egemaps_valence,486,162,88,analysis/phase3_diagnostics/task_valence/eatd_egemaps_valence_features.csv,False
