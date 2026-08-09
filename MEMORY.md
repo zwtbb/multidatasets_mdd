@@ -38,6 +38,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_22_phase5_full_method_gate_audit.md`
   - `/root/autodl-tmp/memory/sessions/session_23_phase5_mv06_annotation_workbench.md`
   - `/root/autodl-tmp/memory/sessions/session_24_phase5_mv07_shared_feature_contract_readiness.md`
+  - `/root/autodl-tmp/memory/sessions/session_25_phase5_mv07_edaic_bge_generation.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -269,15 +270,22 @@ MPDD 2025 is intentionally out of scope for current auditing.
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv07_shared_feature_contract_readiness/`.
   It did not train a model and did not scan raw text/audio/video/gait files. It
   inventories cached subject-level feature families and label coverage for a
-  revised shared-symptom row. Current status is
-  `blocked_current_cached_features_insufficient_for_mv07`: BGE text is the
-  cleanest next contract but lacks E-DAIC, aligned eGeMAPS is blocked by schema
-  mismatch, and WavLM is available only as identity-blocked diagnostic
-  evidence. Generate aligned E-DAIC BGE text features next; keep generated
-  feature CSVs local-only.
+  revised shared-symptom row. After local E-DAIC BGE generation, current status
+  is `ready_to_run_minimal_validation`: E-DAIC, CMDC, and PDCH share 512 BGE
+  model-input columns. This authorizes the next shallow MV07 validation row,
+  not a shared-symptom claim. Aligned eGeMAPS remains blocked by schema
+  mismatch, and WavLM remains identity-blocked diagnostic evidence.
+- Phase 5 `P5_MV07 E-DAIC BGE feature generation` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv07_edaic_bge_generation/`.
+  It generated the ignored local cache
+  `/root/autodl-tmp/analysis/phase2_baselines/edaic_text_bge/edaic_bge_subject_features.csv`
+  for 219 E-DAIC train/dev item-labeled subjects, 163 train and 56 dev, with
+  512 `bge_*` columns and zero subject-overlap or path-like-column violations.
+  Tracked outputs contain only aggregate coverage, local artifact manifest,
+  run summary, report, and hygiene audit.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 15 Phase 5 run summaries and exports claim gates, evidence
+  It reads 16 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -464,10 +472,11 @@ Key Phase 2 outputs:
   double-annotated candidates for agreement, no invalid field values, and
   `artifact_hygiene_passed=true`.
 - P5_MV07 readiness decision: current cached features are not sufficient for a
-  fair revised shared-symptom minimal-validation row. Prefer an aligned BGE text
-  contract after generating E-DAIC subject-level BGE features; regenerate
-  eGeMAPS only with one shared extractor/schema; rerun WavLM only after a
-  stronger inference-compatible identity-control design. Track only readiness
+  fair revised shared-symptom minimal-validation row until E-DAIC BGE is
+  generated. That gap is now resolved locally: the aligned BGE text contract is
+  ready for the next shallow MV07 validation. Regenerate eGeMAPS only with one
+  shared extractor/schema; rerun WavLM only after a stronger
+  inference-compatible identity-control design. Track only scripts/readiness
   summaries and reports; generated feature CSVs, predictions, embeddings, and
   weights remain local-only.
 - Phase 5 full-method gate decision: use
@@ -579,6 +588,6 @@ plaintext credential-like content before committing on the clean remote lineage.
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
    fill the ignored local MV06 annotation workbook and rerun the summary gate,
-   or generate aligned E-DAIC BGE text features and rerun MV07 readiness before
-   any revised shared-symptom feature contract. Full method construction
-   remains blocked until the gate changes.
+   or run the aligned-BGE MV07 shallow shared-symptom validation with
+   subject-level splits, simple floors, and identity/protocol probes. Full
+   method construction remains blocked until the gate changes.

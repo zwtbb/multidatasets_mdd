@@ -17,9 +17,11 @@ predictions, or create new feature embeddings.
 - Implemented `scripts/phase5_audit_mv07_shared_feature_contract_readiness.py`.
 - Generated
   `analysis/phase5_minimal_validation/p5_mv07_shared_feature_contract_readiness/`.
-- Current status is `blocked_current_cached_features_insufficient_for_mv07`.
-- BGE text is the preferred next aligned contract because CMDC and PDCH already
-  have 512-column subject-level BGE caches, but E-DAIC BGE is missing.
+- Initial status was `blocked_current_cached_features_insufficient_for_mv07`.
+  After local E-DAIC BGE generation, current status is
+  `ready_to_run_minimal_validation`.
+- BGE text is the preferred next aligned contract because E-DAIC, CMDC, and
+  PDCH now share 512-column subject-level BGE caches.
 - Current eGeMAPS caches are not schema-aligned across E-DAIC, CMDC, PDCH, and
   EATD; common model-input columns across all required datasets are zero.
 - Current WavLM caches have 768 common model-input columns across E-DAIC, CMDC,
@@ -33,8 +35,9 @@ predictions, or create new feature embeddings.
 
 ## Key Decisions
 
-- Do not run a new shared-symptom training row from the current cached features.
-- Generate E-DAIC subject-level BGE text features next, using
+- The aligned BGE feature contract is ready for a new shallow MV07 validation
+  row, but readiness is not model evidence.
+- E-DAIC subject-level BGE text features were generated locally using
   manifest-governed transcripts and the same BGE feature contract as CMDC/PDCH.
 - Keep generated E-DAIC BGE feature CSVs local-only; track only scripts and
   aggregate readiness/model summaries.
@@ -77,8 +80,8 @@ Versionable artifacts:
 
 ## Blockers And Risks
 
-- E-DAIC BGE subject-level features are missing, blocking the preferred
-  E-DAIC/CMDC/PDCH aligned text contract.
+- The earlier E-DAIC BGE blocker is resolved locally; rerunning from a fresh
+  checkout still requires regenerating the ignored local cache.
 - eGeMAPS caches were generated with incompatible schemas and should not be
   pooled for shared-symptom evidence.
 - WavLM is dimension-aligned but identity-blocked by earlier diagnostics.
@@ -87,7 +90,6 @@ Versionable artifacts:
 
 ## Next Handoff
 
-Generate aligned E-DAIC BGE subject-level text features locally, rerun MV07
-readiness, and only then implement a shallow shared-symptom MV07 training row
-with subject-level splits, identity/protocol probes, simple floors, and
-local-only row predictions/features.
+Run the aligned-BGE shallow shared-symptom MV07 validation row with
+subject-level splits, identity/protocol probes, simple floors, and local-only
+row predictions/features.

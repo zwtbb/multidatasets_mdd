@@ -1,0 +1,36 @@
+{
+  "artifact_hygiene_passed": true,
+  "extractor_summary": {
+    "cache_ref": "analysis/phase2_baselines/edaic_text_bge/edaic_bge_subject_features.csv",
+    "cached_subject_rows": 219,
+    "device": "not_loaded_cache_complete",
+    "hidden_size": 512,
+    "missing_subject_rows": 0,
+    "model_name": "BAAI/bge-small-zh-v1.5"
+  },
+  "generated_at": "2026-08-09T08:48:04+00:00",
+  "input_contract": {
+    "encoder_frozen": true,
+    "manifest_governed_transcripts_read": true,
+    "raw_text_written": false,
+    "row_predictions_written": false,
+    "source_paths_written": false,
+    "test_split_used": false
+  },
+  "model_name": "BAAI/bge-small-zh-v1.5",
+  "output_policy": {
+    "local_only_outputs": [
+      "analysis/phase2_baselines/edaic_text_bge/edaic_bge_subject_features.csv"
+    ],
+    "tracked_outputs": [
+      "report.md",
+      "run_summary.json",
+      "artifact_hygiene_audit.json",
+      "local_artifact_manifest.csv",
+      "subject_coverage_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV07_edaic_bge_generation",
+  "scope": "local_only_feature_contract_preparation",
+  "status": "complete_local_feature_cache_generated"
+}

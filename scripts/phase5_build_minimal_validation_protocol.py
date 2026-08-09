@@ -136,11 +136,11 @@ EXPERIMENT_MATRIX = [
         "phase4_source_id": "full_gate_next_action",
         "rq": "RQ1/RQ2",
         "name": "shared_feature_contract_readiness",
-        "status": "blocked_current_cached_features_insufficient_for_mv07",
-        "train_scope": "no training in readiness audit; future run requires aligned E-DAIC/CMDC/PDCH feature family",
+        "status": "ready_text_bge_minimal_validation",
+        "train_scope": "no training in readiness audit; next run should use aligned E-DAIC/CMDC/PDCH BGE feature family",
         "eval_scope": "feature-cache schema/coverage audit plus label-coverage audit for E-DAIC, CMDC, PDCH, and EATD stress labels",
         "target_contract": "E-DAIC/CMDC PHQ C01-C08; PDCH HAMD mapped constructs as auxiliary sanity; EATD SDS total only as external stress",
-        "feature_contract": "prefer aligned BGE text after generating E-DAIC BGE; aligned eGeMAPS requires regeneration; WavLM requires stronger identity control",
+        "feature_contract": "aligned BGE text is ready locally after generating E-DAIC BGE; aligned eGeMAPS requires regeneration; WavLM requires stronger identity control",
         "model_contract": "readiness only; later shallow shared-symptom heads must include identity/protocol probes",
         "required_controls": "same feature encoder/schema across required datasets; subject-level splits; no raw text export; identity probe before shared-representation claims",
         "primary_metrics": "readiness status; feature family coverage; common model-input columns; label coverage",
@@ -284,7 +284,7 @@ def write_report(audit: dict[str, Any]) -> None:
             "",
             "## Next Handoff",
             "",
-            "`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation workbench and aggregate summary gate, but evidence reporting is blocked until annotations are completed. `P5_MV07` readiness shows current caches are not sufficient for a fair new shared-symptom row; generate aligned E-DAIC BGE text features next. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.",
+            "`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation workbench and aggregate summary gate, but evidence reporting is blocked until annotations are completed. `P5_MV07` BGE readiness is now ready locally; run the aligned-BGE shallow shared-symptom validation next. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.",
         ]
     )
     (OUT_DIR / "minimal_validation_protocol.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -379,7 +379,7 @@ def main() -> None:
         "output_policy_rows": len(OUTPUT_POLICY),
         "full_method_allowed": False,
         "recommended_first_row": "P5_MV01",
-        "recommended_next_ready_row": "P5_MV06_local_evidence_annotation_or_P5_MV07_aligned_edaic_bge_generation",
+        "recommended_next_ready_row": "P5_MV06_local_evidence_annotation_or_P5_MV07_text_bge_shared_symptom_validation",
         "readiness_complete_rows": [
             row["protocol_id"] for row in EXPERIMENT_MATRIX if row["status"].startswith("readiness_complete")
         ],

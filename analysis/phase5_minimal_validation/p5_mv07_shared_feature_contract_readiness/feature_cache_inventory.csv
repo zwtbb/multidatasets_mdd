@@ -2,7 +2,7 @@ feature_family,dataset,cache_ref,exists,feature_subjects,model_input_columns,pat
 audio_wavlm,edaic,edaic_audio_frozen_encoders/wavlm_subject_features.csv,True,219,768,,MV07_AUDIO_WAVLM_CONTROLLED
 audio_wavlm,cmdc,cmdc_audio_frozen_encoders/cmdc_wavlm_subject_features.csv,True,77,768,,MV07_AUDIO_WAVLM_CONTROLLED
 audio_wavlm,pdch,pdch_audio_wavlm/pdch_wavlm_subject_features.csv,True,99,768,,MV07_AUDIO_WAVLM_CONTROLLED
-text_bge,edaic,edaic_text_bge/edaic_bge_subject_features.csv,False,0,0,,MV07_TEXT_BGE_ALIGNED
+text_bge,edaic,edaic_text_bge/edaic_bge_subject_features.csv,True,219,512,,MV07_TEXT_BGE_ALIGNED
 text_bge,cmdc,cmdc_pdch_text_encoder_mlp/cmdc_bge_subject_features.csv,True,77,512,,MV07_TEXT_BGE_ALIGNED
 text_bge,pdch,cmdc_pdch_text_encoder_mlp/pdch_bge_subject_features.csv,True,99,512,,MV07_TEXT_BGE_ALIGNED
 audio_egemaps,edaic,edaic_audio_egemaps/edaic_egemaps_subject_features.csv,True,219,92,,MV07_AUDIO_EGEMAPS_ALIGNED

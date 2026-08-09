@@ -1,6 +1,6 @@
 # P5_MV07 Shared Feature Contract Readiness
 
-Generated: `2026-08-09T08:09:34+00:00`
+Generated: `2026-08-09T08:48:12+00:00`
 
 ## Scope
 
@@ -8,17 +8,17 @@ This audit checks whether existing cached subject-level features are aligned eno
 
 ## Decision
 
-- Readiness status: `blocked_current_cached_features_insufficient_for_mv07`.
-- Recommended next contract: `MV07_TEXT_BGE_ALIGNED_after_generating_EDAIC_BGE`.
+- Readiness status: `ready_to_run_minimal_validation`.
+- Recommended next contract: `MV07_TEXT_BGE_ALIGNED_run_shallow_shared_symptom_validation`.
 - Artifact hygiene passed: `True`.
 
-Current caches are not sufficient for a fair new shared-symptom row: WavLM is aligned but identity-blocked, BGE text lacks E-DAIC, and eGeMAPS schemas are mismatched. Generate aligned E-DAIC BGE text features first.
+The aligned BGE text contract is ready: E-DAIC, CMDC, and PDCH now share 512 BGE model-input columns. This authorizes the next MV07 shallow validation row, not a shared-symptom claim yet.
 
 ## Contract Readiness
 
 | contract | status | required datasets | common columns | next step |
 | --- | --- | --- | ---: | --- |
-| MV07_TEXT_BGE_ALIGNED | `blocked_missing_required_feature_cache` | edaic;cmdc;pdch | 0 | Generate text_bge subject features for: edaic. |
+| MV07_TEXT_BGE_ALIGNED | `ready_to_run_minimal_validation` | edaic;cmdc;pdch | 512 | Run subject-level shallow-head MV07 with identity/protocol probes and local-only row predictions. |
 | MV07_AUDIO_EGEMAPS_ALIGNED | `blocked_schema_mismatch` | edaic;cmdc;pdch;eatd | 0 | Regenerate audio_egemaps with one shared schema/extractor across: edaic, cmdc, pdch, eatd. |
 | MV07_AUDIO_WAVLM_CONTROLLED | `available_but_identity_blocked_current_contract` | edaic;cmdc;pdch | 768 | Only rerun WavLM after a stronger inference-compatible identity control is specified; current WavLM evidence is not enough. |
 
@@ -32,16 +32,16 @@ Current caches are not sufficient for a fair new shared-symptom row: WavLM is al
 | pdch | HAMD17_item_total_supervision | 99 | primary_hamd_internal_validation |
 | eatd | SDS_total_only_external_stress | 162 | no_sds_item_supervision_current_manifest |
 
-## Recommended Generation Queue
+## Recommended Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Generate E-DAIC subject-level BGE text features from manifest-governed transcripts. | edaic text_bge cache exists with bge_* columns, subject-level rows, no path-like columns, no raw text export. |
+| 1 | Run the MV07 shallow shared-symptom validation row on aligned E-DAIC/CMDC/PDCH BGE features. | subject-level PHQ/HAMD construct heads beat simple floors where applicable and include dataset/protocol identity probes with local-only predictions. |
 | 2 | Regenerate aligned eGeMAPS subject features with one extractor/schema for E-DAIC, CMDC, PDCH, and EATD. | all required datasets share nonzero common model-input columns and pass artifact hygiene. |
 | 3 | Specify a stronger WavLM identity-control variant before rerunning shared-symptom validation on WavLM. | feature identity is reduced in an inference-compatible setting while construct metrics stay within tolerance. |
 
 ## Interpretation Boundary
 
-- Current cached features do not yet authorize a new shared-symptom training row.
+- Readiness means the feature contract is available; it is not model evidence.
 - WavLM remains usable only as a controlled diagnostic because identity remains high.
-- The cleanest next implementation is to generate aligned E-DAIC BGE text features so E-DAIC, CMDC, and PDCH share one text feature family.
+- The cleanest next implementation is the aligned BGE MV07 shallow shared-symptom validation row with identity/protocol probes.

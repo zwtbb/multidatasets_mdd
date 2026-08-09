@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-09T08:09:42+00:00`
+Generated: `2026-08-09T08:51:03+00:00`
 
 ## Decision
 
@@ -15,8 +15,8 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | A revised shared-symptom feature contract that beats simple floors while preserving identity/protocol controls, or completed MV06 evidence annotation with aggregate agreement. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss as the target hypothesis and report negative/partial diagnostics. | Cross-dataset or few-shot construct evidence that beats train-mean/total-allocation floors without worsening dataset identity. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Run the aligned BGE MV07 shallow shared-symptom validation with simple floors and identity/protocol probes, or complete MV06 evidence annotation with aggregate agreement. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss as the target hypothesis and report negative/partial diagnostics. | Run the ready aligned-BGE MV07 contract and show cross-dataset or few-shot construct evidence that beats train-mean/total-allocation floors without worsening dataset identity. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering and source-agnostic projection are diagnostic controls; do not claim invariant representation. | Feature-level identity reduction in an inference-compatible setting while preserving shared construct performance. |
@@ -44,14 +44,15 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV06_pilot | `complete` | `ready_for_manual_local_annotation` | `True` | A bounded MV06 local annotation packet is ready. It should be annotated locally and later summarized only as aggregate evidence agreement, prompt-artifact rate, evidence-source distribution, and construct coverage. |
 | P5_MV06_workbench | `complete` | `ready_for_local_human_annotation` | `True` | A two-annotator local MV06 workbook is ready. It contains local text locators and private free-text fields only in ignored local files; tracked outputs are schema and hygiene summaries only. |
 | P5_MV06_summary | `complete` | `blocked_no_completed_annotations` | `True` | The local annotation workbook has not been filled yet; only completion and field-contract gates are meaningful. |
-| P5_MV07_readiness | `complete` | `blocked_current_cached_features_insufficient_for_mv07` | `True` | Current caches are not sufficient for a fair new shared-symptom row: WavLM is aligned but identity-blocked, BGE text lacks E-DAIC, and eGeMAPS schemas are mismatched. Generate aligned E-DAIC BGE text features first. |
+| P5_MV07_edaic_bge_generation | `complete_local_feature_cache_generated` | `complete_local_feature_cache_generated` | `True` | complete_local_feature_cache_generated |
+| P5_MV07_readiness | `complete` | `ready_to_run_minimal_validation` | `True` | The aligned BGE text contract is ready: E-DAIC, CMDC, and PDCH now share 512 BGE model-input columns. This authorizes the next MV07 shallow validation row, not a shared-symptom claim yet. |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
 | 1 | Fill the ignored local MV06 annotation workbook and rerun the aggregate summary gate. | Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true. |
-| 2 | Generate aligned E-DAIC BGE text features, then rerun MV07 readiness and the shared-symptom feature contract. | E-DAIC/CMDC/PDCH share one BGE subject-level feature family with no path-like columns; the subsequent MV07 run beats simple floors without worsening identity controls. |
+| 2 | Run the aligned-BGE MV07 shallow shared-symptom validation row. | MV07 beats train-mean/total-allocation floors where applicable and reports dataset/protocol identity without worsening shortcut controls. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |
 

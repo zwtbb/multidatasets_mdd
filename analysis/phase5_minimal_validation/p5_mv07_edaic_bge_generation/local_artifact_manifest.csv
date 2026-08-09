@@ -1,0 +1,2 @@
+artifact,artifact_class,exists,rows,columns,version_policy
+analysis/phase2_baselines/edaic_text_bge/edaic_bge_subject_features.csv,local_only_feature_cache,True,219,521,ignored_by_git_do_not_commit

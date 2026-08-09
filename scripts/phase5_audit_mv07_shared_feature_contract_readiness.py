@@ -431,15 +431,29 @@ def contract_readiness(features: pd.DataFrame, columns_by_family_dataset: dict[t
 
 
 def generation_queue(contracts: pd.DataFrame) -> pd.DataFrame:
-    rows = [
-        {
+    text_status = str(
+        contracts.loc[contracts["contract_id"] == "MV07_TEXT_BGE_ALIGNED", "current_status"].iloc[0]
+    )
+    if text_status == "ready_to_run_minimal_validation":
+        first_action = {
+            "rank": 1,
+            "action_id": "RUN_MV07_TEXT_BGE_SHARED_SYMPTOM",
+            "action": "Run the MV07 shallow shared-symptom validation row on aligned E-DAIC/CMDC/PDCH BGE features.",
+            "why": "E-DAIC, CMDC, and PDCH now share a 512-column BGE subject-level feature family, so the next blocker is model evidence rather than feature availability.",
+            "success_gate": "subject-level PHQ/HAMD construct heads beat simple floors where applicable and include dataset/protocol identity probes with local-only predictions.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, transformed features, and model artifacts local-only.",
+        }
+    else:
+        first_action = {
             "rank": 1,
             "action_id": "GEN_EDAIC_BGE_SUBJECT_FEATURES",
             "action": "Generate E-DAIC subject-level BGE text features from manifest-governed transcripts.",
             "why": "BGE is already available for CMDC and PDCH; adding E-DAIC creates the cleanest aligned text feature contract for PHQ/HAMD shared-symptom testing.",
             "success_gate": "edaic text_bge cache exists with bge_* columns, subject-level rows, no path-like columns, no raw text export.",
             "version_policy": "Keep generated BGE feature CSV local-only; commit only scripts and aggregate readiness summaries.",
-        },
+        }
+    rows = [
+        first_action,
         {
             "rank": 2,
             "action_id": "REGEN_ALIGNED_EGEMAPS_V2",
@@ -538,7 +552,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any], contracts: pd.DataF
     lines.extend(
         [
             "",
-            "## Recommended Generation Queue",
+        "## Recommended Next Actions",
             "",
             "| rank | action | success gate |",
             "| ---: | --- | --- |",
@@ -551,10 +565,10 @@ def write_report(out_dir: Path, run_summary: dict[str, Any], contracts: pd.DataF
             "",
             "## Interpretation Boundary",
             "",
-            "- Current cached features do not yet authorize a new shared-symptom training row.",
-            "- WavLM remains usable only as a controlled diagnostic because identity remains high.",
-            "- The cleanest next implementation is to generate aligned E-DAIC BGE text features so E-DAIC, CMDC, and PDCH share one text feature family.",
-        ]
+        "- Readiness means the feature contract is available; it is not model evidence.",
+        "- WavLM remains usable only as a controlled diagnostic because identity remains high.",
+        "- The cleanest next implementation is the aligned BGE MV07 shallow shared-symptom validation row with identity/protocol probes.",
+    ]
     )
     (out_dir / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -581,13 +595,22 @@ def main() -> None:
     queue.to_csv(out_dir / "recommended_feature_generation_queue.csv", index=False)
 
     ready_contracts = contracts[contracts["current_status"] == "ready_to_run_minimal_validation"]
-    missing_text = contracts.loc[contracts["contract_id"] == "MV07_TEXT_BGE_ALIGNED", "current_status"].iloc[0]
+    text_status = contracts.loc[contracts["contract_id"] == "MV07_TEXT_BGE_ALIGNED", "current_status"].iloc[0]
     readiness_status = (
         "ready_to_run_minimal_validation"
         if not ready_contracts.empty
         else "blocked_current_cached_features_insufficient_for_mv07"
     )
-    recommended = "MV07_TEXT_BGE_ALIGNED_after_generating_EDAIC_BGE"
+    if readiness_status == "ready_to_run_minimal_validation":
+        recommended = "MV07_TEXT_BGE_ALIGNED_run_shallow_shared_symptom_validation"
+        short_read = (
+            "The aligned BGE text contract is ready: E-DAIC, CMDC, and PDCH now share 512 BGE model-input columns. This authorizes the next MV07 shallow validation row, not a shared-symptom claim yet."
+        )
+    else:
+        recommended = "MV07_TEXT_BGE_ALIGNED_after_generating_EDAIC_BGE"
+        short_read = (
+            "Current caches are not sufficient for a fair new shared-symptom row: WavLM is aligned but identity-blocked, BGE text lacks E-DAIC, and eGeMAPS schemas are mismatched. Generate aligned E-DAIC BGE text features first."
+        )
     run_summary = {
         "run_id": "P5_MV07_shared_feature_contract_readiness",
         "generated_at": generated_at,
@@ -602,10 +625,8 @@ def main() -> None:
         "decision": {
             "readiness_status": readiness_status,
             "recommended_next_contract": recommended,
-            "text_bge_contract_status": str(missing_text),
-            "short_read": (
-                "Current caches are not sufficient for a fair new shared-symptom row: WavLM is aligned but identity-blocked, BGE text lacks E-DAIC, and eGeMAPS schemas are mismatched. Generate aligned E-DAIC BGE text features first."
-            ),
+            "text_bge_contract_status": str(text_status),
+            "short_read": short_read,
         },
         "feature_cache_rows": int(len(features)),
         "contract_rows": int(len(contracts)),

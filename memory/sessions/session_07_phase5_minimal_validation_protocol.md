@@ -42,9 +42,9 @@ minimal model, and it explicitly keeps full method construction blocked.
   excluded from total scoring.
 - MV02 result: best PDCH item-derived total MAE was `5.693` versus train-mean
   items `6.183`, but CMDC sanity feature heads were worse than train mean.
-- MV07 was added as a readiness-only row. It blocks the next shared-symptom
-  feature contract until E-DAIC BGE text features are generated or another
-  aligned feature family passes schema, coverage, and identity-control gates.
+- MV07 was added as a readiness-only row. After local E-DAIC BGE generation,
+  the aligned text-BGE feature contract is ready for the next shallow
+  shared-symptom validation row.
 
 ## Files Owned Or Touched
 
@@ -77,15 +77,13 @@ Artifacts:
 - If `P5_MV01` requires a new common text feature space, that feature
   extraction must be treated as a versioned feature-contract decision and large
   embeddings must stay local-only.
-- `P5_MV07` currently confirms that a new common text feature space is needed:
-  E-DAIC BGE is missing while CMDC/PDCH BGE exists. The generated feature cache
-  should remain local-only.
+- `P5_MV07` now confirms the common BGE text feature space is available
+  locally. The generated E-DAIC BGE feature cache remains local-only.
 
 ## Next Handoff
 
 `P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have been
 implemented or audited as minimal rows. `P5_MV06` readiness is complete and
 can proceed only as a local raw-text annotation workflow with tracked aggregate
-summaries. `P5_MV07` readiness shows the next shared-symptom feature contract
-should start by generating aligned E-DAIC BGE text features, then rerunning the
-readiness gate before any broad full-model implementation.
+summaries. `P5_MV07` readiness shows the aligned-BGE validation row is the next
+runnable shared-symptom step before any broad full-model implementation.

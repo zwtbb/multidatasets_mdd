@@ -2,13 +2,13 @@
   "artifact_hygiene_passed": true,
   "contract_rows": 3,
   "decision": {
-    "readiness_status": "blocked_current_cached_features_insufficient_for_mv07",
-    "recommended_next_contract": "MV07_TEXT_BGE_ALIGNED_after_generating_EDAIC_BGE",
-    "short_read": "Current caches are not sufficient for a fair new shared-symptom row: WavLM is aligned but identity-blocked, BGE text lacks E-DAIC, and eGeMAPS schemas are mismatched. Generate aligned E-DAIC BGE text features first.",
-    "text_bge_contract_status": "blocked_missing_required_feature_cache"
+    "readiness_status": "ready_to_run_minimal_validation",
+    "recommended_next_contract": "MV07_TEXT_BGE_ALIGNED_run_shallow_shared_symptom_validation",
+    "short_read": "The aligned BGE text contract is ready: E-DAIC, CMDC, and PDCH now share 512 BGE model-input columns. This authorizes the next MV07 shallow validation row, not a shared-symptom claim yet.",
+    "text_bge_contract_status": "ready_to_run_minimal_validation"
   },
   "feature_cache_rows": 10,
-  "generated_at": "2026-08-09T08:09:34+00:00",
+  "generated_at": "2026-08-09T08:48:12+00:00",
   "input_contract": {
     "feature_cache_rows_read": true,
     "manifest_label_fields_read": true,

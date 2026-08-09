@@ -42,6 +42,7 @@ RUN_SUMMARIES = {
     "P5_MV06_pilot": PHASE5_DIR / "p5_mv06_evidence_annotation_pilot" / "run_summary.json",
     "P5_MV06_workbench": PHASE5_DIR / "p5_mv06_evidence_annotation_workbench" / "run_summary.json",
     "P5_MV06_summary": PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "run_summary.json",
+    "P5_MV07_edaic_bge_generation": PHASE5_DIR / "p5_mv07_edaic_bge_generation" / "run_summary.json",
     "P5_MV07_readiness": PHASE5_DIR / "p5_mv07_shared_feature_contract_readiness" / "run_summary.json",
 }
 
@@ -52,7 +53,6 @@ STATUS_OVERRIDES = {
     "P5_MV06_pilot": "ready_for_manual_local_annotation",
     "P5_MV06_workbench": "ready_for_local_human_annotation",
     "P5_MV06_summary": "blocked_no_completed_annotations",
-    "P5_MV07_readiness": "blocked_current_cached_features_insufficient_for_mv07",
 }
 
 PASS_RULE_OVERRIDES = {
@@ -62,7 +62,6 @@ PASS_RULE_OVERRIDES = {
     "P5_MV06_pilot": None,
     "P5_MV06_workbench": None,
     "P5_MV06_summary": False,
-    "P5_MV07_readiness": False,
 }
 
 
@@ -122,6 +121,8 @@ def verdict_status(evidence_id: str, summary: dict[str, Any]) -> str:
     decision = summary.get("decision") or {}
     if decision.get("annotation_summary_status"):
         return str(decision["annotation_summary_status"])
+    if decision.get("readiness_status"):
+        return str(decision["readiness_status"])
     return str(verdict.get("pass_rule_status") or summary.get("status") or "unknown")
 
 
@@ -207,9 +208,9 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": "P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 shows current feature caches are not aligned enough for a fair new shared-symptom row.",
-            "required_next_evidence": "A revised shared-symptom feature contract that beats simple floors while preserving identity/protocol controls, or completed MV06 evidence annotation with aggregate agreement.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV07_readiness",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 readiness is {mv07.get('readiness_status')}, but no MV07 shared-symptom model result exists yet.",
+            "required_next_evidence": "Run the aligned BGE MV07 shallow shared-symptom validation with simple floors and identity/protocol probes, or complete MV06 evidence annotation with aggregate agreement.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV07_edaic_bge_generation;P5_MV07_readiness",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
@@ -217,8 +218,8 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "decision": "blocked",
             "allowed_scope": "Discuss as the target hypothesis and report negative/partial diagnostics.",
             "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07 status {mv07.get('readiness_status')}.",
-            "required_next_evidence": "Cross-dataset or few-shot construct evidence that beats train-mean/total-allocation floors without worsening dataset identity.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_readiness",
+            "required_next_evidence": "Run the ready aligned-BGE MV07 contract and show cross-dataset or few-shot construct evidence that beats train-mean/total-allocation floors without worsening dataset identity.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness",
         },
         {
             "claim_id": "C_PDCH_HAMD_INTERNAL",
@@ -299,7 +300,27 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def build_next_actions() -> pd.DataFrame:
+def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
+    mv07 = summaries["P5_MV07_readiness"].get("decision") or {}
+    mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
+    if mv07_ready:
+        shared_feature_action = {
+            "rank": 2,
+            "action_id": "NEXT_MV07_TEXT_BGE_SHARED_SYMPTOM",
+            "action": "Run the aligned-BGE MV07 shallow shared-symptom validation row.",
+            "why_now": "E-DAIC, CMDC, and PDCH now share one BGE subject-level feature family; the next missing evidence is model performance plus identity/protocol probes.",
+            "success_gate": "MV07 beats train-mean/total-allocation floors where applicable and reports dataset/protocol identity without worsening shortcut controls.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, transformed features, and model artifacts local-only.",
+        }
+    else:
+        shared_feature_action = {
+            "rank": 2,
+            "action_id": "NEXT_SHARED_FEATURE_CONTRACT",
+            "action": "Generate aligned E-DAIC BGE text features, then rerun MV07 readiness and the shared-symptom feature contract.",
+            "why_now": "MV07 readiness shows BGE is the cleanest next aligned text contract because CMDC/PDCH BGE already exists while E-DAIC BGE is missing.",
+            "success_gate": "E-DAIC/CMDC/PDCH share one BGE subject-level feature family with no path-like columns; the subsequent MV07 run beats simple floors without worsening identity controls.",
+            "version_policy": "Track scripts and aggregate summaries; keep generated BGE features, row-level predictions, embeddings, and weights local-only.",
+        }
     rows = [
         {
             "rank": 1,
@@ -309,14 +330,7 @@ def build_next_actions() -> pd.DataFrame:
             "success_gate": "Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true.",
             "version_policy": "Commit aggregate summaries only; keep raw snippets, source maps, and per-subject rationales local-only.",
         },
-        {
-            "rank": 2,
-            "action_id": "NEXT_SHARED_FEATURE_CONTRACT",
-            "action": "Generate aligned E-DAIC BGE text features, then rerun MV07 readiness and the shared-symptom feature contract.",
-            "why_now": "MV07 readiness shows BGE is the cleanest next aligned text contract because CMDC/PDCH BGE already exists while E-DAIC BGE is missing.",
-            "success_gate": "E-DAIC/CMDC/PDCH share one BGE subject-level feature family with no path-like columns; the subsequent MV07 run beats simple floors without worsening identity controls.",
-            "version_policy": "Track scripts and aggregate summaries; keep generated BGE features, row-level predictions, embeddings, and weights local-only.",
-        },
+        shared_feature_action,
         {
             "rank": 3,
             "action_id": "NEXT_SPEAKER_PROTOCOL_RECOVERY",
@@ -456,7 +470,7 @@ def main() -> None:
     summaries = {key: read_json(path) for key, path in RUN_SUMMARIES.items()}
     evidence = collect_evidence(summaries)
     claims = build_claim_gate(summaries)
-    actions = build_next_actions()
+    actions = build_next_actions(summaries)
 
     full_method_allowed = not any(claims["decision"].astype(str).str.startswith("blocked"))
     gate_status = "full_method_blocked"

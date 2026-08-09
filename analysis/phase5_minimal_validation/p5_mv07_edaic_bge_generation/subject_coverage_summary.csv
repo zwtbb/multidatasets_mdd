@@ -1,0 +1,2 @@
+dataset,feature_family,model_input_columns,manifest_subjects,feature_subjects,train_manifest_subjects,dev_manifest_subjects,train_feature_subjects,dev_feature_subjects,subject_overlap_violations,path_like_columns,raw_text_written,source_paths_written
+edaic,text_bge,512,219,219,163,56,163,56,0,,False,False
