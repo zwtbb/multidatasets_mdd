@@ -121,8 +121,15 @@ data audit
   complete as a local-only feature-contract preparation step. It generated an
   ignored 219-subject E-DAIC BGE cache and tracked only aggregate audit
   artifacts.
+- Phase 5 `P5_MV07 aligned_bge_shared_symptom_validation`:
+  complete and blocked as positive shared-symptom evidence. It used aligned
+  E-DAIC/CMDC/PDCH frozen BGE subject features and shallow heads only. Pooled
+  PHQ itemwise Ridge improves over train mean but does not consistently beat
+  the total-allocation floor, PDCH HAMD-proxy sanity is internal only, and
+  identity probes remain high: feature balanced accuracy `1.000`, prediction
+  balanced accuracy `0.980`.
 - Phase 5 full-method gate audit:
-  complete. It reads 16 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 17 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -139,9 +146,9 @@ MODMA task-control pass, but the result is still mixed because EATD remains
 below train mean and does not support valence-control claims. `P5_MV02` gives
 bounded PDCH-only HAMD evidence, while `P5_MV03`, `P5_MV03b`, and `P5_MV05`
 are negative for SDS/context claims. `P5_MV06` still requires local annotation
-completion before evidence-localization claims. `P5_MV07` shows the
-aligned-BGE shared-symptom validation row is now runnable, but no MV07 model
-result exists yet.
+completion before evidence-localization claims. `P5_MV07` shows aligned BGE is
+runnable, but the shallow validation is blocked by total-allocation and
+identity evidence.
 
 Use `scripts/phase5_full_method_gate_audit.py` as the active claim boundary.
 The audit blocks full M0/M1/M2/M3 construction, transferable shared-symptom
@@ -270,8 +277,10 @@ representation without those controls.
   ready, including an ignored two-annotator local workbook, but is blocked as
   evidence until annotations and agreement summaries are completed.
 - `P5_MV07 shared_feature_contract_readiness` is complete and ready for the
-  aligned-BGE shallow validation row. The E-DAIC BGE feature CSV is local-only;
-  the next tracked evidence should be aggregate MV07 validation summaries.
+  aligned-BGE shallow validation row. The E-DAIC BGE feature CSV is local-only.
+- `P5_MV07 aligned_bge_shared_symptom_validation` is complete and blocked as
+  shared-symptom evidence. The BGE itemwise heads do not consistently beat the
+  total-allocation floor and feature/prediction identity remains high.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -286,7 +295,8 @@ representation without those controls.
 
 - Phase 5 execution: continue under the full-method gate by filling the
   ignored local MV06 annotation workbook and rerunning the summary gate, or
-  running the aligned-BGE MV07 shallow shared-symptom validation.
+  designing a stronger shared-symptom feature/identity-control contract after
+  the aligned-BGE MV07 block.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

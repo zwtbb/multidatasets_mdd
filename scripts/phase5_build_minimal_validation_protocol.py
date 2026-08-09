@@ -135,18 +135,18 @@ EXPERIMENT_MATRIX = [
         "protocol_id": "P5_MV07",
         "phase4_source_id": "full_gate_next_action",
         "rq": "RQ1/RQ2",
-        "name": "shared_feature_contract_readiness",
-        "status": "ready_text_bge_minimal_validation",
-        "train_scope": "no training in readiness audit; next run should use aligned E-DAIC/CMDC/PDCH BGE feature family",
-        "eval_scope": "feature-cache schema/coverage audit plus label-coverage audit for E-DAIC, CMDC, PDCH, and EATD stress labels",
+        "name": "aligned_bge_shared_symptom_validation",
+        "status": "complete_blocked_aligned_bge_identity_total_allocation",
+        "train_scope": "aligned E-DAIC/CMDC/PDCH BGE feature family with shallow Ridge heads only",
+        "eval_scope": "E-DAIC/CMDC PHQ C01-C08 same-dataset, pooled, and cross-dataset checks plus PDCH HAMD-proxy internal sanity",
         "target_contract": "E-DAIC/CMDC PHQ C01-C08; PDCH HAMD mapped constructs as auxiliary sanity; EATD SDS total only as external stress",
-        "feature_contract": "aligned BGE text is ready locally after generating E-DAIC BGE; aligned eGeMAPS requires regeneration; WavLM requires stronger identity control",
-        "model_contract": "readiness only; later shallow shared-symptom heads must include identity/protocol probes",
+        "feature_contract": "aligned BGE text ran locally after generating E-DAIC BGE; aligned eGeMAPS requires regeneration; WavLM requires stronger identity control",
+        "model_contract": "train-mean, total-allocation Ridge, and BGE itemwise Ridge with feature and prediction identity probes",
         "required_controls": "same feature encoder/schema across required datasets; subject-level splits; no raw text export; identity probe before shared-representation claims",
-        "primary_metrics": "readiness status; feature family coverage; common model-input columns; label coverage",
-        "pass_rule": "an aligned feature family exists across required datasets and can be evaluated without path-like columns or raw-data leakage",
+        "primary_metrics": "macro construct MAE deltas versus train-mean and total-allocation floors; PDCH HAMD-proxy sanity; feature/prediction identity balanced accuracy",
+        "pass_rule": "aligned BGE itemwise heads improve over train-mean and total-allocation floors while reducing identity shortcut risk",
         "stop_rule": "current caches are missing a required dataset, have schema mismatch, or are identity-blocked without a stronger control",
-        "version_policy": "track readiness summaries only; keep generated feature caches and row predictions local-only",
+        "version_policy": "track scripts, readiness summaries, and aggregate validation summaries only; keep generated feature caches and row predictions local-only",
     },
 ]
 
@@ -284,7 +284,7 @@ def write_report(audit: dict[str, Any]) -> None:
             "",
             "## Next Handoff",
             "",
-            "`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation workbench and aggregate summary gate, but evidence reporting is blocked until annotations are completed. `P5_MV07` BGE readiness is now ready locally; run the aligned-BGE shallow shared-symptom validation next. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.",
+            "`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, and `P5_MV07` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation workbench and aggregate summary gate, but evidence reporting is blocked until annotations are completed. `P5_MV07` aligned-BGE shallow validation is blocked because BGE itemwise heads do not beat the total-allocation floor consistently and identity probes remain high. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.",
         ]
     )
     (OUT_DIR / "minimal_validation_protocol.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -379,7 +379,7 @@ def main() -> None:
         "output_policy_rows": len(OUTPUT_POLICY),
         "full_method_allowed": False,
         "recommended_first_row": "P5_MV01",
-        "recommended_next_ready_row": "P5_MV06_local_evidence_annotation_or_P5_MV07_text_bge_shared_symptom_validation",
+        "recommended_next_ready_row": "P5_MV06_local_evidence_annotation_or_stronger_shared_symptom_identity_control",
         "readiness_complete_rows": [
             row["protocol_id"] for row in EXPERIMENT_MATRIX if row["status"].startswith("readiness_complete")
         ],

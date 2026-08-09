@@ -44,6 +44,7 @@ RUN_SUMMARIES = {
     "P5_MV06_summary": PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "run_summary.json",
     "P5_MV07_edaic_bge_generation": PHASE5_DIR / "p5_mv07_edaic_bge_generation" / "run_summary.json",
     "P5_MV07_readiness": PHASE5_DIR / "p5_mv07_shared_feature_contract_readiness" / "run_summary.json",
+    "P5_MV07": PHASE5_DIR / "p5_mv07_aligned_bge_shared_symptom" / "run_summary.json",
 }
 
 STATUS_OVERRIDES = {
@@ -200,7 +201,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv04c_domains = mv04c_domain_rows(summaries["P5_MV04c"])
     mv05 = summaries["P5_MV05"].get("verdict") or {}
     mv06 = summaries["P5_MV06_summary"]
-    mv07 = summaries["P5_MV07_readiness"].get("decision") or {}
+    mv07_result = summaries["P5_MV07"].get("verdict") or {}
 
     rows = [
         {
@@ -208,18 +209,18 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 readiness is {mv07.get('readiness_status')}, but no MV07 shared-symptom model result exists yet.",
-            "required_next_evidence": "Run the aligned BGE MV07 shallow shared-symptom validation with simple floors and identity/protocol probes, or complete MV06 evidence annotation with aggregate agreement.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV07_edaic_bge_generation;P5_MV07_readiness",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')} with feature identity BA {fmt(mv07_result.get('feature_identity_ba'))}.",
+            "required_next_evidence": "Complete MV06 evidence annotation with aggregate agreement, or design a stronger shared-symptom feature/identity-control contract that beats simple floors and reduces shortcut identity.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
             "claim": "Claim a transferable shared symptom representation across scales/datasets.",
             "decision": "blocked",
             "allowed_scope": "Discuss as the target hypothesis and report negative/partial diagnostics.",
-            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07 status {mv07.get('readiness_status')}.",
-            "required_next_evidence": "Run the ready aligned-BGE MV07 contract and show cross-dataset or few-shot construct evidence that beats train-mean/total-allocation floors without worsening dataset identity.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness",
+            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07 status {mv07_result.get('pass_rule_status')}, pooled CMDC delta vs total-allocation {fmt(mv07_result.get('pooled_cmdc_delta_vs_total_alloc'))}, prediction identity BA {fmt(mv07_result.get('prediction_identity_ba'))}.",
+            "required_next_evidence": "A stronger shared-symptom contract must beat train-mean/total-allocation floors on cross-dataset or few-shot construct evidence while reducing dataset/prediction identity.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07",
         },
         {
             "claim_id": "C_PDCH_HAMD_INTERNAL",
@@ -293,7 +294,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "decision": "allowed_with_reframing",
             "allowed_scope": "A diagnosis/audit-driven paper with rigorous negative/mixed results and a bounded method proposal is viable; not a SOTA full-method paper yet.",
             "blocking_evidence": "The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked.",
-            "required_next_evidence": "Either complete MV06 evidence annotations for credibility/RQ4 or run a stronger shared-symptom feature contract before method expansion.",
+            "required_next_evidence": "Either complete MV06 evidence annotations for credibility/RQ4 or design a stronger shared-symptom identity-control contract before method expansion.",
             "primary_sources": "all_phase5",
         },
     ]
@@ -302,8 +303,18 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
 
 def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv07 = summaries["P5_MV07_readiness"].get("decision") or {}
+    mv07_result = summaries["P5_MV07"].get("verdict") or {}
     mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
-    if mv07_ready:
+    if mv07_result.get("pass_rule_status"):
+        shared_feature_action = {
+            "rank": 2,
+            "action_id": "NEXT_SHARED_SYMPTOM_IDENTITY_CONTROL",
+            "action": "Design a stronger shared-symptom feature contract or identity-control variant after the aligned-BGE MV07 block.",
+            "why_now": f"MV07 ran and is {mv07_result.get('pass_rule_status')}; feature identity and prediction identity remain high.",
+            "success_gate": "A revised contract beats train-mean/total-allocation floors and reduces feature/prediction identity before any shared-representation claim.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, transformed features, and model artifacts local-only.",
+        }
+    elif mv07_ready:
         shared_feature_action = {
             "rank": 2,
             "action_id": "NEXT_MV07_TEXT_BGE_SHARED_SYMPTOM",

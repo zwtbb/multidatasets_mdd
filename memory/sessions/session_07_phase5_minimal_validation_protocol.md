@@ -25,6 +25,10 @@ minimal model, and it explicitly keeps full method construction blocked.
 - `P5_MV02` HAMD bridge is now complete as a PDCH-only diagnostic pass. CMDC
   HAMD remains limited to a 25-subject sanity subset and does not support
   transfer claims in the current frozen-feature contract.
+- `P5_MV07` is now complete as an aligned-BGE shallow validation row, not just
+  readiness. It is blocked as shared-symptom evidence because itemwise BGE
+  heads do not consistently beat total-allocation floors and identity remains
+  high.
 
 ## Key Decisions
 
@@ -42,9 +46,9 @@ minimal model, and it explicitly keeps full method construction blocked.
   excluded from total scoring.
 - MV02 result: best PDCH item-derived total MAE was `5.693` versus train-mean
   items `6.183`, but CMDC sanity feature heads were worse than train mean.
-- MV07 was added as a readiness-only row. After local E-DAIC BGE generation,
-  the aligned text-BGE feature contract is ready for the next shallow
-  shared-symptom validation row.
+- MV07 moved from readiness-only to a completed blocked validation row after
+  local E-DAIC BGE generation. Treat it as negative/diagnostic evidence and do
+  not use it to authorize full M0 shared-symptom construction.
 
 ## Files Owned Or Touched
 
@@ -77,13 +81,16 @@ Artifacts:
 - If `P5_MV01` requires a new common text feature space, that feature
   extraction must be treated as a versioned feature-contract decision and large
   embeddings must stay local-only.
-- `P5_MV07` now confirms the common BGE text feature space is available
-  locally. The generated E-DAIC BGE feature cache remains local-only.
+- `P5_MV07` confirms the common BGE text feature space is available locally,
+  but the shallow validation result is blocked by total-allocation and identity
+  evidence. The generated E-DAIC BGE feature cache and row predictions remain
+  local-only.
 
 ## Next Handoff
 
-`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have been
+`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, and `P5_MV07` have been
 implemented or audited as minimal rows. `P5_MV06` readiness is complete and
 can proceed only as a local raw-text annotation workflow with tracked aggregate
-summaries. `P5_MV07` readiness shows the aligned-BGE validation row is the next
-runnable shared-symptom step before any broad full-model implementation.
+summaries. `P5_MV07` aligned-BGE validation should now be reported as a blocked
+shared-feature result; a stronger identity-control/shared-feature contract is
+needed before any broad full-model implementation.

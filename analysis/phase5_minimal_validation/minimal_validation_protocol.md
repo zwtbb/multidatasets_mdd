@@ -1,6 +1,6 @@
 # Phase 5 Minimal Method-Validation Protocol
 
-Generated: `2026-08-09T08:48:11+00:00`
+Generated: `2026-08-09T09:08:46+00:00`
 
 ## Purpose
 
@@ -18,7 +18,7 @@ Minimal validation may begin only with subject-level splits, frozen or explicitl
 - `P5_MV04` `dataset_protocol_control_ablation` (complete_mixed_dataset_protocol_control): baseline shared heads versus dataset-balanced, protocol-balanced, or adversarial identity-control variants
 - `P5_MV05` `mpdd_context_calibration` (complete_negative_context_calibration): calibration/context module versus AV baseline and shuffled-personality controls
 - `P5_MV06` `construct_evidence_localization` (summary_gate_blocked_no_completed_annotations): post-hoc evidence audit tied to construct predictions and protocol controls
-- `P5_MV07` `shared_feature_contract_readiness` (ready_text_bge_minimal_validation): readiness only; later shallow shared-symptom heads must include identity/protocol probes
+- `P5_MV07` `aligned_bge_shared_symptom_validation` (complete_blocked_aligned_bge_identity_total_allocation): train-mean, total-allocation Ridge, and BGE itemwise Ridge with feature and prediction identity probes
 
 ## Mandatory Controls
 
@@ -38,4 +38,4 @@ Minimal validation may begin only with subject-level splits, frozen or explicitl
 
 ## Next Handoff
 
-`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, and `P5_MV05` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation workbench and aggregate summary gate, but evidence reporting is blocked until annotations are completed. `P5_MV07` BGE readiness is now ready locally; run the aligned-BGE shallow shared-symptom validation next. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.
+`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, and `P5_MV07` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation workbench and aggregate summary gate, but evidence reporting is blocked until annotations are completed. `P5_MV07` aligned-BGE shallow validation is blocked because BGE itemwise heads do not beat the total-allocation floor consistently and identity probes remain high. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.

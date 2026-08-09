@@ -78,14 +78,15 @@ Ignored local-only artifact:
   is still a Chinese BGE encoder applied to English E-DAIC transcripts. MV07
   must therefore compare against simple floors and identity/protocol probes
   before any semantic transfer claim.
-- The aligned BGE cache makes the next MV07 validation runnable, but no model
-  result exists yet.
+- The aligned BGE cache made MV07 validation runnable; that validation has now
+  completed and is blocked as shared-symptom evidence because itemwise BGE does
+  not consistently beat total-allocation floors and identity remains high.
 - Generated feature CSVs, row predictions, transformed features, and model
   artifacts must remain local-only.
 
 ## Next Handoff
 
-Run the aligned-BGE MV07 shallow shared-symptom validation row over E-DAIC,
-CMDC, and PDCH. It should use subject-level splits, PHQ C01-C08 heads for
-E-DAIC/CMDC, PDCH HAMD mapped constructs as auxiliary sanity, simple
-train-mean/total-allocation floors, and dataset/protocol identity probes.
+The aligned-BGE MV07 validation row has now run in
+`session_26_phase5_mv07_aligned_bge_shared_symptom.md`. Do not treat E-DAIC
+BGE generation as authorizing shared-representation claims; use the result as a
+negative/diagnostic feature-contract finding.

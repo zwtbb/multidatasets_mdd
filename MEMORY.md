@@ -39,6 +39,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_23_phase5_mv06_annotation_workbench.md`
   - `/root/autodl-tmp/memory/sessions/session_24_phase5_mv07_shared_feature_contract_readiness.md`
   - `/root/autodl-tmp/memory/sessions/session_25_phase5_mv07_edaic_bge_generation.md`
+  - `/root/autodl-tmp/memory/sessions/session_26_phase5_mv07_aligned_bge_shared_symptom.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -283,9 +284,19 @@ MPDD 2025 is intentionally out of scope for current auditing.
   512 `bge_*` columns and zero subject-overlap or path-like-column violations.
   Tracked outputs contain only aggregate coverage, local artifact manifest,
   run summary, report, and hygiene audit.
+- Phase 5 `P5_MV07 aligned_bge_shared_symptom_validation` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv07_aligned_bge_shared_symptom/`.
+  It used aligned E-DAIC/CMDC/PDCH frozen BGE subject features, shallow
+  train-mean/total-allocation/itemwise Ridge heads, subject-level splits, and
+  identity probes. Treat as a blocked/negative shared-symptom validation:
+  `blocked_not_better_than_total_allocation_bge_contract`. Pooled PHQ BGE
+  itemwise heads improve over train mean but do not consistently beat
+  total-allocation floors, PDCH HAMD-proxy sanity is internal only, and
+  identity remains high (feature BA `1.000`, prediction BA `0.980`). Artifact
+  hygiene passed and row-level predictions remain ignored local-only.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 16 Phase 5 run summaries and exports claim gates, evidence
+  It reads 17 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -479,6 +490,13 @@ Key Phase 2 outputs:
   inference-compatible identity-control design. Track only scripts/readiness
   summaries and reports; generated feature CSVs, predictions, embeddings, and
   weights remain local-only.
+- P5_MV07 result decision: the aligned-BGE shallow validation is runnable but
+  blocked as shared-symptom evidence. The BGE itemwise head does not
+  consistently beat the total-allocation floor, and dataset identity remains
+  nearly perfectly recoverable from both features and pooled PHQ predictions.
+  Do not claim transferable shared symptom representation from the current BGE
+  contract; either complete MV06 annotations for evidence credibility or design
+  a stronger identity-control/shared-feature contract before full method work.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -588,6 +606,6 @@ plaintext credential-like content before committing on the clean remote lineage.
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
    fill the ignored local MV06 annotation workbook and rerun the summary gate,
-   or run the aligned-BGE MV07 shallow shared-symptom validation with
-   subject-level splits, simple floors, and identity/protocol probes. Full
-   method construction remains blocked until the gate changes.
+   or design a stronger shared-symptom feature/identity-control contract after
+   the aligned-BGE MV07 block. Full method construction remains blocked until
+   the gate changes.

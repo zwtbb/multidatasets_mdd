@@ -150,8 +150,16 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   `analysis/phase2_baselines/edaic_text_bge/`; tracked artifacts contain only
   aggregate coverage, a local artifact manifest, report, run summary, and
   hygiene audit.
+- Phase 5 `P5_MV07 aligned_bge_shared_symptom_validation` completed in the
+  main checkout. It used aligned E-DAIC/CMDC/PDCH frozen BGE subject features,
+  shallow train-mean/total-allocation/itemwise Ridge heads, subject-level
+  splits, and feature/prediction identity probes. Treat it as
+  `blocked_not_better_than_total_allocation_bge_contract`, not positive
+  shared-symptom evidence: pooled PHQ itemwise heads do not consistently beat
+  total-allocation floors and identity remains high (feature BA `1.000`,
+  prediction BA `0.980`).
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 16
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 17
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
@@ -221,8 +229,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    now has a local manual annotation packet, two-annotator workbench, and
    aggregate-only summary gate ready, but no evidence-localization result
    should be claimed until local annotations are completed and pass the gate.
-   `P5_MV07` readiness now shows the aligned BGE text contract is ready; run
-   the shallow shared-symptom validation before making any shared-representation
+   `P5_MV07` aligned-BGE shallow validation is now complete and blocked by
+   total-allocation and identity evidence, so it should be reported as a
+   negative/diagnostic shared-feature result rather than a shared-representation
    claim.
    The full-method gate audit now records this as
    `blocked_but_publishable_diagnostic_direction`: full method
@@ -268,9 +277,10 @@ Cross-session issues are tracked in:
 
 Continue Phase 5 under the full-method gate audit. The next useful work is
 either filling the ignored local MV06 annotation workbook and rerunning the
-summary gate, or running the aligned-BGE MV07 shallow shared-symptom
-validation. Keep row-level predictions and learned embeddings local-only, and
-do not start full method work until the gate changes.
+summary gate, or designing a stronger shared-symptom feature/identity-control
+contract after the aligned-BGE MV07 block. Keep row-level predictions and
+learned embeddings local-only, and do not start full method work until the gate
+changes.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
 the old local `main` history directly. Run

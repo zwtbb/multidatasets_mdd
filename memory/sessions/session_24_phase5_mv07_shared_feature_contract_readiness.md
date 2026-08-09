@@ -90,6 +90,8 @@ Versionable artifacts:
 
 ## Next Handoff
 
-Run the aligned-BGE shallow shared-symptom MV07 validation row with
-subject-level splits, identity/protocol probes, simple floors, and local-only
-row predictions/features.
+The aligned-BGE shallow MV07 validation row has now been run in
+`session_26_phase5_mv07_aligned_bge_shared_symptom.md` and is blocked as
+positive shared-symptom evidence. Future work should either complete MV06
+annotations or design a stronger shared-symptom feature/identity-control
+contract; do not rerun readiness as if MV07 were still pending.

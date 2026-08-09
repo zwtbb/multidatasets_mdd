@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-09T08:51:03+00:00`
+Generated: `2026-08-09T09:08:46+00:00`
 
 ## Decision
 
@@ -15,8 +15,8 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Run the aligned BGE MV07 shallow shared-symptom validation with simple floors and identity/protocol probes, or complete MV06 evidence annotation with aggregate agreement. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss as the target hypothesis and report negative/partial diagnostics. | Run the ready aligned-BGE MV07 contract and show cross-dataset or few-shot construct evidence that beats train-mean/total-allocation floors without worsening dataset identity. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Complete MV06 evidence annotation with aggregate agreement, or design a stronger shared-symptom feature/identity-control contract that beats simple floors and reduces shortcut identity. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss as the target hypothesis and report negative/partial diagnostics. | A stronger shared-symptom contract must beat train-mean/total-allocation floors on cross-dataset or few-shot construct evidence while reducing dataset/prediction identity. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering and source-agnostic projection are diagnostic controls; do not claim invariant representation. | Feature-level identity reduction in an inference-compatible setting while preserving shared construct performance. |
@@ -24,7 +24,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as audit axes. | A revised context module that improves required subgroup ECE gaps beyond AV-only recalibration and shuffled controls. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `blocked_pending_annotation` | Use current MV06 artifacts as annotation infrastructure only. | Completed local annotations, enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnosis/audit-driven paper with rigorous negative/mixed results and a bounded method proposal is viable; not a SOTA full-method paper yet. | Either complete MV06 evidence annotations for credibility/RQ4 or run a stronger shared-symptom feature contract before method expansion. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnosis/audit-driven paper with rigorous negative/mixed results and a bounded method proposal is viable; not a SOTA full-method paper yet. | Either complete MV06 evidence annotations for credibility/RQ4 or design a stronger shared-symptom identity-control contract before method expansion. |
 
 ## Evidence Inventory
 
@@ -46,13 +46,14 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV06_summary | `complete` | `blocked_no_completed_annotations` | `True` | The local annotation workbook has not been filled yet; only completion and field-contract gates are meaningful. |
 | P5_MV07_edaic_bge_generation | `complete_local_feature_cache_generated` | `complete_local_feature_cache_generated` | `True` | complete_local_feature_cache_generated |
 | P5_MV07_readiness | `complete` | `ready_to_run_minimal_validation` | `True` | The aligned BGE text contract is ready: E-DAIC, CMDC, and PDCH now share 512 BGE model-input columns. This authorizes the next MV07 shallow validation row, not a shared-symptom claim yet. |
+| P5_MV07 | `complete` | `blocked_not_better_than_total_allocation_bge_contract` | `True` | Aligned BGE MV07 is a shallow validation result. Interpret it through pooled PHQ gains, PDCH HAMD-proxy sanity, and identity probes; readiness alone is not a shared-symptom claim. |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
 | 1 | Fill the ignored local MV06 annotation workbook and rerun the aggregate summary gate. | Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true. |
-| 2 | Run the aligned-BGE MV07 shallow shared-symptom validation row. | MV07 beats train-mean/total-allocation floors where applicable and reports dataset/protocol identity without worsening shortcut controls. |
+| 2 | Design a stronger shared-symptom feature contract or identity-control variant after the aligned-BGE MV07 block. | A revised contract beats train-mean/total-allocation floors and reduces feature/prediction identity before any shared-representation claim. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |
 
