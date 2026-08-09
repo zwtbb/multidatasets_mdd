@@ -1,0 +1,180 @@
+{
+  "artifact_hygiene_passed": true,
+  "data_contract": {
+    "clinical_source_content_read": false,
+    "clinical_source_content_written": false,
+    "cmdc_subjects": 77,
+    "edaic_subjects": 219,
+    "encoder_finetuned": false,
+    "pdch_feature_subjects_for_identity_probe": 99,
+    "row_level_predictions_written_local_only": true,
+    "source_locators_written": false
+  },
+  "feature_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc",
+      "pdch"
+    ],
+    "encoder_frozen": true,
+    "feature_family": "text_bge",
+    "generated_features_local_only": true,
+    "model_input_columns": 512
+  },
+  "generated_at": "2026-08-09T10:09:34+00:00",
+  "model_contract": {
+    "control_uses_eval_dataset_labels": false,
+    "control_uses_eval_target_labels": false,
+    "control_variant": "train_fold_edaic_cmdc_iterative_logit_projection",
+    "heads": [
+      "train_mean",
+      "total_alloc_ridge",
+      "bge_itemwise_ridge_raw",
+      "bge_logit_projection_k1_itemwise_ridge",
+      "bge_logit_projection_k3_itemwise_ridge",
+      "bge_logit_projection_k5_itemwise_ridge",
+      "bge_logit_projection_k10_itemwise_ridge"
+    ],
+    "model_weights_written": false,
+    "projection_component_counts": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "projection_directions_written": false,
+    "ridge_alpha_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "subject_overlap_violations": 0
+  },
+  "output_policy": {
+    "local_only_outputs": [
+      "p5_mv07b_local_predictions.csv"
+    ],
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "best_control_summary.csv",
+      "comparison_summary.csv",
+      "construct_target_map.csv",
+      "identity_probe_by_seed.csv",
+      "identity_probe_summary.csv",
+      "label_feature_audit.csv",
+      "metric_summary.csv",
+      "metrics_by_seed.csv",
+      "model_split_audit.csv",
+      "projection_audit.csv",
+      "report.md",
+      "run_summary.json",
+      "worst_slice_by_seed.csv",
+      "worst_slice_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV07b_bge_identity_projection",
+  "scope": "aligned_bge_identity_projection_follow_up",
+  "status": "complete",
+  "verdict": {
+    "best_binary_feature_identity_ba_after": 0.7094642857142857,
+    "best_binary_prediction_identity_ba_after": 0.6839880952380952,
+    "best_control_component_count": 10,
+    "best_control_model": "bge_logit_projection_k10_itemwise_ridge",
+    "best_pooled_cmdc_delta_vs_total_alloc": 0.01771975020116001,
+    "best_pooled_cmdc_delta_vs_train_mean": -0.16374196079874892,
+    "best_pooled_edaic_delta_vs_total_alloc": -0.018679769919217604,
+    "best_pooled_edaic_delta_vs_train_mean": -0.04347764325878001,
+    "best_three_way_feature_identity_ba_after": 0.6874409208362697,
+    "best_worst_relative_delta_vs_raw": 0.021583836899586793,
+    "model_verdicts": [
+      {
+        "beats_total_alloc_all_slices": false,
+        "beats_train_mean_all_slices": true,
+        "binary_feature_identity_ba_after": 0.8561309523809524,
+        "binary_feature_identity_reduced": true,
+        "binary_prediction_identity_ba_after": 0.8274404761904762,
+        "binary_prediction_identity_reduced": true,
+        "component_count": 1,
+        "main_task_within_5pct_vs_raw_all_slices": true,
+        "model": "bge_logit_projection_k1_itemwise_ridge",
+        "pooled_cmdc_delta_vs_total_alloc": 0.008028274098704324,
+        "pooled_cmdc_delta_vs_train_mean": -0.1734334369012046,
+        "pooled_edaic_delta_vs_total_alloc": -0.020267377002218923,
+        "pooled_edaic_delta_vs_train_mean": -0.04506525034178133,
+        "three_way_feature_identity_ba_after": 0.782640826873385,
+        "three_way_feature_identity_reduced": true,
+        "worst_relative_delta_vs_raw": 0.0073092965090982166
+      },
+      {
+        "beats_total_alloc_all_slices": false,
+        "beats_train_mean_all_slices": true,
+        "binary_feature_identity_ba_after": 0.7958928571428572,
+        "binary_feature_identity_reduced": true,
+        "binary_prediction_identity_ba_after": 0.7775000000000001,
+        "binary_prediction_identity_reduced": true,
+        "component_count": 3,
+        "main_task_within_5pct_vs_raw_all_slices": true,
+        "model": "bge_logit_projection_k3_itemwise_ridge",
+        "pooled_cmdc_delta_vs_total_alloc": 0.008302206626162212,
+        "pooled_cmdc_delta_vs_train_mean": -0.17315950437374672,
+        "pooled_edaic_delta_vs_total_alloc": -0.020150713293090816,
+        "pooled_edaic_delta_vs_train_mean": -0.04494858663265322,
+        "three_way_feature_identity_ba_after": 0.7359065069297628,
+        "three_way_feature_identity_reduced": true,
+        "worst_relative_delta_vs_raw": 0.007712770746265807
+      },
+      {
+        "beats_total_alloc_all_slices": false,
+        "beats_train_mean_all_slices": true,
+        "binary_feature_identity_ba_after": 0.8127976190476189,
+        "binary_feature_identity_reduced": true,
+        "binary_prediction_identity_ba_after": 0.720952380952381,
+        "binary_prediction_identity_reduced": true,
+        "component_count": 5,
+        "main_task_within_5pct_vs_raw_all_slices": true,
+        "model": "bge_logit_projection_k5_itemwise_ridge",
+        "pooled_cmdc_delta_vs_total_alloc": 0.01717370988703182,
+        "pooled_cmdc_delta_vs_train_mean": -0.1642880011128771,
+        "pooled_edaic_delta_vs_total_alloc": -0.019377082818092917,
+        "pooled_edaic_delta_vs_train_mean": -0.04417495615765532,
+        "three_way_feature_identity_ba_after": 0.7229166079398637,
+        "three_way_feature_identity_reduced": true,
+        "worst_relative_delta_vs_raw": 0.02077957607941277
+      },
+      {
+        "beats_total_alloc_all_slices": false,
+        "beats_train_mean_all_slices": true,
+        "binary_feature_identity_ba_after": 0.7094642857142857,
+        "binary_feature_identity_reduced": true,
+        "binary_prediction_identity_ba_after": 0.6839880952380952,
+        "binary_prediction_identity_reduced": true,
+        "component_count": 10,
+        "main_task_within_5pct_vs_raw_all_slices": true,
+        "model": "bge_logit_projection_k10_itemwise_ridge",
+        "pooled_cmdc_delta_vs_total_alloc": 0.01771975020116001,
+        "pooled_cmdc_delta_vs_train_mean": -0.16374196079874892,
+        "pooled_edaic_delta_vs_total_alloc": -0.018679769919217604,
+        "pooled_edaic_delta_vs_train_mean": -0.04347764325878001,
+        "three_way_feature_identity_ba_after": 0.6874409208362697,
+        "three_way_feature_identity_reduced": true,
+        "worst_relative_delta_vs_raw": 0.021583836899586793
+      }
+    ],
+    "pass_rule_met": false,
+    "pass_rule_status": "partial_identity_reduced_not_total_floor_beating_bge_projection",
+    "raw_binary_feature_identity_ba": 1.0,
+    "raw_binary_prediction_identity_ba": 0.99375,
+    "raw_three_way_feature_identity_ba": 1.0,
+    "short_read": "MV07b tests an inference-compatible BGE identity projection for the pooled E-DAIC/CMDC PHQ C01-C08 contract. A positive claim requires preserved construct MAE, gains over simple floors, and reduced feature/prediction identity.",
+    "subject_overlap_violations": 0
+  }
+}

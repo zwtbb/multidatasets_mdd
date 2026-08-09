@@ -17,7 +17,7 @@ the numeric source artifacts from each MV row.
 
 - Implemented `scripts/phase5_full_method_gate_audit.py`.
 - Generated `analysis/phase5_minimal_validation/full_method_gate_audit/`.
-- The audit reads 18 Phase 5 run summaries:
+- The audit reads 19 Phase 5 run summaries:
   - MV01 PHQ bridge;
   - MV02 readiness, MV02 PDCH HAMD bridge, MV02b PDCH text probe;
   - MV03/MV03b EATD SDS audio/text stress;
@@ -25,8 +25,9 @@ the numeric source artifacts from each MV row.
   - MV05 MPDD context calibration;
   - MV06 readiness, pilot, annotation workbench, annotation summary gate, and
     local AI preannotation triage;
-  - MV07 E-DAIC BGE generation, shared-feature-contract readiness, and
-    aligned-BGE shallow shared-symptom validation.
+  - MV07 E-DAIC BGE generation, shared-feature-contract readiness,
+    aligned-BGE shallow shared-symptom validation, and MV07b BGE
+    identity-projection follow-up.
 - Artifact hygiene passed with zero violations.
 
 ## Key Decisions
@@ -49,8 +50,8 @@ the numeric source artifacts from each MV row.
 - Ranked next actions:
   1. Review the ignored MV06 AI preannotation, fill the local human annotation
      workbook, and rerun the aggregate summary gate.
-  2. Design a stronger shared-symptom feature contract or identity-control
-     variant after the aligned-BGE MV07 block.
+  2. Resolve the MV07b BGE identity-controlled floor gap, or formally demote it
+     to partial diagnostic evidence.
   3. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
   4. Recover MPDD gender/health metadata and official test labels if available.
 
@@ -90,16 +91,19 @@ Versionable artifacts:
   annotations. AI preannotation is only a review aid and is not claimable.
 - A revised shared feature contract must beat simple floors and preserve
   identity/protocol controls before broad shared-symptom claims.
-- Current MV07 aligned-BGE shallow validation is blocked:
+- MV07 aligned-BGE shallow validation is blocked:
   `blocked_not_better_than_total_allocation_bge_contract`, with feature
   identity BA `1.000` and prediction identity BA `0.980`. eGeMAPS requires
   aligned regeneration, and WavLM requires stronger identity control.
+- MV07b BGE identity projection reduces identity but remains partial:
+  `partial_identity_reduced_not_total_floor_beating_bge_projection`. Best k=10
+  reduced feature/prediction identity BA to `0.709`/`0.684`, but CMDC remains
+  worse than total allocation by `0.018` Macro MAE.
 
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
 The next implementation session should either review the ignored MV06 AI
 preannotation, fill the local human annotation workbook, and rerun the summary
-gate; or design a stronger shared-symptom feature/identity-control contract
-after the aligned-BGE MV07 block. Do not start the full method until the gate
-changes from blocked.
+gate; or resolve the MV07b identity-controlled BGE floor gap. Do not start the
+full method until the gate changes from blocked.

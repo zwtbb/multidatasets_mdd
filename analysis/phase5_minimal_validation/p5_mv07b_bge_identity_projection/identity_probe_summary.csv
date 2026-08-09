@@ -1,0 +1,16 @@
+probe_id,probe_layer,representation,metric,mean,std,seed_count,train_subjects_mean,eval_subjects_mean,sample_count_mean,dataset_count_mean,subject_overlap_count_sum
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,feature,bge_logit_projection_k10_features,Balanced Accuracy,0.7094642857142857,0.06998744623420322,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,feature,bge_logit_projection_k1_features,Balanced Accuracy,0.8561309523809524,0.09915530432819636,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,feature,bge_logit_projection_k3_features,Balanced Accuracy,0.7958928571428572,0.046004242262235394,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,feature,bge_logit_projection_k5_features,Balanced Accuracy,0.8127976190476189,0.0775079086740797,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,feature,raw_bge_features,Balanced Accuracy,1.0,0.0,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,prediction,bge_logit_projection_k10_predictions,Balanced Accuracy,0.6839880952380952,0.10070181378929334,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,prediction,bge_logit_projection_k1_predictions,Balanced Accuracy,0.8274404761904762,0.11080193663017686,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,prediction,bge_logit_projection_k3_predictions,Balanced Accuracy,0.7775000000000001,0.07321839903273014,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,prediction,bge_logit_projection_k5_predictions,Balanced Accuracy,0.720952380952381,0.09208258303015651,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,prediction,raw_bge_predictions,Balanced Accuracy,0.99375,0.013975424859373677,5,224.6,71.4,296.0,2.0,0
+feature_identity_cv_edaic_cmdc_pdch,feature,bge_logit_projection_k10_features,Balanced Accuracy,0.6874409208362697,0.019459866749882208,5,,,395.0,3.0,0
+feature_identity_cv_edaic_cmdc_pdch,feature,bge_logit_projection_k1_features,Balanced Accuracy,0.782640826873385,0.055071998577037956,5,,,395.0,3.0,0
+feature_identity_cv_edaic_cmdc_pdch,feature,bge_logit_projection_k3_features,Balanced Accuracy,0.7359065069297628,0.02888409485434031,5,,,395.0,3.0,0
+feature_identity_cv_edaic_cmdc_pdch,feature,bge_logit_projection_k5_features,Balanced Accuracy,0.7229166079398637,0.025553486965413187,5,,,395.0,3.0,0
+feature_identity_cv_edaic_cmdc_pdch,feature,raw_bge_features,Balanced Accuracy,1.0,0.0,5,,,395.0,3.0,0

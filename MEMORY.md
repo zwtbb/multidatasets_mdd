@@ -41,6 +41,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_25_phase5_mv07_edaic_bge_generation.md`
   - `/root/autodl-tmp/memory/sessions/session_26_phase5_mv07_aligned_bge_shared_symptom.md`
   - `/root/autodl-tmp/memory/sessions/session_27_phase5_mv06_local_ai_preannotation.md`
+  - `/root/autodl-tmp/memory/sessions/session_28_phase5_mv07b_bge_identity_projection.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -302,9 +303,21 @@ MPDD 2025 is intentionally out of scope for current auditing.
   total-allocation floors, PDCH HAMD-proxy sanity is internal only, and
   identity remains high (feature BA `1.000`, prediction BA `0.980`). Artifact
   hygiene passed and row-level predictions remain ignored local-only.
+- Phase 5 `P5_MV07b bge_identity_projection` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv07b_bge_identity_projection/`.
+  It used frozen aligned BGE subject features, train-fold E-DAIC/CMDC
+  dataset-label nuisance projection, shallow itemwise Ridge heads, subject-level
+  splits, and identity probes. Treat as partial diagnostic evidence:
+  `partial_identity_reduced_not_total_floor_beating_bge_projection`. Best k=10
+  projection reduced E-DAIC/CMDC feature identity BA `1.000 -> 0.709`,
+  prediction identity BA `0.994 -> 0.684`, and three-way E-DAIC/CMDC/PDCH
+  feature identity BA `1.000 -> 0.687`, while preserving Macro MAE within 5
+  percent and beating train mean on both E-DAIC and CMDC. It still failed the
+  CMDC total-allocation floor (`+0.018` Macro MAE), so shared-representation
+  and full-method claims remain blocked.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 18 Phase 5 run summaries and exports claim gates, evidence
+  It reads 19 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -510,6 +523,14 @@ Key Phase 2 outputs:
   Do not claim transferable shared symptom representation from the current BGE
   contract; either complete MV06 annotations for evidence credibility or design
   a stronger identity-control/shared-feature contract before full method work.
+- P5_MV07b decision: the BGE identity projection is a meaningful partial
+  diagnostic. Train-fold source-agnostic nuisance projection reduces feature and
+  prediction identity without using evaluation target labels or evaluation
+  dataset labels at transform time, but the best identity-controlled variant
+  remains worse than total allocation on CMDC. Do not claim transferable shared
+  symptom representation from MV07b; either resolve this floor gap with another
+  audited shared-symptom contract or demote MV07b to partial diagnostic evidence
+  in the paper framing.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -620,6 +641,6 @@ plaintext credential-like content before committing on the clean remote lineage.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
    review the ignored MV06 AI preannotation, fill the local human annotation
    workbook, and rerun the summary gate,
-   or design a stronger shared-symptom feature/identity-control contract after
-   the aligned-BGE MV07 block. Full method construction remains blocked until
-   the gate changes.
+   or resolve the MV07b identity-controlled BGE floor gap before expanding into
+   the full method. Full method construction remains blocked until the gate
+   changes.
