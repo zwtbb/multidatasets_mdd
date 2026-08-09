@@ -1,6 +1,6 @@
 issue_type,field,row_count,values,release_policy
-missing_value,evidence_presence,288,,not_claimable_until_completed
-missing_value,evidence_source,288,,not_claimable_until_completed
-missing_value,evidence_strength,288,,not_claimable_until_completed
-missing_value,time_status,288,,not_claimable_until_completed
-missing_value,prompt_artifact,288,,not_claimable_until_completed
+missing_value,evidence_presence,238,,not_claimable_until_completed
+missing_value,evidence_source,238,,not_claimable_until_completed
+missing_value,evidence_strength,238,,not_claimable_until_completed
+missing_value,time_status,238,,not_claimable_until_completed
+missing_value,prompt_artifact,238,,not_claimable_until_completed

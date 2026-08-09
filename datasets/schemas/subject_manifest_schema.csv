@@ -1,0 +1,31 @@
+column,type,description,public_release_policy
+dataset,string,Dataset identifier such as edaic or pdch,schema_only
+subject_id,string,Dataset-local subject identifier,local_only_real_values
+session_id,string,Session identifier when available,local_only_real_values
+segment_id,string,Segment or record identifier,local_only_real_values
+speaker,string,Speaker role when available,local_only_real_values
+task_type,string,Interview or task category,aggregate_or_synthetic_only
+valence,string,Task valence category when available,aggregate_or_synthetic_only
+start_time,float,Segment start time when available,local_only_real_values
+end_time,float,Segment end time when available,local_only_real_values
+text_path,string,Local text/transcript path,local_only_real_values
+audio_path,string,Local audio path,local_only_real_values
+video_path,string,Local video path,local_only_real_values
+video_feature_type,string,Video feature source or extractor,aggregate_or_synthetic_only
+gait_path,string,Local gait or IMU path,local_only_real_values
+phq8_total,float,PHQ-8 total score,local_only_real_values
+phq8_items,json,PHQ-8 item payload,local_only_real_values
+phq9_total,float,PHQ-9 total score,local_only_real_values
+phq9_items,json,PHQ-9 item payload,local_only_real_values
+hamd17_total,float,HAMD-17 total score,local_only_real_values
+hamd17_items,json,HAMD-17 item payload,local_only_real_values
+sds_total,float,SDS total score,local_only_real_values
+binary_label,float,Binary depression label when defined,local_only_real_values
+severity_label,string,Severity category when defined,local_only_real_values
+age,float,Age or age-group value when licensed for local use,local_only_real_values
+gender,string,Gender metadata when available and licensed for local use,local_only_real_values
+personality,json,Personality metadata when available and licensed for local use,local_only_real_values
+health_condition,json,Health metadata when available and licensed for local use,local_only_real_values
+official_split,string,Official split or local split role,aggregate_or_synthetic_only
+file_valid,bool,Whether the referenced local files passed integrity checks,aggregate_or_synthetic_only
+exclusion_reason,string,Reason for exclusion when invalid or missing labels,aggregate_or_synthetic_only

@@ -1,7 +1,7 @@
 # Session Memory: Phase 5 MV06 Human Review Pack
 
 Status: complete
-Last updated: 2026-08-09 UTC
+Last updated: 2026-08-10 UTC
 Thread/task: main agent MV06 human review acceleration
 
 ## Scope
@@ -31,17 +31,20 @@ clinical text/source locators in tracked files.
   progress summaries, schema, local artifact manifest, report, run summary, and
   hygiene audit.
 - Artifact hygiene passed with zero violations.
-- The review pack status is `ready_for_human_review_pack_not_claimable`.
-- Aggregate counts:
+- The review pack status remains `ready_for_human_review_pack_not_claimable`;
+  after importing the filled human workbook, the pack progress aggregates now
+  reflect completed human annotations.
+- Aggregate review-pack counts:
   - 144 candidates;
   - 288 annotation rows;
   - 79 AI keyword-match candidates;
   - 4 AI protocol-artifact candidates;
   - 82 priority-1/2 candidates;
-  - 0 completed human candidates;
-  - 0 double-completed human candidates.
-- `scripts/phase5_summarize_mv06_evidence_annotations.py` was rerun and remains
-  `blocked_no_completed_annotations`.
+  - 30 completed human candidates;
+  - 20 double-completed human candidates.
+- `scripts/phase5_summarize_mv06_evidence_annotations.py` was updated to
+  compute dataset-stratified agreement and rerun. It now reports
+  `ready_for_aggregate_evidence_review`.
 - `scripts/phase5_full_method_gate_audit.py` was updated and rerun. It now
   reads 21 Phase 5 run summaries, includes `P5_MV06_review_pack`, passes
   artifact hygiene, and remains `blocked_but_publishable_diagnostic_direction`.
@@ -106,20 +109,20 @@ Ignored local-only artifacts:
 - The review pack contains AI suggestions that can be wrong, especially for
   negation, time status, protocol artifacts, and C09/HAMD03 safety-sensitive
   evidence. Every row requires human verification.
-- The full method remains blocked. The review pack improves workflow readiness
-  but does not change the claim gate.
+- E-DAIC has only 2 double-annotated pairs in the first pass, so its
+  dataset-specific kappa is unstable/undefined under degenerate marginals.
+- The full method remains blocked. The review pack and first-round annotation
+  summary improve RQ4 credibility but do not resolve the RQ1 measurement gate.
 
 ## Next Handoff
 
-Use the ignored local review pack to prioritize manual review, then enter
-verified human annotations into the original ignored MV06 human workbook. After
-at least 30 candidates have complete annotations and at least 20 candidates are
-double annotated, rerun:
+Use the ignored local review pack if adding another annotation pass, especially
+to expand E-DAIC double annotation. After editing the local workbook, rerun:
 
 ```bash
 python scripts/phase5_summarize_mv06_evidence_annotations.py
 python scripts/phase5_full_method_gate_audit.py
 ```
 
-Only use MV06 evidence in writing after the aggregate summary gate reaches
-`ready_for_aggregate_evidence_review` and artifact hygiene passes.
+Use MV06 evidence in writing only as aggregate, dataset-stratified first-round
+credibility evidence unless the annotation set is expanded.

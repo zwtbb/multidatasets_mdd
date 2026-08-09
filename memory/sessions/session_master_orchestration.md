@@ -1,7 +1,7 @@
 # Session Memory: 主对话 Master Orchestration
 
 Status: active
-Last updated: 2026-08-09 UTC
+Last updated: 2026-08-10 UTC
 Thread/task: main agent (`019fcd77-cf81-7c11-a53e-f37e776d9e1d`)
 
 ## Scope
@@ -151,7 +151,15 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   outputs contain only aggregate review-pack, priority, progress, schema, and
   hygiene summaries. It is `ready_for_human_review_pack_not_claimable`: 144
   candidates, 288 annotation rows, 79 AI keyword-match candidates, 82
-  priority-1/2 candidates, and 0 completed human candidates.
+  priority-1/2 candidates. After importing the completed local human workbook,
+  tracked progress aggregates show 30 completed candidates and 20
+  double-annotated candidates.
+- Phase 5 `P5_MV06 evidence_annotation_summary_gate` was updated to compute
+  dataset-stratified kappa. It now reports
+  `ready_for_aggregate_evidence_review`, with 30 completed candidates and 20
+  double-annotated candidates. RQ4 is allowed only as limited aggregate
+  first-round evidence; E-DAIC has only 2 double pairs and degenerate kappa
+  marginals in this pass.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness` completed in the main
   checkout. It did not train a model or scan raw text/media; it inventories
   cached subject-level features and label coverage. After local E-DAIC BGE
@@ -182,6 +190,12 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   should use `scripts/publish_clean_github_snapshot.py` and
   `docs/github_publish_workflow.md`, so the old local `main` history is never
   pushed directly.
+- A public dataset-governance risk was identified: real row-level manifests,
+  file-integrity rows, and subject split maps with labels, local paths, or
+  subject IDs should not remain in the public latest tree. The current
+  mitigation is to keep real row-level dataset tables local-only, publish
+  schema/synthetic examples, and require explicit approval before any remote
+  history rewrite.
 
 ## Orchestration Rules
 
@@ -238,32 +252,33 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    beyond AV-only recalibration. `P5_MV02` now gives a bounded PDCH-only
    diagnostic pass, but CMDC sanity is negative and coverage-limited;
    `P5_MV02b` shows the lightweight manifest-text hashing probe is weak. Full
-   method work still needs stronger cross-dataset/control evidence. `P5_MV06`
-   now has a local manual annotation packet, two-annotator workbench,
-   aggregate-only summary gate, AI preannotation triage, and human review pack
-   ready. No evidence-localization result should be claimed until human
-   annotations are completed and pass the gate.
+   method work still needs a genuinely changed measurement contract. `P5_MV06`
+   now has first-round aggregate human evidence and dataset-stratified
+   agreement, but E-DAIC agreement is underpowered in this pass.
    `P5_MV07` aligned-BGE shallow validation is now complete and blocked by
    total-allocation and identity evidence, so it should be reported as a
    negative/diagnostic shared-feature result rather than a shared-representation
    claim.
    The full-method gate audit now records this as
-   `blocked_but_publishable_diagnostic_direction`: full method
-   is blocked, while a bounded diagnostic/audit-driven paper direction remains
-   viable.
+   `blocked_but_publishable_diagnostic_direction`: full method is blocked,
+   RQ4 is allowed only as limited aggregate evidence, and a bounded
+   diagnostic/audit-driven paper direction remains viable.
 
 ## Version Management Watchlist
 
 - Large artifacts must stay out of Git.
 - GitHub should contain only the core reproducible experiment skeleton:
-  maintained scripts, configs, governance docs, lightweight summaries, and
-  paper-critical experiment reports. Server-local stable utilities can remain
-  server-only unless they become necessary for reproduction.
+  maintained scripts, configs, governance docs, dataset schema/examples,
+  aggregate summaries, and paper-critical experiment reports. Server-local
+  stable utilities can remain server-only unless they become necessary for
+  reproduction.
 - Before any commit, check `.gitignore` and `git status --short`; stage only
-  code, configs, docs, lightweight manifests/audits, session memories, and small
-  summaries for Phase 3+ diagnostics or method experiments.
-- Do not stage raw datasets, model weights, caches, large feature arrays, audio,
-  video, raw transcripts, raw prompts, raw model responses, or generated
+  code, configs, docs, public manifest schemas/examples, aggregate audits,
+  session memories, and small summaries for Phase 3+ diagnostics or method
+  experiments.
+- Do not stage raw datasets, real row-level manifests, real file-integrity
+  rows, real subject split maps, model weights, caches, large feature arrays,
+  audio, video, raw transcripts, raw prompts, raw model responses, or generated
   Phase 2 baseline result artifacts.
 - Do not store or use plaintext GitHub passwords in files, commands, memory, or
   commits; authenticate remote operations through a token, SSH key, or
@@ -290,11 +305,12 @@ Cross-session issues are tracked in:
 ## Next Handoff
 
 Continue Phase 5 under the full-method gate audit. The next useful work is
-either using the ignored MV06 human review pack to fill the local human
-annotation workbook and rerun the summary gate, or designing a stronger
-shared-symptom feature/identity-control contract after the aligned-BGE MV07
-block. Keep row-level predictions and learned embeddings local-only, and do
-not start full method work until the gate changes.
+to finish latest-tree public dataset-table governance, then design a partial
+measurement-invariance psychometric row after freezing shallow BGE/WavLM as
+negative or partial baselines. Optionally expand E-DAIC MV06 double annotation.
+Keep row-level predictions, real manifests, real integrity/split maps, and
+learned embeddings local-only, and do not start full method work until the gate
+changes.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
 the old local `main` history directly. Run

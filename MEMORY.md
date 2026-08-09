@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-09 UTC
+Last updated: 2026-08-10 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -44,6 +44,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_28_phase5_mv07b_bge_identity_projection.md`
   - `/root/autodl-tmp/memory/sessions/session_29_phase5_mv07c_bge_total_anchor.md`
   - `/root/autodl-tmp/memory/sessions/session_30_phase5_mv06_human_review_pack.md`
+  - `/root/autodl-tmp/memory/sessions/session_31_phase5_mv06_annotation_and_governance_reframe.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -268,9 +269,13 @@ MPDD 2025 is intentionally out of scope for current auditing.
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/`.
   It now defaults to the ignored local annotation workbench and exports only
   aggregate completion, field-issue, evidence-field, prompt-artifact, and
-  agreement summaries. Current status is `blocked_no_completed_annotations`: 0
-  completed candidates and 0 double-annotated candidates. Artifact hygiene
-  passes; no raw text, source locator map, or subject-level rows are exported.
+  dataset-stratified agreement summaries. Current status is
+  `ready_for_aggregate_evidence_review`: 30 completed candidates and 20
+  double-annotated candidates. Overall evidence-presence kappa is `0.808`;
+  CMDC evidence-presence kappa is `0.643`; PDCH evidence-presence kappa is
+  `1.000`; E-DAIC currently has only 2 double pairs with degenerate marginals,
+  so its kappa is undefined. Artifact hygiene passes; no raw text, source
+  locator map, or subject-level rows are exported.
 - Phase 5 `P5_MV06 local_ai_preannotation_triage` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_ai_preannotation_triage/`.
   It read raw clinical text locally through ignored workbench locators and
@@ -344,10 +349,11 @@ MPDD 2025 is intentionally out of scope for current auditing.
   and `artifact_hygiene_passed=true`. Allowed claims are limited to PDCH-only
   HAMD diagnostic evidence, dataset/protocol controls as diagnostics, MODMA
   task-control evidence, and a reframed diagnostic/audit-driven paper
-  direction. Blocked claims include full M0/M1/M2/M3 method start,
+  direction. RQ4 is now `allowed_limited` as first-round aggregate evidence,
+  while blocked claims include full M0/M1/M2/M3 method start,
   transferable shared-symptom representation, positive EATD SDS
-  generalization, EATD valence-adversarial design, RQ3 context conditioning,
-  and RQ4 evidence localization before annotation.
+  generalization, EATD valence-adversarial design, and RQ3 context
+  conditioning.
 
 Phase 2 gate status:
 
@@ -519,10 +525,10 @@ Key Phase 2 outputs:
   hygiene only.
 - P5_MV06 summary-gate decision: use
   `scripts/phase5_summarize_mv06_evidence_annotations.py` as the required
-  aggregate-only export path after local annotation. Evidence reporting remains
-  blocked until the gate has enough completed annotations, enough
-  double-annotated candidates for agreement, no invalid field values, and
-  `artifact_hygiene_passed=true`.
+  aggregate-only export path after local annotation. It must report agreement
+  by dataset as well as an `ALL` diagnostic row. First-round MV06 evidence can
+  now be used only as bounded aggregate credibility evidence; strengthen E-DAIC
+  agreement before making a stronger cross-dataset RQ4 claim.
 - P5_MV06 AI preannotation decision: use
   `scripts/phase5_run_mv06_local_ai_preannotation.py` only as local triage to
   speed human review. Its ignored output can contain local excerpts and
@@ -560,9 +566,13 @@ Key Phase 2 outputs:
 - P5_MV07c decision: train-fold-selected total anchoring does not resolve the
   shallow BGE floor gap. It further reduces prediction identity but does not
   beat raw/projected total allocation on CMDC. Stop iterating small shallow BGE
-  head variants; either complete MV06 human evidence, reframe the BGE sequence
-  as negative/partial evidence, or revisit RQ1 only with a genuinely changed
-  feature or measurement contract.
+  head variants; reframe the BGE sequence as negative/partial evidence and
+  revisit RQ1 only with a genuinely changed psychometric measurement contract.
+- RQ1 method-target decision: direct fixed shared-symptom mapping is now a
+  too-strong hypothesis under current Phase 5 evidence. The next method target
+  should be partial measurement invariance: shared latent constructs plus
+  scale-specific DIF/loading-threshold deviations, first compared against
+  total-score and fixed construct-map baselines on E-DAIC/CMDC/PDCH.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -607,7 +617,8 @@ Key Phase 2 outputs:
 
 Track:
 
-- Code, configs, docs, lightweight dataset manifests/audits, session memories,
+- Code, configs, docs, public dataset schemas/examples, lightweight aggregate
+  audits, session memories,
   and small summaries for the project's own Phase 3+ diagnostics and method
   experiments.
 - Phase 2 baseline reproduction scripts and matrix config, but not generated
@@ -621,9 +632,10 @@ Track:
 Do not track:
 
 - Raw datasets, large features, archives, audio, video, pretrained weights,
-  checkpoints, caches, local runtime files, raw clinical text, raw prompts, raw
-  model responses, bulky prediction/embedding artifacts, or generated
-  `analysis/phase2_baselines/` baseline result artifacts.
+  checkpoints, caches, local runtime files, real row-level subject manifests,
+  real file-integrity rows, real subject split maps, raw clinical text, raw
+  prompts, raw model responses, bulky prediction/embedding artifacts, or
+  generated `analysis/phase2_baselines/` baseline result artifacts.
 - Plaintext credentials must never be written to Git, memory files, scripts, or
   shell history. Use GitHub token, SSH key, or `gh auth login` for remote
   authentication.
@@ -671,8 +683,8 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
-   use the ignored MV06 human review pack to fill the local human annotation
-   workbook, and rerun the summary gate,
-   or reframe the shallow BGE shared-symptom sequence as negative/partial
-   evidence before proposing a genuinely new feature or measurement contract.
+   reduce public row-level dataset-table exposure, then freeze shallow
+   BGE/WavLM rows as negative/partial baselines and design the
+   partial-invariance psychometric measurement row. Optionally expand E-DAIC
+   MV06 double annotation to stabilize per-dataset agreement.
    Full method construction remains blocked until the gate changes.

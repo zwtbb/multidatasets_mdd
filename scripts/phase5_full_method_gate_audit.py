@@ -57,7 +57,6 @@ STATUS_OVERRIDES = {
     "P5_MV06_readiness": "ready_for_local_evidence_annotation",
     "P5_MV06_pilot": "ready_for_manual_local_annotation",
     "P5_MV06_workbench": "ready_for_local_human_annotation",
-    "P5_MV06_summary": "blocked_no_completed_annotations",
     "P5_MV06_ai_preannotation": "ready_for_human_review_not_claimable",
     "P5_MV06_review_pack": "ready_for_human_review_pack_not_claimable",
 }
@@ -68,7 +67,6 @@ PASS_RULE_OVERRIDES = {
     "P5_MV06_readiness": None,
     "P5_MV06_pilot": None,
     "P5_MV06_workbench": None,
-    "P5_MV06_summary": False,
     "P5_MV06_ai_preannotation": False,
     "P5_MV06_review_pack": False,
 }
@@ -138,6 +136,9 @@ def verdict_status(evidence_id: str, summary: dict[str, Any]) -> str:
 def verdict_met(evidence_id: str, summary: dict[str, Any]) -> bool | None:
     if evidence_id in PASS_RULE_OVERRIDES:
         return PASS_RULE_OVERRIDES[evidence_id]
+    if evidence_id == "P5_MV06_summary":
+        decision = summary.get("decision") or {}
+        return decision.get("annotation_summary_status") == "ready_for_aggregate_evidence_review"
     verdict = summary.get("verdict") or {}
     if "pass_rule_met" in verdict:
         return bool(verdict["pass_rule_met"])
@@ -209,6 +210,10 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv04c_domains = mv04c_domain_rows(summaries["P5_MV04c"])
     mv05 = summaries["P5_MV05"].get("verdict") or {}
     mv06 = summaries["P5_MV06_summary"]
+    mv06_decision = mv06.get("decision") or {}
+    mv06_gate = mv06.get("annotation_gate") or {}
+    mv06_status = str(mv06_decision.get("annotation_summary_status", "unknown"))
+    mv06_ready = mv06_status == "ready_for_aggregate_evidence_review"
     mv06_pre = summaries["P5_MV06_ai_preannotation"].get("decision") or {}
     mv06_pack = summaries["P5_MV06_review_pack"].get("decision") or {}
     mv07_result = summaries["P5_MV07"].get("verdict") or {}
@@ -221,17 +226,17 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
-            "required_next_evidence": "Complete MV06 evidence annotation with aggregate agreement, or use a genuinely new audited feature/measurement contract before revisiting shared-symptom method claims.",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
+            "required_next_evidence": "Resolve public manifest/data-governance risk and define a genuinely new audited psychometric measurement contract before revisiting full-method claims.",
             "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
             "claim": "Claim a transferable shared symptom representation across scales/datasets.",
             "decision": "blocked",
-            "allowed_scope": "Discuss as the target hypothesis and report negative/partial diagnostics.",
+            "allowed_scope": "Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance.",
             "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
-            "required_next_evidence": "A stronger shared-symptom contract must beat train-mean/total-allocation floors on cross-dataset or few-shot construct evidence while keeping dataset/prediction identity reduced; avoid further small BGE-head variants unless the feature or measurement contract changes.",
+            "required_next_evidence": "Design and audit a multi-scale psychometric measurement row: shared latent constructs plus scale-specific DIF/loading-threshold deviations, compared against total-score and fixed-map baselines on E-DAIC/CMDC/PDCH.",
             "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c",
         },
         {
@@ -283,32 +288,40 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim_id": "C_RQ3_CONTEXT_CONDITIONING",
             "claim": "Claim positive age/personality context-calibration or conditioning.",
             "decision": "blocked",
-            "allowed_scope": "Report MPDD context calibration as negative and keep age/personality as audit axes.",
+            "allowed_scope": "Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes.",
             "blocking_evidence": f"P5_MV05 status {mv05.get('pass_rule_status')}; {mv05.get('short_read', '')}",
-            "required_next_evidence": "A revised context module that improves required subgroup ECE gaps beyond AV-only recalibration and shuffled controls.",
+            "required_next_evidence": "A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims.",
             "primary_sources": "P5_MV05;Phase3_MPDD",
         },
         {
             "claim_id": "C_RQ4_EVIDENCE_LOCALIZATION",
             "claim": "Claim evidence localization validity.",
-            "decision": "blocked_pending_annotation",
-            "allowed_scope": "Use current MV06 artifacts as annotation infrastructure only.",
-            "blocking_evidence": (
-                "MV06 workbench is ready, but current summary is "
-                f"{mv06.get('decision', {}).get('annotation_summary_status', 'blocked_no_completed_annotations')}; "
-                f"AI preannotation status is {mv06_pre.get('preannotation_status', 'not_run')} and review-pack status is "
-                f"{mv06_pack.get('review_pack_status', 'not_run')}; neither is claimable as human evidence."
+            "decision": "allowed_limited" if mv06_ready else "blocked_pending_annotation",
+            "allowed_scope": (
+                "Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; raw snippets remain local-only."
+                if mv06_ready
+                else "Use current MV06 artifacts as annotation infrastructure only."
             ),
-            "required_next_evidence": "Use the local review pack to complete human annotations, then rerun the summary gate with enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass.",
+            "blocking_evidence": (
+                f"MV06 summary status is {mv06_status}; completed candidates={mv06_gate.get('completed_candidates')}; "
+                f"double-annotated candidates={mv06_gate.get('double_annotated_candidates')}; AI preannotation status is "
+                f"{mv06_pre.get('preannotation_status', 'not_run')} and review-pack status is "
+                f"{mv06_pack.get('review_pack_status', 'not_run')}; AI/review-pack rows remain non-claimable."
+            ),
+            "required_next_evidence": (
+                "For a stronger manuscript claim, expand the E-DAIC double-annotation slice or add Krippendorff alpha/bootstrap uncertainty because E-DAIC currently has few double pairs."
+                if mv06_ready
+                else "Use the local review pack to complete human annotations, then rerun the summary gate with enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass."
+            ),
             "primary_sources": "P5_MV06_readiness;P5_MV06_pilot;P5_MV06_workbench;P5_MV06_summary;P5_MV06_ai_preannotation;P5_MV06_review_pack",
         },
         {
             "claim_id": "C_PUBLISHABLE_PAPER_DIRECTION",
             "claim": "Continue toward a publishable paper.",
             "decision": "allowed_with_reframing",
-            "allowed_scope": "A diagnosis/audit-driven paper with rigorous negative/mixed results and a bounded method proposal is viable; not a SOTA full-method paper yet.",
-            "blocking_evidence": "The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked.",
-            "required_next_evidence": "Either complete MV06 evidence annotations for credibility/RQ4, or reframe the shallow BGE shared-symptom sequence as negative/partial evidence before proposing a new feature/measurement contract.",
+            "allowed_scope": "A diagnostic/audit-driven paper is viable now; the method path should pivot from direct shared-label mapping to partial measurement invariance.",
+            "blocking_evidence": "The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence and data-governance risk.",
+            "required_next_evidence": "First address public manifest/governance risk, then freeze shallow BGE/WavLM rows as negative/partial baselines and design the partial-invariance psychometric measurement row.",
             "primary_sources": "all_phase5",
         },
     ]
@@ -324,10 +337,10 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     if mv07c_result.get("pass_rule_status"):
         shared_feature_action = {
             "rank": 2,
-            "action_id": "NEXT_REFRACTORY_BGE_SHARED_SYMPTOM_REFRAME",
-            "action": "Stop iterating small shallow BGE head variants; either complete MV06 annotations or define a genuinely new audited feature/measurement contract.",
+            "action_id": "NEXT_PARTIAL_INVARIANCE_MEASUREMENT_MODEL",
+            "action": "Freeze shallow BGE/WavLM rows as negative or partial baselines, then design the multi-scale psychometric partial-invariance measurement row.",
             "why_now": f"MV07b and MV07c both reduce prediction identity, but MV07c remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
-            "success_gate": "A new row changes the feature or measurement contract, not only the shallow BGE head, and beats train-mean/total-allocation floors while keeping identity reduced; otherwise treat BGE as negative/partial evidence.",
+            "success_gate": "A new row compares total-score, fixed construct-map, and shared latent constructs plus scale-specific DIF/loading-threshold deviations on E-DAIC, CMDC, and PDCH.",
             "version_policy": "Track scripts and aggregate summaries; keep row predictions, transformed features, projection directions, and model artifacts local-only.",
         }
     elif mv07b_result.get("pass_rule_status"):
@@ -369,15 +382,23 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     rows = [
         {
             "rank": 1,
-            "action_id": "NEXT_MV06_LOCAL_ANNOTATION",
-            "action": "Use the ignored MV06 human review pack to fill the local human annotation workbook, then rerun the aggregate summary gate.",
-            "why_now": "AI triage and the ranked review pack are ready as local-only review aids, but RQ4 remains blocked until human annotations and agreement are completed.",
-            "success_gate": "Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true.",
-            "version_policy": "Commit aggregate summaries only; keep raw snippets, source maps, and per-subject rationales local-only.",
+            "action_id": "NEXT_PUBLIC_MANIFEST_GOVERNANCE",
+            "action": "Audit and reduce public row-level manifest exposure before further GitHub publishing.",
+            "why_now": "The public repository currently tracks real subject-level manifests with labels and local path columns; this is unnecessary for reproducibility and may create dataset-license risk.",
+            "success_gate": "Public repo keeps manifest schemas, synthetic examples, generation scripts, and local-only ignore rules; real row-level manifests remain server-local. Any remote history rewrite requires explicit user approval.",
+            "version_policy": "Track schema/examples and governance docs; keep real row-level manifests, raw data, labels tied to subject rows, and local paths out of the public repo.",
         },
         shared_feature_action,
         {
             "rank": 3,
+            "action_id": "NEXT_MV06_EVIDENCE_STRENGTHENING",
+            "action": "Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice.",
+            "why_now": "MV06 now reaches the 30 completed and 20 double-annotated default gate, but E-DAIC has few double pairs and degenerate kappa for several fields.",
+            "success_gate": "Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators.",
+            "version_policy": "Commit aggregate summaries only; keep raw snippets, source maps, local workbooks, and per-subject rationales local-only.",
+        },
+        {
+            "rank": 4,
             "action_id": "NEXT_SPEAKER_PROTOCOL_RECOVERY",
             "action": "Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible.",
             "why_now": "Literal participant-only/interviewer-only controls remain blocked; they would strengthen RQ2 beyond position proxies.",
@@ -385,7 +406,7 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "version_policy": "Do not commit raw transcripts or source paths.",
         },
         {
-            "rank": 4,
+            "rank": 5,
             "action_id": "NEXT_MPDD_METADATA_SYNC",
             "action": "Try to recover structured MPDD gender/health metadata and official test labels as a governance update.",
             "why_now": "Gender/health context claims and official MPDD test protocols remain blocked by missing local metadata.",

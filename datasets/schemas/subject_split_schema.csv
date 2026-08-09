@@ -1,0 +1,11 @@
+column,type,description,public_release_policy
+dataset,string,Dataset identifier such as edaic or pdch,aggregate_or_synthetic_only
+protocol_id,string,Experiment protocol identifier,aggregate_or_synthetic_only
+protocol_type,string,Split protocol family such as official or grouped_cv,aggregate_or_synthetic_only
+target,string,Prediction target or label family,aggregate_or_synthetic_only
+fold,string,Seed/fold identifier,aggregate_or_synthetic_only
+role,string,Split role such as train/dev/test,aggregate_or_synthetic_only
+subject_id,string,Dataset-local subject identifier,local_only_real_values
+train_task,string,Task slice used for training when applicable,aggregate_or_synthetic_only
+eval_task,string,Task slice used for evaluation when applicable,aggregate_or_synthetic_only
+source,string,How the split row was generated,aggregate_or_synthetic_only

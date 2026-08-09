@@ -66,10 +66,18 @@ analysis/phase5_minimal_validation/**/*weights*.csv
 # Keep generated lightweight governance files versionable
 !datasets/registry.yaml
 !datasets/manifests/
+datasets/manifests/*_subjects.csv
+datasets/manifests/*_subjects.parquet
+!datasets/manifests/.gitkeep
 !datasets/audit/
+datasets/audit/file_integrity.csv
+!datasets/schemas/
+!datasets/examples/
 !datasets/raw/
 !datasets/processed/
 !datasets/splits/
+datasets/splits/*subject_splits*.csv
+!datasets/splits/.gitkeep
 
 # Python and notebook byproducts
 __pycache__/

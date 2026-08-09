@@ -1,17 +1,17 @@
 {
   "annotation_gate": {
-    "completed_candidates": 0,
-    "double_annotated_candidates": 0,
+    "completed_candidates": 30,
+    "double_annotated_candidates": 20,
     "invalid_value_issue_rows": 0,
     "min_completed_candidates": 30,
     "min_double_annotated_candidates": 20
   },
   "artifact_hygiene_passed": true,
   "decision": {
-    "annotation_summary_status": "blocked_no_completed_annotations",
-    "short_read": "The local annotation workbook has not been filled yet; only completion and field-contract gates are meaningful."
+    "annotation_summary_status": "ready_for_aggregate_evidence_review",
+    "short_read": "Aggregate annotation counts and pairwise agreement are ready for human review; raw snippets and subject-level rows remain local-only."
   },
-  "generated_at": "2026-08-09T10:38:59+00:00",
+  "generated_at": "2026-08-09T16:38:54+00:00",
   "input_contract": {
     "candidate_count": 144,
     "local_annotation_packet_rows": 288,

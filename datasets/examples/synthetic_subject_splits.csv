@@ -1,0 +1,3 @@
+dataset,protocol_id,protocol_type,target,fold,role,subject_id,train_task,eval_task,source
+synthetic_ds,phase2_synthetic_binary,grouped_cv,binary_label,0,train,SYN001,interview,interview,synthetic_example
+synthetic_ds,phase2_synthetic_binary,grouped_cv,binary_label,0,validation,SYN002,interview,interview,synthetic_example

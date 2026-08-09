@@ -1,0 +1,19 @@
+column,type,description,public_release_policy
+dataset,string,Dataset identifier such as edaic or pdch,aggregate_or_synthetic_only
+subject_id,string,Dataset-local subject identifier,local_only_real_values
+session_id,string,Session identifier when available,local_only_real_values
+segment_id,string,Segment or record identifier,local_only_real_values
+task_type,string,Interview or task category,aggregate_or_synthetic_only
+official_split,string,Official split or local split role,aggregate_or_synthetic_only
+text_present,bool,Whether local text/transcript exists,aggregate_or_synthetic_only
+audio_present,bool,Whether local audio exists,aggregate_or_synthetic_only
+video_present,bool,Whether local video or video features exist,aggregate_or_synthetic_only
+gait_present,bool,Whether local gait/IMU data exists,aggregate_or_synthetic_only
+label_present,bool,Whether the required local label exists,aggregate_or_synthetic_only
+file_valid,bool,Whether the row passes local integrity checks,aggregate_or_synthetic_only
+exclusion_reason,string,Reason for row exclusion if invalid,aggregate_or_synthetic_only
+video_feature_type,string,Video feature source or extractor,aggregate_or_synthetic_only
+text_path,string,Local text/transcript path,local_only_real_values
+audio_path,string,Local audio path,local_only_real_values
+video_path,string,Local video path,local_only_real_values
+gait_path,string,Local gait or IMU path,local_only_real_values

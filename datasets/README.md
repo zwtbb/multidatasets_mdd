@@ -1,6 +1,6 @@
 # Dataset Workspace
 
-Last updated: 2026-07-26 UTC
+Last updated: 2026-08-10 UTC
 
 Canonical dataset root:
 
@@ -8,17 +8,26 @@ Canonical dataset root:
 /root/autodl-tmp/datasets
 ```
 
-This directory contains local raw datasets, generated subject-level manifests,
-and repeatable audit reports for the cross-scale depression modeling project.
-Raw datasets are intentionally excluded from Git; use the registry and generated
+This directory contains local raw datasets, locally generated subject-level
+manifests, public dataset schemas/examples, and repeatable aggregate audit
+reports for the cross-scale depression modeling project. Raw datasets, real
+row-level subject manifests, real file-integrity rows, and real subject split
+maps are intentionally excluded from Git; use the registry and generated local
 manifests as the stable interface for experiments.
 
 ## Source Of Truth
 
 - `registry.yaml`: canonical dataset registry and research-role mapping.
-- `manifests/*_subjects.parquet`: subject/segment-level experiment interface.
-- `audit/`: latest generated data-quality reports.
+- `schemas/`: public schemas for local subject manifests, integrity tables,
+  and subject split maps.
+- `examples/`: synthetic public examples with the expected columns.
+- `manifests/*_subjects.csv` and `manifests/*_subjects.parquet`: local-only
+  subject/segment-level experiment interface, regenerated from licensed local
+  data.
+- `audit/`: latest generated data-quality reports. Aggregate reports are
+  versionable; `audit/file_integrity.csv` is local-only.
 - `raw/`, `processed/`, `splits/`: reserved project-managed staging areas.
+  Real subject split maps under `splits/` are local-only.
 
 Regenerate manifests and audit reports with:
 
@@ -54,6 +63,10 @@ No subject-level split leakage was detected in the latest audit.
 
 - Do not train directly from ad hoc raw-directory scans.
 - Load experiment inputs from generated manifests.
+- Keep real row-level manifests, integrity rows, and subject split maps
+  local-only. Public releases should include only schema, synthetic examples,
+  generated aggregate audits, and regeneration scripts unless dataset licenses
+  are separately reviewed.
 - Keep all train/dev/test splits subject-level; never split different segments,
   tasks, or modalities from the same subject across train and test.
 - Remove stale static audit files when they duplicate generated reports.

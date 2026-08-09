@@ -1,8 +1,9 @@
 # Cross-Scale Depression Modeling Framework
 
-This repository manages code, configuration, subject-level manifests, audit
-reports, and experiment-result summaries for a multimodal depression modeling
-project.
+This repository manages code, configuration, public manifest schemas,
+aggregate audit reports, and experiment-result summaries for a multimodal
+depression modeling project. Real row-level subject manifests are generated and
+used locally from licensed datasets, but are not part of the public release.
 
 The frozen paper frame is question-first:
 
@@ -47,7 +48,9 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 ## Key Paths
 
 - Dataset registry: `datasets/registry.yaml`
-- Dataset manifests: `datasets/manifests/`
+- Public dataset schemas: `datasets/schemas/`
+- Synthetic dataset examples: `datasets/examples/`
+- Local generated manifests: `datasets/manifests/`
 - Dataset audit: `datasets/audit/`
 - Phase 2 matrix config: `baselines/phase2_baseline_matrix.yaml`
 - Phase 2 status: `analysis/phase2_baselines/baseline_matrix_status.csv`
@@ -89,19 +92,21 @@ python scripts/phase2_metrics.py --self-test
 
 ## Version Policy
 
-Track code, configs, docs, lightweight generated dataset manifests/audits,
-memory files, and small summaries for the project's own diagnostics and method
-experiments. Keep Phase 2 baseline reproduction scripts and matrix config, but
-do not track generated Phase 2 baseline result artifacts by default.
+Track code, configs, docs, public dataset schemas/examples, lightweight
+aggregate audits, memory files, and small summaries for the project's own
+diagnostics and method experiments. Keep Phase 2 baseline reproduction scripts
+and matrix config, but do not track generated Phase 2 baseline result artifacts
+by default.
 
-Do not track raw datasets, audio/video, archives, pretrained weights, model
-checkpoints, caches, local runtime files, raw clinical text, raw prompts, raw
-model responses, large extracted features, or bulky prediction/embedding
-artifacts, or generated `analysis/phase2_baselines/` baseline outputs. These
-stay local and are regenerated through scripts.
+Do not track raw datasets, real row-level subject manifests, real row-level
+file-integrity tables, real subject split maps, audio/video, archives,
+pretrained weights, model checkpoints, caches, local runtime files, raw
+clinical text, raw prompts, raw model responses, large extracted features,
+bulky prediction/embedding artifacts, or generated `analysis/phase2_baselines/`
+baseline outputs. These stay local and are regenerated through scripts.
 
-Use `datasets/registry.yaml` and generated manifests as experiment inputs.
-Avoid ad hoc raw-directory scans in training code.
+Use `datasets/registry.yaml` and locally generated manifests as experiment
+inputs. Avoid ad hoc raw-directory scans in training code.
 
 The GitHub repository tracks only the clean reproducible experiment skeleton.
 Local `main` has historical server-working commits that must not be pushed

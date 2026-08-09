@@ -1,6 +1,6 @@
 # Master Experiment Plan
 
-Last updated: 2026-08-09 UTC
+Last updated: 2026-08-10 UTC
 
 ## Principle
 
@@ -109,9 +109,11 @@ data audit
   required age/personality subgroup calibration gaps beyond AV-only
   recalibration.
 - Phase 5 `P5_MV06 construct_evidence_localization`:
-  readiness, pilot packet, local two-annotator workbench, and aggregate summary
-  gate are complete, but evidence reporting is blocked because no local
-  annotations or double-annotation agreement have been completed.
+  readiness, pilot packet, local two-annotator workbench, human review pack,
+  and aggregate summary gate are complete. The first human annotation pass now
+  reaches the default aggregate gate: 30 completed candidates and 20
+  double-annotated candidates. Evidence reporting is allowed only as
+  aggregate, first-round, dataset-stratified credibility evidence.
 - Phase 5 `P5_MV06 local_ai_preannotation_triage`:
   complete as a local-only review accelerator. It generated ignored AI-triage
   rows for 144 MV06 candidates and tracked only aggregate counts plus hygiene.
@@ -122,8 +124,9 @@ data audit
   candidate index with priority ranks. Tracked outputs contain only aggregate
   review-pack, priority, progress, schema, and hygiene summaries. Current
   status is `ready_for_human_review_pack_not_claimable`: 144 candidates, 288
-  annotation rows, 79 AI keyword-match candidates, 82 priority-1/2 candidates,
-  and still 0 completed human candidates.
+  annotation rows, 79 AI keyword-match candidates, 82 priority-1/2 candidates;
+  after importing human annotations it reflects 30 completed candidates and 20
+  double-annotated candidates in the source workbook.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness`:
   complete as a no-training readiness audit. After local E-DAIC BGE
   generation, E-DAIC, CMDC, and PDCH share 512 BGE model-input columns and the
@@ -172,9 +175,9 @@ evidence, `P5_MV04` only validates a known-dataset diagnostic control, and
 MODMA task-control pass, but the result is still mixed because EATD remains
 below train mean and does not support valence-control claims. `P5_MV02` gives
 bounded PDCH-only HAMD evidence, while `P5_MV03`, `P5_MV03b`, and `P5_MV05`
-are negative for SDS/context claims. `P5_MV06` still requires local annotation
-completion before evidence-localization claims; AI preannotation and the human
-review pack are available only as local review aids. `P5_MV07` shows aligned
+are negative for SDS/context claims. `P5_MV06` now provides first-round
+aggregate evidence-localization credibility evidence with dataset-stratified
+agreement, but E-DAIC has only a small double-annotation slice. `P5_MV07` shows aligned
 BGE is runnable, but the
 shallow validation is blocked by total-allocation and identity evidence.
 `P5_MV07b` reduces BGE feature/prediction identity, but the best
@@ -184,11 +187,35 @@ CMDC total-allocation floor. Further small shallow BGE-head variants should be
 avoided unless the feature or measurement contract changes.
 
 Use `scripts/phase5_full_method_gate_audit.py` as the active claim boundary.
-The audit blocks full M0/M1/M2/M3 construction, transferable shared-symptom
-claims, positive EATD SDS claims, EATD-driven valence-adversarial design, RQ3
-context-conditioning claims, and RQ4 evidence-localization claims before
-annotation. It allows only bounded diagnostic claims and a reframed
-diagnostic/audit-driven paper direction.
+The audit blocks full M0/M1/M2/M3 construction, transferable direct
+shared-symptom claims, positive EATD SDS claims, EATD-driven
+valence-adversarial design, and positive RQ3 context-conditioning claims. It
+now allows RQ4 only as limited first-round aggregate evidence. The next method
+target is not another shallow BGE head; it is a psychometric partial
+measurement-invariance contract.
+
+## Updated Method Target
+
+Phase 5 negative and partial results changed the RQ1 target. Directly mapping
+PHQ/HAMD/SDS labels into one fixed shared symptom space is now treated as a
+too-strong hypothesis under the current evidence. The next candidate method
+should model:
+
+```text
+shared latent symptom constructs
++ scale-specific DIF/loading-threshold deviations
++ protocol nuisance reporting/control
+```
+
+The first runnable row should compare:
+
+1. total-score or total-allocation heads;
+2. fixed construct-map heads;
+3. partial-invariance ordinal latent measurement heads.
+
+Run this first on E-DAIC PHQ-8, CMDC PHQ-9/limited HAMD sanity, and PDCH
+HAMD-17. Keep MPDD as a later measurement-heterogeneity moderator dataset and
+keep EATD/MODMA as stress tests rather than primary training sources.
 
 Phase 2 validation commands:
 
@@ -306,9 +333,10 @@ representation without those controls.
   claims.
 - `P5_MV02 hamd17_auxiliary_bridge` is complete in PDCH-only mode. Treat it as
   bounded PDCH evidence, not cross-dataset HAMD generalization.
-- `P5_MV06 construct_evidence_localization` has local annotation infrastructure
-  ready, including an ignored two-annotator local workbook, but is blocked as
-  evidence until annotations and agreement summaries are completed.
+- `P5_MV06 construct_evidence_localization` has first-round aggregate human
+  annotation evidence ready. `agreement_summary.csv` is dataset-stratified and
+  includes an `ALL` diagnostic row; E-DAIC kappa is currently limited by only
+  two double-annotated pairs and degenerate marginals.
 - `P5_MV06 local_ai_preannotation_triage` is complete as a local-only review
   accelerator. It must not be treated as human annotation, agreement evidence,
   or an RQ4 claim.
@@ -338,11 +366,15 @@ representation without those controls.
 
 ## Later Phases
 
-- Phase 5 execution: continue under the full-method gate by filling the
-  ignored local MV06 human annotation workbook using the human review pack as a
-  review aid, then rerunning the summary gate; or reframe the shallow BGE
-  shared-symptom sequence as negative/partial evidence before proposing a
-  genuinely new feature or measurement contract.
+- Immediate governance: reduce public row-level dataset exposure before further
+  routine GitHub publishing. Keep real row-level manifests, file-integrity
+  rows, and subject split maps local-only; publish schema, synthetic examples,
+  generation scripts, and aggregate audits. Any remote history rewrite requires
+  explicit user approval.
+- Phase 5 execution: freeze shallow BGE/WavLM rows as negative/partial
+  baselines, then design the partial-invariance psychometric measurement row.
+  Optionally expand E-DAIC MV06 double annotation to stabilize per-dataset
+  agreement.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

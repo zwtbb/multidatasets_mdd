@@ -283,8 +283,21 @@ def safe_float(value: Any) -> float | None:
     return numeric if math.isfinite(numeric) else None
 
 
-def pairwise_agreement(frame: pd.DataFrame) -> pd.DataFrame:
-    complete = frame[frame["annotation_complete"]].copy()
+def kappa_from_pairs(pairs: list[tuple[str, str]]) -> tuple[float | None, float | None, float | None, str]:
+    if not pairs:
+        return None, None, None, "insufficient_pair_annotations"
+    observed = sum(1 for left, right in pairs if left == right) / len(pairs)
+    left_counts = Counter(left for left, _ in pairs)
+    right_counts = Counter(right for _, right in pairs)
+    values = sorted(set(left_counts) | set(right_counts))
+    expected = sum((left_counts[value] / len(pairs)) * (right_counts[value] / len(pairs)) for value in values)
+    if expected >= 1:
+        return safe_float(observed), safe_float(expected), None, "undefined_degenerate_marginals"
+    kappa = (observed - expected) / (1 - expected)
+    return safe_float(observed), safe_float(expected), safe_float(kappa), "computed_pairwise_kappa"
+
+
+def pairwise_agreement_for_scope(dataset: str, complete: pd.DataFrame) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for field in ANNOTATION_FIELDS:
         pairs: list[tuple[str, str]] = []
@@ -293,34 +306,27 @@ def pairwise_agreement(frame: pd.DataFrame) -> pd.DataFrame:
             values = per_annotator[["annotator_id", field]].dropna().values.tolist()
             for left, right in itertools.combinations(values, 2):
                 pairs.append((str(left[1]), str(right[1])))
-        if not pairs:
-            rows.append(
-                {
-                    "field": field,
-                    "pair_count": 0,
-                    "observed_agreement": None,
-                    "expected_agreement": None,
-                    "pairwise_kappa": None,
-                    "agreement_status": "insufficient_pair_annotations",
-                }
-            )
-            continue
-        observed = sum(1 for left, right in pairs if left == right) / len(pairs)
-        left_counts = Counter(left for left, _ in pairs)
-        right_counts = Counter(right for _, right in pairs)
-        values = sorted(set(left_counts) | set(right_counts))
-        expected = sum((left_counts[value] / len(pairs)) * (right_counts[value] / len(pairs)) for value in values)
-        kappa = (observed - expected) / (1 - expected) if expected < 1 else None
+        observed, expected, kappa, status = kappa_from_pairs(pairs)
         rows.append(
             {
+                "dataset": dataset,
                 "field": field,
                 "pair_count": int(len(pairs)),
-                "observed_agreement": safe_float(observed),
-                "expected_agreement": safe_float(expected),
-                "pairwise_kappa": safe_float(kappa),
-                "agreement_status": "computed_pairwise_kappa",
+                "observed_agreement": observed,
+                "expected_agreement": expected,
+                "pairwise_kappa": kappa,
+                "agreement_status": status,
             }
         )
+    return rows
+
+
+def pairwise_agreement(frame: pd.DataFrame) -> pd.DataFrame:
+    complete = frame[frame["annotation_complete"]].copy()
+    rows: list[dict[str, Any]] = []
+    rows.extend(pairwise_agreement_for_scope("ALL", complete))
+    for dataset in sorted(frame["dataset"].dropna().unique()):
+        rows.extend(pairwise_agreement_for_scope(str(dataset), complete[complete["dataset"] == dataset]))
     return pd.DataFrame(rows)
 
 
@@ -529,14 +535,17 @@ def write_report(
             "",
             "## Agreement",
             "",
-            "| field | pair count | observed agreement | pairwise kappa | status |",
-            "| --- | ---: | ---: | ---: | --- |",
+            "| dataset | field | pair count | observed agreement | pairwise kappa | status |",
+            "| --- | --- | ---: | ---: | ---: | --- |",
         ]
     )
     for _, row in agreement.iterrows():
         observed = "" if pd.isna(row["observed_agreement"]) else f"{row['observed_agreement']:.3f}"
         kappa = "" if pd.isna(row["pairwise_kappa"]) else f"{row['pairwise_kappa']:.3f}"
-        lines.append(f"| {row['field']} | {row['pair_count']} | {observed} | {kappa} | {row['agreement_status']} |")
+        lines.append(
+            f"| {row['dataset']} | {row['field']} | {row['pair_count']} | "
+            f"{observed} | {kappa} | {row['agreement_status']} |"
+        )
     lines.extend(
         [
             "",

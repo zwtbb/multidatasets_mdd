@@ -1,7 +1,7 @@
 # Session Memory: Phase 5 Full-Method Gate Audit
 
 Status: complete
-Last updated: 2026-08-09 UTC
+Last updated: 2026-08-10 UTC
 Thread/task: main agent Phase 5 claim/gate synthesis
 
 ## Scope
@@ -37,25 +37,27 @@ the numeric source artifacts from each MV row.
 - `full_method_allowed=false`.
 - Blocked claims:
   - starting the full M0/M1/M2/M3 symptom-aligned method;
-  - claiming transferable shared symptom representation;
+  - claiming a transferable direct shared-symptom representation;
   - using EATD SDS total as positive external cross-scale evidence;
   - adding an EATD-driven valence-adversarial component;
-  - claiming positive MPDD context conditioning/calibration;
-  - claiming RQ4 evidence-localization validity before annotation.
+  - claiming positive MPDD context conditioning/calibration.
 - Allowed limited/reframed claims:
   - PDCH-only HAMD diagnostic evidence;
   - dataset/protocol identity controls as diagnostics;
   - MODMA task nuisance projection as bounded protocol-control evidence;
+  - first-round aggregate MV06 evidence localization with dataset-stratified
+    agreement;
   - a publishable diagnostic/audit-driven paper direction if claims are
     reframed away from broad SOTA/full-method claims.
 - Ranked next actions:
-  1. Use the ignored MV06 human review pack to fill the local human annotation
-     workbook, then rerun the aggregate summary gate.
-  2. Stop iterating small shallow BGE head variants; either complete MV06
-     annotations or define a genuinely new audited feature/measurement
-     contract.
-  3. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
-  4. Recover MPDD gender/health metadata and official test labels if available.
+  1. Audit and reduce public row-level manifest exposure before further GitHub
+     publishing.
+  2. Freeze shallow BGE/WavLM rows as negative/partial baselines and design the
+     multi-scale psychometric partial-invariance measurement row.
+  3. Use the dataset-stratified MV06 agreement summary as first-round RQ4
+     evidence and optionally expand E-DAIC double annotation.
+  4. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
+  5. Recover MPDD gender/health metadata and official test labels if available.
 
 ## Files Owned Or Touched
 
@@ -89,12 +91,13 @@ Versionable artifacts:
 
 - The audit is conservative and intentionally blocks full method construction
   while evidence remains mixed/negative.
-- MV06 still needs local annotation by a human reviewer; the current aggregate
-  summary gate cannot validate evidence localization without completed
-  annotations. AI preannotation and the ranked human review pack are only
-  review aids and are not claimable.
-- A revised shared feature contract must beat simple floors and preserve
-  identity/protocol controls before broad shared-symptom claims.
+- MV06 has first-round aggregate evidence, but E-DAIC has too few double pairs
+  for stable dataset-specific kappa in this pass.
+- Public row-level manifests were identified as a data-governance risk; latest
+  tree mitigation can remove them, but remote history rewrite requires explicit
+  user approval.
+- A revised measurement contract must beat simple floors and preserve
+  identity/protocol controls before broad cross-scale measurement claims.
 - MV07 aligned-BGE shallow validation is blocked:
   `blocked_not_better_than_total_allocation_bge_contract`, with feature
   identity BA `1.000` and prediction identity BA `0.980`. eGeMAPS requires
@@ -111,9 +114,7 @@ Versionable artifacts:
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
-The next implementation session should either review the ignored MV06 AI
-preannotation through the ranked human review pack, fill the local human
-annotation workbook, and rerun the summary gate; or define a genuinely new
-audited feature/measurement contract after reframing the shallow BGE sequence
-as negative/partial evidence. Do not start the full method until the gate
-changes from blocked.
+The next implementation session should handle public manifest governance, then
+define a partial-invariance psychometric measurement row after reframing the
+shallow BGE sequence as negative/partial evidence. Do not start the full method
+until the gate changes from blocked.

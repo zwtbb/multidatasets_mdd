@@ -1,6 +1,6 @@
 # P5_MV06 Human Review Pack
 
-Generated: `2026-08-09T10:38:56+00:00`
+Generated: `2026-08-09T16:38:54+00:00`
 
 This helper joins the local human annotation workbench with the local AI triage workbook. It is a review accelerator only; AI suggestions are not human annotation or agreement evidence.
 
@@ -10,8 +10,8 @@ This helper joins the local human annotation workbench with the local AI triage 
 - Candidate count: `144`.
 - Annotation rows: `288`.
 - AI keyword-match candidates: `79`.
-- Completed human candidates currently visible in source workbook: `0`.
-- Double-completed human candidates currently visible in source workbook: `0`.
+- Completed human candidates currently visible in source workbook: `30`.
+- Double-completed human candidates currently visible in source workbook: `20`.
 - Artifact hygiene passed: `True`.
 
 A local review pack now combines AI suggestions, human annotation fields, and priority ranks. It can speed manual review but does not satisfy MV06 annotation, agreement, or RQ4 evidence gates.
@@ -20,23 +20,23 @@ A local review pack now combines AI suggestions, human annotation fields, and pr
 
 | dataset | target family | bucket | candidates | priority 1/2 | AI keyword | AI protocol artifact | complete once | double complete |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| cmdc | construct | high_prediction_error | 5 | 5 | 1 | 0 | 0 | 0 |
+| cmdc | construct | high_prediction_error | 5 | 5 | 1 | 0 | 3 | 2 |
 | cmdc | construct | high_true_severity | 8 | 5 | 5 | 1 | 0 | 0 |
-| cmdc | construct | low_prediction_error | 6 | 0 | 5 | 1 | 0 | 0 |
+| cmdc | construct | low_prediction_error | 6 | 0 | 5 | 1 | 3 | 2 |
 | cmdc | hamd_construct_proxy | high_prediction_error | 7 | 7 | 1 | 1 | 0 | 0 |
-| cmdc | hamd_construct_proxy | high_true_severity | 7 | 3 | 2 | 0 | 0 | 0 |
+| cmdc | hamd_construct_proxy | high_true_severity | 7 | 3 | 2 | 0 | 3 | 2 |
 | cmdc | hamd_construct_proxy | low_prediction_error | 9 | 1 | 5 | 1 | 0 | 0 |
-| cmdc | hamd_item | high_prediction_error | 8 | 8 | 1 | 0 | 0 | 0 |
+| cmdc | hamd_item | high_prediction_error | 8 | 8 | 1 | 0 | 3 | 2 |
 | cmdc | hamd_item | high_true_severity | 5 | 2 | 1 | 0 | 0 | 0 |
-| cmdc | hamd_item | low_prediction_error | 5 | 1 | 1 | 0 | 0 | 0 |
-| edaic | construct | high_prediction_error | 8 | 8 | 6 | 0 | 0 | 0 |
-| edaic | construct | high_true_severity | 8 | 5 | 5 | 0 | 0 | 0 |
+| cmdc | hamd_item | low_prediction_error | 5 | 1 | 1 | 0 | 2 | 2 |
+| edaic | construct | high_prediction_error | 8 | 8 | 6 | 0 | 1 | 0 |
+| edaic | construct | high_true_severity | 8 | 5 | 5 | 0 | 3 | 2 |
 | edaic | construct | low_prediction_error | 8 | 0 | 3 | 0 | 0 | 0 |
-| pdch | hamd_construct_proxy | high_prediction_error | 10 | 10 | 9 | 0 | 0 | 0 |
-| pdch | hamd_construct_proxy | high_true_severity | 9 | 8 | 8 | 0 | 0 | 0 |
-| pdch | hamd_construct_proxy | low_prediction_error | 13 | 1 | 11 | 0 | 0 | 0 |
-| pdch | hamd_item | high_prediction_error | 10 | 10 | 4 | 0 | 0 | 0 |
-| pdch | hamd_item | high_true_severity | 11 | 7 | 7 | 0 | 0 | 0 |
+| pdch | hamd_construct_proxy | high_prediction_error | 10 | 10 | 9 | 0 | 3 | 2 |
+| pdch | hamd_construct_proxy | high_true_severity | 9 | 8 | 8 | 0 | 2 | 1 |
+| pdch | hamd_construct_proxy | low_prediction_error | 13 | 1 | 11 | 0 | 3 | 2 |
+| pdch | hamd_item | high_prediction_error | 10 | 10 | 4 | 0 | 1 | 1 |
+| pdch | hamd_item | high_true_severity | 11 | 7 | 7 | 0 | 3 | 2 |
 | pdch | hamd_item | low_prediction_error | 7 | 1 | 4 | 0 | 0 | 0 |
 
 ## Priority Bands
