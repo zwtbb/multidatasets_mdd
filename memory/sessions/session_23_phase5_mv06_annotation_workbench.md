@@ -29,8 +29,12 @@ RQ4 evidence claims, read raw clinical text, or export snippets.
 - The summary gate was rerun from the workbench and remains
   `blocked_no_completed_annotations`: 0 completed candidates and 0
   double-annotated candidates.
-- The full-method gate was rerun and now inventories 14 Phase 5 evidence rows,
-  including `P5_MV06_workbench`; full method remains blocked.
+- `scripts/phase5_run_mv06_local_ai_preannotation.py` now creates a separate
+  ignored local AI-triage preannotation workbook from the workbench locators.
+  It is a review aid only and does not modify the human workbench.
+- The full-method gate was rerun and now inventories 18 Phase 5 evidence rows,
+  including `P5_MV06_workbench` and `P5_MV06_ai_preannotation`; full method
+  remains blocked.
 
 ## Key Decisions
 
@@ -39,6 +43,8 @@ RQ4 evidence claims, read raw clinical text, or export snippets.
   personal identity in tracked outputs.
 - Optional excerpts and reviewer notes must stay inside ignored local files.
 - C09/HAMD03 remains explicit-evidence-only.
+- AI-triage rows may speed manual review, but they must be verified or
+  corrected by human annotators before the summary gate can support RQ4.
 - RQ4 evidence-localization claims remain blocked until enough local
   annotations are completed, enough candidates are double annotated, agreement
   is summarized, prompt-artifact rates are reported, and tracked aggregate

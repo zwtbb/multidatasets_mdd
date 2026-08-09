@@ -1,0 +1,11 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "P5_MV06_ai_preannotation_triage_hygiene",
+  "files_checked": 6,
+  "generated_at": "2026-08-09T09:21:27+00:00",
+  "local_only_files_skipped": [
+    "p5_mv06_local_ai_preannotation_workbook_predictions.csv"
+  ],
+  "violation_count": 0,
+  "violations": []
+}

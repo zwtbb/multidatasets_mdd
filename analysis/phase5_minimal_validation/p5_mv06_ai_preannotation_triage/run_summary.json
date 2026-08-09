@@ -1,0 +1,42 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "preannotation_status": "ready_for_human_review_not_claimable",
+    "short_read": "AI triage filled a local-only preannotation workbook. It can accelerate human review, but it does not satisfy MV06 human annotation or agreement gates."
+  },
+  "generated_at": "2026-08-09T09:21:27+00:00",
+  "input_contract": {
+    "candidate_rows_read": 288,
+    "raw_text_read_locally": true,
+    "source_locator_map_read_locally": true,
+    "unique_candidates_read": 144
+  },
+  "output_policy": {
+    "local_file_locators_in_tracked_outputs": false,
+    "local_only_files": [
+      "p5_mv06_local_ai_preannotation_workbook_predictions.csv"
+    ],
+    "raw_text_or_excerpts_in_local_only_file": true,
+    "raw_text_or_excerpts_in_tracked_outputs": false,
+    "subject_level_rows_in_tracked_outputs": false,
+    "tracked_outputs": [
+      "report.md",
+      "run_summary.json",
+      "artifact_hygiene_audit.json",
+      "preannotation_summary.csv",
+      "aggregate_preannotation_presence_summary.csv",
+      "aggregate_preannotation_source_summary.csv",
+      "local_artifact_manifest.csv"
+    ]
+  },
+  "preannotation_summary": {
+    "candidate_count": 144,
+    "preannotation_rows": 144,
+    "rows_with_keyword_match": 79,
+    "text_chars_scanned": 704186,
+    "text_files_scanned": 854
+  },
+  "run_id": "P5_MV06_local_ai_preannotation_triage",
+  "scope": "local_ai_triage_not_human_annotation",
+  "status": "complete"
+}

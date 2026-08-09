@@ -40,6 +40,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_24_phase5_mv07_shared_feature_contract_readiness.md`
   - `/root/autodl-tmp/memory/sessions/session_25_phase5_mv07_edaic_bge_generation.md`
   - `/root/autodl-tmp/memory/sessions/session_26_phase5_mv07_aligned_bge_shared_symptom.md`
+  - `/root/autodl-tmp/memory/sessions/session_27_phase5_mv06_local_ai_preannotation.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -267,6 +268,13 @@ MPDD 2025 is intentionally out of scope for current auditing.
   agreement summaries. Current status is `blocked_no_completed_annotations`: 0
   completed candidates and 0 double-annotated candidates. Artifact hygiene
   passes; no raw text, source locator map, or subject-level rows are exported.
+- Phase 5 `P5_MV06 local_ai_preannotation_triage` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_ai_preannotation_triage/`.
+  It read raw clinical text locally through ignored workbench locators and
+  generated an ignored local AI-triage preannotation workbook for 144
+  candidates. Tracked outputs contain only aggregate counts and hygiene. Treat
+  as `ready_for_human_review_not_claimable`: it can accelerate human review but
+  does not satisfy MV06 human annotation, agreement, or RQ4 evidence gates.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv07_shared_feature_contract_readiness/`.
   It did not train a model and did not scan raw text/audio/video/gait files. It
@@ -296,7 +304,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   hygiene passed and row-level predictions remain ignored local-only.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 17 Phase 5 run summaries and exports claim gates, evidence
+  It reads 18 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -482,6 +490,11 @@ Key Phase 2 outputs:
   blocked until the gate has enough completed annotations, enough
   double-annotated candidates for agreement, no invalid field values, and
   `artifact_hygiene_passed=true`.
+- P5_MV06 AI preannotation decision: use
+  `scripts/phase5_run_mv06_local_ai_preannotation.py` only as local triage to
+  speed human review. Its ignored output can contain local excerpts and
+  locators; tracked outputs are aggregate-only. Do not use AI preannotation as
+  human annotation, agreement evidence, or RQ4 validity evidence.
 - P5_MV07 readiness decision: current cached features are not sufficient for a
   fair revised shared-symptom minimal-validation row until E-DAIC BGE is
   generated. That gap is now resolved locally: the aligned BGE text contract is
@@ -605,7 +618,8 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
-   fill the ignored local MV06 annotation workbook and rerun the summary gate,
+   review the ignored MV06 AI preannotation, fill the local human annotation
+   workbook, and rerun the summary gate,
    or design a stronger shared-symptom feature/identity-control contract after
    the aligned-BGE MV07 block. Full method construction remains blocked until
    the gate changes.

@@ -29,6 +29,9 @@ the local source locator map, source paths, raw snippets, or train a model.
 - A temporary synthetic double-annotation test reached
   `ready_for_aggregate_evidence_review`, verifying the agreement path can run
   after local annotations exist.
+- The separate local AI preannotation triage now exists, but it is not read by
+  the default human summary gate and does not satisfy human annotation or
+  agreement requirements.
 
 ## Key Decisions
 
@@ -41,6 +44,8 @@ the local source locator map, source paths, raw snippets, or train a model.
   - invalid field values are zero;
   - prompt-artifact and evidence-source distributions are aggregated; and
   - tracked outputs pass artifact hygiene.
+- AI preannotation may be used as a local review aid only. It must not be
+  counted as human annotation or agreement evidence.
 - Current default thresholds are 30 completed candidates and 20
   double-annotated candidates. These are gate defaults for early review, not a
   final manuscript sampling-size claim.

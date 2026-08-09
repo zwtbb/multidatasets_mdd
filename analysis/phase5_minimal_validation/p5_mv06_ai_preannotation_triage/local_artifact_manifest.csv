@@ -1,0 +1,2 @@
+file,row_count,candidate_count,contains_subject_level_rows,contains_local_file_locators,contains_raw_text_excerpts,contains_ai_triage_fields,git_policy
+p5_mv06_local_ai_preannotation_workbook_predictions.csv,144,144,True,True,True,True,ignored_local_only

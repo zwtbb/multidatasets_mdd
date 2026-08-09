@@ -17,13 +17,14 @@ the numeric source artifacts from each MV row.
 
 - Implemented `scripts/phase5_full_method_gate_audit.py`.
 - Generated `analysis/phase5_minimal_validation/full_method_gate_audit/`.
-- The audit reads 17 Phase 5 run summaries:
+- The audit reads 18 Phase 5 run summaries:
   - MV01 PHQ bridge;
   - MV02 readiness, MV02 PDCH HAMD bridge, MV02b PDCH text probe;
   - MV03/MV03b EATD SDS audio/text stress;
   - MV04/MV04b/MV04c identity and protocol controls;
   - MV05 MPDD context calibration;
-  - MV06 readiness, pilot, annotation workbench, and annotation summary gate;
+  - MV06 readiness, pilot, annotation workbench, annotation summary gate, and
+    local AI preannotation triage;
   - MV07 E-DAIC BGE generation, shared-feature-contract readiness, and
     aligned-BGE shallow shared-symptom validation.
 - Artifact hygiene passed with zero violations.
@@ -46,8 +47,8 @@ the numeric source artifacts from each MV row.
   - a publishable diagnostic/audit-driven paper direction if claims are
     reframed away from broad SOTA/full-method claims.
 - Ranked next actions:
-  1. Fill the ignored local MV06 annotation workbook and rerun the aggregate
-     summary gate.
+  1. Review the ignored MV06 AI preannotation, fill the local human annotation
+     workbook, and rerun the aggregate summary gate.
   2. Design a stronger shared-symptom feature contract or identity-control
      variant after the aligned-BGE MV07 block.
   3. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
@@ -86,7 +87,7 @@ Versionable artifacts:
   while evidence remains mixed/negative.
 - MV06 still needs local annotation by a human reviewer; the current aggregate
   summary gate cannot validate evidence localization without completed
-  annotations.
+  annotations. AI preannotation is only a review aid and is not claimable.
 - A revised shared feature contract must beat simple floors and preserve
   identity/protocol controls before broad shared-symptom claims.
 - Current MV07 aligned-BGE shallow validation is blocked:
@@ -97,7 +98,8 @@ Versionable artifacts:
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
-The next implementation session should either fill the ignored local MV06
-annotation workbook or design a stronger shared-symptom feature/identity-control
-contract after the aligned-BGE MV07 block. Do not start the full method until
-the gate changes from blocked.
+The next implementation session should either review the ignored MV06 AI
+preannotation, fill the local human annotation workbook, and rerun the summary
+gate; or design a stronger shared-symptom feature/identity-control contract
+after the aligned-BGE MV07 block. Do not start the full method until the gate
+changes from blocked.

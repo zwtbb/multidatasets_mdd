@@ -139,6 +139,12 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   schema, annotation rules, manifest, report, run summary, and hygiene audit.
   The summary gate now defaults to the workbench and remains
   `blocked_no_completed_annotations` until human annotation is filled.
+- Phase 5 `P5_MV06 local_ai_preannotation_triage` completed in the main
+  checkout. It reads raw clinical text locally through ignored workbench
+  locators, fills an ignored local AI-triage preannotation workbook for 144
+  candidates, and tracks only aggregate counts plus hygiene. It is
+  `ready_for_human_review_not_claimable`: useful for speeding review, but not
+  human annotation, agreement evidence, or an RQ4 claim.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness` completed in the main
   checkout. It did not train a model or scan raw text/media; it inventories
   cached subject-level features and label coverage. After local E-DAIC BGE
@@ -159,7 +165,7 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   total-allocation floors and identity remains high (feature BA `1.000`,
   prediction BA `0.980`).
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 17
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 18
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
@@ -227,8 +233,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    `P5_MV02b` shows the lightweight manifest-text hashing probe is weak. Full
    method work still needs stronger cross-dataset/control evidence. `P5_MV06`
    now has a local manual annotation packet, two-annotator workbench, and
-   aggregate-only summary gate ready, but no evidence-localization result
-   should be claimed until local annotations are completed and pass the gate.
+   aggregate-only summary gate ready. It also has local-only AI preannotation
+   triage, but no evidence-localization result should be claimed until human
+   annotations are completed and pass the gate.
    `P5_MV07` aligned-BGE shallow validation is now complete and blocked by
    total-allocation and identity evidence, so it should be reported as a
    negative/diagnostic shared-feature result rather than a shared-representation
@@ -276,11 +283,11 @@ Cross-session issues are tracked in:
 ## Next Handoff
 
 Continue Phase 5 under the full-method gate audit. The next useful work is
-either filling the ignored local MV06 annotation workbook and rerunning the
-summary gate, or designing a stronger shared-symptom feature/identity-control
-contract after the aligned-BGE MV07 block. Keep row-level predictions and
-learned embeddings local-only, and do not start full method work until the gate
-changes.
+either reviewing the ignored MV06 AI preannotation, filling the local human
+annotation workbook, and rerunning the summary gate, or designing a stronger
+shared-symptom feature/identity-control contract after the aligned-BGE MV07
+block. Keep row-level predictions and learned embeddings local-only, and do
+not start full method work until the gate changes.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
 the old local `main` history directly. Run
