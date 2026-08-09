@@ -119,7 +119,7 @@ EXPERIMENT_MATRIX = [
         "phase4_source_id": "MV06",
         "rq": "RQ4",
         "name": "construct_evidence_localization",
-        "status": "summary_gate_blocked_no_completed_annotations",
+        "status": "complete_ready_limited_aggregate_evidence",
         "train_scope": "not a separate trainer; consumes minimal model outputs",
         "eval_scope": "E-DAIC, CMDC, and PDCH item/construct predictions",
         "target_contract": "C01-C09 where item labels exist; C09 explicit-evidence-only",
@@ -148,6 +148,23 @@ EXPERIMENT_MATRIX = [
         "stop_rule": "current caches are missing a required dataset, have schema mismatch, or are identity-blocked without a stronger control",
         "version_policy": "track scripts, readiness summaries, and aggregate validation summaries only; keep generated feature caches and row predictions local-only",
     },
+    {
+        "protocol_id": "P5_MV08",
+        "phase4_source_id": "full_gate_next_action",
+        "rq": "RQ1",
+        "name": "partial_invariance_measurement_design",
+        "status": "design_ready_partial_invariance",
+        "train_scope": "E-DAIC PHQ-8 item labels, CMDC PHQ-9 item labels, and PDCH HAMD-17 item labels; CMDC HAMD remains sanity-only",
+        "eval_scope": "subject-level folds and dataset-stratified comparisons across E-DAIC, CMDC, and PDCH",
+        "target_contract": "shared latent C01-C09 constructs with scale-specific HAMD auxiliary constructs C10-C13 where mapped",
+        "feature_contract": "reuse audited aligned BGE subject features first; no encoder fine-tuning and no raw text export in MV08 pilot",
+        "model_contract": "compare total-score floors, fixed construct-map heads, and partial-invariance ordinal latent measurement heads",
+        "required_controls": "predeclare configural/metric/threshold constraints; report sparse DIF deviations; identity/protocol probes remain mandatory before shared-representation claims",
+        "primary_metrics": "item ordinal MAE; item-derived total MAE; dataset-stratified deltas versus total and fixed-map floors; calibration; identity probe balanced accuracy",
+        "pass_rule": "partial-invariance heads beat or explain failures against total-score and fixed-map baselines while keeping DIF concentrated in predeclared partial/auxiliary items",
+        "stop_rule": "improvement disappears after total/fixed-map floors, DIF is diffuse/uninterpretable, or dataset identity remains the main recoverable signal",
+        "version_policy": "track design/trainer scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, and model artifacts local-only",
+    },
 ]
 
 
@@ -155,7 +172,7 @@ METRIC_CONTRACT = [
     {
         "metric_id": "construct_ordinal_mae",
         "task_family": "construct_item_or_ordinal",
-        "required_for": "P5_MV01;P5_MV02",
+        "required_for": "P5_MV01;P5_MV02;P5_MV08",
         "definition": "mean absolute error on item-derived construct ordinal targets",
         "primary": "yes",
         "notes": "report per construct and macro average",
@@ -179,7 +196,7 @@ METRIC_CONTRACT = [
     {
         "metric_id": "mae_rmse_spearman",
         "task_family": "total_score_regression",
-        "required_for": "P5_MV02;P5_MV03",
+        "required_for": "P5_MV02;P5_MV03;P5_MV08",
         "definition": "standard total-score regression metrics",
         "primary": "yes",
         "notes": "use scale-specific score ranges and subject-level bootstrap CIs",
@@ -203,10 +220,18 @@ METRIC_CONTRACT = [
     {
         "metric_id": "identity_probe_balanced_accuracy",
         "task_family": "shortcut_probe",
-        "required_for": "P5_MV01;P5_MV04",
+        "required_for": "P5_MV01;P5_MV04;P5_MV08",
         "definition": "balanced accuracy of a lightweight dataset/protocol classifier on learned or frozen representations",
         "primary": "yes",
         "notes": "lower is better only when main-task evidence is preserved",
+    },
+    {
+        "metric_id": "dif_sparsity_and_localization",
+        "task_family": "measurement_invariance",
+        "required_for": "P5_MV08",
+        "definition": "number and location of nonzero or freed loading/threshold deviations by dataset and scale",
+        "primary": "yes",
+        "notes": "DIF should be concentrated in predeclared partial/auxiliary items, not diffuse across every construct",
     },
 ]
 
@@ -284,7 +309,7 @@ def write_report(audit: dict[str, Any]) -> None:
             "",
             "## Next Handoff",
             "",
-            "`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, and `P5_MV07` have now run. `P5_MV04` now has mixed control evidence: E-DAIC/CMDC known-dataset centering passed diagnostically, source-agnostic projection remains partial, MODMA task nuisance projection passes, and EATD valence control is blocked because the SDS main task stays below train mean. `P5_MV06` has a local annotation workbench and aggregate summary gate, but evidence reporting is blocked until annotations are completed. `P5_MV07` aligned-BGE shallow validation is blocked because BGE itemwise heads do not beat the total-allocation floor consistently and identity probes remain high. Full method work remains blocked until stronger cross-dataset/control evidence is accumulated.",
+            "`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, and `P5_MV07` have now run. `P5_MV06` now has first-round aggregate evidence with dataset-stratified agreement, but E-DAIC agreement remains underpowered. `P5_MV07` aligned-BGE shallow validation is blocked because BGE itemwise heads do not beat the total-allocation floor consistently and identity probes remain high. `P5_MV08` is the next design-ready row: partial measurement invariance with ordinal latent measurement over E-DAIC, CMDC, and PDCH. Full method work remains blocked until MV08 or another genuinely changed measurement contract produces evidence.",
         ]
     )
     (OUT_DIR / "minimal_validation_protocol.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -379,7 +404,7 @@ def main() -> None:
         "output_policy_rows": len(OUTPUT_POLICY),
         "full_method_allowed": False,
         "recommended_first_row": "P5_MV01",
-        "recommended_next_ready_row": "P5_MV06_local_evidence_annotation_or_stronger_shared_symptom_identity_control",
+        "recommended_next_ready_row": "P5_MV08_partial_invariance_measurement",
         "readiness_complete_rows": [
             row["protocol_id"] for row in EXPERIMENT_MATRIX if row["status"].startswith("readiness_complete")
         ],

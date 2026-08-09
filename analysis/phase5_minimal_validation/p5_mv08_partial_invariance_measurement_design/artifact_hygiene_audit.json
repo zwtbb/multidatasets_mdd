@@ -1,7 +1,7 @@
 {
   "artifact_hygiene_passed": true,
-  "audit_id": "P5_full_method_gate_artifact_hygiene",
-  "files_checked": 5,
+  "audit_id": "P5_MV08_partial_invariance_measurement_design_hygiene",
+  "files_checked": 10,
   "generated_at": "2026-08-09T16:52:36+00:00",
   "violation_count": 0,
   "violations": []

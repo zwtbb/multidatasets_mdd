@@ -49,6 +49,7 @@ RUN_SUMMARIES = {
     "P5_MV07": PHASE5_DIR / "p5_mv07_aligned_bge_shared_symptom" / "run_summary.json",
     "P5_MV07b": PHASE5_DIR / "p5_mv07b_bge_identity_projection" / "run_summary.json",
     "P5_MV07c": PHASE5_DIR / "p5_mv07c_bge_total_anchor" / "run_summary.json",
+    "P5_MV08_design": PHASE5_DIR / "p5_mv08_partial_invariance_measurement_design" / "run_summary.json",
 }
 
 STATUS_OVERRIDES = {
@@ -219,6 +220,9 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv07_result = summaries["P5_MV07"].get("verdict") or {}
     mv07b_result = summaries["P5_MV07b"].get("verdict") or {}
     mv07c_result = summaries["P5_MV07c"].get("verdict") or {}
+    mv08 = summaries["P5_MV08_design"]
+    mv08_decision = mv08.get("decision") or {}
+    mv08_status = str(mv08_decision.get("readiness_status", "unknown"))
 
     rows = [
         {
@@ -226,9 +230,9 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
-            "required_next_evidence": "Resolve public manifest/data-governance risk and define a genuinely new audited psychometric measurement contract before revisiting full-method claims.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_status}.",
+            "required_next_evidence": "Implement and run the audited MV08 partial-invariance measurement row before revisiting full-method claims.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
@@ -236,8 +240,8 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "decision": "blocked",
             "allowed_scope": "Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance.",
             "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
-            "required_next_evidence": "Design and audit a multi-scale psychometric measurement row: shared latent constructs plus scale-specific DIF/loading-threshold deviations, compared against total-score and fixed-map baselines on E-DAIC/CMDC/PDCH.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c",
+            "required_next_evidence": "Run MV08: shared latent constructs plus scale-specific DIF/loading-threshold deviations, compared against total-score and fixed-map baselines on E-DAIC/CMDC/PDCH.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design",
         },
         {
             "claim_id": "C_PDCH_HAMD_INTERNAL",
@@ -321,7 +325,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "decision": "allowed_with_reframing",
             "allowed_scope": "A diagnostic/audit-driven paper is viable now; the method path should pivot from direct shared-label mapping to partial measurement invariance.",
             "blocking_evidence": "The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence and data-governance risk.",
-            "required_next_evidence": "First address public manifest/governance risk, then freeze shallow BGE/WavLM rows as negative/partial baselines and design the partial-invariance psychometric measurement row.",
+            "required_next_evidence": "Implement and run MV08, then use the result to decide whether the paper stays diagnostic-only or supports a bounded partial-invariance method claim.",
             "primary_sources": "all_phase5",
         },
     ]
@@ -333,14 +337,16 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv07_result = summaries["P5_MV07"].get("verdict") or {}
     mv07b_result = summaries["P5_MV07b"].get("verdict") or {}
     mv07c_result = summaries["P5_MV07c"].get("verdict") or {}
+    mv08_decision = summaries["P5_MV08_design"].get("decision") or {}
+    mv08_status = str(mv08_decision.get("readiness_status", "unknown"))
     mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
     if mv07c_result.get("pass_rule_status"):
         shared_feature_action = {
             "rank": 2,
-            "action_id": "NEXT_PARTIAL_INVARIANCE_MEASUREMENT_MODEL",
-            "action": "Freeze shallow BGE/WavLM rows as negative or partial baselines, then design the multi-scale psychometric partial-invariance measurement row.",
-            "why_now": f"MV07b and MV07c both reduce prediction identity, but MV07c remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
-            "success_gate": "A new row compares total-score, fixed construct-map, and shared latent constructs plus scale-specific DIF/loading-threshold deviations on E-DAIC, CMDC, and PDCH.",
+            "action_id": "NEXT_RUN_PARTIAL_INVARIANCE_MEASUREMENT",
+            "action": "Implement and run the MV08 partial-invariance ordinal measurement pilot.",
+            "why_now": f"MV08 design is {mv08_status}; MV07b and MV07c reduce prediction identity but still fail the CMDC total-allocation floor, so the next step must change the measurement contract.",
+            "success_gate": "MV08 compares total-score, fixed construct-map, and shared latent constructs plus scale-specific DIF/loading-threshold deviations on E-DAIC, CMDC, and PDCH.",
             "version_policy": "Track scripts and aggregate summaries; keep row predictions, transformed features, projection directions, and model artifacts local-only.",
         }
     elif mv07b_result.get("pass_rule_status"):
@@ -379,18 +385,11 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "success_gate": "E-DAIC/CMDC/PDCH share one BGE subject-level feature family with no path-like columns; the subsequent MV07 run beats simple floors without worsening identity controls.",
             "version_policy": "Track scripts and aggregate summaries; keep generated BGE features, row-level predictions, embeddings, and weights local-only.",
         }
+    shared_feature_action["rank"] = 1
     rows = [
-        {
-            "rank": 1,
-            "action_id": "NEXT_PUBLIC_MANIFEST_GOVERNANCE",
-            "action": "Audit and reduce public row-level manifest exposure before further GitHub publishing.",
-            "why_now": "The public repository currently tracks real subject-level manifests with labels and local path columns; this is unnecessary for reproducibility and may create dataset-license risk.",
-            "success_gate": "Public repo keeps manifest schemas, synthetic examples, generation scripts, and local-only ignore rules; real row-level manifests remain server-local. Any remote history rewrite requires explicit user approval.",
-            "version_policy": "Track schema/examples and governance docs; keep real row-level manifests, raw data, labels tied to subject rows, and local paths out of the public repo.",
-        },
         shared_feature_action,
         {
-            "rank": 3,
+            "rank": 2,
             "action_id": "NEXT_MV06_EVIDENCE_STRENGTHENING",
             "action": "Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice.",
             "why_now": "MV06 now reaches the 30 completed and 20 double-annotated default gate, but E-DAIC has few double pairs and degenerate kappa for several fields.",
@@ -398,7 +397,7 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "version_policy": "Commit aggregate summaries only; keep raw snippets, source maps, local workbooks, and per-subject rationales local-only.",
         },
         {
-            "rank": 4,
+            "rank": 3,
             "action_id": "NEXT_SPEAKER_PROTOCOL_RECOVERY",
             "action": "Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible.",
             "why_now": "Literal participant-only/interviewer-only controls remain blocked; they would strengthen RQ2 beyond position proxies.",
@@ -406,12 +405,20 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "version_policy": "Do not commit raw transcripts or source paths.",
         },
         {
-            "rank": 5,
+            "rank": 4,
             "action_id": "NEXT_MPDD_METADATA_SYNC",
             "action": "Try to recover structured MPDD gender/health metadata and official test labels as a governance update.",
             "why_now": "Gender/health context claims and official MPDD test protocols remain blocked by missing local metadata.",
             "success_gate": "Registry/manifest update plus audit showing coverage and no split leakage.",
             "version_policy": "Commit lightweight metadata coverage/audit only; keep raw files local if license-sensitive.",
+        },
+        {
+            "rank": 5,
+            "action_id": "NEXT_REMOTE_HISTORY_DECISION_OPTIONAL",
+            "action": "Decide later whether the public remote history needs rewrite or repository recreation.",
+            "why_now": "Latest-tree dataset governance is now mitigated; history rewriting is optional and requires explicit user approval.",
+            "success_gate": "No force-push or repository recreation happens without an explicit decision from the user.",
+            "version_policy": "Continue clean snapshot publishing for normal updates.",
         },
     ]
     return pd.DataFrame(rows)

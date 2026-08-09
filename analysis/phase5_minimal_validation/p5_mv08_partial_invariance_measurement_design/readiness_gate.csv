@@ -1,0 +1,6 @@
+gate_id,status,evidence,required_next
+G_LABEL_ACTIVE_DATASETS,pass,edaic_phq8_items=219;cmdc_phq9_items=77;pdch_hamd_items=99,Use E-DAIC/CMDC/PDCH as active MV08 datasets; keep CMDC HAMD as sanity only.
+G_CMDC_HAMD_SANITY_ONLY,pass_limited,cmdc_hamd_items=25,Do not treat CMDC HAMD as a full HAMD external validation set.
+G_PRIOR_FIXED_MAP_NEGATIVE,pass,analysis/phase5_minimal_validation/p5_mv07c_bge_total_anchor/run_summary.json,Use MV07/MV07b/MV07c as the negative/partial baseline sequence that justifies changing the measurement contract.
+G_RQ4_SUPPORT_LIMITED,pass_limited,analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/run_summary.json,Use MV06 only as first-round aggregate credibility evidence; strengthen E-DAIC agreement later.
+G_NO_FULL_METHOD_AUTHORIZATION,blocked_full_method,"MV08 is a minimal-validation row design, not a full M0/M1/M2/M3 start.",Implement and audit MV08 before changing the full-method gate.

@@ -1,0 +1,43 @@
+{
+  "active_coverage_rows": 4,
+  "anchor_rows": 15,
+  "artifact_hygiene_passed": true,
+  "coverage_rows": 6,
+  "decision": {
+    "readiness_status": "ready_to_implement_partial_invariance_validation",
+    "recommended_next_action": "IMPLEMENT_MV08_TRAINER",
+    "short_read": "MV08 is ready to implement as a minimal-validation row: active item supervision exists for E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17. The row should compare total-score, fixed-map, and partial-invariance ordinal latent measurement heads before any full-method claim."
+  },
+  "dif_contract_rows": 5,
+  "generated_at": "2026-08-09T16:52:36+00:00",
+  "input_contract": {
+    "manifest_label_fields_read": true,
+    "phase4_ontology_read": true,
+    "raw_data_scanned": false,
+    "raw_text_read": false
+  },
+  "model_contract_rows": 4,
+  "output_policy": {
+    "latent_scores_written": false,
+    "learned_parameters_written": false,
+    "raw_paths_written": false,
+    "raw_text_written": false,
+    "row_level_predictions_written": false,
+    "tracked_outputs": [
+      "report.md",
+      "run_summary.json",
+      "artifact_hygiene_audit.json",
+      "label_contract_coverage.csv",
+      "construct_anchor_matrix.csv",
+      "measurement_model_contract.csv",
+      "dif_parameter_contract.csv",
+      "readiness_gate.csv",
+      "implementation_queue.csv",
+      "method_source_refs.csv"
+    ]
+  },
+  "run_id": "P5_MV08_partial_invariance_measurement_design",
+  "scope": "design_readiness_no_training",
+  "source_ref_rows": 4,
+  "status": "complete"
+}

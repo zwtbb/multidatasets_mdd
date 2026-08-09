@@ -259,6 +259,10 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    total-allocation and identity evidence, so it should be reported as a
    negative/diagnostic shared-feature result rather than a shared-representation
    claim.
+   `P5_MV08` partial-invariance measurement design is complete and ready to
+   implement: E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17 have active item
+   supervision for a no-full-method minimal validation row; CMDC HAMD is only a
+   limited sanity subset.
    The full-method gate audit now records this as
    `blocked_but_publishable_diagnostic_direction`: full method is blocked,
    RQ4 is allowed only as limited aggregate evidence, and a bounded
@@ -304,13 +308,12 @@ Cross-session issues are tracked in:
 
 ## Next Handoff
 
-Continue Phase 5 under the full-method gate audit. The next useful work is
-to finish latest-tree public dataset-table governance, then design a partial
-measurement-invariance psychometric row after freezing shallow BGE/WavLM as
-negative or partial baselines. Optionally expand E-DAIC MV06 double annotation.
-Keep row-level predictions, real manifests, real integrity/split maps, and
-learned embeddings local-only, and do not start full method work until the gate
-changes.
+Continue Phase 5 under the full-method gate audit. The next useful work is to
+implement and run the `P5_MV08` partial-invariance ordinal measurement pilot.
+Optionally expand E-DAIC MV06 double annotation. Keep row-level predictions,
+real manifests, real integrity/split maps, latent scores, learned parameters,
+and learned embeddings local-only, and do not start full method work until the
+gate changes.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
 the old local `main` history directly. Run

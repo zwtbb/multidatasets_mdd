@@ -1,0 +1,7 @@
+dataset,scale,active_role,total_subjects,item_subjects,required_item_count,total_score_range,item_supervision_status,active_in_mv08,scope_note
+edaic,PHQ-8,primary_phq_anchor,219,219,8,0.000:23.000,item_level_available,True,train_dev_only
+cmdc,PHQ-9,cross_language_phq_anchor,77,77,9,0.000:25.000,item_level_available,True,all_valid_rows
+cmdc,HAMD-17,limited_hamd_sanity,25,25,17,9.000:24.000,limited_hamd_sanity_subset,True,all_valid_rows
+pdch,HAMD-17,primary_hamd_validation,99,99,17,1.000:35.000,item_level_available,True,all_valid_rows
+eatd,SDS,total_only_external_stress,162,0,20,25.000:82.500,total_only,False,all_valid_rows
+mpdd_avg_2026,PHQ-9,total_only_context_stress,175,0,9,0.000:23.000,total_only,False,labeled_train_only

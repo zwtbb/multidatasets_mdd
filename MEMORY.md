@@ -45,6 +45,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_29_phase5_mv07c_bge_total_anchor.md`
   - `/root/autodl-tmp/memory/sessions/session_30_phase5_mv06_human_review_pack.md`
   - `/root/autodl-tmp/memory/sessions/session_31_phase5_mv06_annotation_and_governance_reframe.md`
+  - `/root/autodl-tmp/memory/sessions/session_32_phase5_mv08_partial_invariance_design.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -354,6 +355,17 @@ MPDD 2025 is intentionally out of scope for current auditing.
   transferable shared-symptom representation, positive EATD SDS
   generalization, EATD valence-adversarial design, and RQ3 context
   conditioning.
+- Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
+  It did not train a model or read raw text/media. It converted the RQ1 pivot
+  into an implementation-ready minimal-validation contract: active item
+  supervision exists for E-DAIC PHQ-8 (`219` subjects), CMDC PHQ-9 (`77`
+  subjects), and PDCH HAMD-17 (`99` subjects); CMDC HAMD is only a 25-subject
+  sanity subset, while EATD SDS and MPDD PHQ-9 remain total-only. The model
+  ladder is total-score floor, fixed construct-map head, and partial-invariance
+  ordinal latent measurement with predeclared loading/threshold DIF deviations.
+  Artifact hygiene passed. Treat this as `ready_to_implement_partial_invariance_validation`,
+  not as model evidence or full-method authorization.
 
 Phase 2 gate status:
 
@@ -573,6 +585,10 @@ Key Phase 2 outputs:
   should be partial measurement invariance: shared latent constructs plus
   scale-specific DIF/loading-threshold deviations, first compared against
   total-score and fixed construct-map baselines on E-DAIC/CMDC/PDCH.
+- P5_MV08 design decision: the next executable RQ1 row is the partial
+  invariance ordinal measurement pilot. It must compare total-score floors,
+  fixed-map heads, and partial-invariance heads on E-DAIC/CMDC/PDCH before any
+  full method or transferable shared-symptom claim is reconsidered.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -683,8 +699,7 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
-   reduce public row-level dataset-table exposure, then freeze shallow
-   BGE/WavLM rows as negative/partial baselines and design the
-   partial-invariance psychometric measurement row. Optionally expand E-DAIC
-   MV06 double annotation to stabilize per-dataset agreement.
+   implement and run the `P5_MV08` partial-invariance ordinal measurement
+   pilot. Optionally expand E-DAIC MV06 double annotation to stabilize
+   per-dataset agreement.
    Full method construction remains blocked until the gate changes.

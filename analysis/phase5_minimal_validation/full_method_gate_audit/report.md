@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-09T16:38:54+00:00`
+Generated: `2026-08-09T16:52:36+00:00`
 
 ## Decision
 
@@ -15,8 +15,8 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Resolve public manifest/data-governance risk and define a genuinely new audited psychometric measurement contract before revisiting full-method claims. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance. | Design and audit a multi-scale psychometric measurement row: shared latent constructs plus scale-specific DIF/loading-threshold deviations, compared against total-score and fixed-map baselines on E-DAIC/CMDC/PDCH. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Implement and run the audited MV08 partial-invariance measurement row before revisiting full-method claims. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance. | Run MV08: shared latent constructs plus scale-specific DIF/loading-threshold deviations, compared against total-score and fixed-map baselines on E-DAIC/CMDC/PDCH. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, and BGE total-anchor diagnostics are controls; do not claim invariant representation. | Identity reduction must be paired with total-allocation-beating shared construct performance before it can support a shared-representation claim. |
@@ -24,7 +24,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; raw snippets remain local-only. | For a stronger manuscript claim, expand the E-DAIC double-annotation slice or add Krippendorff alpha/bootstrap uncertainty because E-DAIC currently has few double pairs. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnostic/audit-driven paper is viable now; the method path should pivot from direct shared-label mapping to partial measurement invariance. | First address public manifest/governance risk, then freeze shallow BGE/WavLM rows as negative/partial baselines and design the partial-invariance psychometric measurement row. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnostic/audit-driven paper is viable now; the method path should pivot from direct shared-label mapping to partial measurement invariance. | Implement and run MV08, then use the result to decide whether the paper stays diagnostic-only or supports a bounded partial-invariance method claim. |
 
 ## Evidence Inventory
 
@@ -51,16 +51,17 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV07 | `complete` | `blocked_not_better_than_total_allocation_bge_contract` | `True` | Aligned BGE MV07 is a shallow validation result. Interpret it through pooled PHQ gains, PDCH HAMD-proxy sanity, and identity probes; readiness alone is not a shared-symptom claim. |
 | P5_MV07b | `complete` | `partial_identity_reduced_not_total_floor_beating_bge_projection` | `True` | MV07b tests an inference-compatible BGE identity projection for the pooled E-DAIC/CMDC PHQ C01-C08 contract. A positive claim requires preserved construct MAE, gains over simple floors, and reduced feature/prediction ... |
 | P5_MV07c | `complete` | `blocked_not_better_than_raw_total_allocation_bge_total_anchor` | `True` | MV07c tests whether identity-projected BGE itemwise heads add construct value after a train-fold-selected total anchor. It is a shallow validation row, not the full method. |
+| P5_MV08_design | `complete` | `ready_to_implement_partial_invariance_validation` | `True` | MV08 is ready to implement as a minimal-validation row: active item supervision exists for E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17. The row should compare total-score, fixed-map, and partial-invariance ordinal late... |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Audit and reduce public row-level manifest exposure before further GitHub publishing. | Public repo keeps manifest schemas, synthetic examples, generation scripts, and local-only ignore rules; real row-level manifests remain server-local. Any remote history rewrite requires explicit user approval. |
-| 2 | Freeze shallow BGE/WavLM rows as negative or partial baselines, then design the multi-scale psychometric partial-invariance measurement row. | A new row compares total-score, fixed construct-map, and shared latent constructs plus scale-specific DIF/loading-threshold deviations on E-DAIC, CMDC, and PDCH. |
-| 3 | Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice. | Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators. |
-| 4 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
-| 5 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |
+| 1 | Implement and run the MV08 partial-invariance ordinal measurement pilot. | MV08 compares total-score, fixed construct-map, and shared latent constructs plus scale-specific DIF/loading-threshold deviations on E-DAIC, CMDC, and PDCH. |
+| 2 | Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice. | Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators. |
+| 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
+| 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |
+| 5 | Decide later whether the public remote history needs rewrite or repository recreation. | No force-push or repository recreation happens without an explicit decision from the user. |
 
 ## Interpretation Boundary
 

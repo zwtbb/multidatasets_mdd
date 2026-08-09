@@ -354,6 +354,11 @@ representation without those controls.
 - `P5_MV07c bge_total_anchor` is complete and blocked: total anchoring further
   reduces prediction identity but still does not beat the CMDC total-allocation
   floor.
+- `P5_MV08 partial_invariance_measurement_design` is complete as a no-training
+  design/readiness audit. It establishes the next RQ1 row: compare total-score
+  floors, fixed construct-map heads, and partial-invariance ordinal latent
+  measurement heads on E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17, with CMDC
+  HAMD only as a limited sanity subset.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -366,15 +371,14 @@ representation without those controls.
 
 ## Later Phases
 
-- Immediate governance: reduce public row-level dataset exposure before further
-  routine GitHub publishing. Keep real row-level manifests, file-integrity
-  rows, and subject split maps local-only; publish schema, synthetic examples,
-  generation scripts, and aggregate audits. Any remote history rewrite requires
+- Immediate governance: latest-tree row-level dataset exposure has been
+  mitigated. Keep real row-level manifests, file-integrity rows, and subject
+  split maps local-only; publish schema, synthetic examples, generation
+  scripts, and aggregate audits. Any remote history rewrite still requires
   explicit user approval.
-- Phase 5 execution: freeze shallow BGE/WavLM rows as negative/partial
-  baselines, then design the partial-invariance psychometric measurement row.
-  Optionally expand E-DAIC MV06 double annotation to stabilize per-dataset
-  agreement.
+- Phase 5 execution: implement and run the `P5_MV08` partial-invariance
+  ordinal measurement pilot. Optionally expand E-DAIC MV06 double annotation
+  to stabilize per-dataset agreement.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if
