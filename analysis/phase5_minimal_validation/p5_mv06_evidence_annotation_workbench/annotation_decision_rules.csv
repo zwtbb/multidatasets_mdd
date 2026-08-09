@@ -1,0 +1,7 @@
+field,allowed_values,decision_rule
+evidence_presence,explicit_support;explicit_negation;insufficient;protocol_artifact,Choose explicit_support or explicit_negation only for direct target evidence; use protocol_artifact when fixed prompts or task material explain the signal.
+evidence_source,participant;interviewer;scale_item;unknown,"Prefer participant for subject speech/text, interviewer for prompt-led evidence, scale_item for explicit questionnaire/clinical rating evidence."
+evidence_strength,0;1;2,"0 means none/contradictory/insufficient, 1 means weak or indirect, 2 means clear direct evidence."
+time_status,current;past;hypothetical;unclear,Use current only for present symptom evidence; avoid upgrading past or hypothetical mentions to current symptoms.
+prompt_artifact,yes;no;unclear,"Use yes when the evidence is mainly induced by a prompt, fixed question, task text, or protocol cue rather than participant symptom expression."
+C09_or_HAMD03_policy,explicit_only,"For death/self-harm targets, do not infer from mood, distress, or general severity; require explicit scale item or direct clinical text evidence."

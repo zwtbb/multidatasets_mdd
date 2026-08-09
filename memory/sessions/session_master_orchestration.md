@@ -133,8 +133,14 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   agreement summaries. Current status is `blocked_no_completed_annotations`
   because no local annotations have been filled yet. The gate passed artifact
   hygiene and a synthetic double-annotation readiness test.
+- Phase 5 `P5_MV06 evidence_annotation_workbench` completed in the main
+  checkout. It prepares a two-annotator ignored local workbook and ignored
+  review index with local text locators, while tracked artifacts contain only
+  schema, annotation rules, manifest, report, run summary, and hygiene audit.
+  The summary gate now defaults to the workbench and remains
+  `blocked_no_completed_annotations` until human annotation is filled.
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 13
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 14
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
@@ -201,10 +207,11 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    diagnostic pass, but CMDC sanity is negative and coverage-limited;
    `P5_MV02b` shows the lightweight manifest-text hashing probe is weak. Full
    method work still needs stronger cross-dataset/control evidence. `P5_MV06`
-   now has a local manual annotation packet and aggregate-only summary gate
-   ready, but no evidence-localization result should be claimed until local
-   annotations are completed and pass the gate. The full-method gate audit now
-   records this as `blocked_but_publishable_diagnostic_direction`: full method
+   now has a local manual annotation packet, two-annotator workbench, and
+   aggregate-only summary gate ready, but no evidence-localization result
+   should be claimed until local annotations are completed and pass the gate.
+   The full-method gate audit now records this as
+   `blocked_but_publishable_diagnostic_direction`: full method
    is blocked, while a bounded diagnostic/audit-driven paper direction remains
    viable.
 
@@ -246,7 +253,8 @@ Cross-session issues are tracked in:
 ## Next Handoff
 
 Continue Phase 5 under the full-method gate audit. The next useful work is
-either completing local MV06 annotations and rerunning the summary gate, or
+either filling the ignored local MV06 annotation workbook and rerunning the
+summary gate, or
 designing a revised cross-dataset/shared-symptom feature contract that can beat
 simple floors while preserving the strongest identity/protocol controls. Keep
 row-level predictions and learned embeddings local-only, and do not start full

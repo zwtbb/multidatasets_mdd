@@ -1,0 +1,43 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "short_read": "A two-annotator local MV06 workbook is ready. It contains local text locators and private free-text fields only in ignored local files; tracked outputs are schema and hygiene summaries only.",
+    "workbench_status": "ready_for_local_human_annotation"
+  },
+  "generated_at": "2026-08-09T07:58:51+00:00",
+  "input_contract": {
+    "input_candidate_count": 144,
+    "input_packet_rows": 144,
+    "raw_text_read": false,
+    "source_locator_map_exported_to_tracked_outputs": false,
+    "source_locator_map_read": true
+  },
+  "output_policy": {
+    "local_file_locators_in_local_workbook": true,
+    "local_file_locators_in_tracked_outputs": false,
+    "local_only_files": [
+      "p5_mv06_local_annotation_workbook_predictions.csv",
+      "p5_mv06_local_review_index_predictions.csv"
+    ],
+    "raw_text_written": false,
+    "subject_level_rows_in_tracked_outputs": false,
+    "tracked_outputs": [
+      "report.md",
+      "run_summary.json",
+      "artifact_hygiene_audit.json",
+      "annotation_decision_rules.csv",
+      "local_workbook_schema.csv",
+      "local_artifact_manifest.csv"
+    ]
+  },
+  "run_id": "P5_MV06_evidence_annotation_workbench",
+  "scope": "local_only_human_annotation_workbench",
+  "selection_summary": {
+    "annotator_count": 2,
+    "candidate_count": 144,
+    "candidates_with_local_text_locators": 144,
+    "review_index_rows": 144,
+    "workbook_rows": 288
+  },
+  "status": "complete"
+}

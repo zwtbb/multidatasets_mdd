@@ -1,0 +1,5 @@
+column_group,local_file_only,editable,description
+candidate_metadata,True,False,"Candidate identifiers, dataset label, target label, selection model/protocol, prediction values, bucket, and review priority."
+local_text_locator,True,False,Local text segment names and local file locators for reviewer navigation. These columns must never be committed.
+required_annotation_fields,True,True,"Evidence presence, source, strength, time status, prompt artifact, and stable annotator code."
+private_free_text_fields,True,True,Optional local excerpt and notes. These are for reviewer memory only and are ignored by aggregate export.

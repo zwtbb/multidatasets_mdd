@@ -1,0 +1,3 @@
+file,row_count,candidate_count,annotator_count,contains_subject_level_rows,contains_raw_text,contains_local_file_locators,contains_private_free_text_fields,git_policy
+p5_mv06_local_annotation_workbook_predictions.csv,288,144,2,True,False,True,True,ignored_local_only
+p5_mv06_local_review_index_predictions.csv,144,144,0,True,False,True,False,ignored_local_only

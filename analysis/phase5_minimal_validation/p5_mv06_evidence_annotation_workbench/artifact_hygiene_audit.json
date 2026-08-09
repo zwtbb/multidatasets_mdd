@@ -1,0 +1,12 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "P5_MV06_annotation_workbench_hygiene",
+  "files_checked": 6,
+  "generated_at": "2026-08-09T07:58:51+00:00",
+  "local_only_files_skipped": [
+    "p5_mv06_local_annotation_workbook_predictions.csv",
+    "p5_mv06_local_review_index_predictions.csv"
+  ],
+  "violation_count": 0,
+  "violations": []
+}

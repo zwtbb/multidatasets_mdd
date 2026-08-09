@@ -36,6 +36,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_20_clean_github_publish_workflow.md`
   - `/root/autodl-tmp/memory/sessions/session_21_phase5_mv04c_protocol_task_valence_control.md`
   - `/root/autodl-tmp/memory/sessions/session_22_phase5_full_method_gate_audit.md`
+  - `/root/autodl-tmp/memory/sessions/session_23_phase5_mv06_annotation_workbench.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -248,16 +249,24 @@ MPDD 2025 is intentionally out of scope for current auditing.
   locator map remain ignored local-only files; tracked artifacts contain only
   aggregate sampling, annotation-field policy, and hygiene results. Treat as
   `ready_for_manual_local_annotation`, not evidence-localization results.
+- Phase 5 `P5_MV06 evidence_annotation_workbench` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_workbench/`.
+  It prepares a two-annotator ignored local workbook with 288 rows and an
+  ignored 144-row local review index with text locators. Tracked artifacts
+  contain only schema, annotation rules, manifest, report, run summary, and
+  hygiene audit. No raw clinical text is read or written; local locators remain
+  ignored local-only. Treat as `ready_for_local_human_annotation`, not evidence
+  results.
 - Phase 5 `P5_MV06 evidence_annotation_summary_gate` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/`.
-  It validates the ignored local annotation packet and exports only aggregate
-  completion, field-issue, evidence-field, prompt-artifact, and agreement
-  summaries. Current status is `blocked_no_completed_annotations`: 0 completed
-  candidates and 0 double-annotated candidates. Artifact hygiene passes; no raw
-  text, source locator map, or subject-level rows are exported.
+  It now defaults to the ignored local annotation workbench and exports only
+  aggregate completion, field-issue, evidence-field, prompt-artifact, and
+  agreement summaries. Current status is `blocked_no_completed_annotations`: 0
+  completed candidates and 0 double-annotated candidates. Artifact hygiene
+  passes; no raw text, source locator map, or subject-level rows are exported.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 13 Phase 5 run summaries and exports claim gates, evidence
+  It reads 14 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -430,6 +439,13 @@ Key Phase 2 outputs:
   localization until annotations are completed locally, inter-annotator or
   audit agreement is summarized, prompt-artifact rates are reported, and the
   tracked aggregate export passes hygiene.
+- P5_MV06 workbench decision: use
+  `scripts/phase5_prepare_mv06_annotation_workbench.py` to create the ignored
+  local two-annotator workbook before manual annotation. The default summary
+  gate now reads this workbench. Workbench files can contain subject-level rows,
+  local text locators, local excerpts, and notes only because they are ignored
+  local-only artifacts; tracked outputs must remain schema/rules/aggregate
+  hygiene only.
 - P5_MV06 summary-gate decision: use
   `scripts/phase5_summarize_mv06_evidence_annotations.py` as the required
   aggregate-only export path after local annotation. Evidence reporting remains
@@ -544,7 +560,7 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
-   complete local MV06 annotations and rerun the summary gate, or design a
-   revised cross-dataset/shared-symptom feature contract that can beat simple
-   floors while preserving the strongest identity/protocol controls. Full
-   method construction remains blocked until the gate changes.
+   fill the ignored local MV06 annotation workbook and rerun the summary gate,
+   or design a revised cross-dataset/shared-symptom feature contract that can
+   beat simple floors while preserving the strongest identity/protocol
+   controls. Full method construction remains blocked until the gate changes.

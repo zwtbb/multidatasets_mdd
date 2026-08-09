@@ -17,13 +17,13 @@ the numeric source artifacts from each MV row.
 
 - Implemented `scripts/phase5_full_method_gate_audit.py`.
 - Generated `analysis/phase5_minimal_validation/full_method_gate_audit/`.
-- The audit reads 13 Phase 5 run summaries:
+- The audit reads 14 Phase 5 run summaries:
   - MV01 PHQ bridge;
   - MV02 readiness, MV02 PDCH HAMD bridge, MV02b PDCH text probe;
   - MV03/MV03b EATD SDS audio/text stress;
   - MV04/MV04b/MV04c identity and protocol controls;
   - MV05 MPDD context calibration;
-  - MV06 readiness, pilot, and annotation summary gate.
+  - MV06 readiness, pilot, annotation workbench, and annotation summary gate.
 - Artifact hygiene passed with zero violations.
 
 ## Key Decisions
@@ -44,7 +44,8 @@ the numeric source artifacts from each MV row.
   - a publishable diagnostic/audit-driven paper direction if claims are
     reframed away from broad SOTA/full-method claims.
 - Ranked next actions:
-  1. Complete local MV06 annotations and rerun the aggregate summary gate.
+  1. Fill the ignored local MV06 annotation workbook and rerun the aggregate
+     summary gate.
   2. Design and run a revised shared-symptom feature contract before M0.
   3. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
   4. Recover MPDD gender/health metadata and official test labels if available.
@@ -89,6 +90,6 @@ Versionable artifacts:
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
-The next implementation session should either complete local MV06 annotation
-workflow support or propose/run the next shared-symptom feature contract. Do
+The next implementation session should either fill the ignored local MV06
+annotation workbook or propose/run the next shared-symptom feature contract. Do
 not start the full method until the gate changes from blocked.

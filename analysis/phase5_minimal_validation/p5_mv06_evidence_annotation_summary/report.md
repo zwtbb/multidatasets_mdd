@@ -1,6 +1,6 @@
 # P5_MV06 Evidence Annotation Summary Gate
 
-Generated: `2026-08-09T06:13:01+00:00`
+Generated: `2026-08-09T07:58:51+00:00`
 
 ## Scope
 
@@ -13,7 +13,7 @@ This gate validates the local MV06 annotation packet and exports only aggregate 
 - Double-annotated candidates: `0`.
 - Artifact hygiene passed: `True`.
 
-The local packet has not been annotated yet; only completion and field-contract gates are meaningful.
+The local annotation workbook has not been filled yet; only completion and field-contract gates are meaningful.
 
 ## Completion By Dataset
 
@@ -42,12 +42,11 @@ The local packet has not been annotated yet; only completion and field-contract 
 
 | issue type | field | rows | release policy |
 | --- | --- | ---: | --- |
-| missing_value | evidence_presence | 144 | not_claimable_until_completed |
-| missing_value | evidence_source | 144 | not_claimable_until_completed |
-| missing_value | evidence_strength | 144 | not_claimable_until_completed |
-| missing_value | time_status | 144 | not_claimable_until_completed |
-| missing_value | prompt_artifact | 144 | not_claimable_until_completed |
-| missing_value | annotator_id | 144 | required_for_agreement_audit |
+| missing_value | evidence_presence | 288 | not_claimable_until_completed |
+| missing_value | evidence_source | 288 | not_claimable_until_completed |
+| missing_value | evidence_strength | 288 | not_claimable_until_completed |
+| missing_value | time_status | 288 | not_claimable_until_completed |
+| missing_value | prompt_artifact | 288 | not_claimable_until_completed |
 
 ## Agreement
 

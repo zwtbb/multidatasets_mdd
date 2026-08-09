@@ -109,11 +109,11 @@ data audit
   required age/personality subgroup calibration gaps beyond AV-only
   recalibration.
 - Phase 5 `P5_MV06 construct_evidence_localization`:
-  readiness, pilot packet, and aggregate summary gate are complete, but
-  evidence reporting is blocked because no local annotations or
-  double-annotation agreement have been completed.
+  readiness, pilot packet, local two-annotator workbench, and aggregate summary
+  gate are complete, but evidence reporting is blocked because no local
+  annotations or double-annotation agreement have been completed.
 - Phase 5 full-method gate audit:
-  complete. It reads 13 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 14 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -256,8 +256,8 @@ representation without those controls.
 - `P5_MV02 hamd17_auxiliary_bridge` is complete in PDCH-only mode. Treat it as
   bounded PDCH evidence, not cross-dataset HAMD generalization.
 - `P5_MV06 construct_evidence_localization` has local annotation infrastructure
-  ready but is blocked as evidence until annotations and agreement summaries
-  are completed.
+  ready, including an ignored two-annotator local workbook, but is blocked as
+  evidence until annotations and agreement summaries are completed.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -270,8 +270,9 @@ representation without those controls.
 
 ## Later Phases
 
-- Phase 5 execution: continue under the full-method gate by completing local
-  MV06 annotations and rerunning the summary gate, or design a revised
+- Phase 5 execution: continue under the full-method gate by filling the
+  ignored local MV06 annotation workbook and rerunning the summary gate, or
+  design a revised
   cross-dataset/shared-symptom feature contract that can beat simple floors
   while preserving identity/protocol controls.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports

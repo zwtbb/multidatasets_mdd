@@ -40,6 +40,7 @@ RUN_SUMMARIES = {
     "P5_MV05": PHASE5_DIR / "p5_mv05_mpdd_context_calibration" / "run_summary.json",
     "P5_MV06_readiness": PHASE5_DIR / "p5_mv06_evidence_localization_readiness" / "run_summary.json",
     "P5_MV06_pilot": PHASE5_DIR / "p5_mv06_evidence_annotation_pilot" / "run_summary.json",
+    "P5_MV06_workbench": PHASE5_DIR / "p5_mv06_evidence_annotation_workbench" / "run_summary.json",
     "P5_MV06_summary": PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "run_summary.json",
 }
 
@@ -48,6 +49,7 @@ STATUS_OVERRIDES = {
     "P5_MV02_readiness": "ready_pdch_only_mode",
     "P5_MV06_readiness": "ready_for_local_evidence_annotation",
     "P5_MV06_pilot": "ready_for_manual_local_annotation",
+    "P5_MV06_workbench": "ready_for_local_human_annotation",
     "P5_MV06_summary": "blocked_no_completed_annotations",
 }
 
@@ -56,6 +58,7 @@ PASS_RULE_OVERRIDES = {
     "P5_MV02_readiness": None,
     "P5_MV06_readiness": None,
     "P5_MV06_pilot": None,
+    "P5_MV06_workbench": None,
     "P5_MV06_summary": False,
 }
 
@@ -147,6 +150,16 @@ def short_read(summary: dict[str, Any]) -> str:
     return str(summary.get("status") or "")
 
 
+def local_only_files(summary: dict[str, Any]) -> list[str]:
+    files = summary.get("local_only_files")
+    if files is None:
+        output_policy = summary.get("output_policy") or {}
+        files = output_policy.get("local_only_files")
+    if not files:
+        return []
+    return [str(file) for file in files]
+
+
 def collect_evidence(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for evidence_id, path in RUN_SUMMARIES.items():
@@ -160,7 +173,7 @@ def collect_evidence(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
                 "pass_rule_met": verdict_met(evidence_id, summary),
                 "artifact_hygiene_passed": hygiene_passed(summary),
                 "artifact_hygiene_violation_count": hygiene_violation_count(summary),
-                "local_only_files": ";".join(summary.get("local_only_files") or []),
+                "local_only_files": ";".join(local_only_files(summary)),
                 "short_read": short_read(summary),
             }
         )
@@ -262,9 +275,12 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Claim evidence localization validity.",
             "decision": "blocked_pending_annotation",
             "allowed_scope": "Use current MV06 artifacts as annotation infrastructure only.",
-            "blocking_evidence": f"MV06 summary status {mv06.get('status')}; current summary is blocked_no_completed_annotations.",
+            "blocking_evidence": (
+                "MV06 workbench is ready, but current summary is "
+                f"{mv06.get('decision', {}).get('annotation_summary_status', 'blocked_no_completed_annotations')}."
+            ),
             "required_next_evidence": "Completed local annotations, enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass.",
-            "primary_sources": "P5_MV06_readiness;P5_MV06_pilot;P5_MV06_summary",
+            "primary_sources": "P5_MV06_readiness;P5_MV06_pilot;P5_MV06_workbench;P5_MV06_summary",
         },
         {
             "claim_id": "C_PUBLISHABLE_PAPER_DIRECTION",
@@ -284,7 +300,7 @@ def build_next_actions() -> pd.DataFrame:
         {
             "rank": 1,
             "action_id": "NEXT_MV06_LOCAL_ANNOTATION",
-            "action": "Complete local MV06 evidence annotations and rerun the aggregate summary gate.",
+            "action": "Fill the ignored local MV06 annotation workbook and rerun the aggregate summary gate.",
             "why_now": "This is the clearest blocker for RQ4 and can convert existing infrastructure into publishable evidence-localization support.",
             "success_gate": "Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true.",
             "version_policy": "Commit aggregate summaries only; keep raw snippets, source maps, and per-subject rationales local-only.",

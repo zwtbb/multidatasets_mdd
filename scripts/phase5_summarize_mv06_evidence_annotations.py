@@ -28,8 +28,8 @@ DEFAULT_PACKET = (
     ROOT
     / "analysis"
     / "phase5_minimal_validation"
-    / "p5_mv06_evidence_annotation_pilot"
-    / "p5_mv06_local_annotation_packet_predictions.csv"
+    / "p5_mv06_evidence_annotation_workbench"
+    / "p5_mv06_local_annotation_workbook_predictions.csv"
 )
 DEFAULT_OUT_DIR = ROOT / "analysis" / "phase5_minimal_validation" / "p5_mv06_evidence_annotation_summary"
 
@@ -128,7 +128,7 @@ def require_columns(frame: pd.DataFrame, required: set[str], label: str) -> None
 def load_packet(path: Path) -> pd.DataFrame:
     if not path.exists():
         raise FileNotFoundError(
-            f"{path} does not exist. Run scripts/phase5_run_mv06_evidence_annotation_pilot.py first."
+            f"{path} does not exist. Run scripts/phase5_prepare_mv06_annotation_workbench.py first."
         )
     frame = pd.read_csv(path)
     require_columns(frame, REQUIRED_PACKET_COLUMNS, "MV06 annotation packet")
@@ -371,7 +371,7 @@ def determine_status(
     if invalid_rows:
         return "blocked_invalid_annotation_values", "Fix invalid local annotation values before exporting any aggregate evidence result."
     if completed_candidates == 0:
-        return "blocked_no_completed_annotations", "The local packet has not been annotated yet; only completion and field-contract gates are meaningful."
+        return "blocked_no_completed_annotations", "The local annotation workbook has not been filled yet; only completion and field-contract gates are meaningful."
     if completed_candidates < min_completed_candidates:
         return (
             "blocked_too_few_completed_annotations",
