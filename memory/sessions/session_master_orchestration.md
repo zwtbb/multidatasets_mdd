@@ -204,8 +204,12 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   `gh auth login`.
 - Current tree tracks zero `analysis/phase2_baselines/` files, but local history
   still contains early Phase 2 artifact commits (`be8b52c` and deletion commit
-  `997a7a5`). Before the first remote push, create a clean publish/squash branch
-  and verify the candidate history no longer contains those blobs.
+  `997a7a5`). The first GitHub upload has been completed through a clean
+  remote `main` root commit `a67cfdb`, created from a safe Git archive snapshot
+  that excludes Phase 2 baseline result blobs, row-level predictions, model
+  weights, embeddings, raw data, and plaintext credentials. Do not push the old
+  local `main` history directly; continue future remote updates from the clean
+  remote/main lineage or another verified clean publish path.
 - GitHub CLI is authenticated for account `zwtbb` with token-based HTTPS Git
   operations. Never use plaintext passwords for remote operations or write them
   into files, memory, commands, or Git config.
@@ -218,12 +222,11 @@ Cross-session issues are tracked in:
 
 ## Next Handoff
 
-Continue Phase 5 by completing the first clean GitHub publish, completing local
-MV06 annotations and rerunning the summary gate, or running stronger
-inference-compatible identity/protocol controls.
+Continue Phase 5 by completing local MV06 annotations and rerunning the summary
+gate, or running stronger inference-compatible identity/protocol controls.
 Keep row-level predictions and learned embeddings local-only, and do not start
 full method work until minimal validation shows stronger positive
 cross-dataset/control evidence.
 
-Before any GitHub upload, resolve the pre-push history gate for early Phase 2
-artifacts.
+For future GitHub uploads, keep using the clean remote/main lineage; do not push
+the old local `main` history directly.

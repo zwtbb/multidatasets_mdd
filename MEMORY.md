@@ -472,6 +472,15 @@ this branch history as-is. Before first remote upload, create a clean
 publish/squash branch and verify the push candidate no longer contains Phase 2
 baseline result blobs.
 
+First GitHub publish is complete. Remote
+`https://github.com/zwtbb/multidatasets_mdd` has clean default branch `main`
+starting from root commit `a67cfdb` (`Publish clean experiment skeleton`), built
+from a Git archive of the current safe tracked tree. The remote history does
+not contain local Phase 2 baseline result blobs, row-level prediction files,
+model weights, embeddings, raw data, or plaintext credentials. Continue future
+remote updates from the clean remote/main lineage or another verified clean
+publish path; do not push the old local `main` history directly.
+
 ## Immediate Orchestration Plan
 
 1. Keep using the layered memory hierarchy for all future sessions.
@@ -483,10 +492,9 @@ baseline result blobs.
    - MPDD individual-difference shortcut and subgroup calibration diagnostics:
      complete, with gender/health blocked by missing structured metadata.
    - Dataset-identity probes over reusable frozen representations: complete.
-3. Before first GitHub push, prepare and verify a clean publish history that has
-   never tracked generated Phase 2 baseline artifacts.
-4. Next, complete the first clean GitHub publish, complete local MV06
-   annotations and rerun the summary gate, or continue stronger
-   inference-compatible identity/protocol controls. Full method construction
-   remains blocked until stronger positive cross-dataset/control evidence is
-   accumulated.
+3. Keep future GitHub updates on the clean remote/main lineage; do not push the
+   old local `main` history directly.
+4. Next, complete local MV06 annotations and rerun the summary gate, or
+   continue stronger inference-compatible identity/protocol controls. Full
+   method construction remains blocked until stronger positive
+   cross-dataset/control evidence is accumulated.
