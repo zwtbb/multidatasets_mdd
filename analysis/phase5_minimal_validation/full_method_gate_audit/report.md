@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-09T10:09:40+00:00`
+Generated: `2026-08-09T10:20:47+00:00`
 
 ## Decision
 
@@ -15,16 +15,16 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Complete MV06 evidence annotation with aggregate agreement, or resolve the MV07b shared-symptom floor gap while keeping feature/prediction identity reduced. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss as the target hypothesis and report negative/partial diagnostics. | A stronger shared-symptom contract must beat train-mean/total-allocation floors on cross-dataset or few-shot construct evidence while keeping dataset/prediction identity reduced. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Complete MV06 evidence annotation with aggregate agreement, or use a genuinely new audited feature/measurement contract before revisiting shared-symptom method claims. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss as the target hypothesis and report negative/partial diagnostics. | A stronger shared-symptom contract must beat train-mean/total-allocation floors on cross-dataset or few-shot construct evidence while keeping dataset/prediction identity reduced; avoid further small BGE-head variants unless the feature or measurement contract changes. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
-| C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, and BGE identity projection are diagnostic controls; do not claim invariant representation. | Identity reduction must be paired with total-allocation-beating shared construct performance before it can support a shared-representation claim. |
+| C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, and BGE total-anchor diagnostics are controls; do not claim invariant representation. | Identity reduction must be paired with total-allocation-beating shared construct performance before it can support a shared-representation claim. |
 | C_MODMA_TASK_CONTROL | `allowed_limited` | MODMA task-specific diagnostic protocol-control result. | Integrate with shared-symptom targets and cross-dataset controls before using it as a full method component. |
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as audit axes. | A revised context module that improves required subgroup ECE gaps beyond AV-only recalibration and shuffled controls. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `blocked_pending_annotation` | Use current MV06 artifacts as annotation infrastructure only. | Completed local annotations, enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnosis/audit-driven paper with rigorous negative/mixed results and a bounded method proposal is viable; not a SOTA full-method paper yet. | Either complete MV06 evidence annotations for credibility/RQ4 or resolve the MV07b identity-controlled floor gap before method expansion. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnosis/audit-driven paper with rigorous negative/mixed results and a bounded method proposal is viable; not a SOTA full-method paper yet. | Either complete MV06 evidence annotations for credibility/RQ4, or reframe the shallow BGE shared-symptom sequence as negative/partial evidence before proposing a new feature/measurement contract. |
 
 ## Evidence Inventory
 
@@ -49,13 +49,14 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV07_readiness | `complete` | `ready_to_run_minimal_validation` | `True` | The aligned BGE text contract is ready: E-DAIC, CMDC, and PDCH now share 512 BGE model-input columns. This authorizes the next MV07 shallow validation row, not a shared-symptom claim yet. |
 | P5_MV07 | `complete` | `blocked_not_better_than_total_allocation_bge_contract` | `True` | Aligned BGE MV07 is a shallow validation result. Interpret it through pooled PHQ gains, PDCH HAMD-proxy sanity, and identity probes; readiness alone is not a shared-symptom claim. |
 | P5_MV07b | `complete` | `partial_identity_reduced_not_total_floor_beating_bge_projection` | `True` | MV07b tests an inference-compatible BGE identity projection for the pooled E-DAIC/CMDC PHQ C01-C08 contract. A positive claim requires preserved construct MAE, gains over simple floors, and reduced feature/prediction ... |
+| P5_MV07c | `complete` | `blocked_not_better_than_raw_total_allocation_bge_total_anchor` | `True` | MV07c tests whether identity-projected BGE itemwise heads add construct value after a train-fold-selected total anchor. It is a shallow validation row, not the full method. |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
 | 1 | Review the ignored MV06 AI preannotation, fill the local human annotation workbook, and rerun the aggregate summary gate. | Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true. |
-| 2 | Resolve the MV07b BGE identity-controlled floor gap or formally demote it to partial diagnostic evidence. | An identity-controlled BGE/shared-symptom variant beats train-mean and total-allocation floors on both E-DAIC and CMDC while keeping feature/prediction identity reduced. |
+| 2 | Stop iterating small shallow BGE head variants; either complete MV06 annotations or define a genuinely new audited feature/measurement contract. | A new row changes the feature or measurement contract, not only the shallow BGE head, and beats train-mean/total-allocation floors while keeping identity reduced; otherwise treat BGE as negative/partial evidence. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |
 

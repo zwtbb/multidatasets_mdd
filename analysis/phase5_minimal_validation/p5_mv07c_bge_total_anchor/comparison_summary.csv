@@ -1,0 +1,11 @@
+protocol,target_family,dataset_slice,model,macro_mae,delta_vs_train_mean,delta_vs_raw_total_alloc_ridge,delta_vs_projected_total_alloc_ridge,delta_vs_raw_bge_itemwise_ridge
+pooled_shared_phq_bge_total_anchor,phq_core,cmdc,cvselected_projected_total_alloc_ridge,0.6857732144084056,-0.17155712620006014,0.009904584799848792,0.0,0.006838843329577737
+pooled_shared_phq_bge_total_anchor,phq_core,cmdc,cvselected_projected_total_anchor_itemwise,0.6876522076794717,-0.16967813292899403,0.011783578070914902,0.0018789932710661095,0.008717836600643847
+pooled_shared_phq_bge_total_anchor,phq_core,cmdc,raw_bge_itemwise_ridge,0.6789343710788278,-0.17839596952963788,0.003065741470271055,-0.006838843329577737,0.0
+pooled_shared_phq_bge_total_anchor,phq_core,cmdc,raw_total_alloc_ridge,0.6758686296085568,-0.18146171099990893,0.0,-0.009904584799848792,-0.003065741470271055
+pooled_shared_phq_bge_total_anchor,phq_core,cmdc,train_mean,0.8573303406084657,0.0,0.18146171099990893,0.17155712620006014,0.17839596952963788
+pooled_shared_phq_bge_total_anchor,phq_core,edaic,cvselected_projected_total_alloc_ridge,0.6922301654694737,-0.040176049099687305,-0.015378175760124901,0.0,-0.0119170873048694
+pooled_shared_phq_bge_total_anchor,phq_core,edaic,cvselected_projected_total_anchor_itemwise,0.6896519737598175,-0.042754240809343536,-0.01795636746978113,-0.00257819170965623,-0.01449527901452563
+pooled_shared_phq_bge_total_anchor,phq_core,edaic,raw_bge_itemwise_ridge,0.7041472527743431,-0.028258961794817905,-0.003461088455255501,0.0119170873048694,0.0
+pooled_shared_phq_bge_total_anchor,phq_core,edaic,raw_total_alloc_ridge,0.7076083412295986,-0.024797873339562404,0.0,0.015378175760124901,0.003461088455255501
+pooled_shared_phq_bge_total_anchor,phq_core,edaic,train_mean,0.732406214569161,0.0,0.024797873339562404,0.040176049099687305,0.028258961794817905

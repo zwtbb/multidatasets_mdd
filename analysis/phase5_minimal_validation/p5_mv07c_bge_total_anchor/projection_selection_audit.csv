@@ -1,0 +1,6 @@
+seed,fold,selected_component_count,selected_blend_weight_on_total_constrained_itemwise,selected_inner_cv_macro_mae,fitted_component_count,direction_norm_min,direction_norm_max,train_edaic_subjects,train_cmdc_subjects,selection_uses_outer_eval_labels,selection_uses_outer_eval_dataset_labels,projection_parameters_written,model_weights_written
+0,fold_1,10,0.9,0.7310950800530793,10,0.5022758647347271,4.156588135251188,163,61,False,False,False,False
+1,fold_2,10,0.4,0.7318807992909859,10,0.5008154505951394,3.3178233513614837,163,61,False,False,False,False
+2,fold_3,1,0.6,0.742020559721639,1,0.4871740408702838,0.4871740408702838,163,62,False,False,False,False
+3,fold_4,10,0.2,0.7460990735354162,10,0.49022665565023893,4.47047074100228,163,62,False,False,False,False
+4,fold_5,10,0.0,0.7422027941128704,10,0.5119577996473995,3.858759582895273,163,62,False,False,False,False

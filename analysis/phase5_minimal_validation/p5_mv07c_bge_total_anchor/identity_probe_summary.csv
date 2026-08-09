@@ -1,0 +1,6 @@
+probe_id,probe_layer,representation,metric,mean,std,seed_count,train_subjects_mean,eval_subjects_mean,sample_count_mean,dataset_count_mean,subject_overlap_count_sum
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,feature,cvselected_projected_bge_features,Balanced Accuracy,0.7379166666666667,0.03342594490088511,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,feature,raw_bge_features,Balanced Accuracy,1.0,0.0,5,224.6,71.4,296.0,2.0,0
+edaic_vs_cmdc_identity_train_fold_to_eval_fold,prediction,cvselected_total_anchor_predictions,Balanced Accuracy,0.6644642857142857,0.16749840296053892,5,224.6,71.4,296.0,2.0,0
+feature_identity_cv_edaic_cmdc_pdch,feature,cvselected_projected_bge_features,Balanced Accuracy,0.7020449847310313,0.019760652555687555,5,,,395.0,3.0,0
+feature_identity_cv_edaic_cmdc_pdch,feature,raw_bge_features,Balanced Accuracy,1.0,0.0,5,,,395.0,3.0,0

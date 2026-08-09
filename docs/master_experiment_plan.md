@@ -140,8 +140,15 @@ data audit
   percent and beats train mean on both E-DAIC and CMDC, but remains worse than
   the total-allocation floor on CMDC by `0.018` Macro MAE. Treat as partial
   diagnostic evidence, not a shared-representation pass.
+- Phase 5 `P5_MV07c bge_total_anchor`:
+  complete and blocked. It tested whether identity-projected BGE itemwise heads
+  add value after train-fold-selected total anchoring. Prediction identity BA
+  drops to `0.664`, but CMDC remains worse than raw total allocation by `0.012`
+  Macro MAE and worse than projected total allocation by `0.002`. Treat this
+  as a negative follow-up: total anchoring does not rescue the shallow BGE
+  shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 19 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 20 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -163,6 +170,9 @@ only as a local review aid. `P5_MV07` shows aligned BGE is runnable, but the
 shallow validation is blocked by total-allocation and identity evidence.
 `P5_MV07b` reduces BGE feature/prediction identity, but the best
 identity-controlled variant still fails the CMDC total-allocation floor.
+`P5_MV07c` confirms that train-fold-selected total anchoring also fails the
+CMDC total-allocation floor. Further small shallow BGE-head variants should be
+avoided unless the feature or measurement contract changes.
 
 Use `scripts/phase5_full_method_gate_audit.py` as the active claim boundary.
 The audit blocks full M0/M1/M2/M3 construction, transferable shared-symptom
@@ -301,6 +311,9 @@ representation without those controls.
 - `P5_MV07b bge_identity_projection` is complete and partial: identity is
   reduced, but the best identity-controlled variant still fails the CMDC
   total-allocation floor.
+- `P5_MV07c bge_total_anchor` is complete and blocked: total anchoring further
+  reduces prediction identity but still does not beat the CMDC total-allocation
+  floor.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -315,8 +328,9 @@ representation without those controls.
 
 - Phase 5 execution: continue under the full-method gate by filling the
   ignored local MV06 human annotation workbook using the AI preannotation as a
-  review aid, then rerunning the summary gate; or resolve the MV07b
-  identity-controlled BGE floor gap.
+  review aid, then rerunning the summary gate; or reframe the shallow BGE
+  shared-symptom sequence as negative/partial evidence before proposing a
+  genuinely new feature or measurement contract.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

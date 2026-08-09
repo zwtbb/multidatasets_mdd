@@ -42,6 +42,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_26_phase5_mv07_aligned_bge_shared_symptom.md`
   - `/root/autodl-tmp/memory/sessions/session_27_phase5_mv06_local_ai_preannotation.md`
   - `/root/autodl-tmp/memory/sessions/session_28_phase5_mv07b_bge_identity_projection.md`
+  - `/root/autodl-tmp/memory/sessions/session_29_phase5_mv07c_bge_total_anchor.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -315,9 +316,19 @@ MPDD 2025 is intentionally out of scope for current auditing.
   percent and beating train mean on both E-DAIC and CMDC. It still failed the
   CMDC total-allocation floor (`+0.018` Macro MAE), so shared-representation
   and full-method claims remain blocked.
+- Phase 5 `P5_MV07c bge_total_anchor` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv07c_bge_total_anchor/`.
+  It tested whether identity-projected BGE itemwise heads add construct value
+  after a train-fold-selected total anchor. Treat as a blocked/negative
+  follow-up: `blocked_not_better_than_raw_total_allocation_bge_total_anchor`.
+  Prediction identity BA was reduced to `0.664`, and selected models beat train
+  mean on E-DAIC/CMDC, but CMDC remained worse than raw total allocation by
+  `+0.012` Macro MAE and worse than projected total allocation by `+0.002`.
+  Do not keep iterating small shallow BGE-head variants unless the feature or
+  measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 19 Phase 5 run summaries and exports claim gates, evidence
+  It reads 20 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -531,6 +542,12 @@ Key Phase 2 outputs:
   symptom representation from MV07b; either resolve this floor gap with another
   audited shared-symptom contract or demote MV07b to partial diagnostic evidence
   in the paper framing.
+- P5_MV07c decision: train-fold-selected total anchoring does not resolve the
+  shallow BGE floor gap. It further reduces prediction identity but does not
+  beat raw/projected total allocation on CMDC. Stop iterating small shallow BGE
+  head variants; either complete MV06 human evidence, reframe the BGE sequence
+  as negative/partial evidence, or revisit RQ1 only with a genuinely changed
+  feature or measurement contract.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -641,6 +658,6 @@ plaintext credential-like content before committing on the clean remote lineage.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
    review the ignored MV06 AI preannotation, fill the local human annotation
    workbook, and rerun the summary gate,
-   or resolve the MV07b identity-controlled BGE floor gap before expanding into
-   the full method. Full method construction remains blocked until the gate
-   changes.
+   or reframe the shallow BGE shared-symptom sequence as negative/partial
+   evidence before proposing a genuinely new feature or measurement contract.
+   Full method construction remains blocked until the gate changes.

@@ -47,6 +47,7 @@ RUN_SUMMARIES = {
     "P5_MV07_readiness": PHASE5_DIR / "p5_mv07_shared_feature_contract_readiness" / "run_summary.json",
     "P5_MV07": PHASE5_DIR / "p5_mv07_aligned_bge_shared_symptom" / "run_summary.json",
     "P5_MV07b": PHASE5_DIR / "p5_mv07b_bge_identity_projection" / "run_summary.json",
+    "P5_MV07c": PHASE5_DIR / "p5_mv07c_bge_total_anchor" / "run_summary.json",
 }
 
 STATUS_OVERRIDES = {
@@ -208,6 +209,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv06_pre = summaries["P5_MV06_ai_preannotation"].get("decision") or {}
     mv07_result = summaries["P5_MV07"].get("verdict") or {}
     mv07b_result = summaries["P5_MV07b"].get("verdict") or {}
+    mv07c_result = summaries["P5_MV07c"].get("verdict") or {}
 
     rows = [
         {
@@ -215,18 +217,18 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')} with CMDC delta vs total-allocation {fmt(mv07b_result.get('best_pooled_cmdc_delta_vs_total_alloc'))}.",
-            "required_next_evidence": "Complete MV06 evidence annotation with aggregate agreement, or resolve the MV07b shared-symptom floor gap while keeping feature/prediction identity reduced.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
+            "required_next_evidence": "Complete MV06 evidence annotation with aggregate agreement, or use a genuinely new audited feature/measurement contract before revisiting shared-symptom method claims.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
             "claim": "Claim a transferable shared symptom representation across scales/datasets.",
             "decision": "blocked",
             "allowed_scope": "Discuss as the target hypothesis and report negative/partial diagnostics.",
-            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b best identity-controlled BGE prediction BA is {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))}, but pooled CMDC delta vs total-allocation is {fmt(mv07b_result.get('best_pooled_cmdc_delta_vs_total_alloc'))}.",
-            "required_next_evidence": "A stronger shared-symptom contract must beat train-mean/total-allocation floors on cross-dataset or few-shot construct evidence while keeping dataset/prediction identity reduced.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b",
+            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
+            "required_next_evidence": "A stronger shared-symptom contract must beat train-mean/total-allocation floors on cross-dataset or few-shot construct evidence while keeping dataset/prediction identity reduced; avoid further small BGE-head variants unless the feature or measurement contract changes.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c",
         },
         {
             "claim_id": "C_PDCH_HAMD_INTERNAL",
@@ -250,10 +252,10 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim_id": "C_DATASET_IDENTITY_CONTROL",
             "claim": "Use dataset/protocol identity controls as required diagnostics.",
             "decision": "allowed_limited",
-            "allowed_scope": "Known-dataset centering, source-agnostic WavLM projection, and BGE identity projection are diagnostic controls; do not claim invariant representation.",
-            "blocking_evidence": f"Known-dataset control status {mv04.get('pass_rule_status')}; WavLM source-agnostic status {mv04b.get('pass_rule_status')}, feature identity after {fmt(mv04b.get('best_feature_identity_ba_after'))}; BGE MV07b feature/prediction identity after {fmt(mv07b_result.get('best_binary_feature_identity_ba_after'))}/{fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))}.",
+            "allowed_scope": "Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, and BGE total-anchor diagnostics are controls; do not claim invariant representation.",
+            "blocking_evidence": f"Known-dataset control status {mv04.get('pass_rule_status')}; WavLM source-agnostic status {mv04b.get('pass_rule_status')}, feature identity after {fmt(mv04b.get('best_feature_identity_ba_after'))}; BGE MV07b feature/prediction identity after {fmt(mv07b_result.get('best_binary_feature_identity_ba_after'))}/{fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))}; MV07c prediction identity {fmt(mv07c_result.get('prediction_identity_ba'))}.",
             "required_next_evidence": "Identity reduction must be paired with total-allocation-beating shared construct performance before it can support a shared-representation claim.",
-            "primary_sources": "P5_MV04;P5_MV04b;P5_MV07b",
+            "primary_sources": "P5_MV04;P5_MV04b;P5_MV07b;P5_MV07c",
         },
         {
             "claim_id": "C_MODMA_TASK_CONTROL",
@@ -301,7 +303,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "decision": "allowed_with_reframing",
             "allowed_scope": "A diagnosis/audit-driven paper with rigorous negative/mixed results and a bounded method proposal is viable; not a SOTA full-method paper yet.",
             "blocking_evidence": "The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked.",
-            "required_next_evidence": "Either complete MV06 evidence annotations for credibility/RQ4 or resolve the MV07b identity-controlled floor gap before method expansion.",
+            "required_next_evidence": "Either complete MV06 evidence annotations for credibility/RQ4, or reframe the shallow BGE shared-symptom sequence as negative/partial evidence before proposing a new feature/measurement contract.",
             "primary_sources": "all_phase5",
         },
     ]
@@ -312,8 +314,18 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv07 = summaries["P5_MV07_readiness"].get("decision") or {}
     mv07_result = summaries["P5_MV07"].get("verdict") or {}
     mv07b_result = summaries["P5_MV07b"].get("verdict") or {}
+    mv07c_result = summaries["P5_MV07c"].get("verdict") or {}
     mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
-    if mv07b_result.get("pass_rule_status"):
+    if mv07c_result.get("pass_rule_status"):
+        shared_feature_action = {
+            "rank": 2,
+            "action_id": "NEXT_REFRACTORY_BGE_SHARED_SYMPTOM_REFRAME",
+            "action": "Stop iterating small shallow BGE head variants; either complete MV06 annotations or define a genuinely new audited feature/measurement contract.",
+            "why_now": f"MV07b and MV07c both reduce prediction identity, but MV07c remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
+            "success_gate": "A new row changes the feature or measurement contract, not only the shallow BGE head, and beats train-mean/total-allocation floors while keeping identity reduced; otherwise treat BGE as negative/partial evidence.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, transformed features, projection directions, and model artifacts local-only.",
+        }
+    elif mv07b_result.get("pass_rule_status"):
         shared_feature_action = {
             "rank": 2,
             "action_id": "NEXT_MV07B_SHARED_SYMPTOM_FLOOR_FIX",
