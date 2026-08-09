@@ -133,6 +133,13 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   agreement summaries. Current status is `blocked_no_completed_annotations`
   because no local annotations have been filled yet. The gate passed artifact
   hygiene and a synthetic double-annotation readiness test.
+- Phase 5 full-method gate audit completed in the main checkout at
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 13
+  Phase 5 run summaries and turns them into claim-level decisions. Current
+  status is `blocked_but_publishable_diagnostic_direction`,
+  `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
+  the authoritative Phase 5 claim boundary before any M0/M1/M2/M3 full-method
+  construction.
 - Clean GitHub publish workflow is now implemented. Future remote updates
   should use `scripts/publish_clean_github_snapshot.py` and
   `docs/github_publish_workflow.md`, so the old local `main` history is never
@@ -196,7 +203,10 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    method work still needs stronger cross-dataset/control evidence. `P5_MV06`
    now has a local manual annotation packet and aggregate-only summary gate
    ready, but no evidence-localization result should be claimed until local
-   annotations are completed and pass the gate.
+   annotations are completed and pass the gate. The full-method gate audit now
+   records this as `blocked_but_publishable_diagnostic_direction`: full method
+   is blocked, while a bounded diagnostic/audit-driven paper direction remains
+   viable.
 
 ## Version Management Watchlist
 
@@ -235,12 +245,12 @@ Cross-session issues are tracked in:
 
 ## Next Handoff
 
-Continue Phase 5 by completing local MV06 annotations and rerunning the summary
-gate, or designing a revised cross-dataset/shared-symptom feature contract that
-can beat simple floors while preserving the strongest identity/protocol
-controls. Keep row-level predictions and learned embeddings local-only, and do
-not start full method work until minimal validation shows stronger positive
-cross-dataset/control evidence.
+Continue Phase 5 under the full-method gate audit. The next useful work is
+either completing local MV06 annotations and rerunning the summary gate, or
+designing a revised cross-dataset/shared-symptom feature contract that can beat
+simple floors while preserving the strongest identity/protocol controls. Keep
+row-level predictions and learned embeddings local-only, and do not start full
+method work until the gate changes.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
 the old local `main` history directly. Run

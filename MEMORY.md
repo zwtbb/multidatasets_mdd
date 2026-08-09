@@ -35,6 +35,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_19_phase5_mv02b_pdch_text_semantic_measurement.md`
   - `/root/autodl-tmp/memory/sessions/session_20_clean_github_publish_workflow.md`
   - `/root/autodl-tmp/memory/sessions/session_21_phase5_mv04c_protocol_task_valence_control.md`
+  - `/root/autodl-tmp/memory/sessions/session_22_phase5_full_method_gate_audit.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -97,9 +98,10 @@ MPDD 2025 is intentionally out of scope for current auditing.
 - Phase 0 data governance: complete.
 - Phase 1 research questions and hypotheses: frozen.
 - Phase 2 unified applicable baseline matrix: complete.
-- Current next stage: continue minimal method-validation after the first
-  runnable row. The minimal validation protocol is specified, and full-method
-  work remains blocked until identity/protocol controls are stronger.
+- Current next stage: continue minimal method-validation under the Phase 5
+  full-method gate. The minimal validation protocol is specified, and
+  full-method work remains blocked until stronger cross-dataset/shared-symptom
+  evidence and completed evidence-localization summaries change the gate.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -253,6 +255,19 @@ MPDD 2025 is intentionally out of scope for current auditing.
   summaries. Current status is `blocked_no_completed_annotations`: 0 completed
   candidates and 0 double-annotated candidates. Artifact hygiene passes; no raw
   text, source locator map, or subject-level rows are exported.
+- Phase 5 full-method gate audit is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
+  It reads 13 Phase 5 run summaries and exports claim gates, evidence
+  inventory, a ranked next-action queue, a report, and an artifact-hygiene
+  audit. Current gate status is
+  `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
+  and `artifact_hygiene_passed=true`. Allowed claims are limited to PDCH-only
+  HAMD diagnostic evidence, dataset/protocol controls as diagnostics, MODMA
+  task-control evidence, and a reframed diagnostic/audit-driven paper
+  direction. Blocked claims include full M0/M1/M2/M3 method start,
+  transferable shared-symptom representation, positive EATD SDS
+  generalization, EATD valence-adversarial design, RQ3 context conditioning,
+  and RQ4 evidence localization before annotation.
 
 Phase 2 gate status:
 
@@ -421,6 +436,11 @@ Key Phase 2 outputs:
   blocked until the gate has enough completed annotations, enough
   double-annotated candidates for agreement, no invalid field values, and
   `artifact_hygiene_passed=true`.
+- Phase 5 full-method gate decision: use
+  `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
+  boundary before starting the full symptom-aligned method. Full method remains
+  blocked, but a diagnostic/audit-driven paper direction is viable if claims
+  are bounded and negative evidence is reported honestly.
 
 ## Data Quality Watchlist
 
@@ -523,8 +543,8 @@ plaintext credential-like content before committing on the clean remote lineage.
 3. Keep future GitHub updates on the clean remote/main lineage via
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
-4. Next, complete local MV06 annotations and rerun the summary gate, or design
-   a revised cross-dataset/shared-symptom feature contract that can beat simple
+4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
+   complete local MV06 annotations and rerun the summary gate, or design a
+   revised cross-dataset/shared-symptom feature contract that can beat simple
    floors while preserving the strongest identity/protocol controls. Full
-   method construction remains blocked until stronger positive
-   cross-dataset/control evidence is accumulated.
+   method construction remains blocked until the gate changes.

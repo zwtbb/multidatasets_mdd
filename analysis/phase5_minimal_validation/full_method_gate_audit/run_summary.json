@@ -1,0 +1,45 @@
+{
+  "allowed_limited_claims": [
+    "C_DATASET_IDENTITY_CONTROL",
+    "C_MODMA_TASK_CONTROL",
+    "C_PDCH_HAMD_INTERNAL",
+    "C_PUBLISHABLE_PAPER_DIRECTION"
+  ],
+  "artifact_hygiene": {
+    "artifact_hygiene_passed": true,
+    "audit_id": "P5_full_method_gate_artifact_hygiene",
+    "files_checked": 5,
+    "generated_at": "2026-08-09T07:45:33+00:00",
+    "violation_count": 0,
+    "violations": []
+  },
+  "blocked_claims": [
+    "C_EATD_SDS_GENERALIZATION",
+    "C_EATD_VALENCE_ADVERSARIAL",
+    "C_FULL_METHOD_START",
+    "C_RQ1_SHARED_SYMPTOM",
+    "C_RQ3_CONTEXT_CONDITIONING",
+    "C_RQ4_EVIDENCE_LOCALIZATION"
+  ],
+  "claim_rows": 10,
+  "evidence_rows": 13,
+  "full_method_allowed": false,
+  "gate_status": "blocked_but_publishable_diagnostic_direction",
+  "generated_at": "2026-08-09T07:45:33+00:00",
+  "next_action_rows": 4,
+  "source_run_summaries": {
+    "P5_MV01": "analysis/phase5_minimal_validation/p5_mv01_phq_core_bridge/run_summary.json",
+    "P5_MV02": "analysis/phase5_minimal_validation/p5_mv02_hamd_auxiliary_bridge/run_summary.json",
+    "P5_MV02_readiness": "analysis/phase5_minimal_validation/p5_mv02_hamd_bridge_readiness/run_summary.json",
+    "P5_MV02b": "analysis/phase5_minimal_validation/p5_mv02b_pdch_text_semantic_measurement/run_summary.json",
+    "P5_MV03": "analysis/phase5_minimal_validation/p5_mv03_sds_total_external_stress/run_summary.json",
+    "P5_MV03b": "analysis/phase5_minimal_validation/p5_mv03b_eatd_text_semantic_stress/run_summary.json",
+    "P5_MV04": "analysis/phase5_minimal_validation/p5_mv04_dataset_identity_control/run_summary.json",
+    "P5_MV04b": "analysis/phase5_minimal_validation/p5_mv04_source_agnostic_identity_projection/run_summary.json",
+    "P5_MV04c": "analysis/phase5_minimal_validation/p5_mv04c_protocol_task_valence_control/run_summary.json",
+    "P5_MV05": "analysis/phase5_minimal_validation/p5_mv05_mpdd_context_calibration/run_summary.json",
+    "P5_MV06_pilot": "analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_pilot/run_summary.json",
+    "P5_MV06_readiness": "analysis/phase5_minimal_validation/p5_mv06_evidence_localization_readiness/run_summary.json",
+    "P5_MV06_summary": "analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/run_summary.json"
+  }
+}

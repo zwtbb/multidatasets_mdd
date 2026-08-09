@@ -112,6 +112,12 @@ data audit
   readiness, pilot packet, and aggregate summary gate are complete, but
   evidence reporting is blocked because no local annotations or
   double-annotation agreement have been completed.
+- Phase 5 full-method gate audit:
+  complete. It reads 13 Phase 5 run summaries and writes claim gates, evidence
+  inventory, a next-action queue, a report, and an artifact-hygiene audit under
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
+  is `blocked_but_publishable_diagnostic_direction`,
+  `full_method_allowed=false`, and `artifact_hygiene_passed=true`.
 
 ## Current Method-Design Gate
 
@@ -125,6 +131,13 @@ below train mean and does not support valence-control claims. `P5_MV02` gives
 bounded PDCH-only HAMD evidence, while `P5_MV03`, `P5_MV03b`, and `P5_MV05`
 are negative for SDS/context claims. `P5_MV06` still requires local annotation
 completion before evidence-localization claims.
+
+Use `scripts/phase5_full_method_gate_audit.py` as the active claim boundary.
+The audit blocks full M0/M1/M2/M3 construction, transferable shared-symptom
+claims, positive EATD SDS claims, EATD-driven valence-adversarial design, RQ3
+context-conditioning claims, and RQ4 evidence-localization claims before
+annotation. It allows only bounded diagnostic claims and a reframed
+diagnostic/audit-driven paper direction.
 
 Phase 2 validation commands:
 
@@ -245,6 +258,9 @@ representation without those controls.
 - `P5_MV06 construct_evidence_localization` has local annotation infrastructure
   ready but is blocked as evidence until annotations and agreement summaries
   are completed.
+- The full-method gate audit is the required synthesis step before full method
+  construction. Current gate status is
+  `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
 - Pooled or cross-dataset claims require dataset-stratified metrics and
   dataset/protocol identity probes.
 - Protocol/task/subgroup metrics are mandatory before interpreting pooled
@@ -254,9 +270,10 @@ representation without those controls.
 
 ## Later Phases
 
-- Phase 5 execution: continue with local MV06 annotations and summary-gate
-  rerun, or design a revised cross-dataset/shared-symptom feature contract that
-  can beat simple floors while preserving identity/protocol controls.
+- Phase 5 execution: continue under the full-method gate by completing local
+  MV06 annotations and rerunning the summary gate, or design a revised
+  cross-dataset/shared-symptom feature contract that can beat simple floors
+  while preserving identity/protocol controls.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if
