@@ -1,0 +1,21 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "P5_MV06_human_review_pack_hygiene",
+  "generated_at": "2026-08-09T10:38:56+00:00",
+  "local_only_files_skipped": [
+    "p5_mv06_local_human_review_pack_predictions.csv",
+    "p5_mv06_local_human_review_candidate_index_predictions.csv"
+  ],
+  "tracked_files_checked": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "review_pack_schema.csv",
+    "aggregate_review_pack_summary.csv",
+    "aggregate_priority_summary.csv",
+    "aggregate_human_review_progress_summary.csv",
+    "local_artifact_manifest.csv"
+  ],
+  "violation_count": 0,
+  "violations": []
+}

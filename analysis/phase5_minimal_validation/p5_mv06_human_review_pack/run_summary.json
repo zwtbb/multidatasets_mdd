@@ -1,0 +1,43 @@
+{
+  "artifact_hygiene_passed": true,
+  "artifact_hygiene_violation_count": 0,
+  "decision": {
+    "review_pack_status": "ready_for_human_review_pack_not_claimable",
+    "short_read": "A local review pack now combines AI suggestions, human annotation fields, and priority ranks. It can speed manual review but does not satisfy MV06 annotation, agreement, or RQ4 evidence gates."
+  },
+  "generated_at": "2026-08-09T10:38:56+00:00",
+  "inputs": {
+    "ai_preannotation": "analysis/phase5_minimal_validation/p5_mv06_ai_preannotation_triage/p5_mv06_local_ai_preannotation_workbook_predictions.csv",
+    "human_workbook": "analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_workbench/p5_mv06_local_annotation_workbook_predictions.csv"
+  },
+  "outputs": {
+    "local_only_files": [
+      "p5_mv06_local_human_review_pack_predictions.csv",
+      "p5_mv06_local_human_review_candidate_index_predictions.csv"
+    ],
+    "out_dir": "analysis/phase5_minimal_validation/p5_mv06_human_review_pack",
+    "tracked_files": [
+      "report.md",
+      "run_summary.json",
+      "artifact_hygiene_audit.json",
+      "review_pack_schema.csv",
+      "aggregate_review_pack_summary.csv",
+      "aggregate_priority_summary.csv",
+      "aggregate_human_review_progress_summary.csv",
+      "local_artifact_manifest.csv"
+    ]
+  },
+  "review_pack_summary": {
+    "ai_keyword_match_candidates": 79,
+    "ai_protocol_artifact_candidates": 4,
+    "annotation_row_count": 288,
+    "candidate_count": 144,
+    "candidate_index_rows": 144,
+    "completed_human_candidates_in_source_workbook": 0,
+    "double_completed_human_candidates_in_source_workbook": 0,
+    "priority_1_or_2_candidates": 82
+  },
+  "run_id": "P5_MV06_human_review_pack",
+  "scope": "local_human_review_pack_not_annotation_result",
+  "status": "complete"
+}

@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-09T10:20:47+00:00`
+Generated: `2026-08-09T10:39:04+00:00`
 
 ## Decision
 
@@ -23,7 +23,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_MODMA_TASK_CONTROL | `allowed_limited` | MODMA task-specific diagnostic protocol-control result. | Integrate with shared-symptom targets and cross-dataset controls before using it as a full method component. |
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as audit axes. | A revised context module that improves required subgroup ECE gaps beyond AV-only recalibration and shuffled controls. |
-| C_RQ4_EVIDENCE_LOCALIZATION | `blocked_pending_annotation` | Use current MV06 artifacts as annotation infrastructure only. | Completed local annotations, enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass. |
+| C_RQ4_EVIDENCE_LOCALIZATION | `blocked_pending_annotation` | Use current MV06 artifacts as annotation infrastructure only. | Use the local review pack to complete human annotations, then rerun the summary gate with enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass. |
 | C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnosis/audit-driven paper with rigorous negative/mixed results and a bounded method proposal is viable; not a SOTA full-method paper yet. | Either complete MV06 evidence annotations for credibility/RQ4, or reframe the shallow BGE shared-symptom sequence as negative/partial evidence before proposing a new feature/measurement contract. |
 
 ## Evidence Inventory
@@ -45,6 +45,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV06_workbench | `complete` | `ready_for_local_human_annotation` | `True` | A two-annotator local MV06 workbook is ready. It contains local text locators and private free-text fields only in ignored local files; tracked outputs are schema and hygiene summaries only. |
 | P5_MV06_summary | `complete` | `blocked_no_completed_annotations` | `True` | The local annotation workbook has not been filled yet; only completion and field-contract gates are meaningful. |
 | P5_MV06_ai_preannotation | `complete` | `ready_for_human_review_not_claimable` | `True` | AI triage filled a local-only preannotation workbook. It can accelerate human review, but it does not satisfy MV06 human annotation or agreement gates. |
+| P5_MV06_review_pack | `complete` | `ready_for_human_review_pack_not_claimable` | `True` | A local review pack now combines AI suggestions, human annotation fields, and priority ranks. It can speed manual review but does not satisfy MV06 annotation, agreement, or RQ4 evidence gates. |
 | P5_MV07_edaic_bge_generation | `complete_local_feature_cache_generated` | `complete_local_feature_cache_generated` | `True` | complete_local_feature_cache_generated |
 | P5_MV07_readiness | `complete` | `ready_to_run_minimal_validation` | `True` | The aligned BGE text contract is ready: E-DAIC, CMDC, and PDCH now share 512 BGE model-input columns. This authorizes the next MV07 shallow validation row, not a shared-symptom claim yet. |
 | P5_MV07 | `complete` | `blocked_not_better_than_total_allocation_bge_contract` | `True` | Aligned BGE MV07 is a shallow validation result. Interpret it through pooled PHQ gains, PDCH HAMD-proxy sanity, and identity probes; readiness alone is not a shared-symptom claim. |
@@ -55,7 +56,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Review the ignored MV06 AI preannotation, fill the local human annotation workbook, and rerun the aggregate summary gate. | Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true. |
+| 1 | Use the ignored MV06 human review pack to fill the local human annotation workbook, then rerun the aggregate summary gate. | Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true. |
 | 2 | Stop iterating small shallow BGE head variants; either complete MV06 annotations or define a genuinely new audited feature/measurement contract. | A new row changes the feature or measurement contract, not only the shallow BGE head, and beats train-mean/total-allocation floors while keeping identity reduced; otherwise treat BGE as negative/partial evidence. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

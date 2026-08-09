@@ -43,6 +43,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_27_phase5_mv06_local_ai_preannotation.md`
   - `/root/autodl-tmp/memory/sessions/session_28_phase5_mv07b_bge_identity_projection.md`
   - `/root/autodl-tmp/memory/sessions/session_29_phase5_mv07c_bge_total_anchor.md`
+  - `/root/autodl-tmp/memory/sessions/session_30_phase5_mv06_human_review_pack.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -277,6 +278,14 @@ MPDD 2025 is intentionally out of scope for current auditing.
   candidates. Tracked outputs contain only aggregate counts and hygiene. Treat
   as `ready_for_human_review_not_claimable`: it can accelerate human review but
   does not satisfy MV06 human annotation, agreement, or RQ4 evidence gates.
+- Phase 5 `P5_MV06 human_review_pack` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_human_review_pack/`.
+  It joins the ignored human workbench and ignored AI preannotation into an
+  ignored local review pack and candidate index with priority ranks. Tracked
+  outputs contain only aggregate review-pack, priority, progress, schema, and
+  hygiene summaries. Treat as `ready_for_human_review_pack_not_claimable`: 144
+  candidates, 288 annotation rows, 79 AI keyword-match candidates, 82
+  priority-1/2 candidates, and still 0 completed human candidates.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv07_shared_feature_contract_readiness/`.
   It did not train a model and did not scan raw text/audio/video/gait files. It
@@ -328,7 +337,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 20 Phase 5 run summaries and exports claim gates, evidence
+  It reads 21 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -519,6 +528,12 @@ Key Phase 2 outputs:
   speed human review. Its ignored output can contain local excerpts and
   locators; tracked outputs are aggregate-only. Do not use AI preannotation as
   human annotation, agreement evidence, or RQ4 validity evidence.
+- P5_MV06 human review pack decision: use
+  `scripts/phase5_prepare_mv06_human_review_pack.py` to merge AI suggestions,
+  original human annotation fields, and deterministic priority ranks into
+  ignored local review files. Fill or correct the original ignored human
+  workbook before running the summary gate; do not copy AI suggestions into
+  evidence fields without human verification.
 - P5_MV07 readiness decision: current cached features are not sufficient for a
   fair revised shared-symptom minimal-validation row until E-DAIC BGE is
   generated. That gap is now resolved locally: the aligned BGE text contract is
@@ -656,7 +671,7 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
-   review the ignored MV06 AI preannotation, fill the local human annotation
+   use the ignored MV06 human review pack to fill the local human annotation
    workbook, and rerun the summary gate,
    or reframe the shallow BGE shared-symptom sequence as negative/partial
    evidence before proposing a genuinely new feature or measurement contract.

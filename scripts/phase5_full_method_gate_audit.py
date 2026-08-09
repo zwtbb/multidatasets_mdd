@@ -43,6 +43,7 @@ RUN_SUMMARIES = {
     "P5_MV06_workbench": PHASE5_DIR / "p5_mv06_evidence_annotation_workbench" / "run_summary.json",
     "P5_MV06_summary": PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "run_summary.json",
     "P5_MV06_ai_preannotation": PHASE5_DIR / "p5_mv06_ai_preannotation_triage" / "run_summary.json",
+    "P5_MV06_review_pack": PHASE5_DIR / "p5_mv06_human_review_pack" / "run_summary.json",
     "P5_MV07_edaic_bge_generation": PHASE5_DIR / "p5_mv07_edaic_bge_generation" / "run_summary.json",
     "P5_MV07_readiness": PHASE5_DIR / "p5_mv07_shared_feature_contract_readiness" / "run_summary.json",
     "P5_MV07": PHASE5_DIR / "p5_mv07_aligned_bge_shared_symptom" / "run_summary.json",
@@ -58,6 +59,7 @@ STATUS_OVERRIDES = {
     "P5_MV06_workbench": "ready_for_local_human_annotation",
     "P5_MV06_summary": "blocked_no_completed_annotations",
     "P5_MV06_ai_preannotation": "ready_for_human_review_not_claimable",
+    "P5_MV06_review_pack": "ready_for_human_review_pack_not_claimable",
 }
 
 PASS_RULE_OVERRIDES = {
@@ -68,6 +70,7 @@ PASS_RULE_OVERRIDES = {
     "P5_MV06_workbench": None,
     "P5_MV06_summary": False,
     "P5_MV06_ai_preannotation": False,
+    "P5_MV06_review_pack": False,
 }
 
 
@@ -207,6 +210,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv05 = summaries["P5_MV05"].get("verdict") or {}
     mv06 = summaries["P5_MV06_summary"]
     mv06_pre = summaries["P5_MV06_ai_preannotation"].get("decision") or {}
+    mv06_pack = summaries["P5_MV06_review_pack"].get("decision") or {}
     mv07_result = summaries["P5_MV07"].get("verdict") or {}
     mv07b_result = summaries["P5_MV07b"].get("verdict") or {}
     mv07c_result = summaries["P5_MV07c"].get("verdict") or {}
@@ -219,7 +223,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "allowed_scope": "No full method construction yet.",
             "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
             "required_next_evidence": "Complete MV06 evidence annotation with aggregate agreement, or use a genuinely new audited feature/measurement contract before revisiting shared-symptom method claims.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
@@ -292,10 +296,11 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "blocking_evidence": (
                 "MV06 workbench is ready, but current summary is "
                 f"{mv06.get('decision', {}).get('annotation_summary_status', 'blocked_no_completed_annotations')}; "
-                f"AI preannotation status is {mv06_pre.get('preannotation_status', 'not_run')} and is not claimable."
+                f"AI preannotation status is {mv06_pre.get('preannotation_status', 'not_run')} and review-pack status is "
+                f"{mv06_pack.get('review_pack_status', 'not_run')}; neither is claimable as human evidence."
             ),
-            "required_next_evidence": "Completed local annotations, enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass.",
-            "primary_sources": "P5_MV06_readiness;P5_MV06_pilot;P5_MV06_workbench;P5_MV06_summary;P5_MV06_ai_preannotation",
+            "required_next_evidence": "Use the local review pack to complete human annotations, then rerun the summary gate with enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass.",
+            "primary_sources": "P5_MV06_readiness;P5_MV06_pilot;P5_MV06_workbench;P5_MV06_summary;P5_MV06_ai_preannotation;P5_MV06_review_pack",
         },
         {
             "claim_id": "C_PUBLISHABLE_PAPER_DIRECTION",
@@ -365,8 +370,8 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
         {
             "rank": 1,
             "action_id": "NEXT_MV06_LOCAL_ANNOTATION",
-            "action": "Review the ignored MV06 AI preannotation, fill the local human annotation workbook, and rerun the aggregate summary gate.",
-            "why_now": "AI triage now prefilled a local-only review aid, but RQ4 remains blocked until human annotations and agreement are completed.",
+            "action": "Use the ignored MV06 human review pack to fill the local human annotation workbook, then rerun the aggregate summary gate.",
+            "why_now": "AI triage and the ranked review pack are ready as local-only review aids, but RQ4 remains blocked until human annotations and agreement are completed.",
             "success_gate": "Nonzero completed annotations, enough double annotations for agreement, no invalid field values, artifact_hygiene_passed=true.",
             "version_policy": "Commit aggregate summaries only; keep raw snippets, source maps, and per-subject rationales local-only.",
         },

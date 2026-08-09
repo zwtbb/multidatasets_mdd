@@ -1,0 +1,3 @@
+artifact,row_count,candidate_count,contains_subject_level_rows,may_contain_local_text_locators_or_excerpts,git_policy
+p5_mv06_local_human_review_pack_predictions.csv,288,144,True,True,ignored_local_only
+p5_mv06_local_human_review_candidate_index_predictions.csv,144,144,True,True,ignored_local_only

@@ -17,7 +17,7 @@ the numeric source artifacts from each MV row.
 
 - Implemented `scripts/phase5_full_method_gate_audit.py`.
 - Generated `analysis/phase5_minimal_validation/full_method_gate_audit/`.
-- The audit reads 20 Phase 5 run summaries:
+- The audit reads 21 Phase 5 run summaries:
   - MV01 PHQ bridge;
   - MV02 readiness, MV02 PDCH HAMD bridge, MV02b PDCH text probe;
   - MV03/MV03b EATD SDS audio/text stress;
@@ -25,6 +25,7 @@ the numeric source artifacts from each MV row.
   - MV05 MPDD context calibration;
   - MV06 readiness, pilot, annotation workbench, annotation summary gate, and
     local AI preannotation triage;
+  - MV06 human review pack;
   - MV07 E-DAIC BGE generation, shared-feature-contract readiness,
     aligned-BGE shallow shared-symptom validation, MV07b BGE
     identity-projection follow-up, and MV07c BGE total-anchor follow-up.
@@ -48,8 +49,8 @@ the numeric source artifacts from each MV row.
   - a publishable diagnostic/audit-driven paper direction if claims are
     reframed away from broad SOTA/full-method claims.
 - Ranked next actions:
-  1. Review the ignored MV06 AI preannotation, fill the local human annotation
-     workbook, and rerun the aggregate summary gate.
+  1. Use the ignored MV06 human review pack to fill the local human annotation
+     workbook, then rerun the aggregate summary gate.
   2. Stop iterating small shallow BGE head variants; either complete MV06
      annotations or define a genuinely new audited feature/measurement
      contract.
@@ -60,6 +61,7 @@ the numeric source artifacts from each MV row.
 
 - `scripts/phase5_full_method_gate_audit.py`
 - `analysis/phase5_minimal_validation/full_method_gate_audit/`
+- `analysis/phase5_minimal_validation/p5_mv06_human_review_pack/`
 - `MEMORY.md`
 - `docs/master_experiment_plan.md`
 - `docs/experiment_issue_log.md`
@@ -89,7 +91,8 @@ Versionable artifacts:
   while evidence remains mixed/negative.
 - MV06 still needs local annotation by a human reviewer; the current aggregate
   summary gate cannot validate evidence localization without completed
-  annotations. AI preannotation is only a review aid and is not claimable.
+  annotations. AI preannotation and the ranked human review pack are only
+  review aids and are not claimable.
 - A revised shared feature contract must beat simple floors and preserve
   identity/protocol controls before broad shared-symptom claims.
 - MV07 aligned-BGE shallow validation is blocked:
@@ -109,7 +112,8 @@ Versionable artifacts:
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
 The next implementation session should either review the ignored MV06 AI
-preannotation, fill the local human annotation workbook, and rerun the summary
-gate; or define a genuinely new audited feature/measurement contract after
-reframing the shallow BGE sequence as negative/partial evidence. Do not start
-the full method until the gate changes from blocked.
+preannotation through the ranked human review pack, fill the local human
+annotation workbook, and rerun the summary gate; or define a genuinely new
+audited feature/measurement contract after reframing the shallow BGE sequence
+as negative/partial evidence. Do not start the full method until the gate
+changes from blocked.

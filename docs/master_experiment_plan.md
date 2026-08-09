@@ -116,6 +116,14 @@ data audit
   complete as a local-only review accelerator. It generated ignored AI-triage
   rows for 144 MV06 candidates and tracked only aggregate counts plus hygiene.
   This does not count as human annotation or agreement evidence.
+- Phase 5 `P5_MV06 human_review_pack`:
+  complete as a local-only human review accelerator. It joins the ignored human
+  workbench and ignored AI preannotation into an ignored review pack plus
+  candidate index with priority ranks. Tracked outputs contain only aggregate
+  review-pack, priority, progress, schema, and hygiene summaries. Current
+  status is `ready_for_human_review_pack_not_claimable`: 144 candidates, 288
+  annotation rows, 79 AI keyword-match candidates, 82 priority-1/2 candidates,
+  and still 0 completed human candidates.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness`:
   complete as a no-training readiness audit. After local E-DAIC BGE
   generation, E-DAIC, CMDC, and PDCH share 512 BGE model-input columns and the
@@ -148,7 +156,7 @@ data audit
   as a negative follow-up: total anchoring does not rescue the shallow BGE
   shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 20 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 21 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -165,8 +173,9 @@ MODMA task-control pass, but the result is still mixed because EATD remains
 below train mean and does not support valence-control claims. `P5_MV02` gives
 bounded PDCH-only HAMD evidence, while `P5_MV03`, `P5_MV03b`, and `P5_MV05`
 are negative for SDS/context claims. `P5_MV06` still requires local annotation
-completion before evidence-localization claims; AI preannotation is available
-only as a local review aid. `P5_MV07` shows aligned BGE is runnable, but the
+completion before evidence-localization claims; AI preannotation and the human
+review pack are available only as local review aids. `P5_MV07` shows aligned
+BGE is runnable, but the
 shallow validation is blocked by total-allocation and identity evidence.
 `P5_MV07b` reduces BGE feature/prediction identity, but the best
 identity-controlled variant still fails the CMDC total-allocation floor.
@@ -303,6 +312,9 @@ representation without those controls.
 - `P5_MV06 local_ai_preannotation_triage` is complete as a local-only review
   accelerator. It must not be treated as human annotation, agreement evidence,
   or an RQ4 claim.
+- `P5_MV06 human_review_pack` is complete as a local-only review accelerator.
+  It should be used to prioritize and fill the ignored human workbook, but it
+  must not be treated as human annotation, agreement evidence, or an RQ4 claim.
 - `P5_MV07 shared_feature_contract_readiness` is complete and enabled the
   aligned-BGE shallow validation row. The E-DAIC BGE feature CSV is local-only.
 - `P5_MV07 aligned_bge_shared_symptom_validation` is complete and blocked as
@@ -327,7 +339,7 @@ representation without those controls.
 ## Later Phases
 
 - Phase 5 execution: continue under the full-method gate by filling the
-  ignored local MV06 human annotation workbook using the AI preannotation as a
+  ignored local MV06 human annotation workbook using the human review pack as a
   review aid, then rerunning the summary gate; or reframe the shallow BGE
   shared-symptom sequence as negative/partial evidence before proposing a
   genuinely new feature or measurement contract.

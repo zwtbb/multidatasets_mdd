@@ -145,6 +145,13 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   candidates, and tracks only aggregate counts plus hygiene. It is
   `ready_for_human_review_not_claimable`: useful for speeding review, but not
   human annotation, agreement evidence, or an RQ4 claim.
+- Phase 5 `P5_MV06 human_review_pack` completed in the main checkout. It joins
+  the ignored human workbench and ignored AI preannotation into an ignored local
+  review pack plus candidate index with deterministic priority ranks. Tracked
+  outputs contain only aggregate review-pack, priority, progress, schema, and
+  hygiene summaries. It is `ready_for_human_review_pack_not_claimable`: 144
+  candidates, 288 annotation rows, 79 AI keyword-match candidates, 82
+  priority-1/2 candidates, and 0 completed human candidates.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness` completed in the main
   checkout. It did not train a model or scan raw text/media; it inventories
   cached subject-level features and label coverage. After local E-DAIC BGE
@@ -165,7 +172,7 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   total-allocation floors and identity remains high (feature BA `1.000`,
   prediction BA `0.980`).
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 18
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 21
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
@@ -232,9 +239,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    diagnostic pass, but CMDC sanity is negative and coverage-limited;
    `P5_MV02b` shows the lightweight manifest-text hashing probe is weak. Full
    method work still needs stronger cross-dataset/control evidence. `P5_MV06`
-   now has a local manual annotation packet, two-annotator workbench, and
-   aggregate-only summary gate ready. It also has local-only AI preannotation
-   triage, but no evidence-localization result should be claimed until human
+   now has a local manual annotation packet, two-annotator workbench,
+   aggregate-only summary gate, AI preannotation triage, and human review pack
+   ready. No evidence-localization result should be claimed until human
    annotations are completed and pass the gate.
    `P5_MV07` aligned-BGE shallow validation is now complete and blocked by
    total-allocation and identity evidence, so it should be reported as a
@@ -283,8 +290,8 @@ Cross-session issues are tracked in:
 ## Next Handoff
 
 Continue Phase 5 under the full-method gate audit. The next useful work is
-either reviewing the ignored MV06 AI preannotation, filling the local human
-annotation workbook, and rerunning the summary gate, or designing a stronger
+either using the ignored MV06 human review pack to fill the local human
+annotation workbook and rerun the summary gate, or designing a stronger
 shared-symptom feature/identity-control contract after the aligned-BGE MV07
 block. Keep row-level predictions and learned embeddings local-only, and do
 not start full method work until the gate changes.

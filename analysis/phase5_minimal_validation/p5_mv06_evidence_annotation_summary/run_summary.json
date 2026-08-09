@@ -11,7 +11,7 @@
     "annotation_summary_status": "blocked_no_completed_annotations",
     "short_read": "The local annotation workbook has not been filled yet; only completion and field-contract gates are meaningful."
   },
-  "generated_at": "2026-08-09T09:22:18+00:00",
+  "generated_at": "2026-08-09T10:38:59+00:00",
   "input_contract": {
     "candidate_count": 144,
     "local_annotation_packet_rows": 288,
