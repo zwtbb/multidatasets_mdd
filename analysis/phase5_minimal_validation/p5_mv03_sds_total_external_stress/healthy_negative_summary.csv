@@ -1,0 +1,17 @@
+model,metric,mean,std,seed_count,subject_count_mean
+train_mean_sds_total,healthy_negative_minus_nonnegative,0.0,0.0,5,68.0
+train_mean_sds_total,healthy_negative_highest_rate,0.0,0.0,5,68.0
+train_mean_sds_total,healthy_negative_mean_pred,46.35542168674698,0.0,5,68.0
+train_mean_sds_total,healthy_nonnegative_mean_pred,46.35542168674698,0.0,5,68.0
+wavlm_valence_segment_ridge,healthy_negative_minus_nonnegative,-1.1124051151251795,0.0,5,68.0
+wavlm_valence_segment_ridge,healthy_negative_highest_rate,0.20588235294117646,0.0,5,68.0
+wavlm_valence_segment_ridge,healthy_negative_mean_pred,39.55217976303582,0.0,5,68.0
+wavlm_valence_segment_ridge,healthy_nonnegative_mean_pred,40.664584878161,0.0,5,68.0
+egemaps_valence_segment_svr,healthy_negative_minus_nonnegative,-0.18617242001082618,0.0,5,68.0
+egemaps_valence_segment_svr,healthy_negative_highest_rate,0.27941176470588236,0.0,5,68.0
+egemaps_valence_segment_svr,healthy_negative_mean_pred,43.37159072356218,0.0,5,68.0
+egemaps_valence_segment_svr,healthy_nonnegative_mean_pred,43.55776314357302,0.0,5,68.0
+wavlm_subject_mean_ridge,healthy_negative_minus_nonnegative,0.0,0.0,5,68.0
+wavlm_subject_mean_ridge,healthy_negative_highest_rate,0.0,0.0,5,68.0
+wavlm_subject_mean_ridge,healthy_negative_mean_pred,42.53264422264101,0.0,5,68.0
+wavlm_subject_mean_ridge,healthy_nonnegative_mean_pred,42.53264422264101,0.0,5,68.0

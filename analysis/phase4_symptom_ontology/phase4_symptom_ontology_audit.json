@@ -1,0 +1,43 @@
+{
+  "artifact_hygiene": {
+    "checked_file_count": 7,
+    "generated_at": "2026-08-09T05:16:45+00:00",
+    "passed": true,
+    "violation_count": 0,
+    "violations": []
+  },
+  "artifact_hygiene_passed": true,
+  "construct_count": 15,
+  "datasets": {
+    "cmdc": {
+      "rows": 936,
+      "subjects": 78
+    },
+    "eatd": {
+      "rows": 486,
+      "subjects": 162
+    },
+    "edaic": {
+      "rows": 275,
+      "subjects": 275
+    },
+    "modma": {
+      "rows": 1508,
+      "subjects": 52
+    },
+    "mpdd_avg_2026": {
+      "rows": 1528,
+      "subjects": 224
+    },
+    "pdch": {
+      "rows": 167,
+      "subjects": 100
+    }
+  },
+  "generated_at": "2026-08-09T05:16:45+00:00",
+  "manifest_dir": "datasets/manifests",
+  "minimal_validation_rows": 6,
+  "output_dir": "analysis/phase4_symptom_ontology",
+  "scale_item_count": 54,
+  "warnings": []
+}

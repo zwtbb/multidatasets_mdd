@@ -1,0 +1,48 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "mv06_readiness_status": "ready_for_local_evidence_annotation",
+    "ready_datasets": [
+      "edaic",
+      "cmdc",
+      "pdch"
+    ],
+    "short_read": "MV06 can proceed as a local-only evidence annotation workflow for datasets with prediction-text overlap. The next step should sample candidates from the local queue, inspect raw snippets locally, and commit only aggregate evidence agreement statistics."
+  },
+  "generated_at": "2026-08-09T05:48:54+00:00",
+  "input_contract": {
+    "datasets_checked": [
+      "edaic",
+      "cmdc",
+      "pdch"
+    ],
+    "prediction_sources": [
+      "P5_MV01_phq_core_bridge",
+      "P5_MV02_hamd_auxiliary_bridge"
+    ],
+    "raw_text_read": false,
+    "source_paths_exported_to_tracked_artifacts": false
+  },
+  "local_only_files": [
+    "p5_mv06_local_candidate_predictions.csv"
+  ],
+  "output_policy": {
+    "aggregate_summaries": "tracked",
+    "candidate_queue": "local_only_ignored_predictions_csv",
+    "raw_snippets": "not_written",
+    "source_paths_tracked": "not_written"
+  },
+  "run_id": "P5_MV06_evidence_localization_readiness",
+  "scope": "readiness_and_sampling_policy_no_raw_text_export",
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "annotation_protocol.md",
+    "text_manifest_coverage.csv",
+    "prediction_source_summary.csv",
+    "evidence_readiness_summary.csv",
+    "candidate_queue_summary.csv"
+  ]
+}

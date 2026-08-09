@@ -1,0 +1,33 @@
+{
+  "artifact_hygiene": {
+    "checked_file_count": 5,
+    "generated_at": "2026-08-09T05:48:55+00:00",
+    "passed": true,
+    "violation_count": 0,
+    "violations": []
+  },
+  "artifact_hygiene_passed": true,
+  "blocked_rows": [],
+  "completed_rows": [
+    "P5_MV01",
+    "P5_MV02",
+    "P5_MV03",
+    "P5_MV04",
+    "P5_MV05"
+  ],
+  "full_method_allowed": false,
+  "generated_at": "2026-08-09T05:48:55+00:00",
+  "label_contract_rows": 7,
+  "metric_rows": 7,
+  "output_policy_rows": 3,
+  "phase3_synthesis": "analysis/phase3_diagnostics/phase3_stop_go_synthesis.md",
+  "phase4_label_contract": "analysis/phase4_symptom_ontology/dataset_label_contract.csv",
+  "phase4_matrix": "analysis/phase4_symptom_ontology/minimal_validation_matrix.csv",
+  "phase4_source_rows": 6,
+  "protocol_rows": 6,
+  "readiness_complete_rows": [
+    "P5_MV06"
+  ],
+  "recommended_first_row": "P5_MV01",
+  "recommended_next_ready_row": "P5_MV06_local_evidence_annotation_or_identity_protocol_extension"
+}

@@ -1,0 +1,8 @@
+metric_id,task_family,required_for,definition,primary,notes
+construct_ordinal_mae,construct_item_or_ordinal,P5_MV01;P5_MV02,mean absolute error on item-derived construct ordinal targets,yes,report per construct and macro average
+macro_f1,binary_or_ordinal_bins,P5_MV01;P5_MV03;P5_MV04;P5_MV05,macro-averaged F1 for binary depression or ordinal severity bins,yes,pair with balanced accuracy for binary tasks
+qwk,ordinal,P5_MV05,quadratic weighted kappa for ordinal severity labels,yes,MPDD severity primary ordinal metric
+mae_rmse_spearman,total_score_regression,P5_MV02;P5_MV03,standard total-score regression metrics,yes,use scale-specific score ranges and subject-level bootstrap CIs
+ece_brier,calibration,all,expected calibration error and Brier score for probabilistic outputs,yes,required for subgroup calibration and safety of pooled claims
+worst_slice_gap,robustness,P5_MV04;P5_MV05,difference between overall and weakest dataset/protocol/task/subgroup slice,yes,must be reported even when pooled metric improves
+identity_probe_balanced_accuracy,shortcut_probe,P5_MV01;P5_MV04,balanced accuracy of a lightweight dataset/protocol classifier on learned or frozen representations,yes,lower is better only when main-task evidence is preserved

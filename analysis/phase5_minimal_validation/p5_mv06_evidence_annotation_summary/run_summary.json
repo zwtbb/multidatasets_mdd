@@ -1,0 +1,41 @@
+{
+  "annotation_gate": {
+    "completed_candidates": 0,
+    "double_annotated_candidates": 0,
+    "invalid_value_issue_rows": 0,
+    "min_completed_candidates": 30,
+    "min_double_annotated_candidates": 20
+  },
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "annotation_summary_status": "blocked_no_completed_annotations",
+    "short_read": "The local packet has not been annotated yet; only completion and field-contract gates are meaningful."
+  },
+  "generated_at": "2026-08-09T06:13:01+00:00",
+  "input_contract": {
+    "candidate_count": 144,
+    "local_annotation_packet_rows": 144,
+    "raw_text_read": false,
+    "source_locator_map_read": false
+  },
+  "output_policy": {
+    "aggregate_only": true,
+    "raw_text_written": false,
+    "source_paths_written": false,
+    "subject_level_rows_written": false,
+    "tracked_outputs": [
+      "report.md",
+      "run_summary.json",
+      "artifact_hygiene_audit.json",
+      "annotation_completion_summary.csv",
+      "annotation_value_issues.csv",
+      "aggregate_evidence_presence_summary.csv",
+      "aggregate_evidence_source_summary.csv",
+      "aggregate_prompt_artifact_summary.csv",
+      "agreement_summary.csv",
+      "field_contract.csv"
+    ]
+  },
+  "run_id": "P5_MV06_evidence_annotation_summary",
+  "status": "complete"
+}

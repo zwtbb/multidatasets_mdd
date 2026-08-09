@@ -1,0 +1,2 @@
+protocol,model,dataset_slice,construct_id,metric,mean,std,seed_count,sample_count_mean,ci95_low,ci95_high
+feature_identity,frozen_wavlm,edaic_cmdc,identity,Balanced Accuracy,1.0,0.0,5,296.0,1.0,1.0

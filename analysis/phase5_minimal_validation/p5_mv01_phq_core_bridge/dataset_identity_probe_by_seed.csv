@@ -1,0 +1,6 @@
+seed,probe_id,metric,value,sample_count
+0,frozen_wavlm_edaic_vs_cmdc_identity,Balanced Accuracy,1.0,296
+1,frozen_wavlm_edaic_vs_cmdc_identity,Balanced Accuracy,1.0,296
+2,frozen_wavlm_edaic_vs_cmdc_identity,Balanced Accuracy,1.0,296
+3,frozen_wavlm_edaic_vs_cmdc_identity,Balanced Accuracy,1.0,296
+4,frozen_wavlm_edaic_vs_cmdc_identity,Balanced Accuracy,1.0,296

@@ -1,0 +1,99 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "encoder_finetuning": false,
+    "feature_matrix_saved": false,
+    "feature_spaces": [
+      "text_char_hash_subject_concat"
+    ],
+    "new_feature_extraction": "in_memory_hashing_only",
+    "raw_text_read_from_manifest": true,
+    "raw_text_written": false,
+    "source_paths_written": false,
+    "vectorizer_saved": false
+  },
+  "generated_at": "2026-08-09T06:52:46+00:00",
+  "interpretation": {
+    "short_read": "PDCH text hashing is runnable but weak: the best item-derived HAMD total gain is below the predefined meaningful-improvement threshold. Keep it as a diagnostic result."
+  },
+  "label_contract": {
+    "hamd_code_9_policy": "exclude_from_item_training_and_total_scoring",
+    "pdch_hamd_code_9_subjects": 7,
+    "pdch_hamd_text_subjects": 99,
+    "pdch_text_segments": 165,
+    "primary_total_target": "manifest_hamd17_total"
+  },
+  "local_only_files": [
+    "p5_mv02b_local_predictions.csv"
+  ],
+  "model_contract": {
+    "eval_labels_for_hyperparameters": false,
+    "folds_per_seed": 5,
+    "inner_cv_for_alpha": false,
+    "models": [
+      "train_mean_total",
+      "train_mean_items",
+      "direct_total_ridge",
+      "itemwise_ridge"
+    ],
+    "ridge_alpha_policy": "fixed_train_only_alpha_100",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "output_policy": {
+    "learned_features": "not_written",
+    "model_weights": "not_written",
+    "raw_prompts_or_responses": "not_written",
+    "raw_text": "not_written",
+    "row_level_predictions": "local_only_ignored",
+    "source_paths": "not_written"
+  },
+  "run_id": "P5_MV02b_pdch_text_semantic_measurement",
+  "scope": "pdch_only_manifest_text_hamd17_measurement_audit",
+  "split_audit": {
+    "subject_level_stratified_cv": true,
+    "subject_overlap_violations": 0
+  },
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "metric_summary.csv",
+    "metrics_by_seed.csv",
+    "macro_summary.csv",
+    "comparison_summary.csv",
+    "model_split_audit.csv",
+    "text_input_audit.csv",
+    "feature_contract.csv",
+    "construct_proxy_map.csv",
+    "mv02_frozen_feature_reference.csv"
+  ],
+  "verdict": {
+    "best_text_direct_total_feature": "text_char_hash_subject_concat",
+    "best_text_direct_total_mae": 6.172870191626549,
+    "best_text_item_total_feature": "text_char_hash_subject_concat",
+    "best_text_item_total_mae": 6.174889365866782,
+    "best_text_macro_item_feature": "text_char_hash_subject_concat",
+    "best_text_macro_item_mae": 0.7471690386603239,
+    "direct_total_delta_vs_train_mean": -0.007799160118753257,
+    "direct_total_meaningful": false,
+    "item_total_delta_vs_train_mean": -0.007649323908771599,
+    "item_total_meaningful": false,
+    "macro_item_delta_vs_train_mean": -0.0002175065602182391,
+    "macro_item_meaningful": false,
+    "min_macro_item_mae_improvement": 0.01,
+    "min_total_mae_improvement": 0.1,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_weak_pdch_text_measurement_signal",
+    "short_read": "PDCH text hashing is runnable but weak: the best item-derived HAMD total gain is below the predefined meaningful-improvement threshold. Keep it as a diagnostic result.",
+    "train_mean_item_total_mae": 6.182538689775553,
+    "train_mean_macro_item_mae": 0.7473865452205422,
+    "train_mean_total_mae": 6.180669351745302
+  }
+}

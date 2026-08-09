@@ -1,0 +1,21 @@
+seed,protocol,model,metric,worst_dataset_slice,value
+0,pooled_shared_dataset_identity_control,train_mean,Worst Dataset-Slice Macro Construct MAE,cmdc,0.8780691964285714
+0,pooled_shared_dataset_identity_control,total_alloc_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7636536364129507
+0,pooled_shared_dataset_identity_control,baseline_pooled_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7678538119916513
+0,pooled_shared_dataset_identity_control,dataset_centered_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7645000671091124
+1,pooled_shared_dataset_identity_control,train_mean,Worst Dataset-Slice Macro Construct MAE,cmdc,0.8766741071428572
+1,pooled_shared_dataset_identity_control,total_alloc_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.762690328782067
+1,pooled_shared_dataset_identity_control,baseline_pooled_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7667600759244018
+1,pooled_shared_dataset_identity_control,dataset_centered_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7625789737990243
+2,pooled_shared_dataset_identity_control,train_mean,Worst Dataset-Slice Macro Construct MAE,cmdc,0.7881111111111112
+2,pooled_shared_dataset_identity_control,total_alloc_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7651092068731375
+2,pooled_shared_dataset_identity_control,baseline_pooled_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7684646059177336
+2,pooled_shared_dataset_identity_control,dataset_centered_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7664804832522585
+3,pooled_shared_dataset_identity_control,train_mean,Worst Dataset-Slice Macro Construct MAE,cmdc,0.8945555555555557
+3,pooled_shared_dataset_identity_control,total_alloc_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7618274801405909
+3,pooled_shared_dataset_identity_control,baseline_pooled_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7637871622214235
+3,pooled_shared_dataset_identity_control,dataset_centered_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7618953887233474
+4,pooled_shared_dataset_identity_control,train_mean,Worst Dataset-Slice Macro Construct MAE,cmdc,0.847
+4,pooled_shared_dataset_identity_control,total_alloc_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7659192284915918
+4,pooled_shared_dataset_identity_control,baseline_pooled_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7432553165758514
+4,pooled_shared_dataset_identity_control,dataset_centered_shared_ridge,Worst Dataset-Slice Macro Construct MAE,edaic,0.7661678634392508

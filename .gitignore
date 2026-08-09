@@ -1,0 +1,90 @@
+# Local datasets and heavyweight artifacts
+datasets/CMDC/
+datasets/EATD-Corpus/
+datasets/MODMA/
+datasets/MPDD-AVG-2026/
+datasets/MPDD-2025/
+datasets/PDCH/
+datasets/edaic/
+cache/
+outputs/
+*.wav
+*.WAV
+*.mp4
+*.avi
+*.npz
+*.npy
+*.pkl
+*.mat
+*.tar.gz
+*.zip
+*.z01
+*.z02
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Recomputable analysis caches and row-level prediction artifacts
+analysis/phase2_baselines/
+analysis/phase2_baselines/**/features/
+analysis/phase2_baselines/**/*predictions*.csv
+analysis/phase2_baselines/**/*feature*.csv
+analysis/phase2_baselines/**/*features*.csv
+analysis/phase2_baselines/**/*embeddings*.csv
+analysis/phase2_baselines/**/*training_trace*.csv
+analysis/phase2_baselines/**/*block_summaries*.csv
+analysis/phase2_baselines/**/*turn_metadata*.csv
+analysis/phase2_baselines/**/*progress*.csv
+analysis/phase2_baselines/**/*partial*.csv
+analysis/phase2_baselines/phase2_artifact_hygiene_audit/*.csv
+
+# Phase 2 baseline result artifacts are local-only by default. The Git repo
+# keeps scripts, configs, docs, and memory summaries; regenerate Phase 2
+# artifacts locally when needed.
+
+# Phase 3 diagnostics keep scripts, reports, figures, metric summaries, and
+# small audit tables versionable. Bulky row-level predictions stay local unless
+# explicitly force-added after review.
+analysis/phase3_diagnostics/**/*features*.csv
+analysis/phase3_diagnostics/**/*predictions*.csv
+analysis/phase3_diagnostics/**/personality_counterfactual_sensitivity.csv
+analysis/phase3_diagnostics/**/phase3_fold_summaries.csv
+analysis/phase3_diagnostics/**/subgroup_metrics_by_seed.csv
+!analysis/phase3_diagnostics/**/*skipped_segments.csv
+
+# Phase 5 minimal validation keeps summaries/reports versionable. Row-level
+# predictions, learned representations, model weights, and caches remain local.
+analysis/phase5_minimal_validation/**/*predictions*.csv
+analysis/phase5_minimal_validation/**/*features*.csv
+analysis/phase5_minimal_validation/**/*embeddings*.csv
+analysis/phase5_minimal_validation/**/*model*.joblib
+analysis/phase5_minimal_validation/**/*model*.pkl
+analysis/phase5_minimal_validation/**/*weights*.csv
+
+# Keep generated lightweight governance files versionable
+!datasets/registry.yaml
+!datasets/manifests/
+!datasets/audit/
+!datasets/raw/
+!datasets/processed/
+!datasets/splits/
+
+# Python and notebook byproducts
+__pycache__/
+.ipynb_checkpoints/
+.idea/
+*.pyc
+
+# Local runtime files
+.autodl/
+.Trash-0/
+*.log
+cookies.txt
+clash-for-AutoDL/
+mihomo_manual/
+auto_shutdown_cpu_below_50.sh
+install_codex.sh
+untitled.md
+project/pro_code/bert/text_data/

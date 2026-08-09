@@ -1,0 +1,160 @@
+{
+  "availability": [
+    {
+      "diagnostic": "demographics_only",
+      "notes": "age_group is available; gender is unavailable",
+      "status": "available",
+      "usable_subjects": 175
+    },
+    {
+      "diagnostic": "gender_only_and_gender_subgroups",
+      "notes": "structured gender metadata is empty in the MPDD manifest",
+      "status": "blocked",
+      "usable_subjects": 0
+    },
+    {
+      "diagnostic": "health_only_and_health_subgroups",
+      "notes": "structured health_condition metadata is empty in the MPDD manifest",
+      "status": "blocked",
+      "usable_subjects": 0
+    },
+    {
+      "diagnostic": "personality_only",
+      "notes": "raw text is used in fold-local TF-IDF but never written to outputs",
+      "status": "available",
+      "usable_subjects": 175
+    },
+    {
+      "diagnostic": "audio_video_only",
+      "notes": "uses cached Phase 2 subject-level WavLM and ResNet features",
+      "status": "available",
+      "usable_subjects": 175
+    },
+    {
+      "diagnostic": "gait_psychomotor_context",
+      "notes": "gait is analyzed as context, not concatenated into AVP",
+      "status": "available",
+      "usable_subjects": 175
+    }
+  ],
+  "bootstrap_resamples": 20,
+  "dataset": "MPDD-AVG-2026",
+  "gait_bootstrap_resamples": 50,
+  "gender_non_missing_subjects": 0,
+  "generated_at": "2026-08-04T17:27:36+00:00",
+  "health_non_missing_subjects": 0,
+  "labeled_train_subjects": 175,
+  "no_test_labels_used": true,
+  "personality_trait_bins": {
+    "agreeableness": {
+      "high": 28,
+      "low": 40,
+      "mid": 46,
+      "unknown": 61
+    },
+    "conscientiousness": {
+      "high": 52,
+      "low": 58,
+      "mid": 39,
+      "unknown": 26
+    },
+    "extraversion": {
+      "high": 26,
+      "low": 50,
+      "mid": 49,
+      "unknown": 50
+    },
+    "neuroticism": {
+      "high": 21,
+      "low": 62,
+      "mid": 49,
+      "unknown": 43
+    },
+    "openness": {
+      "high": 25,
+      "low": 70,
+      "mid": 36,
+      "unknown": 44
+    }
+  },
+  "phase2_cache_scopes": [
+    "main_checkout_read_only"
+  ],
+  "phase2_reference_prediction_rows": 9625,
+  "phase3_prediction_rows": 7000,
+  "plots": [
+    "model_comparison_macro_f1_qwk.png",
+    "age_group_ece.png",
+    "gait_top_phq9_correlations.png"
+  ],
+  "prediction_rows": 16625,
+  "raw_arrays_written": false,
+  "raw_audio_written": false,
+  "raw_imu_written": false,
+  "raw_personality_text_written": false,
+  "raw_video_written": false,
+  "run_ids": [
+    "mpdd_audio_phq9_wavlm_linear",
+    "mpdd_audio_severity_wavlm_mlp",
+    "mpdd_av_severity_early_fusion",
+    "mpdd_avp_severity_early_fusion",
+    "mpdd_avp_severity_early_fusion_phase3",
+    "mpdd_avp_severity_gated_fusion",
+    "mpdd_avp_severity_late_fusion",
+    "mpdd_avp_shuffled_personality_early_fusion",
+    "mpdd_demographics_age_severity_logistic",
+    "mpdd_demographics_shuffled_age_severity_logistic",
+    "mpdd_gait_binary_stats_logistic",
+    "mpdd_gait_binary_stats_xgboost",
+    "mpdd_gait_severity_imu_temporal_mlp",
+    "mpdd_personality_counterfactual_age_swap",
+    "mpdd_personality_severity_tfidf_logistic_internal",
+    "mpdd_personality_severity_tfidf_logistic_phase3",
+    "mpdd_personality_shuffled_severity_tfidf_logistic",
+    "mpdd_video_severity_openface_mlp",
+    "mpdd_video_severity_temporal_pooling"
+  ],
+  "seed_count": 5,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "source_paths_written": false,
+  "split_policy": "labeled_train_internal_subject_level_stratified_5fold_oof",
+  "stop_go": {
+    "age_shortcut_or_moderation": {
+      "demographics_minus_shuffled_age_qwk": -0.013380337121173279,
+      "max_age_ece_gap": 0.13219653848124466,
+      "recommendation": "weak_age_only_signal"
+    },
+    "gait_psychomotor_context": {
+      "interpretation": "Gait remains a diagnostic context axis, not a fourth fused modality in this session.",
+      "recommendation": "go_context_validation",
+      "top_abs_spearman_with_phq9": 0.2690028964862473
+    },
+    "gender_health": {
+      "reason": "structured gender and health_condition metadata are empty in the current manifest",
+      "recommendation": "blocked"
+    },
+    "individual_difference_conditioning": {
+      "avp_minus_av_macro_f1": 0.0013568171693500441,
+      "avp_minus_av_qwk": 0.0012269305579059864,
+      "interpretation": "Use as evidence for or against adding personality/context conditioning after Phase 3.",
+      "recommendation": "stop_or_weak_gain"
+    },
+    "personality_bin_calibration": {
+      "max_personality_bin_ece_gap": 0.28877840255592024,
+      "recommendation": "go_calibration_audit"
+    },
+    "personality_shortcut_risk": {
+      "counterfactual_macro_f1": 0.29858413668725914,
+      "personality_minus_shuffled_macro_f1": 0.11618625253188952,
+      "recommendation": "go_shortcut_or_moderator_signal"
+    }
+  },
+  "subgroup_bootstrap_resamples": 10,
+  "subject_count": 175
+}

@@ -1,0 +1,13 @@
+model,metric,mean,std,seed_count,subject_count_mean
+train_mean_sds_total,healthy_negative_minus_nonnegative,0.0,0.0,5,68.0
+train_mean_sds_total,healthy_negative_highest_rate,0.0,0.0,5,68.0
+train_mean_sds_total,healthy_negative_mean_pred,46.35542168674698,0.0,5,68.0
+train_mean_sds_total,healthy_nonnegative_mean_pred,46.35542168674698,0.0,5,68.0
+text_char_tfidf_valence_segment_ridge,healthy_negative_minus_nonnegative,-0.0020843729740895487,0.0,5,68.0
+text_char_tfidf_valence_segment_ridge,healthy_negative_highest_rate,0.23529411764705882,0.0,5,68.0
+text_char_tfidf_valence_segment_ridge,healthy_negative_mean_pred,46.35369800528128,0.0,5,68.0
+text_char_tfidf_valence_segment_ridge,healthy_nonnegative_mean_pred,46.35578237825536,0.0,5,68.0
+text_char_tfidf_subject_concat_ridge,healthy_negative_minus_nonnegative,0.0,0.0,5,68.0
+text_char_tfidf_subject_concat_ridge,healthy_negative_highest_rate,0.0,0.0,5,68.0
+text_char_tfidf_subject_concat_ridge,healthy_negative_mean_pred,46.354562355014664,0.0,5,68.0
+text_char_tfidf_subject_concat_ridge,healthy_nonnegative_mean_pred,46.354562355014664,0.0,5,68.0

@@ -1,0 +1,3 @@
+dataset,label_subjects,feature_subjects,joined_subjects,feature_space,feature_column_count,cache_identity,common_feature_column_count
+edaic,219,219,219,frozen_wavlm_subject_mean,768,edaic_audio_frozen_encoders/wavlm_subject_features.csv,768
+cmdc,77,77,77,frozen_wavlm_subject_mean,768,cmdc_audio_frozen_encoders/cmdc_wavlm_subject_features.csv,768

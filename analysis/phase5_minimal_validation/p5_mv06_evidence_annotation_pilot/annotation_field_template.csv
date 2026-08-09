@@ -1,0 +1,8 @@
+field,allowed_values,required_for_local_annotation,tracked_release_policy
+evidence_presence,explicit_support;explicit_negation;insufficient;protocol_artifact,True,aggregate_counts_only
+evidence_source,participant;interviewer;scale_item;unknown,True,aggregate_counts_only
+evidence_strength,0;1;2,True,aggregate_counts_only
+time_status,current;past;hypothetical;unclear,True,aggregate_counts_only
+prompt_artifact,yes;no;unclear,True,aggregate_counts_only
+local_excerpt,free_text,False,local_only_never_git_by_default
+local_notes,free_text,False,local_only_never_git_by_default

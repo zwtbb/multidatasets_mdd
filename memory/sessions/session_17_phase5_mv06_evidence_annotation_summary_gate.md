@@ -1,0 +1,90 @@
+# Session Memory: Phase 5 MV06 Evidence Annotation Summary Gate
+
+Status: complete
+Last updated: 2026-08-09 UTC
+Thread/task: main agent MV06 annotation aggregation gate
+
+## Scope
+
+This session implements the aggregate-only export gate for local MV06 evidence
+annotations. It reads the ignored local annotation packet, validates annotation
+fields, and writes only aggregate completion, field-issue, evidence-field,
+prompt-artifact, and agreement summaries. It does not read raw clinical text,
+the local source locator map, source paths, raw snippets, or train a model.
+
+## Current State
+
+- Implemented `scripts/phase5_summarize_mv06_evidence_annotations.py`.
+- Generated
+  `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/`.
+- Current real-packet summary status is `blocked_no_completed_annotations`.
+- The local packet has 144 candidate rows and 144 unique candidate IDs, but
+  0 completed candidates and 0 double-annotated candidates.
+- The gate records missing required annotation fields for all 144 rows and
+  forbids evidence-localization claims while blocked.
+- Artifact hygiene passed for tracked outputs.
+- A temporary synthetic double-annotation test reached
+  `ready_for_aggregate_evidence_review`, verifying the agreement path can run
+  after local annotations exist.
+
+## Key Decisions
+
+- `scripts/phase5_summarize_mv06_evidence_annotations.py` is now the required
+  aggregate-only export path after local MV06 annotation.
+- RQ4 evidence-localization validity remains blocked until:
+  - enough candidates have complete annotations;
+  - enough candidates have two complete annotators for agreement;
+  - invalid field values are zero;
+  - prompt-artifact and evidence-source distributions are aggregated; and
+  - tracked outputs pass artifact hygiene.
+- Current default thresholds are 30 completed candidates and 20
+  double-annotated candidates. These are gate defaults for early review, not a
+  final manuscript sampling-size claim.
+
+## Files Owned Or Touched
+
+- `scripts/phase5_summarize_mv06_evidence_annotations.py`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/`
+- `MEMORY.md`
+- `docs/experiment_issue_log.md`
+- `memory/sessions/session_17_phase5_mv06_evidence_annotation_summary_gate.md`
+- `memory/sessions/session_master_orchestration.md`
+
+## Generated Artifacts
+
+Regeneration command:
+
+```bash
+python scripts/phase5_summarize_mv06_evidence_annotations.py
+```
+
+Versionable artifacts:
+
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/report.md`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/run_summary.json`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/artifact_hygiene_audit.json`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/annotation_completion_summary.csv`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/annotation_value_issues.csv`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/aggregate_evidence_presence_summary.csv`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/aggregate_evidence_source_summary.csv`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/aggregate_prompt_artifact_summary.csv`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/agreement_summary.csv`
+- `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/field_contract.csv`
+
+## Blockers And Risks
+
+- The real local annotation packet has not been annotated yet.
+- No agreement or evidence-source claim is available from current real data.
+- The gate can validate and summarize annotations, but it cannot replace human
+  review of raw evidence snippets.
+- Subject-level annotation rows, source locators, snippets, and private notes
+  must remain local-only.
+
+## Next Handoff
+
+Complete local annotations in the ignored packet, preferably by duplicating
+candidate rows for a second annotator with a distinct local annotator code.
+Then rerun `python scripts/phase5_summarize_mv06_evidence_annotations.py` and
+review the aggregate status. Only use MV06 evidence in writing after the gate
+reports enough completed/double-annotated candidates, acceptable agreement,
+prompt-artifact rates, and clean artifact hygiene.

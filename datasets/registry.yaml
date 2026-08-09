@@ -1,0 +1,80 @@
+edaic:
+  raw_root: /root/autodl-tmp/datasets/edaic
+  label_type: PHQ8
+  modalities: [text, audio, video]
+  protocol: virtual_interview
+  role: primary_development
+  main_tasks:
+    - phq8_item_prediction
+    - phq8_total_regression
+    - binary_depression_detection
+    - interviewer_prompt_bias
+  status: uploaded_official
+  notes: E-DAIC is the primary development set. PHQ-8 total/binary labels cover all splits; item labels are available where provided by the detailed labels file. Include interviewer-only, participant-only, and prompt perturbation controls.
+
+cmdc:
+  raw_root: /root/autodl-tmp/datasets/CMDC
+  label_type: PHQ9_HAMD17
+  modalities: [text, audio, video]
+  protocol: clinical_interview
+  role: chinese_cross_protocol_language_validation
+  main_tasks:
+    - external_generalization
+    - phq9_total_regression
+    - hamd17_total_regression
+  status: uploaded_official
+  notes: Local files match the official-style layout. Audit tracks row-level modality availability; SubjectInfo.xlsx has duplicate MDD20 and omits folder MDD21.
+
+pdch:
+  raw_root: /root/autodl-tmp/datasets/PDCH
+  label_type: HAMD17
+  modalities: [text, audio]
+  protocol: face_to_face_consultation
+  role: hospital_consultation_hamd_validation
+  main_tasks:
+    - hamd17_item_prediction
+    - hamd17_total_regression
+    - patient_internal_severity_prediction
+  status: uploaded_extracted
+  notes: Annotation files are present. Audio was extracted from the split wav_data zip archive into audio/wav_data.
+
+modma:
+  raw_root: /root/autodl-tmp/datasets/MODMA
+  label_type: diagnosis_or_PHQ9
+  modalities: [audio]
+  protocol: interview_reading_picture
+  role: controlled_speech_task_stress_test
+  main_tasks:
+    - cross_task_robustness
+    - diagnosis_classification
+    - phq9_total_regression
+  status: uploaded_official_with_invalid_files
+  invalid_file_report: MODMA_INVALID_FILES.txt
+  notes: Official-style layout is present. Five WAV files under subject 02010004 are not readable; treat task type as a stress-test axis, not as a pooled training segment source.
+
+eatd:
+  raw_root: /root/autodl-tmp/datasets/EATD-Corpus
+  label_type: SDS
+  modalities: [text, audio]
+  protocol: positive_neutral_negative_emotion_tasks
+  role: chinese_valence_stress_test
+  main_tasks:
+    - valence_robustness
+    - sds_total_regression
+    - binary_depression_detection
+  status: uploaded_official
+  notes: Use positive, neutral, and negative tasks to separate depression signal from transient emotional valence.
+
+mpdd_avg_2026:
+  raw_root: /root/autodl-tmp/datasets/MPDD-AVG-2026
+  label_type: PHQ9
+  modalities: [audio, video, gait, personality]
+  protocol: age_personality_gait_multimodal
+  role: individual_difference_psychomotor_validation
+  main_tasks:
+    - age_group_generalization
+    - personality_moderation
+    - gait_psychomotor_validation
+    - phq9_total_regression
+  status: uploaded_official_with_label_gaps
+  notes: Raw/feature layout is present. Local train labels cover available labeled train subjects; raw/test rows without labels are retained in manifests as missing_label. Check whether the same behavioral signal has different depression meaning by age/personality/health context.

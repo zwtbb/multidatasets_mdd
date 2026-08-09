@@ -1,0 +1,17 @@
+audio_model,valence,audio_mae,audio_delta_vs_train_mean
+egemaps_valence_segment_svr,all_valences,7.34130243968813,0.1404102633879915
+train_mean_sds_total,all_valences,7.200892176300139,0.0
+wavlm_subject_mean_ridge,all_valences,7.637267804468401,0.4363756281682622
+wavlm_valence_segment_ridge,all_valences,8.782657069864001,1.5817648935638626
+egemaps_valence_segment_svr,positive,7.270164236382897,0.0692720600827616
+train_mean_sds_total,positive,7.200892176300135,0.0
+wavlm_subject_mean_ridge,positive,7.637267804468403,0.4363756281682676
+wavlm_valence_segment_ridge,positive,8.686346084204981,1.485453907904846
+egemaps_valence_segment_svr,neutral,7.32890562976233,0.128013453462195
+train_mean_sds_total,neutral,7.200892176300135,0.0
+wavlm_subject_mean_ridge,neutral,7.637267804468403,0.4363756281682676
+wavlm_valence_segment_ridge,neutral,8.445395424470885,1.2445032481707496
+egemaps_valence_segment_svr,negative,7.424837452919165,0.2239452766190304
+train_mean_sds_total,negative,7.200892176300135,0.0
+wavlm_subject_mean_ridge,negative,7.637267804468403,0.4363756281682676
+wavlm_valence_segment_ridge,negative,9.216229700916138,2.015337524616003

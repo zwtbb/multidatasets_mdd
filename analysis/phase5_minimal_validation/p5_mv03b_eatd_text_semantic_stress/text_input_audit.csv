@@ -1,0 +1,7 @@
+dataset,split,valence,manifest_rows,text_declared_rows,text_existing_rows,text_present_rows,mean_text_char_count,median_text_char_count,min_text_char_count,max_text_char_count
+EATD-Corpus,train,negative,83,83,83,83,73.855421686747,55.0,4.0,366.0
+EATD-Corpus,train,neutral,83,83,83,83,65.19277108433735,50.0,8.0,359.0
+EATD-Corpus,train,positive,83,83,83,83,59.59036144578313,35.0,4.0,381.0
+EATD-Corpus,validation,negative,79,79,79,79,54.77215189873418,42.0,5.0,290.0
+EATD-Corpus,validation,neutral,79,79,79,79,65.55696202531645,43.0,5.0,441.0
+EATD-Corpus,validation,positive,79,79,79,79,49.924050632911396,37.0,1.0,272.0

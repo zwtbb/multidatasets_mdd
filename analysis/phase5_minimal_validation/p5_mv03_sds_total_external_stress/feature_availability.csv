@@ -1,0 +1,3 @@
+feature_space,row_grain,rows,subjects,feature_count,cache_source
+frozen_wavlm_valence_segment,subject_valence,486,162,768,phase2_eatd_audio_wavlm
+egemaps_valence_segment,subject_valence,486,162,88,phase2_eatd_audio_egemaps

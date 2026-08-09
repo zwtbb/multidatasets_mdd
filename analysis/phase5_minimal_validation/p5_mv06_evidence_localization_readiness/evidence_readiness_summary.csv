@@ -1,0 +1,4 @@
+dataset,text_subjects_existing,prediction_subjects,prediction_text_subject_overlap,target_families,constructs_with_predictions,construct_count,mv06_readiness
+edaic,275,56,56,construct,C01;C02;C03;C04;C05;C06;C07;C08,8,ready_text_localization_core_c01_c08
+cmdc,77,77,77,construct;hamd_construct_proxy;hamd_item,C01;C02;C03;C04;C05;C06;C07;C08;C09;C10;C11;C12;C13,13,ready_limited_text_localization
+pdch,99,99,99,hamd_construct_proxy;hamd_item,C01;C02;C03;C04;C05;C06;C07;C08;C09;C10;C11;C12;C13,13,ready_hamd_text_localization

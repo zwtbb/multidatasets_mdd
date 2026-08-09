@@ -1,0 +1,28 @@
+dataset,diagnostic,status,detail,count_1_name,count_1_value,count_2_name,count_2_value
+E-DAIC,speaker_resolved_controls,blocked,Manifest speaker values and transcript columns do not provide speaker identity; participant-only and interviewer-only controls were not run.,manifest_speaker_non_null_rows,0.0,transcript_speaker_column_sets,0
+E-DAIC,fixed_question_or_prompt_proxy,proxy_run,No prompt field is available; train-frequency repeated-turn removal and repeated-turn-only controls were run as a fixed-protocol proxy.,train_repeated_turn_types,52.0,repeat_min_subjects,10
+E-DAIC,position_slices,completed,"Front 25%, middle 50%, and back 25% transcript-position controls were run.",train_subjects,163.0,dev_subjects,56
+E-DAIC,structure:manifest_speaker_non_null_rows,observed,,manifest_speaker_non_null_rows,0.0,,
+E-DAIC,structure:manifest_speaker_unique_non_null,observed,,manifest_speaker_unique_non_null,0.0,,
+E-DAIC,structure:transcript_column_set_count,observed,,transcript_column_set_count,1.0,,
+E-DAIC,structure:transcript_column_sets,observed,Start_Time|End_Time|Text|Confidence,count,219.0,,
+E-DAIC,structure:transcript_speaker_column_sets,observed,,transcript_speaker_column_sets,0.0,,
+E-DAIC,structure:train_subjects,observed,,train_subjects,163.0,,
+E-DAIC,structure:dev_subjects,observed,,dev_subjects,56.0,,
+E-DAIC,structure:transcript_turn_count_min,observed,,transcript_turn_count_min,42.0,,
+E-DAIC,structure:transcript_turn_count_median,observed,,transcript_turn_count_median,87.0,,
+E-DAIC,structure:transcript_turn_count_max,observed,,transcript_turn_count_max,203.0,,
+E-DAIC,structure:empty_turn_count,observed,,empty_turn_count,0.0,,
+E-DAIC,structure:mean_asr_confidence,observed,,mean_asr_confidence,0.9197367046965332,,
+E-DAIC,structure:repeat_min_subjects,observed,,repeat_min_subjects,10.0,,
+E-DAIC,structure:train_unique_turn_types,observed,,train_unique_turn_types,12360.0,,
+E-DAIC,structure:train_repeated_turn_types,observed,,train_repeated_turn_types,52.0,,
+E-DAIC,structure:train_repeated_turn_min_subject_coverage,observed,,train_repeated_turn_min_subject_coverage,10.0,,
+E-DAIC,structure:train_repeated_turn_max_subject_coverage,observed,,train_repeated_turn_max_subject_coverage,133.0,,
+CMDC,speaker_or_prompt_fields,blocked_for_prompt_only,The manifest has no populated speaker or prompt text fields; interviewer/prompt-only controls were not run.,speaker_non_null_rows,0.0,prompt_like_column_count,1
+CMDC,question_position_probe,completed,Per-question and question-block text controls were run using segment_id position.,question_positions,12.0,subjects_with_all_positions,78
+CMDC,structure:subjects,observed,,subjects,78.0,,
+CMDC,structure:rows,observed,,rows,936.0,,
+CMDC,structure:segment_positions,observed,,segment_positions,12.0,,
+CMDC,structure:speaker_non_null_rows,observed,,speaker_non_null_rows,0.0,,
+CMDC,structure:file_valid_rows,observed,,file_valid_rows,908.0,,

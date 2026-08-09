@@ -1,0 +1,4 @@
+dataset,selected_rows,selected_subjects,rows_with_existing_text,subjects_with_existing_text,total_existing_text_rows,safety_sensitive_rows
+cmdc,60,19,60,19,717,6
+edaic,24,14,24,14,24,0
+pdch,60,27,60,27,113,6

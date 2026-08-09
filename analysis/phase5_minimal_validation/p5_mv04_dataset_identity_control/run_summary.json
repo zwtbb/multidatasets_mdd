@@ -1,0 +1,105 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "common_feature_column_count": 768,
+    "feature_dataset_identity_risk_after_control": {
+      "balanced_accuracy_mean": 0.5,
+      "probe": "E-DAIC_vs_CMDC_train_fold_dataset_centered_WavLM_train_fold_to_eval_fold"
+    },
+    "feature_dataset_identity_risk_before_control": {
+      "balanced_accuracy_mean": 1.0,
+      "probe": "E-DAIC_vs_CMDC_raw_frozen_WavLM_train_fold_to_eval_fold"
+    },
+    "feature_space": "frozen_wavlm_subject_mean",
+    "joined_subjects": {
+      "cmdc": 77,
+      "edaic": 219
+    }
+  },
+  "generated_at": "2026-08-05T04:02:11+00:00",
+  "local_only_files": [
+    "p5_mv04_local_predictions.csv"
+  ],
+  "model_contract": {
+    "control_parameters_written": false,
+    "control_uses_eval_dataset_labels": true,
+    "control_uses_eval_target_labels": false,
+    "control_variant": "train_fold_dataset_centering",
+    "encoder_finetuning": false,
+    "models": [
+      "train_mean",
+      "total_alloc_ridge",
+      "baseline_pooled_shared_ridge",
+      "dataset_centered_shared_ridge"
+    ],
+    "raw_audio_scan": false,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "output_policy": {
+    "learned_embeddings": "not_written",
+    "model_weights": "not_written",
+    "raw_clinical_text": "not_written",
+    "raw_prompts_or_responses": "not_written",
+    "row_level_predictions": "local_only_ignored",
+    "transformed_features": "not_written"
+  },
+  "phase2_feature_root_source": "worktree_phase2_cache",
+  "run_id": "P5_MV04_dataset_protocol_control_ablation",
+  "split_audit": {
+    "cmdc_phase2_subject_cv_used": true,
+    "edaic_official_test_used": false,
+    "subject_level": true,
+    "subject_overlap_violations": 0
+  },
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "metric_summary.csv",
+    "metrics_by_seed.csv",
+    "comparison_summary.csv",
+    "worst_slice_summary.csv",
+    "worst_slice_by_seed.csv",
+    "dataset_identity_probe_summary.csv",
+    "dataset_identity_probe_by_seed.csv",
+    "feature_availability.csv",
+    "model_split_audit.csv",
+    "construct_target_map.csv"
+  ],
+  "target_contract": {
+    "c09_policy": "excluded_from_core_bridge_safety_sensitive_phq9_only",
+    "constructs": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "source_scales": {
+      "cmdc": "PHQ-9",
+      "edaic": "PHQ-8"
+    }
+  },
+  "verdict": {
+    "feature_identity_ba_after": 0.5,
+    "feature_identity_ba_before": 1.0,
+    "main_task_within_5pct_all_slices": true,
+    "pass_rule_met": true,
+    "pass_rule_status": "pass_minimal_control",
+    "prediction_identity_ba_baseline": 0.9607738095238096,
+    "prediction_identity_ba_control": 0.47648809523809527,
+    "prediction_identity_not_worse": true,
+    "short_read": "The train-fold dataset-centering control reduces held-out E-DAIC-vs-CMDC identity probe balanced accuracy while preserving PHQ C01-C08 Macro MAE within the 5 percent relative tolerance versus the pooled shared baseline.",
+    "worst_slice_within_5pct": true
+  }
+}

@@ -1,0 +1,6 @@
+field,pair_count,observed_agreement,expected_agreement,pairwise_kappa,agreement_status
+evidence_presence,0,,,,insufficient_pair_annotations
+evidence_source,0,,,,insufficient_pair_annotations
+evidence_strength,0,,,,insufficient_pair_annotations
+time_status,0,,,,insufficient_pair_annotations
+prompt_artifact,0,,,,insufficient_pair_annotations

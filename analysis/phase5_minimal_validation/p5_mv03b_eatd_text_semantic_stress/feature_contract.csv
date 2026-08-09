@@ -1,0 +1,3 @@
+feature_space,row_grain,rows,subjects,vectorizer,max_features,raw_text_read_from_manifest,raw_text_written
+text_char_tfidf_valence_segment,subject_valence,486,162,char_2_5_tfidf,5000,True,False
+text_char_tfidf_subject_concat,subject,162,162,char_2_5_tfidf,5000,True,False

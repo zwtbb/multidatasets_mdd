@@ -1,0 +1,841 @@
+run_id,dataset,target,model,group_type,group_value,metric,mean,std,seed_count,sample_count_mean,subject_count_mean
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,elder,QWK,-0.05776020073026804,0.07978486883773513,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,elder,Ordinal MAE,0.5747126436781609,0.028155054514749183,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,elder,Macro-F1,0.317797413181899,0.028021928077745614,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,elder,ECE,0.32277432369094045,0.022313368490591554,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,elder,Brier Score,0.7206896680712465,0.029583175759261893,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,young,QWK,0.19891758954547692,0.06244550500327604,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,young,Ordinal MAE,0.5727272727272728,0.023399159411334112,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,young,Macro-F1,0.42533659399968593,0.03700346735905024,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,young,ECE,0.37148392801838853,0.017048582868397125,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,age_group,young,Brier Score,0.8553023984199537,0.04214381390735489,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,elder,QWK,0.05171582393970149,0.08128287352398159,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,elder,Ordinal MAE,0.5034482758620691,0.03874091849736256,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,elder,Macro-F1,0.36377160377333556,0.014901662075039897,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,elder,ECE,0.11583410773191534,0.009826923766559803,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,elder,Brier Score,0.5381675741664236,0.019147366518253123,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,young,QWK,0.1099212801204722,0.060060665678862764,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,young,Ordinal MAE,0.5886363636363636,0.023177361425421757,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,young,Macro-F1,0.3445715792828905,0.0198739732434604,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,young,ECE,0.1842697942911568,0.023252075384553556,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,age_group,young,Brier Score,0.6540335789555327,0.020791358080720274,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,elder,QWK,-0.00926125024223734,0.07928289554068133,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,elder,Ordinal MAE,0.5632183908045978,0.03251065660627804,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,elder,Macro-F1,0.37493728795206516,0.027275881376280047,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,elder,ECE,0.14631872060177536,0.019595943064260525,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,elder,Brier Score,0.5599093150713179,0.021699345635684434,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,young,QWK,0.15794351259471395,0.06988781665565066,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,young,Ordinal MAE,0.5704545454545453,0.039626354032187956,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,young,Macro-F1,0.3580432387152311,0.045454056678539516,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,young,ECE,0.19756891271215382,0.015699597546596927,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,age_group,young,Brier Score,0.658889013263833,0.03025837777167719,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,elder,QWK,0.08014407328648052,0.036116922703856455,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,elder,Ordinal MAE,0.4827586206896551,0.040475441061285075,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,elder,Macro-F1,0.31564748449203844,0.014983088278529512,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,elder,ECE,0.15951580294277493,0.030112529483437924,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,elder,Brier Score,0.5622361824749614,0.021442838616481656,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,young,QWK,-0.022926493119986978,0.07564756209745756,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,young,Ordinal MAE,0.6454545454545455,0.053008653589502734,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,young,Macro-F1,0.33868137715627267,0.022328555615035876,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,young,ECE,0.199249695835429,0.03147440965986588,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,age_group,young,Brier Score,0.6932319735699302,0.026596962712847425,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,elder,QWK,0.002722831226142697,0.022232812276196463,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,elder,Ordinal MAE,0.44827586206896547,0.01625532830313902,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,elder,Macro-F1,0.29647097616531926,0.02813967246073243,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,elder,ECE,0.10035350900362863,0.0440929781638554,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,elder,Brier Score,0.5038726998782714,0.009674623818883074,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,young,QWK,0.038474778095042406,0.04123253914703675,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,young,Ordinal MAE,0.5977272727272728,0.011588680712710865,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,young,Macro-F1,0.26872028402017356,0.022396886076980142,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,young,ECE,0.10514798092852082,0.01835469504034767,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,age_group,young,Brier Score,0.6312689338763716,0.008797446856457407,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,elder,QWK,-0.006976800133411132,0.055597287479991576,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,elder,Ordinal MAE,0.5195402298850575,0.03874091849736255,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,elder,Macro-F1,0.3480951144284604,0.022755001393247352,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,elder,ECE,0.12344916053233165,0.03149369168685951,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,elder,Brier Score,0.5375220031666956,0.01863302854592008,5,87.0,87.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,young,QWK,0.08323179872839082,0.07102018285115785,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,young,Ordinal MAE,0.5795454545454545,0.027835110713445226,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,young,Macro-F1,0.3303285975434641,0.009759984915584554,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,young,ECE,0.14496306380408092,0.01915135656551462,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,age_group,young,Brier Score,0.6196820535137316,0.012712515877403548,5,88.0,88.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,high_or_severe,QWK,0.08648648648648649,0.17297297297297298,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,high_or_severe,Ordinal MAE,0.8,0.11428571428571428,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,high_or_severe,Macro-F1,0.24888888888888888,0.09777777777777777,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,high_or_severe,ECE,0.48787136154260136,0.060558213324145516,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,high_or_severe,Brier Score,0.9599061128000168,0.10824789208001098,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mentioned_unclear,QWK,-0.1333333333333333,0.16329931618554516,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mentioned_unclear,Ordinal MAE,0.85,0.1224744871391589,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mentioned_unclear,Macro-F1,0.18666666666666665,0.043546484316145384,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mentioned_unclear,ECE,0.5950080757658489,0.05644684303374947,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mentioned_unclear,Brier Score,1.0963424560445219,0.06952163897396721,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mild_or_low,QWK,-0.07758532159558691,0.06135141104724635,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mild_or_low,Ordinal MAE,0.6833333333333333,0.062360956446232345,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mild_or_low,Macro-F1,0.2674074074074074,0.05200210386959657,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mild_or_low,ECE,0.468588762309162,0.06614815701510933,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,mild_or_low,Brier Score,0.9858364773661041,0.0900804369037766,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,moderate,QWK,-0.2239412562854179,0.0782379926308452,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,moderate,Ordinal MAE,0.8285714285714285,0.10690449676496974,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,moderate,Macro-F1,0.28242424242424236,0.06809489408576067,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,moderate,ECE,0.35147885579018445,0.05200519706610142,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,moderate,Brier Score,0.719720241181834,0.094497690543256,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,none,QWK,-0.0009383104449754764,0.09922208634142884,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,none,Ordinal MAE,0.4901960784313726,0.03281019711898334,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,none,Macro-F1,0.3450361804086771,0.04526414200726263,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,none,ECE,0.2639923055429807,0.03463410885849346,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,none,Brier Score,0.6229997354842536,0.047532381347723765,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,unknown,QWK,0.20739552804110328,0.0710506855930591,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,unknown,Ordinal MAE,0.5574468085106383,0.029787234042553217,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,unknown,Macro-F1,0.42849843264136284,0.04089919657595406,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,unknown,ECE,0.362549897582017,0.024856927494505267,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,financial_stress_bin,unknown,Brier Score,0.8321365281171611,0.04924784572497492,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,high_or_severe,QWK,-0.02546772068511196,0.28474257990990154,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,high_or_severe,Ordinal MAE,0.9428571428571428,0.193780856660722,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,high_or_severe,Macro-F1,0.18968253968253967,0.10946628348931216,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,high_or_severe,ECE,0.4114349616819977,0.012353333852827835,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,high_or_severe,Brier Score,0.8970682550437925,0.05336691590299397,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mentioned_unclear,QWK,-0.37142857142857144,0.330120571665467,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mentioned_unclear,Ordinal MAE,1.15,0.3741657386773941,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mentioned_unclear,Macro-F1,0.1422222222222222,0.08146801235477048,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mentioned_unclear,ECE,0.6066741113517022,0.09187240049048843,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mentioned_unclear,Brier Score,1.0633740045096611,0.15066618554862352,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mild_or_low,QWK,0.17336976824628153,0.12687886886276703,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mild_or_low,Ordinal MAE,0.5166666666666667,0.09718253158075499,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mild_or_low,Macro-F1,0.3685144485144485,0.08217458804686939,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mild_or_low,ECE,0.25160427949571523,0.10926624886995741,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,mild_or_low,Brier Score,0.6178110335356725,0.06008718687173825,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,moderate,QWK,-0.08117647058823532,0.21125428682614267,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,moderate,Ordinal MAE,0.7428571428571427,0.13997084244475302,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,moderate,Macro-F1,0.43151515151515146,0.11115637278305135,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,moderate,ECE,0.3734834173615428,0.11729456200561668,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,moderate,Brier Score,0.5926791937612738,0.10640678430295174,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,none,QWK,0.029204758952936505,0.1035709291778223,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,none,Ordinal MAE,0.40784313725490196,0.03594177015651639,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,none,Macro-F1,0.34027302880598415,0.047073196601035275,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,none,ECE,0.1417328142978962,0.0326830861920824,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,none,Brier Score,0.46836485151292023,0.013542318496918873,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,unknown,QWK,0.13608456103837424,0.05997064606420923,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,unknown,Ordinal MAE,0.5553191489361702,0.02553191489361703,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,unknown,Macro-F1,0.35712852640456905,0.018064123663542916,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,unknown,ECE,0.16254538584011488,0.02323461347399677,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,financial_stress_bin,unknown,Brier Score,0.6212070841628149,0.020189342865875384,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,high_or_severe,QWK,-0.2794133114490521,0.2491824008135177,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,high_or_severe,Ordinal MAE,1.1142857142857143,0.16659862556700863,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,high_or_severe,Macro-F1,0.11825396825396825,0.1057790925812453,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,high_or_severe,ECE,0.4370582412540303,0.06309504639552727,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,high_or_severe,Brier Score,0.9177789785286119,0.06704959000016632,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mentioned_unclear,QWK,-0.43506493506493504,0.3762201155012968,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mentioned_unclear,Ordinal MAE,1.2,0.4,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mentioned_unclear,Macro-F1,0.11555555555555555,0.09977753031397177,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mentioned_unclear,ECE,0.655806828096186,0.040030238301794765,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mentioned_unclear,Brier Score,1.0915017450765903,0.15946422647104358,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mild_or_low,QWK,0.05488179465056091,0.20425388592118587,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mild_or_low,Ordinal MAE,0.5666666666666667,0.12247448713915889,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mild_or_low,Macro-F1,0.36074074074074075,0.05992950516589626,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mild_or_low,ECE,0.3115116206250782,0.058663075231078415,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,mild_or_low,Brier Score,0.6318747434762844,0.05073045840545122,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,moderate,QWK,-0.1282352941176471,0.21411764705882358,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,moderate,Ordinal MAE,0.8,0.11428571428571428,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,moderate,Macro-F1,0.4209090909090909,0.11454545454545462,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,moderate,ECE,0.39640838525700606,0.10955257007008268,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,moderate,Brier Score,0.6081367434836036,0.11118557446007096,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,none,QWK,0.07058998578525122,0.09706904399699041,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,none,Ordinal MAE,0.4117647058823529,0.017537788058821894,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,none,Macro-F1,0.3921733377591819,0.04796657936688862,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,none,ECE,0.13933647871754778,0.046254953426714096,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,none,Brier Score,0.46870813525431154,0.018056463074695495,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,unknown,QWK,0.14011234458449814,0.08819154316909865,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,unknown,Ordinal MAE,0.5659574468085106,0.04823737893087078,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,unknown,Macro-F1,0.3608246896973385,0.044135460947470236,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,unknown,ECE,0.1879290730789831,0.01936342993887164,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,financial_stress_bin,unknown,Brier Score,0.6400033481313274,0.031007266188048707,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,high_or_severe,QWK,0.3008900539335322,0.26566204807864174,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,high_or_severe,Ordinal MAE,0.6857142857142857,0.18952141659173713,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,high_or_severe,Macro-F1,0.3055555555555555,0.12668615834434865,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,high_or_severe,ECE,0.43949871630375964,0.07373067452144004,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,high_or_severe,Brier Score,0.7838213393819983,0.10285812674725808,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mentioned_unclear,QWK,0.04444444444444447,0.28631330503833613,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mentioned_unclear,Ordinal MAE,0.75,0.15811388300841897,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mentioned_unclear,Macro-F1,0.2133333333333333,0.04354648431614539,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mentioned_unclear,ECE,0.4763916258055273,0.13995144369828316,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mentioned_unclear,Brier Score,0.8445608886373581,0.08478495648961859,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mild_or_low,QWK,0.0634844322344323,0.11305805509086364,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mild_or_low,Ordinal MAE,0.5666666666666668,0.033333333333333354,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mild_or_low,Macro-F1,0.2851540616246499,0.05078248241512969,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mild_or_low,ECE,0.35106144372838644,0.06341468310299178,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,mild_or_low,Brier Score,0.7322394732723302,0.06385124518653039,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,moderate,QWK,0.0,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,moderate,Ordinal MAE,0.5714285714285714,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,moderate,Macro-F1,0.41666666666666663,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,moderate,ECE,0.38492251889346296,0.10105233876673621,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,moderate,Brier Score,0.5820343511645438,0.06512301309578408,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,none,QWK,0.022579140386065566,0.061082162175532195,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,none,Ordinal MAE,0.4431372549019607,0.036367131354885104,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,none,Macro-F1,0.30020293882362853,0.022777965943790928,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,none,ECE,0.1280097382658238,0.038661233441415935,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,none,Brier Score,0.5026791125958305,0.034494428486517036,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,unknown,QWK,0.005509804682972774,0.08261144987921427,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,unknown,Ordinal MAE,0.6127659574468086,0.05965040752713273,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,unknown,Macro-F1,0.35091570055906596,0.023199880557000802,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,unknown,ECE,0.17775615082204504,0.03375939299330236,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,financial_stress_bin,unknown,Brier Score,0.6654916993557973,0.028456057211319826,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,high_or_severe,QWK,0.0,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,high_or_severe,Ordinal MAE,0.8571428571428571,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,high_or_severe,Macro-F1,0.19999999999999998,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,high_or_severe,ECE,0.24882300823086662,0.07162385811627571,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,high_or_severe,Brier Score,0.680417902993619,0.032107179628812495,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mentioned_unclear,QWK,0.0,0.0,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mentioned_unclear,Ordinal MAE,0.75,0.0,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mentioned_unclear,Macro-F1,0.22222222222222224,2.7755575615628914e-17,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mentioned_unclear,ECE,0.39824570507427615,0.152988911816534,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mentioned_unclear,Brier Score,0.8077835607991588,0.027416210170594417,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mild_or_low,QWK,0.037735849056603724,0.04621678759968254,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mild_or_low,Ordinal MAE,0.55,0.04082482904638632,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mild_or_low,Macro-F1,0.27189542483660134,0.06083700014755603,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mild_or_low,ECE,0.26026440513954424,0.0993830005950143,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,mild_or_low,Brier Score,0.6087618963946058,0.03016746189178388,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,moderate,QWK,0.0,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,moderate,Ordinal MAE,0.5714285714285714,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,moderate,Macro-F1,0.41666666666666663,0.0,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,moderate,ECE,0.2815008967585002,0.0698514351643817,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,moderate,Brier Score,0.5700036762126321,0.040360158662376716,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,none,QWK,0.001904227023704874,0.0225080356720778,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,none,Ordinal MAE,0.3764705882352941,0.014673166222642895,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,none,Macro-F1,0.3033450119859856,0.030743308368469495,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,none,ECE,0.13124151682193289,0.023586873716974207,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,none,Brier Score,0.45421765355978627,0.013758232721650833,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,unknown,QWK,0.04336435315003997,0.04253733985593202,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,unknown,Ordinal MAE,0.5617021276595745,0.01042336060758802,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,unknown,Macro-F1,0.2776688753376103,0.02244762608977997,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,unknown,ECE,0.080925323805317,0.019512140799891147,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,financial_stress_bin,unknown,Brier Score,0.60568364558091,0.006769129989431483,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,high_or_severe,QWK,-0.3069593088071349,0.1457897652320187,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,high_or_severe,Ordinal MAE,1.1142857142857143,0.10690449676496978,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,high_or_severe,Macro-F1,0.11534391534391535,0.03511051471183887,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,high_or_severe,ECE,0.3867042653459859,0.04550358688739977,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,high_or_severe,Brier Score,0.9256253227170678,0.08623003976223385,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mentioned_unclear,QWK,-0.2,0.24494897427831783,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mentioned_unclear,Ordinal MAE,0.95,0.2449489742783178,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mentioned_unclear,Macro-F1,0.18666666666666665,0.043546484316145384,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mentioned_unclear,ECE,0.4851634606633928,0.14563697170071613,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mentioned_unclear,Brier Score,0.9255486375238015,0.11574240591176488,5,4.0,4.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mild_or_low,QWK,0.339017637726693,0.1639885679650311,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mild_or_low,Ordinal MAE,0.45,0.10000000000000002,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mild_or_low,Macro-F1,0.37888888888888894,0.05612317734702234,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mild_or_low,ECE,0.18432857889655246,0.05026876671018975,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,mild_or_low,Brier Score,0.6009015857867563,0.03443089847638078,5,12.0,12.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,moderate,QWK,-0.1282352941176471,0.21411764705882358,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,moderate,Ordinal MAE,0.8,0.11428571428571428,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,moderate,Macro-F1,0.4209090909090909,0.11454545454545462,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,moderate,ECE,0.2799402070468676,0.11041536900335272,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,moderate,Brier Score,0.5226446198643087,0.05189928586524728,5,7.0,7.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,none,QWK,-0.031068358975815658,0.04976241587332288,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,none,Ordinal MAE,0.4313725490196078,0.03281019711898335,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,none,Macro-F1,0.34703330504790786,0.01974319348575642,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,none,ECE,0.14897519381645552,0.020196958558019305,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,none,Brier Score,0.48878973322447833,0.01579104261751516,5,51.0,51.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,unknown,QWK,0.10597589822880027,0.06927533344846092,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,unknown,Ordinal MAE,0.5489361702127661,0.026574459567652763,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,unknown,Macro-F1,0.34214631413296037,0.007549340019623124,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,unknown,ECE,0.12670695446449923,0.019960372189204163,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,financial_stress_bin,unknown,Brier Score,0.5884814405601764,0.013938821353643022,5,94.0,94.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,high,QWK,0.28242160064988686,0.15305920470670661,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,high,Ordinal MAE,0.43076923076923074,0.05102499677469847,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,high,Macro-F1,0.41578047683310837,0.0573326979529101,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,high,ECE,0.2690071042113193,0.046730971189851755,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,high,Brier Score,0.5940098461538477,0.026414667142424006,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,low,QWK,0.11983286202675894,0.08519900241560757,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,low,Ordinal MAE,0.604,0.04963869458396342,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,low,Macro-F1,0.40003477891932937,0.05992312693381033,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,low,ECE,0.4169306216711872,0.035407871915206085,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,low,Brier Score,0.9015376573624636,0.05431663181651259,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,mid,QWK,0.19474502130651752,0.07890459342410969,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,mid,Ordinal MAE,0.4979591836734694,0.054148976169067754,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,mid,Macro-F1,0.40800631511710367,0.06771762112785877,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,mid,ECE,0.32851897919553735,0.05310746630080971,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,mid,Brier Score,0.7643476057005077,0.08482694185442002,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,unknown,QWK,-0.07872904255441493,0.10749750897304183,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,unknown,Ordinal MAE,0.692,0.0530659966456864,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,unknown,Macro-F1,0.3098064319809223,0.04230675532519219,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,unknown,ECE,0.3597563359012213,0.03896230037847202,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_extraversion_bin,unknown,Brier Score,0.7998488127141254,0.05056596762032962,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,high,QWK,0.1457153497969087,0.11327623949798712,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,high,Ordinal MAE,0.3615384615384616,0.03076923076923077,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,high,Macro-F1,0.3668104610066188,0.06369179384116302,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,high,ECE,0.14236551918295942,0.01900197110725894,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,high,Brier Score,0.39569066236584255,0.007780315122225221,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,low,QWK,0.053962027597125116,0.10454089939928041,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,low,Ordinal MAE,0.624,0.04963869458396341,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,low,Macro-F1,0.32343724095015836,0.01858837436477722,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,low,ECE,0.19855405809089205,0.03939354566922162,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,low,Brier Score,0.6927234389942274,0.02430521661510251,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,mid,QWK,0.11482161167374853,0.027942724206026184,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,mid,Ordinal MAE,0.44897959183673464,0.012907255755789318,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,mid,Macro-F1,0.3387529701566484,0.01863975931590093,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,mid,ECE,0.1657037794267857,0.05153064954848612,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,mid,Brier Score,0.526702872464546,0.04159565279444161,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,unknown,QWK,0.003441774419291721,0.10517932943371716,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,unknown,Ordinal MAE,0.66,0.06572670690061995,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,unknown,Macro-F1,0.28421808883592636,0.03256636519835276,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,unknown,ECE,0.20057679488548957,0.0273886255340571,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_extraversion_bin,unknown,Brier Score,0.6728592795715936,0.03415418757707771,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,high,QWK,0.023625296391652784,0.15750230163476203,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,high,Ordinal MAE,0.46153846153846156,0.059584359172421775,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,high,Macro-F1,0.3263168922839938,0.0689420149599903,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,high,ECE,0.15726985790957076,0.03968106706114502,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,high,Brier Score,0.43333386628027454,0.017831365671770006,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,low,QWK,0.10275868202289964,0.12699813296491608,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,low,Ordinal MAE,0.612,0.06013318551349162,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,low,Macro-F1,0.3424863471710368,0.04653812389622333,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,low,ECE,0.1982858656690753,0.03203823066441676,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,low,Brier Score,0.698095208616281,0.03315699893677579,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,mid,QWK,0.12379916064768123,0.049420451936805415,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,mid,Ordinal MAE,0.4408163265306122,0.03785150406324777,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,mid,Macro-F1,0.33976367457812645,0.05043814036069384,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,mid,ECE,0.16020885594392972,0.032712486417438784,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,mid,Brier Score,0.5424210827420625,0.05421941330944242,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,unknown,QWK,-0.03721249418033527,0.1109999186463826,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,unknown,Ordinal MAE,0.7000000000000001,0.05656854249492381,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,unknown,Macro-F1,0.3004182779688108,0.04775591977554899,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,unknown,ECE,0.22538678054121597,0.03884324153123678,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_extraversion_bin,unknown,Brier Score,0.6788853913991941,0.032847840438170385,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,high,QWK,0.17514892177948774,0.1627470331473559,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,high,Ordinal MAE,0.3769230769230769,0.05102499677469846,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,high,Macro-F1,0.3783344795369753,0.1016221309575905,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,high,ECE,0.16836569142334906,0.018318711036369104,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,high,Brier Score,0.48104172564184894,0.04623894982695359,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,low,QWK,0.017756979720403375,0.055040165178990165,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,low,Ordinal MAE,0.68,0.017888543819998284,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,low,Macro-F1,0.3133092201702162,0.030912289631390213,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,low,ECE,0.251125118543602,0.04087726122846245,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,low,Brier Score,0.7526024191391055,0.01934277015868983,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,mid,QWK,0.001342021627871337,0.15165455366487127,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,mid,Ordinal MAE,0.5428571428571429,0.1313753219545394,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,mid,Macro-F1,0.3478689374996632,0.07552826487105668,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,mid,ECE,0.16852041553576727,0.052351976226200164,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,mid,Brier Score,0.588768627638715,0.07343521305891827,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,unknown,QWK,0.07328649542601773,0.0594581505032359,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,unknown,Ordinal MAE,0.568,0.034871191548325374,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,unknown,Macro-F1,0.31945619731543806,0.018817453314160393,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,unknown,ECE,0.2081484471923504,0.03392728998489004,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_extraversion_bin,unknown,Brier Score,0.6186418594307023,0.03738563988400631,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,high,QWK,0.1417477820837791,0.21172561540088403,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,high,Ordinal MAE,0.33076923076923076,0.05217176910096361,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,high,Macro-F1,0.3237622602839994,0.07004523620640828,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,high,ECE,0.1888247337892775,0.03258771709531511,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,high,Brier Score,0.4420072975747805,0.019912892099392458,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,low,QWK,-0.007934317608567554,0.043952183784481805,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,low,Ordinal MAE,0.68,0.02529822128134702,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,low,Macro-F1,0.23950917261029106,0.0151528186762855,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,low,ECE,0.172466165173933,0.016531581800399407,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,low,Brier Score,0.6642750162488481,0.004338271504974043,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,mid,QWK,0.031163757245295652,0.03650928919191575,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,mid,Ordinal MAE,0.4448979591836735,0.023799803652429802,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,mid,Macro-F1,0.2724522327976673,0.017348885562495368,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,mid,ECE,0.10308451154092964,0.016558137873772426,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,mid,Brier Score,0.5421007471288063,0.015567345178509231,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,unknown,QWK,0.015364496009657325,0.014385632918891533,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,unknown,Ordinal MAE,0.544,0.014966629547095779,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,unknown,Macro-F1,0.3041762680721892,0.04459082269407995,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,unknown,ECE,0.1008886399362603,0.05542122752118481,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_extraversion_bin,unknown,Brier Score,0.5623942782366421,0.019472879421941043,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,high,QWK,-0.017938938330293232,0.05532701038191421,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,high,Ordinal MAE,0.3923076923076923,0.03768445758127967,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,high,Macro-F1,0.28434857506647193,0.004581468942614416,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,high,ECE,0.1430895632585209,0.01645428431058508,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,high,Brier Score,0.38785682064773236,0.010381487801195037,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,low,QWK,0.06412371626165073,0.10335797874544884,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,low,Ordinal MAE,0.588,0.04833218389437828,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,low,Macro-F1,0.3433226386611267,0.019284089635184142,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,low,ECE,0.16668702865352109,0.024533222763441456,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,low,Brier Score,0.657817450277068,0.014616841838571195,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,mid,QWK,0.12646705876922423,0.06815900957026064,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,mid,Ordinal MAE,0.4408163265306123,0.030544141932848514,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,mid,Macro-F1,0.3301667332147983,0.03431903662114629,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,mid,ECE,0.14755947679263778,0.03217804610672357,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,mid,Brier Score,0.5036515595708905,0.027037915799758915,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,unknown,QWK,-0.0799491081733309,0.06529806338356635,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,unknown,Ordinal MAE,0.7,0.05059644256269406,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,unknown,Macro-F1,0.24356946735028928,0.020256659601450004,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,unknown,ECE,0.18729482758834876,0.0330489901167155,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_extraversion_bin,unknown,Brier Score,0.6728471743008564,0.02717802220444122,5,50.0,50.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,high,QWK,0.18679818763697087,0.18349859358273146,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,high,Ordinal MAE,0.5428571428571428,0.08571428571428574,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,high,Macro-F1,0.3543863724351529,0.0996241123906811,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,high,ECE,0.3563584758944243,0.04153003160354787,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,high,Brier Score,0.7287533294729492,0.08745646466993134,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,low,QWK,0.20662684536811682,0.0723637553501162,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,low,Ordinal MAE,0.5449999999999999,0.02915475947422649,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,low,Macro-F1,0.4287643759160787,0.05671309067820205,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,low,ECE,0.4213728018156838,0.011366580554554008,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,low,Brier Score,0.8623435391804899,0.018092127151343295,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,mid,QWK,0.11190247611814319,0.1077190438833862,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,mid,Ordinal MAE,0.5782608695652174,0.04032008041519873,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,mid,Macro-F1,0.39988792468898005,0.04522668812039191,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,mid,ECE,0.35139643825399824,0.054447411402881396,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,mid,Brier Score,0.8363309839054649,0.06234278282738872,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,unknown,QWK,-0.04235133515837577,0.10814942167337253,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,unknown,Ordinal MAE,0.6032786885245902,0.045666846810439726,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,unknown,Macro-F1,0.31049371383355556,0.05359505106396227,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,unknown,ECE,0.32135865884001635,0.04261895109816012,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_agreeableness_bin,unknown,Brier Score,0.7310910185416525,0.06243914594737673,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,high,QWK,-0.005239273927392807,0.2165964792975142,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,high,Ordinal MAE,0.6714285714285714,0.1324802642213672,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,high,Macro-F1,0.2930891330891331,0.08463452028029277,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,high,ECE,0.17530531788316342,0.07618930391665597,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,high,Brier Score,0.5947700548224718,0.04324414237213224,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,low,QWK,0.06978283867651953,0.14608574125490825,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,low,Ordinal MAE,0.565,0.06442049363362563,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,low,Macro-F1,0.3075974681779232,0.038668962967899324,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,low,ECE,0.22455981696327093,0.031616221079515915,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,low,Brier Score,0.6844268071441464,0.040737198842117975,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,mid,QWK,0.23058850294709146,0.1771800446120997,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,mid,Ordinal MAE,0.4782608695652174,0.07010658911563958,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,mid,Macro-F1,0.35794996979409416,0.06821913482335096,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,mid,ECE,0.1690917361723047,0.05145549902103664,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,mid,Brier Score,0.5529814606624752,0.041905278177767936,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,unknown,QWK,-0.031084061082673097,0.05098924781900763,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,unknown,Ordinal MAE,0.5278688524590164,0.0262295081967213,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,unknown,Macro-F1,0.28685621189955557,0.023878848922260255,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,unknown,ECE,0.16874379890278657,0.024509222292091255,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_agreeableness_bin,unknown,Brier Score,0.5722582440868328,0.016790924413705763,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,high,QWK,-0.03413218784427121,0.17650503754107455,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,high,Ordinal MAE,0.6857142857142856,0.1138384103607802,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,high,Macro-F1,0.28887290004106436,0.08680927564772234,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,high,ECE,0.2267892567145294,0.06676284903598771,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,high,Brier Score,0.6277266969297297,0.04719331619793614,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,low,QWK,-0.006912505056438612,0.11080586179916357,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,low,Ordinal MAE,0.6,0.04743416490252569,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,low,Macro-F1,0.2868633054702666,0.04206224099752541,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,low,ECE,0.2336981749617229,0.03927852295847548,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,low,Brier Score,0.7007688519070185,0.04713801866508036,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,mid,QWK,0.2851701978375664,0.13892397259612366,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,mid,Ordinal MAE,0.46521739130434786,0.07091089752304389,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,mid,Macro-F1,0.38020491582335997,0.0729195649030111,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,mid,ECE,0.14858114602900505,0.02386022983005291,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,mid,Brier Score,0.5659683781596884,0.04741113216870552,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,unknown,QWK,-0.051340989203720724,0.07503704751456493,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,unknown,Ordinal MAE,0.5672131147540984,0.030405306542608847,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,unknown,Macro-F1,0.30198738007188036,0.04822668351540091,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,unknown,ECE,0.1763942944338453,0.030211266056552694,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_agreeableness_bin,unknown,Brier Score,0.574634370373166,0.016858378629033652,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,high,QWK,0.15573708583624177,0.1293107962426388,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,high,Ordinal MAE,0.5571428571428572,0.08017837257372731,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,high,Macro-F1,0.3789300762471494,0.09203757023851473,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,high,ECE,0.22760879795313754,0.04713125503875795,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,high,Brier Score,0.6347736368614163,0.049462566459274875,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,low,QWK,0.04013131886001349,0.1281601242334009,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,low,Ordinal MAE,0.615,0.06633249580710797,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,low,Macro-F1,0.3177354842801067,0.04720467115201387,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,low,ECE,0.2310028926306545,0.04490243662659193,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,low,Brier Score,0.6896550515875746,0.04714260879917194,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,mid,QWK,-0.03059873440603824,0.08989623491044223,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,mid,Ordinal MAE,0.6173913043478261,0.07223151185146151,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,mid,Macro-F1,0.32639056329340144,0.048901997738222375,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,mid,ECE,0.1898435480302078,0.04337160978788972,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,mid,Brier Score,0.6439549517098282,0.044175829936076126,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,unknown,QWK,0.018640295000307883,0.06649784179269677,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,unknown,Ordinal MAE,0.4950819672131147,0.047963078158451786,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,unknown,Macro-F1,0.30747847770125,0.027084713139665782,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,unknown,ECE,0.17210151384785827,0.03290501539903644,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_agreeableness_bin,unknown,Brier Score,0.5727404897573896,0.03962949064839073,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,high,QWK,0.022099447513812143,0.04419889502762429,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,high,Ordinal MAE,0.5642857142857143,0.01428571428571428,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,high,Macro-F1,0.252996632996633,0.002289562289562297,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,high,ECE,0.10190030612051588,0.038445349086375494,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,high,Brier Score,0.567611257684918,0.02084779953293349,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,low,QWK,0.02317009606896947,0.027131427278046193,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,low,Ordinal MAE,0.6599999999999999,0.012247448713915901,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,low,Macro-F1,0.2217774467503754,0.014260516462175772,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,low,ECE,0.20410602941331746,0.03401964553284316,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,low,Brier Score,0.6811567914733374,0.017243139747637262,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,mid,QWK,0.040757010588809164,0.0414648825015303,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,mid,Ordinal MAE,0.49565217391304345,0.0162680755946693,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,mid,Macro-F1,0.3091889493797255,0.049810746227887615,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,mid,ECE,0.10595260621980032,0.049667851511528145,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,mid,Brier Score,0.5587898965903981,0.02546938012915105,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,unknown,QWK,0.02278058226669035,0.03394739273366325,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,unknown,Ordinal MAE,0.4360655737704918,0.016718096765877984,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,unknown,Macro-F1,0.3132187426887485,0.04031997552799421,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,unknown,ECE,0.13503157908357966,0.05211608448475244,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_agreeableness_bin,unknown,Brier Score,0.5007355566108328,0.012346151424344245,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,high,QWK,-0.1242639542872757,0.1335006230152559,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,high,Ordinal MAE,0.7285714285714284,0.10497813183356479,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,high,Macro-F1,0.2712123126243794,0.08207277864774286,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,high,ECE,0.23333492914574255,0.05066835963669891,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,high,Brier Score,0.5863294127245444,0.0502428441071256,5,28.0,28.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,low,QWK,0.14341301608565069,0.059922765098586454,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,low,Ordinal MAE,0.51,0.040620192023179826,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,low,Macro-F1,0.3327828280818791,0.021798990584239505,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,low,ECE,0.18914081035552574,0.06179205883930796,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,low,Brier Score,0.6354773006157012,0.02794069245317027,5,40.0,40.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,mid,QWK,0.16176566028526382,0.1266135516906434,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,mid,Ordinal MAE,0.48695652173913045,0.05070392952039395,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,mid,Macro-F1,0.29540623059804644,0.03653743526974473,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,mid,ECE,0.10010495359422504,0.03353332376658362,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,mid,Brier Score,0.5365630606531452,0.0090052333206661,5,46.0,46.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,unknown,QWK,-0.0796830804951861,0.04244433084361017,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,unknown,Ordinal MAE,0.5409836065573771,0.034387175349841016,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,unknown,Macro-F1,0.25742517538099274,0.003934669224078739,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,unknown,ECE,0.14572589618638832,0.02249357716038001,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_agreeableness_bin,unknown,Brier Score,0.5701347313729659,0.022358348272991983,5,61.0,61.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,high,QWK,0.27878748842191736,0.08480049486794704,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,high,Ordinal MAE,0.5920000000000001,0.046647615158762396,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,high,Macro-F1,0.4247450697450697,0.036650533187637405,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,high,ECE,0.4085361078537925,0.02773831680085204,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,high,Brier Score,0.837708474711959,0.04271908944033441,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,low,QWK,0.017249870600581273,0.06853082208704808,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,low,Ordinal MAE,0.6485714285714286,0.02649605284427342,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,low,Macro-F1,0.3737954957357993,0.034309389176600195,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,low,ECE,0.3987342594176031,0.02298547845555015,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,low,Brier Score,0.9041787949023021,0.04074596798974008,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,mid,QWK,0.23354179728091315,0.09244360605532674,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,mid,Ordinal MAE,0.43888888888888883,0.04779069592801459,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,mid,Macro-F1,0.3735772818476198,0.029427982281185577,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,mid,ECE,0.3010575165716633,0.015476003257745173,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,mid,Brier Score,0.6495071219620216,0.03601269117407578,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,unknown,QWK,-0.056850369385390585,0.1446124342463549,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,unknown,Ordinal MAE,0.5545454545454545,0.04679831882266819,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,unknown,Macro-F1,0.3090334689676795,0.042637195703741464,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,unknown,ECE,0.3066871675825942,0.03975244286838902,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_openness_bin,unknown,Brier Score,0.6897529154900331,0.055648415125016316,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,high,QWK,0.10064967460398618,0.18082339051025453,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,high,Ordinal MAE,0.6559999999999999,0.0897997772825746,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,high,Macro-F1,0.39756675025492233,0.1011701290462402,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,high,ECE,0.1961070440920511,0.022807299396145703,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,high,Brier Score,0.6356460829049176,0.035052237449218385,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,low,QWK,0.08523651876638443,0.14501546213739508,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,low,Ordinal MAE,0.6257142857142857,0.06963461489687967,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,low,Macro-F1,0.34185581426275957,0.03451239779886432,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,low,ECE,0.180452083222086,0.031181887843298596,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,low,Brier Score,0.6628851161222715,0.012290472049026039,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,mid,QWK,0.03395877378435517,0.08618269477473084,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,mid,Ordinal MAE,0.4333333333333334,0.033333333333333326,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,mid,Macro-F1,0.33410309507978764,0.04880198246329311,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,mid,ECE,0.14070276254037528,0.031244237906797805,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,mid,Brier Score,0.5273027285960903,0.045921379182233796,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,unknown,QWK,-0.004198648702306751,0.04285184669153975,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,unknown,Ordinal MAE,0.45,0.05261744046722829,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,unknown,Macro-F1,0.33294566085747956,0.04445908214711702,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,unknown,ECE,0.168371627181994,0.03950510854129366,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_openness_bin,unknown,Brier Score,0.5249892152255572,0.034808304201563306,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,high,QWK,0.10285364689625531,0.1270311801074652,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,high,Ordinal MAE,0.656,0.054258639865002144,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,high,Macro-F1,0.43927111388179246,0.07769509424889347,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,high,ECE,0.17869679288933277,0.063268121954336,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,high,Brier Score,0.6447333109270681,0.03492208022879245,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,low,QWK,0.06378516815235442,0.09159146351885449,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,low,Ordinal MAE,0.6485714285714286,0.03896623341995956,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,low,Macro-F1,0.33932046246736514,0.024546874151148795,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,low,ECE,0.22461108120768064,0.02498534973909489,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,low,Brier Score,0.6805381695637819,0.011214319375982893,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,mid,QWK,0.06705951265229619,0.13158745467646438,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,mid,Ordinal MAE,0.4444444444444445,0.05555555555555556,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,mid,Macro-F1,0.33714056240138374,0.043199504398863976,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,mid,ECE,0.14336701407814542,0.023071302153492478,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,mid,Brier Score,0.5262407401725075,0.055498312483462604,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,unknown,QWK,-0.05850000313809476,0.052004039593798616,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,unknown,Ordinal MAE,0.48636363636363633,0.04679831882266816,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,unknown,Macro-F1,0.3307041113172016,0.03015772544229995,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,unknown,ECE,0.18906044938720207,0.04141223234426504,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_openness_bin,unknown,Brier Score,0.5453107338538693,0.029597675202259165,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,high,QWK,0.051937442834905465,0.03542257327984734,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,high,Ordinal MAE,0.688,0.029933259094191512,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,high,Macro-F1,0.33387636629015943,0.0688666182506537,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,high,ECE,0.28522545644287367,0.05776733090280368,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,high,Brier Score,0.7602365824423544,0.04672893598006814,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,low,QWK,0.04802427959822932,0.09261024964949484,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,low,Ordinal MAE,0.6257142857142857,0.05375682206350508,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,low,Macro-F1,0.3583405674197248,0.04401536786028124,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,low,ECE,0.18666317950885453,0.01414045973411467,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,low,Brier Score,0.6583867947790604,0.023429309705636652,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,mid,QWK,0.01229879614648115,0.1254298335379701,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,mid,Ordinal MAE,0.5166666666666666,0.0906083690572227,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,mid,Macro-F1,0.3664947387456473,0.04035169299004412,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,mid,ECE,0.18899650521497638,0.036933423728841855,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,mid,Brier Score,0.5758963281478762,0.06547881223287176,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,unknown,QWK,0.015012847857527833,0.07568053210445691,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,unknown,Ordinal MAE,0.43636363636363634,0.04635472285084349,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,unknown,Macro-F1,0.29037037037037033,0.03158805490403021,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,unknown,ECE,0.18161979393694583,0.017691034510583035,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_openness_bin,unknown,Brier Score,0.547584171376338,0.032611162477768,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,high,QWK,0.04744228534640797,0.08398154271408849,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,high,Ordinal MAE,0.664,0.03199999999999999,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,high,Macro-F1,0.27839696839696837,0.047374584603399834,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,high,ECE,0.17353443164318424,0.03161319901007013,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,high,Brier Score,0.6581540926572788,0.023849785894100875,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,low,QWK,0.0014290504280331851,0.028510624543646935,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,low,Ordinal MAE,0.6399999999999999,0.013997084244475308,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,low,Macro-F1,0.24035630019846108,0.011533554680531275,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,low,ECE,0.1176759293390239,0.02447084698654442,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,low,Brier Score,0.6314020825192699,0.01344840850410838,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,mid,QWK,0.07543554006968634,0.07605652059840161,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,mid,Ordinal MAE,0.37222222222222223,0.022222222222222233,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,mid,Macro-F1,0.3230659715940715,0.036067270581719275,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,mid,ECE,0.14836710555026972,0.024713109593003164,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,mid,Brier Score,0.49129675346736407,0.030348101737052654,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,unknown,QWK,0.02041144178312313,0.04620337197118202,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,unknown,Ordinal MAE,0.38181818181818183,0.026504326794751384,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,unknown,Macro-F1,0.3240325979778035,0.04932791582644103,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,unknown,ECE,0.17871282961667476,0.0631297812126271,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_openness_bin,unknown,Brier Score,0.47840704211191676,0.023176537129874338,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,high,QWK,-0.08984186564721637,0.06653600937813939,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,high,Ordinal MAE,0.7200000000000001,0.04381780460041329,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,high,Macro-F1,0.39272771502656567,0.04617114856586926,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,high,ECE,0.2041496124177508,0.02837653760719567,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,high,Brier Score,0.6168380252944508,0.021737964969255383,5,25.0,25.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,low,QWK,0.04170440811862095,0.06052627984484498,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,low,Ordinal MAE,0.6285714285714287,0.02996596709057576,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,low,Macro-F1,0.3330107066034169,0.011843678686191737,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,low,ECE,0.15137235718175596,0.00840568241599268,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,low,Brier Score,0.6406876053156685,0.008937908856986152,5,70.0,70.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,mid,QWK,0.08844919786096259,0.10718785296458576,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,mid,Ordinal MAE,0.4222222222222222,0.0408248290463863,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,mid,Macro-F1,0.31381966165539976,0.015007136342716304,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,mid,ECE,0.15333269805421254,0.042817270813033645,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,mid,Brier Score,0.5066830151354237,0.02476084755396722,5,36.0,36.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,unknown,QWK,-0.003349050294886524,0.03278012961343136,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,unknown,Ordinal MAE,0.4318181818181818,0.03803000120609435,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,unknown,Macro-F1,0.3274237259728288,0.0064760978672632015,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,unknown,ECE,0.13051691879216326,0.029664345728062314,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_openness_bin,unknown,Brier Score,0.5178809871676722,0.020893867520862027,5,44.0,44.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,high,QWK,-0.07127835731263003,0.08705357932268441,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,high,Ordinal MAE,0.8095238095238095,0.04259177099999599,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,high,Macro-F1,0.2547378129117259,0.03140356473368689,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,high,ECE,0.5278392181572634,0.03901181868482,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,high,Brier Score,1.090117621473102,0.0601489759992425,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,low,QWK,-0.08809328659412255,0.10294141715744547,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,low,Ordinal MAE,0.6,0.021397579292615463,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,low,Macro-F1,0.36446424898846497,0.07460377537016906,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,low,ECE,0.40273586457203675,0.015812101894576845,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,low,Brier Score,0.8888514258648051,0.03735637393230135,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,mid,QWK,0.3235894839068611,0.04712731997122695,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,mid,Ordinal MAE,0.5183673469387755,0.033159340427085536,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,mid,Macro-F1,0.495066138495316,0.05185116984735498,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,mid,ECE,0.29474231225143105,0.04272459889103415,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,mid,Brier Score,0.7105295593768692,0.046760241628519605,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,unknown,QWK,0.006127441078704265,0.17252474374461746,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,unknown,Ordinal MAE,0.48372093023255813,0.05771941230693421,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,unknown,Macro-F1,0.3351799736698771,0.04877390888401571,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,unknown,ECE,0.2459449640251264,0.0395524180437179,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_neuroticism_bin,unknown,Brier Score,0.5848698911426676,0.056930199012357574,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,high,QWK,0.057258736176875956,0.21979594867326102,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,high,Ordinal MAE,0.6761904761904762,0.09233675918888243,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,high,Macro-F1,0.35538347502743795,0.04828649474573322,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,high,ECE,0.2320853459684556,0.031902836813684415,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,high,Brier Score,0.6889212814121463,0.044530508227294284,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,low,QWK,0.10974659844779552,0.15598828029781853,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,low,Ordinal MAE,0.4290322580645161,0.05455333717834762,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,low,Macro-F1,0.37181693658039927,0.0887473299545661,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,low,ECE,0.12660656095509712,0.01902771957357878,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,low,Brier Score,0.5158005544320539,0.018821876405219398,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,mid,QWK,-0.004394306475306831,0.12988147539058598,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,mid,Ordinal MAE,0.7591836734693878,0.08101809486236412,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,mid,Macro-F1,0.3282775743538051,0.039177468650361126,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,mid,ECE,0.2108358912327911,0.037583573646908355,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,mid,Brier Score,0.7530990474295646,0.04382560132725729,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,unknown,QWK,-0.04519761935539446,0.02529465743018108,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,unknown,Ordinal MAE,0.40930232558139534,0.01860465116279071,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,unknown,Macro-F1,0.2924321581855828,0.029773150638910697,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,unknown,ECE,0.16512659408600322,0.0410444211228903,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_neuroticism_bin,unknown,Brier Score,0.4889930067924335,0.024952160194206267,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,high,QWK,0.048074752381834764,0.24380640829092384,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,high,Ordinal MAE,0.6761904761904761,0.1219642711891971,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,high,Macro-F1,0.3998301308827624,0.08215633993253296,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,high,ECE,0.2605520460622349,0.0637022994238526,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,high,Brier Score,0.6847065237515354,0.04464684655697322,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,low,QWK,0.11480784178705009,0.11059249469166924,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,low,Ordinal MAE,0.4161290322580645,0.02370473944628882,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,low,Macro-F1,0.3799696248475791,0.08083969143374606,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,low,ECE,0.15978386206104536,0.03201168688386553,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,low,Brier Score,0.527599625718596,0.015514212593215424,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,mid,QWK,-0.08293270533494528,0.11011291086663377,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,mid,Ordinal MAE,0.8367346938775511,0.07744353453473583,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,mid,Macro-F1,0.30043941052550327,0.052141889682968304,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,mid,ECE,0.2567919194768147,0.04681804996885713,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,mid,Brier Score,0.7812980473890851,0.05694950251373132,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,unknown,QWK,-0.05923915047320105,0.05547165462419961,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,unknown,Ordinal MAE,0.4232558139534883,0.01740305761290206,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,unknown,Macro-F1,0.28664172758519657,0.02632862375158021,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,unknown,ECE,0.1635361191733694,0.03617325246622778,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_neuroticism_bin,unknown,Brier Score,0.4958308247214326,0.027543323698041543,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,high,QWK,-0.05479805631989361,0.14507117082121967,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,high,Ordinal MAE,0.8666666666666668,0.08192690730516788,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,high,Macro-F1,0.2304520653796016,0.05349447793776377,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,high,ECE,0.4119821404527014,0.04564791338877704,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,high,Brier Score,0.9033727978399618,0.040522424311578875,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,low,QWK,0.1080688689819419,0.1888967872351656,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,low,Ordinal MAE,0.4870967741935484,0.08974469511770036,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,low,Macro-F1,0.37879928707353555,0.08318823584064472,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,low,ECE,0.1670744529365669,0.022514334217277984,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,low,Brier Score,0.5778852416635184,0.037898029515065136,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,mid,QWK,0.06385387770833413,0.07663637715299353,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,mid,Ordinal MAE,0.653061224489796,0.04471204551062581,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,mid,Macro-F1,0.3773010901473789,0.016021220994292276,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,mid,ECE,0.19773812153362763,0.015588903140494999,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,mid,Brier Score,0.6749608379396534,0.03312957049186822,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,unknown,QWK,-0.045627580624688725,0.05330325262839246,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,unknown,Ordinal MAE,0.4279069767441861,0.04557190219131496,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,unknown,Macro-F1,0.2827487900972286,0.026171716630325696,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,unknown,ECE,0.16975200774989546,0.019310356608688493,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_neuroticism_bin,unknown,Brier Score,0.5127015523873292,0.03475434018157425,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,high,QWK,-0.06207386363636362,0.07364389023595738,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,high,Ordinal MAE,0.8476190476190475,0.06317380553057904,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,high,Macro-F1,0.18450647692027003,0.03803905251791887,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,high,ECE,0.25243085341457483,0.05885315381987044,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,high,Brier Score,0.7287962711446161,0.021791193261610137,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,low,QWK,-0.010487688612176128,0.045278216437823565,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,low,Ordinal MAE,0.4193548387096774,0.02698903311400243,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,low,Macro-F1,0.29141822991822985,0.017535786378987683,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,low,ECE,0.11220517271407529,0.01735913496262361,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,low,Brier Score,0.5328182136814894,0.020458567350514805,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,mid,QWK,0.08046023579666232,0.06865327467763917,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,mid,Ordinal MAE,0.6734693877551021,0.03872176726736791,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,mid,Macro-F1,0.2698407990919689,0.03652717078803107,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,mid,ECE,0.1300953358600313,0.02862519238735645,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,mid,Brier Score,0.6520805066108707,0.031296719880314315,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,unknown,QWK,0.021204094274505158,0.047917618927439454,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,unknown,Ordinal MAE,0.3441860465116279,0.022785951095657477,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,unknown,Macro-F1,0.329146571228763,0.06267894242185149,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,unknown,ECE,0.18228613135957641,0.03685260936620615,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_neuroticism_bin,unknown,Brier Score,0.44412082103042705,0.02038677060034438,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,high,QWK,0.08981299686034738,0.09839255686576426,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,high,Ordinal MAE,0.638095238095238,0.04856209060564558,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,high,Macro-F1,0.3630907333693711,0.030020598428960914,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,high,ECE,0.20404069534421318,0.03633484739803994,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,high,Brier Score,0.6907674674126372,0.024917614826914496,5,21.0,21.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,low,QWK,0.028696985662686636,0.06854075076256451,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,low,Ordinal MAE,0.435483870967742,0.024986989330370434,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,low,Macro-F1,0.3371952778404391,0.027958363546114785,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,low,ECE,0.10066370738971606,0.025879643034862423,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,low,Brier Score,0.4918305604278442,0.00932571717752867,5,62.0,62.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,mid,QWK,-0.10466384234358517,0.11863801367523995,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,mid,Ordinal MAE,0.7959183673469388,0.09217624318886707,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,mid,Macro-F1,0.31200641422640873,0.040170969532718336,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,mid,ECE,0.2231226270436099,0.02772628487344358,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,mid,Brier Score,0.7203645534130276,0.02704805474863443,5,49.0,49.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,unknown,QWK,-0.0499324022548147,0.018937909020831156,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,unknown,Ordinal MAE,0.39069767441860465,0.017403057612902062,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,unknown,Macro-F1,0.2782179439713687,0.0021226706158213203,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,unknown,ECE,0.13735161449089292,0.01910935387253456,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_neuroticism_bin,unknown,Brier Score,0.48834791407629813,0.013673552922234962,5,43.0,43.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,high,QWK,-0.03562017692452479,0.08752167031830227,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,high,Ordinal MAE,0.5884615384615385,0.03124630155629215,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,high,Macro-F1,0.3563501848449797,0.04835797731014652,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,high,ECE,0.3631273967978884,0.014661811017325062,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,high,Brier Score,0.7659179917506048,0.0376344554861437,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,low,QWK,0.24098181677849456,0.1178664797596316,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,low,Ordinal MAE,0.5724137931034482,0.05602785106645488,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,low,Macro-F1,0.4450808114254442,0.05549610330597616,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,low,ECE,0.4085186899152836,0.03112198536728398,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,low,Brier Score,0.8817346674713249,0.05304680420167671,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,mid,QWK,0.05135264972676139,0.0575654616308626,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,mid,Ordinal MAE,0.5692307692307692,0.06363935203072235,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,mid,Macro-F1,0.32432474760316105,0.06107455835684076,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,mid,ECE,0.36545578375678617,0.05662398943319358,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,mid,Brier Score,0.8238546435107118,0.08114041193199424,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,unknown,QWK,-0.015462023975293148,0.10314657425427115,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,unknown,Ordinal MAE,0.5538461538461539,0.04615384615384615,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,unknown,Macro-F1,0.35903947903947897,0.011910930710947806,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,unknown,ECE,0.260262047273801,0.04878581281566461,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_baseline_logistic,personality_conscientiousness_bin,unknown,Brier Score,0.5718436462257044,0.03360305052822371,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,high,QWK,0.11917748917748919,0.07983740340093227,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,high,Ordinal MAE,0.4884615384615385,0.04485347611419462,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,high,Macro-F1,0.39158859589699546,0.06438602114572735,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,high,ECE,0.14926834722136048,0.03256999134466829,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,high,Brier Score,0.5626016919554572,0.03926541629492214,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,low,QWK,0.058458385645497365,0.08501881318210579,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,low,Ordinal MAE,0.6517241379310346,0.0399166789751387,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,low,Macro-F1,0.31791823222527477,0.04450335600134802,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,low,ECE,0.23341707192315136,0.030283082615827683,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,low,Brier Score,0.7215229881312464,0.03327904559931408,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,mid,QWK,0.1276676884774674,0.16951782436365562,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,mid,Ordinal MAE,0.4461538461538462,0.07536891516255931,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,mid,Macro-F1,0.36131106829634196,0.07441491682411418,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,mid,ECE,0.15197524820142488,0.02759693349162921,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,mid,Brier Score,0.4772463913486783,0.017508926728843376,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,unknown,QWK,-0.04300928440633489,0.11946443195685798,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,unknown,Ordinal MAE,0.5769230769230769,0.08067760370539627,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,unknown,Macro-F1,0.3202990127995352,0.058699278191123895,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,unknown,ECE,0.20270814676307553,0.05306352018589487,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_age_personality_bins,personality_conscientiousness_bin,unknown,Brier Score,0.5638193594104305,0.028343520818041708,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,high,QWK,0.046605149236728184,0.06563846974939382,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,high,Ordinal MAE,0.5307692307692307,0.0431729698473916,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,high,Macro-F1,0.38353989137767497,0.0496854952194039,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,high,ECE,0.14595073185640267,0.030009099347740074,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,high,Brier Score,0.5728491106379485,0.04541136697224972,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,low,QWK,0.11041613423771808,0.08524841915321338,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,low,Ordinal MAE,0.6344827586206897,0.06578891044254798,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,low,Macro-F1,0.33625156453248917,0.06778444467316605,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,low,ECE,0.25139457264315473,0.03233238271923393,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,low,Brier Score,0.7273685213119443,0.044062448928155175,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,mid,QWK,0.06570363189024198,0.14988183102429906,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,mid,Ordinal MAE,0.4769230769230769,0.05523245956035388,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,mid,Macro-F1,0.3449714132636678,0.05901627527249657,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,mid,ECE,0.18881020192262696,0.022371898129718692,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,mid,Brier Score,0.4976027627968099,0.01811104796158951,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,unknown,QWK,-0.03139509898920676,0.15051306071295137,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,unknown,Ordinal MAE,0.623076923076923,0.0890448992522325,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,unknown,Macro-F1,0.3471887271887272,0.09231089947011348,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,unknown,ECE,0.2552401232515338,0.03527490144679067,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_age,personality_conscientiousness_bin,unknown,Brier Score,0.5889349169261646,0.04563046634544578,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,high,QWK,0.13927372779775524,0.10551113283389527,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,high,Ordinal MAE,0.5038461538461538,0.07029102647114255,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,high,Macro-F1,0.34022479530972133,0.04609426288372244,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,high,ECE,0.17568510206763135,0.04984405671402517,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,high,Brier Score,0.5871118330300498,0.033914450194649684,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,low,QWK,-0.03667354474499085,0.09802757575800465,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,low,Ordinal MAE,0.6827586206896552,0.04949206929105971,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,low,Macro-F1,0.3076409587680079,0.02710236316531571,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,low,ECE,0.229731591063057,0.03748850620968257,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,low,Brier Score,0.7146937588078399,0.030560243292882292,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,mid,QWK,0.025955815184844622,0.11751001479934037,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,mid,Ordinal MAE,0.5025641025641026,0.091160968382724,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,mid,Macro-F1,0.40625925530095375,0.05305225621456802,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,mid,ECE,0.16813862148392938,0.01848253618328684,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,mid,Brier Score,0.5899110984458729,0.06083628867975633,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,unknown,QWK,0.014438119591913812,0.14619958474847153,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,unknown,Ordinal MAE,0.5153846153846153,0.052171769100963564,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,unknown,Macro-F1,0.323701122725513,0.061468710971173506,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,unknown,ECE,0.21707961661739023,0.06295873389219592,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_context_calibrated_shuffled_personality_bins,personality_conscientiousness_bin,unknown,Brier Score,0.5742452069872753,0.08174916428370303,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,high,QWK,-0.015789473684210575,0.012892051277806241,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,high,Ordinal MAE,0.5115384615384615,0.009421114395319936,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,high,Macro-F1,0.25841154846588343,0.014036120098048561,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,high,ECE,0.08609844765723465,0.03910752545748691,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,high,Brier Score,0.5440171004103955,0.009498853952772817,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,low,QWK,0.060565041004195574,0.05126720741455697,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,low,Ordinal MAE,0.6310344827586206,0.020689655172413782,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,low,Macro-F1,0.2709069232065012,0.03796874661257897,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,low,ECE,0.1494668435575568,0.0290288725339891,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,low,Brier Score,0.6597074041018409,0.014693772806566318,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,mid,QWK,-0.019932487217038018,0.06705536683482231,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,mid,Ordinal MAE,0.44102564102564096,0.029902317409463086,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,mid,Macro-F1,0.2661724386724386,0.006544011544011522,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,mid,ECE,0.1275156840954927,0.032859752363897154,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,mid,Brier Score,0.52365972111656,0.007820218073863402,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,unknown,QWK,0.04282998449884472,0.04000918470695448,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,unknown,Ordinal MAE,0.43076923076923074,0.028781979898261093,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,unknown,Macro-F1,0.3756394509882882,0.09098074086016561,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,unknown,ECE,0.17097395380244418,0.07637921162416426,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,av_probability_recalibrated,personality_conscientiousness_bin,unknown,Brier Score,0.4774593572206588,0.026669479244483436,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,high,QWK,0.06816017316017317,0.04044379100066442,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,high,Ordinal MAE,0.5,0.042132504423474326,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,high,Macro-F1,0.3879211872160055,0.0369130728208301,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,high,ECE,0.13246082130796338,0.04902001524098837,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,high,Brier Score,0.5641596439872856,0.030251250918201338,5,52.0,52.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,low,QWK,0.01813399095770074,0.07604099701094712,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,low,Ordinal MAE,0.6620689655172415,0.031977994812054135,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,low,Macro-F1,0.2771767141144102,0.015574425115405193,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,low,ECE,0.21520672429499704,0.03396532552077506,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,low,Brier Score,0.6955245115044173,0.03339943232947985,5,58.0,58.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,mid,QWK,0.08915702801930889,0.128340556091738,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,mid,Ordinal MAE,0.4256410256410256,0.047557017925619,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,mid,Macro-F1,0.4249449668399377,0.07471030564140002,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,mid,ECE,0.1384750788070966,0.012568560001022928,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,mid,Brier Score,0.4338311457267797,0.007241371361027603,5,39.0,39.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,unknown,QWK,-0.10667532174306693,0.054797427877753505,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,unknown,Ordinal MAE,0.5846153846153845,0.05652668637191951,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,unknown,Macro-F1,0.25500049518767615,0.007693755282113662,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,unknown,ECE,0.2167449464822067,0.07607052603473521,5,26.0,26.0
+P5_MV05_mpdd_context_calibration,MPDD-AVG-2026,phq9_severity_label,context_only_age_personality_bins,personality_conscientiousness_bin,unknown,Brier Score,0.5653960441065935,0.018883752942649233,5,26.0,26.0

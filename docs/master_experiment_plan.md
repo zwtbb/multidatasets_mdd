@@ -1,0 +1,229 @@
+# Master Experiment Plan
+
+Last updated: 2026-08-05 UTC
+
+## Principle
+
+The project proceeds from measurement and diagnostics to modeling. Do not build
+the full symptom-aligned method before Phase 3 has shown which shortcut,
+protocol, valence, or population effects are real.
+
+Canonical order, reaffirmed by the user on 2026-08-04:
+
+```text
+data audit
+-> task and hypothesis freeze
+-> unified baselines
+-> failure-mode diagnostics
+-> minimal method validation
+-> full method
+-> cross-dataset experiments
+-> statistics and writing
+```
+
+## Completed
+
+- Phase 0 data governance:
+  registry, manifests, generated audits, subject-level leakage checks, and Git
+  ignore policy are established.
+- Phase 1 research frame:
+  RQ1-RQ4 and dataset roles are frozen.
+- Phase 2 unified baselines:
+  all applicable rows are complete; P3HF is a documented conditional exclusion.
+- Phase 3 dataset/protocol identity probe:
+  complete. Seven grouped-CV probes finished with zero group-overlap
+  violations and passed artifact hygiene. Dataset identity is highly
+  recoverable from WavLM, wav2vec2, eGeMAPS, BGE text, and OpenFace feature
+  spaces.
+- Phase 3 E-DAIC/CMDC protocol controls:
+  complete for available text controls. Speaker-resolved interviewer and
+  participant controls are blocked by missing speaker labels, but E-DAIC
+  position/repeated-turn proxy controls and CMDC question-position probes show
+  protocol/task-content shortcut risk.
+- Phase 3 MODMA/EATD task-valence diagnostics:
+  complete. MODMA shows moderate cross-task degradation, strongest for
+  affective-task evaluation. EATD audio eGeMAPS does not support the specific
+  concern that negative material makes healthy subjects look more depressed.
+- Phase 3 MPDD individual-difference diagnostics:
+  complete. Personality-only diagnostics beat shuffled personality, generic
+  audio-video-personality concatenation adds near-zero value over audio-video,
+  subgroup calibration gaps are large enough to track, gait has modest
+  psychomotor-context signal, and gender/health diagnostics are blocked by
+  empty structured manifest fields.
+- Phase 3 Stop/Go synthesis:
+  complete; see
+  `analysis/phase3_diagnostics/phase3_stop_go_synthesis.md`.
+- Phase 4 symptom ontology and label contract:
+  complete enough for method planning. It defines 15 constructs, 54 short
+  item-code mappings, dataset label-contract coverage, and six minimal
+  validation rows. See
+  `analysis/phase4_symptom_ontology/phase4_symptom_ontology_report.md`.
+- Phase 5 minimal method-validation protocol:
+  complete as a planning contract, not as model results. It defines six
+  protocol rows, required metrics, output policy, and `full_method_allowed=false`.
+  See `analysis/phase5_minimal_validation/minimal_validation_protocol.md`.
+- Phase 5 `P5_MV01 phq_core_construct_bridge`:
+  complete as the first runnable minimal-validation row. It used frozen WavLM
+  subject features and shallow heads for E-DAIC PHQ-8 / CMDC PHQ-9 C01-C08.
+  The result is weak and asymmetric, and dataset identity remains perfectly
+  recoverable from frozen WavLM, so it does not support a shared symptom
+  representation claim by itself.
+- Phase 5 `P5_MV04 dataset_protocol_control_ablation`:
+  complete as the first runnable identity-control validation. Train-fold
+  dataset centering reduced E-DAIC/CMDC feature identity balanced accuracy from
+  `1.000` to `0.500` and prediction identity from `0.961` to `0.476`, with
+  dataset-stratified Macro Construct MAE preserved within the 5 percent
+  tolerance. This is a successful diagnostic control, not a final
+  unknown-source inference contract.
+- Phase 5 `P5_MV04b source_agnostic_identity_projection`:
+  complete as an inference-compatible follow-up. The best projection reduced
+  prediction identity from `0.961` to `0.777` without using eval dataset labels,
+  but feature identity remained high (`1.000` to `0.925`). This is a partial
+  diagnostic success, not enough for a dataset-invariant representation claim.
+- Phase 5 `P5_MV03 sds_total_external_stress`:
+  complete as an EATD SDS total/severity-only external stress row. Current
+  cached frozen audio features did not beat the train-mean SDS total floor:
+  best MAE `7.341` versus train mean `7.201`. No stronger healthy-negative
+  shortcut than Phase 3 was observed. This is a runnable negative result, not
+  positive cross-scale SDS evidence.
+
+## Current Method-Design Gate
+
+Phase 2, planned Phase 3 diagnostics, Phase 4 ontology, Phase 5 protocol, and
+the first Phase 5 identity-control follow-ups are complete. Full method
+construction remains blocked because `P5_MV01` exposed weak/asymmetric bridge
+evidence, `P5_MV04` only validates a known-dataset diagnostic control, and
+`P5_MV04b` leaves feature-level dataset identity high. `P5_MV03` further shows
+that current frozen audio features do not provide positive EATD SDS total
+external generalization beyond train mean.
+
+Phase 2 validation commands:
+
+Run:
+
+```bash
+python scripts/phase2_baseline_matrix.py --strict
+python scripts/phase2_export_final_table.py
+python scripts/phase2_completion_audit.py
+```
+
+Expected status:
+
+- `phase2_goal_complete=true`
+- `method_design_gate_recommendation=ready`
+- completed runs `66/67`
+- not-applicable runs `1`
+- blocked runs `0`
+
+## Phase 3 Diagnostics
+
+Run these before method design:
+
+1. E-DAIC/CMDC protocol controls:
+   participant-only, interviewer-only, full dialogue, fixed-question removal,
+   position slices, question shuffle, and paraphrase/replacement when possible.
+   Available text controls are complete; speaker-resolved controls remain
+   blocked by missing speaker/prompt labels.
+2. MODMA task transfer:
+   within-task and cross-task matrix over interview, reading, picture
+   description, and affective tasks. Complete; see
+   `analysis/phase3_diagnostics/task_valence/phase3_task_valence_report.md`.
+3. EATD valence sensitivity:
+   positive/neutral/negative prediction variance per subject and checks that
+   negative material does not masquerade as depression trait. Complete for
+   audio eGeMAPS; see
+   `analysis/phase3_diagnostics/task_valence/phase3_task_valence_report.md`.
+4. MPDD shortcut and moderation probes:
+   personality-only, demographics-only, health-only, shuffled/counterfactual
+   controls, subgroup performance, and subgroup calibration. Complete for
+   available age/personality/audio-video/gait context diagnostics; gender and
+   health diagnostics are blocked by missing structured manifest fields. See
+   `analysis/phase3_diagnostics/mpdd_individual_differences/mpdd_individual_differences_report.md`.
+5. Dataset-identity probe:
+   lightweight classifier predicting dataset/protocol from frozen
+   representations. Complete; see
+   `analysis/phase3_diagnostics/dataset_identity_probe/dataset_identity_probe_report.md`.
+
+## Stop/Go Criteria
+
+Protocol robustness becomes a method component only if at least one diagnostic
+shows meaningful protocol/task/valence dependence.
+
+The dataset/protocol identity probe already satisfies this gate for the pooled
+representation setting: dataset identity is near-perfectly recoverable from
+multiple feature families. Direct pooled training is therefore not acceptable as
+standalone evidence for shared symptom representation.
+
+The E-DAIC/CMDC protocol controls also satisfy the protocol robustness gate for
+available text controls: E-DAIC fixed-turn/position proxies and CMDC
+question-position probes show meaningful protocol/task-content dependence.
+
+The MODMA/EATD task-valence diagnostics add nuance rather than a blanket rule:
+MODMA affective-task transfer degradation supports task-stratified reporting or
+task-robust validation, while EATD eGeMAPS valence confusion is weak/negative
+evidence and should not by itself justify a valence-adversarial component.
+
+MPDD diagnostics support personality shortcut/moderation and subgroup
+calibration audits, but not naive audio-video-personality concatenation as the
+default method. Treat age as a subgroup/calibration axis and gait as
+psychomotor context validation; keep gender/health explicitly blocked unless
+structured metadata is supplied.
+
+Overall Phase 3 decision: proceed to symptom ontology and minimal
+method-validation design with explicit dataset/protocol/task/subgroup controls;
+do not proceed directly to a full method or claim pooled shared symptom
+representation without those controls.
+
+## Phase 4 Ontology Decisions
+
+- PHQ-8 and PHQ-9 share eight direct symptom constructs (C01-C08), making them
+  the cleanest shared construct bridge.
+- PHQ-9, HAMD-17, and SDS include death/self-harm related items, but PHQ-8
+  omits that item. Treat C09 as safety-sensitive and explicit-evidence-only.
+- HAMD-17 bridges many core constructs but also includes anxiety, somatic,
+  functioning, and insight items that should stay auxiliary or scale-specific
+  when the mapping is not direct.
+- SDS is theoretically mappable but the current EATD manifest exposes only SDS
+  total/severity, so EATD cannot provide SDS item-level construct supervision
+  unless item labels are recovered.
+- MODMA and MPDD currently provide PHQ-9 total/severity but not PHQ-9 item
+  fields, so they are not item-level construct-supervision datasets in the
+  current project state.
+
+## Phase 5 Protocol Decisions
+
+- Recommended first runnable row is `P5_MV01 phq_core_construct_bridge`,
+  because E-DAIC PHQ-8 and CMDC PHQ-9 provide the cleanest item-level C01-C08
+  construct bridge. This row is now complete and should be treated as a
+  diagnostic baseline, not a positive shared-representation result.
+- First identity-control row `P5_MV04 dataset_protocol_control_ablation` is
+  complete for E-DAIC/CMDC frozen WavLM. Treat train-fold dataset centering as a
+  successful diagnostic ablation that still needs inference-compatible or
+  protocol/task-slice extensions.
+- Source-agnostic P5_MV04b projection is complete. It reduces prediction
+  identity without eval dataset labels, but residual feature identity remains
+  too high for pooled shared-representation claims.
+- `P5_MV03 sds_total_external_stress` is complete and negative for current
+  frozen audio features: EATD SDS total heads did not beat train mean. EATD
+  remains total/severity-only and cannot support SDS item-level construct
+  claims.
+- `P5_MV02 hamd17_auxiliary_bridge` is blocked until CMDC HAMD item/total
+  coverage is audited or PDCH-only mode is explicitly selected.
+- Pooled or cross-dataset claims require dataset-stratified metrics and
+  dataset/protocol identity probes.
+- Protocol/task/subgroup metrics are mandatory before interpreting pooled
+  gains.
+- Row-level predictions, learned embeddings, checkpoints, raw snippets, raw
+  prompts, and raw model responses stay local-only unless separately reviewed.
+
+## Later Phases
+
+- Phase 5 execution: continue with MPDD context calibration, stronger
+  inference-compatible identity/protocol controls, or an explicitly audited EATD
+  text-feature variant before richer method work.
+- Phase 6: protocol consistency/adversarial components only if Phase 3 supports
+  them.
+- Phase 7: individual-difference and gait-to-psychomotor constraints only if
+  MPDD diagnostics support them.
+- Phase 8+: cross-dataset transfer, leave-one-dataset-out, few-shot adaptation,
+  statistical testing, error analysis, and paper writing.

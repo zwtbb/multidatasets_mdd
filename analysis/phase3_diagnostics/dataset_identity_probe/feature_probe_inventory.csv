@@ -1,0 +1,8 @@
+probe_id,status,n_rows,n_groups,n_features_common,comparable_basis,reason
+dataset_id_audio_wavlm_6way,completed,784,784,768,same frozen WavLM subject embedding columns across six datasets,
+dataset_id_audio_wav2vec2_3way,completed,348,348,768,"same frozen wav2vec2 subject embedding columns for E-DAIC, CMDC, and MODMA",
+dataset_id_audio_egemaps_cmdc_pdch_modma,completed,228,228,352,"intersection of cached subject-level eGeMAPSv02 functional-statistic columns for CMDC, PDCH, and MODMA",
+dataset_id_text_bge_cmdc_pdch,completed,176,176,512,same Chinese BGE frozen text embedding for CMDC and PDCH,
+dataset_id_video_openface_edaic_cmdc_common,completed,263,263,204,intersection of semantic OpenFace statistic columns for E-DAIC and CMDC,
+protocol_modma_task_type_wavlm,completed,208,52,768,same WavLM subject-task feature space within MODMA; grouped by subject,
+protocol_eatd_valence_wavlm,completed,486,162,768,same WavLM segment embedding feature space within EATD; grouped by subject,

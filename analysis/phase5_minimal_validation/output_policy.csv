@@ -1,0 +1,4 @@
+artifact_class,patterns,notes
+tracked,scripts; configs; reports; run summaries; aggregate metric summaries; small figures,"safe for Git when no raw text, source paths, bulky predictions, embeddings, or model weights are included"
+local_only,row-level predictions; learned embeddings; checkpoints; raw snippets; raw prompts; raw model responses,keep ignored unless explicitly reviewed and force-added
+blocked,raw audio; raw video; raw transcripts; source data paths; personal contact/payment identifiers,must not be uploaded through this project repo

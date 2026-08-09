@@ -1,0 +1,481 @@
+run_id,dataset,modality,task,model,seed,task_type,metric,value,ci95_low,ci95_high,sample_count
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,0,severity_regression,CCC,0.08224278051463701,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,0,severity_regression,MAE,3.0932394598776423,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,0,severity_regression,RMSE,4.167464155391492,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,0,severity_regression,Spearman,0.16447158032820602,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,1,severity_regression,CCC,0.023544219298276527,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,1,severity_regression,MAE,3.2038560488232,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,1,severity_regression,RMSE,4.2987428327773465,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,1,severity_regression,Spearman,0.11004224083037412,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,2,severity_regression,CCC,0.0823898227961747,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,2,severity_regression,MAE,3.11744282028557,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,2,severity_regression,RMSE,4.17334322947672,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,2,severity_regression,Spearman,0.16054226165049193,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,3,severity_regression,CCC,0.05797850000381926,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,3,severity_regression,MAE,3.1483338927877282,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,3,severity_regression,RMSE,4.206151689604053,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,3,severity_regression,Spearman,0.12599918154529344,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,4,severity_regression,CCC,0.05234757506217223,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,4,severity_regression,MAE,3.1417882166001805,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,4,severity_regression,RMSE,4.264112379005247,,,175
+mpdd_audio_phq9_wavlm_linear,MPDD-AVG-2026,Audio,PHQ-9 regression,WavLM frozen embedding + linear,4,severity_regression,Spearman,0.15392757097267343,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,0,ordinal_prediction,QWK,0.15264569617166546,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,0,ordinal_prediction,Ordinal MAE,0.6,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,0,ordinal_prediction,Macro-F1,0.38270628700193554,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,0,ordinal_prediction,ECE,0.4256588405716723,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,0,ordinal_prediction,Brier Score,0.8958014762137065,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,1,ordinal_prediction,QWK,0.10527831785122765,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,1,ordinal_prediction,Ordinal MAE,0.5942857142857143,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,1,ordinal_prediction,Macro-F1,0.3588252646442958,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,1,ordinal_prediction,ECE,0.438998417650373,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,1,ordinal_prediction,Brier Score,0.9255321027242475,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,2,ordinal_prediction,QWK,0.03657860705708471,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,2,ordinal_prediction,Ordinal MAE,0.6,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,2,ordinal_prediction,Macro-F1,0.3715330883472477,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,2,ordinal_prediction,ECE,0.4265744309590242,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,2,ordinal_prediction,Brier Score,0.8864820117236003,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,3,ordinal_prediction,QWK,-0.007677543186180413,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,3,ordinal_prediction,Ordinal MAE,0.6457142857142857,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,3,ordinal_prediction,Macro-F1,0.36716909559135535,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,3,ordinal_prediction,ECE,0.47017710801222684,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,3,ordinal_prediction,Brier Score,0.9599515262712014,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,4,ordinal_prediction,QWK,0.15434177771269586,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,4,ordinal_prediction,Ordinal MAE,0.5942857142857143,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,4,ordinal_prediction,Macro-F1,0.3713943355119826,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,4,ordinal_prediction,ECE,0.4703221752467183,,,175
+mpdd_audio_severity_wavlm_mlp,MPDD-AVG-2026,Audio,ordinal severity prediction,WavLM frozen embedding + MLP,4,ordinal_prediction,Brier Score,0.9406346744652423,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,0,ordinal_prediction,QWK,0.14621525724423412,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,0,ordinal_prediction,Ordinal MAE,0.5485714285714286,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,0,ordinal_prediction,Macro-F1,0.42489825794173625,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,0,ordinal_prediction,ECE,0.2985301868982818,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,0,ordinal_prediction,Brier Score,0.7351338556946085,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,1,ordinal_prediction,QWK,0.023925837596645794,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,1,ordinal_prediction,Ordinal MAE,0.6114285714285714,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,1,ordinal_prediction,Macro-F1,0.3374103021161845,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,1,ordinal_prediction,ECE,0.37065035245948197,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,1,ordinal_prediction,Brier Score,0.8313540968779031,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,2,ordinal_prediction,QWK,0.0906116478694331,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,2,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,2,ordinal_prediction,Macro-F1,0.39501182995011824,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,2,ordinal_prediction,ECE,0.3575047162533499,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,2,ordinal_prediction,Brier Score,0.8034533468753914,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,3,ordinal_prediction,QWK,0.05019438777474117,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,3,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,3,ordinal_prediction,Macro-F1,0.3956357279563572,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,3,ordinal_prediction,ECE,0.3413706737887798,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,3,ordinal_prediction,Brier Score,0.8001152596217939,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,4,ordinal_prediction,QWK,0.18717770544563506,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,4,ordinal_prediction,Ordinal MAE,0.5542857142857143,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,4,ordinal_prediction,Macro-F1,0.4067905183068379,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,4,ordinal_prediction,ECE,0.342328729610919,,,175
+mpdd_av_severity_early_fusion,MPDD-AVG-2026,Audio+Video,ordinal severity prediction,WavLM audio + ResNet video early fusion Logistic,4,ordinal_prediction,Brier Score,0.7718466461632851,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,0,ordinal_prediction,QWK,0.14621525724423412,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,0,ordinal_prediction,Ordinal MAE,0.5485714285714286,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,0,ordinal_prediction,Macro-F1,0.42489825794173625,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,0,ordinal_prediction,ECE,0.30010124915136227,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,0,ordinal_prediction,Brier Score,0.7348043218280383,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,1,ordinal_prediction,QWK,0.023925837596645794,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,1,ordinal_prediction,Ordinal MAE,0.6114285714285714,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,1,ordinal_prediction,Macro-F1,0.3374103021161845,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,1,ordinal_prediction,ECE,0.37011969926217225,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,1,ordinal_prediction,Brier Score,0.8313028780995539,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,2,ordinal_prediction,QWK,0.0906116478694331,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,2,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,2,ordinal_prediction,Macro-F1,0.39501182995011824,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,2,ordinal_prediction,ECE,0.35216067892076136,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,2,ordinal_prediction,Brier Score,0.8035583618307374,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,3,ordinal_prediction,QWK,0.05019438777474117,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,3,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,3,ordinal_prediction,Macro-F1,0.3956357279563572,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,3,ordinal_prediction,ECE,0.3354670860373926,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,3,ordinal_prediction,Brier Score,0.7992333901569921,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,4,ordinal_prediction,QWK,0.19331235823516502,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,4,ordinal_prediction,Ordinal MAE,0.5485714285714286,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,4,ordinal_prediction,Macro-F1,0.4135746041535881,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,4,ordinal_prediction,ECE,0.3396258005290324,,,175
+mpdd_avp_severity_early_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Early Fusion,4,ordinal_prediction,Brier Score,0.7714068698702327,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,0,ordinal_prediction,QWK,0.14621525724423412,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,0,ordinal_prediction,Ordinal MAE,0.5485714285714286,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,0,ordinal_prediction,Macro-F1,0.42489825794173625,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,0,ordinal_prediction,ECE,0.30010124915136227,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,0,ordinal_prediction,Brier Score,0.7348043218280383,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,1,ordinal_prediction,QWK,0.023925837596645794,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,1,ordinal_prediction,Ordinal MAE,0.6114285714285714,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,1,ordinal_prediction,Macro-F1,0.3374103021161845,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,1,ordinal_prediction,ECE,0.37011969926217225,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,1,ordinal_prediction,Brier Score,0.8313028780995539,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,2,ordinal_prediction,QWK,0.0906116478694331,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,2,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,2,ordinal_prediction,Macro-F1,0.39501182995011824,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,2,ordinal_prediction,ECE,0.3521606789207614,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,2,ordinal_prediction,Brier Score,0.8035583618307374,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,3,ordinal_prediction,QWK,0.05019438777474117,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,3,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,3,ordinal_prediction,Macro-F1,0.3956357279563572,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,3,ordinal_prediction,ECE,0.3354670860373926,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,3,ordinal_prediction,Brier Score,0.7992333901569921,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,4,ordinal_prediction,QWK,0.19331235823516502,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,4,ordinal_prediction,Ordinal MAE,0.5485714285714286,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,4,ordinal_prediction,Macro-F1,0.4135746041535881,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,4,ordinal_prediction,ECE,0.3396258005290324,,,175
+mpdd_avp_severity_early_fusion_phase3,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + personality TF-IDF early fusion Logistic,4,ordinal_prediction,Brier Score,0.7714068698702327,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,0,ordinal_prediction,QWK,0.10656020882115846,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,0,ordinal_prediction,Ordinal MAE,0.5657142857142857,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,0,ordinal_prediction,Macro-F1,0.39022626434875973,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,0,ordinal_prediction,ECE,0.220703535785915,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,0,ordinal_prediction,Brier Score,0.6612634939972061,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,1,ordinal_prediction,QWK,0.04327090845643844,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,1,ordinal_prediction,Ordinal MAE,0.5885714285714285,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,1,ordinal_prediction,Macro-F1,0.34757222585118214,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,1,ordinal_prediction,ECE,0.24112936233328264,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,1,ordinal_prediction,Brier Score,0.6596546216203537,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,2,ordinal_prediction,QWK,0.04643131235610132,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,2,ordinal_prediction,Ordinal MAE,0.5714285714285714,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,2,ordinal_prediction,Macro-F1,0.3927790490719552,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,2,ordinal_prediction,ECE,0.23028046282764647,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,2,ordinal_prediction,Brier Score,0.6567853474987317,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,3,ordinal_prediction,QWK,0.04906965256051388,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,3,ordinal_prediction,Ordinal MAE,0.5714285714285714,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,3,ordinal_prediction,Macro-F1,0.3592458521870287,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,3,ordinal_prediction,ECE,0.22633099762169218,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,3,ordinal_prediction,Brier Score,0.690185189051738,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,4,ordinal_prediction,QWK,0.11771766965428931,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,4,ordinal_prediction,Ordinal MAE,0.56,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,4,ordinal_prediction,Macro-F1,0.37060842606433037,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,4,ordinal_prediction,ECE,0.24013136734600066,,,175
+mpdd_avp_severity_gated_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Gated Fusion,4,ordinal_prediction,Brier Score,0.6862752549393041,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,0,ordinal_prediction,QWK,0.19065465273901605,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,0,ordinal_prediction,Ordinal MAE,0.5028571428571429,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,0,ordinal_prediction,Macro-F1,0.4008371747999788,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,0,ordinal_prediction,ECE,0.09432614996194368,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,0,ordinal_prediction,Brier Score,0.5815717328154308,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,1,ordinal_prediction,QWK,0.10756972111553798,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,1,ordinal_prediction,Ordinal MAE,0.5257142857142857,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,1,ordinal_prediction,Macro-F1,0.4060558301693053,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,1,ordinal_prediction,ECE,0.10729742482199343,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,1,ordinal_prediction,Brier Score,0.5781567601141904,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,2,ordinal_prediction,QWK,0.06417112299465244,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,2,ordinal_prediction,Ordinal MAE,0.5485714285714286,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,2,ordinal_prediction,Macro-F1,0.3996003996003996,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,2,ordinal_prediction,ECE,0.07979709708324784,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,2,ordinal_prediction,Brier Score,0.5777593073835552,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,3,ordinal_prediction,QWK,0.11855305332389798,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,3,ordinal_prediction,Ordinal MAE,0.52,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,3,ordinal_prediction,Macro-F1,0.3843857700945892,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,3,ordinal_prediction,ECE,0.13081429456855423,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,3,ordinal_prediction,Brier Score,0.6025826516249791,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,4,ordinal_prediction,QWK,0.13903443862245513,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,4,ordinal_prediction,Ordinal MAE,0.5542857142857143,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,4,ordinal_prediction,Macro-F1,0.36687309603976265,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,4,ordinal_prediction,ECE,0.12002136472678446,,,175
+mpdd_avp_severity_late_fusion,MPDD-AVG-2026,AVP,ordinal severity prediction,Late Fusion,4,ordinal_prediction,Brier Score,0.5977372138714847,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,0,ordinal_prediction,QWK,0.14621525724423412,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,0,ordinal_prediction,Ordinal MAE,0.5485714285714286,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,0,ordinal_prediction,Macro-F1,0.42489825794173625,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,0,ordinal_prediction,ECE,0.29960341026563114,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,0,ordinal_prediction,Brier Score,0.7352501066157213,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,1,ordinal_prediction,QWK,0.023925837596645794,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,1,ordinal_prediction,Ordinal MAE,0.6114285714285714,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,1,ordinal_prediction,Macro-F1,0.3374103021161845,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,1,ordinal_prediction,ECE,0.3703748980575319,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,1,ordinal_prediction,Brier Score,0.8310944172356942,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,2,ordinal_prediction,QWK,0.0906116478694331,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,2,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,2,ordinal_prediction,Macro-F1,0.39501182995011824,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,2,ordinal_prediction,ECE,0.35222576966188557,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,2,ordinal_prediction,Brier Score,0.8032462239667272,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,3,ordinal_prediction,QWK,0.05019438777474117,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,3,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,3,ordinal_prediction,Macro-F1,0.3956357279563572,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,3,ordinal_prediction,ECE,0.3412809833226066,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,3,ordinal_prediction,Brier Score,0.7998407685936377,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,4,ordinal_prediction,QWK,0.21225983531564496,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,4,ordinal_prediction,Ordinal MAE,0.5428571428571428,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,4,ordinal_prediction,Macro-F1,0.41351803021632244,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,4,ordinal_prediction,ECE,0.3397643121278762,,,175
+mpdd_avp_shuffled_personality_early_fusion,MPDD-AVG-2026,Audio+Video+Personality,ordinal severity prediction,WavLM audio + ResNet video + shuffled personality TF-IDF early fusion Logistic,4,ordinal_prediction,Brier Score,0.7726925076456265,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,0,ordinal_prediction,QWK,0.023954236682159458,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,0,ordinal_prediction,Ordinal MAE,0.6514285714285715,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,0,ordinal_prediction,Macro-F1,0.3745039449387275,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,0,ordinal_prediction,ECE,0.06216971963843509,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,0,ordinal_prediction,Brier Score,0.6596514930962444,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,1,ordinal_prediction,QWK,-0.026099392205934935,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,1,ordinal_prediction,Ordinal MAE,0.6742857142857143,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,1,ordinal_prediction,Macro-F1,0.3526764031111857,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,1,ordinal_prediction,ECE,0.049216624034211016,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,1,ordinal_prediction,Brier Score,0.655902039853683,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,2,ordinal_prediction,QWK,-0.0010725777618878496,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,2,ordinal_prediction,Ordinal MAE,0.6628571428571428,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,2,ordinal_prediction,Macro-F1,0.35648592692070946,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,2,ordinal_prediction,ECE,0.07122697734939976,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,2,ordinal_prediction,Brier Score,0.6582334001025275,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,3,ordinal_prediction,QWK,0.10406920293053223,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,3,ordinal_prediction,Ordinal MAE,0.5371428571428571,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,3,ordinal_prediction,Macro-F1,0.3653539722285453,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,3,ordinal_prediction,ECE,0.11931389717946984,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,3,ordinal_prediction,Brier Score,0.656126120599373,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,4,ordinal_prediction,QWK,-0.0823268568761304,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,4,ordinal_prediction,Ordinal MAE,0.8114285714285714,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,4,ordinal_prediction,Macro-F1,0.32425545469023725,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,4,ordinal_prediction,ECE,0.10753510356597423,,,175
+mpdd_demographics_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,age group one-hot + Logistic,4,ordinal_prediction,Brier Score,0.6581523629690214,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,0,ordinal_prediction,QWK,0.033806166652509906,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,0,ordinal_prediction,Ordinal MAE,0.9485714285714286,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,0,ordinal_prediction,Macro-F1,0.3186353631694791,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,0,ordinal_prediction,ECE,0.10633791577969824,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,0,ordinal_prediction,Brier Score,0.6715242901137566,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,1,ordinal_prediction,QWK,0.0730861563083488,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,1,ordinal_prediction,Ordinal MAE,0.96,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,1,ordinal_prediction,Macro-F1,0.3065124585163214,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,1,ordinal_prediction,ECE,0.02584858447065476,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,1,ordinal_prediction,Brier Score,0.6628012992050881,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,2,ordinal_prediction,QWK,-0.06139053254437865,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,2,ordinal_prediction,Ordinal MAE,0.9257142857142857,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,2,ordinal_prediction,Macro-F1,0.2563901110412738,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,2,ordinal_prediction,ECE,0.10407577029754392,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,2,ordinal_prediction,Brier Score,0.6747899845466372,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,3,ordinal_prediction,QWK,0.02277996169740948,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,3,ordinal_prediction,Ordinal MAE,0.9885714285714285,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,3,ordinal_prediction,Macro-F1,0.293705460771641,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,3,ordinal_prediction,ECE,0.11594965201359694,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,3,ordinal_prediction,Brier Score,0.68181098821445,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,4,ordinal_prediction,QWK,0.017144546260715376,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,4,ordinal_prediction,Ordinal MAE,0.8571428571428571,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,4,ordinal_prediction,Macro-F1,0.31927518427518425,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,4,ordinal_prediction,ECE,0.010743532981318641,,,175
+mpdd_demographics_shuffled_age_severity_logistic,MPDD-AVG-2026,Demographics,ordinal severity prediction,shuffled age group one-hot + Logistic,4,ordinal_prediction,Brier Score,0.6683863649410047,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,0,binary_classification,Macro-F1,0.5115629984051037,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,0,binary_classification,Balanced Accuracy,0.5134750812567714,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,0,binary_classification,AUROC,0.49295774647887325,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,0,binary_classification,AUPRC,0.38691319907651867,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,0,binary_classification,ECE,0.3328617192111028,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,0,binary_classification,Brier Score,0.36618659871833464,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,1,binary_classification,Macro-F1,0.554177005789909,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,1,binary_classification,Balanced Accuracy,0.5583017334777898,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,1,binary_classification,AUROC,0.5346695557963164,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,1,binary_classification,AUPRC,0.42427783453209317,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,1,binary_classification,ECE,0.2742311546154077,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,1,binary_classification,Brier Score,0.337320483240088,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,2,binary_classification,Macro-F1,0.4716499120798912,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,2,binary_classification,Balanced Accuracy,0.47311755146262185,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,2,binary_classification,AUROC,0.5284398699891658,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,2,binary_classification,AUPRC,0.40854447762257173,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,2,binary_classification,ECE,0.33005364484158933,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,2,binary_classification,Brier Score,0.35254407392810866,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,3,binary_classification,Macro-F1,0.47829647829647837,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,3,binary_classification,Balanced Accuracy,0.48652491874322856,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,3,binary_classification,AUROC,0.4815817984832069,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,3,binary_classification,AUPRC,0.3840605227559996,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,3,binary_classification,ECE,0.3428221709831733,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,3,binary_classification,Brier Score,0.38643810766835707,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,4,binary_classification,Macro-F1,0.48780487804878053,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,4,binary_classification,Balanced Accuracy,0.4878791982665222,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,4,binary_classification,AUROC,0.4530065005417118,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,4,binary_classification,AUPRC,0.35840579723450394,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,4,binary_classification,ECE,0.3156689359869924,,,175
+mpdd_gait_binary_stats_logistic,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + Logistic,4,binary_classification,Brier Score,0.3786486433594231,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,0,binary_classification,Macro-F1,0.5263271861128154,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,0,binary_classification,Balanced Accuracy,0.5321641386782232,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,0,binary_classification,AUROC,0.5633802816901409,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,0,binary_classification,AUPRC,0.47797223097958835,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,0,binary_classification,ECE,0.11769008598157338,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,0,binary_classification,Brier Score,0.2537266646838734,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,1,binary_classification,Macro-F1,0.5365629744712405,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,1,binary_classification,Balanced Accuracy,0.5388678223185266,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,1,binary_classification,AUROC,0.6013001083423619,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,1,binary_classification,AUPRC,0.5116752389915309,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,1,binary_classification,ECE,0.11924739467246194,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,1,binary_classification,Brier Score,0.24628284900041666,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,2,binary_classification,Macro-F1,0.5446773713945882,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,2,binary_classification,Balanced Accuracy,0.5539680390032503,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,2,binary_classification,AUROC,0.6025189599133262,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,2,binary_classification,AUPRC,0.5193889626144496,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,2,binary_classification,ECE,0.13222554125956126,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,2,binary_classification,Brier Score,0.23993855714617643,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,3,binary_classification,Macro-F1,0.5396190676628433,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,3,binary_classification,Balanced Accuracy,0.5411023835319609,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,3,binary_classification,AUROC,0.5868093174431203,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,3,binary_classification,AUPRC,0.5051394404548081,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,3,binary_classification,ECE,0.11216894005026137,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,3,binary_classification,Brier Score,0.25006434532440114,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,4,binary_classification,Macro-F1,0.5287698412698413,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,4,binary_classification,Balanced Accuracy,0.5318255687973998,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,4,binary_classification,AUROC,0.5644637053087758,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,4,binary_classification,AUPRC,0.4527249776187842,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,4,binary_classification,ECE,0.11775570390479909,,,175
+mpdd_gait_binary_stats_xgboost,MPDD-AVG-2026,Gait,binary depression classification,statistical gait features + XGBoost,4,binary_classification,Brier Score,0.25749126807680806,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,0,ordinal_prediction,QWK,-0.026138452113538824,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,0,ordinal_prediction,Ordinal MAE,0.76,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,0,ordinal_prediction,Macro-F1,0.3528637399822457,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,0,ordinal_prediction,ECE,0.274615788968582,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,0,ordinal_prediction,Brier Score,0.7600666805784233,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,1,ordinal_prediction,QWK,0.06297060628032791,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,1,ordinal_prediction,Ordinal MAE,0.7542857142857143,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,1,ordinal_prediction,Macro-F1,0.367003367003367,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,1,ordinal_prediction,ECE,0.2700219950524086,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,1,ordinal_prediction,Brier Score,0.770126513299513,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,2,ordinal_prediction,QWK,0.0535562896483176,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,2,ordinal_prediction,Ordinal MAE,0.7142857142857143,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,2,ordinal_prediction,Macro-F1,0.3851267932357012,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,2,ordinal_prediction,ECE,0.2450747126016965,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,2,ordinal_prediction,Brier Score,0.7628963537230373,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,3,ordinal_prediction,QWK,-0.11613517372679683,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,3,ordinal_prediction,Ordinal MAE,0.7828571428571428,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,3,ordinal_prediction,Macro-F1,0.31478394725280534,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,3,ordinal_prediction,ECE,0.3096800744618488,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,3,ordinal_prediction,Brier Score,0.7775073253313536,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,4,ordinal_prediction,QWK,0.11618834487555552,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,4,ordinal_prediction,Ordinal MAE,0.7028571428571428,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,4,ordinal_prediction,Macro-F1,0.37300014821402105,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,4,ordinal_prediction,ECE,0.25038458081110937,,,175
+mpdd_gait_severity_imu_temporal_mlp,MPDD-AVG-2026,Gait,ordinal severity prediction,IMU temporal encoder + MLP,4,ordinal_prediction,Brier Score,0.7311849357455472,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,0,ordinal_prediction,QWK,0.08886589270122558,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,0,ordinal_prediction,Ordinal MAE,0.7028571428571428,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,0,ordinal_prediction,Macro-F1,0.3012698412698412,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,0,ordinal_prediction,ECE,0.13630862985532147,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,0,ordinal_prediction,Brier Score,0.691574810832752,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,1,ordinal_prediction,QWK,-0.06817651179080086,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,1,ordinal_prediction,Ordinal MAE,0.7371428571428571,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,1,ordinal_prediction,Macro-F1,0.2753854332801701,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,1,ordinal_prediction,ECE,0.11446443403053172,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,1,ordinal_prediction,Brier Score,0.6881377903697161,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,2,ordinal_prediction,QWK,-0.15816565278427697,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,2,ordinal_prediction,Ordinal MAE,0.7885714285714286,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,2,ordinal_prediction,Macro-F1,0.28811317789460883,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,2,ordinal_prediction,ECE,0.13341641605612317,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,2,ordinal_prediction,Brier Score,0.7010555506920241,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,3,ordinal_prediction,QWK,-0.09306322085990937,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,3,ordinal_prediction,Ordinal MAE,0.76,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,3,ordinal_prediction,Macro-F1,0.31031800854504055,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,3,ordinal_prediction,ECE,0.13537419948230572,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,3,ordinal_prediction,Brier Score,0.6932338181392173,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,4,ordinal_prediction,QWK,-0.011362523263787061,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,4,ordinal_prediction,Ordinal MAE,0.7142857142857143,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,4,ordinal_prediction,Macro-F1,0.31783422244663495,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,4,ordinal_prediction,ECE,0.14390370782240786,,,175
+mpdd_personality_counterfactual_age_swap,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic with age-group counterfactual swap,4,ordinal_prediction,Brier Score,0.6863000857410274,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,0,ordinal_prediction,QWK,0.2879746835443038,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,0,ordinal_prediction,Ordinal MAE,0.49142857142857144,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,0,ordinal_prediction,Macro-F1,0.44160309754969945,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,0,ordinal_prediction,ECE,0.12706899132499053,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,0,ordinal_prediction,Brier Score,0.5811957782110362,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,1,ordinal_prediction,QWK,0.15355905091975486,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,1,ordinal_prediction,Ordinal MAE,0.5314285714285715,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,1,ordinal_prediction,Macro-F1,0.40374248914018307,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,1,ordinal_prediction,ECE,0.10414590788893954,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,1,ordinal_prediction,Brier Score,0.5913081740674404,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,2,ordinal_prediction,QWK,0.26969868439666145,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,2,ordinal_prediction,Ordinal MAE,0.5142857142857142,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,2,ordinal_prediction,Macro-F1,0.44273211378474536,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,2,ordinal_prediction,ECE,0.12250304547050134,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,2,ordinal_prediction,Brier Score,0.5883251119270768,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,3,ordinal_prediction,QWK,0.2596853198753154,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,3,ordinal_prediction,Ordinal MAE,0.49142857142857144,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,3,ordinal_prediction,Macro-F1,0.43197139323899886,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,3,ordinal_prediction,ECE,0.13534058487444428,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,3,ordinal_prediction,Brier Score,0.5819523682191248,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,4,ordinal_prediction,QWK,0.18021860837110115,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,4,ordinal_prediction,Ordinal MAE,0.52,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,4,ordinal_prediction,Macro-F1,0.3885264209721977,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,4,ordinal_prediction,ECE,0.1196852178352637,,,175
+mpdd_personality_severity_tfidf_logistic_internal,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic internal component,4,ordinal_prediction,Brier Score,0.580780899007516,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,0,ordinal_prediction,QWK,0.2879746835443038,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,0,ordinal_prediction,Ordinal MAE,0.49142857142857144,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,0,ordinal_prediction,Macro-F1,0.44160309754969945,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,0,ordinal_prediction,ECE,0.12706899132499053,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,0,ordinal_prediction,Brier Score,0.5811957782110362,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,1,ordinal_prediction,QWK,0.15355905091975486,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,1,ordinal_prediction,Ordinal MAE,0.5314285714285715,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,1,ordinal_prediction,Macro-F1,0.40374248914018307,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,1,ordinal_prediction,ECE,0.10414590788893954,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,1,ordinal_prediction,Brier Score,0.5913081740674404,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,2,ordinal_prediction,QWK,0.26969868439666145,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,2,ordinal_prediction,Ordinal MAE,0.5142857142857142,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,2,ordinal_prediction,Macro-F1,0.44273211378474536,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,2,ordinal_prediction,ECE,0.12250304547050134,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,2,ordinal_prediction,Brier Score,0.5883251119270768,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,3,ordinal_prediction,QWK,0.2596853198753154,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,3,ordinal_prediction,Ordinal MAE,0.49142857142857144,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,3,ordinal_prediction,Macro-F1,0.43197139323899886,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,3,ordinal_prediction,ECE,0.13534058487444428,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,3,ordinal_prediction,Brier Score,0.5819523682191248,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,4,ordinal_prediction,QWK,0.18021860837110115,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,4,ordinal_prediction,Ordinal MAE,0.52,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,4,ordinal_prediction,Macro-F1,0.3885264209721977,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,4,ordinal_prediction,ECE,0.1196852178352637,,,175
+mpdd_personality_severity_tfidf_logistic_phase3,MPDD-AVG-2026,Personality,ordinal severity prediction,personality TF-IDF + Logistic,4,ordinal_prediction,Brier Score,0.580780899007516,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,0,ordinal_prediction,QWK,-0.07865266082125189,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,0,ordinal_prediction,Ordinal MAE,0.8171428571428572,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,0,ordinal_prediction,Macro-F1,0.300851521577195,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,0,ordinal_prediction,ECE,0.05840746048129156,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,0,ordinal_prediction,Brier Score,0.6541860645202379,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,1,ordinal_prediction,QWK,-0.06352354145342898,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,1,ordinal_prediction,Ordinal MAE,0.7657142857142857,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,1,ordinal_prediction,Macro-F1,0.29231884057971014,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,1,ordinal_prediction,ECE,0.04208902028546711,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,1,ordinal_prediction,Brier Score,0.6444814722247378,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,2,ordinal_prediction,QWK,0.06753620345853362,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,2,ordinal_prediction,Ordinal MAE,0.7028571428571428,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,2,ordinal_prediction,Macro-F1,0.33133682238159845,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,2,ordinal_prediction,ECE,0.03492833875683982,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,2,ordinal_prediction,Brier Score,0.6595916898954641,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,3,ordinal_prediction,QWK,-0.06896997511392655,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,3,ordinal_prediction,Ordinal MAE,0.7371428571428571,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,3,ordinal_prediction,Macro-F1,0.3162663191885532,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,3,ordinal_prediction,ECE,0.044650928817939,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,3,ordinal_prediction,Brier Score,0.6429518359736138,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,4,ordinal_prediction,QWK,-0.06314432989690721,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,4,ordinal_prediction,Ordinal MAE,0.7885714285714286,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,4,ordinal_prediction,Macro-F1,0.28687074829931974,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,4,ordinal_prediction,ECE,0.052729565264849614,,,175
+mpdd_personality_shuffled_severity_tfidf_logistic,MPDD-AVG-2026,Personality,ordinal severity prediction,shuffled personality TF-IDF + Logistic,4,ordinal_prediction,Brier Score,0.6524485271067714,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,0,ordinal_prediction,QWK,0.14933664705237382,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,0,ordinal_prediction,Ordinal MAE,0.5771428571428572,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,0,ordinal_prediction,Macro-F1,0.3400968484559816,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,0,ordinal_prediction,ECE,0.3636795607565754,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,0,ordinal_prediction,Brier Score,0.8191904947192646,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,1,ordinal_prediction,QWK,0.10543893129770998,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,1,ordinal_prediction,Ordinal MAE,0.64,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,1,ordinal_prediction,Macro-F1,0.3111240913811007,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,1,ordinal_prediction,ECE,0.3945297963773108,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,1,ordinal_prediction,Brier Score,0.8360115414521101,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,2,ordinal_prediction,QWK,0.1701534170153418,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,2,ordinal_prediction,Ordinal MAE,0.5828571428571429,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,2,ordinal_prediction,Macro-F1,0.37516244314489927,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,2,ordinal_prediction,ECE,0.38576131211738585,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,2,ordinal_prediction,Brier Score,0.8085560465797482,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,3,ordinal_prediction,QWK,0.1372172669451659,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,3,ordinal_prediction,Ordinal MAE,0.6,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,3,ordinal_prediction,Macro-F1,0.3086490203824825,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,3,ordinal_prediction,ECE,0.4061405253143755,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,3,ordinal_prediction,Brier Score,0.8711523926952555,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,4,ordinal_prediction,QWK,0.1570263607054807,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,4,ordinal_prediction,Ordinal MAE,0.5542857142857143,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,4,ordinal_prediction,Macro-F1,0.3333646616541353,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,4,ordinal_prediction,ECE,0.36950705900418074,,,175
+mpdd_video_severity_openface_mlp,MPDD-AVG-2026,Video,ordinal severity prediction,OpenFace statistics + MLP,4,ordinal_prediction,Brier Score,0.8301788914009776,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,0,ordinal_prediction,QWK,-0.018298261665141924,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,0,ordinal_prediction,Ordinal MAE,0.6228571428571429,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,0,ordinal_prediction,Macro-F1,0.3693417412582498,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,0,ordinal_prediction,ECE,0.32805820562539695,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,0,ordinal_prediction,Brier Score,0.7658732056117581,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,1,ordinal_prediction,QWK,0.10898060881811289,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,1,ordinal_prediction,Ordinal MAE,0.5657142857142857,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,1,ordinal_prediction,Macro-F1,0.4017316017316017,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,1,ordinal_prediction,ECE,0.2906973368184314,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,1,ordinal_prediction,Brier Score,0.7371042767328553,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,2,ordinal_prediction,QWK,0.04465889479801377,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,2,ordinal_prediction,Ordinal MAE,0.6114285714285714,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,2,ordinal_prediction,Macro-F1,0.37547437547437545,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,2,ordinal_prediction,ECE,0.3475063450567173,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,2,ordinal_prediction,Brier Score,0.7924136653193617,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,3,ordinal_prediction,QWK,-0.0013098028402040995,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,3,ordinal_prediction,Ordinal MAE,0.64,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,3,ordinal_prediction,Macro-F1,0.36609272510435303,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,3,ordinal_prediction,ECE,0.34954173790525855,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,3,ordinal_prediction,Brier Score,0.8093756585625996,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,4,ordinal_prediction,QWK,0.06200202810372313,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,4,ordinal_prediction,Ordinal MAE,0.6171428571428571,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,4,ordinal_prediction,Macro-F1,0.3651702168289846,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,4,ordinal_prediction,ECE,0.3638692288199885,,,175
+mpdd_video_severity_temporal_pooling,MPDD-AVG-2026,Video,ordinal severity prediction,official visual features + temporal pooling,4,ordinal_prediction,Brier Score,0.8102421048486836,,,175

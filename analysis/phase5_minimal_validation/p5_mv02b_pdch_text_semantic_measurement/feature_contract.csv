@@ -1,0 +1,2 @@
+feature_space,row_grain,vectorizer,feature_count,ridge_alpha_selection,raw_text_read_from_manifest,raw_text_written,source_paths_written,vectorizer_saved,feature_matrix_saved
+text_char_hash_subject_concat,subject,char_2_3_hashing,4096,fixed_train_only_alpha_100,True,False,False,False,False

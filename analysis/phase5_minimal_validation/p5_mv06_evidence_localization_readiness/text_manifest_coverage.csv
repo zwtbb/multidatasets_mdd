@@ -1,0 +1,4 @@
+dataset,manifest_rows,manifest_subjects,valid_rows,valid_subjects,text_rows_declared,text_subjects_declared,text_rows_existing,text_subjects_existing,item_or_total_label_subjects
+edaic,275,275,275,275,275,275,275,275,219
+cmdc,936,78,908,77,908,77,908,77,77
+pdch,167,100,165,99,165,99,165,99,99

@@ -1,0 +1,85 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "cached_features_read": true,
+    "egemaps_feature_count": 88,
+    "feature_spaces": [
+      "frozen_wavlm_valence_segment",
+      "egemaps_valence_segment"
+    ],
+    "new_feature_extraction": false,
+    "wavlm_feature_count": 768
+  },
+  "generated_at": "2026-08-05T04:19:50+00:00",
+  "local_only_files": [
+    "p5_mv03_local_predictions.csv"
+  ],
+  "model_contract": {
+    "encoder_finetuning": false,
+    "models": [
+      "train_mean_sds_total",
+      "wavlm_valence_segment_ridge",
+      "wavlm_subject_mean_ridge",
+      "egemaps_valence_segment_svr"
+    ],
+    "raw_audio_scan": false,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "validation_labels_for_hyperparameters": false
+  },
+  "output_policy": {
+    "learned_embeddings": "not_written",
+    "model_weights": "not_written",
+    "raw_audio": "not_written",
+    "raw_clinical_text": "not_written",
+    "raw_prompts_or_responses": "not_written",
+    "row_level_predictions": "local_only_ignored",
+    "source_paths": "not_written"
+  },
+  "run_id": "P5_MV03_sds_total_external_stress",
+  "split_audit": {
+    "official_train_validation_split_used": true,
+    "subject_level": true,
+    "subject_overlap_violations": 0,
+    "train_subjects": 83,
+    "validation_subjects": 79
+  },
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "metric_summary.csv",
+    "metrics_by_seed.csv",
+    "comparison_summary.csv",
+    "valence_gap_by_seed.csv",
+    "valence_gap_summary.csv",
+    "healthy_negative_summary.csv",
+    "phase3_valence_reference.csv",
+    "model_split_audit.csv",
+    "feature_availability.csv"
+  ],
+  "target_contract": {
+    "sds_item_level_supervision": false,
+    "sds_total_only": true,
+    "source_scale": "SDS",
+    "target": "sds_total"
+  },
+  "verdict": {
+    "best_all_valence_mae": 7.34130243968813,
+    "best_delta_vs_train_mean_mae": 0.14041026338799156,
+    "best_healthy_negative_minus_nonnegative": -0.18617242001082618,
+    "best_model": "egemaps_valence_segment_svr",
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_no_sds_generalization",
+    "phase3_healthy_negative_minus_nonnegative": -0.0610785213185836,
+    "short_read": "The EATD SDS total heads are runnable, but none beat the train-mean floor on validation MAE; treat this as weak external stress evidence.",
+    "stronger_negative_shortcut_than_phase3": false,
+    "subject_overlap_violations": 0
+  }
+}

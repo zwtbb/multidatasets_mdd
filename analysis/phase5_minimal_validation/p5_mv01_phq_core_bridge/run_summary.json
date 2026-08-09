@@ -1,0 +1,83 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "common_feature_column_count": 768,
+    "feature_dataset_identity_risk": {
+      "balanced_accuracy_mean": 1.0,
+      "probe": "E-DAIC_vs_CMDC_frozen_WavLM"
+    },
+    "feature_space": "frozen_wavlm_subject_mean",
+    "joined_subjects": {
+      "cmdc": 77,
+      "edaic": 219
+    }
+  },
+  "generated_at": "2026-08-05T03:45:55+00:00",
+  "interpretation": {
+    "short_read": "The PHQ core bridge is runnable but weak and asymmetric: pooled Ridge helps only selectively, while frozen WavLM dataset identity remains perfectly recoverable, so this row is a diagnostic baseline rather than evidence of a shared symptom representation."
+  },
+  "local_only_files": [
+    "p5_mv01_local_predictions.csv"
+  ],
+  "model_contract": {
+    "encoder_finetuning": false,
+    "models": [
+      "train_mean",
+      "dataset_specific_ridge",
+      "cross_dataset_ridge",
+      "pooled_shared_ridge",
+      "total_alloc_ridge"
+    ],
+    "raw_audio_scan": false,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "output_policy": {
+    "learned_embeddings": "not_written",
+    "model_weights": "not_written",
+    "row_level_predictions": "local_only_ignored"
+  },
+  "phase2_feature_root_source": "worktree_phase2_cache",
+  "run_id": "P5_MV01_phq_core_construct_bridge",
+  "split_audit": {
+    "cmdc_phase2_subject_cv_used": true,
+    "edaic_official_test_used": false,
+    "subject_level": true,
+    "subject_overlap_violations": 0
+  },
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "metric_summary.csv",
+    "metrics_by_seed.csv",
+    "comparison_summary.csv",
+    "dataset_identity_probe_summary.csv",
+    "feature_availability.csv",
+    "model_split_audit.csv",
+    "construct_target_map.csv"
+  ],
+  "target_contract": {
+    "c09_policy": "excluded_from_core_bridge_safety_sensitive_phq9_only",
+    "constructs": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "source_scales": {
+      "cmdc": "PHQ-9",
+      "edaic": "PHQ-8"
+    }
+  }
+}

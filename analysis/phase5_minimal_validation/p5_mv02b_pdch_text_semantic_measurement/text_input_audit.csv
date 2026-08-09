@@ -1,0 +1,4 @@
+dataset,audit_type,hamd_subjects,text_subjects,text_segments,min_segments_per_subject,max_segments_per_subject,mean_segments_per_subject,median_text_chars_per_subject,raw_text_written,source_paths_written,text_existing_rows,text_present_rows
+pdch,subject_text_coverage,99,99,165,1,3,1.6666666666666667,6568.0,False,False,,
+pdch,segment_text_coverage,,99,165,,,,4715.0,False,False,,
+pdch,segment_text_access_aggregate,,,165,,,,4715.0,False,False,165.0,165.0

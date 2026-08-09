@@ -1,0 +1,13 @@
+valence,model,mae,delta_vs_train_mean,relative_delta_vs_train_mean
+all_valences,text_char_tfidf_subject_concat_ridge,7.20033664916306,-0.0005555271370782933,-7.714698727286407e-05
+all_valences,text_char_tfidf_valence_segment_ridge,7.200390703229371,-0.000501473070767311,-6.964040822854966e-05
+all_valences,train_mean_sds_total,7.200892176300139,0.0,0.0
+positive,text_char_tfidf_subject_concat_ridge,7.20033664916306,-0.0005555271370747406,-7.714698727237075e-05
+positive,text_char_tfidf_valence_segment_ridge,7.200255745666878,-0.0006364306332571346,-8.83821917722613e-05
+positive,train_mean_sds_total,7.200892176300135,0.0,0.0
+neutral,text_char_tfidf_subject_concat_ridge,7.20033664916306,-0.0005555271370747406,-7.714698727237075e-05
+neutral,text_char_tfidf_valence_segment_ridge,7.200642464696417,-0.0002497116037183389,-3.4677870131176205e-05
+neutral,train_mean_sds_total,7.200892176300135,0.0,0.0
+negative,text_char_tfidf_subject_concat_ridge,7.20033664916306,-0.0005555271370747406,-7.714698727237075e-05
+negative,text_char_tfidf_valence_segment_ridge,7.200273899324815,-0.0006182769753202422,-8.586116278134814e-05
+negative,train_mean_sds_total,7.200892176300135,0.0,0.0

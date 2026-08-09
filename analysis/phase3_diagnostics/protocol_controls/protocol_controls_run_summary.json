@@ -1,0 +1,39 @@
+{
+  "blocked_run_count": 0,
+  "bootstrap_resamples": 200,
+  "completed_run_count": 60,
+  "datasets": [
+    "E-DAIC",
+    "CMDC"
+  ],
+  "edaic_repeat_min_subjects": 10,
+  "artifact_hygiene_passed": true,
+  "generated_at": "2026-08-04T16:41:35+00:00",
+  "manifest_refs": [
+    "datasets/manifests/edaic_subjects.csv",
+    "datasets/manifests/cmdc_subjects.csv"
+  ],
+  "metric_summary_rows": 284,
+  "metrics_by_seed_rows": 1420,
+  "prediction_rows": 17680,
+  "raw_prompt_text_written": false,
+  "raw_text_written": false,
+  "registry_ref": "datasets/registry.yaml",
+  "seed_count": 5,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "source_paths_written": false,
+  "speaker_resolved_controls": {
+    "cmdc_interviewer_or_prompt_only": "blocked_no_populated_speaker_or_prompt_field",
+    "edaic_interviewer_only": "blocked_no_speaker_field",
+    "edaic_participant_only": "blocked_no_speaker_field"
+  },
+  "split_ref": "datasets/splits/phase2_subject_splits.csv",
+  "subject_overlap_violations": 0,
+  "test_labels_used": false
+}

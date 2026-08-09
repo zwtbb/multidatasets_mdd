@@ -1,0 +1,89 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "encoder_finetuning": false,
+    "feature_column_counts": {
+      "audio_egemaps": 352,
+      "audio_wavlm": 768,
+      "early_fusion_all": 1632,
+      "text_bge": 512
+    },
+    "feature_spaces": [
+      "text_bge",
+      "audio_wavlm",
+      "audio_egemaps",
+      "early_fusion_all"
+    ],
+    "raw_data_scan": false
+  },
+  "generated_at": "2026-08-09T05:38:02+00:00",
+  "interpretation": {
+    "short_read": "MV02 is a useful PDCH-only diagnostic: shallow frozen-feature heads beat train-mean severity baselines and provide item-level HAMD summaries. This supports running a bounded HAMD auxiliary bridge, but it is not yet a cross-dataset shared-symptom claim because CMDC HAMD coverage is only a 25-subject sanity subset."
+  },
+  "label_contract": {
+    "cmdc_hamd_subjects": 25,
+    "hamd_code_9_policy": "exclude_from_item_training_and_total_scoring",
+    "pdch_hamd_code_9_subjects": 7,
+    "pdch_hamd_subjects": 99,
+    "primary_total_target": "manifest_hamd17_total"
+  },
+  "local_only_files": [
+    "p5_mv02_local_predictions.csv"
+  ],
+  "model_contract": {
+    "folds_per_seed": 5,
+    "inner_cv_for_alpha": true,
+    "models": [
+      "train_mean_total",
+      "train_mean_items",
+      "direct_total_ridge",
+      "itemwise_ridge"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "output_policy": {
+    "learned_embeddings": "not_written",
+    "media_paths": "not_written",
+    "model_weights": "not_written",
+    "raw_text": "not_written",
+    "row_level_predictions": "local_only_ignored"
+  },
+  "run_id": "P5_MV02_hamd17_auxiliary_bridge",
+  "scope": "pdch_only_hamd17_auxiliary_bridge_with_cmdc_sanity",
+  "split_audit": {
+    "cmdc_sanity_eval_subjects": 25,
+    "cmdc_used_for_hyperparameters": false,
+    "pdch_cv_subject_overlap_violations": 0,
+    "pdch_subject_level_stratified_cv": true
+  },
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "metric_summary.csv",
+    "metrics_by_seed.csv",
+    "macro_summary.csv",
+    "comparison_summary.csv",
+    "model_split_audit.csv",
+    "label_feature_audit.csv",
+    "construct_proxy_map.csv"
+  ],
+  "verdict": {
+    "best_pdch_direct_total_feature": "early_fusion_all",
+    "best_pdch_direct_total_mae": 5.793952228770782,
+    "best_pdch_item_total_feature": "early_fusion_all",
+    "best_pdch_item_total_mae": 5.69304097960432,
+    "best_pdch_macro_item_feature": "early_fusion_all",
+    "best_pdch_macro_item_mae": 0.7267771176710223,
+    "direct_total_beats_train_mean": true,
+    "item_total_beats_train_mean": true,
+    "pass_rule_status": "pass_pdch_only_diagnostic"
+  }
+}

@@ -1,0 +1,17 @@
+dataset,construct_id,scale_item_code
+edaic,C01,PHQ8_C01
+edaic,C02,PHQ8_C02
+edaic,C03,PHQ8_C03
+edaic,C04,PHQ8_C04
+edaic,C05,PHQ8_C05
+edaic,C06,PHQ8_C06
+edaic,C07,PHQ8_C07
+edaic,C08,PHQ8_C08
+cmdc,C01,PHQ9_C01
+cmdc,C02,PHQ9_C02
+cmdc,C03,PHQ9_C03
+cmdc,C04,PHQ9_C04
+cmdc,C05,PHQ9_C05
+cmdc,C06,PHQ9_C06
+cmdc,C07,PHQ9_C07
+cmdc,C08,PHQ9_C08

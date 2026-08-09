@@ -1,0 +1,89 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "feature_spaces": [
+      "text_char_tfidf_valence_segment",
+      "text_char_tfidf_subject_concat"
+    ],
+    "new_feature_extraction": "in_memory_tfidf_only",
+    "raw_text_read_from_manifest": true,
+    "raw_text_written": false,
+    "source_paths_written": false,
+    "vectorizer_saved": false
+  },
+  "generated_at": "2026-08-09T06:26:58+00:00",
+  "local_only_files": [
+    "p5_mv03b_local_predictions.csv"
+  ],
+  "model_contract": {
+    "encoder_finetuning": false,
+    "models": [
+      "train_mean_sds_total",
+      "text_char_tfidf_valence_segment_ridge",
+      "text_char_tfidf_subject_concat_ridge"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "validation_labels_for_hyperparameters": false
+  },
+  "output_policy": {
+    "learned_features": "not_written",
+    "model_weights": "not_written",
+    "raw_prompts_or_responses": "not_written",
+    "raw_text": "not_written",
+    "row_level_predictions": "local_only_ignored",
+    "source_paths": "not_written"
+  },
+  "run_id": "P5_MV03b_eatd_text_semantic_stress",
+  "split_audit": {
+    "official_train_validation_split_used": true,
+    "subject_level": true,
+    "subject_overlap_violations": 0,
+    "train_subjects": 83,
+    "validation_subjects": 79
+  },
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "metric_summary.csv",
+    "metrics_by_seed.csv",
+    "comparison_summary.csv",
+    "valence_gap_by_seed.csv",
+    "valence_gap_summary.csv",
+    "healthy_negative_summary.csv",
+    "phase3_valence_reference.csv",
+    "audio_mv03_reference.csv",
+    "model_split_audit.csv",
+    "text_input_audit.csv",
+    "feature_contract.csv"
+  ],
+  "target_contract": {
+    "sds_item_level_supervision": false,
+    "sds_total_only": true,
+    "source_scale": "SDS",
+    "target": "sds_total"
+  },
+  "verdict": {
+    "best_all_valence_mae": 7.20033664916306,
+    "best_delta_vs_train_mean_mae": -0.0005555271370782933,
+    "best_healthy_negative_minus_nonnegative": 0.0,
+    "best_model": "text_char_tfidf_subject_concat_ridge",
+    "meaningful_improvement": false,
+    "min_absolute_mae_improvement": 0.1,
+    "min_relative_mae_improvement": 0.01,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_no_meaningful_text_sds_generalization",
+    "phase3_healthy_negative_minus_nonnegative": -0.0610785213185836,
+    "short_read": "The EATD text semantic heads are runnable, but the best validation MAE gain over train mean is below the predefined meaningful-improvement threshold; treat this as weak/negative SDS text evidence.",
+    "stronger_negative_shortcut_than_phase3": false,
+    "subject_overlap_violations": 0,
+    "train_mean_all_valence_mae": 7.200892176300139
+  }
+}

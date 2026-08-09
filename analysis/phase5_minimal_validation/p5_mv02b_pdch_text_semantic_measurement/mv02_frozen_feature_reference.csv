@@ -1,0 +1,10 @@
+reference_run_id,eval_scope,dataset,feature_space,model,summary_target,metric,mean,seed_count,target_count
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,none,train_mean_total,hamd_total_direct,MAE,6.180669351745302,5,1
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,none,train_mean_items,hamd_total_from_items,MAE,6.182538689775553,5,1
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,none,train_mean_items,macro_hamd_item_mae,MAE,0.7473865452205422,5,17
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,text_bge,direct_total_ridge,hamd_total_direct,MAE,5.969816411138456,5,1
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,text_bge,itemwise_ridge,hamd_total_from_items,MAE,5.886603109516411,5,1
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,text_bge,itemwise_ridge,macro_hamd_item_mae,MAE,0.7310284136899343,5,17
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,early_fusion_all,direct_total_ridge,hamd_total_direct,MAE,5.793952228770782,5,1
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,early_fusion_all,itemwise_ridge,hamd_total_from_items,MAE,5.69304097960432,5,1
+P5_MV02_hamd17_auxiliary_bridge,pdch_cv,pdch,early_fusion_all,itemwise_ridge,macro_hamd_item_mae,MAE,0.7267771176710223,5,17

@@ -1,0 +1,79 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "cmdc_hamd_subjects_after_valid_item_filter": 25,
+    "cmdc_hamd_use": "small_aligned_25_subject_external_sanity_check_only",
+    "full_method_allowed": false,
+    "mv02_readiness_status": "ready_pdch_only_mode",
+    "pdch_hamd_code_9_subjects": 7,
+    "pdch_raw_item_sum_mismatch_subjects": 7,
+    "pdch_scored_item_sum_mismatch_subjects": 0,
+    "pdch_total_target_policy": "use_manifest_hamd17_total_and_official_9_excluded_scoring",
+    "recommended_first_mode": "pdch_only_subject_level_hamd17_auxiliary_bridge"
+  },
+  "feature_families_checked": 6,
+  "generated_at": "2026-08-09T05:16:56+00:00",
+  "label_summaries": {
+    "cmdc": {
+      "any_item_subjects": 25,
+      "dataset": "cmdc",
+      "full_hamd17_item_subjects": 25,
+      "hamd_code_9_subjects": 0,
+      "hamd_total_subjects": 25,
+      "item_vector_conflict_subjects": 0,
+      "manifest_rows": 936,
+      "manifest_subjects": 78,
+      "raw_item_sum_delta_counts": {
+        "0.0": 25
+      },
+      "raw_item_sum_mismatch_subjects": 0,
+      "scored_item_sum_delta_counts": {
+        "0.0": 25
+      },
+      "scored_item_sum_mismatch_subjects": 0,
+      "total_and_full_item_subjects": 25,
+      "total_conflict_subjects": 0
+    },
+    "pdch": {
+      "any_item_subjects": 99,
+      "dataset": "pdch",
+      "full_hamd17_item_subjects": 99,
+      "hamd_code_9_subjects": 7,
+      "hamd_total_subjects": 99,
+      "item_vector_conflict_subjects": 0,
+      "manifest_rows": 167,
+      "manifest_subjects": 100,
+      "raw_item_sum_delta_counts": {
+        "0.0": 92,
+        "9.0": 7
+      },
+      "raw_item_sum_mismatch_subjects": 7,
+      "scored_item_sum_delta_counts": {
+        "0.0": 99
+      },
+      "scored_item_sum_mismatch_subjects": 0,
+      "total_and_full_item_subjects": 99,
+      "total_conflict_subjects": 0
+    }
+  },
+  "output_policy": {
+    "learned_embeddings": "not_written",
+    "model_weights": "not_written",
+    "raw_text": "not_written",
+    "row_level_predictions": "not_written",
+    "source_paths": "not_written",
+    "subject_level_labels": "not_written"
+  },
+  "run_id": "P5_MV02_hamd_bridge_readiness_audit",
+  "scope": "readiness_audit_no_model_training",
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "hamd_label_coverage.csv",
+    "hamd_total_item_consistency.csv",
+    "feature_availability.csv",
+    "readiness_decision.csv"
+  ]
+}

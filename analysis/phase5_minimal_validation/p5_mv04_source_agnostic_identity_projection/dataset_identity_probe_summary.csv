@@ -1,0 +1,11 @@
+probe_layer,representation,metric,mean,std,seed_count,train_subjects_mean,eval_subjects_mean,subject_overlap_count_sum,ci95_low,ci95_high
+feature,raw_frozen_wavlm_before_control,Balanced Accuracy,1.0,0.0,5,224.6,71.4,0,1.0,1.0
+feature,source_agnostic_logit_projection_k10_after_control,Balanced Accuracy,0.9250595238095238,0.04383818453018434,5,224.6,71.4,0,0.8866336608466124,0.9634853867724352
+feature,source_agnostic_logit_projection_k1_after_control,Balanced Accuracy,0.9139285714285714,0.025217309499879204,5,224.6,71.4,0,0.89182462507403,0.9360325177831128
+feature,source_agnostic_logit_projection_k3_after_control,Balanced Accuracy,0.9344642857142856,0.04941300849132001,5,224.6,71.4,0,0.8911518740982142,0.9777766973303571
+feature,source_agnostic_logit_projection_k5_after_control,Balanced Accuracy,0.9371428571428572,0.0342755854747543,5,224.6,71.4,0,0.9070989818195164,0.9671867324661979
+prediction,baseline_pooled_shared_ridge_predictions,Balanced Accuracy,0.9607738095238096,0.05206734448459999,5,224.6,71.4,0,0.9151347698270276,1.0064128492205917
+prediction,source_agnostic_logit_projection_k10_shared_ridge_predictions,Balanced Accuracy,0.7771428571428571,0.05908521448604279,5,224.6,71.4,0,0.7253523831689259,0.8289333311167884
+prediction,source_agnostic_logit_projection_k1_shared_ridge_predictions,Balanced Accuracy,0.8542261904761904,0.033982309156396454,5,224.6,71.4,0,0.8244393831801929,0.8840129977721879
+prediction,source_agnostic_logit_projection_k3_shared_ridge_predictions,Balanced Accuracy,0.8114285714285714,0.06156996520284358,5,224.6,71.4,0,0.7574601174227563,0.8653970254343865
+prediction,source_agnostic_logit_projection_k5_shared_ridge_predictions,Balanced Accuracy,0.8145238095238095,0.07220725114105189,5,224.6,71.4,0,0.7512313632920513,0.8778162557555678

@@ -1,0 +1,13 @@
+model,metric,mean,std,seed_count,subject_count_mean
+train_mean_sds_total,valence_prediction_std,0.0,0.0,5,79.0
+train_mean_sds_total,negative_minus_nonnegative,0.0,0.0,5,79.0
+train_mean_sds_total,negative_highest_rate,0.0,0.0,5,79.0
+wavlm_valence_segment_ridge,valence_prediction_std,2.3089729730323443,0.0,5,79.0
+wavlm_valence_segment_ridge,negative_minus_nonnegative,-1.0290234076656846,0.0,5,79.0
+wavlm_valence_segment_ridge,negative_highest_rate,0.2151898734177215,2.7755575615628914e-17,5,79.0
+egemaps_valence_segment_svr,valence_prediction_std,0.48507966884728726,0.0,5,79.0
+egemaps_valence_segment_svr,negative_minus_nonnegative,-0.15492471808468947,0.0,5,79.0
+egemaps_valence_segment_svr,negative_highest_rate,0.2911392405063291,0.0,5,79.0
+wavlm_subject_mean_ridge,valence_prediction_std,8.99421184506456e-16,0.0,5,79.0
+wavlm_subject_mean_ridge,negative_minus_nonnegative,0.0,0.0,5,79.0
+wavlm_subject_mean_ridge,negative_highest_rate,0.0,0.0,5,79.0

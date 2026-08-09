@@ -1,0 +1,16 @@
+seed,model,feature_space,train_rows,validation_rows,train_subjects,validation_subjects,subject_overlap_count,selected_alpha,vocabulary_size,text_vectorizer,encoder_finetuning,raw_text_read_from_manifest,raw_text_written,source_paths_written,control_uses_validation_labels_for_hyperparameters
+0,train_mean_sds_total,none,249,237,83,79,0,,,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+0,text_char_tfidf_valence_segment_ridge,text_char_tfidf_valence_segment,249,237,83,79,0,1000.0,4663.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+0,text_char_tfidf_subject_concat_ridge,text_char_tfidf_subject_concat,83,79,83,79,0,1000.0,4666.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+1,train_mean_sds_total,none,249,237,83,79,0,,,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+1,text_char_tfidf_valence_segment_ridge,text_char_tfidf_valence_segment,249,237,83,79,0,1000.0,4663.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+1,text_char_tfidf_subject_concat_ridge,text_char_tfidf_subject_concat,83,79,83,79,0,1000.0,4666.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+2,train_mean_sds_total,none,249,237,83,79,0,,,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+2,text_char_tfidf_valence_segment_ridge,text_char_tfidf_valence_segment,249,237,83,79,0,1000.0,4663.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+2,text_char_tfidf_subject_concat_ridge,text_char_tfidf_subject_concat,83,79,83,79,0,1000.0,4666.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+3,train_mean_sds_total,none,249,237,83,79,0,,,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+3,text_char_tfidf_valence_segment_ridge,text_char_tfidf_valence_segment,249,237,83,79,0,1000.0,4663.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+3,text_char_tfidf_subject_concat_ridge,text_char_tfidf_subject_concat,83,79,83,79,0,1000.0,4666.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+4,train_mean_sds_total,none,249,237,83,79,0,,,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+4,text_char_tfidf_valence_segment_ridge,text_char_tfidf_valence_segment,249,237,83,79,0,1000.0,4663.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False
+4,text_char_tfidf_subject_concat_ridge,text_char_tfidf_subject_concat,83,79,83,79,0,1000.0,4666.0,"TfidfVectorizer(analyzer=char, ngram_range=(2,5), min_df=2, max_features=5000)",False,True,False,False,False

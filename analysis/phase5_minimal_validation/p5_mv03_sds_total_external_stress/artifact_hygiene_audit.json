@@ -1,0 +1,16 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "P5_MV03_artifact_hygiene",
+  "files_checked": 12,
+  "generated_at": "2026-08-05T04:19:50+00:00",
+  "local_only_patterns": [
+    "analysis/phase5_minimal_validation/**/*predictions*.csv",
+    "analysis/phase5_minimal_validation/**/*features*.csv",
+    "analysis/phase5_minimal_validation/**/*embeddings*.csv",
+    "analysis/phase5_minimal_validation/**/*model*.joblib",
+    "analysis/phase5_minimal_validation/**/*model*.pkl",
+    "analysis/phase5_minimal_validation/**/*weights*.csv"
+  ],
+  "violation_count": 0,
+  "violations": []
+}

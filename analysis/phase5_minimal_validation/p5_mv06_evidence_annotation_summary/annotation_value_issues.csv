@@ -1,0 +1,7 @@
+issue_type,field,row_count,values,release_policy
+missing_value,evidence_presence,144,,not_claimable_until_completed
+missing_value,evidence_source,144,,not_claimable_until_completed
+missing_value,evidence_strength,144,,not_claimable_until_completed
+missing_value,time_status,144,,not_claimable_until_completed
+missing_value,prompt_artifact,144,,not_claimable_until_completed
+missing_value,annotator_id,144,,required_for_agreement_audit

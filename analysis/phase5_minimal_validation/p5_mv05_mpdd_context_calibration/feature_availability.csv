@@ -1,0 +1,5 @@
+artifact,source_scope,row_count,joined_subjects,feature_count,new_encoder_extraction
+mpdd_wavlm_subject_features,current_worktree,175,175,768,False
+mpdd_resnet_video_subject_features,current_worktree,175,175,2000,False
+calibration_context_bins,manifest_train_rows_in_memory,175,175,7,False
+audio_video_feature_union,derived_from_cached_phase2_subject_features,175,175,2768,False

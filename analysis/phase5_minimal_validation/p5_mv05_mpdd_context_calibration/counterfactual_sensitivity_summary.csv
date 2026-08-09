@@ -1,0 +1,13 @@
+counterfactual_type,age_group,metric,mean,std,seed_count,subject_count_mean
+age_group_swap,elder,changed_pred_rate,0.46436781609195404,0.07070600689301008,5,87.0
+age_group_swap,elder,mean_abs_delta_expected_severity,0.38407246477671036,0.026029654825856785,5,87.0
+age_group_swap,elder,mean_delta_expected_severity,0.38407246477671036,0.026029654825856785,5,87.0
+age_group_swap,young,changed_pred_rate,0.3,0.049061438965733874,5,88.0
+age_group_swap,young,mean_abs_delta_expected_severity,0.2999726195977234,0.007298958335152572,5,88.0
+age_group_swap,young,mean_delta_expected_severity,-0.2999726195977234,0.007298958335152572,5,88.0
+personality_bin_swap,elder,changed_pred_rate,0.2160919540229885,0.021069313540026852,5,87.0
+personality_bin_swap,elder,mean_abs_delta_expected_severity,0.28982866154872877,0.01838655844335052,5,87.0
+personality_bin_swap,elder,mean_delta_expected_severity,-0.09641092436064885,0.02168598896326751,5,87.0
+personality_bin_swap,young,changed_pred_rate,0.525,0.03962635403218797,5,88.0
+personality_bin_swap,young,mean_abs_delta_expected_severity,0.369025406812111,0.02814097849936551,5,88.0
+personality_bin_swap,young,mean_delta_expected_severity,0.2129743302279356,0.05616726788659289,5,88.0

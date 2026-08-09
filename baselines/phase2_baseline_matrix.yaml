@@ -1,0 +1,939 @@
+version: 1
+stage: phase2_unified_baselines
+
+policy:
+  objective: credible_repeatable_baseline_matrix_before_method_design
+  pretrained_encoder_policy: frozen_by_default
+  small_dataset_finetuning_policy: no_full_finetuning_at_phase2_start
+  minimum_random_seeds: 5
+  random_seeds: [0, 1, 2, 3, 4]
+  bootstrap:
+    enabled: true
+    resamples: 1000
+    confidence_level: 0.95
+    resample_unit: subject_id
+  hyperparameter_selection: dev_or_inner_cv_only
+  test_set_policy: never_select_hyperparameters_on_test
+  forbidden_model_components:
+    - hypergraph
+    - causal_module
+    - llm_summary
+    - contrastive_learning
+    - personality_gating
+    - weak_summary_supervision
+    - full_encoder_finetuning_by_default
+
+metric_sets:
+  binary_classification:
+    - Macro-F1
+    - Balanced Accuracy
+    - AUROC
+    - AUPRC
+    - ECE
+    - Brier Score
+  severity_regression:
+    - CCC
+    - MAE
+    - RMSE
+    - Spearman
+  ordinal_prediction:
+    - QWK
+    - Ordinal MAE
+    - Macro-F1
+    - ECE
+    - Brier Score
+
+coverage_requirements:
+  single_modal_families:
+    - text_tfidf
+    - text_embedding_mlp
+    - text_sentence_attention
+    - audio_egemaps
+    - audio_wavlm
+    - audio_wav2vec2
+    - video_openface
+    - video_official_temporal_pooling
+    - gait_statistics
+    - gait_imu_temporal_encoder
+  multimodal_families:
+    - early_fusion
+    - late_fusion
+    - gated_fusion
+  public_reproduction:
+    edaic:
+      - avec_edaic_official
+      - questmf
+      - existing_text_baseline
+      - existing_audio_baseline
+      - existing_late_fusion_baseline
+    mpdd_avg_2026:
+      - mpdd_official
+      - p3hf_compatibility_gated
+    pdch:
+      - pdch_official_text_only
+      - pdch_official_audio_text
+    eatd:
+      - eatd_official_gru
+      - eatd_official_bilstm
+    modma:
+      - modma_egemaps
+      - modma_frozen_wavlm
+      - modma_task_specific_cross_task
+
+runs:
+  - id: edaic_text_phq8_tfidf_ridge
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Text
+    input_modalities: [text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: TF-IDF + Ridge
+    family: text_tfidf
+    split_policy: official_subject_level_split
+
+  - id: edaic_text_binary_tfidf_logistic
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Text
+    input_modalities: [text]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: TF-IDF + Logistic
+    family: text_tfidf
+    split_policy: official_subject_level_split
+
+  - id: edaic_text_phq8_deberta_mlp
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Text
+    input_modalities: [text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: DeBERTa frozen embedding + MLP
+    family: text_embedding_mlp
+    encoder_policy: frozen
+    split_policy: official_subject_level_split
+
+  - id: edaic_text_phq8_modernbert_mlp
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Text
+    input_modalities: [text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: ModernBERT frozen embedding + MLP
+    family: text_embedding_mlp
+    encoder_policy: frozen
+    split_policy: official_subject_level_split
+
+  - id: edaic_text_phq8_sentence_attention
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Text
+    input_modalities: [text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: sentence encoder + attention pooling
+    family: text_sentence_attention
+    encoder_policy: frozen
+    split_policy: official_subject_level_split
+
+  - id: edaic_audio_phq8_egemaps_svr
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio
+    input_modalities: [audio]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: eGeMAPS + SVR
+    family: audio_egemaps
+    split_policy: official_subject_level_split
+
+  - id: edaic_audio_binary_egemaps_svm
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio
+    input_modalities: [audio]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: eGeMAPS + SVM
+    family: audio_egemaps
+    split_policy: official_subject_level_split
+
+  - id: edaic_audio_phq8_wavlm_linear
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio
+    input_modalities: [audio]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: WavLM frozen embedding + linear
+    family: audio_wavlm
+    encoder_policy: frozen
+    split_policy: official_subject_level_split
+
+  - id: edaic_audio_phq8_wavlm_mlp
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio
+    input_modalities: [audio]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: WavLM frozen embedding + MLP
+    family: audio_wavlm
+    encoder_policy: frozen
+    split_policy: official_subject_level_split
+
+  - id: edaic_audio_phq8_wav2vec2_linear
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio
+    input_modalities: [audio]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: wav2vec2 frozen embedding + linear
+    family: audio_wav2vec2
+    encoder_policy: frozen
+    split_policy: official_subject_level_split
+
+  - id: edaic_audio_phq8_wav2vec2_mlp
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio
+    input_modalities: [audio]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: wav2vec2 frozen embedding + MLP
+    family: audio_wav2vec2
+    encoder_policy: frozen
+    split_policy: official_subject_level_split
+
+  - id: edaic_video_phq8_openface_mlp
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Video
+    input_modalities: [video]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: OpenFace statistics + MLP
+    family: video_openface
+    split_policy: official_subject_level_split
+
+  - id: edaic_video_phq8_official_temporal_pooling
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Video
+    input_modalities: [video]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: official visual features + temporal pooling
+    family: video_official_temporal_pooling
+    split_policy: official_subject_level_split
+
+  - id: edaic_av_phq8_early_fusion
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio/Video/Text
+    input_modalities: [audio, video, text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: Early Fusion
+    family: early_fusion
+    split_policy: official_subject_level_split
+
+  - id: edaic_av_phq8_late_fusion
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio/Video/Text
+    input_modalities: [audio, video, text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: Late Fusion
+    family: late_fusion
+    split_policy: official_subject_level_split
+
+  - id: edaic_av_phq8_gated_fusion
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio/Video/Text
+    input_modalities: [audio, video, text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: Gated Fusion
+    family: gated_fusion
+    split_policy: official_subject_level_split
+
+  - id: edaic_public_avec_official
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio/Video/Text
+    input_modalities: [audio, video, text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: AVEC/E-DAIC official baseline
+    family: public_reproduction
+    public_name: avec_edaic_official
+    split_policy: official_subject_level_split
+
+  - id: edaic_public_questmf
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio/Video/Text
+    input_modalities: [audio, video, text]
+    task: PHQ-8 item-wise ordinal prediction
+    task_type: ordinal_prediction
+    target: phq8_items
+    model: QuestMF
+    family: public_reproduction
+    public_name: questmf
+    split_policy: official_subject_level_split
+    note: PHQ item-wise prediction is prior-art coverage, not a main innovation claim.
+
+  - id: edaic_existing_text_baseline
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Text
+    input_modalities: [text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: existing text baseline
+    family: existing_baseline
+    public_name: existing_text_baseline
+    split_policy: official_subject_level_split
+
+  - id: edaic_existing_audio_baseline
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio
+    input_modalities: [audio]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: existing audio baseline
+    family: existing_baseline
+    public_name: existing_audio_baseline
+    split_policy: official_subject_level_split
+
+  - id: edaic_existing_late_fusion
+    dataset: edaic
+    display_dataset: E-DAIC
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: PHQ-8 regression
+    task_type: severity_regression
+    target: phq8_total
+    model: existing late-fusion baseline
+    family: existing_baseline
+    public_name: existing_late_fusion_baseline
+    split_policy: official_subject_level_split
+
+  - id: cmdc_text_binary_tfidf_logistic
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Text
+    input_modalities: [text]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: TF-IDF + Logistic
+    family: text_tfidf
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_text_phq9_tfidf_ridge
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Text
+    input_modalities: [text]
+    task: PHQ-9 regression
+    task_type: severity_regression
+    target: phq9_total
+    model: TF-IDF + Ridge
+    family: text_tfidf
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_text_phq9_encoder_mlp
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Text
+    input_modalities: [text]
+    task: PHQ-9 regression
+    task_type: severity_regression
+    target: phq9_total
+    model: frozen text encoder embedding + MLP
+    family: text_embedding_mlp
+    encoder_policy: frozen
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_audio_binary_egemaps_svm
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Audio
+    input_modalities: [audio]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: eGeMAPS + SVM
+    family: audio_egemaps
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_audio_binary_wavlm_linear
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Audio
+    input_modalities: [audio]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: WavLM frozen embedding + linear
+    family: audio_wavlm
+    encoder_policy: frozen
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_audio_binary_wav2vec2_linear
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Audio
+    input_modalities: [audio]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: wav2vec2 frozen embedding + linear
+    family: audio_wav2vec2
+    encoder_policy: frozen
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_video_binary_openface_mlp
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Video
+    input_modalities: [video]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: OpenFace statistics + MLP
+    family: video_openface
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_video_binary_temporal_pooling
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Video
+    input_modalities: [video]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: official visual features + temporal pooling
+    family: video_official_temporal_pooling
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_audio_text_binary_early_fusion
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: Early Fusion
+    family: early_fusion
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_audio_text_binary_late_fusion
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: Late Fusion
+    family: late_fusion
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_audio_text_binary_gated_fusion
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: MDD classification
+    task_type: binary_classification
+    target: binary_label
+    model: Gated Fusion
+    family: gated_fusion
+    split_policy: official_or_subject_cv_required
+
+  - id: cmdc_audio_text_hamd17_late_fusion
+    dataset: cmdc
+    display_dataset: CMDC
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: HAMD-17 regression
+    task_type: severity_regression
+    target: hamd17_total
+    model: Late Fusion
+    family: late_fusion
+    split_policy: official_or_subject_cv_required
+
+  - id: pdch_public_text_only
+    dataset: pdch
+    display_dataset: PDCH
+    modality: Text
+    input_modalities: [text]
+    task: HAMD-17 regression
+    task_type: severity_regression
+    target: hamd17_total
+    model: PDCH official text-only
+    family: public_reproduction
+    public_name: pdch_official_text_only
+    split_policy: official_cv_required
+
+  - id: pdch_public_audio_text
+    dataset: pdch
+    display_dataset: PDCH
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: HAMD-17 regression
+    task_type: severity_regression
+    target: hamd17_total
+    model: PDCH official audio-text
+    family: public_reproduction
+    public_name: pdch_official_audio_text
+    split_policy: official_cv_required
+
+  - id: pdch_text_hamd17_tfidf_ridge
+    dataset: pdch
+    display_dataset: PDCH
+    modality: Text
+    input_modalities: [text]
+    task: HAMD-17 regression
+    task_type: severity_regression
+    target: hamd17_total
+    model: TF-IDF + Ridge
+    family: text_tfidf
+    split_policy: official_cv_required
+
+  - id: pdch_text_hamd17_encoder_mlp
+    dataset: pdch
+    display_dataset: PDCH
+    modality: Text
+    input_modalities: [text]
+    task: HAMD-17 regression
+    task_type: severity_regression
+    target: hamd17_total
+    model: frozen text encoder embedding + MLP
+    family: text_embedding_mlp
+    encoder_policy: frozen
+    split_policy: official_cv_required
+
+  - id: pdch_audio_hamd17_wavlm_linear
+    dataset: pdch
+    display_dataset: PDCH
+    modality: Audio
+    input_modalities: [audio]
+    task: HAMD-17 regression
+    task_type: severity_regression
+    target: hamd17_total
+    model: WavLM frozen embedding + linear
+    family: audio_wavlm
+    encoder_policy: frozen
+    split_policy: official_cv_required
+
+  - id: pdch_audio_hamd17_egemaps_svr
+    dataset: pdch
+    display_dataset: PDCH
+    modality: Audio
+    input_modalities: [audio]
+    task: HAMD-17 regression
+    task_type: severity_regression
+    target: hamd17_total
+    model: eGeMAPS + SVR
+    family: audio_egemaps
+    split_policy: official_cv_required
+
+  - id: pdch_audio_text_hamd17_late_fusion
+    dataset: pdch
+    display_dataset: PDCH
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: HAMD-17 regression
+    task_type: severity_regression
+    target: hamd17_total
+    model: Late Fusion
+    family: late_fusion
+    split_policy: official_cv_required
+
+  - id: eatd_public_gru
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: SDS regression
+    task_type: severity_regression
+    target: sds_total
+    model: EATD official GRU
+    family: public_reproduction
+    public_name: eatd_official_gru
+    split_policy: readme_subject_level_split
+
+  - id: eatd_public_bilstm
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: SDS regression
+    task_type: severity_regression
+    target: sds_total
+    model: EATD official BiLSTM
+    family: public_reproduction
+    public_name: eatd_official_bilstm
+    split_policy: readme_subject_level_split
+
+  - id: eatd_text_sds_tfidf_ridge
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Text
+    input_modalities: [text]
+    task: SDS regression
+    task_type: severity_regression
+    target: sds_total
+    model: TF-IDF + Ridge
+    family: text_tfidf
+    split_policy: readme_subject_level_split
+
+  - id: eatd_text_binary_tfidf_logistic
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Text
+    input_modalities: [text]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: TF-IDF + Logistic
+    family: text_tfidf
+    split_policy: readme_subject_level_split
+
+  - id: eatd_audio_sds_egemaps_svr
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Audio
+    input_modalities: [audio]
+    task: SDS regression
+    task_type: severity_regression
+    target: sds_total
+    model: eGeMAPS + SVR
+    family: audio_egemaps
+    split_policy: readme_subject_level_split
+
+  - id: eatd_audio_binary_wavlm_linear
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Audio
+    input_modalities: [audio]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: WavLM frozen embedding + linear
+    family: audio_wavlm
+    encoder_policy: frozen
+    split_policy: readme_subject_level_split
+
+  - id: eatd_audio_text_sds_early_fusion
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: SDS regression
+    task_type: severity_regression
+    target: sds_total
+    model: Early Fusion
+    family: early_fusion
+    split_policy: readme_subject_level_split
+
+  - id: eatd_audio_text_sds_late_fusion
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: SDS regression
+    task_type: severity_regression
+    target: sds_total
+    model: Late Fusion
+    family: late_fusion
+    split_policy: readme_subject_level_split
+
+  - id: eatd_audio_text_sds_gated_fusion
+    dataset: eatd
+    display_dataset: EATD-Corpus
+    modality: Audio/Text
+    input_modalities: [audio, text]
+    task: SDS regression
+    task_type: severity_regression
+    target: sds_total
+    model: Gated Fusion
+    family: gated_fusion
+    split_policy: readme_subject_level_split
+
+  - id: modma_audio_binary_egemaps_svm
+    dataset: modma
+    display_dataset: MODMA
+    modality: Audio
+    input_modalities: [audio]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: eGeMAPS + SVM
+    family: audio_egemaps
+    public_name: modma_egemaps
+    split_policy: subject_level_task_specific_and_cross_task
+
+  - id: modma_audio_binary_wavlm_linear
+    dataset: modma
+    display_dataset: MODMA
+    modality: Audio
+    input_modalities: [audio]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: WavLM frozen embedding + linear
+    family: audio_wavlm
+    public_name: modma_frozen_wavlm
+    encoder_policy: frozen
+    split_policy: subject_level_task_specific_and_cross_task
+
+  - id: modma_audio_binary_wav2vec2_linear
+    dataset: modma
+    display_dataset: MODMA
+    modality: Audio
+    input_modalities: [audio]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: wav2vec2 frozen embedding + linear
+    family: audio_wav2vec2
+    encoder_policy: frozen
+    split_policy: subject_level_task_specific_and_cross_task
+
+  - id: modma_audio_phq9_wavlm_linear
+    dataset: modma
+    display_dataset: MODMA
+    modality: Audio
+    input_modalities: [audio]
+    task: PHQ-9 regression
+    task_type: severity_regression
+    target: phq9_total
+    model: WavLM frozen embedding + linear
+    family: audio_wavlm
+    encoder_policy: frozen
+    split_policy: subject_level_task_specific_and_cross_task
+
+  - id: modma_audio_binary_task_specific_wavlm
+    dataset: modma
+    display_dataset: MODMA
+    modality: Audio
+    input_modalities: [audio]
+    task: task-specific binary classification
+    task_type: binary_classification
+    target: binary_label
+    model: WavLM task-specific test
+    family: task_specific_protocol_test
+    public_name: modma_task_specific_cross_task
+    encoder_policy: frozen
+    split_policy: subject_level_task_specific
+
+  - id: modma_audio_binary_cross_task_wavlm
+    dataset: modma
+    display_dataset: MODMA
+    modality: Audio
+    input_modalities: [audio]
+    task: cross-task binary classification
+    task_type: binary_classification
+    target: binary_label
+    model: WavLM cross-task test
+    family: cross_task_protocol_test
+    public_name: modma_task_specific_cross_task
+    encoder_policy: frozen
+    split_policy: subject_level_cross_task
+
+  - id: mpdd_public_official
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: AVP
+    input_modalities: [audio, video, personality]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: MPDD official baseline
+    family: public_reproduction
+    public_name: mpdd_official
+    split_policy: official_subject_level_split_with_label_gaps
+    required_manifest_values:
+      video_feature_type: resnet_npy
+
+  - id: mpdd_public_p3hf
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: AVP
+    input_modalities: [audio, video, personality]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: P3HF
+    family: public_reproduction
+    public_name: p3hf_compatibility_gated
+    split_policy: official_subject_level_split_with_label_gaps
+    compatibility_gate: run_only_if_code_and_input_features_match_local_MPDD_Young
+    required_manifest_values:
+      video_feature_type: resnet_npy
+    note: Personality vectors and public/private feature separation are prior art under P3HF.
+
+  - id: mpdd_audio_phq9_wavlm_linear
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: Audio
+    input_modalities: [audio]
+    task: PHQ-9 regression
+    task_type: severity_regression
+    target: phq9_total
+    model: WavLM frozen embedding + linear
+    family: audio_wavlm
+    encoder_policy: frozen
+    split_policy: official_subject_level_split_with_label_gaps
+
+  - id: mpdd_audio_severity_wavlm_mlp
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: Audio
+    input_modalities: [audio]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: WavLM frozen embedding + MLP
+    family: audio_wavlm
+    encoder_policy: frozen
+    split_policy: official_subject_level_split_with_label_gaps
+
+  - id: mpdd_video_severity_openface_mlp
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: Video
+    input_modalities: [video]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: OpenFace statistics + MLP
+    family: video_openface
+    split_policy: official_subject_level_split_with_label_gaps
+    required_manifest_values:
+      video_feature_type: openface
+
+  - id: mpdd_video_severity_temporal_pooling
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: Video
+    input_modalities: [video]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: official visual features + temporal pooling
+    family: video_official_temporal_pooling
+    split_policy: official_subject_level_split_with_label_gaps
+    required_manifest_values:
+      video_feature_type: resnet_npy
+
+  - id: mpdd_gait_binary_stats_logistic
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: Gait
+    input_modalities: [gait]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: statistical gait features + Logistic
+    family: gait_statistics
+    split_policy: official_subject_level_split_with_label_gaps
+
+  - id: mpdd_gait_binary_stats_xgboost
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: Gait
+    input_modalities: [gait]
+    task: binary depression classification
+    task_type: binary_classification
+    target: binary_label
+    model: statistical gait features + XGBoost
+    family: gait_statistics
+    split_policy: official_subject_level_split_with_label_gaps
+
+  - id: mpdd_gait_severity_imu_temporal_mlp
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: Gait
+    input_modalities: [gait]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: IMU temporal encoder + MLP
+    family: gait_imu_temporal_encoder
+    encoder_policy: train_small_temporal_head_only
+    split_policy: official_subject_level_split_with_label_gaps
+
+  - id: mpdd_avp_severity_early_fusion
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: AVP
+    input_modalities: [audio, video, personality]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: Early Fusion
+    family: early_fusion
+    split_policy: official_subject_level_split_with_label_gaps
+    required_manifest_values:
+      video_feature_type: resnet_npy
+
+  - id: mpdd_avp_severity_late_fusion
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: AVP
+    input_modalities: [audio, video, personality]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: Late Fusion
+    family: late_fusion
+    split_policy: official_subject_level_split_with_label_gaps
+    required_manifest_values:
+      video_feature_type: resnet_npy
+
+  - id: mpdd_avp_severity_gated_fusion
+    dataset: mpdd_avg_2026
+    display_dataset: MPDD-AVG-2026
+    modality: AVP
+    input_modalities: [audio, video, personality]
+    task: ordinal severity prediction
+    task_type: ordinal_prediction
+    target: severity_label
+    model: Gated Fusion
+    family: gated_fusion
+    split_policy: official_subject_level_split_with_label_gaps
+    required_manifest_values:
+      video_feature_type: resnet_npy

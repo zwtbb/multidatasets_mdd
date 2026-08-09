@@ -1,0 +1,10 @@
+dataset,candidate_bucket,selected_rows,selected_subjects,target_count,rows_with_existing_text,safety_sensitive_rows,mean_abs_error,mean_y_true
+cmdc,high_prediction_error,20,8,17,20,2,3.444244114375153,1.2
+cmdc,high_true_severity,20,8,15,20,2,2.6834388241713905,2.9
+cmdc,low_prediction_error,20,12,14,20,2,0.00612286935332499,0.9583333333333333
+edaic,high_prediction_error,8,3,8,8,0,3.0,2.25
+edaic,high_true_severity,8,7,8,8,0,2.46427847093568,3.0
+edaic,low_prediction_error,8,7,8,8,0,0.0,0.375
+pdch,high_prediction_error,20,8,20,20,2,2.9093321576430937,1.295
+pdch,high_true_severity,20,11,20,20,2,2.242976464731666,3.25
+pdch,low_prediction_error,20,13,20,20,2,0.0002864926814359702,1.45

@@ -1,0 +1,8 @@
+field,allowed_values,required_for_claim,tracked_release_policy
+evidence_presence,explicit_negation;explicit_support;insufficient;protocol_artifact,True,aggregate_counts_only
+evidence_source,interviewer;participant;scale_item;unknown,True,aggregate_counts_only
+evidence_strength,0;1;2,True,aggregate_counts_only
+time_status,current;hypothetical;past;unclear,True,aggregate_counts_only
+prompt_artifact,no;unclear;yes,True,aggregate_counts_only
+annotator_id,local_stable_annotator_code,True,counts_only_no_personal_identity
+private_free_text_fields,free_text,False,local_only_never_git_by_default

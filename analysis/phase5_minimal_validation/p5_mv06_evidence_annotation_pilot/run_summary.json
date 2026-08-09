@@ -1,0 +1,60 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "pilot_status": "ready_for_manual_local_annotation",
+    "short_read": "A bounded MV06 local annotation packet is ready. It should be annotated locally and later summarized only as aggregate evidence agreement, prompt-artifact rate, evidence-source distribution, and construct coverage."
+  },
+  "generated_at": "2026-08-09T06:03:37+00:00",
+  "input_contract": {
+    "candidate_queue_rows": 1157,
+    "candidate_queue_subjects": 182,
+    "raw_text_read": false
+  },
+  "output_policy": {
+    "local_file_locators_in_tracked_artifacts": false,
+    "local_only_files": [
+      "p5_mv06_local_annotation_packet_predictions.csv",
+      "p5_mv06_local_annotation_source_map_predictions.csv"
+    ],
+    "raw_text_written": false,
+    "subject_level_rows_in_tracked_artifacts": false,
+    "tracked_outputs": [
+      "report.md",
+      "run_summary.json",
+      "artifact_hygiene_audit.json",
+      "annotation_field_template.csv",
+      "sampling_summary.csv",
+      "construct_sampling_summary.csv",
+      "dataset_bucket_summary.csv",
+      "text_access_summary.csv",
+      "local_artifact_manifest.csv"
+    ]
+  },
+  "run_id": "P5_MV06_evidence_annotation_pilot",
+  "sampling_contract": {
+    "bucket_priority": {
+      "high_prediction_error": 0,
+      "high_true_severity": 1,
+      "low_prediction_error": 2
+    },
+    "candidate_queue": "local_only_mv06_readiness_candidate_predictions",
+    "max_per_dataset_bucket": 20,
+    "max_per_target_bucket": 1
+  },
+  "scope": "local_annotation_packet_and_tracked_aggregate_sampling_only",
+  "selection_summary": {
+    "datasets": [
+      "cmdc",
+      "edaic",
+      "pdch"
+    ],
+    "local_packet_rows": 144,
+    "local_source_map_rows": 144,
+    "rows_with_existing_text": 144,
+    "safety_sensitive_rows": 12,
+    "selected_rows": 144,
+    "selected_subjects": 60,
+    "subjects_with_existing_text": 60
+  },
+  "status": "complete"
+}

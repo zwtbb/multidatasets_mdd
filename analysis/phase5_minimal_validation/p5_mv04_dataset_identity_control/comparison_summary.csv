@@ -1,0 +1,9 @@
+protocol,dataset_slice,model,macro_mae,delta_vs_train_mean,delta_vs_total_alloc_ridge,delta_vs_baseline_pooled_shared_ridge,relative_delta_vs_baseline
+pooled_shared_dataset_identity_control,cmdc,baseline_pooled_shared_ridge,0.6146896529078706,-0.24219234113974852,0.014950726340188347,0.0,0.0
+pooled_shared_dataset_identity_control,cmdc,dataset_centered_shared_ridge,0.6207684627130675,-0.2361135313345516,0.021029536145385275,0.0060788098051969275,0.009889233984076868
+pooled_shared_dataset_identity_control,cmdc,total_alloc_ridge,0.5997389265676822,-0.25714306747993687,0.0,-0.014950726340188347,-0.024322397927900627
+pooled_shared_dataset_identity_control,cmdc,train_mean,0.8568819940476191,0.0,0.25714306747993687,0.24219234113974852,0.39400751256186867
+pooled_shared_dataset_identity_control,edaic,baseline_pooled_shared_ridge,0.7620241945262123,0.029617944526212248,-0.0018157816138553162,0.0,0.0
+pooled_shared_dataset_identity_control,edaic,dataset_centered_shared_ridge,0.7643245552645987,0.03191830526459871,0.00048457912453114815,0.0023003607383864644,0.0030187502639817247
+pooled_shared_dataset_identity_control,edaic,total_alloc_ridge,0.7638399761400676,0.031433726140067564,0.0,0.0018157816138553162,0.002382839845372989
+pooled_shared_dataset_identity_control,edaic,train_mean,0.73240625,0.0,-0.031433726140067564,-0.029617944526212248,-0.03886745950976947

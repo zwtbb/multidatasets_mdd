@@ -1,0 +1,17 @@
+dataset,construct_id,scale_item_code,source_scale
+edaic,C01,PHQ8_C01,PHQ-8
+edaic,C02,PHQ8_C02,PHQ-8
+edaic,C03,PHQ8_C03,PHQ-8
+edaic,C04,PHQ8_C04,PHQ-8
+edaic,C05,PHQ8_C05,PHQ-8
+edaic,C06,PHQ8_C06,PHQ-8
+edaic,C07,PHQ8_C07,PHQ-8
+edaic,C08,PHQ8_C08,PHQ-8
+cmdc,C01,PHQ9_C01,PHQ-9
+cmdc,C02,PHQ9_C02,PHQ-9
+cmdc,C03,PHQ9_C03,PHQ-9
+cmdc,C04,PHQ9_C04,PHQ-9
+cmdc,C05,PHQ9_C05,PHQ-9
+cmdc,C06,PHQ9_C06,PHQ-9
+cmdc,C07,PHQ9_C07,PHQ-9
+cmdc,C08,PHQ9_C08,PHQ-9

@@ -1,0 +1,7 @@
+diagnostic,status,usable_subjects,notes
+demographics_only,available,175,age_group is available; gender is unavailable
+gender_only_and_gender_subgroups,blocked,0,structured gender metadata is empty in the MPDD manifest
+health_only_and_health_subgroups,blocked,0,structured health_condition metadata is empty in the MPDD manifest
+personality_only,available,175,raw text is used in fold-local TF-IDF but never written to outputs
+audio_video_only,available,175,uses cached Phase 2 subject-level WavLM and ResNet features
+gait_psychomotor_context,available,175,"gait is analyzed as context, not concatenated into AVP"

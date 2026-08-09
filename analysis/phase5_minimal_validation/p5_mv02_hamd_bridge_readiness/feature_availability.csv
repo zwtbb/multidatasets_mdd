@@ -1,0 +1,7 @@
+dataset,feature_family,relative_path,exists,source_scope,row_count,feature_subjects,joined_label_subjects,model_input_column_count
+pdch,text_bge_subject,cmdc_pdch_text_encoder_mlp/pdch_bge_subject_features.csv,True,current_worktree,99,99,99,512
+pdch,audio_wavlm_subject,pdch_audio_wavlm/pdch_wavlm_subject_features.csv,True,current_worktree,99,99,99,768
+pdch,audio_egemaps_subject,cmdc_pdch_audio_egemaps/pdch_egemaps_subject_features.csv,True,current_worktree,99,99,99,352
+cmdc,text_bge_subject,cmdc_pdch_text_encoder_mlp/cmdc_bge_subject_features.csv,True,current_worktree,77,77,25,512
+cmdc,audio_wavlm_subject,cmdc_audio_frozen_encoders/cmdc_wavlm_subject_features.csv,True,current_worktree,77,77,25,768
+cmdc,audio_egemaps_subject,cmdc_pdch_audio_egemaps/cmdc_egemaps_subject_features.csv,True,current_worktree,77,77,25,352

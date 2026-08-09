@@ -1,0 +1,176 @@
+{
+  "artifact_hygiene_passed": true,
+  "dataset": "MPDD-AVG-2026",
+  "feature_contract": {
+    "audio_feature_count": 768,
+    "audio_feature_space": "frozen_wavlm_subject_features",
+    "context_columns": [
+      "age_group",
+      "extraversion_bin",
+      "agreeableness_bin",
+      "openness_bin",
+      "neuroticism_bin",
+      "conscientiousness_bin",
+      "financial_stress_bin"
+    ],
+    "gait_used_as_model_input": false,
+    "new_encoder_extraction": false,
+    "personality_description_hashes_written": false,
+    "phase2_cache_scopes": [
+      "current_worktree"
+    ],
+    "raw_personality_descriptions_written": false,
+    "video_feature_count": 2000,
+    "video_feature_space": "frozen_resnet_video_subject_features"
+  },
+  "generated_at": "2026-08-05T04:43:17+00:00",
+  "local_only_files": [
+    "p5_mv05_local_predictions.csv",
+    "p5_mv05_local_counterfactual_predictions.csv"
+  ],
+  "model_contract": {
+    "age_or_personality_direct_av_bypass": false,
+    "baseline": "av_baseline_logistic",
+    "context_inputs": "age group and personality bins only",
+    "controls": [
+      "av_probability_recalibrated",
+      "av_context_calibrated_shuffled_personality_bins",
+      "av_context_calibrated_shuffled_age",
+      "context_only_age_personality_bins"
+    ],
+    "encoder_finetuning": false,
+    "inner_folds_for_calibrator_av_probabilities": 5,
+    "model_weights_written": false,
+    "outer_folds": 5,
+    "proposed": "av_context_calibrated_age_personality_bins",
+    "proposed_is_calibration_context_not_avp_concatenation": true,
+    "proposed_primary_inputs": "AV probabilities/logits from fold-local frozen AV baseline",
+    "raw_personality_descriptions_model_input": false,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "output_policy": {
+    "counterfactual_rows": "local_only_ignored",
+    "learned_embeddings": "not_written",
+    "model_weights": "not_written",
+    "raw_audio": "not_written",
+    "raw_motion_arrays": "not_written",
+    "raw_personality_descriptions": "not_written",
+    "raw_video": "not_written",
+    "row_level_predictions": "local_only_ignored",
+    "source_paths": "not_written"
+  },
+  "run_id": "P5_MV05_mpdd_context_calibration",
+  "split_audit": {
+    "labeled_test_subjects_seen_by_training": 0,
+    "labeled_train_subjects": 175,
+    "manifest_labeled_test_subjects_available": 0,
+    "mpdd_test_labels_used": false,
+    "repeated_oof_policy": "5 seeds x stratified 5-fold over labeled MPDD train subjects",
+    "subject_level": true,
+    "subject_overlap_violations": 0
+  },
+  "status": "complete",
+  "subgroup_contract": {
+    "age_group_counts": {
+      "elder": 87,
+      "young": 88
+    },
+    "gender_non_missing_subjects": 0,
+    "gender_status": "blocked_empty_manifest_field",
+    "health_non_missing_subjects": 0,
+    "health_status": "blocked_empty_manifest_field",
+    "personality_trait_bin_counts": {
+      "agreeableness": {
+        "high": 28,
+        "low": 40,
+        "mid": 46,
+        "unknown": 61
+      },
+      "conscientiousness": {
+        "high": 52,
+        "low": 58,
+        "mid": 39,
+        "unknown": 26
+      },
+      "extraversion": {
+        "high": 26,
+        "low": 50,
+        "mid": 49,
+        "unknown": 50
+      },
+      "neuroticism": {
+        "high": 21,
+        "low": 62,
+        "mid": 49,
+        "unknown": 43
+      },
+      "openness": {
+        "high": 25,
+        "low": 70,
+        "mid": 36,
+        "unknown": 44
+      }
+    }
+  },
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "metric_summary.csv",
+    "metrics_by_seed.csv",
+    "subgroup_metric_summary.csv",
+    "subgroup_metrics_by_seed.csv",
+    "subgroup_gap_summary.csv",
+    "context_control_summary.csv",
+    "counterfactual_sensitivity_summary.csv",
+    "cohort_context_summary.csv",
+    "gait_psychomotor_context_summary.csv",
+    "diagnostic_availability.csv",
+    "feature_availability.csv",
+    "model_split_audit.csv"
+  ],
+  "target_contract": {
+    "ordinal_classes": [
+      0,
+      1,
+      2
+    ],
+    "phq9_total_available_for_context_profile": true,
+    "source_scale": "PHQ-9",
+    "target": "phq9_severity_label"
+  },
+  "verdict": {
+    "age_ece_gap_av_probability_recalibrated": 0.004794471924892185,
+    "age_ece_gap_baseline": 0.048709604327448086,
+    "age_ece_gap_proposed": 0.06843568655924147,
+    "age_ece_gap_shuffled_age": 0.051250192110378456,
+    "age_gap_improved": false,
+    "context_only_close_to_proposed": false,
+    "main_task_not_collapsed": true,
+    "overall_ece_av_probability_recalibrated": 0.05788769142961216,
+    "overall_ece_baseline": 0.3420769318021625,
+    "overall_ece_not_worse": true,
+    "overall_ece_proposed": 0.11804138404903228,
+    "overall_ece_shuffled_personality": 0.1491481242176011,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_no_context_calibration_gain",
+    "personality_ece_gap_av_probability_recalibrated_max": 0.3173203812689591,
+    "personality_ece_gap_baseline_max": 0.3310157702228682,
+    "personality_ece_gap_proposed_max": 0.46494129705380605,
+    "personality_ece_gap_shuffled_personality_max": 0.3483818875397035,
+    "personality_gap_improved": false,
+    "qwk_baseline": 0.09962496718613785,
+    "qwk_context_only": 0.054640237379827684,
+    "qwk_proposed": 0.098122220518633,
+    "short_read": "The MPDD context-calibration row is runnable, but the proposed AV-probability-plus-context calibrator does not improve age/personality subgroup ECE gaps over the AV baseline strongly enough for a positive RQ3 claim.",
+    "shuffled_age_unchanged": false,
+    "shuffled_personality_unchanged": false,
+    "subject_overlap_violations": 0
+  }
+}

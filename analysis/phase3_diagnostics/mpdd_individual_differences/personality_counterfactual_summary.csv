@@ -1,0 +1,7 @@
+age_group,metric,mean,std,seed_count,subject_count_mean
+elder,changed_pred_rate,0.5977011494252873,0.0633749367912194,5,87.0
+elder,mean_delta_expected_severity,0.123441226716731,0.012179586687043883,5,87.0
+elder,mean_abs_delta_expected_severity,0.21127264797767303,0.007195860279046304,5,87.0
+young,changed_pred_rate,0.684090909090909,0.004545454545454586,5,88.0
+young,mean_delta_expected_severity,-0.11174788171533583,0.01794900778511663,5,88.0
+young,mean_abs_delta_expected_severity,0.2550818045589609,0.010866981019274581,5,88.0

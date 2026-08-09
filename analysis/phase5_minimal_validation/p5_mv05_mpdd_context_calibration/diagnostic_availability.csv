@@ -1,0 +1,8 @@
+diagnostic,status,usable_subjects,notes
+labeled_train_subjects,available,175,"MPDD official train rows with PHQ-9 total, severity, and binary labels"
+audio_video_baseline,available,175,cached WavLM columns=768; cached ResNet columns=2000
+age_group_calibration,available,175,age group is used only as a context calibration/subgroup axis
+personality_bin_calibration,available,175,personality text is parsed in memory into bins; raw text is never written
+gait_psychomotor_context_validation,available,175,gait summaries are diagnostics only and are not model inputs
+gender_subgroup_calibration,blocked,0,structured gender metadata is empty in the MPDD manifest
+health_subgroup_calibration,blocked,0,structured health_condition metadata is empty in the MPDD manifest

@@ -1,0 +1,5 @@
+protocol,model,metric,mean,std,seed_count,ci95_low,ci95_high,delta_vs_baseline_pooled_shared_ridge,relative_delta_vs_baseline
+pooled_shared_dataset_identity_control,baseline_pooled_shared_ridge,Worst Dataset-Slice Macro Construct MAE,0.7620241945262123,0.010645078040026358,5,0.7526933722218829,0.7713550168305416,0.0,0.0
+pooled_shared_dataset_identity_control,dataset_centered_shared_ridge,Worst Dataset-Slice Macro Construct MAE,0.7643245552645987,0.00206303899989618,5,0.7625162218505503,0.7661328886786472,0.0023003607383864644,0.0030187502639817247
+pooled_shared_dataset_identity_control,total_alloc_ridge,Worst Dataset-Slice Macro Construct MAE,0.7638399761400676,0.0016838043743750068,5,0.7623640565316373,0.7653158957484979,0.0018157816138553162,0.002382839845372989
+pooled_shared_dataset_identity_control,train_mean,Worst Dataset-Slice Macro Construct MAE,0.8568819940476191,0.042092192472067955,5,0.8199865606013159,0.8937774274939223,0.09485779952140683,0.1244813487587288

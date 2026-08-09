@@ -1,0 +1,578 @@
+{
+  "artifact_hygiene_passed": true,
+  "bootstrap_resamples": 1000,
+  "completed_probe_count": 7,
+  "completed_probes": 7,
+  "feature_root": "analysis/phase2_baselines",
+  "feature_root_mode": "worktree",
+  "forbidden_artifact_marker_count": 0,
+  "forbidden_artifact_markers": [],
+  "generated_at": "2026-08-04T16:36:29+00:00",
+  "manifest_dir": "datasets/manifests",
+  "metadata": [
+    {
+      "class_counts": {
+        "CMDC": 77,
+        "E-DAIC": 219,
+        "EATD": 162,
+        "MODMA": 52,
+        "MPDD": 175,
+        "PDCH": 99
+      },
+      "feature_columns_common_count": 768,
+      "feature_columns_common_head": [
+        "wavlm_0000",
+        "wavlm_0001",
+        "wavlm_0002",
+        "wavlm_0003",
+        "wavlm_0004",
+        "wavlm_0005",
+        "wavlm_0006",
+        "wavlm_0007",
+        "wavlm_0008",
+        "wavlm_0009",
+        "wavlm_0010",
+        "wavlm_0011",
+        "wavlm_0012",
+        "wavlm_0013",
+        "wavlm_0014",
+        "wavlm_0015",
+        "wavlm_0016",
+        "wavlm_0017",
+        "wavlm_0018",
+        "wavlm_0019"
+      ],
+      "fold_summaries": [
+        {
+          "fold": 0,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wavlm_6way",
+          "test_groups": 157,
+          "test_rows": 157,
+          "train_groups": 627,
+          "train_rows": 627
+        },
+        {
+          "fold": 1,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wavlm_6way",
+          "test_groups": 157,
+          "test_rows": 157,
+          "train_groups": 627,
+          "train_rows": 627
+        },
+        {
+          "fold": 2,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wavlm_6way",
+          "test_groups": 157,
+          "test_rows": 157,
+          "train_groups": 627,
+          "train_rows": 627
+        },
+        {
+          "fold": 3,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wavlm_6way",
+          "test_groups": 157,
+          "test_rows": 157,
+          "train_groups": 627,
+          "train_rows": 627
+        },
+        {
+          "fold": 4,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wavlm_6way",
+          "test_groups": 156,
+          "test_rows": 156,
+          "train_groups": 628,
+          "train_rows": 628
+        }
+      ],
+      "probe_id": "dataset_id_audio_wavlm_6way",
+      "source_notes": []
+    },
+    {
+      "class_counts": {
+        "CMDC": 77,
+        "E-DAIC": 219,
+        "MODMA": 52
+      },
+      "feature_columns_common_count": 768,
+      "feature_columns_common_head": [
+        "wav2vec2_0000",
+        "wav2vec2_0001",
+        "wav2vec2_0002",
+        "wav2vec2_0003",
+        "wav2vec2_0004",
+        "wav2vec2_0005",
+        "wav2vec2_0006",
+        "wav2vec2_0007",
+        "wav2vec2_0008",
+        "wav2vec2_0009",
+        "wav2vec2_0010",
+        "wav2vec2_0011",
+        "wav2vec2_0012",
+        "wav2vec2_0013",
+        "wav2vec2_0014",
+        "wav2vec2_0015",
+        "wav2vec2_0016",
+        "wav2vec2_0017",
+        "wav2vec2_0018",
+        "wav2vec2_0019"
+      ],
+      "fold_summaries": [
+        {
+          "fold": 0,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wav2vec2_3way",
+          "test_groups": 70,
+          "test_rows": 70,
+          "train_groups": 278,
+          "train_rows": 278
+        },
+        {
+          "fold": 1,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wav2vec2_3way",
+          "test_groups": 70,
+          "test_rows": 70,
+          "train_groups": 278,
+          "train_rows": 278
+        },
+        {
+          "fold": 2,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wav2vec2_3way",
+          "test_groups": 70,
+          "test_rows": 70,
+          "train_groups": 278,
+          "train_rows": 278
+        },
+        {
+          "fold": 3,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wav2vec2_3way",
+          "test_groups": 69,
+          "test_rows": 69,
+          "train_groups": 279,
+          "train_rows": 279
+        },
+        {
+          "fold": 4,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_wav2vec2_3way",
+          "test_groups": 69,
+          "test_rows": 69,
+          "train_groups": 279,
+          "train_rows": 279
+        }
+      ],
+      "probe_id": "dataset_id_audio_wav2vec2_3way",
+      "source_notes": []
+    },
+    {
+      "class_counts": {
+        "CMDC": 77,
+        "MODMA": 52,
+        "PDCH": 99
+      },
+      "feature_columns_common_count": 352,
+      "feature_columns_common_head": [
+        "F0semitoneFrom27.5Hz_sma3nz_amean__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_stddevNorm__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_percentile20.0__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_percentile50.0__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_percentile80.0__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope__mean",
+        "F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope__mean",
+        "loudness_sma3_amean__mean",
+        "loudness_sma3_stddevNorm__mean",
+        "loudness_sma3_percentile20.0__mean",
+        "loudness_sma3_percentile50.0__mean",
+        "loudness_sma3_percentile80.0__mean",
+        "loudness_sma3_pctlrange0-2__mean",
+        "loudness_sma3_meanRisingSlope__mean",
+        "loudness_sma3_stddevRisingSlope__mean",
+        "loudness_sma3_meanFallingSlope__mean",
+        "loudness_sma3_stddevFallingSlope__mean"
+      ],
+      "fold_summaries": [
+        {
+          "fold": 0,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_egemaps_cmdc_pdch_modma",
+          "test_groups": 46,
+          "test_rows": 46,
+          "train_groups": 182,
+          "train_rows": 182
+        },
+        {
+          "fold": 1,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_egemaps_cmdc_pdch_modma",
+          "test_groups": 46,
+          "test_rows": 46,
+          "train_groups": 182,
+          "train_rows": 182
+        },
+        {
+          "fold": 2,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_egemaps_cmdc_pdch_modma",
+          "test_groups": 46,
+          "test_rows": 46,
+          "train_groups": 182,
+          "train_rows": 182
+        },
+        {
+          "fold": 3,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_egemaps_cmdc_pdch_modma",
+          "test_groups": 45,
+          "test_rows": 45,
+          "train_groups": 183,
+          "train_rows": 183
+        },
+        {
+          "fold": 4,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_audio_egemaps_cmdc_pdch_modma",
+          "test_groups": 45,
+          "test_rows": 45,
+          "train_groups": 183,
+          "train_rows": 183
+        }
+      ],
+      "probe_id": "dataset_id_audio_egemaps_cmdc_pdch_modma",
+      "source_notes": []
+    },
+    {
+      "class_counts": {
+        "CMDC": 77,
+        "PDCH": 99
+      },
+      "feature_columns_common_count": 512,
+      "feature_columns_common_head": [
+        "bge_0000",
+        "bge_0001",
+        "bge_0002",
+        "bge_0003",
+        "bge_0004",
+        "bge_0005",
+        "bge_0006",
+        "bge_0007",
+        "bge_0008",
+        "bge_0009",
+        "bge_0010",
+        "bge_0011",
+        "bge_0012",
+        "bge_0013",
+        "bge_0014",
+        "bge_0015",
+        "bge_0016",
+        "bge_0017",
+        "bge_0018",
+        "bge_0019"
+      ],
+      "fold_summaries": [
+        {
+          "fold": 0,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_text_bge_cmdc_pdch",
+          "test_groups": 36,
+          "test_rows": 36,
+          "train_groups": 140,
+          "train_rows": 140
+        },
+        {
+          "fold": 1,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_text_bge_cmdc_pdch",
+          "test_groups": 35,
+          "test_rows": 35,
+          "train_groups": 141,
+          "train_rows": 141
+        },
+        {
+          "fold": 2,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_text_bge_cmdc_pdch",
+          "test_groups": 35,
+          "test_rows": 35,
+          "train_groups": 141,
+          "train_rows": 141
+        },
+        {
+          "fold": 3,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_text_bge_cmdc_pdch",
+          "test_groups": 35,
+          "test_rows": 35,
+          "train_groups": 141,
+          "train_rows": 141
+        },
+        {
+          "fold": 4,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_text_bge_cmdc_pdch",
+          "test_groups": 35,
+          "test_rows": 35,
+          "train_groups": 141,
+          "train_rows": 141
+        }
+      ],
+      "probe_id": "dataset_id_text_bge_cmdc_pdch",
+      "source_notes": []
+    },
+    {
+      "class_counts": {
+        "CMDC": 44,
+        "E-DAIC": 219
+      },
+      "feature_columns_common_count": 204,
+      "feature_columns_common_head": [
+        "of_confidence__mean",
+        "of_success__mean",
+        "of_pose_Tx__mean",
+        "of_pose_Ty__mean",
+        "of_pose_Tz__mean",
+        "of_pose_Rx__mean",
+        "of_pose_Ry__mean",
+        "of_pose_Rz__mean",
+        "of_gaze_0_x__mean",
+        "of_gaze_0_y__mean",
+        "of_gaze_0_z__mean",
+        "of_gaze_1_x__mean",
+        "of_gaze_1_y__mean",
+        "of_gaze_1_z__mean",
+        "of_gaze_angle_x__mean",
+        "of_gaze_angle_y__mean",
+        "of_AU01_r__mean",
+        "of_AU02_r__mean",
+        "of_AU04_r__mean",
+        "of_AU05_r__mean"
+      ],
+      "fold_summaries": [
+        {
+          "fold": 0,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_video_openface_edaic_cmdc_common",
+          "test_groups": 53,
+          "test_rows": 53,
+          "train_groups": 210,
+          "train_rows": 210
+        },
+        {
+          "fold": 1,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_video_openface_edaic_cmdc_common",
+          "test_groups": 53,
+          "test_rows": 53,
+          "train_groups": 210,
+          "train_rows": 210
+        },
+        {
+          "fold": 2,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_video_openface_edaic_cmdc_common",
+          "test_groups": 53,
+          "test_rows": 53,
+          "train_groups": 210,
+          "train_rows": 210
+        },
+        {
+          "fold": 3,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_video_openface_edaic_cmdc_common",
+          "test_groups": 52,
+          "test_rows": 52,
+          "train_groups": 211,
+          "train_rows": 211
+        },
+        {
+          "fold": 4,
+          "group_overlap": 0,
+          "probe_id": "dataset_id_video_openface_edaic_cmdc_common",
+          "test_groups": 52,
+          "test_rows": 52,
+          "train_groups": 211,
+          "train_rows": 211
+        }
+      ],
+      "probe_id": "dataset_id_video_openface_edaic_cmdc_common",
+      "source_notes": []
+    },
+    {
+      "class_counts": {
+        "affective_task": 52,
+        "interview": 52,
+        "picture_description": 52,
+        "reading": 52
+      },
+      "feature_columns_common_count": 768,
+      "feature_columns_common_head": [
+        "wavlm_0000",
+        "wavlm_0001",
+        "wavlm_0002",
+        "wavlm_0003",
+        "wavlm_0004",
+        "wavlm_0005",
+        "wavlm_0006",
+        "wavlm_0007",
+        "wavlm_0008",
+        "wavlm_0009",
+        "wavlm_0010",
+        "wavlm_0011",
+        "wavlm_0012",
+        "wavlm_0013",
+        "wavlm_0014",
+        "wavlm_0015",
+        "wavlm_0016",
+        "wavlm_0017",
+        "wavlm_0018",
+        "wavlm_0019"
+      ],
+      "fold_summaries": [
+        {
+          "fold": 0,
+          "group_overlap": 0,
+          "probe_id": "protocol_modma_task_type_wavlm",
+          "test_groups": 11,
+          "test_rows": 44,
+          "train_groups": 41,
+          "train_rows": 164
+        },
+        {
+          "fold": 1,
+          "group_overlap": 0,
+          "probe_id": "protocol_modma_task_type_wavlm",
+          "test_groups": 10,
+          "test_rows": 40,
+          "train_groups": 42,
+          "train_rows": 168
+        },
+        {
+          "fold": 2,
+          "group_overlap": 0,
+          "probe_id": "protocol_modma_task_type_wavlm",
+          "test_groups": 10,
+          "test_rows": 40,
+          "train_groups": 42,
+          "train_rows": 168
+        },
+        {
+          "fold": 3,
+          "group_overlap": 0,
+          "probe_id": "protocol_modma_task_type_wavlm",
+          "test_groups": 11,
+          "test_rows": 44,
+          "train_groups": 41,
+          "train_rows": 164
+        },
+        {
+          "fold": 4,
+          "group_overlap": 0,
+          "probe_id": "protocol_modma_task_type_wavlm",
+          "test_groups": 10,
+          "test_rows": 40,
+          "train_groups": 42,
+          "train_rows": 168
+        }
+      ],
+      "probe_id": "protocol_modma_task_type_wavlm",
+      "source_notes": []
+    },
+    {
+      "class_counts": {
+        "negative": 162,
+        "neutral": 162,
+        "positive": 162
+      },
+      "feature_columns_common_count": 768,
+      "feature_columns_common_head": [
+        "wavlm_0000",
+        "wavlm_0001",
+        "wavlm_0002",
+        "wavlm_0003",
+        "wavlm_0004",
+        "wavlm_0005",
+        "wavlm_0006",
+        "wavlm_0007",
+        "wavlm_0008",
+        "wavlm_0009",
+        "wavlm_0010",
+        "wavlm_0011",
+        "wavlm_0012",
+        "wavlm_0013",
+        "wavlm_0014",
+        "wavlm_0015",
+        "wavlm_0016",
+        "wavlm_0017",
+        "wavlm_0018",
+        "wavlm_0019"
+      ],
+      "fold_summaries": [
+        {
+          "fold": 0,
+          "group_overlap": 0,
+          "probe_id": "protocol_eatd_valence_wavlm",
+          "test_groups": 33,
+          "test_rows": 99,
+          "train_groups": 129,
+          "train_rows": 387
+        },
+        {
+          "fold": 1,
+          "group_overlap": 0,
+          "probe_id": "protocol_eatd_valence_wavlm",
+          "test_groups": 33,
+          "test_rows": 99,
+          "train_groups": 129,
+          "train_rows": 387
+        },
+        {
+          "fold": 2,
+          "group_overlap": 0,
+          "probe_id": "protocol_eatd_valence_wavlm",
+          "test_groups": 32,
+          "test_rows": 96,
+          "train_groups": 130,
+          "train_rows": 390
+        },
+        {
+          "fold": 3,
+          "group_overlap": 0,
+          "probe_id": "protocol_eatd_valence_wavlm",
+          "test_groups": 32,
+          "test_rows": 96,
+          "train_groups": 130,
+          "train_rows": 390
+        },
+        {
+          "fold": 4,
+          "group_overlap": 0,
+          "probe_id": "protocol_eatd_valence_wavlm",
+          "test_groups": 32,
+          "test_rows": 96,
+          "train_groups": 130,
+          "train_rows": 390
+        }
+      ],
+      "probe_id": "protocol_eatd_valence_wavlm",
+      "source_notes": []
+    }
+  ],
+  "n_splits_requested": 5,
+  "out_dir": "analysis/phase3_diagnostics/dataset_identity_probe",
+  "path_valued_manifest_columns_read": false,
+  "raw_modality_files_opened": false,
+  "seed": 20260805,
+  "skipped_probe_count": 0,
+  "skipped_probes": [],
+  "train_test_group_overlap_violations": 0,
+  "worktree_root": "."
+}

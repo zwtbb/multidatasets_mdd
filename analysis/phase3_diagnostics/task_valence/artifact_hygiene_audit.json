@@ -1,0 +1,27 @@
+{
+  "files_scanned": [
+    "eatd_egemaps_valence_features.csv",
+    "eatd_healthy_negative_confusion_by_seed.csv",
+    "eatd_healthy_negative_confusion_summary.csv",
+    "eatd_valence_metric_summary.csv",
+    "eatd_valence_metrics_by_seed.csv",
+    "eatd_valence_predictions.csv",
+    "eatd_valence_stability_summary.csv",
+    "eatd_valence_subject_stability.csv",
+    "modma_egemaps_segment_features.csv",
+    "modma_egemaps_subject_task_features.csv",
+    "modma_task_transfer_drop_summary.csv",
+    "modma_task_transfer_drops_by_seed.csv",
+    "modma_task_transfer_fold_summary.csv",
+    "modma_task_transfer_matrix.csv",
+    "modma_task_transfer_metric_summary.csv",
+    "modma_task_transfer_metrics_by_seed.csv",
+    "modma_task_transfer_predictions.csv",
+    "phase3_task_valence_report.md",
+    "phase3_task_valence_run_summary.json"
+  ],
+  "generated_at": "2026-08-04T17:10:57+00:00",
+  "passed": true,
+  "violation_count": 0,
+  "violations": []
+}

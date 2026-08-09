@@ -1,0 +1,155 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "common_feature_column_count": 768,
+    "feature_space": "frozen_wavlm_subject_mean",
+    "joined_subjects": {
+      "cmdc": 77,
+      "edaic": 219
+    }
+  },
+  "generated_at": "2026-08-05T04:09:10+00:00",
+  "local_only_files": [
+    "p5_mv04b_local_predictions.csv"
+  ],
+  "model_contract": {
+    "control_parameters_written": false,
+    "control_uses_eval_dataset_labels": false,
+    "control_uses_eval_target_labels": false,
+    "control_variant": "train_fold_source_agnostic_iterative_logit_projection",
+    "encoder_finetuning": false,
+    "models": [
+      "train_mean",
+      "total_alloc_ridge",
+      "baseline_pooled_shared_ridge",
+      "source_agnostic_logit_projection_k1_shared_ridge",
+      "source_agnostic_logit_projection_k3_shared_ridge",
+      "source_agnostic_logit_projection_k5_shared_ridge",
+      "source_agnostic_logit_projection_k10_shared_ridge"
+    ],
+    "projection_component_counts": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "raw_audio_scan": false,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "output_policy": {
+    "learned_embeddings": "not_written",
+    "model_weights": "not_written",
+    "projection_directions": "not_written",
+    "raw_clinical_text": "not_written",
+    "raw_prompts_or_responses": "not_written",
+    "row_level_predictions": "local_only_ignored",
+    "transformed_features": "not_written"
+  },
+  "phase2_feature_root_source": "worktree_phase2_cache",
+  "run_id": "P5_MV04b_source_agnostic_identity_projection",
+  "split_audit": {
+    "cmdc_phase2_subject_cv_used": true,
+    "edaic_official_test_used": false,
+    "subject_level": true,
+    "subject_overlap_violations": 0
+  },
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "metric_summary.csv",
+    "metrics_by_seed.csv",
+    "comparison_summary.csv",
+    "worst_slice_summary.csv",
+    "worst_slice_by_seed.csv",
+    "dataset_identity_probe_summary.csv",
+    "dataset_identity_probe_by_seed.csv",
+    "feature_availability.csv",
+    "model_split_audit.csv",
+    "projection_audit.csv",
+    "construct_target_map.csv"
+  ],
+  "target_contract": {
+    "c09_policy": "excluded_from_core_bridge_safety_sensitive_phq9_only",
+    "constructs": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "source_scales": {
+      "cmdc": "PHQ-9",
+      "edaic": "PHQ-8"
+    }
+  },
+  "verdict": {
+    "baseline_prediction_identity_ba": 0.9607738095238096,
+    "best_control_component_count": 10,
+    "best_control_model": "source_agnostic_logit_projection_k10_shared_ridge",
+    "best_feature_identity_ba_after": 0.9250595238095238,
+    "best_prediction_identity_ba_after": 0.7771428571428571,
+    "model_verdicts": [
+      {
+        "component_count": 1,
+        "feature_identity_ba_after": 0.9139285714285714,
+        "feature_identity_reduced": true,
+        "main_task_within_5pct_all_slices": true,
+        "model": "source_agnostic_logit_projection_k1_shared_ridge",
+        "pass_model": true,
+        "prediction_identity_ba_after": 0.8542261904761904,
+        "prediction_identity_reduced": true,
+        "worst_slice_within_5pct": true
+      },
+      {
+        "component_count": 3,
+        "feature_identity_ba_after": 0.9344642857142856,
+        "feature_identity_reduced": true,
+        "main_task_within_5pct_all_slices": true,
+        "model": "source_agnostic_logit_projection_k3_shared_ridge",
+        "pass_model": true,
+        "prediction_identity_ba_after": 0.8114285714285714,
+        "prediction_identity_reduced": true,
+        "worst_slice_within_5pct": true
+      },
+      {
+        "component_count": 5,
+        "feature_identity_ba_after": 0.9371428571428572,
+        "feature_identity_reduced": true,
+        "main_task_within_5pct_all_slices": true,
+        "model": "source_agnostic_logit_projection_k5_shared_ridge",
+        "pass_model": true,
+        "prediction_identity_ba_after": 0.8145238095238095,
+        "prediction_identity_reduced": true,
+        "worst_slice_within_5pct": true
+      },
+      {
+        "component_count": 10,
+        "feature_identity_ba_after": 0.9250595238095238,
+        "feature_identity_reduced": true,
+        "main_task_within_5pct_all_slices": true,
+        "model": "source_agnostic_logit_projection_k10_shared_ridge",
+        "pass_model": true,
+        "prediction_identity_ba_after": 0.7771428571428571,
+        "prediction_identity_reduced": true,
+        "worst_slice_within_5pct": true
+      }
+    ],
+    "pass_rule_met": true,
+    "pass_rule_status": "partial_pass_identity_reduced_not_removed",
+    "raw_feature_identity_ba": 1.0,
+    "residual_feature_identity_high": true,
+    "short_read": "The source-agnostic projection reduces held-out prediction identity and preserves PHQ C01-C08 Macro MAE within tolerance, but feature-layer dataset identity remains high; treat it as a partial diagnostic control and keep full-method claims blocked.",
+    "subject_overlap_violations": 0
+  }
+}

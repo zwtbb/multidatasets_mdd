@@ -1,0 +1,5 @@
+probe_layer,representation,metric,mean,std,seed_count,train_subjects_mean,eval_subjects_mean,subject_overlap_count_sum,ci95_low,ci95_high
+feature,raw_frozen_wavlm_before_control,Balanced Accuracy,1.0,0.0,5,224.6,71.4,0,1.0,1.0
+feature,train_fold_dataset_centered_after_control,Balanced Accuracy,0.5,0.0,5,224.6,71.4,0,0.5,0.5
+prediction,baseline_pooled_shared_ridge_predictions,Balanced Accuracy,0.9607738095238096,0.05206734448459999,5,224.6,71.4,0,0.9151347698270276,1.0064128492205917
+prediction,dataset_centered_shared_ridge_predictions,Balanced Accuracy,0.47648809523809527,0.06421057668014184,5,224.6,71.4,0,0.4202050432202414,0.5327711472559491

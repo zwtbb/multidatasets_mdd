@@ -1,0 +1,10 @@
+model,metric,mean,std,seed_count,subject_count_mean
+train_mean_sds_total,valence_prediction_std,0.0,0.0,5,79.0
+train_mean_sds_total,negative_minus_nonnegative,0.0,0.0,5,79.0
+train_mean_sds_total,negative_highest_rate,0.0,0.0,5,79.0
+text_char_tfidf_valence_segment_ridge,valence_prediction_std,0.0042634928770465055,0.0,5,79.0
+text_char_tfidf_valence_segment_ridge,negative_minus_nonnegative,-0.0019745337664921155,0.0,5,79.0
+text_char_tfidf_valence_segment_ridge,negative_highest_rate,0.2151898734177215,2.7755575615628914e-17,5,79.0
+text_char_tfidf_subject_concat_ridge,valence_prediction_std,1.798842369012912e-15,0.0,5,79.0
+text_char_tfidf_subject_concat_ridge,negative_minus_nonnegative,0.0,0.0,5,79.0
+text_char_tfidf_subject_concat_ridge,negative_highest_rate,0.0,0.0,5,79.0

@@ -1,0 +1,12 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "P5_MV06_evidence_annotation_pilot_hygiene",
+  "files_checked": 9,
+  "generated_at": "2026-08-09T06:03:38+00:00",
+  "local_only_files_skipped": [
+    "p5_mv06_local_annotation_packet_predictions.csv",
+    "p5_mv06_local_annotation_source_map_predictions.csv"
+  ],
+  "violation_count": 0,
+  "violations": []
+}

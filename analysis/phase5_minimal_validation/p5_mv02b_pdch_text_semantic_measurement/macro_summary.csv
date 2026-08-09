@@ -1,0 +1,9 @@
+eval_scope,dataset,feature_space,model,summary_target,metric,mean,std,seed_count,target_count
+pdch_cv,pdch,none,train_mean_total,hamd_total_direct,MAE,6.180669351745302,0.00357920591098772,5,1
+pdch_cv,pdch,none,train_mean_items,hamd_total_from_items,MAE,6.182538689775553,0.003927790909206722,5,1
+pdch_cv,pdch,none,train_mean_items,macro_hamd_item_mae,MAE,0.7473865452205422,0.1680055221598685,5,17
+pdch_cv,pdch,none,train_mean_items,macro_hamd_construct_proxy_mae,MAE,0.6840840435609409,0.2296129191227333,5,13
+pdch_cv,pdch,text_char_hash_subject_concat,direct_total_ridge,hamd_total_direct,MAE,6.172870191626549,0.003466202572885353,5,1
+pdch_cv,pdch,text_char_hash_subject_concat,itemwise_ridge,hamd_total_from_items,MAE,6.174889365866782,0.0038118011477640233,5,1
+pdch_cv,pdch,text_char_hash_subject_concat,itemwise_ridge,macro_hamd_item_mae,MAE,0.7471690386603239,0.1679205198978779,5,17
+pdch_cv,pdch,text_char_hash_subject_concat,itemwise_ridge,macro_hamd_construct_proxy_mae,MAE,0.6837793046988397,0.22953622405091834,5,13
