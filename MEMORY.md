@@ -37,6 +37,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_21_phase5_mv04c_protocol_task_valence_control.md`
   - `/root/autodl-tmp/memory/sessions/session_22_phase5_full_method_gate_audit.md`
   - `/root/autodl-tmp/memory/sessions/session_23_phase5_mv06_annotation_workbench.md`
+  - `/root/autodl-tmp/memory/sessions/session_24_phase5_mv07_shared_feature_contract_readiness.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -135,7 +136,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   mappings, a dataset label-contract audit, and a six-row minimal validation
   matrix at `/root/autodl-tmp/analysis/phase4_symptom_ontology/`.
 - Phase 5 minimal method-validation protocol: complete as a planning contract
-  at `/root/autodl-tmp/analysis/phase5_minimal_validation/`. It has six
+  at `/root/autodl-tmp/analysis/phase5_minimal_validation/`. It has seven
   protocol rows, seven metric/diagnostic rows, output policy, readiness audit,
   and `full_method_allowed=false`. Recommended first runnable row is `P5_MV01`
   `phq_core_construct_bridge`.
@@ -264,9 +265,19 @@ MPDD 2025 is intentionally out of scope for current auditing.
   agreement summaries. Current status is `blocked_no_completed_annotations`: 0
   completed candidates and 0 double-annotated candidates. Artifact hygiene
   passes; no raw text, source locator map, or subject-level rows are exported.
+- Phase 5 `P5_MV07 shared_feature_contract_readiness` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv07_shared_feature_contract_readiness/`.
+  It did not train a model and did not scan raw text/audio/video/gait files. It
+  inventories cached subject-level feature families and label coverage for a
+  revised shared-symptom row. Current status is
+  `blocked_current_cached_features_insufficient_for_mv07`: BGE text is the
+  cleanest next contract but lacks E-DAIC, aligned eGeMAPS is blocked by schema
+  mismatch, and WavLM is available only as identity-blocked diagnostic
+  evidence. Generate aligned E-DAIC BGE text features next; keep generated
+  feature CSVs local-only.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 14 Phase 5 run summaries and exports claim gates, evidence
+  It reads 15 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -452,6 +463,13 @@ Key Phase 2 outputs:
   blocked until the gate has enough completed annotations, enough
   double-annotated candidates for agreement, no invalid field values, and
   `artifact_hygiene_passed=true`.
+- P5_MV07 readiness decision: current cached features are not sufficient for a
+  fair revised shared-symptom minimal-validation row. Prefer an aligned BGE text
+  contract after generating E-DAIC subject-level BGE features; regenerate
+  eGeMAPS only with one shared extractor/schema; rerun WavLM only after a
+  stronger inference-compatible identity-control design. Track only readiness
+  summaries and reports; generated feature CSVs, predictions, embeddings, and
+  weights remain local-only.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -561,6 +579,6 @@ plaintext credential-like content before committing on the clean remote lineage.
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
    fill the ignored local MV06 annotation workbook and rerun the summary gate,
-   or design a revised cross-dataset/shared-symptom feature contract that can
-   beat simple floors while preserving the strongest identity/protocol
-   controls. Full method construction remains blocked until the gate changes.
+   or generate aligned E-DAIC BGE text features and rerun MV07 readiness before
+   any revised shared-symptom feature contract. Full method construction
+   remains blocked until the gate changes.

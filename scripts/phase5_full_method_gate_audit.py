@@ -42,6 +42,7 @@ RUN_SUMMARIES = {
     "P5_MV06_pilot": PHASE5_DIR / "p5_mv06_evidence_annotation_pilot" / "run_summary.json",
     "P5_MV06_workbench": PHASE5_DIR / "p5_mv06_evidence_annotation_workbench" / "run_summary.json",
     "P5_MV06_summary": PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "run_summary.json",
+    "P5_MV07_readiness": PHASE5_DIR / "p5_mv07_shared_feature_contract_readiness" / "run_summary.json",
 }
 
 STATUS_OVERRIDES = {
@@ -51,6 +52,7 @@ STATUS_OVERRIDES = {
     "P5_MV06_pilot": "ready_for_manual_local_annotation",
     "P5_MV06_workbench": "ready_for_local_human_annotation",
     "P5_MV06_summary": "blocked_no_completed_annotations",
+    "P5_MV07_readiness": "blocked_current_cached_features_insufficient_for_mv07",
 }
 
 PASS_RULE_OVERRIDES = {
@@ -60,6 +62,7 @@ PASS_RULE_OVERRIDES = {
     "P5_MV06_pilot": None,
     "P5_MV06_workbench": None,
     "P5_MV06_summary": False,
+    "P5_MV07_readiness": False,
 }
 
 
@@ -196,6 +199,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv04c_domains = mv04c_domain_rows(summaries["P5_MV04c"])
     mv05 = summaries["P5_MV05"].get("verdict") or {}
     mv06 = summaries["P5_MV06_summary"]
+    mv07 = summaries["P5_MV07_readiness"].get("decision") or {}
 
     rows = [
         {
@@ -203,18 +207,18 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": "P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete.",
+            "blocking_evidence": "P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 annotations incomplete; MV07 shows current feature caches are not aligned enough for a fair new shared-symptom row.",
             "required_next_evidence": "A revised shared-symptom feature contract that beats simple floors while preserving identity/protocol controls, or completed MV06 evidence annotation with aggregate agreement.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV07_readiness",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
             "claim": "Claim a transferable shared symptom representation across scales/datasets.",
             "decision": "blocked",
             "allowed_scope": "Discuss as the target hypothesis and report negative/partial diagnostics.",
-            "blocking_evidence": "PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited.",
+            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07 status {mv07.get('readiness_status')}.",
             "required_next_evidence": "Cross-dataset or few-shot construct evidence that beats train-mean/total-allocation floors without worsening dataset identity.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_readiness",
         },
         {
             "claim_id": "C_PDCH_HAMD_INTERNAL",
@@ -308,10 +312,10 @@ def build_next_actions() -> pd.DataFrame:
         {
             "rank": 2,
             "action_id": "NEXT_SHARED_FEATURE_CONTRACT",
-            "action": "Design and run a revised shared-symptom feature contract before M0.",
-            "why_now": "Current WavLM PHQ bridge and EATD SDS heads do not support broad shared representation claims.",
-            "success_gate": "Beats train-mean/total-allocation floors and does not worsen dataset/protocol identity controls across at least E-DAIC/CMDC plus one external stress dataset.",
-            "version_policy": "Track scripts and aggregate summaries; keep row-level predictions, embeddings, and weights local-only.",
+            "action": "Generate aligned E-DAIC BGE text features, then rerun MV07 readiness and the shared-symptom feature contract.",
+            "why_now": "MV07 readiness shows BGE is the cleanest next aligned text contract because CMDC/PDCH BGE already exists while E-DAIC BGE is missing.",
+            "success_gate": "E-DAIC/CMDC/PDCH share one BGE subject-level feature family with no path-like columns; the subsequent MV07 run beats simple floors without worsening identity controls.",
+            "version_policy": "Track scripts and aggregate summaries; keep generated BGE features, row-level predictions, embeddings, and weights local-only.",
         },
         {
             "rank": 3,

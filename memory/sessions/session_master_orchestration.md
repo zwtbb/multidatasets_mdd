@@ -50,7 +50,7 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   mappings, a dataset label-contract audit, source references, and a six-row
   minimal validation matrix.
 - Phase 5 minimal validation protocol is complete as a planning contract under
-  `analysis/phase5_minimal_validation/`. It has six protocol rows, required
+  `analysis/phase5_minimal_validation/`. It has seven protocol rows, required
   metrics, output policy, and a readiness audit with
   `full_method_allowed=false`.
 - Phase 5 `P5_MV01 phq_core_construct_bridge` completed in task
@@ -139,8 +139,14 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   schema, annotation rules, manifest, report, run summary, and hygiene audit.
   The summary gate now defaults to the workbench and remains
   `blocked_no_completed_annotations` until human annotation is filled.
+- Phase 5 `P5_MV07 shared_feature_contract_readiness` completed in the main
+  checkout. It did not train a model or scan raw text/media; it inventories
+  cached subject-level features and label coverage. Current status is
+  `blocked_current_cached_features_insufficient_for_mv07`: E-DAIC BGE text
+  features are missing, eGeMAPS schemas are mismatched, and WavLM is
+  identity-blocked without a stronger inference-compatible control.
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 14
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 15
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
@@ -210,6 +216,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    now has a local manual annotation packet, two-annotator workbench, and
    aggregate-only summary gate ready, but no evidence-localization result
    should be claimed until local annotations are completed and pass the gate.
+   `P5_MV07` readiness shows current cached features are insufficient for the
+   next fair shared-symptom row; generate aligned E-DAIC BGE text features
+   before rerunning that contract.
    The full-method gate audit now records this as
    `blocked_but_publishable_diagnostic_direction`: full method
    is blocked, while a bounded diagnostic/audit-driven paper direction remains
@@ -254,11 +263,10 @@ Cross-session issues are tracked in:
 
 Continue Phase 5 under the full-method gate audit. The next useful work is
 either filling the ignored local MV06 annotation workbook and rerunning the
-summary gate, or
-designing a revised cross-dataset/shared-symptom feature contract that can beat
-simple floors while preserving the strongest identity/protocol controls. Keep
-row-level predictions and learned embeddings local-only, and do not start full
-method work until the gate changes.
+summary gate, or generating aligned E-DAIC BGE text features and rerunning MV07
+readiness before the next shared-symptom contract. Keep row-level predictions
+and learned embeddings local-only, and do not start full method work until the
+gate changes.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
 the old local `main` history directly. Run

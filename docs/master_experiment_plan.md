@@ -59,7 +59,7 @@ data audit
   validation rows. See
   `analysis/phase4_symptom_ontology/phase4_symptom_ontology_report.md`.
 - Phase 5 minimal method-validation protocol:
-  complete as a planning contract, not as model results. It defines six
+  complete as a planning contract, not as model results. It defines seven
   protocol rows, required metrics, output policy, and `full_method_allowed=false`.
   See `analysis/phase5_minimal_validation/minimal_validation_protocol.md`.
 - Phase 5 `P5_MV01 phq_core_construct_bridge`:
@@ -112,8 +112,13 @@ data audit
   readiness, pilot packet, local two-annotator workbench, and aggregate summary
   gate are complete, but evidence reporting is blocked because no local
   annotations or double-annotation agreement have been completed.
+- Phase 5 `P5_MV07 shared_feature_contract_readiness`:
+  complete as a no-training readiness audit. Current cached features are not
+  sufficient for a fair revised shared-symptom row: E-DAIC BGE is missing,
+  eGeMAPS schemas are mismatched, and WavLM remains identity-blocked without a
+  stronger inference-compatible control.
 - Phase 5 full-method gate audit:
-  complete. It reads 14 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 15 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -130,7 +135,9 @@ MODMA task-control pass, but the result is still mixed because EATD remains
 below train mean and does not support valence-control claims. `P5_MV02` gives
 bounded PDCH-only HAMD evidence, while `P5_MV03`, `P5_MV03b`, and `P5_MV05`
 are negative for SDS/context claims. `P5_MV06` still requires local annotation
-completion before evidence-localization claims.
+completion before evidence-localization claims. `P5_MV07` shows the next
+shared-symptom row is blocked until aligned E-DAIC BGE text features or another
+clean shared feature contract is available.
 
 Use `scripts/phase5_full_method_gate_audit.py` as the active claim boundary.
 The audit blocks full M0/M1/M2/M3 construction, transferable shared-symptom
@@ -258,6 +265,10 @@ representation without those controls.
 - `P5_MV06 construct_evidence_localization` has local annotation infrastructure
   ready, including an ignored two-annotator local workbook, but is blocked as
   evidence until annotations and agreement summaries are completed.
+- `P5_MV07 shared_feature_contract_readiness` is complete and blocked by
+  current caches. Generate aligned E-DAIC BGE text features next, keep those
+  feature CSVs local-only, then rerun MV07 before any revised shared-symptom
+  training row.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -272,9 +283,8 @@ representation without those controls.
 
 - Phase 5 execution: continue under the full-method gate by filling the
   ignored local MV06 annotation workbook and rerunning the summary gate, or
-  design a revised
-  cross-dataset/shared-symptom feature contract that can beat simple floors
-  while preserving identity/protocol controls.
+  generate aligned E-DAIC BGE text features and rerun MV07 readiness before a
+  revised cross-dataset/shared-symptom feature contract.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

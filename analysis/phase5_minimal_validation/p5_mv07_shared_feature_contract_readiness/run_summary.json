@@ -1,0 +1,37 @@
+{
+  "artifact_hygiene_passed": true,
+  "contract_rows": 3,
+  "decision": {
+    "readiness_status": "blocked_current_cached_features_insufficient_for_mv07",
+    "recommended_next_contract": "MV07_TEXT_BGE_ALIGNED_after_generating_EDAIC_BGE",
+    "short_read": "Current caches are not sufficient for a fair new shared-symptom row: WavLM is aligned but identity-blocked, BGE text lacks E-DAIC, and eGeMAPS schemas are mismatched. Generate aligned E-DAIC BGE text features first.",
+    "text_bge_contract_status": "blocked_missing_required_feature_cache"
+  },
+  "feature_cache_rows": 10,
+  "generated_at": "2026-08-09T08:09:34+00:00",
+  "input_contract": {
+    "feature_cache_rows_read": true,
+    "manifest_label_fields_read": true,
+    "raw_data_scanned": false,
+    "raw_text_read": false
+  },
+  "label_coverage_rows": 5,
+  "output_policy": {
+    "learned_features_written": false,
+    "raw_paths_written": false,
+    "raw_text_written": false,
+    "row_level_predictions_written": false,
+    "tracked_outputs": [
+      "report.md",
+      "run_summary.json",
+      "artifact_hygiene_audit.json",
+      "feature_cache_inventory.csv",
+      "feature_contract_readiness.csv",
+      "label_coverage_summary.csv",
+      "recommended_feature_generation_queue.csv"
+    ]
+  },
+  "run_id": "P5_MV07_shared_feature_contract_readiness",
+  "scope": "feature_contract_readiness_no_training",
+  "status": "complete"
+}
