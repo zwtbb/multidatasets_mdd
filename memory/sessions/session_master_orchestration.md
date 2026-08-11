@@ -50,7 +50,7 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   mappings, a dataset label-contract audit, source references, and a six-row
   minimal validation matrix.
 - Phase 5 minimal validation protocol is complete as a planning contract under
-  `analysis/phase5_minimal_validation/`. It has seven protocol rows, required
+  `analysis/phase5_minimal_validation/`. It has eight protocol rows, required
   metrics, output policy, and a readiness audit with
   `full_method_allowed=false`.
 - Phase 5 `P5_MV01 phq_core_construct_bridge` completed in task
@@ -180,7 +180,7 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   total-allocation floors and identity remains high (feature BA `1.000`,
   prediction BA `0.980`).
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 24
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 25
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
@@ -202,6 +202,13 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   current MV08 contract is not positive RQ1 evidence; largest pooled item delta
   is CMDC PHQ9_8/C08 psychomotor (`+0.698` MAE versus total floor), and HAMD
   DIF heads show threshold sparsity (`0.318` constant-threshold fraction).
+- Phase 5 `P5_MV08b total_anchored_residual_measurement_design` completed in
+  the main checkout. It exports only design/aggregate artifacts and predeclares
+  one mechanism-changing follow-up: total/latent severity anchoring first,
+  sparse item residual modeling only after anchoring, pooled/collapsed
+  threshold policy, and HAMD as a separate clinical stress test. Current status
+  is `ready_to_implement_mv08b_total_anchored_residual_measurement`; full
+  method remains blocked until the audited MV08b run passes.
 - Clean GitHub publish workflow is now implemented. Future remote updates
   should use `scripts/publish_clean_github_snapshot.py` and
   `docs/github_publish_workflow.md`, so the old local `main` history is never
@@ -279,8 +286,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    the lightweight ordinal measurement head does not beat the total-score floor
    on any pooled active slice, despite reducing prediction identity only to
    `0.900`. MV08 aggregate error analysis confirms this as a not-claimable
-   current contract and recommends either a predeclared MV08b total-anchored
-   residual measurement design or freezing MV08 as negative evidence.
+   current contract. `P5_MV08b` is now predeclared as the one allowed
+   total-anchored residual revision before freezing the sequence as negative
+   diagnostic evidence.
    The full-method gate audit now records this as
    `blocked_but_publishable_diagnostic_direction`: full method is blocked,
    RQ4 is allowed only as limited aggregate evidence, and a bounded
@@ -327,9 +335,10 @@ Cross-session issues are tracked in:
 ## Next Handoff
 
 Continue Phase 5 under the full-method gate audit. The next useful work is to
-decide whether to write a predeclared `P5_MV08b` total-anchored residual
-measurement design or freeze MV08 as diagnostic/negative evidence. Optionally
-expand E-DAIC MV06 double annotation. Keep row-level predictions,
+implement and run the predeclared `P5_MV08b` total-anchored residual
+measurement row, then refresh the full-method gate. If MV08b fails, freeze
+MV08/MV08b as diagnostic/negative evidence. Optionally expand E-DAIC MV06
+double annotation. Keep row-level predictions,
 real manifests, real integrity/split maps, latent scores, learned parameters,
 and learned embeddings local-only, and do not start full method work until the
 gate changes.

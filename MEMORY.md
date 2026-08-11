@@ -48,6 +48,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_32_phase5_mv08_partial_invariance_design.md`
   - `/root/autodl-tmp/memory/sessions/session_33_phase5_mv08_partial_invariance_pilot.md`
   - `/root/autodl-tmp/memory/sessions/session_34_phase5_mv08_error_analysis.md`
+  - `/root/autodl-tmp/memory/sessions/session_35_phase5_mv08b_total_anchored_residual_design.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -146,7 +147,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   mappings, a dataset label-contract audit, and a six-row minimal validation
   matrix at `/root/autodl-tmp/analysis/phase4_symptom_ontology/`.
 - Phase 5 minimal method-validation protocol: complete as a planning contract
-  at `/root/autodl-tmp/analysis/phase5_minimal_validation/`. It has seven
+  at `/root/autodl-tmp/analysis/phase5_minimal_validation/`. It has eight
   protocol rows, seven metric/diagnostic rows, output policy, readiness audit,
   and `full_method_allowed=false`. Recommended first runnable row is `P5_MV01`
   `phq_core_construct_bridge`.
@@ -345,7 +346,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 24 Phase 5 run summaries and exports claim gates, evidence
+  It reads 25 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -390,9 +391,18 @@ MPDD 2025 is intentionally out of scope for current auditing.
   systematic positive bias, the largest pooled item delta is CMDC PHQ9_8/C08
   psychomotor (`+0.698` MAE versus total floor), and HAMD
   scale/item-specific DIF heads have threshold sparsity
-  (`0.318` constant-threshold fraction). Next gate action is either a
-  predeclared MV08b total-anchored/residual measurement design or freezing MV08
-  as negative diagnostic evidence.
+  (`0.318` constant-threshold fraction). The follow-up MV08b
+  total-anchored/residual measurement design is now predeclared separately.
+- Phase 5 `P5_MV08b total_anchored_residual_measurement_design` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08b_total_anchored_residual_measurement_design/`.
+  It did not train a model, read raw text, read row-level predictions, or
+  authorize full-method work. It predeclares one mechanism-changing revision:
+  predict total/latent severity first, model sparse item residuals only after
+  anchoring, pool or collapse sparse ordinal thresholds, and keep HAMD as a
+  separate clinical measurement stress test. Current status is
+  `ready_to_implement_mv08b_total_anchored_residual_measurement`; the full
+  gate still reads `blocked_but_publishable_diagnostic_direction`, and the
+  next ranked action is to implement and run the audited MV08b row.
 
 Phase 2 gate status:
 
@@ -622,12 +632,19 @@ Key Phase 2 outputs:
   does not authorize a transferable RQ1 or full-method claim. Next work should
   analyze the failure mode and either predeclare a stronger psychometric
   measurement revision or freeze MV08 as diagnostic/negative evidence.
-- P5_MV08 error-analysis decision: the current MV08 contract should be frozen
-  as negative evidence unless a new MV08b contract changes the mechanism. A
-  credible MV08b should be total-anchored, model item residual structure only
-  after severity is controlled, pool/collapse sparse ordinal thresholds, and
-  keep HAMD as a separate clinical measurement stress test unless it beats
-  simple floors.
+- P5_MV08 error-analysis decision: the current MV08 contract remains negative
+  evidence unless the predeclared MV08b contract passes. The error analysis
+  justifies total anchoring, item residual modeling only after severity is
+  controlled, pooled/collapsed sparse ordinal thresholds, and HAMD as a
+  separate clinical measurement stress test.
+- P5_MV08b design decision: MV08b is now predeclared as the only allowed
+  follow-up to the negative MV08 pilot. It must compare train-mean items,
+  total-score floor, fixed construct-map floor, and total-anchored residual
+  item heads on the same subject-level E-DAIC/CMDC/PDCH slices. It passes only
+  if it beats total-score and fixed-map floors on at least two pooled active
+  slices while keeping prediction identity no higher than current MV08 M2.
+  If it fails, freeze MV08/MV08b as negative RQ1 diagnostic evidence and pivot
+  writing toward a measurement-audit paper.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -738,8 +755,10 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
-   decide whether to write a predeclared `P5_MV08b` total-anchored residual
-   measurement design or freeze MV08 as negative diagnostic evidence.
+   implement and run the predeclared `P5_MV08b` total-anchored residual
+   measurement row, then refresh the full-method gate. If MV08b fails its
+   total-score/fixed-map/identity gates, freeze MV08/MV08b as negative
+   diagnostic evidence.
    Optionally expand E-DAIC MV06 double annotation to stabilize per-dataset
    agreement.
    Full method construction remains blocked until the gate changes.

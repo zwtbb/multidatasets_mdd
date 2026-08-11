@@ -1,6 +1,6 @@
 # Phase 5 Minimal Method-Validation Protocol
 
-Generated: `2026-08-09T16:52:36+00:00`
+Generated: `2026-08-11T12:13:34+00:00`
 
 ## Purpose
 
@@ -20,6 +20,7 @@ Minimal validation may begin only with subject-level splits, frozen or explicitl
 - `P5_MV06` `construct_evidence_localization` (complete_ready_limited_aggregate_evidence): post-hoc evidence audit tied to construct predictions and protocol controls
 - `P5_MV07` `aligned_bge_shared_symptom_validation` (complete_blocked_aligned_bge_identity_total_allocation): train-mean, total-allocation Ridge, and BGE itemwise Ridge with feature and prediction identity probes
 - `P5_MV08` `partial_invariance_measurement_design` (design_ready_partial_invariance): compare total-score floors, fixed construct-map heads, and partial-invariance ordinal latent measurement heads
+- `P5_MV08b` `total_anchored_residual_measurement` (design_ready_total_anchored_residual): compare train-mean items, total-score floor, fixed construct-map floor, and total-anchored sparse residual item heads with pooled/collapsed threshold policy
 
 ## Mandatory Controls
 

@@ -165,6 +165,23 @@ EXPERIMENT_MATRIX = [
         "stop_rule": "improvement disappears after total/fixed-map floors, DIF is diffuse/uninterpretable, or dataset identity remains the main recoverable signal",
         "version_policy": "track design/trainer scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, and model artifacts local-only",
     },
+    {
+        "protocol_id": "P5_MV08b",
+        "phase4_source_id": "mv08_error_analysis_next_action",
+        "rq": "RQ1",
+        "name": "total_anchored_residual_measurement",
+        "status": "design_ready_total_anchored_residual",
+        "train_scope": "E-DAIC PHQ-8 item labels, CMDC PHQ-9 item labels, and PDCH HAMD-17 item labels under the same active MV08 coverage",
+        "eval_scope": "subject-level folds and dataset-stratified pooled slices across E-DAIC, CMDC, and PDCH",
+        "target_contract": "first predict scale total or latent severity; then predict item residuals relative to the severity anchor for C01-C09 and HAMD-specific auxiliary constructs",
+        "feature_contract": "reuse the audited aligned BGE subject features first; no encoder fine-tuning and no raw text export",
+        "model_contract": "compare train-mean items, total-score floor, fixed construct-map floor, and total-anchored sparse residual item heads with pooled/collapsed threshold policy",
+        "required_controls": "same subject-level splits as MV08; no post-hoc item freeing; threshold sparsity diagnostics; prediction identity probe; HAMD kept as separate clinical stress test",
+        "primary_metrics": "item ordinal MAE; item-derived total MAE; dataset-stratified deltas versus total-score and fixed-map floors; threshold sparsity; prediction identity balanced accuracy",
+        "pass_rule": "beat total-score and fixed-map floors on at least two pooled active slices while keeping prediction identity no higher than current MV08 M2",
+        "stop_rule": "fails total-score/fixed-map floors, residual layer reconstructs total severity, threshold DIF is diffuse, or prediction identity increases",
+        "version_policy": "track design/trainer scripts and aggregate summaries; keep row predictions, residuals, latent scores, learned thresholds, learned parameters, and model artifacts local-only",
+    },
 ]
 
 
@@ -172,7 +189,7 @@ METRIC_CONTRACT = [
     {
         "metric_id": "construct_ordinal_mae",
         "task_family": "construct_item_or_ordinal",
-        "required_for": "P5_MV01;P5_MV02;P5_MV08",
+        "required_for": "P5_MV01;P5_MV02;P5_MV08;P5_MV08b",
         "definition": "mean absolute error on item-derived construct ordinal targets",
         "primary": "yes",
         "notes": "report per construct and macro average",
@@ -196,7 +213,7 @@ METRIC_CONTRACT = [
     {
         "metric_id": "mae_rmse_spearman",
         "task_family": "total_score_regression",
-        "required_for": "P5_MV02;P5_MV03;P5_MV08",
+        "required_for": "P5_MV02;P5_MV03;P5_MV08;P5_MV08b",
         "definition": "standard total-score regression metrics",
         "primary": "yes",
         "notes": "use scale-specific score ranges and subject-level bootstrap CIs",
@@ -220,7 +237,7 @@ METRIC_CONTRACT = [
     {
         "metric_id": "identity_probe_balanced_accuracy",
         "task_family": "shortcut_probe",
-        "required_for": "P5_MV01;P5_MV04;P5_MV08",
+        "required_for": "P5_MV01;P5_MV04;P5_MV08;P5_MV08b",
         "definition": "balanced accuracy of a lightweight dataset/protocol classifier on learned or frozen representations",
         "primary": "yes",
         "notes": "lower is better only when main-task evidence is preserved",
@@ -228,7 +245,7 @@ METRIC_CONTRACT = [
     {
         "metric_id": "dif_sparsity_and_localization",
         "task_family": "measurement_invariance",
-        "required_for": "P5_MV08",
+        "required_for": "P5_MV08;P5_MV08b",
         "definition": "number and location of nonzero or freed loading/threshold deviations by dataset and scale",
         "primary": "yes",
         "notes": "DIF should be concentrated in predeclared partial/auxiliary items, not diffuse across every construct",

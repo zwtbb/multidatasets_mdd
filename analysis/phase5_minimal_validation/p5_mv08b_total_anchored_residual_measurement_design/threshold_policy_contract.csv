@@ -1,0 +1,5 @@
+policy_id,trigger,rule,pass_condition,tracked_output
+T0_observed_score_support,before_training,measure per-item observed category counts inside train folds,no item-specific threshold is estimated for a category with insufficient train-fold support,aggregate category-support and collapse counts only
+T1_collapse_sparse_categories,rare_or_empty_ordinal_levels,collapse adjacent high or low categories by predeclared scale-specific rules before threshold fitting,constant-threshold fraction is lower than current MV08 and rounded-within-one does not degrade materially,threshold_sparsity_summary.csv aggregate only
+T2_pool_thresholds_first,default_MV08b,fit pooled thresholds by scale and construct before freeing item-specific offsets,item residual heads improve beyond B1/B2 without diffuse threshold freeing,aggregate freed-threshold counts by scale/construct
+T3_free_offsets_only_after_error_trigger,large_train_fold_residual_error_with_stable_support,allow a scale/item-specific threshold offset only for predeclared high-error items,offsets remain sparse and interpretable; no post-hoc broad freeing,aggregate DIF sparsity by dataset/scale/construct

@@ -36,18 +36,20 @@ latent scores, learned parameters, raw text, or source locators.
   evidence row. Gate status remains
   `blocked_but_publishable_diagnostic_direction`, with
   `full_method_allowed=false`.
+- Follow-up design is now recorded in
+  `memory/sessions/session_35_phase5_mv08b_total_anchored_residual_design.md`.
 
 ## Key Decisions
 
-- Freeze the current MV08 contract as negative evidence unless a predeclared
-  MV08b changes the measurement mechanism.
-- A credible MV08b should be total-anchored, model item residual structure only
-  after severity is controlled, pool or collapse sparse ordinal thresholds, and
-  keep HAMD as a separate clinical measurement stress test unless it beats
-  simple floors.
-- MV08b success gate, if pursued: beat total-score and fixed-map floors on at
-  least two pooled active slices without increasing prediction identity.
-- If MV08b is not pursued, the paper should continue as a diagnostic and
+- Freeze the current MV08 contract as negative evidence unless the predeclared
+  MV08b follow-up changes the mechanism and passes.
+- The MV08b design is now recorded in session_35: it is total-anchored, models
+  item residual structure only after severity is controlled, pools or collapses
+  sparse ordinal thresholds, and keeps HAMD as a separate clinical measurement
+  stress test.
+- MV08b success gate: beat total-score and fixed-map floors on at least two
+  pooled active slices without increasing prediction identity.
+- If MV08b fails, the paper should continue as a diagnostic and
   measurement-audit contribution rather than a broad shared-measurement method
   claim.
 
@@ -94,15 +96,16 @@ Ignored local-only input:
 
 - Current MV08 remains a negative result and does not authorize full method
   work.
-- MV08b is not automatically justified; it needs a predeclared design contract
-  that changes the mechanism rather than retuning a shallow BGE head.
+- The MV08b design contract now exists. Its remaining risk is empirical:
+  the actual run may still fail total-score/fixed-map/identity gates.
 - E-DAIC MV06 agreement remains underpowered if stronger RQ4 claims are needed.
 - Public remote history rewrite remains optional and requires explicit user
   approval.
 
 ## Next Handoff
 
-Decide whether to write a `P5_MV08b` total-anchored residual measurement design
-or freeze MV08 as negative evidence and pivot writing toward a diagnostic,
-measurement-audit paper. Keep all row-level predictions, learned thresholds,
-latent scores, and private review material local-only.
+This error-analysis handoff is complete. Continue with session_35: implement
+and run the predeclared `P5_MV08b` total-anchored residual measurement row, or
+freeze MV08/MV08b as negative evidence if the run fails. Keep all row-level
+predictions, learned thresholds, latent scores, and private review material
+local-only.

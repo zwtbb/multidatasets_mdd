@@ -1,0 +1,53 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "current_mv08_frozen_as_negative_unless_mv08b_passes": true,
+    "full_method_authorized": false,
+    "readiness_status": "ready_to_implement_mv08b_total_anchored_residual_measurement",
+    "recommended_next_action": "IMPLEMENT_MV08B_RUNNER",
+    "short_read": "MV08b is predeclared as a total-anchored residual measurement revision: predict severity first, model item residuals only after anchoring, pool or collapse sparse thresholds, and keep HAMD as a separate clinical stress test. Full-method work remains blocked until MV08b is run and passes."
+  },
+  "design_gate_rows": 5,
+  "generated_at": "2026-08-11T12:13:34+00:00",
+  "input_contract": {
+    "mv08_aggregate_artifacts_read": true,
+    "phase4_design_artifacts_read": true,
+    "raw_data_scanned": false,
+    "raw_text_read": false,
+    "row_level_predictions_read": false
+  },
+  "model_contract_rows": 5,
+  "output_policy": {
+    "latent_scores_written": false,
+    "learned_parameters_written": false,
+    "raw_paths_written": false,
+    "raw_text_written": false,
+    "row_level_predictions_written": false,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "design_decision_gate.csv",
+      "implementation_queue.csv",
+      "method_source_refs.csv",
+      "model_ladder_contract.csv",
+      "report.md",
+      "residual_target_contract.csv",
+      "run_summary.json",
+      "source_evidence_summary.csv",
+      "threshold_policy_contract.csv"
+    ]
+  },
+  "pass_rule": {
+    "hamd_success_separate_from_phq_shared_core": true,
+    "minimum_pooled_active_slices_beating_both_floors": 2,
+    "prediction_identity_ba_must_not_exceed_current_mv08_m2": true,
+    "primary_floor": "B1_total_score_floor",
+    "secondary_floor": "B2_fixed_construct_map"
+  },
+  "residual_target_rows": 15,
+  "run_id": "P5_MV08b_total_anchored_residual_measurement_design",
+  "scope": "design_readiness_no_training_after_negative_mv08",
+  "source_evidence_rows": 8,
+  "source_ref_rows": 4,
+  "status": "complete",
+  "threshold_policy_rows": 4
+}

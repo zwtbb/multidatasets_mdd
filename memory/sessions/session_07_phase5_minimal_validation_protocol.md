@@ -14,7 +14,7 @@ minimal model, and it explicitly keeps full method construction blocked.
 
 - Implemented `scripts/phase5_build_minimal_validation_protocol.py`.
 - Generated `analysis/phase5_minimal_validation/` with:
-  - seven protocol rows;
+  - eight protocol rows after the later `P5_MV08b` extension;
   - seven required metric/diagnostic rows;
   - three output-policy rows;
   - a readiness audit with `full_method_allowed=false`;
@@ -29,6 +29,8 @@ minimal model, and it explicitly keeps full method construction blocked.
   readiness. It is blocked as shared-symptom evidence because itemwise BGE
   heads do not consistently beat total-allocation floors and identity remains
   high.
+- Later extension: `P5_MV08` has run and failed the total-score floor; `P5_MV08b`
+  is now added as a design-ready total-anchored residual measurement row.
 
 ## Key Decisions
 
@@ -49,6 +51,10 @@ minimal model, and it explicitly keeps full method construction blocked.
 - MV07 moved from readiness-only to a completed blocked validation row after
   local E-DAIC BGE generation. Treat it as negative/diagnostic evidence and do
   not use it to authorize full M0 shared-symptom construction.
+- MV08b is the current RQ1 minimal-validation follow-up. It must beat
+  total-score and fixed-map floors on at least two pooled active slices without
+  increasing prediction identity, or the MV08/MV08b sequence should be frozen
+  as negative diagnostic evidence.
 
 ## Files Owned Or Touched
 
@@ -88,9 +94,8 @@ Artifacts:
 
 ## Next Handoff
 
-`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, and `P5_MV07` have been
-implemented or audited as minimal rows. `P5_MV06` readiness is complete and
-can proceed only as a local raw-text annotation workflow with tracked aggregate
-summaries. `P5_MV07` aligned-BGE validation should now be reported as a blocked
-shared-feature result; a stronger identity-control/shared-feature contract is
-needed before any broad full-model implementation.
+`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, `P5_MV07`, and `P5_MV08`
+have been implemented or audited as minimal rows, while `P5_MV08b` is
+design-ready and should be implemented next. `P5_MV06` has first-round
+aggregate evidence but raw review material remains local-only. Do not start any
+broad full-model implementation until the full-method gate changes.

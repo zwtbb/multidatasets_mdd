@@ -52,6 +52,7 @@ RUN_SUMMARIES = {
     "P5_MV08_design": PHASE5_DIR / "p5_mv08_partial_invariance_measurement_design" / "run_summary.json",
     "P5_MV08": PHASE5_DIR / "p5_mv08_partial_invariance_measurement" / "run_summary.json",
     "P5_MV08_error_analysis": PHASE5_DIR / "p5_mv08_error_analysis" / "run_summary.json",
+    "P5_MV08b_design": PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement_design" / "run_summary.json",
 }
 
 STATUS_OVERRIDES = {
@@ -231,6 +232,8 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv08_status = str(mv08_result.get("pass_rule_status", "unknown"))
     mv08_error = summaries["P5_MV08_error_analysis"].get("decision") or {}
     mv08_error_status = str(mv08_error.get("error_analysis_status", "unknown"))
+    mv08b_design = summaries["P5_MV08b_design"].get("decision") or {}
+    mv08b_design_status = str(mv08b_design.get("readiness_status", "unknown"))
 
     rows = [
         {
@@ -238,18 +241,18 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_design_status}; MV08 result is {mv08_status}, with M2 improving over total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08_result.get('prediction_identity_ba_m2'))}; MV08 error-analysis status is {mv08_error_status}.",
-            "required_next_evidence": "Either predeclare a stronger MV08b measurement revision that changes the current mechanism, or freeze MV08 as negative diagnostic evidence and keep the paper framed as a measurement/audit contribution.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_design_status}; MV08 result is {mv08_status}, with M2 improving over total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08_result.get('prediction_identity_ba_m2'))}; MV08 error-analysis status is {mv08_error_status}; MV08b design status is {mv08b_design_status}.",
+            "required_next_evidence": "Run the predeclared MV08b total-anchored residual measurement row and require it to beat total-score and fixed-map floors on at least two pooled active slices without higher prediction identity; otherwise freeze MV08/MV08b as negative diagnostic evidence.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
             "claim": "Claim a transferable shared symptom representation across scales/datasets.",
             "decision": "blocked",
             "allowed_scope": "Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance.",
-            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 partial-invariance ordinal heads reduce prediction identity to {fmt(mv08_result.get('prediction_identity_ba_m2'))} but improve over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices; MV08 error analysis says the current contract is not claimable positive RQ1 evidence.",
-            "required_next_evidence": "A predeclared MV08b revision must beat total-score and fixed-map floors on at least two pooled active slices without higher prediction identity; otherwise freeze RQ1 as diagnostic/negative evidence.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis",
+            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 partial-invariance ordinal heads reduce prediction identity to {fmt(mv08_result.get('prediction_identity_ba_m2'))} but improve over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices; MV08 error analysis says the current contract is not claimable positive RQ1 evidence; MV08b is {mv08b_design_status} but not yet run.",
+            "required_next_evidence": "Run MV08b and require it to beat total-score and fixed-map floors on at least two pooled active slices without higher prediction identity; otherwise freeze RQ1 as diagnostic/negative evidence.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design",
         },
         {
             "claim_id": "C_PDCH_HAMD_INTERNAL",
@@ -332,8 +335,8 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Continue toward a publishable paper.",
             "decision": "allowed_with_reframing",
             "allowed_scope": "A diagnostic/audit-driven paper is viable now; partial measurement invariance is a promising problem framing but the first MV08 pilot is negative.",
-            "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}; error analysis is {mv08_error_status}; data-governance history cleanup remains a separate approval decision.",
-            "required_next_evidence": "Predeclare a total-anchored/residual MV08b measurement revision only if it changes the mechanism; otherwise write the paper as a diagnostic/measurement-audit contribution.",
+            "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}; data-governance history cleanup remains a separate approval decision.",
+            "required_next_evidence": "Run the predeclared MV08b revision once as a mechanism-changing measurement test; if it fails, write the paper as a diagnostic/measurement-audit contribution.",
             "primary_sources": "all_phase5",
         },
     ]
@@ -351,8 +354,19 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv08_status = str(mv08_result.get("pass_rule_status", "unknown"))
     mv08_error = summaries["P5_MV08_error_analysis"].get("decision") or {}
     mv08_error_status = str(mv08_error.get("error_analysis_status", "unknown"))
+    mv08b_design = summaries["P5_MV08b_design"].get("decision") or {}
+    mv08b_design_status = str(mv08b_design.get("readiness_status", "unknown"))
     mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
-    if mv08_error.get("error_analysis_status"):
+    if mv08b_design.get("readiness_status"):
+        shared_feature_action = {
+            "rank": 2,
+            "action_id": "NEXT_IMPLEMENT_MV08B_TOTAL_ANCHORED_RESIDUAL_MEASUREMENT",
+            "action": "Implement and run the predeclared MV08b total-anchored residual measurement row.",
+            "why_now": f"MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}, so the next evidence gap is the audited MV08b run.",
+            "success_gate": "MV08b must beat total-score and fixed-map floors on at least two pooled active slices, keep prediction identity no higher than current MV08 M2, and export only aggregate diagnostics.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, thresholds, and raw snippets local-only.",
+        }
+    elif mv08_error.get("error_analysis_status"):
         shared_feature_action = {
             "rank": 2,
             "action_id": "NEXT_MV08B_DECISION_OR_FREEZE_NEGATIVE_EVIDENCE",

@@ -1,0 +1,6 @@
+gate_id,status,evidence,required_next
+G_MECHANISM_CHANGED,pass,MV08b predicts total severity first and models item residuals only after anchoring.,Implement B0/B1/B2/M2b in one script with subject-level folds.
+G_TOTAL_FLOOR_PRIMARY,pass,MV08 error analysis shows total-score floors are best or near-best across active slices.,B1_total_score_floor remains the primary pass/fail comparator.
+G_THRESHOLD_SPARSITY_ADDRESSED,pass,"MV08b predeclares category-support checks, category collapse, and pooled thresholds.",Do not export learned thresholds; export only aggregate sparsity diagnostics.
+G_HAMD_SEPARATE_STRESS,pass_limited,PDCH HAMD remains the only adequately sized HAMD item source; CMDC HAMD is sanity-only.,Do not count HAMD success as a PHQ shared-core pass unless PHQ slices also pass.
+G_NO_FULL_METHOD_AUTHORIZATION,blocked_full_method,"MV08b design is a minimal-validation contract, not a full M0/M1/M2/M3 start.",Run and gate MV08b before changing full-method authorization.

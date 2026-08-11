@@ -59,7 +59,7 @@ data audit
   validation rows. See
   `analysis/phase4_symptom_ontology/phase4_symptom_ontology_report.md`.
 - Phase 5 minimal method-validation protocol:
-  complete as a planning contract, not as model results. It defines seven
+  complete as a planning contract, not as model results. It defines eight
   protocol rows, required metrics, output policy, and `full_method_allowed=false`.
   See `analysis/phase5_minimal_validation/minimal_validation_protocol.md`.
 - Phase 5 `P5_MV01 phq_core_construct_bridge`:
@@ -159,7 +159,7 @@ data audit
   as a negative follow-up: total anchoring does not rescue the shallow BGE
   shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 24 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 25 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -182,6 +182,14 @@ data audit
   pooled item delta is CMDC PHQ9_8/C08 psychomotor (`+0.698` MAE versus total
   floor), and HAMD DIF heads show threshold sparsity (`0.318` constant-threshold
   fraction).
+- Phase 5 `P5_MV08b total_anchored_residual_measurement_design`:
+  complete as a no-training predeclared mechanism revision. It turns the MV08
+  failure into one allowed follow-up: predict total/latent severity first,
+  model item residuals only after anchoring, pool or collapse sparse ordinal
+  thresholds, and keep HAMD as a separate clinical measurement stress test.
+  Current status is
+  `ready_to_implement_mv08b_total_anchored_residual_measurement`; full-method
+  construction remains blocked until the MV08b run passes.
 
 ## Current Method-Design Gate
 
@@ -237,13 +245,11 @@ The first runnable row has now compared:
 3. partial-invariance ordinal latent measurement heads.
 
 The E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17 pilot did not beat the
-total-score floor, and error analysis now recommends either freezing the result
-as negative evidence or predeclaring an MV08b revision. A credible MV08b should
-be total-anchored, model item residual structure only after severity is
-controlled, pool/collapse sparse thresholds, and keep HAMD as a separate
-clinical measurement stress test unless it beats simple floors. Keep MPDD as a later
-measurement-heterogeneity moderator dataset and keep EATD/MODMA as stress
-tests rather than primary training sources.
+total-score floor. The MV08b design is now predeclared as the only allowed
+mechanism-changing follow-up: first anchor severity, then test whether sparse
+item residuals add construct information beyond total-score and fixed-map
+floors. Keep MPDD as a later measurement-heterogeneity moderator dataset and
+keep EATD/MODMA as stress tests rather than primary training sources.
 
 Phase 2 validation commands:
 
@@ -395,8 +401,14 @@ representation without those controls.
 - `P5_MV08 error_analysis` is complete and aggregate-only. It identifies
   systematic M2 overprediction, CMDC PHQ9_8/C08 psychomotor as the largest
   pooled item delta, and HAMD threshold sparsity. The current MV08 contract
-  should not be claimed positive unless replaced by a predeclared MV08b
-  mechanism.
+  remains negative unless the predeclared MV08b mechanism later passes.
+- `P5_MV08b total_anchored_residual_measurement_design` is complete as a
+  no-training design contract. It predeclares B0 train-mean items,
+  B1 total-score floor, B2 fixed construct-map floor, and M2b
+  total-anchored residual item heads. MV08b must beat total-score and fixed-map
+  floors on at least two pooled active slices and keep prediction identity no
+  higher than current MV08 M2; otherwise MV08/MV08b should be frozen as
+  negative RQ1 diagnostic evidence.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -414,10 +426,11 @@ representation without those controls.
   split maps local-only; publish schema, synthetic examples, generation
   scripts, and aggregate audits. Any remote history rewrite still requires
   explicit user approval.
-- Phase 5 execution: decide whether to write a predeclared `P5_MV08b`
-  total-anchored residual measurement design or freeze MV08 as negative
-  diagnostic evidence. Optionally expand E-DAIC MV06 double annotation to
-  stabilize per-dataset agreement.
+- Phase 5 execution: implement and run the predeclared `P5_MV08b`
+  total-anchored residual measurement row, then refresh the full-method gate.
+  If MV08b fails, freeze MV08/MV08b as negative diagnostic evidence and pivot
+  writing toward a measurement-audit paper. Optionally expand E-DAIC MV06
+  double annotation to stabilize per-dataset agreement.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

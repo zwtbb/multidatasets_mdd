@@ -30,12 +30,12 @@ the numeric source artifacts from each MV row.
     aligned-BGE shallow shared-symptom validation, MV07b BGE
     identity-projection follow-up, and MV07c BGE total-anchor follow-up.
 - Artifact hygiene passed with zero violations.
-- Later extension: the current gate now reads 24 Phase 5 run summaries after
-  adding `P5_MV08_design`, the completed `P5_MV08` pilot, and
-  `P5_MV08_error_analysis`. The gate remains
+- Later extension: the current gate now reads 25 Phase 5 run summaries after
+  adding `P5_MV08_design`, the completed `P5_MV08` pilot,
+  `P5_MV08_error_analysis`, and `P5_MV08b_design`. The gate remains
   `blocked_but_publishable_diagnostic_direction`; see
-  `memory/sessions/session_34_phase5_mv08_error_analysis.md` for the latest
-  MV08-driven gate refresh.
+  `memory/sessions/session_35_phase5_mv08b_total_anchored_residual_design.md`
+  for the latest MV08-driven gate refresh.
 
 ## Key Decisions
 
@@ -56,14 +56,13 @@ the numeric source artifacts from each MV row.
   - a publishable diagnostic/audit-driven paper direction if claims are
     reframed away from broad SOTA/full-method claims.
 - Ranked next actions:
-  1. Audit and reduce public row-level manifest exposure before further GitHub
-     publishing.
-  2. Freeze shallow BGE/WavLM rows as negative/partial baselines and design the
-     multi-scale psychometric partial-invariance measurement row.
-  3. Use the dataset-stratified MV06 agreement summary as first-round RQ4
+  1. Implement and run the predeclared `P5_MV08b` total-anchored residual
+     measurement row.
+  2. Use the dataset-stratified MV06 agreement summary as first-round RQ4
      evidence and optionally expand E-DAIC double annotation.
-  4. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
-  5. Recover MPDD gender/health metadata and official test labels if available.
+  3. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
+  4. Recover MPDD gender/health metadata and official test labels if available.
+  5. Decide later whether public remote history cleanup is needed.
 
 ## Files Owned Or Touched
 
@@ -122,12 +121,13 @@ Versionable artifacts:
   psychometric measurement implementation does not authorize RQ1/full-method
   claims.
 - MV08 error analysis confirms the current contract is not claimable positive
-  RQ1 evidence and should either be frozen as negative evidence or replaced by
-  a predeclared MV08b mechanism.
+  RQ1 evidence. MV08b is now predeclared as the only allowed mechanism-changing
+  follow-up; if it fails, freeze MV08/MV08b as negative RQ1 diagnostic
+  evidence.
 
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
-The next implementation session should decide whether to write a predeclared
-MV08b total-anchored residual measurement design or freeze MV08 as diagnostic
-evidence. Do not start the full method until the gate changes from blocked.
+The next implementation session should implement and run the predeclared MV08b
+total-anchored residual measurement row. Do not start the full method until the
+gate changes from blocked.
