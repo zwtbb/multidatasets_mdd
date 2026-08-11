@@ -17,7 +17,7 @@ predictions can be grounded in language, acoustic, facial, and gait evidence.
 
 ## Current Status
 
-Phase 1 is frozen. Phase 2 is now closed for all applicable unified-baseline
+Phase 1 is frozen and Phase 2 is closed for all applicable unified-baseline
 rows:
 
 - Planned runs: 67.
@@ -34,7 +34,7 @@ this version" prerequisite. It can be revisited only as a separately labeled
 P3HF packaged-Young-110 reproduction or under a newly defined compatible
 protocol.
 
-The current method-design gate is:
+The Phase 2 completion gate is:
 
 ```bash
 python scripts/phase2_baseline_matrix.py --strict
@@ -44,6 +44,18 @@ python scripts/phase2_completion_audit.py
 
 The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
+
+The active research gate is now Phase 5. Minimal validations are complete
+through `P5_MV09 conditional_dataset_identity_audit`; the full-method gate
+remains `blocked_but_publishable_diagnostic_direction` with
+`full_method_allowed=false`. The paper direction is therefore reframed from a
+positive full shared-symptom model to a measurement-shift /
+measurement-invariance diagnostic paper. MV09 shows that unconditional dataset
+identity should be treated as a shortcut-risk screen, while conditional
+identity remains high after severity or aligned-item conditioning.
+
+Current next action: run a classical PHQ-8/PHQ-9 psychometric invariance
+baseline before any further MV08c-like multimodal head iteration.
 
 ## Key Paths
 
@@ -61,6 +73,10 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 - Main-agent control plan: `docs/master_experiment_plan.md`
 - Issue and decision log: `docs/experiment_issue_log.md`
 - GitHub publish workflow: `docs/github_publish_workflow.md`
+- Phase 5 full-method gate: `analysis/phase5_minimal_validation/full_method_gate_audit/`
+- MV09 conditional identity audit: `analysis/phase5_minimal_validation/p5_mv09_conditional_identity_audit/`
+- Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
+- Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 
 ## Rebuild Commands
 

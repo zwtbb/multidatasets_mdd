@@ -1,0 +1,16 @@
+probe_id,datasets,strategy,representation,condition_columns,residualized_features,control_only,common_severity_bins,metric,mean,std,seed_count,sample_count_mean,min_dataset_count_mean,fold_count_mean
+cmdc_pdch_same_language_total,cmdc;pdch,normalized_total_residualized_bge,text_bge_residualized,severity_norm,True,False,,Balanced Accuracy,1.0,0.0,5,176.0,77.0,5.0
+cmdc_pdch_same_language_total,cmdc;pdch,raw_bge_unconditional,text_bge_raw,,False,False,,Balanced Accuracy,1.0,0.0,5,176.0,77.0,5.0
+cmdc_pdch_same_language_total,cmdc;pdch,severity_common_support_raw_bge,text_bge_raw,,False,False,0.0-0.2;0.2-0.4;0.4-0.6;0.6-0.8,Balanced Accuracy,1.0,0.0,5,170.0,71.0,5.0
+cmdc_pdch_same_language_total,cmdc;pdch,severity_only_control,severity_norm,severity_norm,False,True,,Balanced Accuracy,0.6130350877192983,0.005166919840102069,5,176.0,77.0,5.0
+edaic_cmdc_pdch_total_norm,edaic;cmdc;pdch,normalized_total_residualized_bge,text_bge_residualized,severity_norm,True,False,,Balanced Accuracy,1.0,0.0,5,395.0,77.0,5.0
+edaic_cmdc_pdch_total_norm,edaic;cmdc;pdch,raw_bge_unconditional,text_bge_raw,,False,False,,Balanced Accuracy,1.0,0.0,5,395.0,77.0,5.0
+edaic_cmdc_pdch_total_norm,edaic;cmdc;pdch,severity_common_support_raw_bge,text_bge_raw,,False,False,0.0-0.2;0.2-0.4;0.4-0.6;0.6-0.8,Balanced Accuracy,1.0,0.0,5,381.0,71.0,5.0
+edaic_cmdc_pdch_total_norm,edaic;cmdc;pdch,severity_only_control,severity_norm,severity_norm,False,True,,Balanced Accuracy,0.3996424959509415,0.01190338349242623,5,395.0,77.0,5.0
+edaic_cmdc_phq_core,edaic;cmdc,phq_core_items_control,C01;C02;C03;C04;C05;C06;C07;C08,C01;C02;C03;C04;C05;C06;C07;C08,False,True,,Balanced Accuracy,0.6640591966173361,0.01438639190153598,5,296.0,77.0,5.0
+edaic_cmdc_phq_core,edaic;cmdc,phq_core_items_residualized_bge,text_bge_residualized,C01;C02;C03;C04;C05;C06;C07;C08,True,False,,Balanced Accuracy,0.9911030655391121,0.003875037346389972,5,296.0,77.0,5.0
+edaic_cmdc_phq_core,edaic;cmdc,raw_bge_unconditional,text_bge_raw,,False,False,,Balanced Accuracy,1.0,0.0,5,296.0,77.0,5.0
+edaic_cmdc_phq_core,edaic;cmdc,severity_common_support_raw_bge,text_bge_raw,,False,False,0.0-0.2;0.2-0.4;0.4-0.6;0.6-0.8;0.8-1.0,Balanced Accuracy,1.0,0.0,5,296.0,77.0,5.0
+edaic_cmdc_phq_core,edaic;cmdc,severity_gender_residualized_bge,text_bge_residualized,severity_norm;gender_numeric,True,False,,Balanced Accuracy,1.0,0.0,5,296.0,77.0,5.0
+edaic_cmdc_phq_core,edaic;cmdc,severity_only_control,severity_norm,severity_norm,False,True,,Balanced Accuracy,0.5421599718111346,0.02959283264088853,5,296.0,77.0,5.0
+edaic_cmdc_phq_core,edaic;cmdc,severity_residualized_bge,text_bge_residualized,severity_norm,True,False,,Balanced Accuracy,1.0,0.0,5,296.0,77.0,5.0

@@ -1,0 +1,20 @@
+source_run,family,model,mean_macro_mae,dataset_identity_ba_feature,dataset_identity_ba_prediction,notes
+P5_MV07,aligned_bge_phq,raw_bge_itemwise_ridge,0.6915408119265855,1.0,0.98,Raw aligned-BGE pooled PHQ itemwise head.
+P5_MV07b,aligned_bge_phq,bge_itemwise_ridge_raw,0.6915408119265855,1.0,0.99375,Train-fold dataset-logit nuisance projection sweep.
+P5_MV07b,aligned_bge_phq,bge_logit_projection_k1_itemwise_ridge,0.6856189339673204,0.8561309523809524,0.8274404761904762,Train-fold dataset-logit nuisance projection sweep.
+P5_MV07b,aligned_bge_phq,bge_logit_projection_k3_itemwise_ridge,0.6858142320856133,0.7958928571428572,0.7775000000000001,Train-fold dataset-logit nuisance projection sweep.
+P5_MV07b,aligned_bge_phq,bge_logit_projection_k5_itemwise_ridge,0.6906367989535471,0.8127976190476189,0.720952380952381,Train-fold dataset-logit nuisance projection sweep.
+P5_MV07b,aligned_bge_phq,bge_logit_projection_k10_itemwise_ridge,0.6912584755600488,0.7094642857142857,0.6839880952380952,Train-fold dataset-logit nuisance projection sweep.
+P5_MV07c,aligned_bge_total_anchor,cvselected_projected_total_alloc_ridge,0.6890016899389396,0.7379166666666667,,Total-anchor follow-up; prediction identity available for selected total-anchor output only.
+P5_MV07c,aligned_bge_total_anchor,cvselected_projected_total_anchor_itemwise,0.6886520907196445,0.7379166666666667,0.6644642857142857,Total-anchor follow-up; prediction identity available for selected total-anchor output only.
+P5_MV07c,aligned_bge_total_anchor,raw_bge_itemwise_ridge,0.6915408119265855,1.0,,Total-anchor follow-up; prediction identity available for selected total-anchor output only.
+P5_MV07c,aligned_bge_total_anchor,raw_total_alloc_ridge,0.6917384854190777,1.0,,Total-anchor follow-up; prediction identity available for selected total-anchor output only.
+P5_MV07c,aligned_bge_total_anchor,train_mean,0.7948682775888134,1.0,,Total-anchor follow-up; prediction identity available for selected total-anchor output only.
+P5_MV08,partial_invariance_measurement,M0_total_score_floor,0.682681542282889,1.0,1.0,"Cross-scale measurement row; MAE averages E-DAIC, CMDC, and PDCH pooled slices."
+P5_MV08,partial_invariance_measurement,M0_train_mean_items,0.7610140437323244,1.0,1.0,"Cross-scale measurement row; MAE averages E-DAIC, CMDC, and PDCH pooled slices."
+P5_MV08,partial_invariance_measurement,M1_fixed_construct_map,0.7025484653370354,1.0,0.9833333333333332,"Cross-scale measurement row; MAE averages E-DAIC, CMDC, and PDCH pooled slices."
+P5_MV08,partial_invariance_measurement,M2_partial_invariance_ordinal,0.8239744824676346,1.0,0.9002020202020201,"Cross-scale measurement row; MAE averages E-DAIC, CMDC, and PDCH pooled slices."
+P5_MV08b,partial_invariance_measurement,B0_train_mean_items,0.7610140437323244,1.0,1.0,"Cross-scale measurement row; MAE averages E-DAIC, CMDC, and PDCH pooled slices."
+P5_MV08b,partial_invariance_measurement,B1_total_score_floor,0.682681542282889,1.0,1.0,"Cross-scale measurement row; MAE averages E-DAIC, CMDC, and PDCH pooled slices."
+P5_MV08b,partial_invariance_measurement,B2_fixed_construct_map,0.7025484653370354,1.0,0.9833333333333332,"Cross-scale measurement row; MAE averages E-DAIC, CMDC, and PDCH pooled slices."
+P5_MV08b,partial_invariance_measurement,M2b_total_anchored_residual_measurement,0.6828409432639434,1.0,0.9788888888888888,"Cross-scale measurement row; MAE averages E-DAIC, CMDC, and PDCH pooled slices."

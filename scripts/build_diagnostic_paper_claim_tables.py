@@ -33,6 +33,7 @@ MV06_SUMMARY = PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "run_summary
 MV06_AGREEMENT = PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "agreement_summary.csv"
 MV08_SUMMARY = PHASE5_DIR / "p5_mv08_partial_invariance_measurement" / "run_summary.json"
 MV08B_SUMMARY = PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement" / "run_summary.json"
+MV09_SUMMARY = PHASE5_DIR / "p5_mv09_conditional_identity_audit" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -58,16 +59,16 @@ CLAIM_SECTION = {
 }
 
 PAPER_CLAIM_LANGUAGE = {
-    "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed diagnostic audit.",
-    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative under the current frozen-feature shallow-measurement contract.",
+    "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper.",
+    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, measurement shift, and invariance.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
-    "C_DATASET_IDENTITY_CONTROL": "Use dataset/protocol identity controls as required diagnostics, not as proof of invariant representation.",
+    "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and conditional identity as the stronger shared-latent diagnostic.",
     "C_MODMA_TASK_CONTROL": "Use MODMA task nuisance projection as bounded protocol-control evidence.",
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a diagnostic measurement-audit paper with bounded claims and explicit negative evidence.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims and explicit negative evidence.",
 }
 
 LITERATURE_ROWS = [
@@ -93,11 +94,32 @@ LITERATURE_ROWS = [
         "paper_positioning": "Recent interviewer-bias work motivates treating question type and dialogue protocol as nuisance factors, while our audit generalizes this concern across datasets, tasks, valence, and scale contracts.",
     },
     {
+        "source_id": "multi_probe_audit_2026",
+        "topic": "Nearby benchmark audit risk",
+        "citation_hint": "Ishikawa and Duke 2026, arXiv",
+        "url": "https://arxiv.org/abs/2605.23977",
+        "paper_positioning": "A recent multi-probe depression benchmark audit overlaps several datasets, so our novelty should emphasize measurement shift, conditional identity, and measurement validity rather than a generic dataset audit alone.",
+    },
+    {
+        "source_id": "questionnaire_grounding_acl_2022",
+        "topic": "Questionnaire grounding and OOD depression detection",
+        "citation_hint": "Nguyen et al. 2022, ACL",
+        "url": "https://aclanthology.org/2022.acl-long.578/",
+        "paper_positioning": "Questionnaire-grounded symptom modeling is prior positive evidence for symptom-aware OOD detection; our paper should position its contribution as measuring when cross-dataset symptom targets are not equivalent.",
+    },
+    {
         "source_id": "phq_hamd_irt_2021",
         "topic": "PHQ/HAMD measurement differences",
         "citation_hint": "Ma et al. 2021, Frontiers in Psychiatry",
         "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.747139/full",
         "paper_positioning": "PHQ-9 and HAMD-17 can correlate strongly while differing in item discrimination and severity assessment, supporting our scale-specific measurement framing.",
+    },
+    {
+        "source_id": "phq9_invariance_helius_2017",
+        "topic": "Classical measurement invariance",
+        "citation_hint": "Galenkamp et al. 2017, BMC Psychiatry",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5655879/",
+        "paper_positioning": "PHQ-9 measurement invariance methods provide the template for the next label-only psychometric baseline before another multimodal head iteration.",
     },
     {
         "source_id": "phq_dif_jad_2024",
@@ -170,6 +192,7 @@ def require_inputs() -> None:
         MV06_AGREEMENT,
         MV08_SUMMARY,
         MV08B_SUMMARY,
+        MV09_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -201,6 +224,7 @@ def build_metric_context() -> dict[str, str]:
     agreement = pd.read_csv(MV06_AGREEMENT)
     mv08 = read_json(MV08_SUMMARY)
     mv08b = read_json(MV08B_SUMMARY)
+    mv09 = read_json(MV09_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -208,6 +232,7 @@ def build_metric_context() -> dict[str, str]:
     mv06_gate = mv06["annotation_gate"]
     mv08_v = mv08["verdict"]
     mv08b_v = mv08b["verdict"]
+    mv09_v = mv09["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -224,7 +249,14 @@ def build_metric_context() -> dict[str, str]:
             f"{fmt(mv08_v['prediction_identity_ba_m2'])}. MV08b improves over both floors on "
             f"{mv08b_v['pooled_m2b_improved_vs_both_floor_slices']}/{mv08b_v['pooled_active_slices']} slices, "
             f"but prediction identity BA {fmt(mv08b_v['prediction_identity_ba_m2b'])} exceeds gate "
-            f"{fmt(mv08b_v['current_mv08_m2_prediction_identity_ba_gate'])}."
+            f"{fmt(mv08b_v['current_mv08_m2_prediction_identity_ba_gate'])}. MV09 revises the gate semantics: "
+            f"E-DAIC/CMDC item-conditioned feature identity BA remains {fmt(mv09_v['edaic_cmdc_item_residualized_ba'])}."
+        ),
+        "mv09": (
+            f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
+            f"PHQ-item residualized BA {fmt(mv09_v['edaic_cmdc_item_residualized_ba'])}; "
+            f"CMDC/PDCH severity-residualized BA {fmt(mv09_v['cmdc_pdch_severity_residualized_ba'])}; "
+            f"three-way severity-residualized BA {fmt(mv09_v['three_way_severity_residualized_ba'])}."
         ),
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
@@ -258,6 +290,8 @@ def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Seri
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
         return context["eatd"]
+    if claim_id == "C_DATASET_IDENTITY_CONTROL":
+        return context["mv09"]
     if claim_id == "C_MODMA_TASK_CONTROL":
         return context["modma"]
     if claim_id == "C_RQ4_EVIDENCE_LOCALIZATION":
@@ -304,7 +338,7 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "gate_status",
             "paper_section": "Claim boundary",
             "finding": context["gate"],
-            "interpretation": "Full method construction remains blocked; diagnostic paper framing is allowed with bounded claims.",
+            "interpretation": "Full method construction remains blocked; measurement-shift paper framing is allowed with bounded claims.",
             "source_artifact_ids": "full_method_gate_audit",
         },
         {
@@ -313,6 +347,13 @@ def build_key_findings() -> pd.DataFrame:
             "finding": context["rq1"],
             "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features.",
             "source_artifact_ids": "P5_MV08;P5_MV08b",
+        },
+        {
+            "finding_id": "mv09_conditional_identity_gate",
+            "paper_section": "Identity and protocol diagnostics",
+            "finding": context["mv09"],
+            "interpretation": "Unconditional identity should not be the only hard gate, but conditional BGE identity remains high enough to block a shared-latent claim.",
+            "source_artifact_ids": "P5_MV09",
         },
         {
             "finding_id": "pdch_internal_hamd",

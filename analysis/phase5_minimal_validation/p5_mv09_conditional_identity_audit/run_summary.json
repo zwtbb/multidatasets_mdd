@@ -1,0 +1,156 @@
+{
+  "artifact_hygiene_passed": true,
+  "data_contract": {
+    "covariate_controls": {
+      "edaic_cmdc_age_available": false,
+      "edaic_cmdc_gender_available": true,
+      "pdch_age_gender_available": false
+    },
+    "joined_subjects": {
+      "cmdc": 77,
+      "edaic": 219,
+      "pdch": 99
+    },
+    "model_input_columns": 512
+  },
+  "generated_at": "2026-08-11T13:26:48+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc",
+      "pdch"
+    ],
+    "deployable_model_claim": false,
+    "feature_family": "text_bge",
+    "full_method_allowed": false,
+    "labels_used_for_diagnostic_conditioning": true,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_written": false
+  },
+  "outputs": {
+    "completed_strategy_rows": 15,
+    "conditional_identity_rows": 15,
+    "conditional_identity_seed_rows": 75,
+    "pareto_rows": 19,
+    "skipped_strategy_rows": 0,
+    "tracked_outputs": [
+      "accuracy_invariance_pareto_summary.csv",
+      "artifact_hygiene_audit.json",
+      "condition_balance_summary.csv",
+      "conditional_identity_by_seed.csv",
+      "conditional_identity_summary.csv",
+      "conditional_identity_within_severity_bin.csv",
+      "gate_revision_recommendations.csv",
+      "report.md",
+      "run_summary.json",
+      "source_context_conditional_identity.csv"
+    ],
+    "within_severity_bin_rows": 350
+  },
+  "run_id": "P5_MV09_conditional_dataset_identity_audit",
+  "scope": "conditional_dataset_identity_gate_audit",
+  "status": "complete",
+  "strategy_status": [
+    {
+      "probe_id": "edaic_cmdc_phq_core",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "raw_bge_unconditional"
+    },
+    {
+      "probe_id": "edaic_cmdc_phq_core",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "severity_residualized_bge"
+    },
+    {
+      "probe_id": "edaic_cmdc_phq_core",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "severity_gender_residualized_bge"
+    },
+    {
+      "probe_id": "edaic_cmdc_phq_core",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "phq_core_items_residualized_bge"
+    },
+    {
+      "probe_id": "edaic_cmdc_phq_core",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "severity_common_support_raw_bge"
+    },
+    {
+      "probe_id": "edaic_cmdc_phq_core",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "severity_only_control"
+    },
+    {
+      "probe_id": "edaic_cmdc_phq_core",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "phq_core_items_control"
+    },
+    {
+      "probe_id": "cmdc_pdch_same_language_total",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "raw_bge_unconditional"
+    },
+    {
+      "probe_id": "cmdc_pdch_same_language_total",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "normalized_total_residualized_bge"
+    },
+    {
+      "probe_id": "cmdc_pdch_same_language_total",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "severity_common_support_raw_bge"
+    },
+    {
+      "probe_id": "cmdc_pdch_same_language_total",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "severity_only_control"
+    },
+    {
+      "probe_id": "edaic_cmdc_pdch_total_norm",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "raw_bge_unconditional"
+    },
+    {
+      "probe_id": "edaic_cmdc_pdch_total_norm",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "normalized_total_residualized_bge"
+    },
+    {
+      "probe_id": "edaic_cmdc_pdch_total_norm",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "severity_common_support_raw_bge"
+    },
+    {
+      "probe_id": "edaic_cmdc_pdch_total_norm",
+      "skip_reason": "",
+      "status": "complete",
+      "strategy": "severity_only_control"
+    }
+  ],
+  "verdict": {
+    "cmdc_pdch_raw_ba": 1.0,
+    "cmdc_pdch_severity_residualized_ba": 1.0,
+    "edaic_cmdc_item_residualized_ba": 0.9911030655391121,
+    "edaic_cmdc_raw_ba": 1.0,
+    "edaic_cmdc_severity_residualized_ba": 1.0,
+    "short_read": "Unconditional dataset identity should be treated as a shortcut-risk screen; future gates need conditional identity for shared latent claims.",
+    "status": "complete_identity_gate_revision_needed",
+    "three_way_raw_ba": 1.0,
+    "three_way_severity_residualized_ba": 1.0
+  }
+}

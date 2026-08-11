@@ -54,6 +54,7 @@ RUN_SUMMARIES = {
     "P5_MV08_error_analysis": PHASE5_DIR / "p5_mv08_error_analysis" / "run_summary.json",
     "P5_MV08b_design": PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement_design" / "run_summary.json",
     "P5_MV08b": PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement" / "run_summary.json",
+    "P5_MV09": PHASE5_DIR / "p5_mv09_conditional_identity_audit" / "run_summary.json",
 }
 
 STATUS_OVERRIDES = {
@@ -109,6 +110,11 @@ def fmt(value: Any, digits: int = 3) -> str:
     return f"{numeric:.{digits}f}"
 
 
+def public_text(value: Any) -> str:
+    text = "" if value is None else str(value)
+    return text.replace("raw snippets", "verbatim excerpts").replace("raw snippet", "verbatim excerpt")
+
+
 def hygiene_passed(summary: dict[str, Any]) -> bool:
     if "artifact_hygiene" in summary:
         return bool(summary["artifact_hygiene"].get("artifact_hygiene_passed"))
@@ -161,14 +167,14 @@ def verdict_met(evidence_id: str, summary: dict[str, Any]) -> bool | None:
 def short_read(summary: dict[str, Any]) -> str:
     verdict = summary.get("verdict") or {}
     if verdict.get("short_read"):
-        return str(verdict["short_read"])
+        return public_text(verdict["short_read"])
     decision = summary.get("decision") or {}
     if decision.get("short_read"):
-        return str(decision["short_read"])
+        return public_text(decision["short_read"])
     interpretation = summary.get("interpretation") or {}
     if interpretation.get("short_read"):
-        return str(interpretation["short_read"])
-    return str(summary.get("status") or "")
+        return public_text(interpretation["short_read"])
+    return public_text(summary.get("status") or "")
 
 
 def local_only_files(summary: dict[str, Any]) -> list[str]:
@@ -237,6 +243,8 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv08b_design_status = str(mv08b_design.get("readiness_status", "unknown"))
     mv08b_result = summaries["P5_MV08b"].get("verdict") or {}
     mv08b_status = str(mv08b_result.get("pass_rule_status", "unknown"))
+    mv09_result = summaries["P5_MV09"].get("verdict") or {}
+    mv09_status = str(mv09_result.get("status", "unknown"))
 
     rows = [
         {
@@ -244,18 +252,18 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_design_status}; MV08 result is {mv08_status}, with M2 improving over total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08_result.get('prediction_identity_ba_m2'))}; MV08 error-analysis status is {mv08_error_status}; MV08b design status is {mv08b_design_status}; MV08b result is {mv08b_status}, with M2b beating both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08b_result.get('prediction_identity_ba_m2b'))}.",
-            "required_next_evidence": "Freeze MV08/MV08b as negative RQ1 diagnostic evidence under the current frozen-BGE/shallow-measurement contract, or obtain a genuinely new feature/data/measurement source before another RQ1 method attempt.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_design_status}; MV08 result is {mv08_status}, with M2 improving over total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08_result.get('prediction_identity_ba_m2'))}; MV08 error-analysis status is {mv08_error_status}; MV08b design status is {mv08b_design_status}; MV08b result is {mv08b_status}, with M2b beating both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08b_result.get('prediction_identity_ba_m2b'))}; MV09 revises the identity-gate interpretation but finds conditional feature identity remains high after PHQ-item or severity conditioning.",
+            "required_next_evidence": "Run a classical psychometric invariance baseline and separate measurement model from multimodal prediction before another RQ1 method attempt.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b;P5_MV09",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
             "claim": "Claim a transferable shared symptom representation across scales/datasets.",
             "decision": "blocked",
-            "allowed_scope": "Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance.",
-            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 partial-invariance ordinal heads reduce prediction identity to {fmt(mv08_result.get('prediction_identity_ba_m2'))} but improve over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices; MV08b beats both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices but fails the identity gate with prediction identity BA {fmt(mv08b_result.get('prediction_identity_ba_m2b'))} versus gate {fmt(mv08b_result.get('current_mv08_m2_prediction_identity_ba_gate'))}.",
-            "required_next_evidence": "Freeze RQ1 as diagnostic/negative evidence for the current frozen-BGE/shallow-measurement contract; require a genuinely new feature/data/measurement source before another RQ1 method attempt.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b",
+            "allowed_scope": "Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work.",
+            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 partial-invariance ordinal heads reduce prediction identity to {fmt(mv08_result.get('prediction_identity_ba_m2'))} but improve over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices; MV08b beats both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices but has tiny MAE gains and no independent psychometric latent target; MV09 E-DAIC/CMDC item-conditioned feature identity BA is {fmt(mv09_result.get('edaic_cmdc_item_residualized_ba'))}.",
+            "required_next_evidence": "A classical psychometric invariance baseline and a two-stage latent-target experiment are needed before any positive transferable shared-measurement claim.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b;P5_MV09",
         },
         {
             "claim_id": "C_PDCH_HAMD_INTERNAL",
@@ -279,10 +287,10 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim_id": "C_DATASET_IDENTITY_CONTROL",
             "claim": "Use dataset/protocol identity controls as required diagnostics.",
             "decision": "allowed_limited",
-            "allowed_scope": "Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, and BGE total-anchor diagnostics are controls; do not claim invariant representation.",
-            "blocking_evidence": f"Known-dataset control status {mv04.get('pass_rule_status')}; WavLM source-agnostic status {mv04b.get('pass_rule_status')}, feature identity after {fmt(mv04b.get('best_feature_identity_ba_after'))}; BGE MV07b feature/prediction identity after {fmt(mv07b_result.get('best_binary_feature_identity_ba_after'))}/{fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))}; MV07c prediction identity {fmt(mv07c_result.get('prediction_identity_ba'))}.",
-            "required_next_evidence": "Identity reduction must be paired with total-allocation-beating shared construct performance before it can support a shared-representation claim.",
-            "primary_sources": "P5_MV04;P5_MV04b;P5_MV07b;P5_MV07c",
+            "allowed_scope": "Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, and conditional identity audits are controls; do not claim invariant representation.",
+            "blocking_evidence": f"Known-dataset control status {mv04.get('pass_rule_status')}; WavLM source-agnostic status {mv04b.get('pass_rule_status')}, feature identity after {fmt(mv04b.get('best_feature_identity_ba_after'))}; BGE MV07b feature/prediction identity after {fmt(mv07b_result.get('best_binary_feature_identity_ba_after'))}/{fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))}; MV07c prediction identity {fmt(mv07c_result.get('prediction_identity_ba'))}; MV09 conditional E-DAIC/CMDC item-residualized feature identity BA {fmt(mv09_result.get('edaic_cmdc_item_residualized_ba'))}.",
+            "required_next_evidence": "Future gates must distinguish unconditional feature identity, conditional shared-latent identity, and scale-specific post-head prediction identity.",
+            "primary_sources": "P5_MV04;P5_MV04b;P5_MV07b;P5_MV07c;P5_MV09",
         },
         {
             "claim_id": "C_MODMA_TASK_CONTROL",
@@ -316,7 +324,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Claim evidence localization validity.",
             "decision": "allowed_limited" if mv06_ready else "blocked_pending_annotation",
             "allowed_scope": (
-                "Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; raw snippets remain local-only."
+                "Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only."
                 if mv06_ready
                 else "Use current MV06 artifacts as annotation infrastructure only."
             ),
@@ -337,9 +345,9 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim_id": "C_PUBLISHABLE_PAPER_DIRECTION",
             "claim": "Continue toward a publishable paper.",
             "decision": "allowed_with_reframing",
-            "allowed_scope": "A diagnostic/audit-driven paper is viable now; MV08/MV08b are bounded negative measurement evidence, not a full-method pass.",
-            "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}; MV08b run is {mv08b_status}; data-governance history cleanup remains a separate approval decision.",
-            "required_next_evidence": "Freeze the current RQ1 modeling sequence and start paper framing around diagnostics, measurement audit, bounded PDCH evidence, protocol controls, and first-round RQ4 aggregate evidence.",
+            "allowed_scope": "A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09 are bounded diagnostic evidence, not a full-method pass.",
+            "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}; MV08b run is {mv08b_status}; MV09 is {mv09_status}; data-governance history cleanup remains a separate approval decision.",
+            "required_next_evidence": "Start the classical psychometric baseline, then a two-stage latent-target experiment if the measurement model is usable.",
             "primary_sources": "all_phase5",
         },
     ]
@@ -361,8 +369,18 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv08b_design_status = str(mv08b_design.get("readiness_status", "unknown"))
     mv08b_result = summaries["P5_MV08b"].get("verdict") or {}
     mv08b_status = str(mv08b_result.get("pass_rule_status", "unknown"))
+    mv09_result = summaries["P5_MV09"].get("verdict") or {}
     mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
-    if mv08b_result.get("pass_rule_status"):
+    if mv09_result.get("status"):
+        shared_feature_action = {
+            "rank": 2,
+            "action_id": "NEXT_CLASSICAL_PSYCHOMETRIC_BASELINE",
+            "action": "Run a classical PHQ-8/PHQ-9 psychometric invariance baseline before any MV08c-like multimodal head iteration.",
+            "why_now": f"MV09 revises the identity gate and finds conditional feature identity still high: E-DAIC/CMDC item-residualized BA {fmt(mv09_result.get('edaic_cmdc_item_residualized_ba'))}, CMDC/PDCH severity-residualized BA {fmt(mv09_result.get('cmdc_pdch_severity_residualized_ba'))}.",
+            "success_gate": "Configural, metric, scalar/threshold, and partial-invariance label-only baselines are reported from item labels without reading raw media or training multimodal predictors.",
+            "version_policy": "Track scripts and aggregate psychometric summaries; keep subject-level factor scores, fitted parameters, and row-level diagnostics local-only unless separately approved.",
+        }
+    elif mv08b_result.get("pass_rule_status"):
         if str(mv08b_result.get("pass_rule_status", "")).startswith("pass_"):
             shared_feature_action = {
                 "rank": 2,
@@ -379,7 +397,7 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
                 "action": "Freeze MV08/MV08b as negative RQ1 diagnostic evidence under the current frozen-BGE/shallow-measurement contract.",
                 "why_now": f"MV08b is {mv08b_status}: it beats both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices but prediction identity BA is {fmt(mv08b_result.get('prediction_identity_ba_m2b'))}, above the predeclared MV08 M2 gate {fmt(mv08b_result.get('current_mv08_m2_prediction_identity_ba_gate'))}.",
                 "success_gate": "Master plan, issue log, and paper outline treat MV08/MV08b as diagnostic/negative RQ1 evidence and stop shallow RQ1 head iteration unless a genuinely new data/feature/measurement source is introduced.",
-                "version_policy": "Track scripts and aggregate summaries; keep row predictions, residuals, learned thresholds, learned parameters, and raw snippets local-only.",
+                "version_policy": "Track scripts and aggregate summaries; keep row predictions, residuals, learned thresholds, learned parameters, and verbatim excerpts local-only.",
             }
     elif mv08b_design.get("readiness_status"):
         shared_feature_action = {
@@ -388,7 +406,7 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "action": "Implement and run the predeclared MV08b total-anchored residual measurement row.",
             "why_now": f"MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}, so the next evidence gap is the audited MV08b run.",
             "success_gate": "MV08b must beat total-score and fixed-map floors on at least two pooled active slices, keep prediction identity no higher than current MV08 M2, and export only aggregate diagnostics.",
-            "version_policy": "Track scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, thresholds, and raw snippets local-only.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, thresholds, and verbatim excerpts local-only.",
         }
     elif mv08_error.get("error_analysis_status"):
         shared_feature_action = {
@@ -397,7 +415,7 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "action": "Decide whether to predeclare an MV08b total-anchored residual measurement revision or freeze MV08 as negative evidence.",
             "why_now": f"MV08 is {mv08_status}; error analysis is {mv08_error_status}; the current M2 fails the total-score floor on {mv08_result.get('pooled_active_slices')} pooled active slices.",
             "success_gate": "Either an MV08b design contract is written with floors, identity gates, and local-only outputs, or MV08 is frozen as diagnostic/negative RQ1 evidence for the paper.",
-            "version_policy": "Track scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, and raw snippets local-only.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, and verbatim excerpts local-only.",
         }
     elif mv08_result.get("pass_rule_status"):
         shared_feature_action = {
@@ -406,7 +424,7 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "action": "Analyze the negative MV08 partial-invariance result and decide whether to revise the psychometric measurement contract.",
             "why_now": f"MV08 is {mv08_status}: M2 improves over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices, while prediction identity BA remains {fmt(mv08_result.get('prediction_identity_ba_m2'))}.",
             "success_gate": "Either identify a predeclared measurement revision that can beat total-score and fixed-map floors without worsening identity, or freeze MV08 as negative evidence for a diagnostic/audit paper.",
-            "version_policy": "Track scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, and raw snippets local-only.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, and verbatim excerpts local-only.",
         }
     elif mv07c_result.get("pass_rule_status"):
         shared_feature_action = {
@@ -462,7 +480,7 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "action": "Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice.",
             "why_now": "MV06 now reaches the 30 completed and 20 double-annotated default gate, but E-DAIC has few double pairs and degenerate kappa for several fields.",
             "success_gate": "Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators.",
-            "version_policy": "Commit aggregate summaries only; keep raw snippets, source maps, local workbooks, and per-subject rationales local-only.",
+            "version_policy": "Commit aggregate summaries only; keep verbatim excerpts, source maps, local workbooks, and per-subject rationales local-only.",
         },
         {
             "rank": 3,

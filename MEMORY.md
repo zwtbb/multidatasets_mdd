@@ -52,6 +52,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_36_phase5_mv08b_total_anchored_residual_run.md`
   - `/root/autodl-tmp/memory/sessions/session_37_diagnostic_paper_claim_tables.md`
   - `/root/autodl-tmp/memory/sessions/session_38_data_governance_label_contracts_draft.md`
+  - `/root/autodl-tmp/memory/sessions/session_39_mv09_conditional_identity_gate_revision.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -349,7 +350,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 26 Phase 5 run summaries and exports claim gates, evidence
+  It reads 27 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -360,7 +361,8 @@ MPDD 2025 is intentionally out of scope for current auditing.
   while blocked claims include full M0/M1/M2/M3 method start,
   transferable shared-symptom representation, positive EATD SDS
   generalization, EATD valence-adversarial design, and RQ3 context
-  conditioning.
+  conditioning. After MV09, its ranked next action is a classical PHQ-8/PHQ-9
+  psychometric invariance baseline.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -415,10 +417,25 @@ MPDD 2025 is intentionally out of scope for current auditing.
   and fixed-map floors on 2/3 pooled active slices, but prediction identity BA
   is `0.979`, above the predeclared MV08 M2 gate `0.900`; therefore it cannot
   support a transferable shared-measurement claim.
+- Phase 5 `P5_MV09 conditional_dataset_identity_audit` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv09_conditional_identity_audit/`.
+  It used aligned E-DAIC/CMDC/PDCH frozen BGE subject features, manifest labels
+  and available covariates for diagnostic conditioning only, five-seed
+  subject-level identity probes, and aggregate-only outputs. Artifact hygiene
+  passed. Treat it as `complete_identity_gate_revision_needed`: unconditional
+  dataset identity is a shortcut-risk screen rather than a standalone hard
+  failure, but conditional feature identity remains high after conditioning
+  (`E-DAIC/CMDC` PHQ-item residualized BA `0.991`, `CMDC/PDCH`
+  severity-residualized BA `1.000`, three-way severity-residualized BA
+  `1.000`). Future shared-latent claims must report conditional identity, and
+  scale-specific post-head prediction identity is diagnostic rather than the
+  same hard gate as shared latent identity. The next experiment should be a
+  classical PHQ-8/PHQ-9 psychometric invariance baseline before another
+  multimodal RQ1 head iteration.
 - Diagnostic measurement-audit paper claim tables are complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`. They export
-  paper-facing allowed/blocked claim boundaries, six key numeric findings, and
-  nine literature-positioning rows from aggregate artifacts plus web-checked
+  paper-facing allowed/blocked claim boundaries, seven key numeric findings,
+  and twelve literature-positioning rows from aggregate artifacts plus web-checked
   primary sources. Artifact hygiene passed. Treat them as manuscript
   scaffolding, not a replacement for source experiment artifacts.
 - Diagnostic measurement-audit paper Data Governance and Label Contracts draft
@@ -516,7 +533,7 @@ Key Phase 2 outputs:
 - Phase 5 protocol decisions: minimal validation must report
   dataset-stratified, protocol/task-stratified, and subgroup/calibration
   metrics before pooled claims. Row-level predictions, learned embeddings,
-  checkpoints, raw snippets, raw prompts, and raw model responses are
+  checkpoints, verbatim excerpts, raw prompts, and raw model responses are
   local-only unless separately reviewed.
 - P5_MV01 decision: frozen WavLM is a runnable but weak PHQ-8/PHQ-9 construct
   bridge. CMDC same-dataset Ridge improves over train-mean but not over
@@ -693,6 +710,15 @@ Key Phase 2 outputs:
   boundary before starting the full symptom-aligned method. Full method remains
   blocked, but a diagnostic/audit-driven paper direction is viable if claims
   are bounded and negative evidence is reported honestly.
+- MV09 identity-gate decision: unconditional dataset identity BA is a
+  shortcut-risk screen, not a standalone hard-failure criterion. For future
+  shared latent representations, audit dataset identity after conditioning on
+  target severity, aligned item labels where available, and legitimate
+  covariates. Treat scale-specific post-head prediction identity as diagnostic
+  unless the output space is explicitly shared. Current conditional BGE identity
+  remains high, so the project pivots from a generic diagnostic audit toward a
+  measurement-shift / measurement-invariance paper and a classical
+  psychometric baseline.
 
 ## Data Quality Watchlist
 
@@ -797,13 +823,11 @@ plaintext credential-like content before committing on the clean remote lineage.
 3. Keep future GitHub updates on the clean remote/main lineage via
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
-4. Use the Phase 5 full-method gate audit as the active claim boundary. MV08b
-   has now failed the identity gate, so freeze MV08/MV08b as negative RQ1
-   diagnostic evidence under the current frozen-BGE/shallow-measurement
-   contract. Paper-facing claim/evidence tables now exist under
-   `analysis/diagnostic_measurement_audit_paper/`, and the Data Governance and
-   Label Contracts draft section is ready. Next work should draft the Baselines
-   and Failure-Mode Diagnostics section and/or strengthen MV06 E-DAIC agreement
-   before making stronger evidence-localization claims. Optionally expand
-   E-DAIC MV06 double annotation to stabilize per-dataset agreement.
-   Full method construction remains blocked until the gate changes.
+4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
+   revises identity-gate semantics and keeps full method construction blocked:
+   current conditional BGE identity remains high even after severity or PHQ-item
+   conditioning. The paper direction is now measurement shift / measurement
+   invariance with bounded negative and diagnostic evidence. The next
+   experiment is the classical PHQ-8/PHQ-9 psychometric invariance baseline;
+   secondary work can draft Baselines and Failure-Mode Diagnostics or strengthen
+   E-DAIC MV06 agreement before stronger evidence-localization claims.

@@ -4,18 +4,25 @@ Last updated: 2026-08-11 UTC
 
 ## Working Title
 
-When Depression Datasets Do Not Measure the Same Thing: A Cross-Dataset
-Diagnostic Audit of Symptom, Protocol, and Population Effects
+Do Depression Datasets Measure the Same Construct? A Measurement-Invariance
+View of Cross-Dataset Multimodal Depression Detection
 
 ## Current Thesis
 
-The publishable contribution should be framed as a diagnostic and measurement
-audit rather than a broad state-of-the-art model paper. Across E-DAIC, CMDC,
-PDCH, MODMA, EATD, and MPDD, the evidence shows that depression prediction is
-strongly shaped by dataset identity, protocol/task content, label scale, and
-population context. A symptom-aligned framework is still the right scientific
-direction, but the current frozen-feature and shallow-measurement contracts do
-not justify a transferable shared-symptom representation claim.
+The publishable contribution should be framed as a measurement-shift and
+measurement-invariance diagnostic paper rather than a broad state-of-the-art
+model paper. Across E-DAIC, CMDC, PDCH, MODMA, EATD, and MPDD, the evidence
+shows that depression prediction is shaped by dataset identity, protocol/task
+content, label scale, and population context. A symptom-aligned framework is
+still the right scientific direction, but the current frozen-feature and
+shallow-measurement contracts do not justify a transferable shared-symptom
+representation claim.
+
+The key conceptual correction after MV09 is that unconditional dataset identity
+is a shortcut-risk screen, not a standalone hard failure. For shared-latent
+claims, the stronger question is conditional identity: whether dataset identity
+remains recoverable after conditioning on severity, aligned item labels, and
+legitimate covariates where available.
 
 ## Claim Boundary
 
@@ -25,6 +32,12 @@ Allowed claims:
   subject-level splits, manifest-driven inputs, and artifact hygiene gates.
 - Dataset/protocol identity is a major shortcut risk and must be reported
   before interpreting pooled depression models.
+- Conditional dataset identity is now required for any future shared-latent
+  claim. MV09 finds that BGE feature identity remains high after PHQ item or
+  severity conditioning, so current shared-latent claims remain blocked.
+- Post-head prediction identity is diagnostic when outputs are scale-specific;
+  it should not be treated as the same hard gate as identity in a shared latent
+  representation.
 - MODMA provides bounded evidence that task nuisance control can reduce
   task-identity signal while preserving the main diagnostic task.
 - PDCH supports a bounded HAMD-17 internal diagnostic bridge, not cross-dataset
@@ -34,6 +47,8 @@ Allowed claims:
 - MV08/MV08b provide negative measurement evidence: simple partial-invariance
   and total-anchored residual heads are not enough to establish transferable
   RQ1 measurement under the current feature contract.
+- MV07/MV07b/MV07c and MV08/MV08b can be used as an accuracy-invariance
+  trade-off sequence, not as positive shared-space evidence.
 
 Blocked claims:
 
@@ -71,7 +86,14 @@ Blocked claims:
    MV08b improves over both floors on E-DAIC and PDCH, but fails the
    predeclared identity gate because prediction identity BA rises to `0.979`.
 
-6. Evidence localization is a credibility layer, not a rescue for weak RQ1.
+6. Conditional identity sharpens, rather than removes, the shortcut concern.
+   MV09 revises the gate semantics but finds E-DAIC/CMDC PHQ-item residualized
+   BGE identity BA remains `0.991`, and CMDC/PDCH severity-residualized
+   identity BA remains `1.000`. This supports a measurement-shift framing and
+   motivates a label-only psychometric invariance baseline before another
+   multimodal head.
+
+7. Evidence localization is a credibility layer, not a rescue for weak RQ1.
    MV06 can support bounded aggregate credibility claims, but stronger RQ4
    claims need a larger E-DAIC double-annotation slice or additional agreement
    uncertainty analysis.
@@ -100,7 +122,7 @@ Blocked claims:
    - Why PHQ-8/PHQ-9 are the cleanest shared bridge.
    - Why HAMD/SDS require bounded auxiliary or total-only handling.
 
-5. Minimal Method Evidence
+5. Minimal Method Evidence and Accuracy-Invariance Trade-Offs
    - MV01 PHQ bridge.
    - MV02 PDCH HAMD bridge.
    - MV03/MV03b SDS stress.
@@ -108,16 +130,25 @@ Blocked claims:
    - MV05 context calibration.
    - MV07/MV07b/MV07c aligned-BGE shared-feature sequence.
    - MV08/MV08b measurement-invariance sequence.
+   - MV09 conditional dataset identity and Pareto-style accuracy-invariance
+     summary.
 
-6. Evidence Localization
+6. Psychometric Measurement Baselines
+   - Classical PHQ-8/PHQ-9 configural, metric, scalar/threshold, and partial
+     invariance baselines.
+   - Label-only scale linking before multimodal prediction.
+   - Two-stage target plan: fit measurement model `Y -> theta`, train
+     multimodal predictor `X -> theta`, then map `theta -> Y^(d)`.
+
+7. Evidence Localization
    - MV06 aggregate annotation workflow.
    - Dataset-stratified agreement.
    - Prompt-artifact versus participant-evidence boundary.
 
-7. Discussion
+8. Discussion
    - Negative results as measurement evidence.
    - Why total-score floors are hard to beat.
-   - Why identity reduction alone is insufficient.
+   - Why unconditional identity reduction alone is insufficient.
    - What future work would need: new item labels, stronger aligned features,
      speaker/protocol labels, and larger evidence annotation.
 
@@ -134,14 +165,25 @@ Tracked outputs:
 
 - `paper_claim_boundary.csv` and `paper_claim_boundary.md`: compact
   allowed/blocked claim language, evidence, guardrails, and source artifact IDs.
-- `key_numeric_findings.csv`: six manuscript-ready findings for the full gate,
-  RQ1 measurement sequence, PDCH HAMD, MODMA task control, EATD stress, and
-  MV06 evidence localization.
+- `key_numeric_findings.csv`: seven manuscript-ready findings for the full gate,
+  RQ1 measurement sequence, MV09 conditional identity, PDCH HAMD, MODMA task
+  control, EATD stress, and MV06 evidence localization.
 - `literature_positioning.csv`: web-checked source list for dataset governance,
   interviewer/protocol bias, PHQ/HAMD psychometrics, measurement invariance,
   MPDD/P3HF positioning, and PDCH.
 - `report.md`, `run_summary.json`, and `artifact_hygiene_audit.json`: writing
   handoff and release/hygiene status.
+
+The MV09 conditional identity audit is generated by:
+
+```bash
+python scripts/phase5_run_mv09_conditional_identity_audit.py
+```
+
+Tracked outputs include `conditional_identity_summary.csv`,
+`gate_revision_recommendations.csv`, `accuracy_invariance_pareto_summary.csv`,
+`report.md`, `run_summary.json`, and `artifact_hygiene_audit.json` under
+`analysis/phase5_minimal_validation/p5_mv09_conditional_identity_audit/`.
 
 The Data Governance and Label Contracts section scaffold is generated in the
 same directory by:
@@ -174,9 +216,11 @@ Tracked outputs:
 2. Done: create compact allowed/blocked claim tables from the full-method gate.
 3. Done: draft the Data Governance and Label Contracts section from existing
    Phase 0 through Phase 4 artifacts.
-4. Draft the Baselines and Failure-Mode Diagnostics section from Phase 2 and
+4. Done: run MV09 conditional identity audit and update the full-method gate.
+5. Run the classical PHQ-8/PHQ-9 psychometric invariance baseline.
+6. Draft the Baselines and Failure-Mode Diagnostics section from Phase 2 and
    Phase 3 aggregate summaries.
-5. Expand E-DAIC MV06 double annotation if a stronger RQ4 claim is desired.
-6. Prepare result tables from existing aggregate summaries only; do not export
+7. Expand E-DAIC MV06 double annotation if a stronger RQ4 claim is desired.
+8. Prepare result tables from existing aggregate summaries only; do not export
    row-level predictions, raw text, subject locators, learned parameters, or
    model files.
