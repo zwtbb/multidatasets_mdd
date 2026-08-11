@@ -1,6 +1,6 @@
 # Diagnostic Measurement-Audit Paper Tables
 
-Generated: `2026-08-11T15:15:52+00:00`
+Generated: `2026-08-11T16:36:07+00:00`
 
 ## Scope
 
@@ -10,18 +10,19 @@ This writing-prep artifact converts existing aggregate gates into paper-facing c
 
 - Allowed or reframed claim rows: `6`.
 - Blocked claim rows: `5`.
-- Key finding rows: `12`.
-- Literature-positioning rows: `15`.
+- Key finding rows: `13`.
+- Literature-positioning rows: `17`.
 - Artifact hygiene passed: `True`.
 
 ## Key Findings
 
 | finding | interpretation |
 | --- | --- |
-| Full gate reads 32 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False. | Full method construction remains blocked; measurement-shift paper framing is allowed with bounded claims. |
-| MV08 improves over total-score floor on 0/3 pooled active slices with prediction identity BA 0.900. MV08b improves over both floors on 2/3 slices, but prediction identity BA 0.979 exceeds gate 0.900. MV09 revises the gate semantics: E-DAIC/CMDC item-conditioned feature identity BA remains 0.991. MV10 adds a label-only PHQ screen with loading congruence 0.998, 7/8 metric items, 4/8 threshold items, and 4/8 candidate anchors. MV11 confirms 4 MV10 anchors with 0 loading-DIF and 2 threshold-DIF flags, but core AIC/BIC split is True. MV12 design is ready_to_implement_mv12_two_stage_latent_target; MV12 run is blocked_theta_gain_not_observed_scale_safe, with same-dataset theta gate True, observed-scale safety False, external theta transfer False, and conditional identity BA 0.602. MV12 aggregate tradeoff analysis is complete_freeze_current_mv12_latent_target_line and recommends freezing the current latent-target line. | Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line. |
+| Full gate reads 34 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False. | Full method construction remains blocked; measurement-shift paper framing is allowed with bounded claims. |
+| MV08 improves over total-score floor on 0/3 pooled active slices with prediction identity BA 0.900. MV08b improves over both floors on 2/3 slices, but prediction identity BA 0.979 exceeds gate 0.900. MV09 revises the gate semantics: E-DAIC/CMDC item-conditioned feature identity BA remains 0.991. MV10 adds a label-only PHQ screen with loading congruence 0.998, 7/8 metric items, 4/8 threshold items, and 4/8 candidate anchors. MV11 confirms 4 MV10 anchors with 0 loading-DIF and 2 threshold-DIF flags, but core AIC/BIC split is True. MV13 external mirt replication confirms 4 anchors with 0 loading-DIF and 2 threshold-DIF flags, core convergence False, and 6/6 MV11-aligned decisions. MV12 design is ready_to_implement_mv12_two_stage_latent_target; MV12 run is blocked_theta_gain_not_observed_scale_safe, with same-dataset theta gate True, observed-scale safety False, external theta transfer False, and conditional identity BA 0.602. MV12 aggregate tradeoff analysis is complete_freeze_current_mv12_latent_target_line and recommends freezing the current latent-target line. | Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11/MV13/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line. |
 | MV10 label-only PHQ screen: configural pass=True; loading congruence 0.998; metric invariant items 7/8; threshold invariant items 4/8; anchor candidates 4/8; status complete_partial_invariance_supported_approx. | The label-only PHQ screen supports a common one-factor and partial-anchor interpretation, but threshold/scalar invariance remains partial. |
 | MV11 formal graded-response IRT confirmation: status complete_formal_partial_invariance_supported_with_bic_caveat; confirmed MV10 anchors 4; loading-DIF flags 0; threshold-DIF flags 2; best AIC core model partial_mv10; best BIC core model scalar. | The formal label-only IRT confirmation preserves the MV10 anchor map but leaves an AIC/BIC caveat, so it supports target design rather than a full method claim. |
+| MV13 external R mirt replication: status complete_external_mirt_with_convergence_warnings; confirmed MV10 anchors 4; loading-DIF flags 0; threshold-DIF flags 2; best AIC/BIC core models partial_mv10/scalar; core converged=False; MV11-aligned decisions 6/6; parameter CI status available_aggregate_only. | The external R mirt replication preserves the MV11 qualitative anchor/DIF pattern, but the convergence caveat and small CMDC N require MV14 uncertainty evidence before stronger item-level wording. |
 | MV12 two-stage latent-target design: status ready_to_implement_mv12_two_stage_latent_target; full_method_allowed=False; outputs predeclare 7 model-ladder rows, 6 identity/transfer gates, and 6 pass/fail gates. | The next method test is now predeclared: separate Y_to_theta measurement from X_to_theta prediction, keep scores and parameters local-only, and gate on direct floors, transfer, and conditional identity. |
 | MV12 two-stage latent-target run: status blocked_theta_gain_not_observed_scale_safe; E-DAIC same-dataset theta delta vs train mean -0.078; CMDC same-dataset theta delta -0.146; E-DAIC observed macro delta vs direct itemwise 0.004; CMDC observed macro delta 0.067; conditional identity BA 0.602; external theta transfer pass=False. | The actual two-stage run supports the measurement-shift story: the shared latent prediction layer reduces conditional identity and improves same-dataset theta MAE, but it does not safely reconstruct observed item scales or transfer externally. |
 | MV12 aggregate tradeoff analysis: status complete_freeze_current_mv12_latent_target_line; freeze_current_latent_target_line=True; tradeoff_rows=25; failure_mode_rows=6; recommends freezing current latent-target line. | The aggregate tradeoff analysis closes the current latent-target line: the result is paper-critical diagnostic evidence, while the next step is drafting or a genuinely new mechanism rather than another small head variant. |

@@ -1,0 +1,102 @@
+{
+  "artifact_hygiene_passed": true,
+  "generated_at": "2026-08-11T16:36:00+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "external_lavaan_runtime": true,
+    "external_mirt_runtime": true,
+    "full_method_allowed": false,
+    "label_only": true,
+    "manifest_governed_item_loader": true,
+    "multimodal_features_read": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false,
+    "scales": [
+      "PHQ-8",
+      "PHQ-9"
+    ],
+    "shared_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "subject_ids_exported": false
+  },
+  "output_policy": {
+    "factor_or_theta_scores_exported": false,
+    "fitted_model_objects_exported": false,
+    "fitted_parameters_exported": false,
+    "local_only_files": {
+      "ignored_local_item_response_matrix": "participant-grain PHQ item response matrix without subject IDs"
+    },
+    "tracked_outputs": [
+      "anchor_confirmation_summary.csv",
+      "artifact_hygiene_audit.json",
+      "external_model_syntax_summary.csv",
+      "external_replication_alignment_summary.csv",
+      "fit_model_summary.csv",
+      "gate_recommendations.csv",
+      "input_boundary_contract.csv",
+      "invariance_comparison_summary.csv",
+      "item_dif_lrt_summary.csv",
+      "item_fit_summary.csv",
+      "method_context_external_psychometric.csv",
+      "parameter_ci_availability_summary.csv",
+      "psychometric_input_audit.csv",
+      "r_execution_summary.csv",
+      "report.md",
+      "run_summary.json",
+      "runtime_versions.csv"
+    ]
+  },
+  "run_id": "P5_MV13_external_psychometric_replication",
+  "scope": "label_only_external_mirt_psychometric_replication",
+  "status": "complete",
+  "verdict": {
+    "best_aic_model": "partial_mv10",
+    "best_bic_model": "scalar",
+    "confirmed_mv10_anchor_items": 4,
+    "core_converged": false,
+    "core_fit_success": true,
+    "core_model_aic_bic_split": true,
+    "external_engine": "R mirt::multipleGroup",
+    "external_runtime_ready": true,
+    "fit_count": 20,
+    "itemfit_status": "available",
+    "loading_dif_flagged_items": 0,
+    "metric_vs_configural_decision": "no_strong_evidence_against_restriction",
+    "min_confirmed_anchor_items_required": 3,
+    "mv11_mv13_aligned_rows": 6,
+    "mv11_mv13_alignment_rows": 6,
+    "parameter_ci_finite_se_count": 45,
+    "parameter_ci_status": "available_aggregate_only",
+    "partial_mv10_vs_configural_decision": "no_strong_evidence_against_restriction",
+    "r_returncode": 0,
+    "scalar_vs_metric_decision": "restricted_model_rejected_lrt_only",
+    "shared_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "short_read": "External R mirt replication is complete: the qualitative PHQ partial-invariance claim is externally checked while full item parameters and factor scores remain local-only.",
+    "status": "complete_external_mirt_with_convergence_warnings",
+    "subjects": {
+      "cmdc": 77,
+      "edaic": 219
+    },
+    "threshold_dif_flagged_items": 2
+  }
+}

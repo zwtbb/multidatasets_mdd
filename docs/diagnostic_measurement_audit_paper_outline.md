@@ -29,12 +29,17 @@ common one-factor/configural screen and strong loading congruence, but
 threshold/scalar agreement is only partial. MV11 then fits a label-only
 multi-group graded-response IRT confirmation. It preserves the four MV10
 anchors, flags no loading DIF, flags threshold DIF for `C02` and `C06`, and
-records an AIC/BIC caveat. MV12 then tests the two-stage latent-target
+records an AIC/BIC caveat. MV13 externally replicates this qualitative
+psychometric pattern with R `mirt::multipleGroup`: the same four anchors are
+confirmed, loading DIF remains unflagged, threshold DIF remains localized to
+`C02` and `C06`, AIC still prefers the partial model, and BIC still prefers
+scalar, while a configural convergence warning keeps the claim conservative.
+MV12 then tests the two-stage latent-target
 experiment: fit local-only `Y -> theta` measurement targets, train `X -> theta`
 predictors, and gate them against direct/floor baselines, conditional identity,
 and external transfer. It improves same-dataset theta MAE and lowers
 conditional shared-latent identity, but fails observed-scale safety and
-external theta transfer. Together, MV10/MV11/MV12 move the project from a
+external theta transfer. Together, MV10/MV11/MV13/MV12 move the project from a
 generic benchmark audit toward a target-measurement-shift paper; they still do
 not authorize a full method. The aggregate MV12 tradeoff/failure-mode analysis
 now recommends freezing the current latent-target line and using it as
@@ -44,7 +49,8 @@ iterations.
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate artifacts. The next research route is no longer
 another shallow shared-symptom head. It is: measurement shift -> partial
-invariance -> latent linking -> few-shot scale calibration.
+invariance -> measurement uncertainty -> latent linking -> few-shot scale
+calibration.
 
 ## Claim Boundary
 
@@ -77,6 +83,11 @@ Allowed claims:
   caveat: all four MV10 anchors are preserved, no loading-DIF items are
   strongly flagged, and threshold DIF is strongest for `C02` anhedonia and
   `C06` self-worth.
+- MV13 provides external R `mirt::multipleGroup` replication of the PHQ
+  measurement conclusion: all four MV10 anchors are confirmed, loading DIF
+  remains unflagged, threshold DIF remains `C02`/`C06`, AIC/BIC still split
+  between partial/scalar, and all fitted parameters, factor scores, model
+  objects, and local item-response rows stay local-only.
 - MV12 provides a predeclared two-stage latent-target design that separates
   label measurement from multimodal prediction and keeps theta scores, fitted
   parameters, row predictions, transformed features, and model artifacts
@@ -102,7 +113,7 @@ Blocked claims:
 - Full M0/M1/M2/M3 symptom-aligned method construction.
 - A transferable shared-symptom representation across PHQ-8, PHQ-9, HAMD-17,
   and SDS.
-- A full PHQ-8/PHQ-9 scalar-invariance claim, because MV10/MV11 support
+- A full PHQ-8/PHQ-9 scalar-invariance claim, because MV10/MV11/MV13 support
   partial measurement invariance rather than full threshold/scalar invariance.
 - Positive EATD SDS external generalization.
 - EATD-driven valence-adversarial method design.
@@ -150,13 +161,16 @@ Blocked claims:
    fatigue, `C05` appetite, and `C07` concentration; `C02`, `C03`, and `C06`
    are metric-only/threshold-free, and `C08` psychomotor should be freed.
 
-8. Formal label-only IRT confirmation preserves the partial-anchor story.
+8. Formal and external label-only IRT confirmation preserve the partial-anchor story.
    MV11 fits multi-group graded-response IRT models over the same PHQ items.
    Metric constraints are not strongly rejected versus configural, scalar
    constraints are rejected by LRT only, and the MV10 partial model is best by
    AIC while scalar remains best by BIC. Item DIF checks flag no loading DIF
    and threshold DIF for `C02` and `C06`, preserving all four MV10 anchors but
-   keeping a conservative caveat for manuscript claims.
+   keeping a conservative caveat for manuscript claims. MV13 repeats the
+   model ladder with external R `mirt`, reproduces the same qualitative
+   anchor/DIF pattern, and retains the configural convergence warning as a
+   limitation rather than hiding it.
 
 9. Two-stage latent-target prediction is informative but still blocked.
    MV12 separates `Y -> theta` measurement from `X -> theta` prediction,
@@ -216,6 +230,7 @@ Blocked claims:
    - MV10 approximate PHQ-8/PHQ-9 configural, metric, scalar/threshold, and
      partial-invariance screen.
    - MV11 formal label-only graded-response IRT confirmation.
+   - MV13 external R `mirt` replication and convergence caveat.
    - MV12 two-stage latent-target design, blocked run, and aggregate
      tradeoff/failure-mode analysis.
    - Label-only scale linking before multimodal prediction.
@@ -247,11 +262,11 @@ Tracked outputs:
 
 - `paper_claim_boundary.csv` and `paper_claim_boundary.md`: compact
   allowed/blocked claim language, evidence, guardrails, and source artifact IDs.
-- `key_numeric_findings.csv`: twelve manuscript-ready findings for the full gate,
+- `key_numeric_findings.csv`: thirteen manuscript-ready findings for the full gate,
   RQ1 measurement sequence, MV10 psychometric baseline, MV11 formal
-  confirmation, MV12 design, MV12 run, MV12 tradeoff freeze decision, MV09
-  conditional identity, PDCH HAMD, MODMA task control, EATD stress, and MV06
-  evidence localization.
+  confirmation, MV13 external replication, MV12 design, MV12 run, MV12
+  tradeoff freeze decision, MV09 conditional identity, PDCH HAMD, MODMA task
+  control, EATD stress, and MV06 evidence localization.
 - `literature_positioning.csv`: web-checked source list for dataset governance,
   interviewer/protocol bias, PHQ/HAMD psychometrics, measurement invariance,
   MPDD/P3HF positioning, and PDCH.
@@ -268,7 +283,7 @@ python scripts/build_diagnostic_paper_results_sections.py
 Tracked outputs:
 
 - `baselines_failure_modes_measurement_results.md`: draft manuscript text for
-  the baseline floor, Phase 3 failure-mode diagnostics, MV08-MV12 measurement
+  the baseline floor, Phase 3 failure-mode diagnostics, MV08-MV13 measurement
   results, and bounded Phase 5 supporting claims.
 - `results_section_source_map.csv`: aggregate source artifact map.
 - `results_section_claim_checklist.csv`: release-safe claim and guardrail
@@ -397,10 +412,9 @@ Tracked outputs:
    MV12 as the current bounded diagnostic result.
 10. Done: draft the Baselines, Failure-Mode Diagnostics, and Measurement
    Results sections from aggregate tables.
-11. Predeclare MV13 external psychometric replication using a mature
-   psychometric package, preferably R `mirt` or an equivalent ordinal
-   multi-group CFA/IRT workflow, to confirm MV10/MV11 conclusions outside the
-   custom implementation.
+11. Done: predeclare and run MV13 external R `mirt` psychometric replication,
+   confirming the MV10/MV11 qualitative partial-invariance pattern with a
+   configural convergence caveat.
 12. Predeclare MV14 measurement-uncertainty bootstrap for PHQ item loadings,
    thresholds, DIF selection frequency, and latent-target reliability.
 13. Predeclare MV15 latent-conditioned dataset identity: compare `D|Z`,

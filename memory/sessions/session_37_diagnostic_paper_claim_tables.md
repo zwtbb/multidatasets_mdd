@@ -21,8 +21,11 @@ parameters, or authorize full method construction.
 - Artifact hygiene passed with zero violations.
 - Output includes:
   - 11 paper-facing claim boundary rows;
-  - 12 key numeric finding rows;
-  - 15 literature-positioning rows.
+  - originally 12 key numeric finding rows;
+  - originally 15 literature-positioning rows.
+- Superseded update: `session_46_mv13_external_psychometric_replication.md`
+  refreshed this generator after MV13. Current outputs now include 13 key
+  numeric finding rows and 17 literature-positioning rows.
 - Web lookup was used on 2026-08-11 to verify current positioning sources:
   ACL Anthology DAIC and EMNLP interviewer-bias records, official DAIC access
   page, Frontiers PHQ/HAMD IRT article, PubMed/search metadata for PHQ DIF and

@@ -36,9 +36,10 @@ calibration parameters, embeddings, or model artifacts.
   - MV10/MV11 partial PHQ measurement invariance evidence.
   - MV12 as a predictive fidelity-dataset identifiability trade-off.
   - Bounded PDCH, MODMA, EATD, and MV06 supporting claims.
-- Lightweight MV13 feasibility preflight found no `Rscript` executable on the
-  current PATH. MV13 will need R/mirt setup or an equivalent container/workflow
-  after predeclaration.
+- Lightweight MV13 feasibility preflight originally found no `Rscript`
+  executable on the current PATH. This was superseded by
+  `session_46_mv13_external_psychometric_replication.md`, which installed and
+  version-captured R/lavaan/mirt and completed MV13.
 
 ## Key Decisions
 
@@ -99,10 +100,9 @@ Tracked aggregate outputs:
 
 - Full M0/M1/M2/M3 method construction remains blocked by the Phase 5
   full-method gate.
-- MV11 still needs an external psychometric replication before it becomes a
-  high-confidence manuscript pillar.
-- Current runtime does not expose `Rscript` on PATH, so MV13 requires
-  environment preparation before execution.
+- MV11 now has MV13 external R `mirt` replication support, but the configural
+  convergence caveat and small CMDC PHQ item-labeled N require MV14 uncertainty
+  evidence before stronger item-level DIF wording.
 - CMDC PHQ item supervision is small, so MV14 bootstrap/stability evidence is
   needed before strong item-level DIF wording.
 - MV15 must treat theta scores as local-only conditioning material and export
@@ -114,11 +114,12 @@ Tracked aggregate outputs:
 
 ## Next Handoff
 
-Predeclare `P5_MV13 external_psychometric_replication` first. Check whether the
-runtime can support R `mirt` or an equivalent mature ordinal multi-group
-CFA/IRT workflow. The success target is agreement on the qualitative
-measurement conclusion: one-factor/metric PHQ structure broadly holds,
-threshold/scalar equivalence is partial, and the partial-invariance
-interpretation remains plausible with model-selection caveats. Keep fitted
-parameters, factor scores, local theta tables, and model artifacts local-only;
-track only aggregate fit, DIF, stability, and hygiene summaries.
+MV13 has been completed in
+`session_46_mv13_external_psychometric_replication.md`. Next, predeclare MV14
+measurement-uncertainty/bootstrap. The success target is aggregate stability
+evidence for the qualitative measurement conclusion: one-factor/metric PHQ
+structure broadly holds, threshold/scalar equivalence is partial, and the
+partial-invariance interpretation remains plausible with model-selection and
+convergence caveats. Keep fitted parameters, factor scores, local theta tables,
+bootstrap samples, and model artifacts local-only; track only aggregate fit,
+DIF, stability, and hygiene summaries.

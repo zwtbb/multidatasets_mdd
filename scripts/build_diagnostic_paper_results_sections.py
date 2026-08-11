@@ -44,6 +44,7 @@ MV12_GATES = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "gate_deco
 MV12_SLICE_DIAGNOSTICS = (
     PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "mv12_dataset_slice_diagnostics.csv"
 )
+MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 DEFAULT_OUT_DIR = PAPER_DIR
 
 TRACKED_FILES = [
@@ -92,6 +93,8 @@ def manuscript_text(value: Any) -> str:
         "failure_mode_rows=6": "6 failure-mode rows",
         "status complete_partial_invariance_supported_approx": "status supports approximate partial invariance",
         "status complete_formal_partial_invariance_supported_with_bic_caveat": "status supports formal partial invariance with a BIC caveat",
+        "status complete_external_mirt_with_convergence_warnings": "status supports external replication with convergence warnings",
+        "core converged=False": "the core model ladder retains a convergence warning",
         "status blocked_theta_gain_not_observed_scale_safe": "status is blocked because theta gain is not observed-scale safe",
         "status pass_pdch_only_diagnostic": "status is a PDCH-only diagnostic pass",
         "status blocked_main_task_below_floor": "status is blocked because the main task is below the floor",
@@ -123,6 +126,7 @@ def require_inputs() -> None:
         MV12_FAILURES,
         MV12_GATES,
         MV12_SLICE_DIAGNOSTICS,
+        MV13_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -266,6 +270,7 @@ def phase5_context() -> dict[str, Any]:
         "finding_mv09": manuscript_text(findings.loc["mv09_conditional_identity_gate", "finding"]),
         "finding_mv10": manuscript_text(findings.loc["mv10_psychometric_baseline", "finding"]),
         "finding_mv11": manuscript_text(findings.loc["mv11_formal_psychometric_confirmation", "finding"]),
+        "finding_mv13": manuscript_text(findings.loc["mv13_external_psychometric_replication", "finding"]),
         "finding_mv12_run": manuscript_text(findings.loc["mv12_two_stage_latent_target_run", "finding"]),
         "finding_mv12_analysis": manuscript_text(findings.loc["mv12_tradeoff_freeze_decision", "finding"]),
         "finding_pdch": manuscript_text(findings.loc["pdch_internal_hamd", "finding"]),
@@ -349,7 +354,13 @@ def build_source_map() -> pd.DataFrame:
             "section": "Measurement Results",
             "source_artifact_id": "key_numeric_findings",
             "source_path": rel(PAPER_FINDINGS),
-            "use": "paper-facing MV08-MV12, PDCH, MODMA, EATD, and MV06 findings",
+            "use": "paper-facing MV08-MV13, PDCH, MODMA, EATD, and MV06 findings",
+        },
+        {
+            "section": "Measurement Results",
+            "source_artifact_id": "mv13_external_psychometric_replication",
+            "source_path": rel(MV13_SUMMARY),
+            "use": "MV13 external R mirt replication status and convergence caveat",
         },
         {
             "section": "Measurement Results",
@@ -464,11 +475,11 @@ def write_markdown(
         "",
         f"The Phase 5 full-method gate now reads `{ctx5['evidence_rows']}` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.",
         "",
-        "The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11 address the second level by showing partial rather than scalar PHQ invariance; MV12 addresses the third level by separating label measurement from multimodal prediction.",
+        "The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13 address the second level by showing partial rather than scalar PHQ invariance with external replication; MV12 addresses the third level by separating label measurement from multimodal prediction.",
         "",
         "The first measurement sequence is negative or bounded. MV08 improves over the total-score floor on `0/3` pooled active slices, while MV08b improves over both total-score and fixed-map floors on `2/3` slices but raises prediction dataset identity to `0.979`. MV09 then revises the gate semantics: post-head identity is diagnostic when outputs are scale-specific, while shared-latent claims require conditional identity checks. Under that sharper test, E-DAIC/CMDC item-conditioned feature identity remains `0.991`, so direct fixed shared-symptom mappings remain too strong under the current frozen-feature and shallow-head contract.",
         "",
-        "The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 share a strong one-factor/metric structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Threshold/scalar equivalence is weaker, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. The conservative manuscript claim is therefore strong structural similarity with partial, uncertain threshold equivalence, not a full scalar-invariance proof.",
+        "The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 share a strong one-factor/metric structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Threshold/scalar equivalence is weaker, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. MV13 external R mirt replication preserves the same qualitative anchor/DIF pattern, with no loading-DIF flags and threshold-DIF flags on `C02` and `C06`, but retains a configural convergence warning. The conservative manuscript claim is therefore strong structural similarity with partial, uncertain threshold equivalence, not a full scalar-invariance proof.",
         "",
         f"MV12 then tests whether multimodal features can predict the label-derived latent target, and the result should not be flattened into a simple failure. Within datasets, `X -> theta` is learnable: M12a improves theta MAE over the train-mean theta floor by `{fmt(ctx5['mv12_edaic_same_theta_delta'])}` on E-DAIC and `{fmt(ctx5['mv12_cmdc_same_theta_delta'])}` on CMDC. The predicted latent target is also far less dataset-identifiable than the upstream conditional feature space, with conditional identity BA `{fmt(ctx5['mv12_conditional_identity_ba'])}` versus the MV09 reference `0.991`.",
         "",

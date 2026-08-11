@@ -1,0 +1,7 @@
+alignment_id,mv11_value,mv13_value,aligned,interpretation
+anchor_set_overlap,C01;C04;C05;C07,C01;C04;C05;C07,True,Checks whether external mirt preserves the MV10/MV11 candidate anchor set.
+loading_dif_overlap,none,none,True,Checks whether both implementations avoid strong loading DIF flags.
+threshold_dif_overlap,C02;C06,C02;C06,True,Checks whether threshold DIF concentrates on the same symptoms.
+metric_vs_configural,no_strong_evidence_against_restriction,no_strong_evidence_against_restriction,True,Compares the qualitative nested-model decision label.
+scalar_vs_metric,restricted_model_rejected_lrt_only,restricted_model_rejected_lrt_only,True,Compares the qualitative nested-model decision label.
+partial_mv10_vs_configural,no_strong_evidence_against_restriction,no_strong_evidence_against_restriction,True,Compares the qualitative nested-model decision label.

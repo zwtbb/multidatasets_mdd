@@ -1,0 +1,67 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "design_status": "ready_for_external_replication_run",
+    "external_runtime_ready": true,
+    "full_method_allowed": false,
+    "next_action": "RUN_MIRT_MODEL_LADDER",
+    "short_read": "MV13 is predeclared as an external mirt/lavaan psychometric replication. Execution waits for a version-captured external runtime."
+  },
+  "generated_at": "2026-08-11T16:35:31+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "external_model_run_performed": false,
+    "label_only": true,
+    "local_r_input_written": false,
+    "multimodal_features_read": false,
+    "participant_grain_outputs_written": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false,
+    "scales": [
+      "PHQ-8",
+      "PHQ-9"
+    ],
+    "shared_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ]
+  },
+  "outputs": {
+    "gate_rows": 6,
+    "implementation_rows": 5,
+    "input_contract_rows": 4,
+    "method_source_rows": 4,
+    "model_contract_rows": 6,
+    "source_evidence_rows": 6,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "external_model_ladder_contract.csv",
+      "implementation_queue.csv",
+      "input_boundary_contract.csv",
+      "method_source_refs.csv",
+      "pass_fail_gate_contract.csv",
+      "report.md",
+      "run_summary.json",
+      "runtime_preflight.csv",
+      "source_evidence_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV13_external_psychometric_replication_design",
+  "runtime_preflight": {
+    "external_runtime_ready": true,
+    "lavaan_status": "0.6.10",
+    "mirt_status": "1.35.1",
+    "rscript_available": true
+  },
+  "scope": "external_psychometric_replication_predeclaration",
+  "status": "complete"
+}

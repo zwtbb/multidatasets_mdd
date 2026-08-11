@@ -1,0 +1,5 @@
+check_id,status,observed,decision
+Rscript_on_path,pass,available,MV13 execution can use R only after Rscript is available on PATH.
+mirt_package,pass,1.35.1,mirt is the preferred external replication engine for multi-group graded-response IRT.
+lavaan_package,pass,0.6.10,lavaan is the ordinal CFA sensitivity fallback if mirt is unavailable or does not converge.
+external_runtime_ready,pass,ready,Do not run MV13 claims until the external runtime is installed and version-captured.

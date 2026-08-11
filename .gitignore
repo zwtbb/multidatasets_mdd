@@ -62,6 +62,12 @@ analysis/phase5_minimal_validation/**/*embeddings*.csv
 analysis/phase5_minimal_validation/**/*model*.joblib
 analysis/phase5_minimal_validation/**/*model*.pkl
 analysis/phase5_minimal_validation/**/*weights*.csv
+analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/local_*
+analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/*.rds
+analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/*.RData
+analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/*parameter_table*.csv
+analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/*factor_score*.csv
+analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/*theta*.csv
 
 # Keep generated lightweight governance files versionable
 !datasets/registry.yaml

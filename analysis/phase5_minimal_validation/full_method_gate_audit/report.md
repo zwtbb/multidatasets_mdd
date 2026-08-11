@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-11T15:15:48+00:00`
+Generated: `2026-08-11T16:36:07+00:00`
 
 ## Decision
 
@@ -15,9 +15,9 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Draft the Baselines, Failure-Mode Diagnostics, and Measurement sections from aggregate tables, or introduce a genuinely new predeclared mechanism that fixes observed-scale reconstruction and external theta transfer while preserving conditional identity. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work. | A later predeclared model must preserve the MV12 conditional-identity gain while fixing observed-scale reconstruction and external theta transfer against direct X-to-Y floors. |
-| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10 and MV11 as label-only PHQ partial-invariance evidence, and MV12 plus its aggregate tradeoff analysis as bounded two-stage prediction diagnostics; do not present them as multimodal method success or external scale transfer. | If extending the method line, predeclare a genuinely new revision that improves observed-scale mapping and external theta transfer while retaining local-only theta and parameter boundaries. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Predeclare and run MV14 measurement-uncertainty/bootstrap evidence, then only consider MV15/MV16 if uncertainty, conditional identity, and scale-linking gates remain coherent. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work. | MV14 should quantify measurement uncertainty and anchor/DIF stability before stronger item-level wording or a later predeclared X-to-theta calibration mechanism. |
+| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13 as label-only PHQ partial-invariance evidence, and MV12 plus its aggregate tradeoff analysis as bounded two-stage prediction diagnostics; do not present them as multimodal method success or external scale transfer. | Run MV14 measurement-uncertainty/bootstrap to quantify anchor, DIF, and fit-stability uncertainty under the same local-only item-response boundary. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, and conditional identity audits are controls; do not claim invariant representation. | Future gates must distinguish unconditional feature identity, conditional shared-latent identity, and scale-specific post-head prediction identity. |
@@ -25,7 +25,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, expand the E-DAIC double-annotation slice or add Krippendorff alpha/bootstrap uncertainty because E-DAIC currently has few double pairs. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12 and MV12 aggregate tradeoff analysis are bounded diagnostic evidence, not a full-method pass. | Draft Baselines, Failure-Mode Diagnostics, and Measurement sections from aggregate tables; optionally strengthen E-DAIC MV06 double annotation before stronger evidence-localization claims. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13 and MV12 aggregate tradeoff analysis are bounded diagnostic evidence, not a full-method pass. | Run MV14 measurement-uncertainty/bootstrap, then use MV15/MV16 only if they are predeclared as measurement-shift follow-ups with local-only latent and calibration artifacts. |
 
 ## Evidence Inventory
 
@@ -63,12 +63,14 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV12_design | `complete` | `ready_to_implement_mv12_two_stage_latent_target` | `True` | Design is ready; the actual MV12 X_to_theta run is still required before any full-method or transferable shared-latent claim. |
 | P5_MV12 | `complete` | `blocked_theta_gain_not_observed_scale_safe` | `True` | MV12 runs the predeclared two-stage PHQ latent-target test. A pass requires theta utility, observed-scale safety, external transfer, conditional shared-latent identity, leakage control, and artifact hygiene; design or... |
 | P5_MV12_analysis | `complete` | `complete_freeze_current_mv12_latent_target_line` | `True` | Aggregate-only MV12 analysis recommends freezing the current latent-target line: latent theta utility and conditional identity improve, but observed-scale safety and external theta transfer remain the decisive blockers. |
+| P5_MV13_design | `complete` | `ready_for_external_replication_run` | `True` | MV13 is predeclared as an external mirt/lavaan psychometric replication. Execution waits for a version-captured external runtime. |
+| P5_MV13 | `complete` | `complete_external_mirt_with_convergence_warnings` | `True` | External R mirt replication is complete: the qualitative PHQ partial-invariance claim is externally checked while full item parameters and factor scores remain local-only. |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Draft the Baselines, Failure-Mode Diagnostics, and Measurement Results sections from the aggregate evidence tables. | Draft sections cite Phase 2/3 and MV07-MV12 aggregate tables, make no full-method claim, and do not quote row-level predictions, local theta outputs, fitted parameters, or raw clinical text. |
+| 1 | Predeclare MV14 measurement-uncertainty bootstrap for PHQ anchor and DIF stability. | MV14 reports aggregate bootstrap/stability intervals for anchor support, loading-DIF flags, threshold-DIF flags, fit-model selection, and convergence; it exports no subject rows, item-response matrices, factor/theta scores, fitted parameters, or model objects. |
 | 2 | Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice. | Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

@@ -39,6 +39,7 @@ MV11_SUMMARY = PHASE5_DIR / "p5_mv11_formal_psychometric_confirmation" / "run_su
 MV12_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target_design" / "run_summary.json"
 MV12_RUN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target" / "run_summary.json"
 MV12_ANALYSIS_SUMMARY = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "run_summary.json"
+MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -66,8 +67,8 @@ CLAIM_SECTION = {
 
 PAPER_CLAIM_LANGUAGE = {
     "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper.",
-    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, partial invariance, and the frozen MV12 latent-target diagnostic.",
-    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11 as label-only PHQ partial-invariance evidence with an explicit AIC/BIC caveat, and MV12 as a bounded test of whether multimodal features can predict that target.",
+    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, external partial-invariance replication, and the frozen MV12 latent-target diagnostic.",
+    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV13 as label-only PHQ partial-invariance evidence with explicit AIC/BIC and convergence caveats, and MV12 as a bounded test of whether multimodal features can predict that target.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
     "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and conditional identity as the stronger shared-latent diagnostic.",
@@ -75,7 +76,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, and the completed two-stage latent-target plus aggregate tradeoff analysis as diagnostic gates.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, external psychometric replication, and the completed two-stage latent-target plus aggregate tradeoff analysis as diagnostic gates.",
 }
 
 LITERATURE_ROWS = [
@@ -140,7 +141,21 @@ LITERATURE_ROWS = [
         "topic": "Ordinal IRT measurement model",
         "citation_hint": "Samejima 1969, Psychometrika Monograph 17",
         "url": "https://www.psychometricsociety.org/sites/main/files/file-attachments/mn17.pdf",
-        "paper_positioning": "The graded-response model provides the ordinal IRT family used by MV11 to separate label measurement from multimodal prediction.",
+        "paper_positioning": "The graded-response model provides the ordinal IRT family used by MV11/MV13 to separate label measurement from multimodal prediction.",
+    },
+    {
+        "source_id": "mirt_jss_2012",
+        "topic": "External psychometric replication runtime",
+        "citation_hint": "Chalmers 2012, Journal of Statistical Software",
+        "url": "https://www.jstatsoft.org/article/view/v048i06",
+        "paper_positioning": "mirt supplies the external multidimensional IRT implementation used in MV13 to replicate the PHQ partial-invariance conclusion.",
+    },
+    {
+        "source_id": "mirt_multiplegroup_docs",
+        "topic": "Multi-group IRT implementation",
+        "citation_hint": "mirt multipleGroup documentation",
+        "url": "https://philchalmers.github.io/mirt/html/multipleGroup.html",
+        "paper_positioning": "The multipleGroup interface documents the multi-group invariance and DIF workflow used for the MV13 external replication.",
     },
     {
         "source_id": "irt_lr_dif_frontiers_2017",
@@ -226,6 +241,7 @@ def require_inputs() -> None:
         MV12_DESIGN_SUMMARY,
         MV12_RUN_SUMMARY,
         MV12_ANALYSIS_SUMMARY,
+        MV13_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -263,6 +279,7 @@ def build_metric_context() -> dict[str, str]:
     mv12_design = read_json(MV12_DESIGN_SUMMARY)
     mv12_run = read_json(MV12_RUN_SUMMARY)
     mv12_analysis = read_json(MV12_ANALYSIS_SUMMARY)
+    mv13 = read_json(MV13_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -276,6 +293,7 @@ def build_metric_context() -> dict[str, str]:
     mv12_d = mv12_design["decision"]
     mv12_v = mv12_run["verdict"]
     mv12_a = mv12_analysis["decision"]
+    mv13_v = mv13["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -300,6 +318,10 @@ def build_metric_context() -> dict[str, str]:
             f"MV11 confirms {mv11_v['confirmed_mv10_anchor_items']} MV10 anchors with "
             f"{mv11_v['loading_dif_flagged_items']} loading-DIF and {mv11_v['threshold_dif_flagged_items']} "
             f"threshold-DIF flags, but core AIC/BIC split is {mv11_v['core_model_aic_bic_split']}. "
+            f"MV13 external mirt replication confirms {mv13_v['confirmed_mv10_anchor_items']} anchors with "
+            f"{mv13_v['loading_dif_flagged_items']} loading-DIF and {mv13_v['threshold_dif_flagged_items']} "
+            f"threshold-DIF flags, core convergence {mv13_v['core_converged']}, and "
+            f"{mv13_v['mv11_mv13_aligned_rows']}/{mv13_v['mv11_mv13_alignment_rows']} MV11-aligned decisions. "
             f"MV12 design is {mv12_d['readiness_status']}; MV12 run is {mv12_v['pass_rule_status']}, "
             f"with same-dataset theta gate {mv12_v['same_dataset_theta_gate_passed']}, observed-scale safety "
             f"{mv12_v['same_dataset_observed_gate_passed']}, external theta transfer "
@@ -328,6 +350,16 @@ def build_metric_context() -> dict[str, str]:
             f"threshold-DIF flags {mv11_v['threshold_dif_flagged_items']}; "
             f"best AIC core model {mv11_v['best_aic_model']}; "
             f"best BIC core model {mv11_v['best_bic_model']}."
+        ),
+        "mv13": (
+            f"MV13 external R mirt replication: status {mv13_v['status']}; "
+            f"confirmed MV10 anchors {mv13_v['confirmed_mv10_anchor_items']}; "
+            f"loading-DIF flags {mv13_v['loading_dif_flagged_items']}; "
+            f"threshold-DIF flags {mv13_v['threshold_dif_flagged_items']}; "
+            f"best AIC/BIC core models {mv13_v['best_aic_model']}/{mv13_v['best_bic_model']}; "
+            f"core converged={mv13_v['core_converged']}; "
+            f"MV11-aligned decisions {mv13_v['mv11_mv13_aligned_rows']}/{mv13_v['mv11_mv13_alignment_rows']}; "
+            f"parameter CI status {mv13_v['parameter_ci_status']}."
         ),
         "mv12_design": (
             f"MV12 two-stage latent-target design: status {mv12_d['readiness_status']}; "
@@ -377,11 +409,11 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
         return f"{context['rq1']} {context['mv12_analysis']}"
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
-        return f"{context['mv10']} {context['mv11']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
+        return f"{context['mv10']} {context['mv11']} {context['mv13']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
@@ -441,8 +473,8 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "rq1_measurement_negative",
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
-            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV12;P5_MV12_analysis",
+            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11/MV13/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV12;P5_MV12_analysis",
         },
         {
             "finding_id": "mv10_psychometric_baseline",
@@ -457,6 +489,13 @@ def build_key_findings() -> pd.DataFrame:
             "finding": context["mv11"],
             "interpretation": "The formal label-only IRT confirmation preserves the MV10 anchor map but leaves an AIC/BIC caveat, so it supports target design rather than a full method claim.",
             "source_artifact_ids": "P5_MV11",
+        },
+        {
+            "finding_id": "mv13_external_psychometric_replication",
+            "paper_section": "Psychometric baseline",
+            "finding": context["mv13"],
+            "interpretation": "The external R mirt replication preserves the MV11 qualitative anchor/DIF pattern, but the convergence caveat and small CMDC N require MV14 uncertainty evidence before stronger item-level wording.",
+            "source_artifact_ids": "P5_MV13",
         },
         {
             "finding_id": "mv12_two_stage_latent_target_design",

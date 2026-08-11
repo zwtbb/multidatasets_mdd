@@ -46,7 +46,7 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Minimal validations are complete
-through `P5_MV12` plus the aggregate `P5_MV12_analysis`; the full-method gate remains
+through `P5_MV13` external psychometric replication; the full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a measurement-shift /
@@ -70,17 +70,22 @@ latent route than direct item transfer, so treat MV12 as a predictive
 fidelity-dataset identifiability trade-off, not a simple failed model. The
 aggregate MV12
 tradeoff/failure-mode analysis freezes the current latent-target line rather
-than adding another small shallow-head variant.
+than adding another small shallow-head variant. MV13 installs a version-captured
+external R psychometric runtime and reruns the PHQ multi-group graded-response
+model ladder with `mirt::multipleGroup`. It qualitatively replicates MV11:
+four MV10 anchors are confirmed, no loading DIF is strongly flagged, threshold
+DIF remains concentrated on `C02` and `C06`, AIC prefers the partial model, and
+BIC prefers scalar. The configural model retains a convergence warning, so MV13
+is bounded external measurement evidence, not a full-method pass.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate tables only. Current next action: predeclare and
-run the next measurement-aware validation sequence in order: external
-psychometric replication (`P5_MV13`), measurement-uncertainty bootstrap
-(`P5_MV14`), latent-conditioned dataset identity (`P5_MV15`), and cross-dataset
-theta calibration / few-shot scale linking (`P5_MV16`). Optionally expand
+run measurement-uncertainty bootstrap (`P5_MV14`), then latent-conditioned
+dataset identity (`P5_MV15`) and cross-dataset theta calibration / few-shot
+scale linking (`P5_MV16`) if their gates remain coherent. Optionally expand
 E-DAIC MV06 double annotation before stronger RQ4 wording. Theta scores, fitted
-parameters, row predictions, transformed features, calibration parameters, and
-model artifacts remain local-only.
+parameters, row predictions, transformed features, bootstrap samples,
+calibration parameters, and model artifacts remain local-only.
 
 ## Key Paths
 
@@ -105,6 +110,8 @@ model artifacts remain local-only.
 - MV12 two-stage latent-target design: `analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target_design/`
 - MV12 two-stage latent-target run: `analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target/`
 - MV12 aggregate tradeoff analysis: `analysis/phase5_minimal_validation/p5_mv12_latent_target_tradeoff_analysis/`
+- MV13 external psychometric replication design: `analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication_design/`
+- MV13 external psychometric replication run: `analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
@@ -143,6 +150,14 @@ Diagnostic paper writing scaffolds:
 python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
+```
+
+Phase 5 gate and MV13 external psychometric replication:
+
+```bash
+python scripts/phase5_plan_mv13_external_psychometric_replication.py --overwrite
+python scripts/phase5_run_mv13_external_psychometric_replication.py
+python scripts/phase5_full_method_gate_audit.py
 ```
 
 ## Version Policy

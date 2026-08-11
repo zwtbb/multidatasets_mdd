@@ -1,0 +1,5 @@
+artifact_class,git_policy,reason,allowed_tracked_derivative
+ignored_local_item_response_matrix,ignored_local_only,"Participant-grain PHQ item response rows are analysis input, not a public aggregate artifact.",psychometric_input_audit.csv with dataset-level counts only
+fitted_mirt_model_objects,do_not_track,Fitted model objects can contain full item parameters and reproducibility internals.,fit_model_summary.csv and r_execution_summary.csv
+item_parameter_or_ci_tables,local_only_if_generated,Full item parameter values and confidence intervals are fitted psychometric parameters.,parameter_ci_availability_summary.csv with counts only
+factor_or_theta_scores,do_not_track,Subject-level latent scores are participant-grain outputs.,none; later MV15/MV16 may export aggregate identity/calibration summaries only
