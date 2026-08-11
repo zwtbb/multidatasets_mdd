@@ -180,7 +180,7 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   total-allocation floors and identity remains high (feature BA `1.000`,
   prediction BA `0.980`).
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 23
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 24
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
@@ -195,6 +195,13 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   macro item MAE versus total-score floor and `+0.140` versus fixed map;
   feature identity BA remains `1.000` and M2 prediction identity BA is `0.900`.
   Row-level predictions remain ignored local-only.
+- Phase 5 `P5_MV08 error_analysis` completed in the main checkout. It reads
+  the ignored MV08 row predictions locally and exports only aggregate
+  diagnostics. Current status:
+  `complete_current_mv08_not_claimable_revision_or_freeze`. It confirms the
+  current MV08 contract is not positive RQ1 evidence; largest pooled item delta
+  is CMDC PHQ9_8/C08 psychomotor (`+0.698` MAE versus total floor), and HAMD
+  DIF heads show threshold sparsity (`0.318` constant-threshold fraction).
 - Clean GitHub publish workflow is now implemented. Future remote updates
   should use `scripts/publish_clean_github_snapshot.py` and
   `docs/github_publish_workflow.md`, so the old local `main` history is never
@@ -271,7 +278,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    `P5_MV08` partial-invariance measurement is now complete and negative:
    the lightweight ordinal measurement head does not beat the total-score floor
    on any pooled active slice, despite reducing prediction identity only to
-   `0.900`.
+   `0.900`. MV08 aggregate error analysis confirms this as a not-claimable
+   current contract and recommends either a predeclared MV08b total-anchored
+   residual measurement design or freezing MV08 as negative evidence.
    The full-method gate audit now records this as
    `blocked_but_publishable_diagnostic_direction`: full method is blocked,
    RQ4 is allowed only as limited aggregate evidence, and a bounded
@@ -318,10 +327,9 @@ Cross-session issues are tracked in:
 ## Next Handoff
 
 Continue Phase 5 under the full-method gate audit. The next useful work is to
-analyze the negative `P5_MV08` partial-invariance result and decide whether a
-predeclared stronger psychometric measurement revision is justified or whether
-MV08 should be frozen as diagnostic/negative evidence. Optionally expand
-E-DAIC MV06 double annotation. Keep row-level predictions,
+decide whether to write a predeclared `P5_MV08b` total-anchored residual
+measurement design or freeze MV08 as diagnostic/negative evidence. Optionally
+expand E-DAIC MV06 double annotation. Keep row-level predictions,
 real manifests, real integrity/split maps, latent scores, learned parameters,
 and learned embeddings local-only, and do not start full method work until the
 gate changes.

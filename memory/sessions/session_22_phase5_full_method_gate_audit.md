@@ -30,11 +30,12 @@ the numeric source artifacts from each MV row.
     aligned-BGE shallow shared-symptom validation, MV07b BGE
     identity-projection follow-up, and MV07c BGE total-anchor follow-up.
 - Artifact hygiene passed with zero violations.
-- Later extension: the current gate now reads 23 Phase 5 run summaries after
-  adding `P5_MV08_design` and the completed `P5_MV08` pilot. The gate remains
+- Later extension: the current gate now reads 24 Phase 5 run summaries after
+  adding `P5_MV08_design`, the completed `P5_MV08` pilot, and
+  `P5_MV08_error_analysis`. The gate remains
   `blocked_but_publishable_diagnostic_direction`; see
-  `memory/sessions/session_33_phase5_mv08_partial_invariance_pilot.md` for the
-  latest MV08-driven gate refresh.
+  `memory/sessions/session_34_phase5_mv08_error_analysis.md` for the latest
+  MV08-driven gate refresh.
 
 ## Key Decisions
 
@@ -120,10 +121,13 @@ Versionable artifacts:
   total-score floor on `0/3` pooled active slices, so the first lightweight
   psychometric measurement implementation does not authorize RQ1/full-method
   claims.
+- MV08 error analysis confirms the current contract is not claimable positive
+  RQ1 evidence and should either be frozen as negative evidence or replaced by
+  a predeclared MV08b mechanism.
 
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
-The next implementation session should analyze the negative MV08 result or
-freeze it as diagnostic evidence. Do not start the full method until the gate
-changes from blocked.
+The next implementation session should decide whether to write a predeclared
+MV08b total-anchored residual measurement design or freeze MV08 as diagnostic
+evidence. Do not start the full method until the gate changes from blocked.

@@ -1,0 +1,44 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "current_mv08_claimable_positive_rq1": false,
+    "error_analysis_status": "complete_current_mv08_not_claimable_revision_or_freeze",
+    "pooled_active_slices": 3,
+    "pooled_slices_failed_fixed_map": 3,
+    "pooled_slices_failed_total_floor": 3,
+    "short_read": "MV08 error analysis confirms the current partial-invariance ordinal head should be frozen as negative evidence unless a predeclared MV08b revision changes the measurement mechanism. The total-score floor remains the key comparator.",
+    "worst_pooled_delta_vs_fixed_map": 0.1395986460828517,
+    "worst_pooled_delta_vs_total_floor": 0.15189077788514882
+  },
+  "generated_at": "2026-08-11T11:54:39+00:00",
+  "input_contract": {
+    "latent_scores_written": false,
+    "learned_parameters_written": false,
+    "local_row_predictions_read": true,
+    "raw_data_scanned": false,
+    "raw_text_read": false,
+    "subject_level_rows_exported": false
+  },
+  "output_policy": {
+    "local_only_inputs": [
+      "p5_mv08_local_row_predictions.csv"
+    ],
+    "private_identifiers_exported": false,
+    "raw_paths_exported": false,
+    "raw_text_exported": false,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "construct_error_diagnostics.csv",
+      "error_bin_summary.csv",
+      "item_error_diagnostics.csv",
+      "report.md",
+      "revision_queue.csv",
+      "run_summary.json",
+      "slice_error_diagnostics.csv",
+      "threshold_sparsity_diagnostics.csv"
+    ]
+  },
+  "run_id": "P5_MV08_error_analysis",
+  "scope": "aggregate_error_analysis_for_negative_mv08_no_new_model",
+  "status": "complete"
+}

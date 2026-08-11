@@ -1,0 +1,8 @@
+protocol,dif_policy,head_group_count,min_train_observations,mean_train_observations,threshold_count,learned_threshold_models,constant_threshold_models,constant_threshold_fraction,mean_head_constant_threshold_fraction,mean_m2_delta_mae_vs_total_floor
+cmdc_phq_subject_cv,scale_specific_safety,1,61,61.6,15,14,1,0.06666666666666667,0.06666666666666667,0.11429819415968281
+cmdc_phq_subject_cv,shared_phq_anchor,8,61,61.6,120,120,0,0.0,0.0,0.019436477282093353
+edaic_train_dev,shared_phq_anchor,8,163,163.0,120,120,0,0.0,0.0,0.1468393112875455
+pdch_hamd_subject_cv,scale_or_item_specific_dif,17,73,73.6,340,232,108,0.3176470588235294,0.3176470588235294,0.11755699642858254
+pooled_partial_invariance,scale_or_item_specific_dif,17,73,73.6,340,232,108,0.3176470588235294,0.3176470588235294,0.15189077788514882
+pooled_partial_invariance,scale_specific_safety,1,61,61.6,15,14,1,0.06666666666666667,0.06666666666666667,0.19996404935352743
+pooled_partial_invariance,shared_phq_anchor,8,224,224.6,120,120,0,0.0,0.0,0.1329986542562899

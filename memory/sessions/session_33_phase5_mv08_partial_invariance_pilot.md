@@ -1,6 +1,6 @@
 # Session Memory: Phase 5 MV08 Partial-Invariance Pilot
 
-Status: active
+Status: complete
 Last updated: 2026-08-11 UTC
 Thread/task: main agent P5_MV08 implementation and gate refresh
 
@@ -44,15 +44,16 @@ learned parameters, raw text, or source locators to Git.
   full evidence row. The gate remains
   `blocked_but_publishable_diagnostic_direction`, with
   `full_method_allowed=false`.
+- Follow-up aggregate error analysis is recorded in
+  `memory/sessions/session_34_phase5_mv08_error_analysis.md`.
 
 ## Key Decisions
 
 - MV08 is a negative minimal-validation result, not positive RQ1 evidence.
 - The partial measurement-invariance framing remains scientifically useful, but
   the current frozen-BGE/lightweight ordinal-head implementation is not enough.
-- The next ranked action is MV08 error analysis or a predeclared measurement
-  revision. If no credible revision is identified, freeze MV08 as negative
-  evidence and continue a diagnostic/measurement-audit paper framing.
+- The next ranked action after this pilot was MV08 error analysis; that handoff
+  is now complete in session_34.
 - Row-level MV08 predictions are local-only:
   `analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement/p5_mv08_local_row_predictions.csv`.
 
@@ -108,7 +109,6 @@ Ignored local-only artifacts:
 
 ## Next Handoff
 
-Run a focused MV08 error analysis against aggregate outputs and, if needed,
-inspect the ignored local row predictions without exporting subject-level data.
-Decide whether a stronger psychometric measurement revision is justified or
-whether MV08 should be frozen as negative evidence in a diagnostic/audit paper.
+This pilot handoff is complete. Future work should use session_34 to decide
+whether to predeclare an MV08b measurement revision or freeze MV08 as negative
+evidence in a diagnostic/audit paper.

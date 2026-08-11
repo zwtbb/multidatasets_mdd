@@ -159,7 +159,7 @@ data audit
   as a negative follow-up: total anchoring does not rescue the shallow BGE
   shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 23 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 24 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -173,6 +173,15 @@ data audit
   `+0.140` versus fixed map. Feature identity BA remains `1.000`, and M2
   prediction identity BA is `0.900`. Treat this as negative measurement-model
   evidence, not a full-method authorization.
+- Phase 5 `P5_MV08 error_analysis`:
+  complete as an aggregate-only analysis of the negative MV08 result. It reads
+  the ignored local row-prediction file but exports only slice/item/construct,
+  error-bin, threshold-sparsity, and revision-queue summaries. It confirms the
+  current MV08 contract is not claimable positive RQ1 evidence: pooled M2 is
+  worse than total-score and fixed-map floors on all active slices, the largest
+  pooled item delta is CMDC PHQ9_8/C08 psychomotor (`+0.698` MAE versus total
+  floor), and HAMD DIF heads show threshold sparsity (`0.318` constant-threshold
+  fraction).
 
 ## Current Method-Design Gate
 
@@ -194,9 +203,9 @@ identity-controlled variant still fails the CMDC total-allocation floor.
 `P5_MV07c` confirms that train-fold-selected total anchoring also fails the
 CMDC total-allocation floor. `P5_MV08` changes the measurement contract but its
 first lightweight partial-invariance ordinal pilot also fails the total-score
-floor on all pooled active slices. Further small shallow BGE-head variants
-should be avoided, and MV08 should be analyzed as a measurement-model failure
-mode before any stronger revision is attempted.
+floor on all pooled active slices. MV08 error analysis confirms systematic
+overprediction, shared-PHQ anchor fragility, and HAMD threshold sparsity.
+Further small shallow BGE-head variants should be avoided.
 
 Use `scripts/phase5_full_method_gate_audit.py` as the active claim boundary.
 The audit blocks full M0/M1/M2/M3 construction, transferable direct
@@ -205,7 +214,8 @@ valence-adversarial design, and positive RQ3 context-conditioning claims. It
 now allows RQ4 only as limited first-round aggregate evidence. The next method
 target is not another shallow BGE head. The psychometric partial
 measurement-invariance direction remains the right framing, but the first MV08
-implementation is negative and must be revised or frozen as diagnostic evidence.
+implementation is negative and must either be revised through a predeclared
+MV08b contract or frozen as diagnostic evidence.
 
 ## Updated Method Target
 
@@ -227,8 +237,11 @@ The first runnable row has now compared:
 3. partial-invariance ordinal latent measurement heads.
 
 The E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17 pilot did not beat the
-total-score floor, so the next step is error analysis or a predeclared stronger
-psychometric measurement revision. Keep MPDD as a later
+total-score floor, and error analysis now recommends either freezing the result
+as negative evidence or predeclaring an MV08b revision. A credible MV08b should
+be total-anchored, model item residual structure only after severity is
+controlled, pool/collapse sparse thresholds, and keep HAMD as a separate
+clinical measurement stress test unless it beats simple floors. Keep MPDD as a later
 measurement-heterogeneity moderator dataset and keep EATD/MODMA as stress
 tests rather than primary training sources.
 
@@ -379,6 +392,11 @@ representation without those controls.
   head reduces prediction identity relative to some earlier BGE heads but is
   worse than the total-score floor on all pooled active slices. Treat it as a
   negative/diagnostic measurement result.
+- `P5_MV08 error_analysis` is complete and aggregate-only. It identifies
+  systematic M2 overprediction, CMDC PHQ9_8/C08 psychomotor as the largest
+  pooled item delta, and HAMD threshold sparsity. The current MV08 contract
+  should not be claimed positive unless replaced by a predeclared MV08b
+  mechanism.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -396,9 +414,9 @@ representation without those controls.
   split maps local-only; publish schema, synthetic examples, generation
   scripts, and aggregate audits. Any remote history rewrite still requires
   explicit user approval.
-- Phase 5 execution: analyze the negative `P5_MV08` partial-invariance result
-  and decide whether to revise the psychometric measurement contract or freeze
-  it as diagnostic evidence. Optionally expand E-DAIC MV06 double annotation to
+- Phase 5 execution: decide whether to write a predeclared `P5_MV08b`
+  total-anchored residual measurement design or freeze MV08 as negative
+  diagnostic evidence. Optionally expand E-DAIC MV06 double annotation to
   stabilize per-dataset agreement.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
