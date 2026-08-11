@@ -64,16 +64,23 @@ threshold DIF, and AIC/BIC disagree between the partial and scalar core models.
 MV12 then runs that two-stage test. The `X -> theta` head improves same-dataset
 theta MAE versus train mean on E-DAIC and CMDC, and conditional shared-latent
 identity BA falls to `0.602`, but observed-scale reconstruction is worse than
-the direct itemwise floor and external theta transfer does not pass. Treat this
-as bounded measurement-shift evidence, not a full-method pass. The aggregate
-MV12 tradeoff/failure-mode analysis now recommends freezing the current
-latent-target line rather than adding another small shallow-head variant.
+the direct itemwise floor and external theta transfer does not pass.
+Cross-dataset observed-scale transfer is nevertheless better through the
+latent route than direct item transfer, so treat MV12 as a predictive
+fidelity-dataset identifiability trade-off, not a simple failed model. The
+aggregate MV12
+tradeoff/failure-mode analysis freezes the current latent-target line rather
+than adding another small shallow-head variant.
 
-Current next action: draft the Baselines, Failure-Mode Diagnostics, and
-Measurement Results sections from aggregate tables; optionally expand E-DAIC
-MV06 double annotation before stronger RQ4 wording. Theta scores, fitted
-parameters, row predictions, transformed features, and model artifacts remain
-local-only.
+The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
+now generated from aggregate tables only. Current next action: predeclare and
+run the next measurement-aware validation sequence in order: external
+psychometric replication (`P5_MV13`), measurement-uncertainty bootstrap
+(`P5_MV14`), latent-conditioned dataset identity (`P5_MV15`), and cross-dataset
+theta calibration / few-shot scale linking (`P5_MV16`). Optionally expand
+E-DAIC MV06 double annotation before stronger RQ4 wording. Theta scores, fitted
+parameters, row predictions, transformed features, calibration parameters, and
+model artifacts remain local-only.
 
 ## Key Paths
 
@@ -100,6 +107,7 @@ local-only.
 - MV12 aggregate tradeoff analysis: `analysis/phase5_minimal_validation/p5_mv12_latent_target_tradeoff_analysis/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
+- Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
 
 ## Rebuild Commands
 
@@ -127,6 +135,14 @@ Metric helper self-test:
 
 ```bash
 python scripts/phase2_metrics.py --self-test
+```
+
+Diagnostic paper writing scaffolds:
+
+```bash
+python scripts/build_diagnostic_paper_claim_tables.py
+python scripts/build_diagnostic_paper_data_governance_section.py
+python scripts/build_diagnostic_paper_results_sections.py
 ```
 
 ## Version Policy

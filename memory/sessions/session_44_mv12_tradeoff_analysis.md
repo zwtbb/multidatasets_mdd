@@ -103,7 +103,10 @@ python scripts/build_diagnostic_paper_claim_tables.py
 
 ## Next Handoff
 
-Draft the Baselines, Failure-Mode Diagnostics, and Measurement Results sections
-from aggregate tables. Optionally strengthen E-DAIC MV06 double annotation
-before stronger RQ4 wording. Keep all row-level outputs and local/private review
-material out of Git.
+Superseded by
+`memory/sessions/session_45_diagnostic_paper_results_sections.md`: the
+Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold has now
+been drafted from aggregate tables. Next work should predeclare the MV13-MV16
+measurement-aware validation/calibration sequence or strengthen E-DAIC MV06
+double annotation before stronger RQ4 wording. Keep all row-level outputs and
+local/private review material out of Git.

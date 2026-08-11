@@ -270,6 +270,17 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   `complete_freeze_current_mv12_latent_target_line`: freeze the current
   latent-target line and move to manuscript drafting or optional E-DAIC MV06
   strengthening.
+- Diagnostic paper Baselines, Failure-Mode Diagnostics, and Measurement
+  Results sections were drafted in the main checkout by
+  `scripts/build_diagnostic_paper_results_sections.py`. The scaffold reads
+  aggregate Phase 2/3/5 artifacts only, exports source maps, claim checklist,
+  run summary, report, and hygiene audit under
+  `analysis/diagnostic_measurement_audit_paper/`, and passes artifact hygiene.
+  It reframes MV12 as a predictive fidelity-dataset identifiability trade-off:
+  latent compression improves same-dataset theta utility, conditional identity,
+  and cross-dataset observed-scale transfer versus direct item transfer, but
+  same-dataset observed-scale safety and external theta transfer still block a
+  positive full-method claim.
 - A diagnostic measurement-audit paper outline now exists at
   `docs/diagnostic_measurement_audit_paper_outline.md`; it frames current
   evidence as a publishable measurement-shift / measurement-invariance
@@ -377,10 +388,14 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   `blocked_but_publishable_diagnostic_direction`: full method is blocked,
 	   RQ4 is allowed only as limited aggregate evidence, and a bounded
 	   measurement-shift / measurement-invariance paper direction remains viable.
-	   The next active task is drafting Baselines, Failure-Mode Diagnostics, and
-	   Measurement Results from aggregate tables, with theta scores, fitted
-	   parameters, row predictions, transformed features, projection directions,
-	   and model artifacts kept local-only.
+	   The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold
+	   is now complete. The next active task is predeclaring MV13 external
+	   psychometric replication, followed by MV14 measurement-uncertainty
+	   bootstrap, MV15 latent-conditioned dataset identity, and MV16
+	   cross-dataset theta calibration / few-shot scale linking, with theta
+	   scores, fitted parameters, row predictions, transformed features,
+	   projection directions, calibration parameters, and model artifacts kept
+	   local-only.
 
 ## Version Management Watchlist
 
@@ -425,18 +440,18 @@ Cross-session issues are tracked in:
 Continue Phase 5 under the full-method gate audit. MV08b has failed its
 predeclared identity gate, MV09 revised identity-gate semantics, MV10 completed
 an approximate label-only PHQ partial-invariance screen, and MV11 formally
-confirmed the MV10 anchor map with a BIC caveat. MV12 now completes the
-two-stage latent-target run and remains blocked as positive method evidence:
-same-dataset theta utility and conditional identity improve, but observed-scale
-reconstruction and external theta transfer do not pass. MV12 aggregate
-tradeoff analysis now freezes the current latent-target line. The next useful
-writing task is drafting the Baselines, Failure-Mode Diagnostics, and
-Measurement Results sections from aggregate tables.
-Optionally expand E-DAIC MV06 double annotation to stabilize per-dataset
-agreement before stronger RQ4 wording. Keep row-level predictions, real
-manifests, real integrity/split maps, latent scores, learned parameters, and
-learned embeddings local-only, and do not start full method work until the gate
-changes.
+confirmed the MV10 anchor map with a BIC caveat. MV12 completes the two-stage
+latent-target run and remains blocked as positive method evidence, but its
+trade-off is paper-critical: same-dataset theta utility, conditional identity,
+and cross-dataset observed-scale transfer improve, while same-dataset observed
+item-scale safety and external theta transfer fail. The results-section
+scaffold is complete. Next, predeclare MV13 external psychometric replication,
+then MV14 bootstrap uncertainty, MV15 latent-conditioned identity, and MV16
+few-shot theta calibration. Optionally expand E-DAIC MV06 double annotation to
+stabilize per-dataset agreement before stronger RQ4 wording. Keep row-level
+predictions, real manifests, real integrity/split maps, latent scores, learned
+parameters, learned embeddings, calibration parameters, and model artifacts
+local-only, and do not start full method work until the gate changes.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
 the old local `main` history directly. Run

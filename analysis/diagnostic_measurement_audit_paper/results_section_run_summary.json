@@ -1,0 +1,35 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "section_scaffold_status": "ready_for_manuscript_editing",
+    "short_read": "Baselines, Failure-Mode Diagnostics, and Measurement Results draft sections are ready from aggregate artifacts; full method remains blocked."
+  },
+  "generated_at": "2026-08-11T15:40:15+00:00",
+  "input_contract": {
+    "aggregate_phase2_audits_read": true,
+    "aggregate_phase3_summaries_read": true,
+    "aggregate_phase5_summaries_read": true,
+    "private_review_material_read": false,
+    "raw_data_scanned": false,
+    "row_level_model_outputs_read": false
+  },
+  "outputs": {
+    "claim_checklist_rows": 6,
+    "draft_sections": [
+      "Baselines",
+      "Failure-Mode Diagnostics",
+      "Measurement Results"
+    ],
+    "source_rows": 9,
+    "tracked_outputs": [
+      "baselines_failure_modes_measurement_results.md",
+      "results_section_artifact_hygiene_audit.json",
+      "results_section_claim_checklist.csv",
+      "results_section_report.md",
+      "results_section_run_summary.json",
+      "results_section_source_map.csv"
+    ]
+  },
+  "run_id": "diagnostic_measurement_audit_results_sections",
+  "status": "complete"
+}
