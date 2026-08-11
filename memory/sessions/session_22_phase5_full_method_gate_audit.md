@@ -1,7 +1,7 @@
 # Session Memory: Phase 5 Full-Method Gate Audit
 
 Status: complete
-Last updated: 2026-08-10 UTC
+Last updated: 2026-08-11 UTC
 Thread/task: main agent Phase 5 claim/gate synthesis
 
 ## Scope
@@ -17,7 +17,7 @@ the numeric source artifacts from each MV row.
 
 - Implemented `scripts/phase5_full_method_gate_audit.py`.
 - Generated `analysis/phase5_minimal_validation/full_method_gate_audit/`.
-- The audit reads 21 Phase 5 run summaries:
+- The original audit in this session read 21 Phase 5 run summaries:
   - MV01 PHQ bridge;
   - MV02 readiness, MV02 PDCH HAMD bridge, MV02b PDCH text probe;
   - MV03/MV03b EATD SDS audio/text stress;
@@ -30,6 +30,11 @@ the numeric source artifacts from each MV row.
     aligned-BGE shallow shared-symptom validation, MV07b BGE
     identity-projection follow-up, and MV07c BGE total-anchor follow-up.
 - Artifact hygiene passed with zero violations.
+- Later extension: the current gate now reads 23 Phase 5 run summaries after
+  adding `P5_MV08_design` and the completed `P5_MV08` pilot. The gate remains
+  `blocked_but_publishable_diagnostic_direction`; see
+  `memory/sessions/session_33_phase5_mv08_partial_invariance_pilot.md` for the
+  latest MV08-driven gate refresh.
 
 ## Key Decisions
 
@@ -110,11 +115,15 @@ Versionable artifacts:
   remains blocked: `blocked_not_better_than_raw_total_allocation_bge_total_anchor`.
   CMDC is worse than raw total allocation by `0.012` Macro MAE and worse than
   projected total allocation by `0.002`.
+- MV08 partial-invariance ordinal measurement is also blocked:
+  `blocked_not_better_than_total_score_floor`. M2 improves over the
+  total-score floor on `0/3` pooled active slices, so the first lightweight
+  psychometric measurement implementation does not authorize RQ1/full-method
+  claims.
 
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
-The next implementation session should handle public manifest governance, then
-define a partial-invariance psychometric measurement row after reframing the
-shallow BGE sequence as negative/partial evidence. Do not start the full method
-until the gate changes from blocked.
+The next implementation session should analyze the negative MV08 result or
+freeze it as diagnostic evidence. Do not start the full method until the gate
+changes from blocked.

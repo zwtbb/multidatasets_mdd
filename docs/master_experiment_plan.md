@@ -1,6 +1,6 @@
 # Master Experiment Plan
 
-Last updated: 2026-08-10 UTC
+Last updated: 2026-08-11 UTC
 
 ## Principle
 
@@ -159,11 +159,20 @@ data audit
   as a negative follow-up: total anchoring does not rescue the shallow BGE
   shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 21 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 23 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`.
+- Phase 5 `P5_MV08 partial_invariance_measurement`:
+  complete and blocked as positive RQ1 evidence. It compares train-mean items,
+  total-score floors, fixed construct-map heads, and partial-invariance ordinal
+  heads over aligned frozen BGE features for E-DAIC PHQ-8, CMDC PHQ-9, and PDCH
+  HAMD-17. M2 improves over the total-score floor on `0/3` pooled active slices;
+  worst pooled deltas are `+0.152` macro item MAE versus total-score floor and
+  `+0.140` versus fixed map. Feature identity BA remains `1.000`, and M2
+  prediction identity BA is `0.900`. Treat this as negative measurement-model
+  evidence, not a full-method authorization.
 
 ## Current Method-Design Gate
 
@@ -183,16 +192,20 @@ shallow validation is blocked by total-allocation and identity evidence.
 `P5_MV07b` reduces BGE feature/prediction identity, but the best
 identity-controlled variant still fails the CMDC total-allocation floor.
 `P5_MV07c` confirms that train-fold-selected total anchoring also fails the
-CMDC total-allocation floor. Further small shallow BGE-head variants should be
-avoided unless the feature or measurement contract changes.
+CMDC total-allocation floor. `P5_MV08` changes the measurement contract but its
+first lightweight partial-invariance ordinal pilot also fails the total-score
+floor on all pooled active slices. Further small shallow BGE-head variants
+should be avoided, and MV08 should be analyzed as a measurement-model failure
+mode before any stronger revision is attempted.
 
 Use `scripts/phase5_full_method_gate_audit.py` as the active claim boundary.
 The audit blocks full M0/M1/M2/M3 construction, transferable direct
 shared-symptom claims, positive EATD SDS claims, EATD-driven
 valence-adversarial design, and positive RQ3 context-conditioning claims. It
 now allows RQ4 only as limited first-round aggregate evidence. The next method
-target is not another shallow BGE head; it is a psychometric partial
-measurement-invariance contract.
+target is not another shallow BGE head. The psychometric partial
+measurement-invariance direction remains the right framing, but the first MV08
+implementation is negative and must be revised or frozen as diagnostic evidence.
 
 ## Updated Method Target
 
@@ -207,15 +220,17 @@ shared latent symptom constructs
 + protocol nuisance reporting/control
 ```
 
-The first runnable row should compare:
+The first runnable row has now compared:
 
 1. total-score or total-allocation heads;
 2. fixed construct-map heads;
 3. partial-invariance ordinal latent measurement heads.
 
-Run this first on E-DAIC PHQ-8, CMDC PHQ-9/limited HAMD sanity, and PDCH
-HAMD-17. Keep MPDD as a later measurement-heterogeneity moderator dataset and
-keep EATD/MODMA as stress tests rather than primary training sources.
+The E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17 pilot did not beat the
+total-score floor, so the next step is error analysis or a predeclared stronger
+psychometric measurement revision. Keep MPDD as a later
+measurement-heterogeneity moderator dataset and keep EATD/MODMA as stress
+tests rather than primary training sources.
 
 Phase 2 validation commands:
 
@@ -359,6 +374,11 @@ representation without those controls.
   floors, fixed construct-map heads, and partial-invariance ordinal latent
   measurement heads on E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17, with CMDC
   HAMD only as a limited sanity subset.
+- `P5_MV08 partial_invariance_measurement` is complete and blocked as positive
+  shared-measurement evidence. The first lightweight ordinal partial-invariance
+  head reduces prediction identity relative to some earlier BGE heads but is
+  worse than the total-score floor on all pooled active slices. Treat it as a
+  negative/diagnostic measurement result.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -376,9 +396,10 @@ representation without those controls.
   split maps local-only; publish schema, synthetic examples, generation
   scripts, and aggregate audits. Any remote history rewrite still requires
   explicit user approval.
-- Phase 5 execution: implement and run the `P5_MV08` partial-invariance
-  ordinal measurement pilot. Optionally expand E-DAIC MV06 double annotation
-  to stabilize per-dataset agreement.
+- Phase 5 execution: analyze the negative `P5_MV08` partial-invariance result
+  and decide whether to revise the psychometric measurement contract or freeze
+  it as diagnostic evidence. Optionally expand E-DAIC MV06 double annotation to
+  stabilize per-dataset agreement.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

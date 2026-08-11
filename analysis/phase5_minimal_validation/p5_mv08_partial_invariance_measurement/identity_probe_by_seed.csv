@@ -1,0 +1,26 @@
+seed,probe_id,model,metric,value,sample_count,dataset_count
+0,feature_identity_bge_edaic_cmdc_pdch,feature_bge,Balanced Accuracy,1.0,388,3
+1,feature_identity_bge_edaic_cmdc_pdch,feature_bge,Balanced Accuracy,1.0,388,3
+2,feature_identity_bge_edaic_cmdc_pdch,feature_bge,Balanced Accuracy,1.0,388,3
+3,feature_identity_bge_edaic_cmdc_pdch,feature_bge,Balanced Accuracy,1.0,388,3
+4,feature_identity_bge_edaic_cmdc_pdch,feature_bge,Balanced Accuracy,1.0,388,3
+0,prediction_identity_pooled_eval_dataset,M0_train_mean_items,Balanced Accuracy,1.0,90,3
+0,prediction_identity_pooled_eval_dataset,M0_total_score_floor,Balanced Accuracy,1.0,90,3
+0,prediction_identity_pooled_eval_dataset,M1_fixed_construct_map,Balanced Accuracy,0.9555555555555555,90,3
+0,prediction_identity_pooled_eval_dataset,M2_partial_invariance_ordinal,Balanced Accuracy,0.8484848484848484,90,3
+1,prediction_identity_pooled_eval_dataset,M0_train_mean_items,Balanced Accuracy,1.0,91,3
+1,prediction_identity_pooled_eval_dataset,M0_total_score_floor,Balanced Accuracy,1.0,91,3
+1,prediction_identity_pooled_eval_dataset,M1_fixed_construct_map,Balanced Accuracy,1.0,91,3
+1,prediction_identity_pooled_eval_dataset,M2_partial_invariance_ordinal,Balanced Accuracy,0.8772727272727273,91,3
+2,prediction_identity_pooled_eval_dataset,M0_train_mean_items,Balanced Accuracy,1.0,89,3
+2,prediction_identity_pooled_eval_dataset,M0_total_score_floor,Balanced Accuracy,1.0,89,3
+2,prediction_identity_pooled_eval_dataset,M1_fixed_construct_map,Balanced Accuracy,0.9777777777777779,89,3
+2,prediction_identity_pooled_eval_dataset,M2_partial_invariance_ordinal,Balanced Accuracy,0.9267676767676768,89,3
+3,prediction_identity_pooled_eval_dataset,M0_train_mean_items,Balanced Accuracy,1.0,90,3
+3,prediction_identity_pooled_eval_dataset,M0_total_score_floor,Balanced Accuracy,1.0,90,3
+3,prediction_identity_pooled_eval_dataset,M1_fixed_construct_map,Balanced Accuracy,1.0,90,3
+3,prediction_identity_pooled_eval_dataset,M2_partial_invariance_ordinal,Balanced Accuracy,0.9328282828282827,90,3
+4,prediction_identity_pooled_eval_dataset,M0_train_mean_items,Balanced Accuracy,1.0,89,3
+4,prediction_identity_pooled_eval_dataset,M0_total_score_floor,Balanced Accuracy,1.0,89,3
+4,prediction_identity_pooled_eval_dataset,M1_fixed_construct_map,Balanced Accuracy,0.9833333333333332,89,3
+4,prediction_identity_pooled_eval_dataset,M2_partial_invariance_ordinal,Balanced Accuracy,0.9156565656565657,89,3

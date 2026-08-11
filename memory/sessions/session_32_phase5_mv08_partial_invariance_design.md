@@ -1,7 +1,7 @@
 # Session Memory: Phase 5 MV08 Partial-Invariance Design
 
-Status: active
-Last updated: 2026-08-10 UTC
+Status: complete
+Last updated: 2026-08-11 UTC
 Thread/task: main agent P5_MV08 design/readiness audit
 
 ## Scope
@@ -12,6 +12,8 @@ text/media, or authorize full M0/M1/M2/M3 construction.
 
 ## Current State
 
+- This design session has been superseded by implementation/result session
+  `memory/sessions/session_33_phase5_mv08_partial_invariance_pilot.md`.
 - Added and ran
   `scripts/phase5_plan_mv08_partial_invariance_measurement.py`.
 - Generated
@@ -26,8 +28,8 @@ text/media, or authorize full M0/M1/M2/M3 construction.
   checking.
 - EATD SDS and MPDD PHQ-9 remain total-only and are not active item-level MV08
   training sources.
-- The full-method gate now includes `P5_MV08_design` as evidence, keeps full
-  method blocked, and ranks `NEXT_RUN_PARTIAL_INVARIANCE_MEASUREMENT` first.
+- The full-method gate includes `P5_MV08_design` as design evidence. The
+  actual MV08 pilot has now been run and is recorded in session_33.
 
 ## Key Decisions
 
@@ -83,7 +85,8 @@ Versionable MV08 design outputs:
 
 ## Blockers And Risks
 
-- No MV08 trainer or pilot result exists yet.
+- The MV08 trainer/pilot now exists and has run; see session_33 for result
+  details.
 - The first MV08 design can be underpowered for HAMD transfer because CMDC
   HAMD has only 25 usable subjects.
 - E-DAIC MV06 agreement remains underpowered if a stronger RQ4 claim is needed.
@@ -92,8 +95,7 @@ Versionable MV08 design outputs:
 
 ## Next Handoff
 
-Implement `scripts/phase5_run_mv08_partial_invariance_measurement.py` as the
-next focused task. It should use subject-level folds, compare total-score,
-fixed-map, and partial-invariance ordinal measurement heads, write aggregate
-metrics/gates only, and keep row predictions, latent scores, learned
-parameters, and model artifacts ignored local-only.
+The original implementation handoff is complete. Future work should use
+session_33: analyze why the first MV08 implementation underperformed the
+total-score floor, then decide whether to predeclare a stronger measurement
+revision or freeze the row as diagnostic/negative evidence.

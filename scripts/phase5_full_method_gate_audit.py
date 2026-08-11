@@ -50,6 +50,7 @@ RUN_SUMMARIES = {
     "P5_MV07b": PHASE5_DIR / "p5_mv07b_bge_identity_projection" / "run_summary.json",
     "P5_MV07c": PHASE5_DIR / "p5_mv07c_bge_total_anchor" / "run_summary.json",
     "P5_MV08_design": PHASE5_DIR / "p5_mv08_partial_invariance_measurement_design" / "run_summary.json",
+    "P5_MV08": PHASE5_DIR / "p5_mv08_partial_invariance_measurement" / "run_summary.json",
 }
 
 STATUS_OVERRIDES = {
@@ -220,9 +221,11 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv07_result = summaries["P5_MV07"].get("verdict") or {}
     mv07b_result = summaries["P5_MV07b"].get("verdict") or {}
     mv07c_result = summaries["P5_MV07c"].get("verdict") or {}
-    mv08 = summaries["P5_MV08_design"]
-    mv08_decision = mv08.get("decision") or {}
-    mv08_status = str(mv08_decision.get("readiness_status", "unknown"))
+    mv08_design = summaries["P5_MV08_design"]
+    mv08_decision = mv08_design.get("decision") or {}
+    mv08_design_status = str(mv08_decision.get("readiness_status", "unknown"))
+    mv08_result = summaries["P5_MV08"].get("verdict") or {}
+    mv08_status = str(mv08_result.get("pass_rule_status", "unknown"))
 
     rows = [
         {
@@ -230,18 +233,18 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_status}.",
-            "required_next_evidence": "Implement and run the audited MV08 partial-invariance measurement row before revisiting full-method claims.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_design_status}; MV08 result is {mv08_status}, with M2 improving over total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08_result.get('prediction_identity_ba_m2'))}.",
+            "required_next_evidence": "Analyze why MV08 partial-invariance ordinal heads underperform the total-score floor, then revise the measurement contract or keep the paper framed as diagnostic evidence.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
             "claim": "Claim a transferable shared symptom representation across scales/datasets.",
             "decision": "blocked",
             "allowed_scope": "Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance.",
-            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}.",
-            "required_next_evidence": "Run MV08: shared latent constructs plus scale-specific DIF/loading-threshold deviations, compared against total-score and fixed-map baselines on E-DAIC/CMDC/PDCH.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design",
+            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 partial-invariance ordinal heads reduce prediction identity to {fmt(mv08_result.get('prediction_identity_ba_m2'))} but improve over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices.",
+            "required_next_evidence": "Revise the partial-invariance measurement implementation or add stronger audited measurement evidence before any transferable RQ1 claim.",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08",
         },
         {
             "claim_id": "C_PDCH_HAMD_INTERNAL",
@@ -323,9 +326,9 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim_id": "C_PUBLISHABLE_PAPER_DIRECTION",
             "claim": "Continue toward a publishable paper.",
             "decision": "allowed_with_reframing",
-            "allowed_scope": "A diagnostic/audit-driven paper is viable now; the method path should pivot from direct shared-label mapping to partial measurement invariance.",
-            "blocking_evidence": "The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence and data-governance risk.",
-            "required_next_evidence": "Implement and run MV08, then use the result to decide whether the paper stays diagnostic-only or supports a bounded partial-invariance method claim.",
+            "allowed_scope": "A diagnostic/audit-driven paper is viable now; partial measurement invariance is a promising problem framing but the first MV08 pilot is negative.",
+            "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}, and data-governance history cleanup remains a separate approval decision.",
+            "required_next_evidence": "Use MV08 as evidence that a stronger psychometric measurement model is needed, then decide whether to revise that model or write the paper as a diagnostic/measurement-audit contribution.",
             "primary_sources": "all_phase5",
         },
     ]
@@ -338,14 +341,25 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv07b_result = summaries["P5_MV07b"].get("verdict") or {}
     mv07c_result = summaries["P5_MV07c"].get("verdict") or {}
     mv08_decision = summaries["P5_MV08_design"].get("decision") or {}
-    mv08_status = str(mv08_decision.get("readiness_status", "unknown"))
+    mv08_design_status = str(mv08_decision.get("readiness_status", "unknown"))
+    mv08_result = summaries["P5_MV08"].get("verdict") or {}
+    mv08_status = str(mv08_result.get("pass_rule_status", "unknown"))
     mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
-    if mv07c_result.get("pass_rule_status"):
+    if mv08_result.get("pass_rule_status"):
+        shared_feature_action = {
+            "rank": 2,
+            "action_id": "NEXT_MV08_ERROR_ANALYSIS_OR_MEASUREMENT_REVISION",
+            "action": "Analyze the negative MV08 partial-invariance result and decide whether to revise the psychometric measurement contract.",
+            "why_now": f"MV08 is {mv08_status}: M2 improves over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices, while prediction identity BA remains {fmt(mv08_result.get('prediction_identity_ba_m2'))}.",
+            "success_gate": "Either identify a predeclared measurement revision that can beat total-score and fixed-map floors without worsening identity, or freeze MV08 as negative evidence for a diagnostic/audit paper.",
+            "version_policy": "Track scripts and aggregate summaries; keep row predictions, latent scores, learned parameters, and raw snippets local-only.",
+        }
+    elif mv07c_result.get("pass_rule_status"):
         shared_feature_action = {
             "rank": 2,
             "action_id": "NEXT_RUN_PARTIAL_INVARIANCE_MEASUREMENT",
             "action": "Implement and run the MV08 partial-invariance ordinal measurement pilot.",
-            "why_now": f"MV08 design is {mv08_status}; MV07b and MV07c reduce prediction identity but still fail the CMDC total-allocation floor, so the next step must change the measurement contract.",
+            "why_now": f"MV08 design is {mv08_design_status}; MV07b and MV07c reduce prediction identity but still fail the CMDC total-allocation floor, so the next step must change the measurement contract.",
             "success_gate": "MV08 compares total-score, fixed construct-map, and shared latent constructs plus scale-specific DIF/loading-threshold deviations on E-DAIC, CMDC, and PDCH.",
             "version_policy": "Track scripts and aggregate summaries; keep row predictions, transformed features, projection directions, and model artifacts local-only.",
         }

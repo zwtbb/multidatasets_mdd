@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-10 UTC
+Last updated: 2026-08-11 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -46,6 +46,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_30_phase5_mv06_human_review_pack.md`
   - `/root/autodl-tmp/memory/sessions/session_31_phase5_mv06_annotation_and_governance_reframe.md`
   - `/root/autodl-tmp/memory/sessions/session_32_phase5_mv08_partial_invariance_design.md`
+  - `/root/autodl-tmp/memory/sessions/session_33_phase5_mv08_partial_invariance_pilot.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -343,7 +344,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 21 Phase 5 run summaries and exports claim gates, evidence
+  It reads 23 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -366,6 +367,18 @@ MPDD 2025 is intentionally out of scope for current auditing.
   ordinal latent measurement with predeclared loading/threshold DIF deviations.
   Artifact hygiene passed. Treat this as `ready_to_implement_partial_invariance_validation`,
   not as model evidence or full-method authorization.
+- Phase 5 `P5_MV08 partial_invariance_measurement` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement/`.
+  It used aligned frozen BGE subject features and item labels for E-DAIC PHQ-8,
+  CMDC PHQ-9, and PDCH HAMD-17, comparing train-mean items, total-score floor,
+  fixed construct-map heads, and partial-invariance ordinal heads. Treat as a
+  negative minimal-validation result:
+  `blocked_not_better_than_total_score_floor`. In pooled evaluation, M2 improved
+  over total-score floor on `0/3` active dataset slices; worst pooled M2 deltas
+  were `+0.152` MAE versus total-score floor and `+0.140` versus fixed map.
+  Feature identity BA remained `1.000`, while M2 prediction identity BA was
+  `0.900`. Artifact hygiene passed and row predictions remain ignored
+  local-only.
 
 Phase 2 gate status:
 
@@ -589,6 +602,12 @@ Key Phase 2 outputs:
   invariance ordinal measurement pilot. It must compare total-score floors,
   fixed-map heads, and partial-invariance heads on E-DAIC/CMDC/PDCH before any
   full method or transferable shared-symptom claim is reconsidered.
+- P5_MV08 result decision: the first partial-invariance ordinal measurement
+  pilot is negative under the frozen BGE/lightweight head contract. It supports
+  the paper framing that scale alignment is a real measurement problem, but it
+  does not authorize a transferable RQ1 or full-method claim. Next work should
+  analyze the failure mode and either predeclare a stronger psychometric
+  measurement revision or freeze MV08 as diagnostic/negative evidence.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -699,7 +718,8 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
-   implement and run the `P5_MV08` partial-invariance ordinal measurement
-   pilot. Optionally expand E-DAIC MV06 double annotation to stabilize
+   analyze the negative `P5_MV08` partial-invariance result and decide whether
+   to revise the psychometric measurement contract or freeze MV08 as diagnostic
+   evidence. Optionally expand E-DAIC MV06 double annotation to stabilize
    per-dataset agreement.
    Full method construction remains blocked until the gate changes.

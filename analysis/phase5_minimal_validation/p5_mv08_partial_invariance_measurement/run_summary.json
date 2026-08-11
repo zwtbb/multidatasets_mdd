@@ -1,0 +1,92 @@
+{
+  "artifact_hygiene_passed": true,
+  "generated_at": "2026-08-11T11:39:55+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc",
+      "pdch"
+    ],
+    "feature_family": "text_bge",
+    "manifest_label_fields_read": true,
+    "model_input_columns": 512,
+    "phase4_ontology_read": true,
+    "raw_data_scanned": false,
+    "raw_text_read": false
+  },
+  "label_feature_audit": [
+    {
+      "dataset": "edaic",
+      "feature_subjects": 219,
+      "joined_subjects": 219,
+      "label_subjects": 219,
+      "model_input_columns": 512,
+      "scale": "PHQ-8"
+    },
+    {
+      "dataset": "cmdc",
+      "feature_subjects": 77,
+      "joined_subjects": 77,
+      "label_subjects": 77,
+      "model_input_columns": 512,
+      "scale": "PHQ-9"
+    },
+    {
+      "dataset": "pdch",
+      "feature_subjects": 99,
+      "joined_subjects": 92,
+      "label_subjects": 92,
+      "model_input_columns": 512,
+      "scale": "HAMD-17"
+    }
+  ],
+  "models_compared": [
+    "M0_train_mean_items",
+    "M0_total_score_floor",
+    "M1_fixed_construct_map",
+    "M2_partial_invariance_ordinal"
+  ],
+  "output_policy": {
+    "latent_scores_written": false,
+    "learned_parameters_written": false,
+    "local_only_files": [
+      "p5_mv08_local_row_predictions.csv"
+    ],
+    "raw_paths_written": false,
+    "raw_text_written": false,
+    "row_level_predictions_written": true,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "comparison_summary.csv",
+      "construct_target_map.csv",
+      "dif_sparsity_summary.csv",
+      "identity_probe_by_seed.csv",
+      "identity_probe_summary.csv",
+      "label_feature_audit.csv",
+      "metric_summary.csv",
+      "metrics_by_seed.csv",
+      "model_split_audit.csv",
+      "report.md",
+      "run_summary.json"
+    ]
+  },
+  "run_id": "P5_MV08_partial_invariance_measurement",
+  "scope": "minimal_validation_partial_invariance_no_full_method",
+  "split_audit": {
+    "max_train_eval_subject_overlap": 0,
+    "rows": 20
+  },
+  "status": "complete",
+  "verdict": {
+    "feature_identity_ba": 1.0,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_not_better_than_total_score_floor",
+    "pooled_active_slices": 3,
+    "pooled_m2_improved_vs_fixed_map_slices": 0,
+    "pooled_m2_improved_vs_total_score_floor_slices": 0,
+    "pooled_m2_worst_delta_vs_fixed_construct_map": 0.13959864608285177,
+    "pooled_m2_worst_delta_vs_total_score_floor": 0.15208333433157972,
+    "prediction_identity_ba_m2": 0.9002020202020201,
+    "short_read": "MV08 tests whether an explicitly partial measurement-invariance contract improves over total-score and fixed-map floors. Treat a pass as bounded RQ1 measurement evidence only, not full-method authorization."
+  }
+}

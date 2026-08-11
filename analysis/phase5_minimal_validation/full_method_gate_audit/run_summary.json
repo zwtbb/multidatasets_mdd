@@ -10,7 +10,7 @@
     "artifact_hygiene_passed": true,
     "audit_id": "P5_full_method_gate_artifact_hygiene",
     "files_checked": 5,
-    "generated_at": "2026-08-09T16:52:36+00:00",
+    "generated_at": "2026-08-11T11:42:31+00:00",
     "violation_count": 0,
     "violations": []
   },
@@ -22,10 +22,10 @@
     "C_RQ3_CONTEXT_CONDITIONING"
   ],
   "claim_rows": 10,
-  "evidence_rows": 22,
+  "evidence_rows": 23,
   "full_method_allowed": false,
   "gate_status": "blocked_but_publishable_diagnostic_direction",
-  "generated_at": "2026-08-09T16:52:36+00:00",
+  "generated_at": "2026-08-11T11:42:31+00:00",
   "next_action_rows": 5,
   "source_run_summaries": {
     "P5_MV01": "analysis/phase5_minimal_validation/p5_mv01_phq_core_bridge/run_summary.json",
@@ -49,6 +49,7 @@
     "P5_MV07_readiness": "analysis/phase5_minimal_validation/p5_mv07_shared_feature_contract_readiness/run_summary.json",
     "P5_MV07b": "analysis/phase5_minimal_validation/p5_mv07b_bge_identity_projection/run_summary.json",
     "P5_MV07c": "analysis/phase5_minimal_validation/p5_mv07c_bge_total_anchor/run_summary.json",
+    "P5_MV08": "analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement/run_summary.json",
     "P5_MV08_design": "analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/run_summary.json"
   }
 }

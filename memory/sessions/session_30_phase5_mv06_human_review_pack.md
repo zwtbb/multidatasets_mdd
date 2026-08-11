@@ -45,9 +45,10 @@ clinical text/source locators in tracked files.
 - `scripts/phase5_summarize_mv06_evidence_annotations.py` was updated to
   compute dataset-stratified agreement and rerun. It now reports
   `ready_for_aggregate_evidence_review`.
-- `scripts/phase5_full_method_gate_audit.py` was updated and rerun. It now
-  reads 21 Phase 5 run summaries, includes `P5_MV06_review_pack`, passes
-  artifact hygiene, and remains `blocked_but_publishable_diagnostic_direction`.
+- `scripts/phase5_full_method_gate_audit.py` was updated and rerun. It then
+  read 21 Phase 5 run summaries, included `P5_MV06_review_pack`, passed
+  artifact hygiene, and remained `blocked_but_publishable_diagnostic_direction`.
+  Later MV08 work expanded the current gate to 23 evidence rows.
 
 ## Key Decisions
 

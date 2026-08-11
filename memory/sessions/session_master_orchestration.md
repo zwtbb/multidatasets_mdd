@@ -1,7 +1,7 @@
 # Session Memory: 主对话 Master Orchestration
 
 Status: active
-Last updated: 2026-08-10 UTC
+Last updated: 2026-08-11 UTC
 Thread/task: main agent (`019fcd77-cf81-7c11-a53e-f37e776d9e1d`)
 
 ## Scope
@@ -180,12 +180,21 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   total-allocation floors and identity remains high (feature BA `1.000`,
   prediction BA `0.980`).
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 21
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 23
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
   the authoritative Phase 5 claim boundary before any M0/M1/M2/M3 full-method
   construction.
+- Phase 5 `P5_MV08 partial-invariance measurement` completed in the main
+  checkout. It compares train-mean items, total-score floors, fixed construct
+  maps, and partial-invariance ordinal heads over aligned frozen BGE features
+  for E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17. Treat it as
+  `blocked_not_better_than_total_score_floor`: M2 improves over total-score
+  floor on `0/3` pooled active slices; worst pooled M2 deltas are `+0.152`
+  macro item MAE versus total-score floor and `+0.140` versus fixed map;
+  feature identity BA remains `1.000` and M2 prediction identity BA is `0.900`.
+  Row-level predictions remain ignored local-only.
 - Clean GitHub publish workflow is now implemented. Future remote updates
   should use `scripts/publish_clean_github_snapshot.py` and
   `docs/github_publish_workflow.md`, so the old local `main` history is never
@@ -259,10 +268,10 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    total-allocation and identity evidence, so it should be reported as a
    negative/diagnostic shared-feature result rather than a shared-representation
    claim.
-   `P5_MV08` partial-invariance measurement design is complete and ready to
-   implement: E-DAIC PHQ-8, CMDC PHQ-9, and PDCH HAMD-17 have active item
-   supervision for a no-full-method minimal validation row; CMDC HAMD is only a
-   limited sanity subset.
+   `P5_MV08` partial-invariance measurement is now complete and negative:
+   the lightweight ordinal measurement head does not beat the total-score floor
+   on any pooled active slice, despite reducing prediction identity only to
+   `0.900`.
    The full-method gate audit now records this as
    `blocked_but_publishable_diagnostic_direction`: full method is blocked,
    RQ4 is allowed only as limited aggregate evidence, and a bounded
@@ -309,8 +318,10 @@ Cross-session issues are tracked in:
 ## Next Handoff
 
 Continue Phase 5 under the full-method gate audit. The next useful work is to
-implement and run the `P5_MV08` partial-invariance ordinal measurement pilot.
-Optionally expand E-DAIC MV06 double annotation. Keep row-level predictions,
+analyze the negative `P5_MV08` partial-invariance result and decide whether a
+predeclared stronger psychometric measurement revision is justified or whether
+MV08 should be frozen as diagnostic/negative evidence. Optionally expand
+E-DAIC MV06 double annotation. Keep row-level predictions,
 real manifests, real integrity/split maps, latent scores, learned parameters,
 and learned embeddings local-only, and do not start full method work until the
 gate changes.
