@@ -29,8 +29,10 @@ minimal model, and it explicitly keeps full method construction blocked.
   readiness. It is blocked as shared-symptom evidence because itemwise BGE
   heads do not consistently beat total-allocation floors and identity remains
   high.
-- Later extension: `P5_MV08` has run and failed the total-score floor; `P5_MV08b`
-  is now added as a design-ready total-anchored residual measurement row.
+- Later extension: `P5_MV08` has run and failed the total-score floor.
+  `P5_MV08b` has also run and failed its predeclared prediction-identity gate,
+  so the MV08/MV08b sequence is frozen as negative RQ1 diagnostic evidence
+  under the current frozen-BGE/shallow-measurement contract.
 
 ## Key Decisions
 
@@ -51,10 +53,11 @@ minimal model, and it explicitly keeps full method construction blocked.
 - MV07 moved from readiness-only to a completed blocked validation row after
   local E-DAIC BGE generation. Treat it as negative/diagnostic evidence and do
   not use it to authorize full M0 shared-symptom construction.
-- MV08b is the current RQ1 minimal-validation follow-up. It must beat
-  total-score and fixed-map floors on at least two pooled active slices without
-  increasing prediction identity, or the MV08/MV08b sequence should be frozen
-  as negative diagnostic evidence.
+- MV08b completed the current RQ1 minimal-validation follow-up. It beat
+  total-score and fixed-map floors on 2/3 pooled active slices but increased
+  prediction identity above the predeclared MV08 M2 gate, so MV08/MV08b should
+  be frozen as negative diagnostic evidence unless a genuinely new data,
+  feature, or measurement source is introduced.
 
 ## Files Owned Or Touched
 
@@ -94,8 +97,8 @@ Artifacts:
 
 ## Next Handoff
 
-`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, `P5_MV07`, and `P5_MV08`
-have been implemented or audited as minimal rows, while `P5_MV08b` is
-design-ready and should be implemented next. `P5_MV06` has first-round
-aggregate evidence but raw review material remains local-only. Do not start any
+`P5_MV01`, `P5_MV02`, `P5_MV03`, `P5_MV04`, `P5_MV05`, `P5_MV07`, `P5_MV08`,
+and `P5_MV08b` have been implemented or audited as minimal rows. `P5_MV06` has
+first-round aggregate evidence but raw review material remains local-only.
+Freeze MV08/MV08b as negative RQ1 diagnostic evidence and do not start any
 broad full-model implementation until the full-method gate changes.

@@ -180,7 +180,7 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   total-allocation floors and identity remains high (feature BA `1.000`,
   prediction BA `0.980`).
 - Phase 5 full-method gate audit completed in the main checkout at
-  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 25
+  `analysis/phase5_minimal_validation/full_method_gate_audit/`. It reads 26
   Phase 5 run summaries and turns them into claim-level decisions. Current
   status is `blocked_but_publishable_diagnostic_direction`,
   `full_method_allowed=false`, and `artifact_hygiene_passed=true`. Treat it as
@@ -207,8 +207,20 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   one mechanism-changing follow-up: total/latent severity anchoring first,
   sparse item residual modeling only after anchoring, pooled/collapsed
   threshold policy, and HAMD as a separate clinical stress test. Current status
-  is `ready_to_implement_mv08b_total_anchored_residual_measurement`; full
-  method remains blocked until the audited MV08b run passes.
+  is `ready_to_implement_mv08b_total_anchored_residual_measurement`.
+- Phase 5 `P5_MV08b total_anchored_residual_measurement` completed in the main
+  checkout. It uses the same subject-level E-DAIC/CMDC/PDCH slices as MV08 and
+  compares train-mean items, total-score floors, fixed construct-map floors,
+  and total-anchored residual heads over aligned frozen BGE features. Treat it
+  as negative/blocked RQ1 evidence:
+  `blocked_prediction_identity_increased_vs_mv08`. M2b beats both total-score
+  and fixed-map floors on 2/3 pooled active slices, but prediction identity BA
+  rises to `0.979`, above the predeclared MV08 M2 gate `0.900`. Row/residual
+  predictions remain ignored local-only.
+- A diagnostic measurement-audit paper outline now exists at
+  `docs/diagnostic_measurement_audit_paper_outline.md`; it frames current
+  evidence as a publishable diagnostic/audit contribution rather than a full
+  method pass.
 - Clean GitHub publish workflow is now implemented. Future remote updates
   should use `scripts/publish_clean_github_snapshot.py` and
   `docs/github_publish_workflow.md`, so the old local `main` history is never
@@ -286,9 +298,10 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    the lightweight ordinal measurement head does not beat the total-score floor
    on any pooled active slice, despite reducing prediction identity only to
    `0.900`. MV08 aggregate error analysis confirms this as a not-claimable
-   current contract. `P5_MV08b` is now predeclared as the one allowed
-   total-anchored residual revision before freezing the sequence as negative
-   diagnostic evidence.
+   current contract. `P5_MV08b` is now complete and blocked by the
+   predeclared prediction-identity gate. Freeze MV08/MV08b as negative RQ1
+   diagnostic evidence under the current frozen-BGE shallow-measurement
+   contract.
    The full-method gate audit now records this as
    `blocked_but_publishable_diagnostic_direction`: full method is blocked,
    RQ4 is allowed only as limited aggregate evidence, and a bounded
@@ -334,14 +347,14 @@ Cross-session issues are tracked in:
 
 ## Next Handoff
 
-Continue Phase 5 under the full-method gate audit. The next useful work is to
-implement and run the predeclared `P5_MV08b` total-anchored residual
-measurement row, then refresh the full-method gate. If MV08b fails, freeze
-MV08/MV08b as diagnostic/negative evidence. Optionally expand E-DAIC MV06
-double annotation. Keep row-level predictions,
-real manifests, real integrity/split maps, latent scores, learned parameters,
-and learned embeddings local-only, and do not start full method work until the
-gate changes.
+Continue Phase 5 under the full-method gate audit. MV08b has failed its
+predeclared identity gate, so freeze MV08/MV08b as diagnostic/negative RQ1
+evidence and use `docs/diagnostic_measurement_audit_paper_outline.md` as the
+next writing frame. Optionally expand E-DAIC MV06 double annotation to
+stabilize per-dataset agreement. Keep row-level predictions, real manifests,
+real integrity/split maps, latent scores, learned parameters, and learned
+embeddings local-only, and do not start full method work until the gate
+changes.
 
 For future GitHub uploads, keep using the clean remote/main lineage; do not push
 the old local `main` history directly. Run

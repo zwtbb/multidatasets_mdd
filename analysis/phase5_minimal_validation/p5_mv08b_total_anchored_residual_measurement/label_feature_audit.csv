@@ -1,0 +1,4 @@
+dataset,scale,label_subjects,feature_subjects,joined_subjects,model_input_columns
+edaic,PHQ-8,219,219,219,512
+cmdc,PHQ-9,77,77,77,512
+pdch,HAMD-17,92,99,92,512

@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-11T12:13:43+00:00`
+Generated: `2026-08-11T12:37:43+00:00`
 
 ## Decision
 
@@ -15,8 +15,8 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Run the predeclared MV08b total-anchored residual measurement row and require it to beat total-score and fixed-map floors on at least two pooled active slices without higher prediction identity; otherwise freeze MV08/MV08b as negative diagnostic evidence. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance. | Run MV08b and require it to beat total-score and fixed-map floors on at least two pooled active slices without higher prediction identity; otherwise freeze RQ1 as diagnostic/negative evidence. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Freeze MV08/MV08b as negative RQ1 diagnostic evidence under the current frozen-BGE/shallow-measurement contract, or obtain a genuinely new feature/data/measurement source before another RQ1 method attempt. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as a negative/partial diagnostic and reframe RQ1 toward partial measurement invariance. | Freeze RQ1 as diagnostic/negative evidence for the current frozen-BGE/shallow-measurement contract; require a genuinely new feature/data/measurement source before another RQ1 method attempt. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, and BGE total-anchor diagnostics are controls; do not claim invariant representation. | Identity reduction must be paired with total-allocation-beating shared construct performance before it can support a shared-representation claim. |
@@ -24,7 +24,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; raw snippets remain local-only. | For a stronger manuscript claim, expand the E-DAIC double-annotation slice or add Krippendorff alpha/bootstrap uncertainty because E-DAIC currently has few double pairs. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnostic/audit-driven paper is viable now; partial measurement invariance is a promising problem framing but the first MV08 pilot is negative. | Run the predeclared MV08b revision once as a mechanism-changing measurement test; if it fails, write the paper as a diagnostic/measurement-audit contribution. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A diagnostic/audit-driven paper is viable now; MV08/MV08b are bounded negative measurement evidence, not a full-method pass. | Freeze the current RQ1 modeling sequence and start paper framing around diagnostics, measurement audit, bounded PDCH evidence, protocol controls, and first-round RQ4 aggregate evidence. |
 
 ## Evidence Inventory
 
@@ -55,12 +55,13 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV08 | `complete` | `blocked_not_better_than_total_score_floor` | `True` | MV08 tests whether an explicitly partial measurement-invariance contract improves over total-score and fixed-map floors. Treat a pass as bounded RQ1 measurement evidence only, not full-method authorization. |
 | P5_MV08_error_analysis | `complete` | `complete_current_mv08_not_claimable_revision_or_freeze` | `True` | MV08 error analysis confirms the current partial-invariance ordinal head should be frozen as negative evidence unless a predeclared MV08b revision changes the measurement mechanism. The total-score floor remains the k... |
 | P5_MV08b_design | `complete` | `ready_to_implement_mv08b_total_anchored_residual_measurement` | `True` | MV08b is predeclared as a total-anchored residual measurement revision: predict severity first, model item residuals only after anchoring, pool or collapse sparse thresholds, and keep HAMD as a separate clinical stres... |
+| P5_MV08b | `complete` | `blocked_prediction_identity_increased_vs_mv08` | `True` | MV08b tests whether item residuals add construct information after a total-severity anchor. Treat a pass as bounded RQ1 measurement evidence only, not full-method authorization. |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Implement and run the predeclared MV08b total-anchored residual measurement row. | MV08b must beat total-score and fixed-map floors on at least two pooled active slices, keep prediction identity no higher than current MV08 M2, and export only aggregate diagnostics. |
+| 1 | Freeze MV08/MV08b as negative RQ1 diagnostic evidence under the current frozen-BGE/shallow-measurement contract. | Master plan, issue log, and paper outline treat MV08/MV08b as diagnostic/negative RQ1 evidence and stop shallow RQ1 head iteration unless a genuinely new data/feature/measurement source is introduced. |
 | 2 | Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice. | Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

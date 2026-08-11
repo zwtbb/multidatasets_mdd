@@ -13,7 +13,7 @@ evidence.
 
 | ID | Research question | Hypothesis | Main datasets |
 | --- | --- | --- | --- |
-| RQ1 | Do depression models measure the same construct across datasets and scales? | Direct shared symptom mapping is too strong under current Phase 5 evidence; the next method hypothesis is partial measurement invariance: shared latent symptom constructs with scale-specific DIF/loading-threshold deviations should transfer better than total-score or fixed-map heads. | E-DAIC: PHQ-8; CMDC: PHQ-9 plus limited HAMD fields; PDCH: HAMD-17. MPDD and EATD stay stress/context datasets until item-level contracts improve. |
+| RQ1 | Do depression models measure the same construct across datasets and scales? | Direct shared symptom mapping is too strong under current Phase 5 evidence. Partial-invariance and total-anchored residual measurement are useful diagnostic frames, but current frozen-BGE shallow implementations do not establish a transferable shared-symptom representation because MV08 fails simple floors and MV08b fails the prediction-identity gate. | E-DAIC: PHQ-8; CMDC: PHQ-9 plus limited HAMD fields; PDCH: HAMD-17. MPDD and EATD stay stress/context datasets until item-level contracts improve. |
 | RQ2 | Does the model depend on interview protocol and task content? | Depression predictions can be inflated by protocol shortcuts such as interviewer questions, question position, reading text, picture prompts, or emotion-valence materials; participant-centered and perturbation controls should separate symptom evidence from task content. | E-DAIC and CMDC: interviewer questions; MODMA: interview, reading, picture description, affective tasks; EATD-Corpus: positive, neutral, negative tasks |
 | RQ3 | How do individual differences affect symptom expression? | Age, personality, health status, and gait/psychomotor context can moderate the relation between depression labels and speech, facial, gait, and other behavioral features, so a transferable model must evaluate these moderators instead of treating all subjects as one homogeneous population. | MPDD-AVG-2026 young subset, elderly subset, audio-video subset, personality/health metadata, and gait subset; equivalently MPDD-Young, MPDD-Elderly, and MPDD gait anchors |
 | RQ4 | Are symptom predictions supported by observable evidence? | Total-score or severity predictions are credible only when they can be localized to corresponding linguistic, acoustic, facial, or gait evidence matching the predicted symptom constructs. | E-DAIC, CMDC, PDCH |
@@ -53,6 +53,9 @@ All splits must be subject-level. Different segments, tasks, or modalities from
 the same subject must not cross train, validation, and test boundaries.
 
 Architecture choices should stay unfrozen until the RQ-aligned measurement
-contracts are stable: partial-invariance latent measurement for RQ1, protocol
-and content controls for RQ2, moderator-aware measurement heterogeneity for
-RQ3, and evidence-localized explanations for RQ4.
+contracts are stable. Under the current evidence, the paper should prioritize a
+diagnostic measurement-audit frame: partial-invariance and total-anchored
+residual measurement are reported as bounded negative RQ1 evidence, protocol
+and content controls remain central for RQ2, moderator-aware measurement
+heterogeneity remains a later RQ3 direction, and evidence localization remains
+an RQ4 credibility layer.

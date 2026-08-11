@@ -25,8 +25,13 @@ full M0/M1/M2/M3 construction.
   evidence row. Gate status remains
   `blocked_but_publishable_diagnostic_direction`, with
   `full_method_allowed=false`.
-- Current top-ranked gate action:
+- At design time, the top-ranked gate action was
   `NEXT_IMPLEMENT_MV08B_TOTAL_ANCHORED_RESIDUAL_MEASUREMENT`.
+- Follow-up implementation/run is complete in
+  `memory/sessions/session_36_phase5_mv08b_total_anchored_residual_run.md`.
+  MV08b failed its identity gate and should now be frozen with MV08 as negative
+  RQ1 diagnostic evidence under the current frozen-BGE/shallow-measurement
+  contract.
 
 ## Key Decisions
 
@@ -96,9 +101,10 @@ Versionable MV08b design outputs:
 
 ## Blockers And Risks
 
-- MV08b is design-ready, not result evidence.
-- Full method work remains blocked until MV08b is implemented, run, and passes
-  the total-score/fixed-map/identity gates.
+- This design session alone is not result evidence; the result evidence now
+  lives in session 36.
+- Full method work remains blocked because MV08b has been implemented and did
+  not pass the total-score/fixed-map/identity gate bundle.
 - The most likely failure mode is that severity anchoring explains nearly all
   stable item signal, leaving residual heads unable to beat the simple floors.
 - E-DAIC MV06 agreement remains underpowered if a stronger RQ4 claim is needed.
@@ -107,8 +113,8 @@ Versionable MV08b design outputs:
 
 ## Next Handoff
 
-Implement and run
-`scripts/phase5_run_mv08b_total_anchored_residual_measurement.py`, then rerun
-`scripts/phase5_full_method_gate_audit.py`. Keep row-level residual
-predictions, latent scores, learned thresholds, learned parameters, model
-files, and private review material local-only.
+This design handoff has been consumed by the MV08b run session. Future work
+should cite session 36 for result evidence, freeze MV08/MV08b as negative RQ1
+diagnostic evidence, and keep row-level residual predictions, latent scores,
+learned thresholds, learned parameters, model files, and private review
+material local-only.

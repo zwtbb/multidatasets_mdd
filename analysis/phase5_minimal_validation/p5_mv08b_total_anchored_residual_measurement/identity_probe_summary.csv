@@ -1,0 +1,6 @@
+probe_id,model,metric,mean,std,seed_count,sample_count_mean
+feature_identity_bge_edaic_cmdc_pdch,feature_bge,Balanced Accuracy,1.0,0.0,5,388.0
+prediction_identity_pooled_eval_dataset,B0_train_mean_items,Balanced Accuracy,1.0,0.0,5,89.8
+prediction_identity_pooled_eval_dataset,B1_total_score_floor,Balanced Accuracy,1.0,0.0,5,89.8
+prediction_identity_pooled_eval_dataset,B2_fixed_construct_map,Balanced Accuracy,0.9833333333333332,0.018425693279752253,5,89.8
+prediction_identity_pooled_eval_dataset,M2b_total_anchored_residual_measurement,Balanced Accuracy,0.9788888888888889,0.015908690070307097,5,89.8

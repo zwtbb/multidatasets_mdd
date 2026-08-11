@@ -30,12 +30,12 @@ the numeric source artifacts from each MV row.
     aligned-BGE shallow shared-symptom validation, MV07b BGE
     identity-projection follow-up, and MV07c BGE total-anchor follow-up.
 - Artifact hygiene passed with zero violations.
-- Later extension: the current gate now reads 25 Phase 5 run summaries after
+- Later extension: the current gate now reads 26 Phase 5 run summaries after
   adding `P5_MV08_design`, the completed `P5_MV08` pilot,
-  `P5_MV08_error_analysis`, and `P5_MV08b_design`. The gate remains
-  `blocked_but_publishable_diagnostic_direction`; see
-  `memory/sessions/session_35_phase5_mv08b_total_anchored_residual_design.md`
-  for the latest MV08-driven gate refresh.
+  `P5_MV08_error_analysis`, `P5_MV08b_design`, and the completed `P5_MV08b`
+  run. The gate remains `blocked_but_publishable_diagnostic_direction`; see
+  `memory/sessions/session_36_phase5_mv08b_total_anchored_residual_run.md` for
+  the latest MV08-driven gate refresh.
 
 ## Key Decisions
 
@@ -56,8 +56,8 @@ the numeric source artifacts from each MV row.
   - a publishable diagnostic/audit-driven paper direction if claims are
     reframed away from broad SOTA/full-method claims.
 - Ranked next actions:
-  1. Implement and run the predeclared `P5_MV08b` total-anchored residual
-     measurement row.
+  1. Freeze MV08/MV08b as negative RQ1 diagnostic evidence under the current
+     frozen-BGE/shallow-measurement contract and frame the diagnostic paper.
   2. Use the dataset-stratified MV06 agreement summary as first-round RQ4
      evidence and optionally expand E-DAIC double annotation.
   3. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
@@ -121,13 +121,17 @@ Versionable artifacts:
   psychometric measurement implementation does not authorize RQ1/full-method
   claims.
 - MV08 error analysis confirms the current contract is not claimable positive
-  RQ1 evidence. MV08b is now predeclared as the only allowed mechanism-changing
-  follow-up; if it fails, freeze MV08/MV08b as negative RQ1 diagnostic
-  evidence.
+  RQ1 evidence.
+- MV08b is complete and blocked:
+  `blocked_prediction_identity_increased_vs_mv08`. It beats both total-score
+  and fixed-map floors on 2/3 pooled active slices, but prediction identity BA
+  is `0.979`, above the predeclared MV08 M2 gate `0.900`. Freeze MV08/MV08b as
+  negative RQ1 diagnostic evidence unless a genuinely new data, feature, or
+  measurement source is introduced.
 
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
-The next implementation session should implement and run the predeclared MV08b
-total-anchored residual measurement row. Do not start the full method until the
-gate changes from blocked.
+The next work should frame the diagnostic measurement-audit paper and/or
+strengthen MV06 E-DAIC agreement. Do not start the full method until the gate
+changes from blocked.

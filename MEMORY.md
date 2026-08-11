@@ -49,6 +49,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_33_phase5_mv08_partial_invariance_pilot.md`
   - `/root/autodl-tmp/memory/sessions/session_34_phase5_mv08_error_analysis.md`
   - `/root/autodl-tmp/memory/sessions/session_35_phase5_mv08b_total_anchored_residual_design.md`
+  - `/root/autodl-tmp/memory/sessions/session_36_phase5_mv08b_total_anchored_residual_run.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -346,7 +347,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 25 Phase 5 run summaries and exports claim gates, evidence
+  It reads 26 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -400,9 +401,18 @@ MPDD 2025 is intentionally out of scope for current auditing.
   predict total/latent severity first, model sparse item residuals only after
   anchoring, pool or collapse sparse ordinal thresholds, and keep HAMD as a
   separate clinical measurement stress test. Current status is
-  `ready_to_implement_mv08b_total_anchored_residual_measurement`; the full
-  gate still reads `blocked_but_publishable_diagnostic_direction`, and the
-  next ranked action is to implement and run the audited MV08b row.
+  `ready_to_implement_mv08b_total_anchored_residual_measurement`.
+- Phase 5 `P5_MV08b total_anchored_residual_measurement` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08b_total_anchored_residual_measurement/`.
+  It used aligned frozen BGE features and the same E-DAIC/CMDC/PDCH
+  subject-level slices as MV08, comparing train-mean items, total-score floor,
+  fixed construct-map floor, and total-anchored sparse residual heads.
+  Artifact hygiene passed and row/residual predictions remain ignored
+  local-only. Treat as a negative/blocked RQ1 result:
+  `blocked_prediction_identity_increased_vs_mv08`. M2b beats both total-score
+  and fixed-map floors on 2/3 pooled active slices, but prediction identity BA
+  is `0.979`, above the predeclared MV08 M2 gate `0.900`; therefore it cannot
+  support a transferable shared-measurement claim.
 
 Phase 2 gate status:
 
@@ -645,6 +655,13 @@ Key Phase 2 outputs:
   slices while keeping prediction identity no higher than current MV08 M2.
   If it fails, freeze MV08/MV08b as negative RQ1 diagnostic evidence and pivot
   writing toward a measurement-audit paper.
+- P5_MV08b result decision: MV08b partially improves measurement error but
+  fails the predeclared identity gate. Freeze the current frozen-BGE/shallow
+  RQ1 modeling sequence as negative diagnostic evidence. Do not start another
+  shallow RQ1 head iteration unless a genuinely new data, feature, or
+  measurement source is introduced. The paper direction should now emphasize a
+  diagnostic measurement-audit contribution; a draft outline exists at
+  `/root/autodl-tmp/docs/diagnostic_measurement_audit_paper_outline.md`.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -754,11 +771,11 @@ plaintext credential-like content before committing on the clean remote lineage.
 3. Keep future GitHub updates on the clean remote/main lineage via
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
-4. Use the Phase 5 full-method gate audit as the active claim boundary. Next,
-   implement and run the predeclared `P5_MV08b` total-anchored residual
-   measurement row, then refresh the full-method gate. If MV08b fails its
-   total-score/fixed-map/identity gates, freeze MV08/MV08b as negative
-   diagnostic evidence.
+4. Use the Phase 5 full-method gate audit as the active claim boundary. MV08b
+   has now failed the identity gate, so freeze MV08/MV08b as negative RQ1
+   diagnostic evidence under the current frozen-BGE/shallow-measurement
+   contract. Next work should move toward the diagnostic measurement-audit
+   paper frame and/or strengthen MV06 E-DAIC agreement.
    Optionally expand E-DAIC MV06 double annotation to stabilize per-dataset
    agreement.
    Full method construction remains blocked until the gate changes.

@@ -1,0 +1,103 @@
+{
+  "artifact_hygiene_passed": true,
+  "generated_at": "2026-08-11T12:34:39+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc",
+      "pdch"
+    ],
+    "feature_family": "text_bge",
+    "manifest_label_fields_read": true,
+    "model_input_columns": 512,
+    "phase4_ontology_read": true,
+    "raw_data_scanned": false,
+    "raw_text_read": false
+  },
+  "label_feature_audit": [
+    {
+      "dataset": "edaic",
+      "feature_subjects": 219,
+      "joined_subjects": 219,
+      "label_subjects": 219,
+      "model_input_columns": 512,
+      "scale": "PHQ-8"
+    },
+    {
+      "dataset": "cmdc",
+      "feature_subjects": 77,
+      "joined_subjects": 77,
+      "label_subjects": 77,
+      "model_input_columns": 512,
+      "scale": "PHQ-9"
+    },
+    {
+      "dataset": "pdch",
+      "feature_subjects": 99,
+      "joined_subjects": 92,
+      "label_subjects": 92,
+      "model_input_columns": 512,
+      "scale": "HAMD-17"
+    }
+  ],
+  "models_compared": [
+    "B0_train_mean_items",
+    "B1_total_score_floor",
+    "B2_fixed_construct_map",
+    "M2b_total_anchored_residual_measurement"
+  ],
+  "output_policy": {
+    "latent_scores_written": false,
+    "learned_parameters_written": false,
+    "learned_thresholds_written": false,
+    "local_only_files": [
+      "p5_mv08b_local_row_predictions.csv"
+    ],
+    "raw_paths_written": false,
+    "raw_text_written": false,
+    "residual_predictions_written": true,
+    "row_level_predictions_written": true,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "comparison_summary.csv",
+      "construct_target_map.csv",
+      "identity_probe_by_seed.csv",
+      "identity_probe_summary.csv",
+      "label_feature_audit.csv",
+      "metric_summary.csv",
+      "metrics_by_seed.csv",
+      "model_split_audit.csv",
+      "report.md",
+      "residual_model_audit.csv",
+      "run_summary.json",
+      "threshold_sparsity_summary.csv"
+    ]
+  },
+  "predeclared_pass_rule": {
+    "hamd_success_separate_from_phq_shared_core": true,
+    "minimum_pooled_active_slices_beating_total_and_fixed_floors": 2,
+    "prediction_identity_ba_must_not_exceed": 0.9002020202020201
+  },
+  "run_id": "P5_MV08b_total_anchored_residual_measurement",
+  "scope": "minimal_validation_total_anchored_residual_no_full_method",
+  "split_audit": {
+    "max_train_eval_subject_overlap": 0,
+    "rows": 20
+  },
+  "status": "complete",
+  "verdict": {
+    "current_mv08_m2_prediction_identity_ba_gate": 0.9002020202020201,
+    "feature_identity_ba": 1.0,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_prediction_identity_increased_vs_mv08",
+    "pooled_active_slices": 3,
+    "pooled_m2b_improved_vs_both_floor_slices": 2,
+    "pooled_m2b_improved_vs_fixed_map_slices": 3,
+    "pooled_m2b_improved_vs_total_score_floor_slices": 2,
+    "pooled_m2b_worst_delta_vs_fixed_construct_map": -0.009687932771378582,
+    "pooled_m2b_worst_delta_vs_total_score_floor": 0.007218323249072012,
+    "prediction_identity_ba_m2b": 0.9788888888888889,
+    "prediction_identity_gate_passed": false,
+    "short_read": "MV08b tests whether item residuals add construct information after a total-severity anchor. Treat a pass as bounded RQ1 measurement evidence only, not full-method authorization."
+  }
+}
