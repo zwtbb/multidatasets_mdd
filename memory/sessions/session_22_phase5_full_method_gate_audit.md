@@ -36,6 +36,12 @@ the numeric source artifacts from each MV row.
   run. The gate remains `blocked_but_publishable_diagnostic_direction`; see
   `memory/sessions/session_36_phase5_mv08b_total_anchored_residual_run.md` for
   the latest MV08-driven gate refresh.
+- Latest extension: the current gate now reads 32 Phase 5 run summaries after
+  MV09 conditional identity, MV10/MV11 label-only psychometrics, MV12
+  two-stage latent-target design/run, and MV12 aggregate tradeoff analysis.
+  The gate remains `blocked_but_publishable_diagnostic_direction`,
+  `full_method_allowed=false`, and artifact hygiene passes. Rank 1 next action
+  is `NEXT_DRAFT_BASELINES_FAILURE_MODE_MEASUREMENT_SECTIONS`.
 
 ## Key Decisions
 
@@ -53,11 +59,14 @@ the numeric source artifacts from each MV row.
   - MODMA task nuisance projection as bounded protocol-control evidence;
   - first-round aggregate MV06 evidence localization with dataset-stratified
     agreement;
+  - MV10/MV11 PHQ partial-invariance evidence plus MV12 design/run/tradeoff
+    analysis as bounded measurement-shift diagnostics;
   - a publishable diagnostic/audit-driven paper direction if claims are
     reframed away from broad SOTA/full-method claims.
 - Ranked next actions:
-  1. Freeze MV08/MV08b as negative RQ1 diagnostic evidence under the current
-     frozen-BGE/shallow-measurement contract and frame the diagnostic paper.
+  1. Draft Baselines, Failure-Mode Diagnostics, and Measurement Results from
+     aggregate tables after MV12 analysis freezes the current latent-target
+     line.
   2. Use the dataset-stratified MV06 agreement summary as first-round RQ4
      evidence and optionally expand E-DAIC double annotation.
   3. Recover or create speaker/protocol labels for E-DAIC controls if feasible.
@@ -128,10 +137,15 @@ Versionable artifacts:
   is `0.979`, above the predeclared MV08 M2 gate `0.900`. Freeze MV08/MV08b as
   negative RQ1 diagnostic evidence unless a genuinely new data, feature, or
   measurement source is introduced.
+- MV12 is complete and blocked:
+  `blocked_theta_gain_not_observed_scale_safe`. Aggregate tradeoff/failure-mode
+  analysis recommends freezing the current latent-target line because
+  same-dataset theta utility and conditional identity improve, but
+  observed-scale safety and external theta transfer fail.
 
 ## Next Handoff
 
 Use the full-method gate audit as the authoritative Phase 5 claim boundary.
-The next work should frame the diagnostic measurement-audit paper and/or
-strengthen MV06 E-DAIC agreement. Do not start the full method until the gate
-changes from blocked.
+The next work should draft the Baselines, Failure-Mode Diagnostics, and
+Measurement Results sections and/or strengthen MV06 E-DAIC agreement. Do not
+start the full method until the gate changes from blocked.

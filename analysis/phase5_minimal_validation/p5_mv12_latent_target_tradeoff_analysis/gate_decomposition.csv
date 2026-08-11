@@ -1,0 +1,9 @@
+gate_id,gate_passed,primary_value,threshold_or_reference,interpretation
+G0_measurement_optimization,True,True,all fold measurement optimizers successful,Label-only target generation is numerically usable.
+G1_same_dataset_theta_utility,True,edaic -0.078; cmdc -0.146,M12a theta MAE below train-mean theta floor on both same-dataset slices,The latent target is predictable within each PHQ dataset.
+G2_same_dataset_observed_scale_safety,False,edaic 0.004; cmdc 0.067,M12a observed macro MAE no worse than direct itemwise Ridge on both slices,This is the primary failure: theta gains do not safely map back to observed PHQ item scales.
+G3_external_theta_transfer,False,False,at least one held-out cross-dataset direction beats train-mean theta floor,The latent target has not shown external theta transfer.
+G4_external_observed_scale_safety,True,True,at least one held-out cross-dataset direction is not worse than direct itemwise Ridge on observed macro MAE,"Observed transfer is not the limiting gate, but this does not rescue failed theta transfer."
+G5_conditional_shared_latent_identity,True,0.602,below preferred BA 0.700; MV09 reference 0.991,The shared-latent prediction layer is less dataset-identifiable after legitimate conditioning.
+G6_leakage_boundary,True,True,"no eval target use, no test labels, no tracked row predictions or learned parameters",The aggregate result is release-compatible.
+G7_artifact_hygiene,True,True,tracked outputs pass hygiene scan,No public artifact hygiene issue was detected.

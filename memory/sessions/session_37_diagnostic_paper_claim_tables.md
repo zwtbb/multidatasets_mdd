@@ -20,9 +20,9 @@ parameters, or authorize full method construction.
   `ready_for_diagnostic_paper_drafting`.
 - Artifact hygiene passed with zero violations.
 - Output includes:
-  - 10 paper-facing claim boundary rows;
-  - 6 key numeric finding rows;
-  - 9 literature-positioning rows.
+  - 11 paper-facing claim boundary rows;
+  - 12 key numeric finding rows;
+  - 15 literature-positioning rows.
 - Web lookup was used on 2026-08-11 to verify current positioning sources:
   ACL Anthology DAIC and EMNLP interviewer-bias records, official DAIC access
   page, Frontiers PHQ/HAMD IRT article, PubMed/search metadata for PHQ DIF and
@@ -37,6 +37,8 @@ parameters, or authorize full method construction.
 - Keep the diagnostic paper claim boundary conservative:
   - full method remains blocked;
   - RQ1 transferable shared-measurement remains blocked;
+  - MV12 two-stage latent-target and aggregate tradeoff analysis are bounded
+    measurement-shift diagnostics, and the current latent-target line is frozen;
   - PDCH HAMD is bounded internal evidence;
   - MODMA task control is bounded protocol-control evidence;
   - MV06 is first-round aggregate RQ4 credibility evidence only;
@@ -80,12 +82,15 @@ Versionable outputs:
   evidence scaffolding ready for drafting.
 - E-DAIC MV06 agreement remains underpowered for stronger cross-dataset RQ4
   evidence-localization claims.
+- MV12 tradeoff analysis is complete, so the next writing step is drafting
+  Baselines, Failure-Mode Diagnostics, and Measurement Results from aggregate
+  tables rather than deciding whether to analyze/freeze MV12.
 - Literature positioning includes web-checked rows, but final paper writing
   should still move sources into a formal bibliography.
 
 ## Next Handoff
 
-Draft the Data Governance and Label Contracts section from Phase 0 through
-Phase 4 artifacts, using the paper claim tables as claim boundaries. If a
-stronger RQ4 section is desired, expand E-DAIC MV06 double annotation before
-making stronger evidence-localization claims.
+Draft the Baselines, Failure-Mode Diagnostics, and Measurement Results
+sections from aggregate tables, using the paper claim tables as claim
+boundaries. If a stronger RQ4 section is desired, expand E-DAIC MV06 double
+annotation before making stronger evidence-localization claims.

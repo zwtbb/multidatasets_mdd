@@ -38,6 +38,7 @@ MV10_SUMMARY = PHASE5_DIR / "p5_mv10_psychometric_invariance_baseline" / "run_su
 MV11_SUMMARY = PHASE5_DIR / "p5_mv11_formal_psychometric_confirmation" / "run_summary.json"
 MV12_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target_design" / "run_summary.json"
 MV12_RUN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target" / "run_summary.json"
+MV12_ANALYSIS_SUMMARY = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -65,8 +66,8 @@ CLAIM_SECTION = {
 
 PAPER_CLAIM_LANGUAGE = {
     "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper.",
-    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, and partial invariance.",
-    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11 as label-only PHQ partial-invariance evidence with an explicit AIC/BIC caveat.",
+    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, partial invariance, and the frozen MV12 latent-target diagnostic.",
+    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11 as label-only PHQ partial-invariance evidence with an explicit AIC/BIC caveat, and MV12 as a bounded test of whether multimodal features can predict that target.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
     "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and conditional identity as the stronger shared-latent diagnostic.",
@@ -74,7 +75,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, and the completed two-stage latent-target experiment as a diagnostic gate.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, and the completed two-stage latent-target plus aggregate tradeoff analysis as diagnostic gates.",
 }
 
 LITERATURE_ROWS = [
@@ -224,6 +225,7 @@ def require_inputs() -> None:
         MV11_SUMMARY,
         MV12_DESIGN_SUMMARY,
         MV12_RUN_SUMMARY,
+        MV12_ANALYSIS_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -260,6 +262,7 @@ def build_metric_context() -> dict[str, str]:
     mv11 = read_json(MV11_SUMMARY)
     mv12_design = read_json(MV12_DESIGN_SUMMARY)
     mv12_run = read_json(MV12_RUN_SUMMARY)
+    mv12_analysis = read_json(MV12_ANALYSIS_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -272,6 +275,7 @@ def build_metric_context() -> dict[str, str]:
     mv11_v = mv11["verdict"]
     mv12_d = mv12_design["decision"]
     mv12_v = mv12_run["verdict"]
+    mv12_a = mv12_analysis["decision"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -300,7 +304,9 @@ def build_metric_context() -> dict[str, str]:
             f"with same-dataset theta gate {mv12_v['same_dataset_theta_gate_passed']}, observed-scale safety "
             f"{mv12_v['same_dataset_observed_gate_passed']}, external theta transfer "
             f"{mv12_v['external_transfer_theta_gate_passed']}, and conditional identity BA "
-            f"{fmt(mv12_v['conditional_identity_ba_m12a'])}."
+            f"{fmt(mv12_v['conditional_identity_ba_m12a'])}. "
+            f"MV12 aggregate tradeoff analysis is {mv12_a['analysis_status']} and recommends freezing "
+            f"the current latent-target line."
         ),
         "mv09": (
             f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
@@ -339,6 +345,13 @@ def build_metric_context() -> dict[str, str]:
             f"conditional identity BA {fmt(mv12_v['conditional_identity_ba_m12a'])}; "
             f"external theta transfer pass={mv12_v['external_transfer_theta_gate_passed']}."
         ),
+        "mv12_analysis": (
+            f"MV12 aggregate tradeoff analysis: status {mv12_a['analysis_status']}; "
+            f"freeze_current_latent_target_line={mv12_a['freeze_current_latent_target_line']}; "
+            f"tradeoff_rows={mv12_analysis['outputs']['tradeoff_rows']}; "
+            f"failure_mode_rows={mv12_analysis['outputs']['failure_mode_rows']}; "
+            f"recommends freezing current latent-target line."
+        ),
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
             f"direct total MAE {fmt(mv02_v['best_pdch_direct_total_mae'])}; "
@@ -364,11 +377,11 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv12_design']} {context['mv12_run']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
-        return context["rq1"]
+        return f"{context['rq1']} {context['mv12_analysis']}"
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
-        return f"{context['mv10']} {context['mv11']} {context['mv12_design']} {context['mv12_run']}"
+        return f"{context['mv10']} {context['mv11']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
@@ -428,8 +441,8 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "rq1_measurement_negative",
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
-            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11 shift the next gate to a two-stage latent-target predictor.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11",
+            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV12;P5_MV12_analysis",
         },
         {
             "finding_id": "mv10_psychometric_baseline",
@@ -458,6 +471,13 @@ def build_key_findings() -> pd.DataFrame:
             "finding": context["mv12_run"],
             "interpretation": "The actual two-stage run supports the measurement-shift story: the shared latent prediction layer reduces conditional identity and improves same-dataset theta MAE, but it does not safely reconstruct observed item scales or transfer externally.",
             "source_artifact_ids": "P5_MV12",
+        },
+        {
+            "finding_id": "mv12_tradeoff_freeze_decision",
+            "paper_section": "Measurement evidence",
+            "finding": context["mv12_analysis"],
+            "interpretation": "The aggregate tradeoff analysis closes the current latent-target line: the result is paper-critical diagnostic evidence, while the next step is drafting or a genuinely new mechanism rather than another small head variant.",
+            "source_artifact_ids": "P5_MV12_analysis",
         },
         {
             "finding_id": "mv09_conditional_identity_gate",

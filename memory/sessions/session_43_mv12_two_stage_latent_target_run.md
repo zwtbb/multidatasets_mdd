@@ -1,6 +1,6 @@
 # Session Memory: Phase 5 MV12 Two-Stage Latent-Target Run
 
-Status: active
+Status: complete
 Last updated: 2026-08-11 UTC
 Thread/task: main agent continuation
 
@@ -33,11 +33,12 @@ model artifacts.
 - Conditional shared-latent identity BA for M12a is `0.602`, improving over the
   MV09 E-DAIC/CMDC conditional feature-identity reference `0.991` and passing
   the preferred `0.700` threshold.
-- Full-method gate now reads 31 Phase 5 evidence rows and remains
+- Full-method gate has since been refreshed by the MV12 tradeoff-analysis
+  session and now reads 32 Phase 5 evidence rows. It remains
   `blocked_but_publishable_diagnostic_direction` with
   `full_method_allowed=false`.
-- Diagnostic paper tables now contain 11 key numeric findings, including the
-  MV12 run.
+- Diagnostic paper tables now contain 12 key numeric findings, including the
+  MV12 run and MV12 tradeoff freeze decision.
 
 ## Key Decisions
 
@@ -46,8 +47,9 @@ model artifacts.
 - The interesting positive signal is at the latent identity layer, not the
   observed item-output layer.
 - Do not start full M0/M1/M2/M3 construction from this result.
-- Next decision: either run an aggregate-only MV12 error/Pareto analysis, or
-  freeze the latent-target line and draft with MV12 as a diagnostic result.
+- Follow-up decision is resolved in
+  `memory/sessions/session_44_mv12_tradeoff_analysis.md`: freeze the current
+  latent-target line and draft with MV12 as a diagnostic result.
 
 ## Files Owned Or Touched
 
@@ -116,8 +118,6 @@ python scripts/build_diagnostic_paper_claim_tables.py
 
 ## Next Handoff
 
-Decide whether to implement an aggregate-only MV12 error/Pareto analysis that
-compares theta utility, observed-scale safety, transfer, and identity trade-offs
-across MV07/MV07b/MV07c/MV08/MV08b/MV12. If not, freeze MV12 as the current
-latent-target diagnostic result and continue manuscript drafting from the
-updated claim boundaries.
+This run is superseded by the aggregate-only MV12 tradeoff-analysis session.
+Continue manuscript drafting from the refreshed gate and paper tables, or
+optionally strengthen E-DAIC MV06 double annotation before stronger RQ4 wording.

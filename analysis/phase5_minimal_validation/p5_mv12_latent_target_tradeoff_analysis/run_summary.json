@@ -1,0 +1,45 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "analysis_status": "complete_freeze_current_mv12_latent_target_line",
+    "conditional_identity_ba_m12a": 0.6015151515151514,
+    "external_transfer_theta_gate_passed": false,
+    "freeze_current_latent_target_line": true,
+    "full_method_allowed": false,
+    "mv12_pass_rule_status": "blocked_theta_gain_not_observed_scale_safe",
+    "same_dataset_observed_gate_passed": false,
+    "same_dataset_theta_gate_passed": true,
+    "short_read": "Aggregate-only MV12 analysis recommends freezing the current latent-target line: latent theta utility and conditional identity improve, but observed-scale safety and external theta transfer remain the decisive blockers."
+  },
+  "generated_at": "2026-08-11T15:15:42+00:00",
+  "input_contract": {
+    "aggregate_phase5_summaries_read": true,
+    "fitted_parameters_read": false,
+    "private_review_material_read": false,
+    "raw_data_scanned": false,
+    "row_level_predictions_read": false,
+    "theta_score_tables_read": false
+  },
+  "outputs": {
+    "failure_mode_rows": 6,
+    "gate_rows": 8,
+    "mv12_dataset_slice_rows": 14,
+    "recommendation_rows": 4,
+    "source_rows": 6,
+    "tracked_outputs": [
+      "accuracy_identity_tradeoff_summary.csv",
+      "artifact_hygiene_audit.json",
+      "failure_mode_summary.csv",
+      "gate_decomposition.csv",
+      "mechanism_recommendation_queue.csv",
+      "mv12_dataset_slice_diagnostics.csv",
+      "report.md",
+      "run_summary.json",
+      "source_artifact_summary.csv"
+    ],
+    "tradeoff_rows": 25
+  },
+  "run_id": "P5_MV12_latent_target_tradeoff_analysis",
+  "scope": "aggregate_only_mv12_error_and_pareto_analysis",
+  "status": "complete"
+}

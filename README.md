@@ -46,7 +46,7 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Minimal validations are complete
-through `P5_MV12 two_stage_latent_target`; the full-method gate remains
+through `P5_MV12` plus the aggregate `P5_MV12_analysis`; the full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a measurement-shift /
@@ -65,12 +65,15 @@ MV12 then runs that two-stage test. The `X -> theta` head improves same-dataset
 theta MAE versus train mean on E-DAIC and CMDC, and conditional shared-latent
 identity BA falls to `0.602`, but observed-scale reconstruction is worse than
 the direct itemwise floor and external theta transfer does not pass. Treat this
-as bounded measurement-shift evidence, not a full-method pass.
+as bounded measurement-shift evidence, not a full-method pass. The aggregate
+MV12 tradeoff/failure-mode analysis now recommends freezing the current
+latent-target line rather than adding another small shallow-head variant.
 
-Current next action: analyze or freeze MV12 as diagnostic evidence, optionally
-with an aggregate accuracy-invariance/Pareto summary, while keeping theta
-scores, fitted parameters, row predictions, transformed features, and model
-artifacts local-only.
+Current next action: draft the Baselines, Failure-Mode Diagnostics, and
+Measurement Results sections from aggregate tables; optionally expand E-DAIC
+MV06 double annotation before stronger RQ4 wording. Theta scores, fitted
+parameters, row predictions, transformed features, and model artifacts remain
+local-only.
 
 ## Key Paths
 
@@ -94,6 +97,7 @@ artifacts local-only.
 - MV11 formal psychometric confirmation: `analysis/phase5_minimal_validation/p5_mv11_formal_psychometric_confirmation/`
 - MV12 two-stage latent-target design: `analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target_design/`
 - MV12 two-stage latent-target run: `analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target/`
+- MV12 aggregate tradeoff analysis: `analysis/phase5_minimal_validation/p5_mv12_latent_target_tradeoff_analysis/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 
