@@ -53,6 +53,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_37_diagnostic_paper_claim_tables.md`
   - `/root/autodl-tmp/memory/sessions/session_38_data_governance_label_contracts_draft.md`
   - `/root/autodl-tmp/memory/sessions/session_39_mv09_conditional_identity_gate_revision.md`
+  - `/root/autodl-tmp/memory/sessions/session_40_mv10_psychometric_invariance_baseline.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -350,19 +351,21 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 27 Phase 5 run summaries and exports claim gates, evidence
+  It reads 28 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
   and `artifact_hygiene_passed=true`. Allowed claims are limited to PDCH-only
   HAMD diagnostic evidence, dataset/protocol controls as diagnostics, MODMA
-  task-control evidence, and a reframed diagnostic/audit-driven paper
-  direction. RQ4 is now `allowed_limited` as first-round aggregate evidence,
+  task-control evidence, MV10 approximate psychometric screening, and a
+  reframed diagnostic/audit-driven paper direction. RQ4 is now
+  `allowed_limited` as first-round aggregate evidence,
   while blocked claims include full M0/M1/M2/M3 method start,
   transferable shared-symptom representation, positive EATD SDS
   generalization, EATD valence-adversarial design, and RQ3 context
-  conditioning. After MV09, its ranked next action is a classical PHQ-8/PHQ-9
-  psychometric invariance baseline.
+  conditioning. After MV10, its ranked next action is formal PHQ-8/PHQ-9
+  ordinal CFA/IRT confirmation followed by a two-stage latent-target design if
+  the measurement target is stable.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -429,13 +432,25 @@ MPDD 2025 is intentionally out of scope for current auditing.
   severity-residualized BA `1.000`, three-way severity-residualized BA
   `1.000`). Future shared-latent claims must report conditional identity, and
   scale-specific post-head prediction identity is diagnostic rather than the
-  same hard gate as shared latent identity. The next experiment should be a
-  classical PHQ-8/PHQ-9 psychometric invariance baseline before another
-  multimodal RQ1 head iteration.
+  same hard gate as shared latent identity. MV09 motivated the subsequent
+  label-only PHQ psychometric baseline before any further multimodal RQ1 head
+  iteration.
+- Phase 5 `P5_MV10 classical_psychometric_invariance_baseline` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/`.
+  It is a label-only PHQ-8/PHQ-9 measurement screen over E-DAIC (`219`
+  subjects) and CMDC (`77` subjects). It read no multimodal features, raw
+  text/media, row-level predictions, or private review material, and artifact
+  hygiene passed. Treat as `complete_partial_invariance_supported_approx`:
+  configural screen passes, loading congruence is `0.998`, metric-loading
+  screen passes for `7/8` items, threshold/scalar screen passes for `4/8`
+  items, and candidate anchors are `C01`, `C04`, `C05`, and `C07`. It is not a
+  formal multi-group ordinal CFA/IRT result. Full method remains blocked; next
+  work is formal psychometric confirmation and then a predeclared two-stage
+  `Y -> theta`, `X -> theta` target if confirmed.
 - Diagnostic measurement-audit paper claim tables are complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`. They export
-  paper-facing allowed/blocked claim boundaries, seven key numeric findings,
-  and twelve literature-positioning rows from aggregate artifacts plus web-checked
+  paper-facing allowed/blocked claim boundaries, eight key numeric findings,
+  and thirteen literature-positioning rows from aggregate artifacts plus web-checked
   primary sources. Artifact hygiene passed. Treat them as manuscript
   scaffolding, not a replacement for source experiment artifacts.
 - Diagnostic measurement-audit paper Data Governance and Label Contracts draft
@@ -717,8 +732,15 @@ Key Phase 2 outputs:
   covariates. Treat scale-specific post-head prediction identity as diagnostic
   unless the output space is explicitly shared. Current conditional BGE identity
   remains high, so the project pivots from a generic diagnostic audit toward a
-  measurement-shift / measurement-invariance paper and a classical
+  measurement-shift / measurement-invariance paper and a label-only
   psychometric baseline.
+- MV10 psychometric-baseline decision: the E-DAIC PHQ-8 and CMDC PHQ-9 labels
+  support an approximate common one-factor/metric screen, but threshold/scalar
+  invariance is partial and formal ordinal CFA/IRT was not run in the current
+  runtime. Use `C01`, `C04`, `C05`, and `C07` as candidate anchors only.
+  Keep full method blocked; next work is formal psychometric confirmation and
+  then a predeclared two-stage latent-target experiment only if the measurement
+  target is stable.
 
 ## Data Quality Watchlist
 
@@ -824,10 +846,12 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
-   revises identity-gate semantics and keeps full method construction blocked:
-   current conditional BGE identity remains high even after severity or PHQ-item
-   conditioning. The paper direction is now measurement shift / measurement
-   invariance with bounded negative and diagnostic evidence. The next
-   experiment is the classical PHQ-8/PHQ-9 psychometric invariance baseline;
+   revises identity-gate semantics and MV10 provides an approximate label-only
+   PHQ partial-invariance screen, but full method construction remains blocked:
+   current conditional BGE identity remains high and formal psychometric
+   confirmation is still missing. The paper direction is measurement shift /
+   measurement invariance with bounded negative and diagnostic evidence. The
+   next experiment is formal PHQ-8/PHQ-9 ordinal CFA/IRT confirmation, followed
+   by a two-stage latent-target design only if the measurement target is stable;
    secondary work can draft Baselines and Failure-Mode Diagnostics or strengthen
    E-DAIC MV06 agreement before stronger evidence-localization claims.

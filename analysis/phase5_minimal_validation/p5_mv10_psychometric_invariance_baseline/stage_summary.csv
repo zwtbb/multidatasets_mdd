@@ -1,0 +1,8 @@
+stage,status,evidence,claim_boundary
+configural_screen,pass,Both datasets pass one-factor screen; loading congruence=0.998.,Approximate configural support only; not formal multi-group ordinal CFA.
+metric_loading_screen,metric_screen_pass,"7/8 items within loading delta tolerance 0.2; mean delta=0.093, max delta=0.206.","Metric evidence is based on one-factor loading congruence, not formal equality constraints."
+threshold_scalar_screen,threshold_screen_partial_or_flagged,"4/8 items within threshold-location tolerance 0.35; mean threshold delta=0.382, max=1.377.",Threshold/scalar evidence is an ordinal logistic DIF screen using leave-one-item-out severity.
+partial_invariance_screen,partial_invariance_screen_pass,4/8 items are anchor candidates with both metric and threshold support.,Use only as a candidate anchor map for a future formal measurement model.
+next_model_target,plan_two_stage_latent_target,Overall MV10 status is complete_partial_invariance_supported_approx.,Do not start a full multimodal method from this screen alone.
+edaic_score_distribution,complete,"n=219, core total mean=6.639, median=5.000, full total mean=6.639.",Distribution differences are population/protocol confounded and are not clinical scale conversions.
+cmdc_score_distribution,complete,"n=77, core total mean=6.130, median=2.000, full total mean=6.429.",Distribution differences are population/protocol confounded and are not clinical scale conversions.

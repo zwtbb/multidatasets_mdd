@@ -1,0 +1,87 @@
+{
+  "artifact_hygiene_passed": true,
+  "data_contract": {
+    "item_count": 8,
+    "subjects": {
+      "cmdc": 77,
+      "edaic": 219
+    },
+    "thresholds_per_item": 3
+  },
+  "generated_at": "2026-08-11T13:51:08+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "fitted_parameters_written": false,
+    "formal_ordinal_cfa_or_irt_fit": false,
+    "full_method_allowed": false,
+    "label_only": true,
+    "multimodal_features_read": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false,
+    "scales": [
+      "PHQ-8",
+      "PHQ-9"
+    ],
+    "shared_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "subject_level_outputs_written": false
+  },
+  "outputs": {
+    "bootstrap_rows": 6,
+    "input_audit_rows": 2,
+    "item_distribution_rows": 16,
+    "loading_rows": 8,
+    "partial_rows": 8,
+    "reliability_rows": 2,
+    "score_linking_rows": 25,
+    "source_context_rows": 4,
+    "stage_rows": 7,
+    "threshold_rows": 24,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "bootstrap_reliability_summary.csv",
+      "empirical_score_linking_summary.csv",
+      "gate_recommendations.csv",
+      "item_distribution_summary.csv",
+      "loading_invariance_summary.csv",
+      "partial_invariance_summary.csv",
+      "psychometric_input_audit.csv",
+      "reliability_dimensionality_summary.csv",
+      "report.md",
+      "run_summary.json",
+      "source_context_psychometric_baseline.csv",
+      "stage_summary.csv",
+      "threshold_dif_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV10_psychometric_invariance_baseline",
+  "scope": "label_only_psychometric_invariance_screen",
+  "status": "complete",
+  "verdict": {
+    "anchor_candidate_items": 4,
+    "configural_screen_pass": true,
+    "loading_congruence": 0.998124559590971,
+    "max_abs_loading_delta": 0.20571111953712673,
+    "max_abs_threshold_delta": 1.3772002882461691,
+    "mean_abs_loading_delta": 0.09302374750619932,
+    "mean_abs_threshold_delta": 0.38199190792728693,
+    "metric_invariant_items": 7,
+    "metric_status": "metric_screen_pass",
+    "partial_invariance_status": "partial_invariance_screen_pass",
+    "short_read": "Label-only PHQ screen supports a common one-factor structure and partial anchors, but threshold/scalar invariance remains approximate and must be treated as measurement-shift evidence.",
+    "status": "complete_partial_invariance_supported_approx",
+    "threshold_invariant_items": 4,
+    "threshold_status": "threshold_screen_partial_or_flagged"
+  }
+}

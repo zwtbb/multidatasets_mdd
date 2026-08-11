@@ -34,6 +34,7 @@ MV06_AGREEMENT = PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "agreement
 MV08_SUMMARY = PHASE5_DIR / "p5_mv08_partial_invariance_measurement" / "run_summary.json"
 MV08B_SUMMARY = PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement" / "run_summary.json"
 MV09_SUMMARY = PHASE5_DIR / "p5_mv09_conditional_identity_audit" / "run_summary.json"
+MV10_SUMMARY = PHASE5_DIR / "p5_mv10_psychometric_invariance_baseline" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -48,6 +49,7 @@ TRACKED_FILES = [
 CLAIM_SECTION = {
     "C_FULL_METHOD_START": "Claim boundary",
     "C_RQ1_SHARED_SYMPTOM": "Measurement evidence",
+    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Psychometric baseline",
     "C_PDCH_HAMD_INTERNAL": "HAMD diagnostic evidence",
     "C_EATD_SDS_GENERALIZATION": "External stress tests",
     "C_DATASET_IDENTITY_CONTROL": "Identity and protocol diagnostics",
@@ -60,7 +62,8 @@ CLAIM_SECTION = {
 
 PAPER_CLAIM_LANGUAGE = {
     "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper.",
-    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, measurement shift, and invariance.",
+    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, and partial invariance.",
+    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10 as approximate label-only PHQ measurement-screen evidence, with formal ordinal CFA/IRT still required.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
     "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and conditional identity as the stronger shared-latent diagnostic.",
@@ -68,7 +71,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims and explicit negative evidence.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, and a formal psychometric confirmation as the next gate.",
 }
 
 LITERATURE_ROWS = [
@@ -120,6 +123,13 @@ LITERATURE_ROWS = [
         "citation_hint": "Galenkamp et al. 2017, BMC Psychiatry",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5655879/",
         "paper_positioning": "PHQ-9 measurement invariance methods provide the template for the next label-only psychometric baseline before another multimodal head iteration.",
+    },
+    {
+        "source_id": "phq9_measurement_invariance_us_2019",
+        "topic": "PHQ-9 sociodemographic invariance",
+        "citation_hint": "Patel et al. 2019, Depression and Anxiety",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6736700/",
+        "paper_positioning": "PHQ-9 measurement-invariance work shows why group and dataset comparisons require psychometric checks before interpreting score or model differences.",
     },
     {
         "source_id": "phq_dif_jad_2024",
@@ -193,6 +203,7 @@ def require_inputs() -> None:
         MV08_SUMMARY,
         MV08B_SUMMARY,
         MV09_SUMMARY,
+        MV10_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -225,6 +236,7 @@ def build_metric_context() -> dict[str, str]:
     mv08 = read_json(MV08_SUMMARY)
     mv08b = read_json(MV08B_SUMMARY)
     mv09 = read_json(MV09_SUMMARY)
+    mv10 = read_json(MV10_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -233,6 +245,7 @@ def build_metric_context() -> dict[str, str]:
     mv08_v = mv08["verdict"]
     mv08b_v = mv08b["verdict"]
     mv09_v = mv09["verdict"]
+    mv10_v = mv10["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -250,13 +263,23 @@ def build_metric_context() -> dict[str, str]:
             f"{mv08b_v['pooled_m2b_improved_vs_both_floor_slices']}/{mv08b_v['pooled_active_slices']} slices, "
             f"but prediction identity BA {fmt(mv08b_v['prediction_identity_ba_m2b'])} exceeds gate "
             f"{fmt(mv08b_v['current_mv08_m2_prediction_identity_ba_gate'])}. MV09 revises the gate semantics: "
-            f"E-DAIC/CMDC item-conditioned feature identity BA remains {fmt(mv09_v['edaic_cmdc_item_residualized_ba'])}."
+            f"E-DAIC/CMDC item-conditioned feature identity BA remains {fmt(mv09_v['edaic_cmdc_item_residualized_ba'])}. "
+            f"MV10 adds a label-only PHQ screen with loading congruence {fmt(mv10_v['loading_congruence'])}, "
+            f"{mv10_v['metric_invariant_items']}/8 metric items, {mv10_v['threshold_invariant_items']}/8 "
+            f"threshold items, and {mv10_v['anchor_candidate_items']}/8 candidate anchors."
         ),
         "mv09": (
             f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
             f"PHQ-item residualized BA {fmt(mv09_v['edaic_cmdc_item_residualized_ba'])}; "
             f"CMDC/PDCH severity-residualized BA {fmt(mv09_v['cmdc_pdch_severity_residualized_ba'])}; "
             f"three-way severity-residualized BA {fmt(mv09_v['three_way_severity_residualized_ba'])}."
+        ),
+        "mv10": (
+            f"MV10 label-only PHQ screen: configural pass={mv10_v['configural_screen_pass']}; "
+            f"loading congruence {fmt(mv10_v['loading_congruence'])}; "
+            f"metric invariant items {mv10_v['metric_invariant_items']}/8; "
+            f"threshold invariant items {mv10_v['threshold_invariant_items']}/8; "
+            f"anchor candidates {mv10_v['anchor_candidate_items']}/8; status {mv10_v['status']}."
         ),
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
@@ -283,9 +306,11 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return context["gate"]
+        return f"{context['gate']} {context['mv10']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
         return context["rq1"]
+    if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
+        return context["mv10"]
     if claim_id == "C_PDCH_HAMD_INTERNAL":
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
@@ -345,8 +370,15 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "rq1_measurement_negative",
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
-            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b",
+            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10 shifts the next gate to formal psychometric confirmation.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10",
+        },
+        {
+            "finding_id": "mv10_psychometric_baseline",
+            "paper_section": "Psychometric baseline",
+            "finding": context["mv10"],
+            "interpretation": "The label-only PHQ screen supports a common one-factor and partial-anchor interpretation, but threshold/scalar invariance remains approximate and formally unconfirmed.",
+            "source_artifact_ids": "P5_MV10",
         },
         {
             "finding_id": "mv09_conditional_identity_gate",

@@ -1,0 +1,5 @@
+source_id,topic,citation_hint,url,use_in_mv10
+phq9_invariance_helius_2017,classical PHQ measurement invariance,"Galenkamp et al. 2017, BMC Psychiatry",https://pmc.ncbi.nlm.nih.gov/articles/PMC5655879/,"Motivates configural, metric, scalar/threshold, and partial-invariance checks before cross-group PHQ comparisons."
+phq9_measurement_invariance_us_2019,PHQ-9 sociodemographic invariance,"Patel et al. 2019, Depression and Anxiety",https://pmc.ncbi.nlm.nih.gov/articles/PMC6736700/,Positions PHQ-9 invariance testing as a prerequisite for meaningful group comparisons.
+phq_hamd_irt_2021,PHQ/HAMD scale measurement differences,"Ma et al. 2021, Frontiers in Psychiatry",https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.747139/full,Supports separating scale measurement from multimodal prediction because PHQ and HAMD can differ psychometrically.
+scale_linking_jclinepi_2026,cross-scale linking,"Zhou et al. 2026, Journal of Clinical Epidemiology",https://www.jclinepi.com/article/S0895-4356(26)00082-X/abstract,Motivates reporting empirical score-linking as a measurement diagnostic rather than assuming correlated scales are interchangeable.

@@ -1,0 +1,3 @@
+dataset,scale,subjects,item_count,cronbach_alpha,first_eigenvalue,second_eigenvalue,first_to_second_eigen_ratio,first_factor_variance_share,min_first_factor_loading,max_first_factor_loading,configural_screen_status
+edaic,PHQ-8,219,8,0.9097420043661131,4.951616320476798,0.7496703266984527,6.605058442533948,0.6189520400595997,0.6419337804454401,0.8453095870077484,configural_screen_pass
+cmdc,PHQ-9,77,8,0.9563711969338251,6.1686272474249515,0.5720301091110711,10.783745731515662,0.7710784059281189,0.8297304757170654,0.9329916536901225,configural_screen_pass

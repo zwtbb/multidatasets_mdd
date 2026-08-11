@@ -46,16 +46,22 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Minimal validations are complete
-through `P5_MV09 conditional_dataset_identity_audit`; the full-method gate
+through `P5_MV10 classical_psychometric_invariance_baseline`; the full-method gate
 remains `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a measurement-shift /
 measurement-invariance diagnostic paper. MV09 shows that unconditional dataset
 identity should be treated as a shortcut-risk screen, while conditional
-identity remains high after severity or aligned-item conditioning.
+identity remains high after severity or aligned-item conditioning. MV10 adds a
+label-only PHQ-8/PHQ-9 psychometric screen: both datasets pass the one-factor
+configural screen, loading congruence is `0.998`, `7/8` items pass the
+approximate metric-loading screen, but only `4/8` items pass the approximate
+threshold/scalar screen. Treat MV10 as partial measurement-shift evidence and
+candidate anchors (`C01`, `C04`, `C05`, `C07`), not as formal ordinal CFA/IRT.
 
-Current next action: run a classical PHQ-8/PHQ-9 psychometric invariance
-baseline before any further MV08c-like multimodal head iteration.
+Current next action: run or package formal ordinal CFA/IRT confirmation for the
+PHQ-8/PHQ-9 anchor map, then predeclare a two-stage latent-target experiment
+(`Y -> theta`, then `X -> theta`) only if the measurement target is stable.
 
 ## Key Paths
 
@@ -75,6 +81,7 @@ baseline before any further MV08c-like multimodal head iteration.
 - GitHub publish workflow: `docs/github_publish_workflow.md`
 - Phase 5 full-method gate: `analysis/phase5_minimal_validation/full_method_gate_audit/`
 - MV09 conditional identity audit: `analysis/phase5_minimal_validation/p5_mv09_conditional_identity_audit/`
+- MV10 psychometric invariance baseline: `analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 

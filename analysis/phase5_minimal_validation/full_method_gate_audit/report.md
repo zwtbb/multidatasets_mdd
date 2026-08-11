@@ -1,13 +1,13 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-11T13:27:01+00:00`
+Generated: `2026-08-11T13:51:14+00:00`
 
 ## Decision
 
 - Full method allowed: `False`.
 - Gate status: `blocked_but_publishable_diagnostic_direction`.
 - Blocked claim count: `5`.
-- Allowed limited/reframed claim count: `5`.
+- Allowed limited/reframed claim count: `6`.
 
 The current evidence supports a careful diagnostic paper direction, but not a broad full symptom-aligned method claim yet.
 
@@ -15,8 +15,9 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Run a classical psychometric invariance baseline and separate measurement model from multimodal prediction before another RQ1 method attempt. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work. | A classical psychometric invariance baseline and a two-stage latent-target experiment are needed before any positive transferable shared-measurement claim. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Run formal ordinal CFA/IRT or an equivalent psychometric confirmation, then predeclare a two-stage Y-to-theta and X-to-theta latent-target experiment before another RQ1 method attempt. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work. | Formal ordinal CFA/IRT must confirm or revise the MV10 anchor map before a two-stage latent-target experiment can support any positive transferable shared-measurement claim. |
+| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10 as approximate label-only measurement-screen evidence for PHQ-8/PHQ-9 partial invariance; do not present it as formal multi-group ordinal CFA/IRT or a full-method pass. | Formal ordinal CFA/IRT or equivalent psychometric confirmation plus no subject-level factor score or fitted-parameter export before any positive measurement-invariance claim. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, and conditional identity audits are controls; do not claim invariant representation. | Future gates must distinguish unconditional feature identity, conditional shared-latent identity, and scale-specific post-head prediction identity. |
@@ -24,7 +25,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, expand the E-DAIC double-annotation slice or add Krippendorff alpha/bootstrap uncertainty because E-DAIC currently has few double pairs. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09 are bounded diagnostic evidence, not a full-method pass. | Start the classical psychometric baseline, then a two-stage latent-target experiment if the measurement model is usable. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09/MV10 are bounded diagnostic evidence, not a full-method pass. | Run formal ordinal CFA/IRT or equivalent confirmation, then a two-stage latent-target experiment if the measurement model is usable. |
 
 ## Evidence Inventory
 
@@ -56,13 +57,14 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV08_error_analysis | `complete` | `complete_current_mv08_not_claimable_revision_or_freeze` | `True` | MV08 error analysis confirms the current partial-invariance ordinal head should be frozen as negative evidence unless a predeclared MV08b revision changes the measurement mechanism. The total-score floor remains the k... |
 | P5_MV08b_design | `complete` | `ready_to_implement_mv08b_total_anchored_residual_measurement` | `True` | MV08b is predeclared as a total-anchored residual measurement revision: predict severity first, model item residuals only after anchoring, pool or collapse sparse thresholds, and keep HAMD as a separate clinical stres... |
 | P5_MV08b | `complete` | `blocked_prediction_identity_increased_vs_mv08` | `True` | MV08b tests whether item residuals add construct information after a total-severity anchor. Treat a pass as bounded RQ1 measurement evidence only, not full-method authorization. |
-| P5_MV09 | `complete` | `complete` | `True` | Unconditional dataset identity should be treated as a shortcut-risk screen; future gates need conditional identity for shared latent claims. |
+| P5_MV09 | `complete` | `complete_identity_gate_revision_needed` | `True` | Unconditional dataset identity should be treated as a shortcut-risk screen; future gates need conditional identity for shared latent claims. |
+| P5_MV10 | `complete` | `complete_partial_invariance_supported_approx` | `True` | Label-only PHQ screen supports a common one-factor structure and partial anchors, but threshold/scalar invariance remains approximate and must be treated as measurement-shift evidence. |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Run a classical PHQ-8/PHQ-9 psychometric invariance baseline before any MV08c-like multimodal head iteration. | Configural, metric, scalar/threshold, and partial-invariance label-only baselines are reported from item labels without reading raw media or training multimodal predictors. |
+| 1 | Run or package a formal ordinal CFA/IRT confirmation for PHQ-8/PHQ-9 anchors, then predeclare the two-stage latent-target experiment. | Formal fit, invariance, and DIF tables confirm or revise the candidate anchor map C01/C04/C05/C07 and keep factor scores and fitted parameters local-only. |
 | 2 | Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice. | Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

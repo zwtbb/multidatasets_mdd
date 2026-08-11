@@ -1,0 +1,9 @@
+construct_id,item_label_short,abs_loading_delta,max_abs_threshold_location_delta,mean_abs_threshold_location_delta,metric_invariant_screen,threshold_invariant_screen,partial_invariance_role
+C01,depressed_mood,0.04129308709210411,0.3108482510934977,0.18073973959212752,True,True,anchor_candidate
+C02,anhedonia,0.11010044799247887,1.3772002882461691,0.8339830999025217,True,False,metric_only_threshold_free
+C03,sleep,0.06674790793888641,0.3704098612218223,0.22438525605399842,True,False,metric_only_threshold_free
+C04,fatigue,0.0651075560458384,0.34796714672060486,0.1970100230221136,True,True,anchor_candidate
+C05,appetite,0.0953312316099032,0.3314075947384103,0.24500540116779293,True,True,anchor_candidate
+C06,self_worth,0.0597532640715015,1.0220420336115112,0.748265304624722,True,False,metric_only_threshold_free
+C07,concentration,0.10014536576175537,0.17246348132418376,0.11904775753096679,True,True,anchor_candidate
+C08,psychomotor,0.20571111953712673,0.5989893425238302,0.5074986815240528,False,False,free_loading_or_threshold

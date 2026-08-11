@@ -1,0 +1,5 @@
+recommendation_id,status,recommendation,evidence
+formal_cfa_boundary,formal_ordinal_cfa_not_run,Treat MV10 as a reproducible label-only invariance screen; run lavaan/mirt/semopy or equivalent before making a formal psychometric invariance claim.,"The current runtime has no R/lavaan, mirt, semopy, factor_analyzer, or statsmodels dependency."
+partial_anchor_map,partial_invariance_screen_pass,Use anchor candidates only as a starting map for two-stage latent-target design.,Anchor candidates: C01;C04;C05;C07; DIF/free candidates: C02;C03;C06;C08.
+two_stage_latent_target,plan_if_formal_fit_confirms,"Separate Y->theta measurement fitting from X->theta multimodal prediction, then map theta back to dataset-specific observed items.",MV10 status complete_partial_invariance_supported_approx; metric items 7/8; threshold items 4/8.
+full_method_gate,keep_blocked,Keep full M0/M1/M2/M3 method construction blocked until formal measurement and conditional identity gates are both satisfied.,MV10 is label-only and approximate; it does not address multimodal feature identity or external transfer by itself.
