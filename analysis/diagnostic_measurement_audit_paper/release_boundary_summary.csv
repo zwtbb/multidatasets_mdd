@@ -1,0 +1,6 @@
+artifact_family,examples,release_policy,rationale
+raw data and media,audio; video; raw transcripts; archives,local_only,"dataset licenses, consent boundaries, and file size"
+real row-level tables,real subject manifests; real file-integrity rows; real split maps,local_only,"contains identifiers, labels, or local file references"
+model internals and private review,row predictions; learned parameters; embeddings; verbatim excerpts; annotation workbooks,local_only_by_default,privacy and artifact-hygiene boundary
+public reproducibility skeleton,scripts; registry roles; schemas; synthetic examples; aggregate audits,track_in_git,supports reproducibility without redistributing sensitive data
+paper-critical summaries,claim gates; aggregate metric tables; hygiene audits; writing scaffolds,track_in_git_after_hygiene,needed for manuscript traceability and does not expose row-level material

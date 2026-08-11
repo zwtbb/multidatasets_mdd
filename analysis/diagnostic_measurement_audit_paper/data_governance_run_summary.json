@@ -1,0 +1,37 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "section_status": "ready_for_manuscript_drafting",
+    "short_read": "Data governance and label-contract draft section is ready from registry and aggregate audit sources."
+  },
+  "generated_at": "2026-08-11T13:01:12+00:00",
+  "input_contract": {
+    "aggregate_dataset_audit_read": true,
+    "phase4_label_contract_read": true,
+    "private_review_material_read": false,
+    "raw_data_scanned": false,
+    "raw_paths_written": false,
+    "registry_read": true,
+    "row_level_manifests_read": false
+  },
+  "outputs": {
+    "construct_coverage_rows": 4,
+    "dataset_governance_rows": 6,
+    "label_contract_rows": 7,
+    "release_boundary_rows": 5,
+    "source_context_rows": 9,
+    "tracked_outputs": [
+      "construct_coverage_summary.csv",
+      "data_governance_artifact_hygiene_audit.json",
+      "data_governance_label_contracts.md",
+      "data_governance_report.md",
+      "data_governance_run_summary.json",
+      "dataset_governance_summary.csv",
+      "label_contract_summary.csv",
+      "release_boundary_summary.csv",
+      "source_context_data_governance.csv"
+    ]
+  },
+  "run_id": "diagnostic_paper_data_governance_section",
+  "status": "complete"
+}

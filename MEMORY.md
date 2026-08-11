@@ -51,6 +51,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_35_phase5_mv08b_total_anchored_residual_design.md`
   - `/root/autodl-tmp/memory/sessions/session_36_phase5_mv08b_total_anchored_residual_run.md`
   - `/root/autodl-tmp/memory/sessions/session_37_diagnostic_paper_claim_tables.md`
+  - `/root/autodl-tmp/memory/sessions/session_38_data_governance_label_contracts_draft.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -420,6 +421,12 @@ MPDD 2025 is intentionally out of scope for current auditing.
   nine literature-positioning rows from aggregate artifacts plus web-checked
   primary sources. Artifact hygiene passed. Treat them as manuscript
   scaffolding, not a replacement for source experiment artifacts.
+- Diagnostic measurement-audit paper Data Governance and Label Contracts draft
+  is complete at `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`.
+  It exports aggregate dataset-governance, label-contract, construct-coverage,
+  release-boundary, source-context, report, and hygiene files from the registry
+  and aggregate audit/Phase 4 tables only. Artifact hygiene passed. Treat it as
+  manuscript scaffolding, not an experiment-input interface.
 
 Phase 2 gate status:
 
@@ -675,6 +682,12 @@ Key Phase 2 outputs:
   These tables support drafting but do not authorize stronger claims. The next
   writing task is the Data Governance and Label Contracts section and/or
   E-DAIC MV06 double-annotation strengthening.
+- Diagnostic data-governance section decision: use
+  `scripts/build_diagnostic_paper_data_governance_section.py` to regenerate
+  the paper-facing Data Governance and Label Contracts draft from registry,
+  aggregate dataset audit, and Phase 4 label-contract sources only. It is safe
+  for Git only after its artifact-hygiene audit passes; it must not replace the
+  local manifest layer for experiments.
 - Phase 5 full-method gate decision: use
   `scripts/phase5_full_method_gate_audit.py` as the authoritative claim
   boundary before starting the full symptom-aligned method. Full method remains
@@ -788,9 +801,9 @@ plaintext credential-like content before committing on the clean remote lineage.
    has now failed the identity gate, so freeze MV08/MV08b as negative RQ1
    diagnostic evidence under the current frozen-BGE/shallow-measurement
    contract. Paper-facing claim/evidence tables now exist under
-   `analysis/diagnostic_measurement_audit_paper/`. Next work should draft the
-   Data Governance and Label Contracts section and/or strengthen MV06 E-DAIC
-   agreement.
-   Optionally expand E-DAIC MV06 double annotation to stabilize per-dataset
-   agreement.
+   `analysis/diagnostic_measurement_audit_paper/`, and the Data Governance and
+   Label Contracts draft section is ready. Next work should draft the Baselines
+   and Failure-Mode Diagnostics section and/or strengthen MV06 E-DAIC agreement
+   before making stronger evidence-localization claims. Optionally expand
+   E-DAIC MV06 double annotation to stabilize per-dataset agreement.
    Full method construction remains blocked until the gate changes.

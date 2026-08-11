@@ -1,0 +1,5 @@
+scale,direct_constructs,partial_constructs,secondary_constructs,absent_constructs,paper_interpretation
+PHQ-8,8,0,0,7,"cleanest core PHQ bridge, especially C01-C08; PHQ-9 alone includes C09"
+PHQ-9,9,0,0,6,"cleanest core PHQ bridge, especially C01-C08; PHQ-9 alone includes C09"
+HAMD-17,5,5,3,2,clinician-rated HAMD includes core items plus anxiety/somatic/insight content
+SDS,5,9,0,1,SDS is broad self-report and currently total-only in EATD; use cautiously for stress testing

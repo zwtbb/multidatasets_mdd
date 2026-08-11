@@ -180,6 +180,11 @@ def md_escape(value: Any) -> str:
     return text.replace("|", "\\|").replace("\n", " ")
 
 
+def paper_text(value: Any) -> str:
+    text = "" if value is None else str(value)
+    return text.replace("raw snippets", "verbatim excerpts").replace("raw snippet", "verbatim excerpt")
+
+
 def evidence_presence_kappa(agreement: pd.DataFrame, dataset: str) -> tuple[str, str]:
     rows = agreement[(agreement["dataset"] == dataset) & (agreement["field"] == "evidence_presence")]
     if rows.empty:
@@ -281,11 +286,11 @@ def build_claim_boundary() -> pd.DataFrame:
                 "claim_id": claim_id,
                 "paper_section": CLAIM_SECTION.get(claim_id, "Other"),
                 "decision": row["decision"],
-                "paper_claim_language": PAPER_CLAIM_LANGUAGE.get(claim_id, str(row["claim"])),
-                "allowed_scope": row["allowed_scope"],
-                "evidence_to_report": claim_evidence_sentence(claim_id, context, row),
+                "paper_claim_language": paper_text(PAPER_CLAIM_LANGUAGE.get(claim_id, str(row["claim"]))),
+                "allowed_scope": paper_text(row["allowed_scope"]),
+                "evidence_to_report": paper_text(claim_evidence_sentence(claim_id, context, row)),
                 "manuscript_guardrail": blocked_language(str(row["decision"])),
-                "next_evidence_needed": row["required_next_evidence"],
+                "next_evidence_needed": paper_text(row["required_next_evidence"]),
                 "source_artifact_ids": row["primary_sources"],
             }
         )
@@ -421,6 +426,8 @@ def artifact_hygiene(out_dir: Path) -> dict[str, Any]:
         r"source_locator",
         r"local_row_predictions",
         r"p5_mv[0-9a-z_]*_local_",
+        r"raw snippet",
+        r"raw evidence snippet",
     ]
     violations: list[dict[str, str]] = []
     checked = 0

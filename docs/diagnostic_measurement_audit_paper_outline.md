@@ -143,14 +143,40 @@ Tracked outputs:
 - `report.md`, `run_summary.json`, and `artifact_hygiene_audit.json`: writing
   handoff and release/hygiene status.
 
+The Data Governance and Label Contracts section scaffold is generated in the
+same directory by:
+
+```bash
+python scripts/build_diagnostic_paper_data_governance_section.py
+```
+
+Tracked outputs:
+
+- `dataset_governance_summary.csv`: six-dataset registry/audit summary with
+  roles, protocols, modalities, valid rows, label type, and quality notes.
+- `label_contract_summary.csv`: seven dataset-scale label contracts and
+  paper-facing claim boundaries.
+- `construct_coverage_summary.csv`: PHQ-8, PHQ-9, HAMD-17, and SDS coverage of
+  the 15-construct ontology.
+- `release_boundary_summary.csv`: what remains local-only versus what can be
+  tracked after hygiene.
+- `source_context_data_governance.csv`: web-checked primary source context for
+  dataset and psychometric framing.
+- `data_governance_label_contracts.md`, `data_governance_report.md`,
+  `data_governance_run_summary.json`, and
+  `data_governance_artifact_hygiene_audit.json`: manuscript draft and
+  reproducibility/hygiene status.
+
 ## Immediate Writing Tasks
 
 1. Done: freeze MV08/MV08b as negative RQ1 diagnostic evidence in the issue log
    and master plan.
 2. Done: create compact allowed/blocked claim tables from the full-method gate.
-3. Draft the Data Governance and Label Contracts section from existing Phase 0
-   through Phase 4 artifacts.
-4. Expand E-DAIC MV06 double annotation if a stronger RQ4 claim is desired.
-5. Prepare result tables from existing aggregate summaries only; do not export
+3. Done: draft the Data Governance and Label Contracts section from existing
+   Phase 0 through Phase 4 artifacts.
+4. Draft the Baselines and Failure-Mode Diagnostics section from Phase 2 and
+   Phase 3 aggregate summaries.
+5. Expand E-DAIC MV06 double annotation if a stronger RQ4 claim is desired.
+6. Prepare result tables from existing aggregate summaries only; do not export
    row-level predictions, raw text, subject locators, learned parameters, or
    model files.
