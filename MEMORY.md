@@ -60,6 +60,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_44_mv12_tradeoff_analysis.md`
   - `/root/autodl-tmp/memory/sessions/session_45_diagnostic_paper_results_sections.md`
   - `/root/autodl-tmp/memory/sessions/session_46_mv13_external_psychometric_replication.md`
+  - `/root/autodl-tmp/memory/sessions/session_47_mv14_measurement_uncertainty_bootstrap_design.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -125,10 +126,11 @@ MPDD 2025 is intentionally out of scope for current auditing.
 - Current next stage: measurement-aware validation under the Phase 5
   full-method gate. The current MV12 latent-target line is frozen as bounded
   diagnostic evidence, MV13 external psychometric replication is complete with
-  a convergence caveat, the Baselines/Failure-Mode/Measurement Results
-  scaffold is complete, and full-method work remains blocked until a genuinely
-  new predeclared mechanism changes the gate. The active next experiment is
-  MV14 measurement-uncertainty/bootstrap.
+  a convergence caveat, MV14 measurement-uncertainty/bootstrap is now
+  predeclared as a design contract, the Baselines/Failure-Mode/Measurement
+  Results scaffold is complete, and full-method work remains blocked until a
+  genuinely new predeclared mechanism changes the gate. The active next
+  experiment is to implement and run MV14.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -360,7 +362,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 34 Phase 5 run summaries and exports claim gates, evidence
+  It reads 35 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -374,7 +376,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   shared-symptom representation, positive EATD SDS generalization, EATD
   valence-adversarial design, and RQ3 context conditioning. After MV13, its
   ranked next action is
-  `NEXT_PREDECLARE_MV14_MEASUREMENT_UNCERTAINTY_BOOTSTRAP`.
+  `NEXT_IMPLEMENT_MV14_MEASUREMENT_UNCERTAINTY_BOOTSTRAP`.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -513,6 +515,18 @@ MPDD 2025 is intentionally out of scope for current auditing.
   is now the next active measurement step. Local R item-response input, fitted
   parameters, factor/theta scores, parameter CI values, model objects, and
   bootstrap samples stay local-only.
+- Phase 5 `P5_MV14 measurement_uncertainty_bootstrap_design` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap_design/`.
+  It is a label-only predeclaration, not a bootstrap run. It reads only
+  aggregate MV10/MV11/MV13/full-gate artifacts and exports bootstrap-tier,
+  input-boundary, local-only-boundary, stability-metric, pass/fail-gate,
+  implementation-queue, method-source, runtime-preflight, report, run-summary,
+  and hygiene artifacts. Current status is
+  `ready_to_implement_mv14_measurement_uncertainty_bootstrap`; Rscript, mirt
+  1.35.1, `multipleGroup`, `DIF`, `boot.mirt`, and `boot.LR` are available.
+  Track only future aggregate stability summaries; bootstrap inputs, draw
+  indices, fitted parameters, full CI values, factor/theta scores, model
+  objects, and detailed logs stay local-only.
 - Diagnostic measurement-audit paper claim tables are complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`. They export
   paper-facing allowed/blocked claim boundaries, thirteen key numeric findings,
@@ -845,14 +859,22 @@ Key Phase 2 outputs:
   convergence warning and small CMDC item-labeled N require MV14 uncertainty
   evidence before stronger item-level DIF wording. Treat MV13 as label-only
   measurement evidence, not multimodal method success.
+- MV14 measurement-uncertainty design decision: use group-wise subject
+  bootstrap over the same E-DAIC/CMDC PHQ C01-C08 item-response boundary to
+  quantify convergence, AIC/BIC model-selection frequency, anchor support,
+  loading-DIF and threshold-DIF selection frequency, item-fit stability, and
+  SE/CI availability. The default predeclared ladder is smoke R=10, core
+  stability R=200, item-DIF stability R=100, plus optional `boot.mirt` and
+  `boot.LR` sensitivity tiers. MV14 is uncertainty evidence only, not full
+  method authorization.
 - Diagnostic results-section decision: use
   `scripts/build_diagnostic_paper_results_sections.py` to regenerate the
   Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold from
   aggregate artifacts only. Its manuscript framing should treat MV12 as a
   predictive fidelity-dataset identifiability trade-off, not as a simple model
   failure or a positive full-method result.
-- Next measurement-aware route decision: the next experiments should be
-  continue in order as MV14 measurement-uncertainty bootstrap, MV15
+- Next measurement-aware route decision: the next experiments should continue
+  in order as MV14 measurement-uncertainty bootstrap run, MV15
   latent-conditioned dataset identity, and MV16 cross-dataset theta calibration
   / few-shot scale linking. Do not run MV08c-like shallow-head variants, EATD
   valence-adversarial modules, naive personality conditioning, or a
@@ -969,11 +991,13 @@ plaintext credential-like content before committing on the clean remote lineage.
    two-stage latent-target result, and MV12 aggregate tradeoff analysis freezes
    the current latent-target line. MV13 externally replicates the MV11
    qualitative PHQ partial-invariance pattern with R `mirt`, while retaining a
-   configural convergence caveat. Full method construction remains blocked.
+   configural convergence caveat. MV14 now predeclares the bootstrap
+   uncertainty layer and is ready to implement. Full method construction remains
+   blocked.
    The paper direction is measurement shift / measurement invariance with
    bounded negative and diagnostic evidence. The Baselines, Failure-Mode
    Diagnostics, and Measurement Results scaffold is complete. The next active
-   task is to predeclare MV14 bootstrap uncertainty, followed by MV15
+   task is to implement and run MV14 bootstrap uncertainty, followed by MV15
    latent-conditioned identity and MV16 cross-dataset theta calibration /
    few-shot scale linking; secondary work can strengthen E-DAIC MV06 agreement
    before stronger evidence-localization claims.

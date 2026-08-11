@@ -1,0 +1,82 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "design_status": "ready_to_implement_mv14_measurement_uncertainty_bootstrap",
+    "full_method_allowed": false,
+    "mv14_runtime_ready": true,
+    "next_action": "IMPLEMENT_MV14_R_BOOTSTRAP_RUNNER",
+    "short_read": "MV14 is predeclared as an aggregate-only bootstrap stability audit for PHQ anchors, DIF flags, model selection, convergence, and uncertainty availability."
+  },
+  "generated_at": "2026-08-11T16:58:06+00:00",
+  "input_contract": {
+    "bootstrap_unit": "subject_row_within_dataset_group",
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "external_bootstrap_run_performed": false,
+    "label_only": true,
+    "media_or_transcripts_read": false,
+    "multimodal_features_read": false,
+    "participant_grain_outputs_written": false,
+    "row_level_predictions_read": false,
+    "scales": [
+      "PHQ-8",
+      "PHQ-9"
+    ],
+    "shared_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ]
+  },
+  "local_only_files": {
+    "bootstrap_item_response_inputs": "group-wise resampled participant-grain item matrices",
+    "bootstrap_resampling_draws": "within-dataset draw indices and row multiplicities",
+    "factor_or_theta_scores": "all latent/factor scores",
+    "fitted_mirt_model_objects": "all fitted bootstrap model objects",
+    "fitted_parameters_or_ci_values": "full item parameters and confidence interval values",
+    "per_resample_logs": "detailed warnings and fit traces"
+  },
+  "outputs": {
+    "bootstrap_tier_rows": 5,
+    "gate_rows": 9,
+    "implementation_rows": 6,
+    "input_contract_rows": 4,
+    "local_only_boundary_rows": 6,
+    "method_source_rows": 6,
+    "source_evidence_rows": 9,
+    "stability_metric_rows": 8,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "bootstrap_ladder_contract.csv",
+      "implementation_queue.csv",
+      "input_boundary_contract.csv",
+      "local_only_boundary_contract.csv",
+      "method_source_refs.csv",
+      "pass_fail_gate_contract.csv",
+      "report.md",
+      "run_summary.json",
+      "runtime_preflight.csv",
+      "source_evidence_summary.csv",
+      "stability_metric_contract.csv"
+    ]
+  },
+  "run_id": "P5_MV14_measurement_uncertainty_bootstrap_design",
+  "runtime_preflight": {
+    "DIF_status": "available",
+    "boot_LR_status": "available",
+    "boot_mirt_status": "available",
+    "mirt_status": "1.35.1",
+    "multipleGroup_status": "available",
+    "mv14_runtime_ready": true,
+    "rscript_available": true
+  },
+  "scope": "measurement_uncertainty_bootstrap_predeclaration",
+  "status": "complete"
+}

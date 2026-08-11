@@ -1,0 +1,7 @@
+artifact_class,git_policy,reason,allowed_tracked_derivative
+bootstrap_item_response_inputs,ignored_local_only,Each bootstrap input is participant-grain label data even if identifiers are removed.,"aggregate counts by dataset, item, model, and convergence category"
+bootstrap_resampling_indices,ignored_local_only,Resampling draws can reveal participant-grain multiplicities and row linkage.,"seed, bootstrap count, and group-size summary"
+fitted_mirt_model_objects,do_not_track,Fitted objects contain full psychometric parameters and internals.,"fit success, convergence, information-criterion, and warning-count summaries"
+full_parameter_or_ci_values,local_only_if_generated,Parameter estimates and CI values are fitted measurement outputs.,finite SE/CI availability counts and missingness reasons
+factor_or_theta_scores,do_not_track,Latent scores are participant-grain outputs.,none in MV14; later MV15/MV16 may export aggregate identity or calibration summaries only
+per_resample_row_logs,ignored_local_only,"Detailed logs can contain row counts, sampled patterns, or failure traces tied to small groups.",failure-rate summaries and bounded warning-category counts

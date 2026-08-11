@@ -1,0 +1,8 @@
+check_id,status,observed,decision
+Rscript_on_path,pass,available,MV14 execution requires the existing version-captured R runtime.
+mirt_package,pass,1.35.1,mirt remains the primary external psychometric runtime.
+multipleGroup_function,pass,available,multipleGroup is required for the core E-DAIC/CMDC model ladder.
+DIF_function,pass,available,DIF is useful as a documented reference path; the MV13 one-free model ladder remains acceptable if DIF is unavailable.
+boot_mirt_function,pass,available,boot.mirt enables optional aggregate SE-availability sensitivity.
+boot_LR_function,pass,available,boot.LR enables optional parametric LRT sensitivity.
+mv14_runtime_ready,pass,ready,"The design can be complete even if optional bootstrap helpers are missing, but the execution run must version-capture any fallback."

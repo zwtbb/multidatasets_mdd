@@ -46,7 +46,8 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Minimal validations are complete
-through `P5_MV13` external psychometric replication; the full-method gate remains
+through `P5_MV13` external psychometric replication, and `P5_MV14` measurement
+uncertainty/bootstrap is now predeclared as a design contract; the full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a measurement-shift /
@@ -76,10 +77,13 @@ model ladder with `mirt::multipleGroup`. It qualitatively replicates MV11:
 four MV10 anchors are confirmed, no loading DIF is strongly flagged, threshold
 DIF remains concentrated on `C02` and `C06`, AIC prefers the partial model, and
 BIC prefers scalar. The configural model retains a convergence warning, so MV13
-is bounded external measurement evidence, not a full-method pass.
+is bounded external measurement evidence, not a full-method pass. MV14 now
+fixes the bootstrap tiers, local-only boundaries, stability metrics, and
+pass/downgrade rules for quantifying anchor, DIF, model-selection, convergence,
+and SE/CI-availability uncertainty before stronger item-level wording.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
-now generated from aggregate tables only. Current next action: predeclare and
+now generated from aggregate tables only. Current next action: implement and
 run measurement-uncertainty bootstrap (`P5_MV14`), then latent-conditioned
 dataset identity (`P5_MV15`) and cross-dataset theta calibration / few-shot
 scale linking (`P5_MV16`) if their gates remain coherent. Optionally expand
@@ -112,6 +116,7 @@ calibration parameters, and model artifacts remain local-only.
 - MV12 aggregate tradeoff analysis: `analysis/phase5_minimal_validation/p5_mv12_latent_target_tradeoff_analysis/`
 - MV13 external psychometric replication design: `analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication_design/`
 - MV13 external psychometric replication run: `analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/`
+- MV14 measurement-uncertainty bootstrap design: `analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap_design/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
@@ -152,11 +157,12 @@ python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
 ```
 
-Phase 5 gate and MV13 external psychometric replication:
+Phase 5 gate, MV13 external psychometric replication, and MV14 bootstrap design:
 
 ```bash
 python scripts/phase5_plan_mv13_external_psychometric_replication.py --overwrite
 python scripts/phase5_run_mv13_external_psychometric_replication.py
+python scripts/phase5_plan_mv14_measurement_uncertainty_bootstrap.py --overwrite
 python scripts/phase5_full_method_gate_audit.py
 ```
 

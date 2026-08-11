@@ -278,8 +278,16 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   threshold DIF on `C02`/`C06`, AIC prefers the MV10 partial model, and BIC
   prefers scalar. Treat as
   `complete_external_mirt_with_convergence_warnings` because the configural
-  core model did not converge within 3000 EM cycles. MV14 measurement
-  uncertainty/bootstrap is now the next active task.
+  core model did not converge within 3000 EM cycles.
+- Phase 5 `P5_MV14 measurement_uncertainty_bootstrap_design` completed in the
+  main checkout. It is a design/predeclaration contract, not a bootstrap run.
+  It reads only aggregate MV10/MV11/MV13/full-gate artifacts and exports
+  aggregate bootstrap-tier, local-only-boundary, stability-metric,
+  pass/fail-gate, runtime-preflight, implementation-queue, report, run summary,
+  and hygiene artifacts. Treat it as
+  `ready_to_implement_mv14_measurement_uncertainty_bootstrap`: Rscript, mirt
+  1.35.1, `multipleGroup`, `DIF`, `boot.mirt`, and `boot.LR` are available,
+  and the next active task is implementing/running MV14.
 - Diagnostic paper Baselines, Failure-Mode Diagnostics, and Measurement
   Results sections were drafted in the main checkout by
   `scripts/build_diagnostic_paper_results_sections.py`. The scaffold reads
@@ -394,7 +402,8 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   aggregate tradeoff analysis now freezes the current latent-target line.
 	   `P5_MV13` externally replicates the MV11 qualitative PHQ
 	   partial-invariance result with R `mirt`, while retaining a configural
-	   convergence caveat.
+	   convergence caveat. `P5_MV14` is now predeclared as an aggregate-only
+	   measurement-uncertainty bootstrap design and is ready to implement.
 	   Freeze MV08/MV08b as negative RQ1 diagnostic evidence under the current
 	   frozen-BGE shallow-measurement contract.
 	   The full-method gate audit now records this as
@@ -402,7 +411,7 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   RQ4 is allowed only as limited aggregate evidence, and a bounded
 	   measurement-shift / measurement-invariance paper direction remains viable.
 	   The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold
-	   is now complete. The next active task is predeclaring MV14
+	   is now complete. The next active task is implementing and running MV14
 	   measurement-uncertainty bootstrap, followed by MV15 latent-conditioned
 	   dataset identity and MV16 cross-dataset theta calibration / few-shot scale
 	   linking, with theta scores, fitted parameters, row predictions,
@@ -458,9 +467,10 @@ trade-off is paper-critical: same-dataset theta utility, conditional identity,
 and cross-dataset observed-scale transfer improve, while same-dataset observed
 item-scale safety and external theta transfer fail. The results-section
 scaffold is complete. MV13 external R `mirt` replication now preserves the
-MV11 qualitative anchor/DIF pattern with a configural convergence caveat. Next,
-predeclare MV14 bootstrap uncertainty, then MV15 latent-conditioned identity,
-and MV16 few-shot theta calibration. Optionally expand E-DAIC MV06 double
+MV11 qualitative anchor/DIF pattern with a configural convergence caveat. MV14
+bootstrap uncertainty is predeclared and ready to implement; next, run MV14,
+then MV15 latent-conditioned identity and MV16 few-shot theta calibration.
+Optionally expand E-DAIC MV06 double
 annotation to stabilize per-dataset agreement before stronger RQ4 wording. Keep
 row-level predictions, real manifests, real integrity/split maps, latent
 scores, learned parameters, learned embeddings, bootstrap samples, calibration
