@@ -1,0 +1,5 @@
+recommendation_id,status,recommendation,evidence
+formal_irt_boundary,formal_grm_mml_completed,Use MV11 as the formal label-only graded-response IRT confirmation layer; do not export fitted item parameters or subject factor scores.,20 model fits completed; optimizer_all_success=True.
+partial_anchor_map,complete_formal_partial_invariance_supported_with_bic_caveat,Use the confirmed anchor set as the candidate measurement target for any later two-stage latent prediction design.,Confirmed MV10 anchors: C01;C04;C05;C07; revised/free items: C02;C06.
+two_stage_latent_target,ready_to_predeclare_two_stage_latent_target_with_bic_caveat,"If proceeding, predeclare Y->theta measurement fitting separately from X->theta multimodal prediction and compare against direct X->Y floors.",MV11 status complete_formal_partial_invariance_supported_with_bic_caveat; confirmed MV10 anchors 4/3 required.
+full_method_gate,keep_blocked,Keep full M0/M1/M2/M3 construction blocked until the two-stage latent-target experiment is run and conditional identity is audited.,"MV11 is label-only; it does not test multimodal prediction, feature identity, or external transfer."

@@ -35,6 +35,7 @@ MV08_SUMMARY = PHASE5_DIR / "p5_mv08_partial_invariance_measurement" / "run_summ
 MV08B_SUMMARY = PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement" / "run_summary.json"
 MV09_SUMMARY = PHASE5_DIR / "p5_mv09_conditional_identity_audit" / "run_summary.json"
 MV10_SUMMARY = PHASE5_DIR / "p5_mv10_psychometric_invariance_baseline" / "run_summary.json"
+MV11_SUMMARY = PHASE5_DIR / "p5_mv11_formal_psychometric_confirmation" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -63,7 +64,7 @@ CLAIM_SECTION = {
 PAPER_CLAIM_LANGUAGE = {
     "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper.",
     "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, and partial invariance.",
-    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10 as approximate label-only PHQ measurement-screen evidence, with formal ordinal CFA/IRT still required.",
+    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11 as label-only PHQ partial-invariance evidence with an explicit AIC/BIC caveat.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
     "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and conditional identity as the stronger shared-latent diagnostic.",
@@ -71,7 +72,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, and a formal psychometric confirmation as the next gate.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, and a two-stage latent-target experiment as the next gate.",
 }
 
 LITERATURE_ROWS = [
@@ -130,6 +131,20 @@ LITERATURE_ROWS = [
         "citation_hint": "Patel et al. 2019, Depression and Anxiety",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6736700/",
         "paper_positioning": "PHQ-9 measurement-invariance work shows why group and dataset comparisons require psychometric checks before interpreting score or model differences.",
+    },
+    {
+        "source_id": "samejima_graded_response_1969",
+        "topic": "Ordinal IRT measurement model",
+        "citation_hint": "Samejima 1969, Psychometrika Monograph 17",
+        "url": "https://www.psychometricsociety.org/sites/main/files/file-attachments/mn17.pdf",
+        "paper_positioning": "The graded-response model provides the ordinal IRT family used by MV11 to separate label measurement from multimodal prediction.",
+    },
+    {
+        "source_id": "irt_lr_dif_frontiers_2017",
+        "topic": "IRT likelihood-ratio DIF testing",
+        "citation_hint": "Jeong and Lee 2017, Frontiers in Education",
+        "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2017.00051/full",
+        "paper_positioning": "IRT likelihood-ratio DIF testing supports MV11 item-level loading and threshold DIF diagnostics.",
     },
     {
         "source_id": "phq_dif_jad_2024",
@@ -204,6 +219,7 @@ def require_inputs() -> None:
         MV08B_SUMMARY,
         MV09_SUMMARY,
         MV10_SUMMARY,
+        MV11_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -237,6 +253,7 @@ def build_metric_context() -> dict[str, str]:
     mv08b = read_json(MV08B_SUMMARY)
     mv09 = read_json(MV09_SUMMARY)
     mv10 = read_json(MV10_SUMMARY)
+    mv11 = read_json(MV11_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -246,6 +263,7 @@ def build_metric_context() -> dict[str, str]:
     mv08b_v = mv08b["verdict"]
     mv09_v = mv09["verdict"]
     mv10_v = mv10["verdict"]
+    mv11_v = mv11["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -266,7 +284,10 @@ def build_metric_context() -> dict[str, str]:
             f"E-DAIC/CMDC item-conditioned feature identity BA remains {fmt(mv09_v['edaic_cmdc_item_residualized_ba'])}. "
             f"MV10 adds a label-only PHQ screen with loading congruence {fmt(mv10_v['loading_congruence'])}, "
             f"{mv10_v['metric_invariant_items']}/8 metric items, {mv10_v['threshold_invariant_items']}/8 "
-            f"threshold items, and {mv10_v['anchor_candidate_items']}/8 candidate anchors."
+            f"threshold items, and {mv10_v['anchor_candidate_items']}/8 candidate anchors. "
+            f"MV11 confirms {mv11_v['confirmed_mv10_anchor_items']} MV10 anchors with "
+            f"{mv11_v['loading_dif_flagged_items']} loading-DIF and {mv11_v['threshold_dif_flagged_items']} "
+            f"threshold-DIF flags, but core AIC/BIC split is {mv11_v['core_model_aic_bic_split']}."
         ),
         "mv09": (
             f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
@@ -280,6 +301,14 @@ def build_metric_context() -> dict[str, str]:
             f"metric invariant items {mv10_v['metric_invariant_items']}/8; "
             f"threshold invariant items {mv10_v['threshold_invariant_items']}/8; "
             f"anchor candidates {mv10_v['anchor_candidate_items']}/8; status {mv10_v['status']}."
+        ),
+        "mv11": (
+            f"MV11 formal graded-response IRT confirmation: status {mv11_v['status']}; "
+            f"confirmed MV10 anchors {mv11_v['confirmed_mv10_anchor_items']}; "
+            f"loading-DIF flags {mv11_v['loading_dif_flagged_items']}; "
+            f"threshold-DIF flags {mv11_v['threshold_dif_flagged_items']}; "
+            f"best AIC core model {mv11_v['best_aic_model']}; "
+            f"best BIC core model {mv11_v['best_bic_model']}."
         ),
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
@@ -306,11 +335,11 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
         return context["rq1"]
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
-        return context["mv10"]
+        return f"{context['mv10']} {context['mv11']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
@@ -370,15 +399,22 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "rq1_measurement_negative",
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
-            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10 shifts the next gate to formal psychometric confirmation.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10",
+            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11 shift the next gate to a two-stage latent-target predictor.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11",
         },
         {
             "finding_id": "mv10_psychometric_baseline",
             "paper_section": "Psychometric baseline",
             "finding": context["mv10"],
-            "interpretation": "The label-only PHQ screen supports a common one-factor and partial-anchor interpretation, but threshold/scalar invariance remains approximate and formally unconfirmed.",
+            "interpretation": "The label-only PHQ screen supports a common one-factor and partial-anchor interpretation, but threshold/scalar invariance remains partial.",
             "source_artifact_ids": "P5_MV10",
+        },
+        {
+            "finding_id": "mv11_formal_psychometric_confirmation",
+            "paper_section": "Psychometric baseline",
+            "finding": context["mv11"],
+            "interpretation": "The formal label-only IRT confirmation preserves the MV10 anchor map but leaves an AIC/BIC caveat, so it supports target design rather than a full method claim.",
+            "source_artifact_ids": "P5_MV11",
         },
         {
             "finding_id": "mv09_conditional_identity_gate",

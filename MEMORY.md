@@ -54,6 +54,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_38_data_governance_label_contracts_draft.md`
   - `/root/autodl-tmp/memory/sessions/session_39_mv09_conditional_identity_gate_revision.md`
   - `/root/autodl-tmp/memory/sessions/session_40_mv10_psychometric_invariance_baseline.md`
+  - `/root/autodl-tmp/memory/sessions/session_41_mv11_formal_psychometric_confirmation.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -351,21 +352,21 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 28 Phase 5 run summaries and exports claim gates, evidence
+  It reads 29 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
   and `artifact_hygiene_passed=true`. Allowed claims are limited to PDCH-only
   HAMD diagnostic evidence, dataset/protocol controls as diagnostics, MODMA
-  task-control evidence, MV10 approximate psychometric screening, and a
-  reframed diagnostic/audit-driven paper direction. RQ4 is now
+  task-control evidence, MV10/MV11 label-only psychometric screening and
+  confirmation, and a reframed diagnostic/audit-driven paper direction. RQ4 is now
   `allowed_limited` as first-round aggregate evidence,
   while blocked claims include full M0/M1/M2/M3 method start,
   transferable shared-symptom representation, positive EATD SDS
   generalization, EATD valence-adversarial design, and RQ3 context
-  conditioning. After MV10, its ranked next action is formal PHQ-8/PHQ-9
-  ordinal CFA/IRT confirmation followed by a two-stage latent-target design if
-  the measurement target is stable.
+  conditioning. After MV11, its ranked next action is to predeclare a
+  two-stage latent-target experiment with local-only factor scores/parameters,
+  direct baselines, conditional identity probes, and external transfer checks.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -444,13 +445,24 @@ MPDD 2025 is intentionally out of scope for current auditing.
   configural screen passes, loading congruence is `0.998`, metric-loading
   screen passes for `7/8` items, threshold/scalar screen passes for `4/8`
   items, and candidate anchors are `C01`, `C04`, `C05`, and `C07`. It is not a
-  formal multi-group ordinal CFA/IRT result. Full method remains blocked; next
-  work is formal psychometric confirmation and then a predeclared two-stage
-  `Y -> theta`, `X -> theta` target if confirmed.
+  formal multi-group ordinal CFA/IRT result. It motivated MV11 formal
+  label-only graded-response IRT confirmation before any multimodal
+  `X -> theta` target.
+- Phase 5 `P5_MV11 formal_ordinal_psychometric_confirmation` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv11_formal_psychometric_confirmation/`.
+  It fits a label-only multi-group graded-response IRT confirmation over the
+  same E-DAIC/CMDC PHQ C01-C08 labels and exports only aggregate fit,
+  invariance, DIF, and anchor-confirmation summaries. Treat as
+  `complete_formal_partial_invariance_supported_with_bic_caveat`: all four
+  MV10 anchors are confirmed, no loading-DIF items are strongly flagged,
+  threshold DIF is flagged for `C02` and `C06`, AIC prefers the MV10 partial
+  core model, and BIC prefers scalar. It is formal label-only measurement
+  evidence, not a multimodal method pass. Full method remains blocked; next
+  work is to predeclare the two-stage latent-target experiment.
 - Diagnostic measurement-audit paper claim tables are complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`. They export
-  paper-facing allowed/blocked claim boundaries, eight key numeric findings,
-  and thirteen literature-positioning rows from aggregate artifacts plus web-checked
+  paper-facing allowed/blocked claim boundaries, nine key numeric findings,
+  and fifteen literature-positioning rows from aggregate artifacts plus web-checked
   primary sources. Artifact hygiene passed. Treat them as manuscript
   scaffolding, not a replacement for source experiment artifacts.
 - Diagnostic measurement-audit paper Data Governance and Label Contracts draft
@@ -736,11 +748,15 @@ Key Phase 2 outputs:
   psychometric baseline.
 - MV10 psychometric-baseline decision: the E-DAIC PHQ-8 and CMDC PHQ-9 labels
   support an approximate common one-factor/metric screen, but threshold/scalar
-  invariance is partial and formal ordinal CFA/IRT was not run in the current
-  runtime. Use `C01`, `C04`, `C05`, and `C07` as candidate anchors only.
-  Keep full method blocked; next work is formal psychometric confirmation and
-  then a predeclared two-stage latent-target experiment only if the measurement
-  target is stable.
+  invariance is partial. Use `C01`, `C04`, `C05`, and `C07` as candidate
+  anchors only until formal confirmation.
+- MV11 formal-psychometric decision: the label-only multi-group graded-response
+  IRT confirmation preserves all four MV10 anchors and flags no strong loading
+  DIF, but threshold DIF remains for `C02` and `C06` and AIC/BIC disagree on
+  partial versus scalar core models. Treat this as enough to predeclare a
+  two-stage latent target, not as a full shared-symptom method pass. Factor
+  scores, posterior scores, fitted item parameters, row diagnostics, and model
+  artifacts must stay local-only.
 
 ## Data Quality Watchlist
 
@@ -846,12 +862,13 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
-   revises identity-gate semantics and MV10 provides an approximate label-only
-   PHQ partial-invariance screen, but full method construction remains blocked:
-   current conditional BGE identity remains high and formal psychometric
-   confirmation is still missing. The paper direction is measurement shift /
-   measurement invariance with bounded negative and diagnostic evidence. The
-   next experiment is formal PHQ-8/PHQ-9 ordinal CFA/IRT confirmation, followed
-   by a two-stage latent-target design only if the measurement target is stable;
-   secondary work can draft Baselines and Failure-Mode Diagnostics or strengthen
-   E-DAIC MV06 agreement before stronger evidence-localization claims.
+   revises identity-gate semantics, MV10 provides an approximate PHQ
+   partial-invariance screen, and MV11 provides formal label-only
+   graded-response confirmation with a BIC caveat. Full method construction
+   remains blocked because the project still lacks a predeclared and audited
+   multimodal `X -> theta` experiment. The paper direction is measurement
+   shift / measurement invariance with bounded negative and diagnostic
+   evidence. The next experiment is `P5_MV12` two-stage latent-target design;
+   secondary work can draft Baselines and Failure-Mode Diagnostics or
+   strengthen E-DAIC MV06 agreement before stronger evidence-localization
+   claims.

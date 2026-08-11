@@ -26,10 +26,12 @@ legitimate covariates where available.
 
 MV10 adds the first label-only PHQ-8/PHQ-9 psychometric baseline. It supports a
 common one-factor/configural screen and strong loading congruence, but
-threshold/scalar agreement is only partial. This moves the project from a
-generic benchmark audit toward a target-measurement-shift paper: the next gate
-is formal ordinal CFA/IRT confirmation of the candidate PHQ anchors before any
-new multimodal `X -> theta` experiment.
+threshold/scalar agreement is only partial. MV11 then fits a label-only
+multi-group graded-response IRT confirmation. It preserves the four MV10
+anchors, flags no loading DIF, flags threshold DIF for `C02` and `C06`, and
+records an AIC/BIC caveat. Together, MV10/MV11 move the project from a generic
+benchmark audit toward a target-measurement-shift paper; the next gate is a
+predeclared two-stage latent-target experiment before any full method.
 
 ## Claim Boundary
 
@@ -58,6 +60,10 @@ Allowed claims:
   and CMDC pass the one-factor screen, loading congruence is `0.998`, `7/8`
   items pass the metric-loading screen, and `4/8` items are candidate partial
   anchors (`C01`, `C04`, `C05`, `C07`).
+- MV11 provides formal label-only graded-response IRT confirmation with a BIC
+  caveat: all four MV10 anchors are preserved, no loading-DIF items are
+  strongly flagged, and threshold DIF is strongest for `C02` anhedonia and
+  `C06` self-worth.
 - MV07/MV07b/MV07c and MV08/MV08b can be used as an accuracy-invariance
   trade-off sequence, not as positive shared-space evidence.
 
@@ -66,8 +72,8 @@ Blocked claims:
 - Full M0/M1/M2/M3 symptom-aligned method construction.
 - A transferable shared-symptom representation across PHQ-8, PHQ-9, HAMD-17,
   and SDS.
-- A formal PHQ-8/PHQ-9 measurement-invariance claim from MV10 alone, because
-  MV10 is an approximate label-only screen rather than ordinal CFA/IRT.
+- A full PHQ-8/PHQ-9 scalar-invariance claim, because MV10/MV11 support
+  partial measurement invariance rather than full threshold/scalar invariance.
 - Positive EATD SDS external generalization.
 - EATD-driven valence-adversarial method design.
 - Positive MPDD context-conditioning or calibration.
@@ -114,7 +120,15 @@ Blocked claims:
    fatigue, `C05` appetite, and `C07` concentration; `C02`, `C03`, and `C06`
    are metric-only/threshold-free, and `C08` psychomotor should be freed.
 
-8. Evidence localization is a credibility layer, not a rescue for weak RQ1.
+8. Formal label-only IRT confirmation preserves the partial-anchor story.
+   MV11 fits multi-group graded-response IRT models over the same PHQ items.
+   Metric constraints are not strongly rejected versus configural, scalar
+   constraints are rejected by LRT only, and the MV10 partial model is best by
+   AIC while scalar remains best by BIC. Item DIF checks flag no loading DIF
+   and threshold DIF for `C02` and `C06`, preserving all four MV10 anchors but
+   keeping a conservative caveat for manuscript claims.
+
+9. Evidence localization is a credibility layer, not a rescue for weak RQ1.
    MV06 can support bounded aggregate credibility claims, but stronger RQ4
    claims need a larger E-DAIC double-annotation slice or additional agreement
    uncertainty analysis.
@@ -157,10 +171,11 @@ Blocked claims:
 6. Psychometric Measurement Baselines
    - MV10 approximate PHQ-8/PHQ-9 configural, metric, scalar/threshold, and
      partial-invariance screen.
-   - Formal ordinal CFA/IRT confirmation as the next gate.
+   - MV11 formal label-only graded-response IRT confirmation.
    - Label-only scale linking before multimodal prediction.
-   - Two-stage target plan: fit measurement model `Y -> theta`, train
-     multimodal predictor `X -> theta`, then map `theta -> Y^(d)`.
+   - Next gate: predeclare a two-stage target plan that fits measurement model
+     `Y -> theta`, trains multimodal predictor `X -> theta`, then maps
+     `theta -> Y^(d)`.
 
 7. Evidence Localization
    - MV06 aggregate annotation workflow.
@@ -187,10 +202,10 @@ Tracked outputs:
 
 - `paper_claim_boundary.csv` and `paper_claim_boundary.md`: compact
   allowed/blocked claim language, evidence, guardrails, and source artifact IDs.
-- `key_numeric_findings.csv`: eight manuscript-ready findings for the full gate,
-  RQ1 measurement sequence, MV10 psychometric baseline, MV09 conditional
-  identity, PDCH HAMD, MODMA task control, EATD stress, and MV06 evidence
-  localization.
+- `key_numeric_findings.csv`: nine manuscript-ready findings for the full gate,
+  RQ1 measurement sequence, MV10 psychometric baseline, MV11 formal
+  confirmation, MV09 conditional identity, PDCH HAMD, MODMA task control, EATD
+  stress, and MV06 evidence localization.
 - `literature_positioning.csv`: web-checked source list for dataset governance,
   interviewer/protocol bias, PHQ/HAMD psychometrics, measurement invariance,
   MPDD/P3HF positioning, and PDCH.
@@ -220,6 +235,19 @@ Tracked outputs include `reliability_dimensionality_summary.csv`,
 `stage_summary.csv`, `report.md`, `run_summary.json`, and
 `artifact_hygiene_audit.json` under
 `analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/`.
+
+The MV11 formal psychometric confirmation is generated by:
+
+```bash
+python scripts/phase5_run_mv11_formal_psychometric_confirmation.py
+```
+
+Tracked outputs include `fit_model_summary.csv`,
+`invariance_comparison_summary.csv`, `item_dif_lrt_summary.csv`,
+`anchor_confirmation_summary.csv`, `gate_recommendations.csv`,
+`method_context_formal_irt.csv`, `report.md`, `run_summary.json`, and
+`artifact_hygiene_audit.json` under
+`analysis/phase5_minimal_validation/p5_mv11_formal_psychometric_confirmation/`.
 
 The Data Governance and Label Contracts section scaffold is generated in the
 same directory by:
@@ -254,9 +282,10 @@ Tracked outputs:
    Phase 0 through Phase 4 artifacts.
 4. Done: run MV09 conditional identity audit and update the full-method gate.
 5. Done: run MV10 approximate PHQ-8/PHQ-9 psychometric invariance baseline.
-6. Run or package formal ordinal CFA/IRT confirmation for the MV10 PHQ anchor
-   map, then predeclare the two-stage latent-target experiment if the
-   measurement target is stable.
+6. Done: run MV11 formal label-only graded-response IRT confirmation.
+7. Predeclare the two-stage latent-target experiment with local-only factor
+   scores/parameters, direct X-to-Y floors, conditional identity probes, and
+   external transfer checks.
 6. Draft the Baselines and Failure-Mode Diagnostics section from Phase 2 and
    Phase 3 aggregate summaries.
 7. Expand E-DAIC MV06 double annotation if a stronger RQ4 claim is desired.

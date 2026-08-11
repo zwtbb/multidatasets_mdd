@@ -1,0 +1,89 @@
+{
+  "artifact_hygiene_passed": true,
+  "data_contract": {
+    "groups": [
+      "edaic",
+      "cmdc"
+    ],
+    "item_count": 8,
+    "quadrature_points": 31,
+    "subjects": {
+      "cmdc": 77,
+      "edaic": 219
+    }
+  },
+  "generated_at": "2026-08-11T14:05:00+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "external_lavaan_or_mirt_runtime": false,
+    "fitted_parameters_written": false,
+    "formal_model_family": "multi_group_graded_response_mml",
+    "formal_ordinal_cfa_or_irt_fit": true,
+    "full_method_allowed": false,
+    "label_only": true,
+    "multimodal_features_read": false,
+    "mv10_partial_anchor_map_read": "analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/partial_invariance_summary.csv",
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false,
+    "scales": [
+      "PHQ-8",
+      "PHQ-9"
+    ],
+    "shared_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "subject_level_outputs_written": false
+  },
+  "outputs": {
+    "anchor_rows": 8,
+    "comparison_rows": 5,
+    "item_dif_rows": 16,
+    "model_fit_rows": 20,
+    "recommendation_rows": 4,
+    "source_context_rows": 4,
+    "tracked_outputs": [
+      "anchor_confirmation_summary.csv",
+      "artifact_hygiene_audit.json",
+      "fit_model_summary.csv",
+      "gate_recommendations.csv",
+      "invariance_comparison_summary.csv",
+      "item_dif_lrt_summary.csv",
+      "method_context_formal_irt.csv",
+      "report.md",
+      "run_summary.json"
+    ]
+  },
+  "run_id": "P5_MV11_formal_psychometric_confirmation",
+  "scope": "label_only_formal_graded_response_irt_confirmation",
+  "status": "complete",
+  "verdict": {
+    "best_aic_any_model": "partial_mv10",
+    "best_aic_model": "partial_mv10",
+    "best_bic_any_model": "threshold_free_one_C02",
+    "best_bic_model": "scalar",
+    "confirmed_mv10_anchor_items": 4,
+    "core_model_aic_bic_split": true,
+    "fit_count": 20,
+    "loading_dif_flagged_items": 0,
+    "metric_vs_configural_decision": "no_strong_evidence_against_restriction",
+    "min_confirmed_anchor_items_required": 3,
+    "model_family": "multi_group_graded_response_mml",
+    "optimizer_all_success": true,
+    "partial_mv10_vs_configural_decision": "no_strong_evidence_against_restriction",
+    "partial_mv10_vs_scalar_decision": "restricted_model_rejected_lrt_only",
+    "scalar_vs_metric_decision": "restricted_model_rejected_lrt_only",
+    "short_read": "Formal label-only graded-response IRT confirmation supports a partial-invariance PHQ target with an AIC/BIC interpretation caveat; fitted parameters and subject scores are local-only.",
+    "status": "complete_formal_partial_invariance_supported_with_bic_caveat",
+    "threshold_dif_flagged_items": 2
+  }
+}

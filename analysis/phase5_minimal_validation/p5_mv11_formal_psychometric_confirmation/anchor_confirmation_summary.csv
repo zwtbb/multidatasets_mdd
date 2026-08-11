@@ -1,0 +1,9 @@
+construct_id,item_label_short,mv10_role,formal_role,mv10_anchor_confirmed,loading_dif_flag,threshold_dif_flag,loading_lrt_p_value,threshold_lrt_p_value,loading_delta_bic_restricted_minus_freed,threshold_delta_bic_restricted_minus_freed
+C01,depressed_mood,anchor_candidate,formal_anchor_supported,True,False,False,0.26890558565988715,0.7384546524110024,-4.4680382006336,-15.810248098089687
+C02,anhedonia,metric_only_threshold_free,formal_metric_only_threshold_free,False,False,True,0.0548279833998434,1.9293669569672842e-05,-2.0030497255147566,7.466017877572995
+C03,sleep,metric_only_threshold_free,formal_anchor_supported,False,False,False,0.8762399707656197,0.6423715806069394,-5.666105298731964,-15.395476356802646
+C04,fatigue,anchor_candidate,formal_anchor_supported,True,False,False,0.6395840480990087,0.18816866640604696,-5.471072875711798,-12.285250970106972
+C05,appetite,anchor_candidate,formal_anchor_supported,True,False,False,0.22843397887216577,0.3695776980488836,-4.239773652226177,-13.924531173613104
+C06,self_worth,metric_only_threshold_free,formal_metric_only_threshold_free,False,False,True,0.7896978670206921,3.490395407523709e-05,-5.619228980133812,6.232650786412705
+C07,concentration,anchor_candidate,formal_anchor_supported,True,False,False,0.13203915629304755,0.7390556995177255,-3.4219946848133986,-15.812768091982434
+C08,psychomotor,free_loading_or_threshold,formal_anchor_supported,False,False,False,0.05948864753964743,0.4939439575569212,-2.138775781055301,-14.672739713706505

@@ -1,6 +1,6 @@
 # Diagnostic Measurement-Audit Paper Tables
 
-Generated: `2026-08-11T13:51:23+00:00`
+Generated: `2026-08-11T14:11:07+00:00`
 
 ## Scope
 
@@ -10,17 +10,18 @@ This writing-prep artifact converts existing aggregate gates into paper-facing c
 
 - Allowed or reframed claim rows: `6`.
 - Blocked claim rows: `5`.
-- Key finding rows: `8`.
-- Literature-positioning rows: `13`.
+- Key finding rows: `9`.
+- Literature-positioning rows: `15`.
 - Artifact hygiene passed: `True`.
 
 ## Key Findings
 
 | finding | interpretation |
 | --- | --- |
-| Full gate reads 28 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False. | Full method construction remains blocked; measurement-shift paper framing is allowed with bounded claims. |
-| MV08 improves over total-score floor on 0/3 pooled active slices with prediction identity BA 0.900. MV08b improves over both floors on 2/3 slices, but prediction identity BA 0.979 exceeds gate 0.900. MV09 revises the gate semantics: E-DAIC/CMDC item-conditioned feature identity BA remains 0.991. MV10 adds a label-only PHQ screen with loading congruence 0.998, 7/8 metric items, 4/8 threshold items, and 4/8 candidate anchors. | Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10 shifts the next gate to formal psychometric confirmation. |
-| MV10 label-only PHQ screen: configural pass=True; loading congruence 0.998; metric invariant items 7/8; threshold invariant items 4/8; anchor candidates 4/8; status complete_partial_invariance_supported_approx. | The label-only PHQ screen supports a common one-factor and partial-anchor interpretation, but threshold/scalar invariance remains approximate and formally unconfirmed. |
+| Full gate reads 29 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False. | Full method construction remains blocked; measurement-shift paper framing is allowed with bounded claims. |
+| MV08 improves over total-score floor on 0/3 pooled active slices with prediction identity BA 0.900. MV08b improves over both floors on 2/3 slices, but prediction identity BA 0.979 exceeds gate 0.900. MV09 revises the gate semantics: E-DAIC/CMDC item-conditioned feature identity BA remains 0.991. MV10 adds a label-only PHQ screen with loading congruence 0.998, 7/8 metric items, 4/8 threshold items, and 4/8 candidate anchors. MV11 confirms 4 MV10 anchors with 0 loading-DIF and 2 threshold-DIF flags, but core AIC/BIC split is True. | Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11 shift the next gate to a two-stage latent-target predictor. |
+| MV10 label-only PHQ screen: configural pass=True; loading congruence 0.998; metric invariant items 7/8; threshold invariant items 4/8; anchor candidates 4/8; status complete_partial_invariance_supported_approx. | The label-only PHQ screen supports a common one-factor and partial-anchor interpretation, but threshold/scalar invariance remains partial. |
+| MV11 formal graded-response IRT confirmation: status complete_formal_partial_invariance_supported_with_bic_caveat; confirmed MV10 anchors 4; loading-DIF flags 0; threshold-DIF flags 2; best AIC core model partial_mv10; best BIC core model scalar. | The formal label-only IRT confirmation preserves the MV10 anchor map but leaves an AIC/BIC caveat, so it supports target design rather than a full method claim. |
 | MV09 conditional identity audit: E-DAIC/CMDC raw BA 1.000, PHQ-item residualized BA 0.991; CMDC/PDCH severity-residualized BA 1.000; three-way severity-residualized BA 1.000. | Unconditional identity should not be the only hard gate, but conditional BGE identity remains high enough to block a shared-latent claim. |
 | PDCH item-derived total MAE 5.693; direct total MAE 5.794; macro item MAE 0.727; status pass_pdch_only_diagnostic. | PDCH supports bounded internal HAMD measurement evidence only. |
 | MODMA task projection reduces feature task identity BA 0.762 -> 0.570 while preserving main task signal (0.688). | MODMA provides bounded task-control evidence. |

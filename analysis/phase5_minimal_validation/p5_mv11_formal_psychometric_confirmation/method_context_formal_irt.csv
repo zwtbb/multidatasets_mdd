@@ -1,0 +1,5 @@
+source_id,topic,citation_hint,url,use_in_mv11
+samejima_graded_response_1969,graded-response IRT,"Samejima 1969, Psychometrika Monograph 17",https://www.psychometricsociety.org/sites/main/files/file-attachments/mn17.pdf,Defines the graded-response model family used for ordinal item response confirmation.
+phq9_invariance_helius_2017,PHQ-9 measurement invariance,"Galenkamp et al. 2017, BMC Psychiatry",https://pmc.ncbi.nlm.nih.gov/articles/PMC5655879/,"Motivates configural, metric, scalar/threshold, and partial-invariance testing before cross-group PHQ comparisons."
+phq9_measurement_invariance_us_2019,PHQ-9 sociodemographic invariance,"Patel et al. 2019, Depression and Anxiety",https://pmc.ncbi.nlm.nih.gov/articles/PMC6736700/,Frames PHQ invariance as a prerequisite for meaningful score and model comparisons across groups.
+irt_lr_dif_frontiers_2017,IRT likelihood-ratio DIF testing,"Jeong and Lee 2017, Frontiers in Education",https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2017.00051/full,Supports using item-level likelihood-ratio comparisons as DIF diagnostics.

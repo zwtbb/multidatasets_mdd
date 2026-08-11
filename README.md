@@ -46,7 +46,7 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Minimal validations are complete
-through `P5_MV10 classical_psychometric_invariance_baseline`; the full-method gate
+through `P5_MV11 formal_ordinal_psychometric_confirmation`; the full-method gate
 remains `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a measurement-shift /
@@ -57,11 +57,15 @@ label-only PHQ-8/PHQ-9 psychometric screen: both datasets pass the one-factor
 configural screen, loading congruence is `0.998`, `7/8` items pass the
 approximate metric-loading screen, but only `4/8` items pass the approximate
 threshold/scalar screen. Treat MV10 as partial measurement-shift evidence and
-candidate anchors (`C01`, `C04`, `C05`, `C07`), not as formal ordinal CFA/IRT.
+candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 then fits a label-only
+multi-group graded-response IRT confirmation: all four MV10 anchors are
+preserved, no loading-DIF items are strongly flagged, `C02` and `C06` show
+threshold DIF, and AIC/BIC disagree between the partial and scalar core models.
 
-Current next action: run or package formal ordinal CFA/IRT confirmation for the
-PHQ-8/PHQ-9 anchor map, then predeclare a two-stage latent-target experiment
-(`Y -> theta`, then `X -> theta`) only if the measurement target is stable.
+Current next action: predeclare the two-stage latent-target experiment
+(`Y -> theta`, then `X -> theta`) with local-only factor scores and fitted
+parameters, direct/floor baselines, conditional identity probes, and external
+transfer checks.
 
 ## Key Paths
 
@@ -82,6 +86,7 @@ PHQ-8/PHQ-9 anchor map, then predeclare a two-stage latent-target experiment
 - Phase 5 full-method gate: `analysis/phase5_minimal_validation/full_method_gate_audit/`
 - MV09 conditional identity audit: `analysis/phase5_minimal_validation/p5_mv09_conditional_identity_audit/`
 - MV10 psychometric invariance baseline: `analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/`
+- MV11 formal psychometric confirmation: `analysis/phase5_minimal_validation/p5_mv11_formal_psychometric_confirmation/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 

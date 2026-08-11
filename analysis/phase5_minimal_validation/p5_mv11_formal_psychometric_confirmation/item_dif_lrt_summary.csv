@@ -1,0 +1,17 @@
+construct_id,item_label_short,dif_type,reference_model,freed_model,df,lr_statistic,p_value,delta_bic_restricted_minus_freed,strong_dif_flag,decision
+C01,depressed_mood,loading,metric,loading_free_one_C01,1,1.2223212536905521,0.26890558565988715,-4.4680382006336,False,no_strong_evidence_against_restriction
+C01,depressed_mood,threshold,scalar,threshold_free_one_C01,3,1.2608302648823155,0.7384546524110024,-15.810248098089687,False,no_strong_evidence_against_restriction
+C02,anhedonia,loading,metric,loading_free_one_C02,1,3.687309728809396,0.0548279833998434,-2.0030497255147566,False,no_strong_evidence_against_restriction
+C02,anhedonia,threshold,scalar,threshold_free_one_C02,3,24.537096240544997,1.9293669569672842e-05,7.466017877572995,True,restricted_model_rejected_lrt_and_bic
+C03,sleep,loading,metric,loading_free_one_C03,1,0.024254155592643656,0.8762399707656197,-5.666105298731964,False,no_strong_evidence_against_restriction
+C03,sleep,threshold,scalar,threshold_free_one_C03,3,1.6756020061693562,0.6423715806069394,-15.395476356802646,False,no_strong_evidence_against_restriction
+C04,fatigue,loading,metric,loading_free_one_C04,1,0.2192865786123548,0.6395840480990087,-5.471072875711798,False,no_strong_evidence_against_restriction
+C04,fatigue,threshold,scalar,threshold_free_one_C04,3,4.785827392865031,0.18816866640604696,-12.285250970106972,False,no_strong_evidence_against_restriction
+C05,appetite,loading,metric,loading_free_one_C05,1,1.4505858020979758,0.22843397887216577,-4.239773652226177,False,no_strong_evidence_against_restriction
+C05,appetite,threshold,scalar,threshold_free_one_C05,3,3.1465471893588983,0.3695776980488836,-13.924531173613104,False,no_strong_evidence_against_restriction
+C06,self_worth,loading,metric,loading_free_one_C06,1,0.07113047419079521,0.7896978670206921,-5.619228980133812,False,no_strong_evidence_against_restriction
+C06,self_worth,threshold,scalar,threshold_free_one_C06,3,23.303729149384708,3.490395407523709e-05,6.232650786412705,True,restricted_model_rejected_lrt_and_bic
+C07,concentration,loading,metric,loading_free_one_C07,1,2.268364769510754,0.13203915629304755,-3.4219946848133986,False,no_strong_evidence_against_restriction
+C07,concentration,threshold,scalar,threshold_free_one_C07,3,1.2583102709895684,0.7390556995177255,-15.812768091982434,False,no_strong_evidence_against_restriction
+C08,psychomotor,loading,metric,loading_free_one_C08,1,3.551583673269306,0.05948864753964743,-2.138775781055301,False,no_strong_evidence_against_restriction
+C08,psychomotor,threshold,scalar,threshold_free_one_C08,3,2.3983386492654972,0.4939439575569212,-14.672739713706505,False,no_strong_evidence_against_restriction
