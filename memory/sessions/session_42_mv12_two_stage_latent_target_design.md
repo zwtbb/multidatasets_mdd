@@ -1,6 +1,6 @@
 # Session Memory: Phase 5 MV12 Two-Stage Latent-Target Design
 
-Status: active
+Status: complete
 Last updated: 2026-08-11 UTC
 Thread/task: main agent continuation
 
@@ -102,9 +102,7 @@ python scripts/build_diagnostic_paper_claim_tables.py
 
 ## Next Handoff
 
-Implement `scripts/phase5_run_mv12_two_stage_latent_target.py` under the MV12
-contract. The runner should generate local-only `Y_to_theta` targets, run
-direct and floor baselines, train primary BGE `X_to_theta` and optional
-identity-projected variants, audit same-dataset and E-DAIC/CMDC transfer,
-export only aggregate metrics and hygiene summaries, then refresh the full
-method gate and paper tables.
+The design handoff is complete and superseded by
+`memory/sessions/session_43_mv12_two_stage_latent_target_run.md`. Use that
+session memory for the implemented MV12 run, refreshed gates, and next
+research decision.

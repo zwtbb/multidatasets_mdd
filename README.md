@@ -46,7 +46,7 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Minimal validations are complete
-through `P5_MV12 two_stage_latent_target_design`; the full-method gate remains
+through `P5_MV12 two_stage_latent_target`; the full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a measurement-shift /
@@ -61,13 +61,16 @@ candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 then fits a label-only
 multi-group graded-response IRT confirmation: all four MV10 anchors are
 preserved, no loading-DIF items are strongly flagged, `C02` and `C06` show
 threshold DIF, and AIC/BIC disagree between the partial and scalar core models.
-MV12 now predeclares the next test: fit local-only `Y -> theta` targets, train
-audited `X -> theta` predictors, compare against direct/floor baselines, and
-gate the result on conditional identity plus external transfer.
+MV12 then runs that two-stage test. The `X -> theta` head improves same-dataset
+theta MAE versus train mean on E-DAIC and CMDC, and conditional shared-latent
+identity BA falls to `0.602`, but observed-scale reconstruction is worse than
+the direct itemwise floor and external theta transfer does not pass. Treat this
+as bounded measurement-shift evidence, not a full-method pass.
 
-Current next action: implement and run the predeclared MV12 two-stage
-latent-target experiment while keeping theta scores, fitted parameters, row
-predictions, transformed features, and model artifacts local-only.
+Current next action: analyze or freeze MV12 as diagnostic evidence, optionally
+with an aggregate accuracy-invariance/Pareto summary, while keeping theta
+scores, fitted parameters, row predictions, transformed features, and model
+artifacts local-only.
 
 ## Key Paths
 
@@ -90,6 +93,7 @@ predictions, transformed features, and model artifacts local-only.
 - MV10 psychometric invariance baseline: `analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/`
 - MV11 formal psychometric confirmation: `analysis/phase5_minimal_validation/p5_mv11_formal_psychometric_confirmation/`
 - MV12 two-stage latent-target design: `analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target_design/`
+- MV12 two-stage latent-target run: `analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 

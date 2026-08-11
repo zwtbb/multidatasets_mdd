@@ -36,7 +36,8 @@ MV08B_SUMMARY = PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement" / "r
 MV09_SUMMARY = PHASE5_DIR / "p5_mv09_conditional_identity_audit" / "run_summary.json"
 MV10_SUMMARY = PHASE5_DIR / "p5_mv10_psychometric_invariance_baseline" / "run_summary.json"
 MV11_SUMMARY = PHASE5_DIR / "p5_mv11_formal_psychometric_confirmation" / "run_summary.json"
-MV12_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target_design" / "run_summary.json"
+MV12_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target_design" / "run_summary.json"
+MV12_RUN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -73,7 +74,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, and a two-stage latent-target experiment as the next gate.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, and the completed two-stage latent-target experiment as a diagnostic gate.",
 }
 
 LITERATURE_ROWS = [
@@ -221,7 +222,8 @@ def require_inputs() -> None:
         MV09_SUMMARY,
         MV10_SUMMARY,
         MV11_SUMMARY,
-        MV12_SUMMARY,
+        MV12_DESIGN_SUMMARY,
+        MV12_RUN_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -256,7 +258,8 @@ def build_metric_context() -> dict[str, str]:
     mv09 = read_json(MV09_SUMMARY)
     mv10 = read_json(MV10_SUMMARY)
     mv11 = read_json(MV11_SUMMARY)
-    mv12 = read_json(MV12_SUMMARY)
+    mv12_design = read_json(MV12_DESIGN_SUMMARY)
+    mv12_run = read_json(MV12_RUN_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -267,7 +270,8 @@ def build_metric_context() -> dict[str, str]:
     mv09_v = mv09["verdict"]
     mv10_v = mv10["verdict"]
     mv11_v = mv11["verdict"]
-    mv12_d = mv12["decision"]
+    mv12_d = mv12_design["decision"]
+    mv12_v = mv12_run["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -292,7 +296,11 @@ def build_metric_context() -> dict[str, str]:
             f"MV11 confirms {mv11_v['confirmed_mv10_anchor_items']} MV10 anchors with "
             f"{mv11_v['loading_dif_flagged_items']} loading-DIF and {mv11_v['threshold_dif_flagged_items']} "
             f"threshold-DIF flags, but core AIC/BIC split is {mv11_v['core_model_aic_bic_split']}. "
-            f"MV12 design is {mv12_d['readiness_status']}."
+            f"MV12 design is {mv12_d['readiness_status']}; MV12 run is {mv12_v['pass_rule_status']}, "
+            f"with same-dataset theta gate {mv12_v['same_dataset_theta_gate_passed']}, observed-scale safety "
+            f"{mv12_v['same_dataset_observed_gate_passed']}, external theta transfer "
+            f"{mv12_v['external_transfer_theta_gate_passed']}, and conditional identity BA "
+            f"{fmt(mv12_v['conditional_identity_ba_m12a'])}."
         ),
         "mv09": (
             f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
@@ -315,12 +323,21 @@ def build_metric_context() -> dict[str, str]:
             f"best AIC core model {mv11_v['best_aic_model']}; "
             f"best BIC core model {mv11_v['best_bic_model']}."
         ),
-        "mv12": (
+        "mv12_design": (
             f"MV12 two-stage latent-target design: status {mv12_d['readiness_status']}; "
             f"full_method_allowed={mv12_d['full_method_allowed']}; "
-            f"outputs predeclare {mv12['outputs']['model_ladder_rows']} model-ladder rows, "
-            f"{mv12['outputs']['identity_transfer_gate_rows']} identity/transfer gates, and "
-            f"{mv12['outputs']['pass_fail_gate_rows']} pass/fail gates."
+            f"outputs predeclare {mv12_design['outputs']['model_ladder_rows']} model-ladder rows, "
+            f"{mv12_design['outputs']['identity_transfer_gate_rows']} identity/transfer gates, and "
+            f"{mv12_design['outputs']['pass_fail_gate_rows']} pass/fail gates."
+        ),
+        "mv12_run": (
+            f"MV12 two-stage latent-target run: status {mv12_v['pass_rule_status']}; "
+            f"E-DAIC same-dataset theta delta vs train mean {fmt(mv12_v['m12a_edaic_delta_theta_mae_vs_B0'])}; "
+            f"CMDC same-dataset theta delta {fmt(mv12_v['m12a_cmdc_delta_theta_mae_vs_B0'])}; "
+            f"E-DAIC observed macro delta vs direct itemwise {fmt(mv12_v['m12a_edaic_delta_observed_macro_mae_vs_B3'])}; "
+            f"CMDC observed macro delta {fmt(mv12_v['m12a_cmdc_delta_observed_macro_mae_vs_B3'])}; "
+            f"conditional identity BA {fmt(mv12_v['conditional_identity_ba_m12a'])}; "
+            f"external theta transfer pass={mv12_v['external_transfer_theta_gate_passed']}."
         ),
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
@@ -347,11 +364,11 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv12']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv12_design']} {context['mv12_run']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
         return context["rq1"]
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
-        return f"{context['mv10']} {context['mv11']} {context['mv12']}"
+        return f"{context['mv10']} {context['mv11']} {context['mv12_design']} {context['mv12_run']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
@@ -431,9 +448,16 @@ def build_key_findings() -> pd.DataFrame:
         {
             "finding_id": "mv12_two_stage_latent_target_design",
             "paper_section": "Measurement evidence",
-            "finding": context["mv12"],
+            "finding": context["mv12_design"],
             "interpretation": "The next method test is now predeclared: separate Y_to_theta measurement from X_to_theta prediction, keep scores and parameters local-only, and gate on direct floors, transfer, and conditional identity.",
             "source_artifact_ids": "P5_MV12_design",
+        },
+        {
+            "finding_id": "mv12_two_stage_latent_target_run",
+            "paper_section": "Measurement evidence",
+            "finding": context["mv12_run"],
+            "interpretation": "The actual two-stage run supports the measurement-shift story: the shared latent prediction layer reduces conditional identity and improves same-dataset theta MAE, but it does not safely reconstruct observed item scales or transfer externally.",
+            "source_artifact_ids": "P5_MV12",
         },
         {
             "finding_id": "mv09_conditional_identity_gate",

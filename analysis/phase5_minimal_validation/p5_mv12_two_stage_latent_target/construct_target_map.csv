@@ -1,0 +1,9 @@
+construct_id,item_label_short,mv12_target_role,used_in_primary_theta,edaic_item,cmdc_item,mv11_formal_role,mv11_loading_dif_flag,mv11_threshold_dif_flag
+C01,depressed_mood,primary_anchor,True,PHQ_8Depressed,PHQ-2,formal_anchor_supported,False,False
+C02,anhedonia,dif_aware_primary,True,PHQ_8NoInterest,PHQ-1,formal_metric_only_threshold_free,False,True
+C03,sleep,sensitivity_only,False,PHQ_8Sleep,PHQ-3,formal_anchor_supported,False,False
+C04,fatigue,primary_anchor,True,PHQ_8Tired,PHQ-4,formal_anchor_supported,False,False
+C05,appetite,primary_anchor,True,PHQ_8Appetite,PHQ-5,formal_anchor_supported,False,False
+C06,self_worth,dif_aware_primary,True,PHQ_8Failure,PHQ-6,formal_metric_only_threshold_free,False,True
+C07,concentration,primary_anchor,True,PHQ_8Concentrating,PHQ-7,formal_anchor_supported,False,False
+C08,psychomotor,sensitivity_only,False,PHQ_8Moving,PHQ-8,formal_anchor_supported,False,False

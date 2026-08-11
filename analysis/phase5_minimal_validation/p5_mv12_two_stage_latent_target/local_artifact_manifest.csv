@@ -1,0 +1,5 @@
+artifact_class,written,tracked,public_surrogate
+row_prediction_table,True,False,aggregate metrics and identity summaries
+fitted_measurement_parameters,False,False,aggregate optimizer and target-generation summaries
+theta_target_table,False,False,aggregate theta distribution and reliability summaries
+model_or_projection_artifact,False,False,aggregate model split and leakage audits

@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-11T14:30:06+00:00`
+Generated: `2026-08-11T14:48:09+00:00`
 
 ## Decision
 
@@ -15,9 +15,9 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Implement and run the predeclared two-stage Y-to-theta and X-to-theta latent-target experiment, then audit conditional identity and external transfer before another full-method attempt. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work. | The MV12 run must show that multimodal X->theta prediction beats direct/floor baselines while passing conditional identity and external transfer diagnostics. |
-| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10 and MV11 as label-only PHQ partial-invariance evidence with an AIC/BIC caveat; do not present them as multimodal method success or external scale transfer. | Run MV12 X-to-theta prediction without subject-level theta scores or fitted-parameter release. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Analyze or freeze MV12 as bounded measurement-shift evidence; do not start full M0/M1/M2/M3 until a future predeclared run passes theta utility, observed-scale safety, external transfer, conditional identity, leakage, and hygiene gates. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work. | A later predeclared model must preserve the MV12 conditional-identity gain while fixing observed-scale reconstruction and external theta transfer against direct X-to-Y floors. |
+| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10 and MV11 as label-only PHQ partial-invariance evidence and MV12 as a bounded two-stage prediction diagnostic; do not present them as multimodal method success or external scale transfer. | If extending the method line, predeclare a revision that improves observed-scale mapping and external theta transfer while retaining local-only theta and parameter boundaries. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, and conditional identity audits are controls; do not claim invariant representation. | Future gates must distinguish unconditional feature identity, conditional shared-latent identity, and scale-specific post-head prediction identity. |
@@ -25,7 +25,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, expand the E-DAIC double-annotation slice or add Krippendorff alpha/bootstrap uncertainty because E-DAIC currently has few double pairs. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12-design are bounded diagnostic or design evidence, not a full-method pass. | Implement and run the two-stage latent-target experiment, then update claim boundaries from its aggregate performance and conditional-identity results. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12 are bounded diagnostic evidence, not a full-method pass. | Use MV12 as a paper-critical bounded diagnostic result, then decide whether to add a Pareto/error analysis or freeze the current method line before drafting. |
 
 ## Evidence Inventory
 
@@ -61,12 +61,13 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV10 | `complete` | `complete_partial_invariance_supported_approx` | `True` | Label-only PHQ screen supports a common one-factor structure and partial anchors, but threshold/scalar invariance remains approximate and must be treated as measurement-shift evidence. |
 | P5_MV11 | `complete` | `complete_formal_partial_invariance_supported_with_bic_caveat` | `True` | Formal label-only graded-response IRT confirmation supports a partial-invariance PHQ target with an AIC/BIC interpretation caveat; fitted parameters and subject scores are local-only. |
 | P5_MV12_design | `complete` | `ready_to_implement_mv12_two_stage_latent_target` | `True` | Design is ready; the actual MV12 X_to_theta run is still required before any full-method or transferable shared-latent claim. |
+| P5_MV12 | `complete` | `blocked_theta_gain_not_observed_scale_safe` | `True` | MV12 runs the predeclared two-stage PHQ latent-target test. A pass requires theta utility, observed-scale safety, external transfer, conditional shared-latent identity, leakage control, and artifact hygiene; design or... |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Implement and run the predeclared MV12 two-stage latent-target experiment. | Aggregate MV12 results show X-to-theta beats train-mean/direct X-to-Y floors on same-dataset and transfer checks, conditional shared-latent identity improves versus MV09 baselines, leakage audits pass, and no local-only artifacts are tracked. |
+| 1 | Analyze or freeze the MV12 two-stage latent-target result as bounded measurement-shift evidence. | Either an aggregate-only MV12 error/Pareto analysis identifies a predeclared mechanism change, or the current MV12 run is frozen as diagnostic evidence and the manuscript boundary states that shared-latent prediction is not yet a full method. |
 | 2 | Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice. | Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

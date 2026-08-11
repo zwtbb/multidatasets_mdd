@@ -56,6 +56,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_40_mv10_psychometric_invariance_baseline.md`
   - `/root/autodl-tmp/memory/sessions/session_41_mv11_formal_psychometric_confirmation.md`
   - `/root/autodl-tmp/memory/sessions/session_42_mv12_two_stage_latent_target_design.md`
+  - `/root/autodl-tmp/memory/sessions/session_43_mv12_two_stage_latent_target_run.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -353,23 +354,21 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 30 Phase 5 run summaries and exports claim gates, evidence
+  It reads 31 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
   and `artifact_hygiene_passed=true`. Allowed claims are limited to PDCH-only
   HAMD diagnostic evidence, dataset/protocol controls as diagnostics, MODMA
   task-control evidence, MV10/MV11 label-only psychometric screening and
-  confirmation, MV12 design-readiness evidence, and a reframed
+  confirmation, MV12 design/run diagnostic evidence, and a reframed
   diagnostic/audit-driven paper direction. RQ4 is now
   `allowed_limited` as first-round aggregate evidence,
   while blocked claims include full M0/M1/M2/M3 method start,
   transferable shared-symptom representation, positive EATD SDS
   generalization, EATD valence-adversarial design, and RQ3 context
-  conditioning. After MV12 design, its ranked next action is to implement and
-  run the two-stage latent-target experiment with local-only theta
-  scores/parameters, direct baselines, conditional identity probes, and
-  external transfer checks.
+  conditioning. After MV12 run, its ranked next action is
+  `NEXT_MV12_ERROR_ANALYSIS_OR_FREEZE_LATENT_TARGET`.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -473,9 +472,20 @@ MPDD 2025 is intentionally out of scope for current auditing.
   predictions, transformed features, projection directions, and model artifacts
   remain local-only. This is design evidence only, not a multimodal method
   pass.
+- Phase 5 `P5_MV12 two_stage_latent_target` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target/`.
+  It fits local-only label-derived PHQ theta targets for E-DAIC/CMDC, trains
+  shallow BGE `X -> theta` heads, compares direct/floor baselines, and exports
+  only aggregate metrics, identity, transfer, leakage, and hygiene summaries.
+  Treat as `blocked_theta_gain_not_observed_scale_safe`: M12a improves
+  same-dataset theta MAE over train mean on E-DAIC (`-0.078`) and CMDC
+  (`-0.146`), and conditional shared-latent identity BA is `0.602`, but
+  observed macro item MAE is worse than direct itemwise Ridge on E-DAIC
+  (`+0.004`) and CMDC (`+0.067`), and external theta transfer does not beat the
+  train-mean theta floor. Full method remains blocked.
 - Diagnostic measurement-audit paper claim tables are complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`. They export
-  paper-facing allowed/blocked claim boundaries, ten key numeric findings,
+  paper-facing allowed/blocked claim boundaries, eleven key numeric findings,
   and fifteen literature-positioning rows from aggregate artifacts plus web-checked
   primary sources. Artifact hygiene passed. Treat them as manuscript
   scaffolding, not a replacement for source experiment artifacts.
@@ -779,6 +789,13 @@ Key Phase 2 outputs:
   `theta -> Y^(d)` mapping. Full method remains blocked until the actual run
   passes predictive utility, external transfer, conditional shared-latent
   identity, leakage, and artifact-hygiene gates.
+- MV12 latent-target run decision: the two-stage `X -> theta` test is useful
+  but not positive method evidence. Same-dataset theta prediction and
+  conditional shared-latent identity improve, but observed-scale reconstruction
+  is not safe versus the direct itemwise floor and external theta transfer
+  fails. Treat MV12 as bounded measurement-shift evidence; next decide whether
+  to add aggregate-only MV12 error/Pareto analysis or freeze the current
+  latent-target line before drafting.
 
 ## Data Quality Watchlist
 
@@ -885,13 +902,12 @@ plaintext credential-like content before committing on the clean remote lineage.
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
    revises identity-gate semantics, MV10 provides an approximate PHQ
-   partial-invariance screen, and MV11 provides formal label-only
-   graded-response confirmation with a BIC caveat. MV12 now predeclares the
-   two-stage latent-target design. Full method construction remains blocked
-   because the project still lacks the actual audited multimodal `X -> theta`
-   result. The paper direction is measurement shift / measurement invariance
-   with bounded negative and diagnostic evidence. The next experiment is the
-   `P5_MV12` two-stage latent-target run;
-   secondary work can draft Baselines and Failure-Mode Diagnostics or
-   strengthen E-DAIC MV06 agreement before stronger evidence-localization
-   claims.
+   partial-invariance screen, MV11 provides formal label-only graded-response
+   confirmation with a BIC caveat, and MV12 provides a completed but blocked
+   two-stage latent-target result. Full method construction remains blocked.
+   The paper direction is measurement shift / measurement invariance with
+   bounded negative and diagnostic evidence. The next active research decision
+   is whether to add aggregate-only MV12 error/Pareto analysis or freeze the
+   current latent-target line; secondary work can draft Baselines and
+   Failure-Mode Diagnostics or strengthen E-DAIC MV06 agreement before stronger
+   evidence-localization claims.
