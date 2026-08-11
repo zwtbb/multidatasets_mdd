@@ -1,0 +1,31 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "paper_table_status": "ready_for_diagnostic_paper_drafting",
+    "short_read": "Paper-facing claim and evidence tables are ready from aggregate gates; full method remains blocked."
+  },
+  "generated_at": "2026-08-11T12:47:43+00:00",
+  "input_contract": {
+    "aggregate_phase5_summaries_read": true,
+    "full_method_gate_read": true,
+    "private_review_material_read": false,
+    "raw_data_scanned": false,
+    "row_level_model_outputs_read": false
+  },
+  "outputs": {
+    "claim_rows": 10,
+    "key_finding_rows": 6,
+    "literature_positioning_rows": 9,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "key_numeric_findings.csv",
+      "literature_positioning.csv",
+      "paper_claim_boundary.csv",
+      "paper_claim_boundary.md",
+      "report.md",
+      "run_summary.json"
+    ]
+  },
+  "run_id": "diagnostic_measurement_audit_paper_tables",
+  "status": "complete"
+}

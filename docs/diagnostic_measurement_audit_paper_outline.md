@@ -121,12 +121,33 @@ Blocked claims:
    - What future work would need: new item labels, stronger aligned features,
      speaker/protocol labels, and larger evidence annotation.
 
+## Paper-Facing Tables
+
+The first paper table scaffold is generated at
+`analysis/diagnostic_measurement_audit_paper/` by:
+
+```bash
+python scripts/build_diagnostic_paper_claim_tables.py
+```
+
+Tracked outputs:
+
+- `paper_claim_boundary.csv` and `paper_claim_boundary.md`: compact
+  allowed/blocked claim language, evidence, guardrails, and source artifact IDs.
+- `key_numeric_findings.csv`: six manuscript-ready findings for the full gate,
+  RQ1 measurement sequence, PDCH HAMD, MODMA task control, EATD stress, and
+  MV06 evidence localization.
+- `literature_positioning.csv`: web-checked source list for dataset governance,
+  interviewer/protocol bias, PHQ/HAMD psychometrics, measurement invariance,
+  MPDD/P3HF positioning, and PDCH.
+- `report.md`, `run_summary.json`, and `artifact_hygiene_audit.json`: writing
+  handoff and release/hygiene status.
+
 ## Immediate Writing Tasks
 
-1. Freeze MV08/MV08b as negative RQ1 diagnostic evidence in the issue log and
-   master plan.
-2. Create a compact table of allowed versus blocked claims from the full-method
-   gate.
+1. Done: freeze MV08/MV08b as negative RQ1 diagnostic evidence in the issue log
+   and master plan.
+2. Done: create compact allowed/blocked claim tables from the full-method gate.
 3. Draft the Data Governance and Label Contracts section from existing Phase 0
    through Phase 4 artifacts.
 4. Expand E-DAIC MV06 double annotation if a stronger RQ4 claim is desired.

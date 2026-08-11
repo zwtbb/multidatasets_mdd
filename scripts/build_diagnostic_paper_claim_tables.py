@@ -1,0 +1,512 @@
+#!/usr/bin/env python3
+"""Build paper-facing claim and evidence tables for the diagnostic audit paper.
+
+This is a writing-prep script, not an experiment runner. It reads existing
+aggregate Phase 5 gates and summaries, then emits compact claim boundaries,
+key numeric findings, and literature-positioning notes for the diagnostic
+measurement-audit paper. It does not read raw data, row-level outputs, local
+review workbooks, or private source locators.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import re
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+import pandas as pd
+
+
+ROOT = Path(__file__).resolve().parents[1]
+PHASE5_DIR = ROOT / "analysis" / "phase5_minimal_validation"
+DEFAULT_OUT_DIR = ROOT / "analysis" / "diagnostic_measurement_audit_paper"
+
+CLAIM_GATE = PHASE5_DIR / "full_method_gate_audit" / "claim_gate.csv"
+FULL_GATE_SUMMARY = PHASE5_DIR / "full_method_gate_audit" / "run_summary.json"
+MV02_SUMMARY = PHASE5_DIR / "p5_mv02_hamd_auxiliary_bridge" / "run_summary.json"
+MV04C_SUMMARY = PHASE5_DIR / "p5_mv04c_protocol_task_valence_control" / "run_summary.json"
+MV06_SUMMARY = PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "run_summary.json"
+MV06_AGREEMENT = PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "agreement_summary.csv"
+MV08_SUMMARY = PHASE5_DIR / "p5_mv08_partial_invariance_measurement" / "run_summary.json"
+MV08B_SUMMARY = PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement" / "run_summary.json"
+
+TRACKED_FILES = [
+    "artifact_hygiene_audit.json",
+    "key_numeric_findings.csv",
+    "literature_positioning.csv",
+    "paper_claim_boundary.csv",
+    "paper_claim_boundary.md",
+    "report.md",
+    "run_summary.json",
+]
+
+CLAIM_SECTION = {
+    "C_FULL_METHOD_START": "Claim boundary",
+    "C_RQ1_SHARED_SYMPTOM": "Measurement evidence",
+    "C_PDCH_HAMD_INTERNAL": "HAMD diagnostic evidence",
+    "C_EATD_SDS_GENERALIZATION": "External stress tests",
+    "C_DATASET_IDENTITY_CONTROL": "Identity and protocol diagnostics",
+    "C_MODMA_TASK_CONTROL": "Identity and protocol diagnostics",
+    "C_EATD_VALENCE_ADVERSARIAL": "External stress tests",
+    "C_RQ3_CONTEXT_CONDITIONING": "Population/context diagnostics",
+    "C_RQ4_EVIDENCE_LOCALIZATION": "Evidence localization",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Paper framing",
+}
+
+PAPER_CLAIM_LANGUAGE = {
+    "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed diagnostic audit.",
+    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative under the current frozen-feature shallow-measurement contract.",
+    "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
+    "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
+    "C_DATASET_IDENTITY_CONTROL": "Use dataset/protocol identity controls as required diagnostics, not as proof of invariant representation.",
+    "C_MODMA_TASK_CONTROL": "Use MODMA task nuisance projection as bounded protocol-control evidence.",
+    "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
+    "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
+    "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a diagnostic measurement-audit paper with bounded claims and explicit negative evidence.",
+}
+
+LITERATURE_ROWS = [
+    {
+        "source_id": "daic_lrec_2014",
+        "topic": "Dataset governance and clinical-interview context",
+        "citation_hint": "Gratch et al. 2014, LREC",
+        "url": "https://aclanthology.org/L14-1421/",
+        "paper_positioning": "DAIC contains clinical interviews with audio, video, questionnaire, transcription, and verbal/nonverbal annotation, supporting our governance-first treatment of interview corpora.",
+    },
+    {
+        "source_id": "daic_official_access",
+        "topic": "Dataset access and public release boundaries",
+        "citation_hint": "USC ICT DAIC-WOZ and Extended DAIC download page",
+        "url": "https://dcapswoz.ict.usc.edu/",
+        "paper_positioning": "Official access terms motivate keeping real row-level manifests, paths, and private review material out of the public repository.",
+    },
+    {
+        "source_id": "interviewer_bias_emnlp_2025",
+        "topic": "Protocol/interviewer bias",
+        "citation_hint": "Zhang and Poellabauer 2025, Findings of EMNLP",
+        "url": "https://aclanthology.org/2025.findings-emnlp.650/",
+        "paper_positioning": "Recent interviewer-bias work motivates treating question type and dialogue protocol as nuisance factors, while our audit generalizes this concern across datasets, tasks, valence, and scale contracts.",
+    },
+    {
+        "source_id": "phq_hamd_irt_2021",
+        "topic": "PHQ/HAMD measurement differences",
+        "citation_hint": "Ma et al. 2021, Frontiers in Psychiatry",
+        "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.747139/full",
+        "paper_positioning": "PHQ-9 and HAMD-17 can correlate strongly while differing in item discrimination and severity assessment, supporting our scale-specific measurement framing.",
+    },
+    {
+        "source_id": "phq_dif_jad_2024",
+        "topic": "Measurement invariance and DIF",
+        "citation_hint": "Delamain et al. 2024, Journal of Affective Disorders",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37989437/",
+        "paper_positioning": "PHQ-9 measurement invariance and DIF are active clinical-measurement questions, supporting our decision to frame RQ1 as measurement validity rather than only model architecture.",
+    },
+    {
+        "source_id": "scale_linking_jclinepi_2026",
+        "topic": "Cross-scale linking",
+        "citation_hint": "Zhou et al. 2026, Journal of Clinical Epidemiology",
+        "url": "https://www.jclinepi.com/article/S0895-4356(26)00082-X/abstract",
+        "paper_positioning": "A 2026 equipercentile-linking study reports significant correlations but systematic differences among depression scales, aligning with our negative shared-space evidence.",
+    },
+    {
+        "source_id": "mpdd_challenge_2025",
+        "topic": "Individual differences and MPDD",
+        "citation_hint": "Fu et al. 2025, ACM MM Challenge",
+        "url": "https://hacilab.github.io/MPDDChallenge.github.io/",
+        "paper_positioning": "The MPDD challenge explicitly foregrounds age, health, living condition, and personality context, supporting our RQ3 treatment of population heterogeneity.",
+    },
+    {
+        "source_id": "p3hf_aaai_2026",
+        "topic": "Personality-aware multimodal methods",
+        "citation_hint": "Fu et al. 2026, AAAI",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/37159",
+        "paper_positioning": "P3HF shows strong personality-aware modeling on MPDD-Young, so our paper should not claim generic personality-aware fusion as the novelty.",
+    },
+    {
+        "source_id": "pdch_dataset",
+        "topic": "PDCH HAMD consultation data",
+        "citation_hint": "PDCH dataset page",
+        "url": "https://github.com/Miraclemarvel55/PDCH",
+        "paper_positioning": "PDCH provides real consultation audio/text paired with professional HAMD-17 assessments, matching our bounded PDCH-only HAMD diagnostic claim.",
+    },
+]
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def read_json(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        raise FileNotFoundError(path)
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def safe_float(value: Any) -> float | None:
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError):
+        return None
+    return numeric if math.isfinite(numeric) else None
+
+
+def fmt(value: Any, digits: int = 3) -> str:
+    numeric = safe_float(value)
+    return "NA" if numeric is None else f"{numeric:.{digits}f}"
+
+
+def require_inputs() -> None:
+    for path in [
+        CLAIM_GATE,
+        FULL_GATE_SUMMARY,
+        MV02_SUMMARY,
+        MV04C_SUMMARY,
+        MV06_SUMMARY,
+        MV06_AGREEMENT,
+        MV08_SUMMARY,
+        MV08B_SUMMARY,
+    ]:
+        if not path.exists():
+            raise FileNotFoundError(path)
+
+
+def md_escape(value: Any) -> str:
+    text = "" if value is None else str(value)
+    return text.replace("|", "\\|").replace("\n", " ")
+
+
+def evidence_presence_kappa(agreement: pd.DataFrame, dataset: str) -> tuple[str, str]:
+    rows = agreement[(agreement["dataset"] == dataset) & (agreement["field"] == "evidence_presence")]
+    if rows.empty:
+        return "NA", "NA"
+    row = rows.iloc[0]
+    return fmt(row["pairwise_kappa"]), str(int(row["pair_count"]))
+
+
+def build_metric_context() -> dict[str, str]:
+    gate = read_json(FULL_GATE_SUMMARY)
+    mv02 = read_json(MV02_SUMMARY)
+    mv04c = read_json(MV04C_SUMMARY)
+    mv06 = read_json(MV06_SUMMARY)
+    agreement = pd.read_csv(MV06_AGREEMENT)
+    mv08 = read_json(MV08_SUMMARY)
+    mv08b = read_json(MV08B_SUMMARY)
+
+    mv02_v = mv02["verdict"]
+    modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
+    eatd = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "EATD")
+    mv06_gate = mv06["annotation_gate"]
+    mv08_v = mv08["verdict"]
+    mv08b_v = mv08b["verdict"]
+    all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
+    cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
+    edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
+    pdch_kappa, pdch_pairs = evidence_presence_kappa(agreement, "pdch")
+
+    return {
+        "gate": (
+            f"Full gate reads {gate['evidence_rows']} Phase 5 summaries; "
+            f"status {gate['gate_status']}; full_method_allowed={gate['full_method_allowed']}."
+        ),
+        "rq1": (
+            f"MV08 improves over total-score floor on {mv08_v['pooled_m2_improved_vs_total_score_floor_slices']}/"
+            f"{mv08_v['pooled_active_slices']} pooled active slices with prediction identity BA "
+            f"{fmt(mv08_v['prediction_identity_ba_m2'])}. MV08b improves over both floors on "
+            f"{mv08b_v['pooled_m2b_improved_vs_both_floor_slices']}/{mv08b_v['pooled_active_slices']} slices, "
+            f"but prediction identity BA {fmt(mv08b_v['prediction_identity_ba_m2b'])} exceeds gate "
+            f"{fmt(mv08b_v['current_mv08_m2_prediction_identity_ba_gate'])}."
+        ),
+        "pdch": (
+            f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
+            f"direct total MAE {fmt(mv02_v['best_pdch_direct_total_mae'])}; "
+            f"macro item MAE {fmt(mv02_v['best_pdch_macro_item_mae'])}; status {mv02_v['pass_rule_status']}."
+        ),
+        "modma": (
+            f"MODMA task projection reduces feature task identity BA {fmt(modma['raw_feature_identity_ba'])} -> "
+            f"{fmt(modma['feature_identity_ba_after'])} while preserving main task signal "
+            f"({fmt(modma['raw_primary_metric_value'])})."
+        ),
+        "eatd": (
+            f"EATD valence/SDS remains blocked: raw primary MAE {fmt(eatd['raw_primary_metric_value'])} "
+            f"versus train-mean floor {fmt(eatd['floor_primary_metric_value'])}; status {eatd['status']}."
+        ),
+        "mv06": (
+            f"MV06 has {mv06_gate['completed_candidates']} completed and "
+            f"{mv06_gate['double_annotated_candidates']} double-annotated candidates. Evidence-presence kappa: "
+            f"ALL {all_kappa} ({all_pairs} pairs), CMDC {cmdc_kappa} ({cmdc_pairs}), "
+            f"PDCH {pdch_kappa} ({pdch_pairs}), E-DAIC {edaic_kappa} ({edaic_pairs}, degenerate/underpowered if NA)."
+        ),
+    }
+
+
+def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
+    if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
+        return context["gate"]
+    if claim_id == "C_RQ1_SHARED_SYMPTOM":
+        return context["rq1"]
+    if claim_id == "C_PDCH_HAMD_INTERNAL":
+        return context["pdch"]
+    if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
+        return context["eatd"]
+    if claim_id == "C_MODMA_TASK_CONTROL":
+        return context["modma"]
+    if claim_id == "C_RQ4_EVIDENCE_LOCALIZATION":
+        return context["mv06"]
+    return str(row["blocking_evidence"])
+
+
+def blocked_language(decision: str) -> str:
+    if decision == "blocked":
+        return "Do not use as a positive claim; report as negative or blocked evidence."
+    if decision == "allowed_limited":
+        return "Allowed only with the scoped wording in this table."
+    if decision == "allowed_with_reframing":
+        return "Allowed as paper framing, not as a full-method success claim."
+    return "Review before manuscript use."
+
+
+def build_claim_boundary() -> pd.DataFrame:
+    claims = pd.read_csv(CLAIM_GATE)
+    context = build_metric_context()
+    rows: list[dict[str, Any]] = []
+    for _, row in claims.iterrows():
+        claim_id = str(row["claim_id"])
+        rows.append(
+            {
+                "claim_id": claim_id,
+                "paper_section": CLAIM_SECTION.get(claim_id, "Other"),
+                "decision": row["decision"],
+                "paper_claim_language": PAPER_CLAIM_LANGUAGE.get(claim_id, str(row["claim"])),
+                "allowed_scope": row["allowed_scope"],
+                "evidence_to_report": claim_evidence_sentence(claim_id, context, row),
+                "manuscript_guardrail": blocked_language(str(row["decision"])),
+                "next_evidence_needed": row["required_next_evidence"],
+                "source_artifact_ids": row["primary_sources"],
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def build_key_findings() -> pd.DataFrame:
+    context = build_metric_context()
+    rows = [
+        {
+            "finding_id": "gate_status",
+            "paper_section": "Claim boundary",
+            "finding": context["gate"],
+            "interpretation": "Full method construction remains blocked; diagnostic paper framing is allowed with bounded claims.",
+            "source_artifact_ids": "full_method_gate_audit",
+        },
+        {
+            "finding_id": "rq1_measurement_negative",
+            "paper_section": "Measurement evidence",
+            "finding": context["rq1"],
+            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b",
+        },
+        {
+            "finding_id": "pdch_internal_hamd",
+            "paper_section": "HAMD diagnostic evidence",
+            "finding": context["pdch"],
+            "interpretation": "PDCH supports bounded internal HAMD measurement evidence only.",
+            "source_artifact_ids": "P5_MV02",
+        },
+        {
+            "finding_id": "modma_task_control",
+            "paper_section": "Identity and protocol diagnostics",
+            "finding": context["modma"],
+            "interpretation": "MODMA provides bounded task-control evidence.",
+            "source_artifact_ids": "P5_MV04c",
+        },
+        {
+            "finding_id": "eatd_negative_stress",
+            "paper_section": "External stress tests",
+            "finding": context["eatd"],
+            "interpretation": "EATD should remain a negative stress test, not a method component driver.",
+            "source_artifact_ids": "P5_MV03;P5_MV03b;P5_MV04c",
+        },
+        {
+            "finding_id": "mv06_first_round_evidence",
+            "paper_section": "Evidence localization",
+            "finding": context["mv06"],
+            "interpretation": "MV06 can support first-round aggregate credibility; E-DAIC agreement needs strengthening for stronger claims.",
+            "source_artifact_ids": "P5_MV06_summary",
+        },
+    ]
+    return pd.DataFrame(rows)
+
+
+def literature_positioning() -> pd.DataFrame:
+    return pd.DataFrame(LITERATURE_ROWS)
+
+
+def write_claim_markdown(out_dir: Path, claims: pd.DataFrame) -> None:
+    lines = [
+        "# Paper Claim Boundary",
+        "",
+        "| section | decision | paper claim language | evidence to report | guardrail |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for _, row in claims.iterrows():
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    md_escape(row["paper_section"]),
+                    md_escape(row["decision"]),
+                    md_escape(row["paper_claim_language"]),
+                    md_escape(row["evidence_to_report"]),
+                    md_escape(row["manuscript_guardrail"]),
+                ]
+            )
+            + " |"
+        )
+    (out_dir / "paper_claim_boundary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_report(out_dir: Path, run_summary: dict[str, Any], claims: pd.DataFrame, findings: pd.DataFrame) -> None:
+    allowed = claims[claims["decision"].isin(["allowed_limited", "allowed_with_reframing"])]
+    blocked = claims[claims["decision"] == "blocked"]
+    lines = [
+        "# Diagnostic Measurement-Audit Paper Tables",
+        "",
+        f"Generated: `{run_summary['generated_at']}`",
+        "",
+        "## Scope",
+        "",
+        "This writing-prep artifact converts existing aggregate gates into paper-facing claim, evidence, and positioning tables. It does not read private review material or row-level model outputs.",
+        "",
+        "## Claim Boundary",
+        "",
+        f"- Allowed or reframed claim rows: `{len(allowed)}`.",
+        f"- Blocked claim rows: `{len(blocked)}`.",
+        f"- Key finding rows: `{len(findings)}`.",
+        f"- Literature-positioning rows: `{run_summary['outputs']['literature_positioning_rows']}`.",
+        f"- Artifact hygiene passed: `{run_summary['artifact_hygiene_passed']}`.",
+        "",
+        "## Key Findings",
+        "",
+        "| finding | interpretation |",
+        "| --- | --- |",
+    ]
+    for _, row in findings.iterrows():
+        lines.append(f"| {md_escape(row['finding'])} | {md_escape(row['interpretation'])} |")
+    lines.extend(
+        [
+            "",
+            "## Release Rule",
+            "",
+            "- Use these tables as manuscript scaffolding, not as a replacement for the source artifacts.",
+            "- Keep private review material, learned parameters, and row-level model outputs local-only.",
+            "- Any stronger RQ4 claim should first improve E-DAIC double-annotation agreement stability.",
+        ]
+    )
+    (out_dir / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def artifact_hygiene(out_dir: Path) -> dict[str, Any]:
+    forbidden_patterns = [
+        r"/root/",
+        r"/autodl-tmp/",
+        r"\bsubject_id\b",
+        r"\.wav\b",
+        r"\.mp4\b",
+        r"\.avi\b",
+        r"local_annotation_workbook",
+        r"source_locator",
+        r"local_row_predictions",
+        r"p5_mv[0-9a-z_]*_local_",
+    ]
+    violations: list[dict[str, str]] = []
+    checked = 0
+    for path in sorted(out_dir.glob("*")):
+        if not path.is_file() or path.name not in TRACKED_FILES:
+            continue
+        checked += 1
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for pattern in forbidden_patterns:
+            if re.search(pattern, text, flags=re.IGNORECASE):
+                violations.append({"file": path.name, "pattern": pattern})
+    return {
+        "audit_id": "diagnostic_measurement_audit_paper_tables_hygiene",
+        "generated_at": utc_now(),
+        "files_checked": checked,
+        "artifact_hygiene_passed": not violations,
+        "violation_count": len(violations),
+        "violations": violations,
+    }
+
+
+def build_outputs(out_dir: Path, generated_at: str) -> dict[str, Any]:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    claims = build_claim_boundary()
+    findings = build_key_findings()
+    literature = literature_positioning()
+
+    claims.to_csv(out_dir / "paper_claim_boundary.csv", index=False)
+    findings.to_csv(out_dir / "key_numeric_findings.csv", index=False)
+    literature.to_csv(out_dir / "literature_positioning.csv", index=False)
+    write_claim_markdown(out_dir, claims)
+
+    stale_hygiene = out_dir / "artifact_hygiene_audit.json"
+    if stale_hygiene.exists():
+        stale_hygiene.unlink()
+
+    run_summary = {
+        "run_id": "diagnostic_measurement_audit_paper_tables",
+        "generated_at": generated_at,
+        "status": "complete",
+        "input_contract": {
+            "full_method_gate_read": True,
+            "aggregate_phase5_summaries_read": True,
+            "raw_data_scanned": False,
+            "private_review_material_read": False,
+            "row_level_model_outputs_read": False,
+        },
+        "outputs": {
+            "tracked_outputs": TRACKED_FILES,
+            "claim_rows": int(len(claims)),
+            "key_finding_rows": int(len(findings)),
+            "literature_positioning_rows": int(len(literature)),
+        },
+        "decision": {
+            "paper_table_status": "ready_for_diagnostic_paper_drafting",
+            "short_read": "Paper-facing claim and evidence tables are ready from aggregate gates; full method remains blocked.",
+        },
+        "artifact_hygiene_passed": False,
+    }
+    (out_dir / "run_summary.json").write_text(json.dumps(run_summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    write_report(out_dir, run_summary, claims, findings)
+    hygiene = artifact_hygiene(out_dir)
+    run_summary["artifact_hygiene_passed"] = bool(hygiene["artifact_hygiene_passed"])
+    (out_dir / "run_summary.json").write_text(json.dumps(run_summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    write_report(out_dir, run_summary, claims, findings)
+    hygiene = artifact_hygiene(out_dir)
+    (out_dir / "artifact_hygiene_audit.json").write_text(json.dumps(hygiene, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    if not hygiene["artifact_hygiene_passed"]:
+        raise SystemExit("artifact hygiene violations found; see artifact_hygiene_audit.json")
+    return run_summary
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    args = parser.parse_args()
+
+    require_inputs()
+    generated_at = utc_now()
+    run_summary = build_outputs(args.out_dir, generated_at)
+    print(
+        "Wrote diagnostic paper tables to "
+        f"{args.out_dir.relative_to(ROOT)} with status "
+        f"{run_summary['decision']['paper_table_status']}"
+    )
+
+
+if __name__ == "__main__":
+    main()
