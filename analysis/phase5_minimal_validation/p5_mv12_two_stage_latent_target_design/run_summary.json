@@ -1,0 +1,76 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "full_method_allowed": false,
+    "readiness_status": "ready_to_implement_mv12_two_stage_latent_target",
+    "recommended_next_action": "implement_scripts_phase5_run_mv12_two_stage_latent_target",
+    "short_read": "MV12 is predeclared as a two-stage measurement-target experiment: fit Y_to_theta locally, train audited X_to_theta predictors, compare against direct/floor baselines, and gate on conditional identity plus external transfer."
+  },
+  "generated_at": "2026-08-11T14:28:40+00:00",
+  "input_contract": {
+    "aggregate_phase5_artifacts_read": true,
+    "fitted_measurement_parameters_read": false,
+    "multimodal_features_read": false,
+    "mv07_direct_baseline_summaries_read": true,
+    "mv09_conditional_identity_read": true,
+    "mv11_formal_measurement_read": true,
+    "private_review_material_read": false,
+    "raw_data_scanned": false,
+    "row_level_predictions_read": false,
+    "subject_theta_scores_read": false
+  },
+  "output_policy": {
+    "local_only_files": [
+      "mv12_local_measurement_fit_parameters.json",
+      "mv12_local_theta_targets.csv",
+      "p5_mv12_local_predictions.csv",
+      "mv12_local_feature_projection_and_model_artifacts"
+    ],
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "identity_transfer_gate_contract.csv",
+      "implementation_queue.csv",
+      "local_only_boundary_contract.csv",
+      "method_source_refs.csv",
+      "model_ladder_contract.csv",
+      "pass_fail_gate_contract.csv",
+      "report.md",
+      "run_summary.json",
+      "source_evidence_summary.csv",
+      "target_generation_contract.csv"
+    ]
+  },
+  "outputs": {
+    "identity_transfer_gate_rows": 6,
+    "implementation_queue_rows": 6,
+    "local_only_boundary_rows": 5,
+    "method_source_ref_rows": 4,
+    "model_ladder_rows": 7,
+    "pass_fail_gate_rows": 6,
+    "source_evidence_rows": 10,
+    "target_contract_rows": 4,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "identity_transfer_gate_contract.csv",
+      "implementation_queue.csv",
+      "local_only_boundary_contract.csv",
+      "method_source_refs.csv",
+      "model_ladder_contract.csv",
+      "pass_fail_gate_contract.csv",
+      "report.md",
+      "run_summary.json",
+      "source_evidence_summary.csv",
+      "target_generation_contract.csv"
+    ]
+  },
+  "run_id": "P5_MV12_two_stage_latent_target_design",
+  "scope": "predeclared_design_no_training",
+  "status": "complete",
+  "verdict": {
+    "full_method_allowed": false,
+    "pass_rule_met": null,
+    "pass_rule_status": "design_ready_full_method_still_blocked",
+    "short_read": "Design is ready; the actual MV12 X_to_theta run is still required before any full-method or transferable shared-latent claim.",
+    "status": "ready_to_implement_mv12_two_stage_latent_target"
+  }
+}

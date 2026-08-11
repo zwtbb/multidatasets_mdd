@@ -36,6 +36,7 @@ MV08B_SUMMARY = PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement" / "r
 MV09_SUMMARY = PHASE5_DIR / "p5_mv09_conditional_identity_audit" / "run_summary.json"
 MV10_SUMMARY = PHASE5_DIR / "p5_mv10_psychometric_invariance_baseline" / "run_summary.json"
 MV11_SUMMARY = PHASE5_DIR / "p5_mv11_formal_psychometric_confirmation" / "run_summary.json"
+MV12_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target_design" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -220,6 +221,7 @@ def require_inputs() -> None:
         MV09_SUMMARY,
         MV10_SUMMARY,
         MV11_SUMMARY,
+        MV12_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -254,6 +256,7 @@ def build_metric_context() -> dict[str, str]:
     mv09 = read_json(MV09_SUMMARY)
     mv10 = read_json(MV10_SUMMARY)
     mv11 = read_json(MV11_SUMMARY)
+    mv12 = read_json(MV12_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -264,6 +267,7 @@ def build_metric_context() -> dict[str, str]:
     mv09_v = mv09["verdict"]
     mv10_v = mv10["verdict"]
     mv11_v = mv11["verdict"]
+    mv12_d = mv12["decision"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -287,7 +291,8 @@ def build_metric_context() -> dict[str, str]:
             f"threshold items, and {mv10_v['anchor_candidate_items']}/8 candidate anchors. "
             f"MV11 confirms {mv11_v['confirmed_mv10_anchor_items']} MV10 anchors with "
             f"{mv11_v['loading_dif_flagged_items']} loading-DIF and {mv11_v['threshold_dif_flagged_items']} "
-            f"threshold-DIF flags, but core AIC/BIC split is {mv11_v['core_model_aic_bic_split']}."
+            f"threshold-DIF flags, but core AIC/BIC split is {mv11_v['core_model_aic_bic_split']}. "
+            f"MV12 design is {mv12_d['readiness_status']}."
         ),
         "mv09": (
             f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
@@ -309,6 +314,13 @@ def build_metric_context() -> dict[str, str]:
             f"threshold-DIF flags {mv11_v['threshold_dif_flagged_items']}; "
             f"best AIC core model {mv11_v['best_aic_model']}; "
             f"best BIC core model {mv11_v['best_bic_model']}."
+        ),
+        "mv12": (
+            f"MV12 two-stage latent-target design: status {mv12_d['readiness_status']}; "
+            f"full_method_allowed={mv12_d['full_method_allowed']}; "
+            f"outputs predeclare {mv12['outputs']['model_ladder_rows']} model-ladder rows, "
+            f"{mv12['outputs']['identity_transfer_gate_rows']} identity/transfer gates, and "
+            f"{mv12['outputs']['pass_fail_gate_rows']} pass/fail gates."
         ),
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
@@ -335,11 +347,11 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv12']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
         return context["rq1"]
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
-        return f"{context['mv10']} {context['mv11']}"
+        return f"{context['mv10']} {context['mv11']} {context['mv12']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
@@ -415,6 +427,13 @@ def build_key_findings() -> pd.DataFrame:
             "finding": context["mv11"],
             "interpretation": "The formal label-only IRT confirmation preserves the MV10 anchor map but leaves an AIC/BIC caveat, so it supports target design rather than a full method claim.",
             "source_artifact_ids": "P5_MV11",
+        },
+        {
+            "finding_id": "mv12_two_stage_latent_target_design",
+            "paper_section": "Measurement evidence",
+            "finding": context["mv12"],
+            "interpretation": "The next method test is now predeclared: separate Y_to_theta measurement from X_to_theta prediction, keep scores and parameters local-only, and gate on direct floors, transfer, and conditional identity.",
+            "source_artifact_ids": "P5_MV12_design",
         },
         {
             "finding_id": "mv09_conditional_identity_gate",
