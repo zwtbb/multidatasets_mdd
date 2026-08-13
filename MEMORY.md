@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-11 UTC
+Last updated: 2026-08-13 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -61,6 +61,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_45_diagnostic_paper_results_sections.md`
   - `/root/autodl-tmp/memory/sessions/session_46_mv13_external_psychometric_replication.md`
   - `/root/autodl-tmp/memory/sessions/session_47_mv14_measurement_uncertainty_bootstrap_design.md`
+  - `/root/autodl-tmp/memory/sessions/session_48_mv06_annotation_import_round2.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -290,12 +291,12 @@ MPDD 2025 is intentionally out of scope for current auditing.
   It now defaults to the ignored local annotation workbench and exports only
   aggregate completion, field-issue, evidence-field, prompt-artifact, and
   dataset-stratified agreement summaries. Current status is
-  `ready_for_aggregate_evidence_review`: 30 completed candidates and 20
-  double-annotated candidates. Overall evidence-presence kappa is `0.808`;
-  CMDC evidence-presence kappa is `0.643`; PDCH evidence-presence kappa is
-  `1.000`; E-DAIC currently has only 2 double pairs with degenerate marginals,
-  so its kappa is undefined. Artifact hygiene passes; no raw text, source
-  locator map, or subject-level rows are exported.
+  `ready_for_aggregate_evidence_review`: 143 completed candidates and 143
+  double-annotated candidates over the 144-candidate local workbench. One CMDC
+  sampled candidate remains incomplete because the imported workbook attachment
+  omitted its two annotator rows. Evidence-presence kappa is `0.965` overall,
+  `0.967` for CMDC, `0.846` for E-DAIC, and `1.000` for PDCH. Artifact hygiene
+  passes; no raw text, source locator map, or subject-level rows are exported.
 - Phase 5 `P5_MV06 local_ai_preannotation_triage` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_ai_preannotation_triage/`.
   It read raw clinical text locally through ignored workbench locators and
@@ -722,8 +723,9 @@ Key Phase 2 outputs:
   `scripts/phase5_summarize_mv06_evidence_annotations.py` as the required
   aggregate-only export path after local annotation. It must report agreement
   by dataset as well as an `ALL` diagnostic row. First-round MV06 evidence can
-  now be used only as bounded aggregate credibility evidence; strengthen E-DAIC
-  agreement before making a stronger cross-dataset RQ4 claim.
+  now be used only as bounded aggregate credibility evidence; stronger RQ4
+  wording should add agreement uncertainty analysis and resolve the remaining
+  incomplete local candidate if needed.
 - P5_MV06 AI preannotation decision: use
   `scripts/phase5_run_mv06_local_ai_preannotation.py` only as local triage to
   speed human review. Its ignored output can contain local excerpts and
@@ -999,5 +1001,6 @@ plaintext credential-like content before committing on the clean remote lineage.
    Diagnostics, and Measurement Results scaffold is complete. The next active
    task is to implement and run MV14 bootstrap uncertainty, followed by MV15
    latent-conditioned identity and MV16 cross-dataset theta calibration /
-   few-shot scale linking; secondary work can strengthen E-DAIC MV06 agreement
-   before stronger evidence-localization claims.
+   few-shot scale linking; secondary MV06 work can add agreement uncertainty
+   analysis and resolve the one incomplete local candidate before stronger
+   evidence-localization claims.

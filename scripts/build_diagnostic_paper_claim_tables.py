@@ -298,6 +298,18 @@ def build_metric_context() -> dict[str, str]:
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
     pdch_kappa, pdch_pairs = evidence_presence_kappa(agreement, "pdch")
+    remaining_mv06 = max(
+        0,
+        int(mv06.get("input_contract", {}).get("candidate_count", 0))
+        - int(mv06_gate["completed_candidates"]),
+    )
+    mv06_remaining_clause = (
+        f" {remaining_mv06} sampled candidate remains incomplete in the local workbook."
+        if remaining_mv06 == 1
+        else f" {remaining_mv06} sampled candidates remain incomplete in the local workbook."
+        if remaining_mv06 > 1
+        else " All sampled candidates are complete."
+    )
 
     return {
         "gate": (
@@ -402,7 +414,8 @@ def build_metric_context() -> dict[str, str]:
             f"MV06 has {mv06_gate['completed_candidates']} completed and "
             f"{mv06_gate['double_annotated_candidates']} double-annotated candidates. Evidence-presence kappa: "
             f"ALL {all_kappa} ({all_pairs} pairs), CMDC {cmdc_kappa} ({cmdc_pairs}), "
-            f"PDCH {pdch_kappa} ({pdch_pairs}), E-DAIC {edaic_kappa} ({edaic_pairs}, degenerate/underpowered if NA)."
+            f"PDCH {pdch_kappa} ({pdch_pairs}), E-DAIC {edaic_kappa} ({edaic_pairs})."
+            f"{mv06_remaining_clause} Field-specific degenerate marginal statuses should be read from agreement_summary.csv."
         ),
     }
 
@@ -550,7 +563,7 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "mv06_first_round_evidence",
             "paper_section": "Evidence localization",
             "finding": context["mv06"],
-            "interpretation": "MV06 can support first-round aggregate credibility; E-DAIC agreement needs strengthening for stronger claims.",
+            "interpretation": "MV06 can support first-round aggregate credibility; stronger RQ4 claims should add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows.",
             "source_artifact_ids": "P5_MV06_summary",
         },
     ]
@@ -619,7 +632,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any], claims: pd.DataFram
             "",
             "- Use these tables as manuscript scaffolding, not as a replacement for the source artifacts.",
             "- Keep private review material, learned parameters, and row-level model outputs local-only.",
-            "- Any stronger RQ4 claim should first improve E-DAIC double-annotation agreement stability.",
+            "- Any stronger RQ4 claim should first add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows.",
         ]
     )
     (out_dir / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

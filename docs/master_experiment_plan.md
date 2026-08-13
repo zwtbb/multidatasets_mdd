@@ -110,10 +110,12 @@ data audit
   recalibration.
 - Phase 5 `P5_MV06 construct_evidence_localization`:
   readiness, pilot packet, local two-annotator workbench, human review pack,
-  and aggregate summary gate are complete. The first human annotation pass now
-  reaches the default aggregate gate: 30 completed candidates and 20
-  double-annotated candidates. Evidence reporting is allowed only as
-  aggregate, first-round, dataset-stratified credibility evidence.
+  and aggregate summary gate are complete. The updated human annotation import
+  now reaches the aggregate gate with 143 completed and 143 double-annotated
+  candidates over the 144-candidate local workbench. Evidence-presence kappa is
+  `0.965` overall, `0.967` for CMDC, `0.846` for E-DAIC, and `1.000` for PDCH.
+  Evidence reporting is allowed only as aggregate, first-round,
+  dataset-stratified credibility evidence.
 - Phase 5 `P5_MV06 local_ai_preannotation_triage`:
   complete as a local-only review accelerator. It generated ignored AI-triage
   rows for 144 MV06 candidates and tracked only aggregate counts plus hygiene.
@@ -125,7 +127,7 @@ data audit
   review-pack, priority, progress, schema, and hygiene summaries. Current
   status is `ready_for_human_review_pack_not_claimable`: 144 candidates, 288
   annotation rows, 79 AI keyword-match candidates, 82 priority-1/2 candidates;
-  after importing human annotations it reflects 30 completed candidates and 20
+  after importing human annotations it reflects 143 completed candidates and 143
   double-annotated candidates in the source workbook.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness`:
   complete as a no-training readiness audit. After local E-DAIC BGE
@@ -243,7 +245,7 @@ below train mean and does not support valence-control claims. `P5_MV02` gives
 bounded PDCH-only HAMD evidence, while `P5_MV03`, `P5_MV03b`, and `P5_MV05`
 are negative for SDS/context claims. `P5_MV06` now provides first-round
 aggregate evidence-localization credibility evidence with dataset-stratified
-agreement, but E-DAIC has only a small double-annotation slice. `P5_MV07`
+agreement, including computable E-DAIC evidence-presence agreement. `P5_MV07`
 shows aligned BGE is runnable, but the shallow validation is blocked by
 total-allocation and identity evidence.
 `P5_MV07b` reduces BGE feature/prediction identity, but the best
@@ -417,8 +419,8 @@ representation without those controls.
   bounded PDCH evidence, not cross-dataset HAMD generalization.
 - `P5_MV06 construct_evidence_localization` has first-round aggregate human
   annotation evidence ready. `agreement_summary.csv` is dataset-stratified and
-  includes an `ALL` diagnostic row; E-DAIC kappa is currently limited by only
-  two double-annotated pairs and degenerate marginals.
+  includes an `ALL` diagnostic row; evidence-presence kappa is `0.965`
+  overall, `0.967` for CMDC, `0.846` for E-DAIC, and `1.000` for PDCH.
 - `P5_MV06 local_ai_preannotation_triage` is complete as a local-only review
   accelerator. It must not be treated as human annotation, agreement evidence,
   or an RQ4 claim.
@@ -497,8 +499,8 @@ representation without those controls.
   explicit user approval.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
   as bounded diagnostic evidence, then implement/run MV14 measurement
-  uncertainty. Optionally expand E-DAIC MV06 double annotation to stabilize
-  per-dataset agreement.
+  uncertainty. Optionally add MV06 agreement uncertainty analysis and resolve
+  the one incomplete local candidate before stronger RQ4 wording.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

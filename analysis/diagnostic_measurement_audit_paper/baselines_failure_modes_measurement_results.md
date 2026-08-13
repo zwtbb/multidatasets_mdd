@@ -1,6 +1,6 @@
 # Baselines, Failure-Mode Diagnostics, and Measurement Results
 
-Generated: `2026-08-11T16:36:12+00:00`
+Generated: `2026-08-13T05:22:49+00:00`
 
 ## Scope
 
@@ -24,7 +24,7 @@ MPDD supports a population-heterogeneity audit but not a positive context-condit
 
 ## Draft Section: Measurement Results
 
-The Phase 5 full-method gate now reads `34` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.
+The Phase 5 full-method gate now reads `35` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.
 
 The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13 address the second level by showing partial rather than scalar PHQ invariance with external replication; MV12 addresses the third level by separating label measurement from multimodal prediction.
 
@@ -36,7 +36,7 @@ MV12 then tests whether multimodal features can predict the label-derived latent
 
 The cost is predictive fidelity and latent-scale transfer. Same-dataset observed macro item MAE is worse than direct itemwise Ridge by `0.004` on E-DAIC and `0.067` on CMDC, showing that a one-dimensional latent bottleneck loses item-profile information. Cross-dataset evaluation splits the story even more sharply: the latent route improves observed macro item MAE relative to direct item transfer by `-0.260` for CMDC-to-E-DAIC and `-0.210` for E-DAIC-to-CMDC, yet theta MAE remains worse than the target train-mean theta floor by `0.037` and `0.077`. The interpretation is therefore a predictive fidelity-dataset identifiability trade-off: psychometric latent compression removes substantial dataset information and can help observed-scale transfer, but it does not yet calibrate a fully transferable latent severity scale. The aggregate tradeoff analysis freezes the current latent-target line as paper-critical diagnostic evidence.
 
-The remaining Phase 5 findings define bounded supporting claims. PDCH supports an internal HAMD diagnostic bridge: item-derived total MAE is `5.693`, direct total MAE is `5.794`, and macro item MAE is `0.727`, but this does not support cross-dataset HAMD transfer. MODMA supports task-control evidence because task projection reduces feature task-identity BA from `0.762` to `0.570` while preserving the main task signal (`0.688`). EATD remains a negative SDS stress test because uncontrolled primary MAE is `28.810` versus a train-mean floor of `7.201`. MV06 supplies first-round aggregate evidence-localization credibility: `30` candidates are completed and `20` are double annotated, with evidence-presence kappa `0.808` overall, `0.643` for CMDC, `1.000` for PDCH, and underpowered/undefined for E-DAIC. Together, these results support a paper about measurement validity, protocol dependence, and bounded evidence localization, while keeping external HAMD transfer, EATD SDS generalization, positive MPDD context conditioning, and full-method construction blocked.
+The remaining Phase 5 findings define bounded supporting claims. PDCH supports an internal HAMD diagnostic bridge: item-derived total MAE is `5.693`, direct total MAE is `5.794`, and macro item MAE is `0.727`, but this does not support cross-dataset HAMD transfer. MODMA supports task-control evidence because task projection reduces feature task-identity BA from `0.762` to `0.570` while preserving the main task signal (`0.688`). EATD remains a negative SDS stress test because uncontrolled primary MAE is `28.810` versus a train-mean floor of `7.201`. MV06 has 143 completed and 143 double-annotated candidates. Evidence-presence kappa: ALL 0.965 (143 pairs), CMDC 0.967 (59), PDCH 1.000 (60), E-DAIC 0.846 (24). 1 sampled candidate remains incomplete in the local workbook. Field-specific degenerate marginal statuses should be read from agreement_summary.csv. Together, these results support a paper about measurement validity, protocol dependence, and bounded evidence localization, while keeping external HAMD transfer, EATD SDS generalization, positive MPDD context conditioning, and full-method construction blocked.
 
 ## Manuscript Guardrails
 
@@ -44,7 +44,7 @@ The remaining Phase 5 findings define bounded supporting claims. PDCH supports a
 - Do not claim that high unconditional dataset identity is automatically harmful; use it as a shortcut-risk screen and reserve conditional identity for shared-latent claims.
 - Do not call scale-specific post-head identity a hard shared-latent failure unless the output space is explicitly shared.
 - Do not use MV12 as positive full-method evidence; its tradeoff analysis freezes the current latent-target line.
-- Do not strengthen RQ4 beyond first-round aggregate credibility unless E-DAIC double annotation is expanded or uncertainty analysis is added.
+- Do not strengthen RQ4 beyond first-round aggregate credibility without agreement uncertainty analysis and resolving remaining incomplete candidate rows, if any.
 
 ## Source Map
 
@@ -69,5 +69,5 @@ The remaining Phase 5 findings define bounded supporting claims. PDCH supports a
 | Dataset/protocol shortcut risk | supported_diagnostic | Dataset identity probes include WavLM six-way BA 0.990, CMDC/PDCH BGE BA 1.000, and E-DAIC/CMDC OpenFace BA 1.000. | Treat identity as shortcut-risk evidence; use conditional identity for shared-latent claims. |
 | Protocol/task failure modes | supported_diagnostic | CMDC Q10-only binary Macro-F1 delta is -0.374; MODMA affective-task BA drop is 0.142. | Speaker-resolved E-DAIC/CMDC controls remain blocked by missing fields. |
 | Population/context method gain | blocked_positive_claim | MPDD AVP adds only Macro-F1 0.001 and QWK 0.001 over AV, while subgroup calibration gaps remain large. | Use age/personality as heterogeneity axes, not as a positive context-conditioning method claim. |
-| Measurement-shift paper direction | allowed_with_reframing | Full gate reads 34 Phase 5 summaries; the full method remains blocked, but the measurement-shift paper direction is allowed. | Report negative and bounded results honestly; no full M0/M1/M2/M3 claim. |
+| Measurement-shift paper direction | allowed_with_reframing | Full gate reads 35 Phase 5 summaries; the full method remains blocked, but the measurement-shift paper direction is allowed. | Report negative and bounded results honestly; no full M0/M1/M2/M3 claim. |
 | MV12 latent-target method | blocked_positive_method_claim | MV12 improves same-dataset theta utility and conditional identity, but observed-scale safety and external theta transfer fail; aggregate analysis freezes the current line. | Future method work needs a genuinely new predeclared mechanism. |

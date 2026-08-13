@@ -398,7 +398,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
                 f"{mv06_pack.get('review_pack_status', 'not_run')}; AI/review-pack rows remain non-claimable."
             ),
             "required_next_evidence": (
-                "For a stronger manuscript claim, expand the E-DAIC double-annotation slice or add Krippendorff alpha/bootstrap uncertainty because E-DAIC currently has few double pairs."
+                "For a stronger manuscript claim, add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows; cite dataset-specific kappas from the MV06 agreement table."
                 if mv06_ready
                 else "Use the local review pack to complete human annotations, then rerun the summary gate with enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass."
             ),
@@ -631,9 +631,9 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
         {
             "rank": 2,
             "action_id": "NEXT_MV06_EVIDENCE_STRENGTHENING",
-            "action": "Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally expand the E-DAIC double-annotation slice.",
-            "why_now": "MV06 now reaches the 30 completed and 20 double-annotated default gate, but E-DAIC has few double pairs and degenerate kappa for several fields.",
-            "success_gate": "Dataset-stratified agreement remains aggregate-only, and any added E-DAIC review improves per-dataset agreement stability without exporting snippets or source locators.",
+            "action": "Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally add agreement uncertainty analysis and resolve any incomplete local candidate rows.",
+            "why_now": "MV06 now strongly exceeds the default completion and double-annotation gate, and E-DAIC evidence-presence agreement is computable; one sampled candidate remains incomplete in the local workbook.",
+            "success_gate": "Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators.",
             "version_policy": "Commit aggregate summaries only; keep verbatim excerpts, source maps, local workbooks, and per-subject rationales local-only.",
         },
         {

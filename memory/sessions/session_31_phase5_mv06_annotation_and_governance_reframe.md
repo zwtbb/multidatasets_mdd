@@ -1,7 +1,7 @@
 # Session Memory: Phase 5 MV06 Annotation And Governance Reframe
 
-Status: active
-Last updated: 2026-08-10 UTC
+Status: complete
+Last updated: 2026-08-13 UTC
 Thread/task: main agent MV06 annotation import, agreement fix, and plan reframe
 
 ## Scope
@@ -18,6 +18,10 @@ It does not force-push or rewrite remote history.
 
 ## Current State
 
+- Superseded for current MV06 annotation counts by
+  `memory/sessions/session_48_mv06_annotation_import_round2.md`. The historical
+  first-import facts below are retained to explain the earlier agreement-gate
+  and governance reframe.
 - Imported the filled local workbook from the Codex attachment into the ignored
   default MV06 human workbook path:
   `analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_workbench/p5_mv06_local_annotation_workbook_predictions.csv`.
@@ -65,8 +69,9 @@ It does not force-push or rewrite remote history.
 - Cross-dataset MV06 evidence claims must use dataset-stratified agreement, not
   only pooled kappa.
 - MV06 first-round evidence can support only bounded aggregate credibility
-  claims. Stronger RQ4 claims should add more E-DAIC double annotation or
-  report uncertainty/alpha-style agreement.
+  claims. After the second import, stronger RQ4 claims should add
+  uncertainty/alpha-style agreement and resolve the remaining incomplete local
+  candidate if needed.
 - Full method remains blocked despite MV06 passing because RQ1 direct shared
   symptom mapping remains unsupported and public data-governance risk must be
   reduced.
@@ -138,7 +143,8 @@ Ignored local-only inputs/artifacts:
 - Public remote history still contains older row-level dataset-table commits
   unless the user explicitly approves a history rewrite or repository
   recreation.
-- E-DAIC MV06 agreement is underpowered in this first pass.
+- Historical first-pass E-DAIC MV06 agreement was underpowered, but current
+  counts are superseded by session 48.
 - The partial-invariance method target still needs a concrete protocol row and
   implementation plan.
 

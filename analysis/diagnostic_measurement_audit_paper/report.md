@@ -1,6 +1,6 @@
 # Diagnostic Measurement-Audit Paper Tables
 
-Generated: `2026-08-11T16:36:07+00:00`
+Generated: `2026-08-13T05:22:49+00:00`
 
 ## Scope
 
@@ -18,7 +18,7 @@ This writing-prep artifact converts existing aggregate gates into paper-facing c
 
 | finding | interpretation |
 | --- | --- |
-| Full gate reads 34 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False. | Full method construction remains blocked; measurement-shift paper framing is allowed with bounded claims. |
+| Full gate reads 35 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False. | Full method construction remains blocked; measurement-shift paper framing is allowed with bounded claims. |
 | MV08 improves over total-score floor on 0/3 pooled active slices with prediction identity BA 0.900. MV08b improves over both floors on 2/3 slices, but prediction identity BA 0.979 exceeds gate 0.900. MV09 revises the gate semantics: E-DAIC/CMDC item-conditioned feature identity BA remains 0.991. MV10 adds a label-only PHQ screen with loading congruence 0.998, 7/8 metric items, 4/8 threshold items, and 4/8 candidate anchors. MV11 confirms 4 MV10 anchors with 0 loading-DIF and 2 threshold-DIF flags, but core AIC/BIC split is True. MV13 external mirt replication confirms 4 anchors with 0 loading-DIF and 2 threshold-DIF flags, core convergence False, and 6/6 MV11-aligned decisions. MV12 design is ready_to_implement_mv12_two_stage_latent_target; MV12 run is blocked_theta_gain_not_observed_scale_safe, with same-dataset theta gate True, observed-scale safety False, external theta transfer False, and conditional identity BA 0.602. MV12 aggregate tradeoff analysis is complete_freeze_current_mv12_latent_target_line and recommends freezing the current latent-target line. | Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11/MV13/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line. |
 | MV10 label-only PHQ screen: configural pass=True; loading congruence 0.998; metric invariant items 7/8; threshold invariant items 4/8; anchor candidates 4/8; status complete_partial_invariance_supported_approx. | The label-only PHQ screen supports a common one-factor and partial-anchor interpretation, but threshold/scalar invariance remains partial. |
 | MV11 formal graded-response IRT confirmation: status complete_formal_partial_invariance_supported_with_bic_caveat; confirmed MV10 anchors 4; loading-DIF flags 0; threshold-DIF flags 2; best AIC core model partial_mv10; best BIC core model scalar. | The formal label-only IRT confirmation preserves the MV10 anchor map but leaves an AIC/BIC caveat, so it supports target design rather than a full method claim. |
@@ -30,10 +30,10 @@ This writing-prep artifact converts existing aggregate gates into paper-facing c
 | PDCH item-derived total MAE 5.693; direct total MAE 5.794; macro item MAE 0.727; status pass_pdch_only_diagnostic. | PDCH supports bounded internal HAMD measurement evidence only. |
 | MODMA task projection reduces feature task identity BA 0.762 -> 0.570 while preserving main task signal (0.688). | MODMA provides bounded task-control evidence. |
 | EATD valence/SDS remains blocked: raw primary MAE 28.810 versus train-mean floor 7.201; status blocked_main_task_below_floor. | EATD should remain a negative stress test, not a method component driver. |
-| MV06 has 30 completed and 20 double-annotated candidates. Evidence-presence kappa: ALL 0.808 (20 pairs), CMDC 0.643 (10), PDCH 1.000 (8), E-DAIC NA (2, degenerate/underpowered if NA). | MV06 can support first-round aggregate credibility; E-DAIC agreement needs strengthening for stronger claims. |
+| MV06 has 143 completed and 143 double-annotated candidates. Evidence-presence kappa: ALL 0.965 (143 pairs), CMDC 0.967 (59), PDCH 1.000 (60), E-DAIC 0.846 (24). 1 sampled candidate remains incomplete in the local workbook. Field-specific degenerate marginal statuses should be read from agreement_summary.csv. | MV06 can support first-round aggregate credibility; stronger RQ4 claims should add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows. |
 
 ## Release Rule
 
 - Use these tables as manuscript scaffolding, not as a replacement for the source artifacts.
 - Keep private review material, learned parameters, and row-level model outputs local-only.
-- Any stronger RQ4 claim should first improve E-DAIC double-annotation agreement stability.
+- Any stronger RQ4 claim should first add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows.

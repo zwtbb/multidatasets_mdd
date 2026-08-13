@@ -86,8 +86,9 @@ The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate tables only. Current next action: implement and
 run measurement-uncertainty bootstrap (`P5_MV14`), then latent-conditioned
 dataset identity (`P5_MV15`) and cross-dataset theta calibration / few-shot
-scale linking (`P5_MV16`) if their gates remain coherent. Optionally expand
-E-DAIC MV06 double annotation before stronger RQ4 wording. Theta scores, fitted
+scale linking (`P5_MV16`) if their gates remain coherent. Optional MV06 work is
+now agreement uncertainty analysis plus resolving the one incomplete local
+candidate before stronger RQ4 wording. Theta scores, fitted
 parameters, row predictions, transformed features, bootstrap samples,
 calibration parameters, and model artifacts remain local-only.
 

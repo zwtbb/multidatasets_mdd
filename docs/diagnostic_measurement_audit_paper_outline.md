@@ -197,8 +197,8 @@ Blocked claims:
 
 10. Evidence localization is a credibility layer, not a rescue for weak RQ1.
    MV06 can support bounded aggregate credibility claims, but stronger RQ4
-   claims need a larger E-DAIC double-annotation slice or additional agreement
-   uncertainty analysis.
+   claims need agreement uncertainty analysis and completion of the remaining
+   local candidate if available.
 
 ## Proposed Sections
 
@@ -450,7 +450,8 @@ Tracked outputs:
 15. Predeclare MV16 cross-dataset theta calibration / few-shot scale linking:
    evaluate affine, monotonic, or anchor-based calibration with small target
    calibration sets before any new full method.
-16. Expand E-DAIC MV06 double annotation if a stronger RQ4 claim is desired.
+16. Add MV06 agreement uncertainty analysis and resolve the remaining
+   incomplete local candidate if stronger RQ4 wording is desired.
 17. Prepare result tables from existing aggregate summaries only; do not export
    row-level predictions, raw text, subject locators, learned parameters, or
    model files.

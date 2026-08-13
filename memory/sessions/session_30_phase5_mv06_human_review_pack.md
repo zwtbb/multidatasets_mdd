@@ -1,7 +1,7 @@
 # Session Memory: Phase 5 MV06 Human Review Pack
 
 Status: complete
-Last updated: 2026-08-10 UTC
+Last updated: 2026-08-13 UTC
 Thread/task: main agent MV06 human review acceleration
 
 ## Scope
@@ -32,7 +32,7 @@ clinical text/source locators in tracked files.
   hygiene audit.
 - Artifact hygiene passed with zero violations.
 - The review pack status remains `ready_for_human_review_pack_not_claimable`;
-  after importing the filled human workbook, the pack progress aggregates now
+  after importing the updated human workbook, the pack progress aggregates now
   reflect completed human annotations.
 - Aggregate review-pack counts:
   - 144 candidates;
@@ -40,8 +40,8 @@ clinical text/source locators in tracked files.
   - 79 AI keyword-match candidates;
   - 4 AI protocol-artifact candidates;
   - 82 priority-1/2 candidates;
-  - 30 completed human candidates;
-  - 20 double-completed human candidates.
+  - 143 completed human candidates;
+  - 143 double-completed human candidates.
 - `scripts/phase5_summarize_mv06_evidence_annotations.py` was updated to
   compute dataset-stratified agreement and rerun. It now reports
   `ready_for_aggregate_evidence_review`.
@@ -105,13 +105,14 @@ Ignored local-only artifacts:
 
 ## Blockers And Risks
 
-- Human annotation remains incomplete: 0 completed candidates and 0
-  double-completed candidates.
+- One CMDC candidate remains incomplete after the latest workbook import because
+  the attachment omitted its two annotator rows.
 - The review pack contains AI suggestions that can be wrong, especially for
   negation, time status, protocol artifacts, and C09/HAMD03 safety-sensitive
   evidence. Every row requires human verification.
-- E-DAIC has only 2 double-annotated pairs in the first pass, so its
-  dataset-specific kappa is unstable/undefined under degenerate marginals.
+- E-DAIC evidence-presence agreement is now computable with 24 double pairs and
+  kappa `0.846`; field-specific degenerate marginal statuses remain in
+  `agreement_summary.csv`.
 - The full method remains blocked. The review pack and first-round annotation
   summary improve RQ4 credibility but do not resolve the RQ1 measurement gate.
 

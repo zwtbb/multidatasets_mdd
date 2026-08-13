@@ -151,15 +151,16 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   outputs contain only aggregate review-pack, priority, progress, schema, and
   hygiene summaries. It is `ready_for_human_review_pack_not_claimable`: 144
   candidates, 288 annotation rows, 79 AI keyword-match candidates, 82
-  priority-1/2 candidates. After importing the completed local human workbook,
-  tracked progress aggregates show 30 completed candidates and 20
+  priority-1/2 candidates. After importing the updated local human workbook,
+  tracked progress aggregates show 143 completed candidates and 143
   double-annotated candidates.
 - Phase 5 `P5_MV06 evidence_annotation_summary_gate` was updated to compute
   dataset-stratified kappa. It now reports
-  `ready_for_aggregate_evidence_review`, with 30 completed candidates and 20
-  double-annotated candidates. RQ4 is allowed only as limited aggregate
-  first-round evidence; E-DAIC has only 2 double pairs and degenerate kappa
-  marginals in this pass.
+  `ready_for_aggregate_evidence_review`, with 143 completed candidates and 143
+  double-annotated candidates over the 144-candidate local workbench. RQ4 is
+  allowed only as limited aggregate first-round evidence; evidence-presence
+  kappa is `0.965` overall, `0.967` for CMDC, `0.846` for E-DAIC, and `1.000`
+  for PDCH.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness` completed in the main
   checkout. It did not train a model or scan raw text/media; it inventories
   cached subject-level features and label coverage. After local E-DAIC BGE
@@ -382,8 +383,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
    diagnostic pass, but CMDC sanity is negative and coverage-limited;
    `P5_MV02b` shows the lightweight manifest-text hashing probe is weak. Full
    method work still needs a genuinely changed measurement contract. `P5_MV06`
-   now has first-round aggregate human evidence and dataset-stratified
-   agreement, but E-DAIC agreement is underpowered in this pass.
+   now has strengthened first-round aggregate human evidence and
+   dataset-stratified agreement, including computable E-DAIC evidence-presence
+   kappa.
    `P5_MV07` aligned-BGE shallow validation is now complete and blocked by
    total-allocation and identity evidence, so it should be reported as a
    negative/diagnostic shared-feature result rather than a shared-representation
@@ -470,8 +472,8 @@ scaffold is complete. MV13 external R `mirt` replication now preserves the
 MV11 qualitative anchor/DIF pattern with a configural convergence caveat. MV14
 bootstrap uncertainty is predeclared and ready to implement; next, run MV14,
 then MV15 latent-conditioned identity and MV16 few-shot theta calibration.
-Optionally expand E-DAIC MV06 double
-annotation to stabilize per-dataset agreement before stronger RQ4 wording. Keep
+Optionally add MV06 agreement uncertainty analysis and resolve the remaining
+incomplete local candidate before stronger RQ4 wording. Keep
 row-level predictions, real manifests, real integrity/split maps, latent
 scores, learned parameters, learned embeddings, bootstrap samples, calibration
 parameters, and model artifacts local-only, and do not start full method work
