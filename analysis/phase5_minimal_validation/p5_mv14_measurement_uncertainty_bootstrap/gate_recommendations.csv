@@ -1,0 +1,5 @@
+recommendation_id,status,recommendation,evidence
+measurement_uncertainty_boundary,complete_mv14_uncertainty_supports_cautious_phq_partial_invariance,Use MV14 only to calibrate PHQ anchor/DIF and model-selection uncertainty wording.,Core effective R 185; DIF effective R 100.
+anchor_wording,stable,Describe C01/C04/C05/C07 as stable anchors only when all four support frequencies pass the predeclared threshold.,Stable anchors: C01;C04;C05;C07.
+dif_wording,localized,Report loading-DIF sparsity and threshold-DIF localization separately.,Top threshold-DIF items: C02;C06.
+full_method_gate,keep_blocked,Do not start full M0/M1/M2/M3 from MV14 alone.,"MV14 checks Y-layer measurement uncertainty, not X-to-theta prediction or cross-dataset calibration."

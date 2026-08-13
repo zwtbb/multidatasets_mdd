@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-13T05:22:40+00:00`
+Generated: `2026-08-13T07:03:17+00:00`
 
 ## Decision
 
@@ -15,9 +15,9 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Implement and run MV14 measurement-uncertainty/bootstrap evidence, then only consider MV15/MV16 if uncertainty, conditional identity, and scale-linking gates remain coherent. |
-| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work. | MV14 should run the predeclared bootstrap and quantify measurement uncertainty and anchor/DIF stability before stronger item-level wording or a later predeclared X-to-theta calibration mechanism. |
-| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13 as label-only PHQ partial-invariance evidence, MV14 design as the predeclared uncertainty boundary, and MV12 plus its aggregate tradeoff analysis as bounded two-stage prediction diagnostics; do not present them as multimodal method success or external scale transfer. | Implement and run MV14 measurement-uncertainty/bootstrap to quantify anchor, DIF, and fit-stability uncertainty under the same local-only item-response boundary. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Predeclare MV15 latent-conditioned dataset identity and MV16 cross-dataset theta calibration / few-shot scale linking before any full-method construction. |
+| C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/partial diagnostic evidence and reframe RQ1 as measurement-shift and measurement-invariance work. | Predeclare MV15/MV16 to test latent-conditioned identity and cross-dataset theta calibration before stronger transferable representation wording. |
+| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13/MV14 as label-only PHQ partial-invariance evidence with measured uncertainty, and MV12 plus its aggregate tradeoff analysis as bounded two-stage prediction diagnostics; do not present them as multimodal method success or external scale transfer. | Predeclare MV15/MV16 if moving beyond label-measurement evidence toward latent identity or scale-linking claims. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, and conditional identity audits are controls; do not claim invariant representation. | Future gates must distinguish unconditional feature identity, conditional shared-latent identity, and scale-specific post-head prediction identity. |
@@ -25,7 +25,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows; cite dataset-specific kappas from the MV06 agreement table. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14 design and MV12 aggregate tradeoff analysis are bounded diagnostic evidence, not a full-method pass. | Implement and run MV14 measurement-uncertainty/bootstrap, then use MV15/MV16 only if they are predeclared as measurement-shift follow-ups with local-only latent and calibration artifacts. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-invariance paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14 and MV12 aggregate tradeoff analysis are bounded diagnostic evidence, not a full-method pass. | Predeclare MV15/MV16 as measurement-shift follow-ups with local-only latent and calibration artifacts. |
 
 ## Evidence Inventory
 
@@ -66,12 +66,13 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV13_design | `complete` | `ready_for_external_replication_run` | `True` | MV13 is predeclared as an external mirt/lavaan psychometric replication. Execution waits for a version-captured external runtime. |
 | P5_MV13 | `complete` | `complete_external_mirt_with_convergence_warnings` | `True` | External R mirt replication is complete: the qualitative PHQ partial-invariance claim is externally checked while full item parameters and factor scores remain local-only. |
 | P5_MV14_design | `complete` | `ready_to_implement_mv14_measurement_uncertainty_bootstrap` | `True` | MV14 is predeclared as an aggregate-only bootstrap stability audit for PHQ anchors, DIF flags, model selection, convergence, and uncertainty availability. |
+| P5_MV14 | `complete` | `complete_mv14_uncertainty_supports_cautious_phq_partial_invariance` | `True` | MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap; it updates item-level wording but does not authorize full multimodal method work. |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Implement and run the predeclared MV14 measurement-uncertainty bootstrap for PHQ anchor, DIF, model-selection, and convergence stability. | MV14 produces aggregate convergence rates, AIC/BIC model-selection frequencies, anchor-support frequencies, loading-DIF and threshold-DIF selection frequencies, SE/CI availability counts, item-fit availability, and hygiene outputs without exporting subject rows, item-response matrices, fitted parameters, factor/theta scores, model objects, or bootstrap draw details. |
+| 1 | Predeclare MV15 latent-conditioned dataset identity after the completed MV14 measurement-uncertainty run. | MV15 specifies how to compare dataset identity conditioned on labels, theta, and legitimate covariates with aggregate-only outputs and local-only theta or residual tables. |
 | 2 | Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally add agreement uncertainty analysis and resolve any incomplete local candidate rows. | Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

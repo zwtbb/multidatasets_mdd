@@ -43,31 +43,21 @@ or population-specific spurious correlations.
 - Prefer primary sources for factual claims: official dataset pages, papers,
   code repositories, documentation, and challenge pages.
 
-## Agent Behavior Guardrails
+## Behavior Guardrails / 行为准则
 
-- Do not guess. Do not hide uncertainty, blockers, or tradeoffs. Surface them
-  early with concrete evidence and current best options.
-- Write the smallest code that directly solves the current verified problem.
-  Do not add speculative features, speculative branches, or future-proofing
-  that is not required by the active experiment contract.
-- Modify only what must change for the task, and clean up issues introduced by
-  the current work.
-- Define the success condition before claiming completion, then keep iterating
-  until verification passes or a real blocker is recorded.
-- Trust internal code, framework contracts, and project invariants unless
-  current evidence contradicts them.
-- Validate at system boundaries: user inputs, files from outside the current
-  controlled pipeline, external APIs, network calls, installed tools, datasets,
-  and repository publishing boundaries.
-- Do not add defensive checks, fallbacks, empty/default handling, or validation
-  for states that the local contract makes impossible. Let impossible internal
-  states fail loudly.
-- Do not swallow errors with broad `catch`/`except`, silent defaults, `nil` or
-  empty fallbacks, or vague warning-only behavior. Prefer fast failure with a
-  useful error message.
-- Do not create helper functions, tool classes, abstractions, or frameworks for
-  one-off operations unless they remove real repeated complexity or match an
-  established local pattern.
+- 不要假设。不要隐藏不确定性、困惑、阻塞或权衡取舍；尽早用具体证据和当前可选路径暴露出来。
+- 只写解决当前已验证问题的最小代码；不要添加推测性功能、推测性分支，或没有实验合同支撑的未来扩展。
+- 只修改必须修改的地方；只清理本轮工作自己产生的问题。
+- 在声称完成前先明确定义成功标准；验证通过前持续迭代，否则记录真实 blocker。
+
+### Anti-Overengineering / Anti-Defensive Programming
+
+- 信任内部代码、框架保证和项目不变量，除非当前证据明确推翻它们。
+- 只在系统边界做校验：用户输入、当前受控流程之外的文件、外部 API、网络调用、安装工具、数据集输入、仓库发布边界。
+- 禁止为项目合同中“不可能发生”的内部状态添加错误处理、回退、空值检查或额外验证；让不可能的内部状态快速失败。
+- 绝不吞掉错误：禁止宽泛 `catch`/`except`、`rescue nil`、静默默认值、空值回退或只给模糊 warning 的处理方式。
+- 禁止为一次性操作创建辅助函数、工具类、抽象或框架，除非它确实消除重复复杂度，或符合项目既有模式。
+- 优先快速失败并给出有用错误信息，而不是掩盖问题。
 
 ## Dataset Governance
 

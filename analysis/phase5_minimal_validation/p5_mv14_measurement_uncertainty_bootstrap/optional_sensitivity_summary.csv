@@ -1,0 +1,3 @@
+"tier_id","status","requested_R","aggregate_output_policy","reason"
+"MV14_D_boot_mirt_SE_availability","skipped_runtime_bounded_optional",0,"finite SE/CI availability counts only if run later","Default MV14 run prioritizes predeclared core and item-DIF stability before optional parameter bootstrap."
+"MV14_E_parametric_LR_sensitivity","skipped_runtime_bounded_optional",0,"parametric LRT p-value summaries only if run later","Default MV14 run prioritizes observed bootstrap decision stability before optional boot.LR sensitivity."

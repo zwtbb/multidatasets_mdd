@@ -1,0 +1,105 @@
+{
+  "artifact_hygiene_passed": true,
+  "generated_at": "2026-08-13T06:45:37+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "full_method_allowed": false,
+    "label_only": true,
+    "manifest_governed_item_loader": true,
+    "multimodal_features_read": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false,
+    "scales": [
+      "PHQ-8",
+      "PHQ-9"
+    ],
+    "shared_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "subject_ids_exported": false,
+    "subjects": {
+      "cmdc": 77,
+      "edaic": 219
+    }
+  },
+  "output_policy": {
+    "bootstrap_draws_exported": false,
+    "factor_or_theta_scores_exported": false,
+    "fitted_model_objects_exported": false,
+    "fitted_parameters_exported": false,
+    "local_only_files": {
+      "ignored_bootstrap_resampling_draws": "created only in R memory and never exported",
+      "ignored_local_item_response_matrix": "participant-grain PHQ item response matrix without subject IDs"
+    },
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "bootstrap_ladder_realization.csv",
+      "bootstrap_runtime_summary.csv",
+      "core_model_stability_summary.csv",
+      "gate_recommendations.csv",
+      "input_boundary_contract.csv",
+      "input_response_category_support.csv",
+      "invariance_decision_frequency.csv",
+      "item_dif_stability_summary.csv",
+      "itemfit_stability_summary.csv",
+      "model_selection_frequency.csv",
+      "mv11_mv13_mv14_alignment_summary.csv",
+      "optional_sensitivity_summary.csv",
+      "pass_fail_gate_assessment.csv",
+      "psychometric_input_audit.csv",
+      "r_execution_summary.csv",
+      "report.md",
+      "run_summary.json",
+      "runtime_versions.csv",
+      "warning_failure_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV14_measurement_uncertainty_bootstrap",
+  "scope": "label_only_measurement_uncertainty_bootstrap",
+  "status": "complete",
+  "verdict": {
+    "anchor_loading_dif_high_items": [],
+    "anchors_stable": true,
+    "best_aic_model": "configural",
+    "best_bic_model": "scalar",
+    "core_completed": true,
+    "core_effective_draws": 185,
+    "dif_completed": true,
+    "dif_min_anchor_effective_draws": 100,
+    "external_engine": "R mirt::multipleGroup",
+    "full_method_allowed": false,
+    "high_loading_dif_items": [],
+    "itemfit_available": true,
+    "loading_dif_sparse": true,
+    "low_anchor_items": [],
+    "pass_rule_met": true,
+    "r_returncode": 0,
+    "requested_core_R": 200,
+    "requested_dif_R": 100,
+    "requested_smoke_R": 10,
+    "short_read": "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap; it updates item-level wording but does not authorize full multimodal method work.",
+    "smoke_completed": true,
+    "stable_anchor_items": [
+      "C01",
+      "C04",
+      "C05",
+      "C07"
+    ],
+    "status": "complete_mv14_uncertainty_supports_cautious_phq_partial_invariance",
+    "threshold_dif_localized_to_C02_C06": true,
+    "top_threshold_dif_items": [
+      "C02",
+      "C06"
+    ]
+  }
+}

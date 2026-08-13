@@ -1,0 +1,5 @@
+artifact_class,git_policy,reason,allowed_tracked_derivative
+local_phq_item_response_matrix,ignored_local_only,Participant-grain PHQ item rows are analysis inputs even without IDs.,dataset-level counts and response-category support only
+bootstrap_resampling_draws,not_exported,Draw indices can reveal participant-grain multiplicities and row linkage.,"seed, requested R, effective R, and aggregate fit/DIF counts"
+fitted_mirt_model_objects,do_not_track,Fitted objects contain item parameters and internal estimation state.,"fit success, convergence, information-criterion, and warning summaries"
+full_parameter_ci_or_theta_values,do_not_track,"Full parameter, CI, factor, and theta values are fitted measurement outputs.",availability counts only if a later optional tier is run

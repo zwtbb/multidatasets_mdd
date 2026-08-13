@@ -1,0 +1,11 @@
+"tier_id","model_id","attempted_draws","fit_success_draws","fit_success_rate","fit_success_ci_low","fit_success_ci_high","converged_draws","convergence_rate","convergence_ci_low","convergence_ci_high","warning_draws","error_draws","median_iterations","p95_iterations"
+"MV14_A_smoke_runtime","configural",10,10,1,0.722467200137112,1,9,0.9,0.595849973204762,0.982123786904927,0,0,394.5,2654.4
+"MV14_A_smoke_runtime","metric",10,10,1,0.722467200137112,1,10,1,0.722467200137112,1,0,0,107,194.9
+"MV14_A_smoke_runtime","scalar",10,10,1,0.722467200137112,1,10,1,0.722467200137112,1,0,0,70,111.3
+"MV14_A_smoke_runtime","partial_mv10",10,10,1,0.722467200137112,1,10,1,0.722467200137112,1,0,0,100.5,277.55
+"MV14_B_core_model_stability","configural",200,185,0.925,0.879956389763706,0.954025082815618,120,0.6,0.53083672039262,0.665394214331927,0,15,666,3000
+"MV14_B_core_model_stability","metric",200,200,1,0.981154673622734,1,198,0.99,0.964278238283823,0.997253341866456,0,0,98.5,232.25
+"MV14_B_core_model_stability","scalar",200,200,1,0.981154673622734,1,200,1,0.981154673622734,1,0,0,66,88
+"MV14_B_core_model_stability","partial_mv10",200,200,1,0.981154673622734,1,199,0.995,0.972226295602107,0.999116831284399,0,0,87,191.35
+"MV14_C_item_DIF_stability","metric",100,100,1,0.963006501793014,1,98,0.98,0.929988209271456,0.994498032449838,0,0,95,260.25
+"MV14_C_item_DIF_stability","scalar",100,100,1,0.963006501793014,1,100,1,0.963006501793014,1,0,0,64.5,88.15

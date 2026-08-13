@@ -6,6 +6,7 @@ Failure-Mode Diagnostics,phase3_protocol_controls,analysis/phase3_diagnostics/pr
 Failure-Mode Diagnostics,phase3_task_valence,analysis/phase3_diagnostics/task_valence/modma_task_transfer_drop_summary.csv,MODMA cross-task degradation and EATD valence stress interpretation
 Failure-Mode Diagnostics,phase3_mpdd_individual_differences,analysis/phase3_diagnostics/mpdd_individual_differences/phase3_run_summary.json,"MPDD personality, age, gait, and missing metadata diagnostics"
 Measurement Results,paper_claim_boundary,analysis/diagnostic_measurement_audit_paper/paper_claim_boundary.csv,allowed and blocked paper claim language
-Measurement Results,key_numeric_findings,analysis/diagnostic_measurement_audit_paper/key_numeric_findings.csv,"paper-facing MV08-MV13, PDCH, MODMA, EATD, and MV06 findings"
+Measurement Results,key_numeric_findings,analysis/diagnostic_measurement_audit_paper/key_numeric_findings.csv,"paper-facing MV08-MV14, PDCH, MODMA, EATD, and MV06 findings"
 Measurement Results,mv13_external_psychometric_replication,analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/run_summary.json,MV13 external R mirt replication status and convergence caveat
+Measurement Results,mv14_measurement_uncertainty_bootstrap,analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/run_summary.json,"MV14 bootstrap anchor, DIF, convergence, and model-selection stability"
 Measurement Results,mv12_tradeoff_analysis,analysis/phase5_minimal_validation/p5_mv12_latent_target_tradeoff_analysis/run_summary.json,"MV12 freeze decision, failure modes, and gate decomposition"

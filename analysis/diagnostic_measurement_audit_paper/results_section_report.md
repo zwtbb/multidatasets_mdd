@@ -1,12 +1,12 @@
 # Results Section Scaffold Report
 
-Generated: `2026-08-13T05:22:49+00:00`
+Generated: `2026-08-13T07:03:36+00:00`
 
 ## Decision
 
 - Section scaffold status: `ready_for_manuscript_editing`.
 - Artifact hygiene passed: `True`.
-- Source rows: `10`.
+- Source rows: `11`.
 - Claim checklist rows: `6`.
 
 ## Handoff

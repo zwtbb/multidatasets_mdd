@@ -40,6 +40,7 @@ MV12_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target_design" / "r
 MV12_RUN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target" / "run_summary.json"
 MV12_ANALYSIS_SUMMARY = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "run_summary.json"
 MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
+MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -68,7 +69,7 @@ CLAIM_SECTION = {
 PAPER_CLAIM_LANGUAGE = {
     "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper.",
     "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, external partial-invariance replication, and the frozen MV12 latent-target diagnostic.",
-    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV13 as label-only PHQ partial-invariance evidence with explicit AIC/BIC and convergence caveats, and MV12 as a bounded test of whether multimodal features can predict that target.",
+    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV13/MV14 as label-only PHQ partial-invariance evidence with explicit AIC/BIC, convergence, and bootstrap-stability caveats, and MV12 as a bounded test of whether multimodal features can predict that target.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
     "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and conditional identity as the stronger shared-latent diagnostic.",
@@ -76,7 +77,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, external psychometric replication, and the completed two-stage latent-target plus aggregate tradeoff analysis as diagnostic gates.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-invariance paper with bounded claims, explicit negative evidence, external psychometric replication, bootstrap uncertainty, and the completed two-stage latent-target plus aggregate tradeoff analysis as diagnostic gates.",
 }
 
 LITERATURE_ROWS = [
@@ -242,6 +243,7 @@ def require_inputs() -> None:
         MV12_RUN_SUMMARY,
         MV12_ANALYSIS_SUMMARY,
         MV13_SUMMARY,
+        MV14_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -280,6 +282,7 @@ def build_metric_context() -> dict[str, str]:
     mv12_run = read_json(MV12_RUN_SUMMARY)
     mv12_analysis = read_json(MV12_ANALYSIS_SUMMARY)
     mv13 = read_json(MV13_SUMMARY)
+    mv14 = read_json(MV14_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -294,6 +297,7 @@ def build_metric_context() -> dict[str, str]:
     mv12_v = mv12_run["verdict"]
     mv12_a = mv12_analysis["decision"]
     mv13_v = mv13["verdict"]
+    mv14_v = mv14["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -334,6 +338,11 @@ def build_metric_context() -> dict[str, str]:
             f"{mv13_v['loading_dif_flagged_items']} loading-DIF and {mv13_v['threshold_dif_flagged_items']} "
             f"threshold-DIF flags, core convergence {mv13_v['core_converged']}, and "
             f"{mv13_v['mv11_mv13_aligned_rows']}/{mv13_v['mv11_mv13_alignment_rows']} MV11-aligned decisions. "
+            f"MV14 bootstrap uncertainty is {mv14_v['status']}: core effective R {mv14_v['core_effective_draws']}, "
+            f"DIF effective R {mv14_v['dif_min_anchor_effective_draws']}, stable anchors "
+            f"{';'.join(mv14_v['stable_anchor_items'])}, top threshold-DIF items "
+            f"{';'.join(mv14_v['top_threshold_dif_items'])}, and best AIC/BIC "
+            f"{mv14_v['best_aic_model']}/{mv14_v['best_bic_model']}. "
             f"MV12 design is {mv12_d['readiness_status']}; MV12 run is {mv12_v['pass_rule_status']}, "
             f"with same-dataset theta gate {mv12_v['same_dataset_theta_gate_passed']}, observed-scale safety "
             f"{mv12_v['same_dataset_observed_gate_passed']}, external theta transfer "
@@ -372,6 +381,15 @@ def build_metric_context() -> dict[str, str]:
             f"core converged={mv13_v['core_converged']}; "
             f"MV11-aligned decisions {mv13_v['mv11_mv13_aligned_rows']}/{mv13_v['mv11_mv13_alignment_rows']}; "
             f"parameter CI status {mv13_v['parameter_ci_status']}."
+        ),
+        "mv14": (
+            f"MV14 bootstrap uncertainty: status {mv14_v['status']}; requested smoke/core/DIF R "
+            f"{mv14_v['requested_smoke_R']}/{mv14_v['requested_core_R']}/{mv14_v['requested_dif_R']}; "
+            f"core effective R {mv14_v['core_effective_draws']}; DIF effective R "
+            f"{mv14_v['dif_min_anchor_effective_draws']}; stable anchors "
+            f"{';'.join(mv14_v['stable_anchor_items'])}; top threshold-DIF items "
+            f"{';'.join(mv14_v['top_threshold_dif_items'])}; best AIC/BIC models "
+            f"{mv14_v['best_aic_model']}/{mv14_v['best_bic_model']}."
         ),
         "mv12_design": (
             f"MV12 two-stage latent-target design: status {mv12_d['readiness_status']}; "
@@ -422,11 +440,11 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
         return f"{context['rq1']} {context['mv12_analysis']}"
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
-        return f"{context['mv10']} {context['mv11']} {context['mv13']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
+        return f"{context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
@@ -486,8 +504,8 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "rq1_measurement_negative",
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
-            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11/MV13/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV12;P5_MV12_analysis",
+            "interpretation": "Partial-invariance and residual measurement are diagnostic negative evidence under current features; MV10/MV11/MV13/MV14/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_MV12;P5_MV12_analysis",
         },
         {
             "finding_id": "mv10_psychometric_baseline",
@@ -507,8 +525,15 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "mv13_external_psychometric_replication",
             "paper_section": "Psychometric baseline",
             "finding": context["mv13"],
-            "interpretation": "The external R mirt replication preserves the MV11 qualitative anchor/DIF pattern, but the convergence caveat and small CMDC N require MV14 uncertainty evidence before stronger item-level wording.",
+            "interpretation": "The external R mirt replication preserves the MV11 qualitative anchor/DIF pattern; MV14 now supplies the bootstrap uncertainty layer needed for cautious item-level wording.",
             "source_artifact_ids": "P5_MV13",
+        },
+        {
+            "finding_id": "mv14_measurement_uncertainty_bootstrap",
+            "paper_section": "Psychometric baseline",
+            "finding": context["mv14"],
+            "interpretation": "The bootstrap run supports cautious PHQ partial-invariance wording: the four MV10 anchors are stable, loading DIF is sparse, and threshold DIF remains concentrated on C02/C06, while AIC/BIC model preference remains an uncertainty caveat.",
+            "source_artifact_ids": "P5_MV14",
         },
         {
             "finding_id": "mv12_two_stage_latent_target_design",

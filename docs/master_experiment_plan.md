@@ -161,7 +161,7 @@ data audit
   as a negative follow-up: total anchoring does not rescue the shallow BGE
   shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 35 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 36 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -225,8 +225,17 @@ data audit
   complete as a predeclaration, not a run. It fixes smoke/core/DIF/optional
   bootstrap tiers, aggregate stability metrics, local-only boundaries, and
   pass/downgrade gates for anchor, DIF, model-selection, convergence, item-fit,
-  and SE/CI-availability uncertainty. Current status is
-  `ready_to_implement_mv14_measurement_uncertainty_bootstrap`.
+  and SE/CI-availability uncertainty. Its design run summary records
+  `ready_to_implement_mv14_measurement_uncertainty_bootstrap`; the later MV14
+  run has now consumed that contract.
+- Phase 5 `P5_MV14 measurement_uncertainty_bootstrap`:
+  complete with aggregate-only outputs and local item-response inputs ignored.
+  It ran smoke/core/DIF R=`10/200/100`; core effective R is `185`, DIF
+  effective R is `100`, all four MV10 anchors are stable (`C01`, `C04`,
+  `C05`, `C07`), threshold-DIF frequencies remain top-ranked for `C02` and
+  `C06`, and AIC/BIC prefer `configural`/`scalar`. Treat as cautious
+  measurement-uncertainty support for PHQ partial invariance, not a full-method
+  pass.
 - Diagnostic measurement-audit paper outline:
   initialized at `docs/diagnostic_measurement_audit_paper_outline.md`. It
   freezes allowed versus blocked claim boundaries and proposes the paper
@@ -266,12 +275,12 @@ now allows RQ4 only as limited first-round aggregate evidence. The next method
 target is not another shallow BGE head. The psychometric partial
 measurement-invariance direction remains a useful diagnostic framing, but
 MV08/MV08b are both negative or blocked under the current frozen-BGE shallow
-contract. MV09-MV13 move the project into a label-measurement and
+contract. MV09-MV14 move the project into a label-measurement and
 measurement-shift frame: MV10/MV11/MV13 support bounded PHQ partial-invariance
-evidence, MV12 shows a useful but blocked theta-prediction trade-off, and MV14
-is now predeclared to quantify uncertainty before stronger item-level DIF
-wording. The next active step is implementing and running MV14; full method
-work remains blocked.
+evidence, MV14 adds bootstrap stability/uncertainty support for cautious
+anchor and DIF wording, and MV12 shows a useful but blocked theta-prediction
+trade-off. The next active step is predeclaring MV15 latent-conditioned
+identity; full method work remains blocked.
 
 ## Updated Method Target
 
@@ -480,6 +489,10 @@ representation without those controls.
 - `P5_MV14 measurement_uncertainty_bootstrap_design` is complete and ready to
   implement. It predeclares group-wise subject bootstrap, stability metrics,
   local-only boundaries, and pass/downgrade rules before any bootstrap run.
+- `P5_MV14 measurement_uncertainty_bootstrap` is complete and supports cautious
+  PHQ partial-invariance wording: core effective R `185/200`, DIF effective R
+  `100/100`, stable anchors `C01/C04/C05/C07`, threshold-DIF concentrated on
+  `C02/C06`, and full-method work still blocked.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -498,9 +511,11 @@ representation without those controls.
   scripts, and aggregate audits. Any remote history rewrite still requires
   explicit user approval.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
-  as bounded diagnostic evidence, then implement/run MV14 measurement
-  uncertainty. Optionally add MV06 agreement uncertainty analysis and resolve
-  the one incomplete local candidate before stronger RQ4 wording.
+  as bounded diagnostic evidence, keep MV14 as the completed measurement
+  uncertainty layer, then predeclare MV15 latent-conditioned identity and MV16
+  theta calibration / few-shot scale linking. Optionally add MV06 agreement
+  uncertainty analysis and resolve the one incomplete local candidate before
+  stronger RQ4 wording.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

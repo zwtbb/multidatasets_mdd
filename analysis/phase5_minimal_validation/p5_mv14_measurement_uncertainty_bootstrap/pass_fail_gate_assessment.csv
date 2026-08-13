@@ -1,0 +1,6 @@
+gate_id,status,evidence,claim_effect
+G3_convergence_visibility,pass,Core effective draws: 185.,Report convergence frequency before interpreting item-level stability.
+G4_anchor_stability,pass,Stable anchors: C01;C04;C05;C07; low anchors: none.,Anchor wording is cautious unless all four MV10 anchors exceed the support threshold.
+G5_loading_DIF_sparsity,pass,High loading-DIF items: none; anchor high-loading items: none.,Diffuse loading DIF downgrades common-metric wording.
+G6_threshold_DIF_localization,pass,Top threshold-DIF items: C02;C06.,C02/C06 wording is strongest only if bootstrap frequencies remain concentrated there.
+G8_no_full_method_authorization,pass,MV14 is label-only measurement uncertainty evidence.,Full M0/M1/M2/M3 remains blocked.

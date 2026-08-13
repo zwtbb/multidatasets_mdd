@@ -11,7 +11,7 @@
     "artifact_hygiene_passed": true,
     "audit_id": "P5_full_method_gate_artifact_hygiene",
     "files_checked": 5,
-    "generated_at": "2026-08-13T05:22:40+00:00",
+    "generated_at": "2026-08-13T07:03:17+00:00",
     "violation_count": 0,
     "violations": []
   },
@@ -23,10 +23,10 @@
     "C_RQ3_CONTEXT_CONDITIONING"
   ],
   "claim_rows": 11,
-  "evidence_rows": 35,
+  "evidence_rows": 36,
   "full_method_allowed": false,
   "gate_status": "blocked_but_publishable_diagnostic_direction",
-  "generated_at": "2026-08-13T05:22:40+00:00",
+  "generated_at": "2026-08-13T07:03:17+00:00",
   "next_action_rows": 5,
   "source_run_summaries": {
     "P5_MV01": "analysis/phase5_minimal_validation/p5_mv01_phq_core_bridge/run_summary.json",
@@ -63,6 +63,7 @@
     "P5_MV12_design": "analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target_design/run_summary.json",
     "P5_MV13": "analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/run_summary.json",
     "P5_MV13_design": "analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication_design/run_summary.json",
+    "P5_MV14": "analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/run_summary.json",
     "P5_MV14_design": "analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap_design/run_summary.json"
   }
 }
