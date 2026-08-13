@@ -2,7 +2,7 @@
   "artifact_hygiene_passed": true,
   "audit_id": "diagnostic_measurement_audit_paper_tables_hygiene",
   "files_checked": 6,
-  "generated_at": "2026-08-13T08:26:14+00:00",
+  "generated_at": "2026-08-13T09:11:50+00:00",
   "violation_count": 0,
   "violations": []
 }

@@ -42,6 +42,7 @@ MV12_ANALYSIS_SUMMARY = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" /
 MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
 MV15_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
+MV15_RUN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -68,17 +69,17 @@ CLAIM_SECTION = {
 }
 
 PAPER_CLAIM_LANGUAGE = {
-    "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper, with MV15 now predeclared as the next identity audit.",
-    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, external anchor/DIF replication, the frozen MV12 latent-target diagnostic with dimension-matched caveats, and the predeclared MV15 identity gate.",
+    "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper, with MV15 now completed as a negative latent-conditioned identity audit.",
+    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, external anchor/DIF replication, the frozen MV12 latent-target diagnostic with dimension-matched caveats, and the completed MV15 identity gate.",
     "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV13/MV14 as label-only PHQ common-structure, stable-anchor, sparse-loading-DIF, and localized-threshold-shift evidence with explicit AIC/BIC and convergence caveats, not as bootstrap-confirmed global partial invariance.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
-    "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and use MV15's latent-conditioned identity ladder as the next shared-latent diagnostic.",
+    "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and use MV15's latent-conditioned identity result as shared-latent diagnostic evidence.",
     "C_MODMA_TASK_CONTROL": "Use MODMA task nuisance projection as bounded protocol-control evidence.",
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-validity paper with bounded claims, explicit negative evidence, external psychometric replication, convergence-aware bootstrap uncertainty, the completed two-stage latent-target plus aggregate tradeoff analysis, and MV15's predeclared dimension-matched identity ladder as diagnostic gates.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-validity paper with bounded claims, explicit negative evidence, external psychometric replication, convergence-aware bootstrap uncertainty, the completed two-stage latent-target plus aggregate tradeoff analysis, and MV15's completed dimension-matched identity ladder as diagnostic gates.",
 }
 
 LITERATURE_ROWS = [
@@ -246,6 +247,7 @@ def require_inputs() -> None:
         MV13_SUMMARY,
         MV14_SUMMARY,
         MV15_DESIGN_SUMMARY,
+        MV15_RUN_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -286,6 +288,7 @@ def build_metric_context() -> dict[str, str]:
     mv13 = read_json(MV13_SUMMARY)
     mv14 = read_json(MV14_SUMMARY)
     mv15_design = read_json(MV15_DESIGN_SUMMARY)
+    mv15_run = read_json(MV15_RUN_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -302,6 +305,7 @@ def build_metric_context() -> dict[str, str]:
     mv13_v = mv13["verdict"]
     mv14_v = mv14["verdict"]
     mv15_d = mv15_design["decision"]
+    mv15_v = mv15_run["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -358,7 +362,13 @@ def build_metric_context() -> dict[str, str]:
             f"{mv12_v['external_transfer_theta_gate_passed']}, and conditional identity BA "
             f"{fmt(mv12_v['conditional_identity_ba_m12a'])}. "
             f"MV12 aggregate tradeoff analysis is {mv12_a['analysis_status']} and recommends freezing "
-            f"the current latent-target line; {mv12_a['dimension_matched_identity_caveat']}"
+            f"the current latent-target line; {mv12_a['dimension_matched_identity_caveat']} "
+            f"MV15 then blocks latent-conditioned BGE feature-invariance wording: raw feature BA "
+            f"{fmt(mv15_v['raw_feature_identity_ba'])}, theta-conditioned feature BA "
+            f"{fmt(mv15_v['theta_conditioned_feature_identity_ba'])}, and total/predicted-total/B3-conditioned "
+            f"feature BA {fmt(mv15_v['total_conditioned_feature_identity_ba'])}/"
+            f"{fmt(mv15_v['predicted_total_conditioned_feature_identity_ba'])}/"
+            f"{fmt(mv15_v['b3_itemwise_theta_conditioned_feature_identity_ba'])}."
         ),
         "mv09": (
             f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
@@ -437,6 +447,19 @@ def build_metric_context() -> dict[str, str]:
             f"pass/fail gates {mv15_design['outputs']['pass_fail_gate_rows']}; "
             f"full_method_allowed={mv15_d['full_method_allowed']}."
         ),
+        "mv15_run": (
+            f"MV15 latent-conditioned identity run: status {mv15_v['pass_rule_status']}; "
+            f"raw feature identity BA {fmt(mv15_v['raw_feature_identity_ba'])}; "
+            f"theta-conditioned feature identity BA {fmt(mv15_v['theta_conditioned_feature_identity_ba'])}; "
+            f"total/predicted-total/B3-conditioned feature identity BA "
+            f"{fmt(mv15_v['total_conditioned_feature_identity_ba'])}/"
+            f"{fmt(mv15_v['predicted_total_conditioned_feature_identity_ba'])}/"
+            f"{fmt(mv15_v['b3_itemwise_theta_conditioned_feature_identity_ba'])}; "
+            f"theta-only identity BA {fmt(mv15_v['theta_only_identity_ba'])}; "
+            f"predicted-theta output identity BA {fmt(mv15_v['psychometric_predicted_theta_output_identity_ba'])}; "
+            f"B3 Pareto dominates predicted theta output={mv15_v['b3_pareto_dominates_predicted_theta_output']}; "
+            f"full_method_allowed={mv15_v['full_method_allowed']}."
+        ),
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
             f"direct total MAE {fmt(mv02_v['best_pdch_direct_total_mae'])}; "
@@ -463,9 +486,9 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']} {context['mv15_design']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']} {context['mv15_design']} {context['mv15_run']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
-        return f"{context['rq1']} {context['mv12_analysis']} {context['mv15_design']}"
+        return f"{context['rq1']} {context['mv12_analysis']} {context['mv15_run']}"
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
         return f"{context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
@@ -473,7 +496,7 @@ def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Seri
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
         return context["eatd"]
     if claim_id == "C_DATASET_IDENTITY_CONTROL":
-        return f"{context['mv09']} {context['mv15_design']}"
+        return f"{context['mv09']} {context['mv15_run']}"
     if claim_id == "C_MODMA_TASK_CONTROL":
         return context["modma"]
     if claim_id == "C_RQ4_EVIDENCE_LOCALIZATION":
@@ -527,8 +550,8 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "rq1_measurement_negative",
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
-            "interpretation": "Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV13/MV14/MV12 shift RQ1 to measurement-target validity and freeze the current latent-target line.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_MV12;P5_MV12_analysis",
+            "interpretation": "Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV13/MV14/MV12 shift RQ1 to measurement-target validity, while MV15 freezes the current BGE latent-conditioned feature-identity line as negative evidence.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_MV12;P5_MV12_analysis;P5_MV15",
         },
         {
             "finding_id": "mv10_psychometric_baseline",
@@ -576,15 +599,22 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "mv12_tradeoff_freeze_decision",
             "paper_section": "Measurement evidence",
             "finding": context["mv12_analysis"],
-            "interpretation": "The aggregate tradeoff analysis closes the current latent-target line: M12a is not uniquely more invariant than a dimension-matched B3 severity baseline, so MV15 must compare total, predicted-total, itemwise-theta, and psychometric-theta controls.",
+            "interpretation": "The aggregate tradeoff analysis closes the current latent-target line: M12a is not uniquely more invariant than a dimension-matched B3 severity baseline, which MV15 then tests directly with total, predicted-total, itemwise-theta, and psychometric-theta controls.",
             "source_artifact_ids": "P5_MV12_analysis",
         },
         {
             "finding_id": "mv15_latent_conditioned_identity_design",
             "paper_section": "Identity and protocol diagnostics",
             "finding": context["mv15_design"],
-            "interpretation": "MV15 is now the predeclared identity-gate follow-up: it must compare raw feature identity, observed labels, PHQ total, predicted total, direct-itemwise-theta severity, psychometric theta, covariates, predicted-output identity, and severity-only external sensitivity before any stronger shared-latent wording.",
+            "interpretation": "MV15 design predeclared the identity-gate follow-up before the run: raw feature identity, observed labels, PHQ total, predicted total, direct-itemwise-theta severity, psychometric theta, covariates, predicted-output identity, and severity-only external sensitivity.",
             "source_artifact_ids": "P5_MV15_design",
+        },
+        {
+            "finding_id": "mv15_latent_conditioned_identity_run",
+            "paper_section": "Identity and protocol diagnostics",
+            "finding": context["mv15_run"],
+            "interpretation": "MV15 blocks theta-specific feature-invariance wording under the current BGE contract: conditioning on label theta does not reduce feature identity below total, predicted-total, or B3 severity controls, and B3 output remains a dimension-matched caveat.",
+            "source_artifact_ids": "P5_MV15",
         },
         {
             "finding_id": "mv09_conditional_identity_gate",

@@ -49,7 +49,8 @@ MV12_SLICE_DIAGNOSTICS = (
 )
 MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
-MV15_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
+MV15_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
+MV15_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity" / "run_summary.json"
 DEFAULT_OUT_DIR = PAPER_DIR
 
 TRACKED_FILES = [
@@ -105,6 +106,7 @@ def manuscript_text(value: Any) -> str:
         "status pass_pdch_only_diagnostic": "status is a PDCH-only diagnostic pass",
         "status blocked_main_task_below_floor": "status is blocked because the main task is below the floor",
         "ready_to_implement_mv15_latent_conditioned_identity": "a predeclared MV15 latent-conditioned identity design",
+        "blocked_theta_conditioned_feature_identity_high": "blocked because theta-conditioned feature identity remains high",
     }
     for old, new in replacements.items():
         text = text.replace(old, new)
@@ -136,6 +138,7 @@ def require_inputs() -> None:
         MV12_SLICE_DIAGNOSTICS,
         MV13_SUMMARY,
         MV14_SUMMARY,
+        MV15_DESIGN_SUMMARY,
         MV15_SUMMARY,
     ]:
         if not path.exists():
@@ -254,6 +257,7 @@ def phase5_context() -> dict[str, Any]:
     gate = read_json(FULL_GATE)
     mv12 = read_json(MV12_ANALYSIS)
     mv14 = read_json(MV14_SUMMARY)
+    mv15_design = read_json(MV15_DESIGN_SUMMARY)
     mv15 = read_json(MV15_SUMMARY)
     tradeoff = pd.read_csv(MV12_TRADEOFF)
     failures = pd.read_csv(MV12_FAILURES)
@@ -291,6 +295,8 @@ def phase5_context() -> dict[str, Any]:
     b3 = b3_tradeoff.iloc[0]
     m12a = m12a_tradeoff.iloc[0]
     mv14_v = mv14["verdict"]
+    mv15_d = mv15_design["decision"]
+    mv15_v = mv15["verdict"]
     mv15_outputs = mv15["outputs"]
 
     return {
@@ -301,7 +307,8 @@ def phase5_context() -> dict[str, Any]:
         "finding_mv11": manuscript_text(findings.loc["mv11_formal_psychometric_confirmation", "finding"]),
         "finding_mv13": manuscript_text(findings.loc["mv13_external_psychometric_replication", "finding"]),
         "finding_mv14": manuscript_text(findings.loc["mv14_measurement_uncertainty_bootstrap", "finding"]),
-        "finding_mv15": manuscript_text(findings.loc["mv15_latent_conditioned_identity_design", "finding"]),
+        "finding_mv15_design": manuscript_text(findings.loc["mv15_latent_conditioned_identity_design", "finding"]),
+        "finding_mv15": manuscript_text(findings.loc["mv15_latent_conditioned_identity_run", "finding"]),
         "finding_mv12_run": manuscript_text(findings.loc["mv12_two_stage_latent_target_run", "finding"]),
         "finding_mv12_analysis": manuscript_text(findings.loc["mv12_tradeoff_freeze_decision", "finding"]),
         "finding_pdch": manuscript_text(findings.loc["pdch_internal_hamd", "finding"]),
@@ -346,8 +353,22 @@ def phase5_context() -> dict[str, Any]:
         "mv14_stable_ladder_effective_draws": mv14_v["stable_ladder_effective_draws"],
         "mv14_stable_ladder_best_aic_model": mv14_v["stable_ladder_best_aic_model"],
         "mv14_stable_ladder_best_bic_model": mv14_v["stable_ladder_best_bic_model"],
-        "mv15_conditioning_ladder_rows": mv15_outputs["conditioning_ladder_rows"],
-        "mv15_identity_probe_rows": mv15_outputs["identity_probe_rows"],
+        "mv15_design_conditioning_ladder_rows": mv15_design["outputs"]["conditioning_ladder_rows"],
+        "mv15_design_identity_probe_rows": mv15_design["outputs"]["identity_probe_rows"],
+        "mv15_conditioning_identity_rows": mv15_outputs["conditioning_identity_rows"],
+        "mv15_output_identity_rows": mv15_outputs["output_identity_rows"],
+        "mv15_status": mv15_v["pass_rule_status"],
+        "mv15_raw_feature_identity_ba": mv15_v["raw_feature_identity_ba"],
+        "mv15_theta_conditioned_feature_identity_ba": mv15_v["theta_conditioned_feature_identity_ba"],
+        "mv15_total_conditioned_feature_identity_ba": mv15_v["total_conditioned_feature_identity_ba"],
+        "mv15_predicted_total_conditioned_feature_identity_ba": mv15_v[
+            "predicted_total_conditioned_feature_identity_ba"
+        ],
+        "mv15_b3_conditioned_feature_identity_ba": mv15_v["b3_itemwise_theta_conditioned_feature_identity_ba"],
+        "mv15_theta_only_identity_ba": mv15_v["theta_only_identity_ba"],
+        "mv15_predicted_theta_output_identity_ba": mv15_v["psychometric_predicted_theta_output_identity_ba"],
+        "mv15_b3_pareto_dominates_predicted_theta": mv15_v["b3_pareto_dominates_predicted_theta_output"],
+        "mv15_design_status": mv15_d["design_status"],
         "full_method_claim": claims.loc["C_FULL_METHOD_START", "manuscript_guardrail"],
         "rq1_claim": claims.loc["C_RQ1_SHARED_SYMPTOM", "manuscript_guardrail"],
     }
@@ -418,8 +439,14 @@ def build_source_map() -> pd.DataFrame:
         {
             "section": "Measurement Results",
             "source_artifact_id": "mv15_latent_conditioned_identity_design",
-            "source_path": rel(MV15_SUMMARY),
+            "source_path": rel(MV15_DESIGN_SUMMARY),
             "use": "MV15 predeclared latent-conditioned identity ladder and local-only boundary",
+        },
+        {
+            "section": "Measurement Results",
+            "source_artifact_id": "mv15_latent_conditioned_identity_run",
+            "source_path": rel(MV15_SUMMARY),
+            "use": "MV15 aggregate latent-conditioned identity results and pass/fail gate",
         },
         {
             "section": "Measurement Results",
@@ -534,7 +561,7 @@ def write_markdown(
         "",
         f"The Phase 5 full-method gate now reads `{ctx5['evidence_rows']}` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.",
         "",
-        f"The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13/MV14 address the second level by showing substantial common PHQ structure with stable anchors, sparse loading DIF, repeated C02/C06 threshold non-equivalence, and convergence-aware model-selection uncertainty rather than uniformly supported exact scalar or partial invariance; MV12 addresses the third level by separating label measurement from multimodal prediction. {ctx5['finding_mv15']} This is a predeclared follow-up gate with `{ctx5['mv15_conditioning_ladder_rows']}` conditioning rows and `{ctx5['mv15_identity_probe_rows']}` identity probes, not a completed identity result.",
+        f"The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13/MV14 address the second level by showing substantial common PHQ structure with stable anchors, sparse loading DIF, repeated C02/C06 threshold non-equivalence, and convergence-aware model-selection uncertainty rather than uniformly supported exact scalar or partial invariance; MV12 addresses the third level by separating label measurement from multimodal prediction. MV15 was predeclared with `{ctx5['mv15_design_conditioning_ladder_rows']}` conditioning rows and `{ctx5['mv15_design_identity_probe_rows']}` identity probes, then executed as an aggregate-only identity audit. {ctx5['finding_mv15']} The key interpretation is that low-dimensional output identity and feature-level invariance are different: theta-only BA is `{fmt(ctx5['mv15_theta_only_identity_ba'])}` and predicted-theta output identity BA is `{fmt(ctx5['mv15_predicted_theta_output_identity_ba'])}`, but residualized BGE feature identity remains `{fmt(ctx5['mv15_theta_conditioned_feature_identity_ba'])}` after theta conditioning and `{fmt(ctx5['mv15_total_conditioned_feature_identity_ba'])}`/`{fmt(ctx5['mv15_predicted_total_conditioned_feature_identity_ba'])}`/`{fmt(ctx5['mv15_b3_conditioned_feature_identity_ba'])}` after total, predicted-total, and B3 controls.",
         "",
         "The first measurement sequence is negative or bounded. MV08 improves over the total-score floor on `0/3` pooled active slices, while MV08b improves over both total-score and fixed-map floors on `2/3` slices but raises prediction dataset identity to `0.979`. MV09 then revises the gate semantics: post-head identity is diagnostic when outputs are scale-specific, while shared-latent claims require conditional identity checks. Under that sharper test, E-DAIC/CMDC item-conditioned feature identity remains `0.991`, so direct fixed shared-symptom mappings remain too strong under the current frozen-feature and shallow-head contract.",
         "",
@@ -552,6 +579,7 @@ def write_markdown(
         "- Do not claim that high unconditional dataset identity is automatically harmful; use it as a shortcut-risk screen and reserve conditional identity for shared-latent claims.",
         "- Do not call scale-specific post-head identity a hard shared-latent failure unless the output space is explicitly shared.",
         "- Do not use MV12 as positive full-method evidence; its tradeoff analysis freezes the current latent-target line.",
+        "- Do not use low one-dimensional output identity as evidence that upstream BGE features are dataset-invariant; MV15 keeps feature identity high after theta and severity conditioning.",
         "- Do not strengthen RQ4 beyond first-round aggregate credibility without agreement uncertainty analysis and resolving remaining incomplete candidate rows, if any.",
         "",
         "## Source Map",

@@ -42,9 +42,11 @@ fitted psychometric parameters, or rewrite GitHub history directly.
   pass/fail gates, including raw, total, predicted-total, observed-item, B3
   itemwise-theta, psychometric-theta, covariate, predicted-output, and
   severity-only controls.
-- Full-method gate remains
+- At this design-session boundary, the full-method gate remained
   `blocked_but_publishable_diagnostic_direction`,
-  `full_method_allowed=false`, and now reads 37 Phase 5 summaries.
+  `full_method_allowed=false`, and read 37 Phase 5 summaries. The later MV15
+  run is recorded in
+  `/root/autodl-tmp/memory/sessions/session_51_mv15_latent_conditioned_identity_run.md`.
 
 ## Key Decisions
 
@@ -54,9 +56,10 @@ fitted psychometric parameters, or rewrite GitHub history directly.
   uncertainty evidence.
 - Do not use MV12's `0.991 -> 0.602` identity reduction alone as evidence that
   psychometric theta is uniquely invariant.
-- The next active experiment is the MV15 runner. It must answer whether
-  `I(Z;D|theta)` is lower than `I(Z;D|total)`, `I(Z;D|predicted_total)`, and
-  `I(Z;D|B3_itemwise_theta)` under subject-level folds.
+- The MV15 runner design must answer whether `I(Z;D|theta)` is lower than
+  `I(Z;D|total)`, `I(Z;D|predicted_total)`, and
+  `I(Z;D|B3_itemwise_theta)` under subject-level folds. The later execution
+  result is owned by session 51.
 - MV16 should be predeclared as DIF-guided few-shot measurement calibration,
   comparing zero-shot source measurement, global affine theta calibration,
   `C02/C06` threshold calibration, all-threshold calibration, and direct

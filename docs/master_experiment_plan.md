@@ -161,7 +161,7 @@ data audit
   as a negative follow-up: total anchoring does not rescue the shallow BGE
   shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 37 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 38 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -245,8 +245,18 @@ data audit
   only, with 10 conditioning ladder rows, 7 identity-probe rows, and 8
   pass/fail gates. The design requires raw, total, predicted-total, observed
   item, B3 itemwise-theta, psychometric-theta, covariate, predicted-output, and
-  severity-only controls so the future runner can test whether theta
-  conditioning beats dimension-matched severity controls.
+  severity-only controls and has now been consumed by the MV15 runner.
+- Phase 5 `P5_MV15 latent_conditioned_dataset_identity`:
+  complete and blocked as feature-invariance evidence. It used subject-level
+  folds, aligned BGE features, fold-local PHQ theta generation, total,
+  predicted-total, observed-item, B3 itemwise-theta, psychometric-theta,
+  covariate, predicted-output, and severity-only sensitivity controls. Raw,
+  theta-conditioned, total-conditioned, predicted-total-conditioned, and
+  B3-conditioned BGE feature identity BA are all `1.000`; PHQ-item-conditioned
+  feature identity BA is `0.974`; theta-only identity BA is `0.576`; and
+  predicted-theta output identity BA is `0.646`. Treat this as negative
+  diagnostic evidence: low-dimensional output identity is not upstream feature
+  invariance.
 - Diagnostic measurement-audit paper outline:
   initialized at `docs/diagnostic_measurement_audit_paper_outline.md`. It
   freezes allowed versus blocked claim boundaries and proposes the paper
@@ -289,9 +299,10 @@ a label-measurement and measurement-shift frame: MV10/MV11/MV13 support
 bounded common-structure and anchor/DIF evidence, MV14 adds convergence-safe
 bootstrap stability for item-level anchors and localized threshold DIF while
 leaving global model selection uncertain, MV12 shows a useful but blocked
-theta-prediction trade-off with a dimension-matched B3 caveat, and MV15 is now
-design-ready. The next active step is implementing and running the MV15
-latent-conditioned identity runner; full method work remains blocked.
+theta-prediction trade-off with a dimension-matched B3 caveat, and MV15 now
+blocks theta-specific BGE feature-invariance wording under dimension-matched
+controls. The next active step is predeclaring MV16 DIF-guided few-shot
+measurement calibration; full method work remains blocked.
 
 ## Updated Method Target
 
@@ -508,10 +519,12 @@ representation without those controls.
   `C02/C06`. Treat it as item-level measurement-shift evidence with uncertain
   global invariance-model selection.
 - `P5_MV15 latent_conditioned_dataset_identity_design` is complete and design
-  ready. The future runner must compare raw feature identity against total,
-  predicted-total, observed-item, B3 itemwise-theta, psychometric-theta,
-  covariate, predicted-output, and severity-only controls, with all theta,
-  residual, row-level, split, and fitted artifacts kept local-only.
+  consumed by the MV15 run.
+- `P5_MV15 latent_conditioned_dataset_identity` is complete and blocked:
+  theta-conditioned BGE feature identity remains `1.000`, matching total,
+  predicted-total, and B3-conditioned feature identity, while theta-only and
+  predicted-theta output identity are lower. Keep feature-invariance and
+  low-dimensional-output identity separate.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -531,9 +544,9 @@ representation without those controls.
   explicit user approval.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
   as bounded diagnostic evidence, keep MV14 as the completed convergence-safe
-  item-level measurement-uncertainty layer, implement and run the predeclared
-  MV15 latent-conditioned identity runner, then predeclare MV16 DIF-guided
-  few-shot measurement calibration. Optionally add MV06 agreement uncertainty
+  item-level measurement-uncertainty layer, freeze MV15 as negative
+  latent-conditioned feature-identity evidence, then predeclare MV16
+  DIF-guided few-shot measurement calibration. Optionally add MV06 agreement uncertainty
   analysis and resolve the one incomplete local candidate before stronger RQ4
   wording.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports

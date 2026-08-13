@@ -1,6 +1,6 @@
 # Baselines, Failure-Mode Diagnostics, and Measurement Results
 
-Generated: `2026-08-13T08:26:14+00:00`
+Generated: `2026-08-13T09:11:51+00:00`
 
 ## Scope
 
@@ -24,9 +24,9 @@ MPDD supports a population-heterogeneity audit but not a positive context-condit
 
 ## Draft Section: Measurement Results
 
-The Phase 5 full-method gate now reads `37` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.
+The Phase 5 full-method gate now reads `38` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.
 
-The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13/MV14 address the second level by showing substantial common PHQ structure with stable anchors, sparse loading DIF, repeated C02/C06 threshold non-equivalence, and convergence-aware model-selection uncertainty rather than uniformly supported exact scalar or partial invariance; MV12 addresses the third level by separating label measurement from multimodal prediction. MV15 latent-conditioned identity design: status a predeclared MV15 latent-conditioned identity design; primary scope S1_primary_edaic_cmdc_phq; conditioning ladder rows 10; identity probe rows 7; pass/fail gates 8; full method is not allowed. This is a predeclared follow-up gate with `10` conditioning rows and `7` identity probes, not a completed identity result.
+The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13/MV14 address the second level by showing substantial common PHQ structure with stable anchors, sparse loading DIF, repeated C02/C06 threshold non-equivalence, and convergence-aware model-selection uncertainty rather than uniformly supported exact scalar or partial invariance; MV12 addresses the third level by separating label measurement from multimodal prediction. MV15 was predeclared with `10` conditioning rows and `7` identity probes, then executed as an aggregate-only identity audit. MV15 latent-conditioned identity run: status blocked because theta-conditioned feature identity remains high; raw feature identity BA 1.000; theta-conditioned feature identity BA 1.000; total/predicted-total/B3-conditioned feature identity BA 1.000/1.000/1.000; theta-only identity BA 0.576; predicted-theta output identity BA 0.646; B3 Pareto dominates predicted theta output=True; full method is not allowed. The key interpretation is that low-dimensional output identity and feature-level invariance are different: theta-only BA is `0.576` and predicted-theta output identity BA is `0.646`, but residualized BGE feature identity remains `1.000` after theta conditioning and `1.000`/`1.000`/`1.000` after total, predicted-total, and B3 controls.
 
 The first measurement sequence is negative or bounded. MV08 improves over the total-score floor on `0/3` pooled active slices, while MV08b improves over both total-score and fixed-map floors on `2/3` slices but raises prediction dataset identity to `0.979`. MV09 then revises the gate semantics: post-head identity is diagnostic when outputs are scale-specific, while shared-latent claims require conditional identity checks. Under that sharper test, E-DAIC/CMDC item-conditioned feature identity remains `0.991`, so direct fixed shared-symptom mappings remain too strong under the current frozen-feature and shallow-head contract.
 
@@ -44,6 +44,7 @@ The remaining Phase 5 findings define bounded supporting claims. PDCH supports a
 - Do not claim that high unconditional dataset identity is automatically harmful; use it as a shortcut-risk screen and reserve conditional identity for shared-latent claims.
 - Do not call scale-specific post-head identity a hard shared-latent failure unless the output space is explicitly shared.
 - Do not use MV12 as positive full-method evidence; its tradeoff analysis freezes the current latent-target line.
+- Do not use low one-dimensional output identity as evidence that upstream BGE features are dataset-invariant; MV15 keeps feature identity high after theta and severity conditioning.
 - Do not strengthen RQ4 beyond first-round aggregate credibility without agreement uncertainty analysis and resolving remaining incomplete candidate rows, if any.
 
 ## Source Map
@@ -61,6 +62,7 @@ The remaining Phase 5 findings define bounded supporting claims. PDCH supports a
 | Measurement Results | mv13_external_psychometric_replication | analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/run_summary.json | MV13 external R mirt replication status and convergence caveat |
 | Measurement Results | mv14_measurement_uncertainty_bootstrap | analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/run_summary.json | MV14 bootstrap anchor, DIF, convergence, and model-selection stability |
 | Measurement Results | mv15_latent_conditioned_identity_design | analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity_design/run_summary.json | MV15 predeclared latent-conditioned identity ladder and local-only boundary |
+| Measurement Results | mv15_latent_conditioned_identity_run | analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/run_summary.json | MV15 aggregate latent-conditioned identity results and pass/fail gate |
 | Measurement Results | mv12_tradeoff_analysis | analysis/phase5_minimal_validation/p5_mv12_latent_target_tradeoff_analysis/run_summary.json | MV12 freeze decision, failure modes, and gate decomposition |
 
 ## Claim Checklist
@@ -71,5 +73,5 @@ The remaining Phase 5 findings define bounded supporting claims. PDCH supports a
 | Dataset/protocol shortcut risk | supported_diagnostic | Dataset identity probes include WavLM six-way BA 0.990, CMDC/PDCH BGE BA 1.000, and E-DAIC/CMDC OpenFace BA 1.000. | Treat identity as shortcut-risk evidence; use conditional identity for shared-latent claims. |
 | Protocol/task failure modes | supported_diagnostic | CMDC Q10-only binary Macro-F1 delta is -0.374; MODMA affective-task BA drop is 0.142. | Speaker-resolved E-DAIC/CMDC controls remain blocked by missing fields. |
 | Population/context method gain | blocked_positive_claim | MPDD AVP adds only Macro-F1 0.001 and QWK 0.001 over AV, while subgroup calibration gaps remain large. | Use age/personality as heterogeneity axes, not as a positive context-conditioning method claim. |
-| Measurement-shift paper direction | allowed_with_reframing | Full gate reads 37 Phase 5 summaries; the full method remains blocked, but the measurement-shift paper direction is allowed. | Report negative and bounded results honestly; no full M0/M1/M2/M3 claim. |
+| Measurement-shift paper direction | allowed_with_reframing | Full gate reads 38 Phase 5 summaries; the full method remains blocked, but the measurement-shift paper direction is allowed. | Report negative and bounded results honestly; no full M0/M1/M2/M3 claim. |
 | MV12 latent-target method | blocked_positive_method_claim | MV12 improves same-dataset theta utility and conditional identity, but observed-scale safety and external theta transfer fail; aggregate analysis freezes the current line. | Future method work needs a genuinely new predeclared mechanism. |

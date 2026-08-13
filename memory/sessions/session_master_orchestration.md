@@ -302,13 +302,17 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   AIC/BIC model selection remains split. Treat it as item-level
   measurement-shift evidence with global model-selection uncertainty, not a
   global partial-invariance pass; full method remains blocked.
-- Phase 5 `P5_MV15 latent_conditioned_dataset_identity_design` completed in
-  the main checkout. It is a design/predeclaration, not a probe run. It exports
-  10 conditioning ladder rows, 7 identity-probe rows, and 8 pass/fail gates,
-  including total, predicted-total, observed-item, B3 itemwise-theta,
-  psychometric-theta, covariate, predicted-output, and severity-only controls.
-  Full method remains blocked until the future MV15 runner produces aggregate
-  identity results.
+- Phase 5 `P5_MV15 latent_conditioned_dataset_identity` completed in the main
+  checkout after the prior design/predeclaration. It exports aggregate identity
+  scores, conditioning-ladder results, output-identity controls, external
+  severity-only sensitivities, pass/fail gates, report, run summary, and
+  hygiene audit only. Its decision is
+  `blocked_theta_conditioned_feature_identity_high`: raw/theta/total/
+  predicted-total/B3-conditioned BGE feature identity BA remains `1.000`,
+  PHQ-item-conditioned feature identity BA is `0.974`, theta-only identity BA
+  is `0.576`, psychometric predicted-theta output identity BA is `0.646`, and
+  B3 output Pareto-dominates predicted theta. Treat MV15 as negative
+  feature-invariance evidence and move to MV16, not full-method construction.
 - Diagnostic paper Baselines, Failure-Mode Diagnostics, and Measurement
   Results sections were drafted in the main checkout by
   `scripts/build_diagnostic_paper_results_sections.py`. The scaffold reads
@@ -429,8 +433,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   convergence caveat. `P5_MV14` now completes the corrected convergence-safe
 	   aggregate-only measurement-uncertainty bootstrap run and supports
 	   item-level stable-anchor/localized-threshold-DIF wording with uncertain
-	   global model selection. `P5_MV15` is design-ready with dimension-matched
-	   severity controls.
+	   global model selection. `P5_MV15` is complete and negative: feature
+	   identity remains high after dimension-matched severity and theta
+	   conditioning.
 	   Freeze MV08/MV08b as negative RQ1 diagnostic evidence under the current
 	   frozen-BGE shallow-measurement contract.
 	   The full-method gate audit now records this as
@@ -438,12 +443,10 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   RQ4 is allowed only as limited aggregate evidence, and a bounded
 	   measurement-shift / measurement-validity paper direction remains viable.
 	   The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold
-	   is now refreshed. The next active task is implementing and running MV15
-	   latent-conditioned dataset identity, followed by MV16 DIF-guided
+	   is now refreshed. The next active task is predeclaring MV16 DIF-guided
 	   few-shot measurement calibration, with theta scores, fitted parameters,
-	   row predictions,
-	   transformed features, projection directions, calibration parameters,
-	   bootstrap samples, and model artifacts kept local-only.
+	   row predictions, transformed features, projection directions, calibration
+	   parameters, bootstrap samples, and model artifacts kept local-only.
 
 ## Version Management Watchlist
 
@@ -497,9 +500,10 @@ MV11 qualitative anchor/DIF pattern with a configural convergence caveat. MV14
 bootstrap uncertainty is corrected and complete: model selection/LRT are
 convergence-safe, stable anchors and localized C02/C06 threshold DIF are the
 claimable item-level finding, and global invariance-model selection remains
-uncertain. MV15 latent-conditioned identity is now predeclared with
-dimension-matched severity controls; next, implement/run the MV15 runner, then
-predeclare MV16 DIF-guided few-shot measurement calibration.
+uncertain. MV15 latent-conditioned identity is now complete and negative:
+feature identity stays high after dimension-matched severity and theta
+conditioning, so next predeclare MV16 DIF-guided few-shot measurement
+calibration.
 Optionally add MV06 agreement uncertainty analysis and resolve the remaining
 incomplete local candidate before stronger RQ4 wording. Keep
 row-level predictions, real manifests, real integrity/split maps, latent
