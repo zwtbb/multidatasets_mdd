@@ -43,6 +43,32 @@ or population-specific spurious correlations.
 - Prefer primary sources for factual claims: official dataset pages, papers,
   code repositories, documentation, and challenge pages.
 
+## Agent Behavior Guardrails
+
+- Do not guess. Do not hide uncertainty, blockers, or tradeoffs. Surface them
+  early with concrete evidence and current best options.
+- Write the smallest code that directly solves the current verified problem.
+  Do not add speculative features, speculative branches, or future-proofing
+  that is not required by the active experiment contract.
+- Modify only what must change for the task, and clean up issues introduced by
+  the current work.
+- Define the success condition before claiming completion, then keep iterating
+  until verification passes or a real blocker is recorded.
+- Trust internal code, framework contracts, and project invariants unless
+  current evidence contradicts them.
+- Validate at system boundaries: user inputs, files from outside the current
+  controlled pipeline, external APIs, network calls, installed tools, datasets,
+  and repository publishing boundaries.
+- Do not add defensive checks, fallbacks, empty/default handling, or validation
+  for states that the local contract makes impossible. Let impossible internal
+  states fail loudly.
+- Do not swallow errors with broad `catch`/`except`, silent defaults, `nil` or
+  empty fallbacks, or vague warning-only behavior. Prefer fast failure with a
+  useful error message.
+- Do not create helper functions, tool classes, abstractions, or frameworks for
+  one-off operations unless they remove real repeated complexity or match an
+  established local pattern.
+
 ## Dataset Governance
 
 - Use `/root/autodl-tmp/datasets/registry.yaml` as the source of truth for
