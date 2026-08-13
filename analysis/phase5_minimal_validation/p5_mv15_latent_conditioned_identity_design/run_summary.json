@@ -1,0 +1,73 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "design_status": "ready_to_implement_mv15_latent_conditioned_identity",
+    "full_method_allowed": false,
+    "next_after_mv15": "predeclare_mv16_theta_calibration_if_mv15_interpretable",
+    "primary_scope": "S1_primary_edaic_cmdc_phq",
+    "recommended_next_action": "implement_scripts_phase5_run_mv15_latent_conditioned_identity",
+    "short_read": "MV15 is predeclared as a latent-conditioned identity audit: compare dataset identity from BGE features and low-dimensional outputs after conditioning on observed labels, total severity, predicted-total severity, direct-itemwise-theta severity, label-derived theta, common-support bins, and legitimate covariates. It is diagnostic only."
+  },
+  "generated_at": "2026-08-13T08:24:25+00:00",
+  "input_contract": {
+    "aggregate_phase5_artifacts_read": true,
+    "full_method_allowed": false,
+    "future_feature_family": "text_bge",
+    "future_identity_unit": "subject_level",
+    "future_primary_datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "future_sensitivity_datasets": [
+      "pdch"
+    ],
+    "multimodal_features_read_now": false,
+    "private_review_material_read": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false
+  },
+  "local_only_files": {
+    "measurement_parameters": "all fitted item parameters and posterior diagnostics",
+    "residualized_features": "all feature residual matrices and nuisance directions",
+    "row_predictions": "all per-participant identity probe outputs",
+    "split_maps": "all fold assignment tables",
+    "theta_scores": "all participant-grain label-derived and predicted theta tables"
+  },
+  "outputs": {
+    "analysis_variable_rows": 9,
+    "conditioning_ladder_rows": 10,
+    "dataset_scope_rows": 4,
+    "identity_probe_rows": 7,
+    "implementation_queue_rows": 4,
+    "input_boundary_rows": 4,
+    "local_only_boundary_rows": 5,
+    "method_source_ref_rows": 5,
+    "pass_fail_gate_rows": 8,
+    "source_evidence_rows": 9,
+    "tracked_outputs": [
+      "analysis_variable_contract.csv",
+      "artifact_hygiene_audit.json",
+      "conditioning_ladder_contract.csv",
+      "dataset_scope_contract.csv",
+      "identity_probe_contract.csv",
+      "implementation_queue.csv",
+      "input_boundary_contract.csv",
+      "local_only_boundary_contract.csv",
+      "method_source_refs.csv",
+      "pass_fail_gate_contract.csv",
+      "report.md",
+      "run_summary.json",
+      "source_evidence_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV15_latent_conditioned_dataset_identity_design",
+  "scope": "latent_conditioned_identity_predeclaration_no_probe_run",
+  "status": "complete",
+  "verdict": {
+    "full_method_allowed": false,
+    "pass_rule_met": null,
+    "pass_rule_status": "design_ready_full_method_still_blocked",
+    "short_read": "Design is ready; the actual MV15 identity run is still required before any identity-gate interpretation can change.",
+    "status": "ready_to_implement_mv15_latent_conditioned_identity"
+  }
+}

@@ -1,6 +1,6 @@
 # Diagnostic Measurement-Audit Paper Outline
 
-Last updated: 2026-08-11 UTC
+Last updated: 2026-08-13 UTC
 
 ## Working Title
 
@@ -10,7 +10,7 @@ View of Cross-Dataset Multimodal Depression Detection
 ## Current Thesis
 
 The publishable contribution should be framed as a measurement-shift and
-measurement-invariance diagnostic paper rather than a broad state-of-the-art
+measurement-validity diagnostic paper rather than a broad state-of-the-art
 model paper. Across E-DAIC, CMDC, PDCH, MODMA, EATD, and MPDD, the evidence
 shows that depression prediction is shaped by dataset identity, protocol/task
 content, label scale, and population context. A symptom-aligned framework is
@@ -24,9 +24,9 @@ claims, the stronger question is conditional identity: whether dataset identity
 remains recoverable after conditioning on severity, aligned item labels, and
 legitimate covariates where available.
 
-MV10 adds the first label-only PHQ-8/PHQ-9 psychometric baseline. It supports a
-common one-factor/configural screen and strong loading congruence, but
-threshold/scalar agreement is only partial. MV11 then fits a label-only
+MV10 adds the first label-only PHQ-8/PHQ-9 psychometric baseline. It supports
+substantial common PHQ structure and strong loading congruence, but exact
+threshold/scalar agreement is not uniformly supported. MV11 then fits a label-only
 multi-group graded-response IRT confirmation. It preserves the four MV10
 anchors, flags no loading DIF, flags threshold DIF for `C02` and `C06`, and
 records an AIC/BIC caveat. MV13 externally replicates this qualitative
@@ -38,24 +38,28 @@ MV12 then tests the two-stage latent-target
 experiment: fit local-only `Y -> theta` measurement targets, train `X -> theta`
 predictors, and gate them against direct/floor baselines, conditional identity,
 and external transfer. It improves same-dataset theta MAE and lowers
-conditional shared-latent identity, but fails observed-scale safety and
-external theta transfer. MV14 adds the predeclared bootstrap uncertainty layer:
-with smoke/core/DIF R=`10/200/100`, core effective R is `185`, DIF effective R
-is `100`, all four MV10 anchors remain stable, and threshold DIF stays
-localized to `C02` and `C06`. Together, MV10/MV11/MV13/MV14/MV12 move the project from a
-generic benchmark audit toward a target-measurement-shift paper; they still do
-not authorize a full method. The aggregate MV12 tradeoff/failure-mode analysis
-now recommends freezing the current latent-target line and using it as
-paper-critical diagnostic evidence rather than continuing small shallow-head
-iterations. MV14 now supplies the measurement-uncertainty layer with
-aggregate-only stability summaries for anchor support, loading/threshold DIF,
-model selection, convergence, item fit, and optional SE/CI sensitivity status.
+conditional predicted-theta identity versus upstream BGE feature identity, but
+fails observed-scale safety and zero-shot source-calibrated external theta
+transfer. The aggregate MV12 tradeoff analysis adds a crucial caveat: M12a is
+Pareto-dominated by B3 direct itemwise Ridge compressed to theta on pooled
+observed macro MAE and conditional identity, so MV12 does not prove
+psychometric theta is uniquely more invariant than dimension-matched severity
+outputs. MV14 adds the corrected predeclared bootstrap uncertainty layer: with
+smoke/core/DIF R=`10/200/100`, convergence-safe full-ladder effective core R is
+`120/200` after `185/200` fit-success draws, configural converges in `120/200`,
+the stable metric/partial/scalar ladder has `197` effective draws, DIF effective
+R is `100`, all four MV10 anchors remain stable, and threshold DIF stays
+localized to `C02` and `C06`. Together, MV10/MV11/MV13/MV14/MV12 move the
+project from a generic benchmark audit toward a target-measurement-shift paper;
+they still do not authorize a full method. MV15 is now predeclared as the next
+identity audit with dimension-matched total, predicted-total, itemwise-theta,
+and psychometric-theta controls.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate artifacts. The next research route is no longer
-another shallow shared-symptom head. It is: measurement shift -> partial
-invariance -> measurement uncertainty -> latent linking -> few-shot scale
-calibration.
+another shallow shared-symptom head. It is: measurement shift -> convergence-safe
+measurement uncertainty -> dimension-matched latent-conditioned identity ->
+DIF-guided few-shot measurement calibration.
 
 ## Claim Boundary
 
@@ -93,26 +97,34 @@ Allowed claims:
   remains unflagged, threshold DIF remains `C02`/`C06`, AIC/BIC still split
   between partial/scalar, and all fitted parameters, factor scores, model
   objects, and local item-response rows stay local-only.
-- MV14 provides a completed measurement-uncertainty/bootstrap run. It executes
-  the predeclared smoke/core/DIF tiers, keeps local item-response inputs and
-  draw details out of Git, and supports cautious PHQ partial-invariance wording:
-  stable anchors `C01/C04/C05/C07`, localized threshold DIF `C02/C06`, and an
-  AIC/BIC uncertainty caveat. It does not authorize full method work.
+- MV14 provides a completed convergence-safe measurement-uncertainty/bootstrap
+  run. It executes the predeclared smoke/core/DIF tiers, keeps local
+  item-response inputs and draw details out of Git, and supports item-level
+  wording: stable anchors `C01/C04/C05/C07`, sparse loading DIF, localized
+  threshold DIF `C02/C06`, and uncertain global model selection. It does not
+  authorize full method work.
 - MV12 provides a predeclared two-stage latent-target design that separates
   label measurement from multimodal prediction and keeps theta scores, fitted
   parameters, row predictions, transformed features, and model artifacts
   local-only.
 - MV12 provides bounded two-stage latent-target run evidence: same-dataset
-  theta prediction improves over train mean, conditional identity BA is
-  `0.602`, but observed-scale reconstruction and external theta transfer block
-  a positive shared-latent method claim.
+  theta prediction improves over train mean and conditional predicted-theta
+  identity BA is `0.602`, but observed-scale reconstruction and zero-shot
+  source-calibrated external theta transfer block a positive shared-latent
+  method claim.
 - MV12 aggregate tradeoff analysis provides the freeze decision: current
-  latent-target evidence improves theta utility and conditional identity, but
-  same-dataset observed-scale safety and external theta transfer remain the
-  decisive blockers. Cross-dataset observed-scale transfer is better through
-  the latent route than direct item transfer, so the manuscript should frame
-  MV12 as a predictive fidelity-dataset identifiability trade-off rather than a
-  simple failed model.
+  latent-target evidence improves theta utility and lowers identity versus the
+  upstream feature layer, but same-dataset observed-scale safety and zero-shot
+  source-calibrated external theta transfer remain decisive blockers. B3 direct
+  itemwise Ridge compressed to theta has lower pooled observed macro MAE and
+  lower conditional identity than M12a, so the manuscript should frame MV12 as
+  a predictive fidelity-dataset identifiability trade-off rather than a simple
+  failed model or a theta-specific invariance proof.
+- MV15 provides a completed design contract for latent-conditioned identity.
+  The future runner must compare raw features with total, predicted-total,
+  observed-item, B3 itemwise-theta, psychometric-theta, covariate,
+  predicted-output, and severity-only controls before any stronger identity
+  wording.
 - MV07/MV07b/MV07c and MV08/MV08b can be used as an accuracy-invariance
   trade-off sequence, better described in the manuscript as a predictive
   fidelity-dataset identifiability trade-off, not as positive shared-space
@@ -123,8 +135,10 @@ Blocked claims:
 - Full M0/M1/M2/M3 symptom-aligned method construction.
 - A transferable shared-symptom representation across PHQ-8, PHQ-9, HAMD-17,
   and SDS.
-- A full PHQ-8/PHQ-9 scalar-invariance claim, because MV10/MV11/MV13 support
-  partial measurement invariance rather than full threshold/scalar invariance.
+- A full PHQ-8/PHQ-9 scalar-invariance claim, or a bootstrap-confirmed global
+  partial-invariance claim, because MV10/MV11/MV13/MV14 support item-level
+  common-structure, anchor, and localized threshold-DIF evidence while global
+  invariance-model selection remains uncertain.
 - Positive EATD SDS external generalization.
 - EATD-driven valence-adversarial method design.
 - Positive MPDD context-conditioning or calibration.
@@ -413,6 +427,20 @@ Tracked outputs include `bootstrap_ladder_realization.csv`,
 `artifact_hygiene_audit.json` under
 `analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/`.
 
+The MV15 latent-conditioned identity design is generated by:
+
+```bash
+python scripts/phase5_plan_mv15_latent_conditioned_identity.py --overwrite
+```
+
+Tracked outputs include `dataset_scope_contract.csv`,
+`analysis_variable_contract.csv`, `conditioning_ladder_contract.csv`,
+`identity_probe_contract.csv`, `pass_fail_gate_contract.csv`,
+`local_only_boundary_contract.csv`, `implementation_queue.csv`,
+`source_evidence_summary.csv`, `report.md`, `run_summary.json`, and
+`artifact_hygiene_audit.json` under
+`analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity_design/`.
+
 The Data Governance and Label Contracts section scaffold is generated in the
 same directory by:
 
@@ -456,21 +484,26 @@ Tracked outputs:
 10. Done: draft the Baselines, Failure-Mode Diagnostics, and Measurement
    Results sections from aggregate tables.
 11. Done: predeclare and run MV13 external R `mirt` psychometric replication,
-   confirming the MV10/MV11 qualitative partial-invariance pattern with a
+   confirming the MV10/MV11 qualitative anchor/DIF localization pattern with a
    configural convergence caveat.
 12. Done: predeclare MV14 measurement-uncertainty bootstrap for PHQ anchors,
    loadings, thresholds, DIF selection frequency, model selection, convergence,
    item fit, and SE/CI availability.
-13. Done: implement and run the predeclared MV14 bootstrap, exporting aggregate
-   stability summaries only.
-14. Predeclare MV15 latent-conditioned dataset identity: compare `D|Z`,
-   `D|Z,Y`, and `D|Z,theta` using local-only theta scores and aggregate-only
-   identity outputs.
-15. Predeclare MV16 cross-dataset theta calibration / few-shot scale linking:
-   evaluate affine, monotonic, or anchor-based calibration with small target
-   calibration sets before any new full method.
-16. Add MV06 agreement uncertainty analysis and resolve the remaining
+13. Done: implement and rerun the corrected convergence-safe MV14 bootstrap,
+   exporting aggregate stability summaries only.
+14. Done: predeclare MV15 latent-conditioned dataset identity with
+   dimension-matched severity controls: raw `Z`, total, predicted total,
+   observed items, B3 itemwise theta, psychometric theta, covariates,
+   predicted-output identity, and severity-only sensitivities.
+15. Implement and run MV15 latent-conditioned identity, keeping theta scores,
+   residualized features, row predictions, split maps, and fitted artifacts
+   local-only.
+16. Predeclare MV16 DIF-guided cross-dataset measurement calibration:
+   compare zero-shot source measurement, global affine theta calibration,
+   `C02/C06` threshold calibration, all-threshold calibration, and direct
+   target-domain adaptation at k=`0/5/10/20/40`.
+17. Add MV06 agreement uncertainty analysis and resolve the remaining
    incomplete local candidate if stronger RQ4 wording is desired.
-17. Prepare result tables from existing aggregate summaries only; do not export
+18. Prepare result tables from existing aggregate summaries only; do not export
    row-level predictions, raw text, subject locators, learned parameters, or
    model files.

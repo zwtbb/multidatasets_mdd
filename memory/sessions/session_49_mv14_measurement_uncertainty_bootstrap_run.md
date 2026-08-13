@@ -22,30 +22,34 @@ method construction, or rewrite public Git history.
 - The run used the manifest-governed MV10 PHQ item loader and R
   `mirt::multipleGroup`.
 - Requested tiers were smoke/core/DIF R=`10/200/100`.
-- Core model stability effective R is `185/200`; the 15 non-effective core
-  draws came from configural fit errors categorized as nonfinite or missing
-  numeric runtime messages.
+- Correction applied 2026-08-13: model selection and LRT summaries now require
+  `fit_success && converged`, so the earlier "core effective R=`185/200`"
+  interpretation is superseded. Convergence-safe full-ladder effective core R
+  is `120/200`; `185/200` is the fit-success denominator; configural converges
+  in `120/200`.
+- Stable-ladder sensitivity over metric/partial/scalar has effective R `197`.
 - DIF tier effective R is `100/100`.
 - Bootstrap-stable MV10 anchors are `C01`, `C04`, `C05`, and `C07`.
 - Loading DIF remains sparse: no item exceeds loading-DIF frequency `0.50`.
 - Threshold DIF remains concentrated on `C02` and `C06`, with frequencies
   `0.80` and `0.76`.
-- AIC/BIC model selection remains an uncertainty caveat: AIC most often selects
-  `configural`, while BIC most often selects `scalar`.
+- AIC/BIC model selection remains an uncertainty caveat: full-ladder AIC/BIC
+  most often selects `configural`/`scalar`, while stable-ladder AIC/BIC selects
+  `partial_mv10`/`scalar`.
 - Artifact hygiene passed. The ignored local input is
   `analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/local_mv14_phq_response_matrix.csv`.
 
 ## Key Decisions
 
-- Treat MV14 as cautious PHQ partial-invariance uncertainty evidence, not as a
-  full-method pass.
+- Treat MV14 as item-level PHQ measurement-shift uncertainty evidence, not as a
+  global partial-invariance win or full-method pass.
 - The MV10/MV11/MV13 anchor map can be described as bootstrap-stable with
   conservative wording.
 - C02/C06 threshold-DIF wording is strengthened by bootstrap localization, but
   full scalar invariance remains unsupported.
-- Keep model-selection uncertainty visible: MV14 changes AIC preference from
-  MV13's single-fit partial model to bootstrap-most-frequent configural, while
-  BIC remains scalar.
+- Keep model-selection uncertainty visible: convergence-safe full-ladder AIC
+  most often selects configural, BIC remains scalar, and the stable
+  metric/partial/scalar ladder selects partial by AIC and scalar by BIC.
 - Optional `boot.mirt` and `boot.LR` tiers were skipped as runtime-bounded
   optional sensitivities; the tracked output records skip reasons aggregate-only.
 - The full-method gate remains
@@ -85,6 +89,7 @@ Tracked MV14 aggregate outputs:
 - `bootstrap_runtime_summary.csv`
 - `core_model_stability_summary.csv`
 - `model_selection_frequency.csv`
+- `stable_ladder_model_selection_frequency.csv`
 - `invariance_decision_frequency.csv`
 - `item_dif_stability_summary.csv`
 - `itemfit_stability_summary.csv`
@@ -114,7 +119,9 @@ python scripts/build_diagnostic_paper_results_sections.py
 
 - Full method remains blocked; MV14 is label-only measurement uncertainty.
 - Configural model stability remains imperfect: fit success `185/200` and
-  convergence `120/200` in the core tier.
+  convergence `120/200` in the core tier. The corrected script keeps these
+  draws visible in attempted/failed denominators and excludes non-converged
+  fits from AIC/BIC selection and LRT decisions.
 - CMDC still has only 77 PHQ item-labeled subjects, so wording should remain
   cautious even where bootstrap stability supports the anchor/DIF pattern.
 - MV06 still has one incomplete local candidate and no agreement uncertainty
@@ -122,8 +129,9 @@ python scripts/build_diagnostic_paper_results_sections.py
 
 ## Next Handoff
 
-Predeclare `P5_MV15 latent_conditioned_dataset_identity`: compare dataset
-identity conditioned on available labels, label-derived theta, and legitimate
-covariates using aggregate-only outputs. Keep theta tables, residualized
+Superseded by
+`memory/sessions/session_50_mv15_latent_conditioned_identity_design.md`.
+Next work is to implement and run `P5_MV15 latent_conditioned_dataset_identity`
+with dimension-matched severity controls. Keep theta tables, residualized
 features, nuisance directions, row predictions, fitted parameters, and model
 artifacts local-only.

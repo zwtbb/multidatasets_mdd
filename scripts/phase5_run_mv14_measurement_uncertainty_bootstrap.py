@@ -75,6 +75,7 @@ TRACKED_FILES = {
     "report.md",
     "run_summary.json",
     "runtime_versions.csv",
+    "stable_ladder_model_selection_frequency.csv",
     "warning_failure_summary.csv",
 }
 
@@ -325,10 +326,18 @@ def top_selection(selection: pd.DataFrame, tier_id: str, criterion: str) -> str:
     return str(rows.iloc[0]["model_id"])
 
 
+def first_numeric(frame: pd.DataFrame, field: str, default: int = 0) -> int:
+    if frame.empty or field not in frame.columns:
+        return default
+    value = safe_float(frame.iloc[0].get(field))
+    return int(value) if value is not None else default
+
+
 def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str, Any]) -> dict[str, Any]:
     runtime = read_csv(out_dir / "bootstrap_runtime_summary.csv")
     core = read_csv(out_dir / "core_model_stability_summary.csv")
     selection = read_csv(out_dir / "model_selection_frequency.csv")
+    stable_selection = read_csv(out_dir / "stable_ladder_model_selection_frequency.csv")
     dif = read_csv(out_dir / "item_dif_stability_summary.csv")
     itemfit = read_csv(out_dir / "itemfit_stability_summary.csv")
 
@@ -342,31 +351,44 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
         not dif.empty and (dif["tier_id"].astype(str) == "MV14_C_item_DIF_stability").any()
     )
 
-    core_effective = safe_float(
-        first_value(
-            selection[
-                (selection.get("tier_id", pd.Series(dtype=str)).astype(str) == "MV14_B_core_model_stability")
-                & (selection.get("criterion", pd.Series(dtype=str)).astype(str) == "aic")
-            ],
-            "model_id",
-            "configural",
-            "effective_draws",
-            0,
-        )
-    ) or 0
+    core_selection_rows = selection[
+        (selection.get("tier_id", pd.Series(dtype=str)).astype(str) == "MV14_B_core_model_stability")
+        & (selection.get("criterion", pd.Series(dtype=str)).astype(str) == "aic")
+    ]
+    core_selection_ref = core_selection_rows[core_selection_rows.get("model_id", pd.Series(dtype=str)).astype(str) == "configural"]
+    core_effective = first_numeric(core_selection_ref, "effective_draws", 0)
+    core_attempted = first_numeric(core_selection_ref, "attempted_draws", requested["core_r"])
+    core_all_fit_success = first_numeric(core_selection_ref, "all_fit_success_draws", 0)
+    core_all_converged = first_numeric(core_selection_ref, "all_converged_draws", 0)
     if core_effective == 0 and requested["core_r"] == 0:
-        core_effective = safe_float(
-            first_value(
-                selection[
-                    (selection.get("tier_id", pd.Series(dtype=str)).astype(str) == "MV14_A_smoke_runtime")
-                    & (selection.get("criterion", pd.Series(dtype=str)).astype(str) == "aic")
-                ],
-                "model_id",
-                "configural",
-                "effective_draws",
-                0,
-            )
-        ) or 0
+        smoke_selection_rows = selection[
+            (selection.get("tier_id", pd.Series(dtype=str)).astype(str) == "MV14_A_smoke_runtime")
+            & (selection.get("criterion", pd.Series(dtype=str)).astype(str) == "aic")
+        ]
+        core_selection_ref = smoke_selection_rows[
+            smoke_selection_rows.get("model_id", pd.Series(dtype=str)).astype(str) == "configural"
+        ]
+        core_effective = first_numeric(core_selection_ref, "effective_draws", 0)
+        core_attempted = first_numeric(core_selection_ref, "attempted_draws", requested["smoke_r"])
+        core_all_fit_success = first_numeric(core_selection_ref, "all_fit_success_draws", 0)
+        core_all_converged = first_numeric(core_selection_ref, "all_converged_draws", 0)
+
+    configural_core = core[
+        (core.get("tier_id", pd.Series(dtype=str)).astype(str) == "MV14_B_core_model_stability")
+        & (core.get("model_id", pd.Series(dtype=str)).astype(str) == "configural")
+    ]
+    configural_fit_success = first_numeric(configural_core, "fit_success_draws", 0)
+    configural_converged = first_numeric(configural_core, "converged_draws", 0)
+    configural_convergence_rate = safe_float(first_value(configural_core, "model_id", "configural", "convergence_rate", None))
+
+    stable_selection_rows = stable_selection[
+        (stable_selection.get("tier_id", pd.Series(dtype=str)).astype(str) == "MV14_B_core_model_stability")
+        & (stable_selection.get("criterion", pd.Series(dtype=str)).astype(str) == "aic")
+    ]
+    stable_ref = stable_selection_rows[
+        stable_selection_rows.get("model_id", pd.Series(dtype=str)).astype(str) == "metric"
+    ]
+    stable_ladder_effective = first_numeric(stable_ref, "effective_draws", 0)
 
     dif_effective = int(pd.to_numeric(dif.get("anchor_support_effective_draws", pd.Series(dtype=float)), errors="coerce").min()) if not dif.empty else 0
 
@@ -399,6 +421,8 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
     best_aic_tier = "MV14_B_core_model_stability" if requested["core_r"] > 0 else "MV14_A_smoke_runtime"
     best_aic_model = top_selection(selection, best_aic_tier, "aic")
     best_bic_model = top_selection(selection, best_aic_tier, "bic")
+    stable_ladder_best_aic_model = top_selection(stable_selection, best_aic_tier, "aic")
+    stable_ladder_best_bic_model = top_selection(stable_selection, best_aic_tier, "bic")
     itemfit_available = (
         not itemfit.empty
         and int(pd.to_numeric(itemfit.get("itemfit_available_draws", pd.Series(dtype=float)), errors="coerce").fillna(0).sum()) > 0
@@ -414,7 +438,7 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
     elif requested["dif_r"] > 0 and (not dif_done or dif_effective <= 0):
         status = "blocked_mv14_dif_bootstrap_no_effective_draws"
     elif anchors_stable and loading_sparse and threshold_localized:
-        status = "complete_mv14_uncertainty_supports_cautious_phq_partial_invariance"
+        status = "complete_mv14_convergence_safe_item_level_measurement_shift"
     else:
         status = "complete_mv14_uncertainty_requires_downgraded_item_wording"
 
@@ -429,9 +453,18 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
         "core_completed": core_done,
         "dif_completed": dif_done,
         "core_effective_draws": int(core_effective),
+        "core_selection_attempted_draws": int(core_attempted),
+        "core_all_fit_success_draws": int(core_all_fit_success),
+        "core_all_converged_draws": int(core_all_converged),
+        "configural_fit_success_draws": int(configural_fit_success),
+        "configural_converged_draws": int(configural_converged),
+        "configural_convergence_rate": configural_convergence_rate,
+        "stable_ladder_effective_draws": int(stable_ladder_effective),
         "dif_min_anchor_effective_draws": int(dif_effective),
         "best_aic_model": best_aic_model,
         "best_bic_model": best_bic_model,
+        "stable_ladder_best_aic_model": stable_ladder_best_aic_model,
+        "stable_ladder_best_bic_model": stable_ladder_best_bic_model,
         "stable_anchor_items": stable_anchor_items,
         "low_anchor_items": low_anchor_items,
         "anchors_stable": anchors_stable,
@@ -442,10 +475,11 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
         "threshold_dif_localized_to_C02_C06": threshold_localized,
         "itemfit_available": itemfit_available,
         "full_method_allowed": False,
-        "pass_rule_met": status == "complete_mv14_uncertainty_supports_cautious_phq_partial_invariance",
+        "pass_rule_met": status == "complete_mv14_convergence_safe_item_level_measurement_shift",
         "short_read": (
             "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap; "
-            "it updates item-level wording but does not authorize full multimodal method work."
+            "its convergence-safe interpretation is item-level threshold/localization evidence, "
+            "not a global partial-invariance model-selection win or full multimodal method authorization."
         ),
     }
 
@@ -502,7 +536,7 @@ def build_alignment(out_dir: Path, verdict: dict[str, Any]) -> pd.DataFrame:
             "mv13_value": str(mv13.get("best_aic_model")),
             "mv14_value": str(verdict["best_aic_model"]),
             "aligned": str(mv13.get("best_aic_model")) == str(verdict["best_aic_model"]),
-            "interpretation": "AIC/BIC disagreement is reported as uncertainty, not forced into one model.",
+            "interpretation": "AIC full-ladder preference is convergence-safe and reported as model-selection sensitivity, not a global-invariance proof.",
         },
         {
             "alignment_id": "bic_model_preference",
@@ -510,7 +544,19 @@ def build_alignment(out_dir: Path, verdict: dict[str, Any]) -> pd.DataFrame:
             "mv13_value": str(mv13.get("best_bic_model")),
             "mv14_value": str(verdict["best_bic_model"]),
             "aligned": str(mv13.get("best_bic_model")) == str(verdict["best_bic_model"]),
-            "interpretation": "BIC model preference is summarized separately from AIC.",
+            "interpretation": "BIC model preference is summarized separately because its complexity penalty answers a different question from LRT/AIC.",
+        },
+        {
+            "alignment_id": "stable_ladder_sensitivity",
+            "mv11_value": "metric;partial_mv10;scalar",
+            "mv13_value": "metric/partial/scalar mostly converged",
+            "mv14_value": (
+                f"AIC={verdict['stable_ladder_best_aic_model']};"
+                f"BIC={verdict['stable_ladder_best_bic_model']};"
+                f"effective={verdict['stable_ladder_effective_draws']}"
+            ),
+            "aligned": verdict["stable_ladder_effective_draws"] > 0,
+            "interpretation": "Stable-ladder sensitivity excludes configural because configural convergence is the main numerical instability.",
         },
     ]
     return pd.DataFrame(rows)
@@ -521,9 +567,14 @@ def build_gate_assessment(verdict: dict[str, Any]) -> pd.DataFrame:
         [
             {
                 "gate_id": "G3_convergence_visibility",
-                "status": "pass" if verdict["core_completed"] else "blocked",
-                "evidence": f"Core effective draws: {verdict['core_effective_draws']}.",
-                "claim_effect": "Report convergence frequency before interpreting item-level stability.",
+                "status": "pass_with_global_model_selection_downgrade" if verdict["core_completed"] else "blocked",
+                "evidence": (
+                    f"Core attempted {verdict['core_selection_attempted_draws']}; "
+                    f"full-ladder fit-success {verdict['core_all_fit_success_draws']}; "
+                    f"full-ladder converged {verdict['core_all_converged_draws']}; "
+                    f"configural converged {verdict['configural_converged_draws']}."
+                ),
+                "claim_effect": "Global model-selection and configural LRT wording must be downgraded when convergence is limited.",
             },
             {
                 "gate_id": "G4_anchor_stability",
@@ -559,8 +610,12 @@ def build_gate_recommendations(verdict: dict[str, Any]) -> pd.DataFrame:
             {
                 "recommendation_id": "measurement_uncertainty_boundary",
                 "status": verdict["status"],
-                "recommendation": "Use MV14 only to calibrate PHQ anchor/DIF and model-selection uncertainty wording.",
-                "evidence": f"Core effective R {verdict['core_effective_draws']}; DIF effective R {verdict['dif_min_anchor_effective_draws']}.",
+                "recommendation": "Use MV14 for item-level PHQ anchor/DIF stability and convergence-aware model-selection uncertainty wording.",
+                "evidence": (
+                    f"Full-ladder convergence-safe R {verdict['core_effective_draws']}/"
+                    f"{verdict['core_selection_attempted_draws']}; DIF effective R "
+                    f"{verdict['dif_min_anchor_effective_draws']}."
+                ),
             },
             {
                 "recommendation_id": "anchor_wording",
@@ -573,6 +628,16 @@ def build_gate_recommendations(verdict: dict[str, Any]) -> pd.DataFrame:
                 "status": "localized" if verdict["threshold_dif_localized_to_C02_C06"] else "downgrade",
                 "recommendation": "Report loading-DIF sparsity and threshold-DIF localization separately.",
                 "evidence": f"Top threshold-DIF items: {';'.join(verdict['top_threshold_dif_items']) or 'none'}.",
+            },
+            {
+                "recommendation_id": "global_invariance_wording",
+                "status": "downgrade_to_uncertain",
+                "recommendation": "Do not summarize MV14 as bootstrap-confirmed partial invariance; report substantial common PHQ structure with localized threshold non-equivalence and uncertain global model selection.",
+                "evidence": (
+                    f"Configural converged {verdict['configural_converged_draws']}/"
+                    f"{verdict['core_selection_attempted_draws']}; stable-ladder effective R "
+                    f"{verdict['stable_ladder_effective_draws']}."
+                ),
             },
             {
                 "recommendation_id": "full_method_gate",
@@ -594,6 +659,8 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
     runtime = read_csv(out_dir / "bootstrap_runtime_summary.csv")
     core = read_csv(out_dir / "core_model_stability_summary.csv")
     selection = read_csv(out_dir / "model_selection_frequency.csv")
+    stable_selection = read_csv(out_dir / "stable_ladder_model_selection_frequency.csv")
+    decisions = read_csv(out_dir / "invariance_decision_frequency.csv")
     dif = read_csv(out_dir / "item_dif_stability_summary.csv")
     gate = read_csv(out_dir / "gate_recommendations.csv")
 
@@ -610,10 +677,12 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         "",
         f"- Status: `{verdict['status']}`.",
         f"- Requested R: smoke `{verdict['requested_smoke_R']}`, core `{verdict['requested_core_R']}`, DIF `{verdict['requested_dif_R']}`.",
-        f"- Core effective draws: `{verdict['core_effective_draws']}`.",
+        f"- Core convergence-safe full-ladder draws: `{verdict['core_effective_draws']}` / `{verdict['core_selection_attempted_draws']}`.",
+        f"- Core full-ladder fit-success/converged draws: `{verdict['core_all_fit_success_draws']}` / `{verdict['core_all_converged_draws']}`.",
+        f"- Configural fit-success/converged draws: `{verdict['configural_fit_success_draws']}` / `{verdict['configural_converged_draws']}`.",
         f"- DIF minimum effective anchor draws: `{verdict['dif_min_anchor_effective_draws']}`.",
-        f"- Best AIC model: `{verdict['best_aic_model']}`.",
-        f"- Best BIC model: `{verdict['best_bic_model']}`.",
+        f"- Best full-ladder AIC/BIC model: `{verdict['best_aic_model']}` / `{verdict['best_bic_model']}`.",
+        f"- Best stable-ladder AIC/BIC model: `{verdict['stable_ladder_best_aic_model']}` / `{verdict['stable_ladder_best_bic_model']}`.",
         f"- Stable anchors: `{';'.join(verdict['stable_anchor_items']) or 'none'}`.",
         f"- Top threshold-DIF items: `{';'.join(verdict['top_threshold_dif_items']) or 'none'}`.",
         f"- Artifact hygiene passed: `{run_summary['artifact_hygiene_passed']}`.",
@@ -648,10 +717,10 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
     lines.extend(
         [
             "",
-            "## Model Selection",
+            "## Full-Ladder Model Selection",
             "",
-            "| tier | criterion | model | frequency | effective draws |",
-            "| --- | --- | --- | ---: | ---: |",
+            "| tier | criterion | model | frequency | attempted | fit-success | converged | effective |",
+            "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
     for _, row in selection.iterrows():
@@ -659,7 +728,48 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
             continue
         lines.append(
             f"| {row['tier_id']} | {row['criterion']} | {row['model_id']} | "
-            f"{fmt(row['selection_frequency'])} | {int(row['effective_draws'])} |"
+            f"{fmt(row['selection_frequency'])} | {int(row['attempted_draws'])} | "
+            f"{int(row['all_fit_success_draws'])} | {int(row['all_converged_draws'])} | "
+            f"{int(row['effective_draws'])} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Stable-Ladder Sensitivity",
+            "",
+            "| tier | criterion | model | frequency | attempted | fit-success | converged | effective |",
+            "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for _, row in stable_selection.iterrows():
+        if safe_float(row.get("selection_frequency")) is None or row["selection_frequency"] <= 0:
+            continue
+        lines.append(
+            f"| {row['tier_id']} | {row['criterion']} | {row['model_id']} | "
+            f"{fmt(row['selection_frequency'])} | {int(row['attempted_draws'])} | "
+            f"{int(row['all_fit_success_draws'])} | {int(row['all_converged_draws'])} | "
+            f"{int(row['effective_draws'])} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## LRT Decision Stability",
+            "",
+            "| tier | comparison | decision | attempted freq | valid freq | attempted | valid | failed |",
+            "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for _, row in decisions.iterrows():
+        attempted_freq = safe_float(row.get("decision_frequency"))
+        valid_freq = safe_float(row.get("valid_decision_frequency"))
+        if attempted_freq is None or attempted_freq <= 0:
+            continue
+        lines.append(
+            f"| {row['tier_id']} | {row['comparison_id']} | `{row['decision']}` | "
+            f"{fmt(attempted_freq)} | {fmt(valid_freq)} | {int(row['attempted_draws'])} | "
+            f"{int(row['effective_draws'])} | {int(row['failed_draws'])} |"
         )
 
     lines.extend(
@@ -697,6 +807,8 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
             "## Interpretation Boundary",
             "",
             "- MV14 is label-only measurement uncertainty evidence, not multimodal method evidence.",
+            "- Model-selection and LRT summaries are convergence-safe: non-converged fits remain visible in attempted/failed denominators and do not enter AIC/BIC or LRT decisions.",
+            "- Do not summarize MV14 as a global partial-invariance win; use item-level wording around stable anchors, sparse loading DIF, localized C02/C06 threshold non-equivalence, and global model-selection uncertainty.",
             "- Public outputs contain aggregate counts, frequencies, intervals, version rows, and bounded warning categories only.",
             "- Local item-response matrices, resampling draws, fitted parameters, CI values, factor/theta scores, model objects, and detailed logs are not tracked.",
             "- Full method construction remains blocked pending later predeclared MV15/MV16-style evidence.",

@@ -1,0 +1,8 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "P5_MV15_latent_conditioned_identity_design_hygiene",
+  "files_checked": 12,
+  "generated_at": "2026-08-13T08:24:25+00:00",
+  "violation_count": 0,
+  "violations": []
+}

@@ -1,0 +1,5 @@
+input_id,read_now,future_runner_use,allowed_sources,forbidden_sources,tracked_derivative
+aggregate_phase5_sources_for_design,true,gate context and reference thresholds,MV09;MV10;MV11;MV12;MV12_analysis;MV13;MV14;full_method_gate,raw media;raw transcripts;private review material;local workbooks,source_evidence_summary.csv
+future_feature_inputs,false,identity-probe inputs,manifest-governed aligned BGE feature cache used by MV07-MV12,ad hoc raw-directory scans or new encoder fine-tuning,aggregate feature-family and coverage audit only
+future_label_inputs,false,conditioning and local theta generation,manifest-governed PHQ item labels and totals for E-DAIC/CMDC; normalized totals for sensitivity scopes,E-DAIC official test labels or unmanifested labels,aggregate label coverage and category support only
+future_theta_inputs,false,primary latent-conditioning variable,locally regenerated MV11/MV14-compatible measurement fit inside the future runner,tracked theta score files or public fitted parameter tables,"aggregate theta coverage, reliability, bin, and identity summaries only"

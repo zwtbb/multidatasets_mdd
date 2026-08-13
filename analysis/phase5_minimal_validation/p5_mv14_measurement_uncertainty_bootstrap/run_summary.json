@@ -1,6 +1,6 @@
 {
   "artifact_hygiene_passed": true,
-  "generated_at": "2026-08-13T06:45:37+00:00",
+  "generated_at": "2026-08-13T08:07:49+00:00",
   "input_contract": {
     "datasets": [
       "edaic",
@@ -61,6 +61,7 @@
       "report.md",
       "run_summary.json",
       "runtime_versions.csv",
+      "stable_ladder_model_selection_frequency.csv",
       "warning_failure_summary.csv"
     ]
   },
@@ -72,8 +73,14 @@
     "anchors_stable": true,
     "best_aic_model": "configural",
     "best_bic_model": "scalar",
+    "configural_converged_draws": 120,
+    "configural_convergence_rate": 0.6,
+    "configural_fit_success_draws": 185,
+    "core_all_converged_draws": 120,
+    "core_all_fit_success_draws": 185,
     "core_completed": true,
-    "core_effective_draws": 185,
+    "core_effective_draws": 120,
+    "core_selection_attempted_draws": 200,
     "dif_completed": true,
     "dif_min_anchor_effective_draws": 100,
     "external_engine": "R mirt::multipleGroup",
@@ -87,7 +94,7 @@
     "requested_core_R": 200,
     "requested_dif_R": 100,
     "requested_smoke_R": 10,
-    "short_read": "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap; it updates item-level wording but does not authorize full multimodal method work.",
+    "short_read": "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap; its convergence-safe interpretation is item-level threshold/localization evidence, not a global partial-invariance model-selection win or full multimodal method authorization.",
     "smoke_completed": true,
     "stable_anchor_items": [
       "C01",
@@ -95,7 +102,10 @@
       "C05",
       "C07"
     ],
-    "status": "complete_mv14_uncertainty_supports_cautious_phq_partial_invariance",
+    "stable_ladder_best_aic_model": "partial_mv10",
+    "stable_ladder_best_bic_model": "scalar",
+    "stable_ladder_effective_draws": 197,
+    "status": "complete_mv14_convergence_safe_item_level_measurement_shift",
     "threshold_dif_localized_to_C02_C06": true,
     "top_threshold_dif_items": [
       "C02",

@@ -46,53 +46,51 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Minimal validations are complete
-through `P5_MV14` measurement-uncertainty bootstrap; the full-method gate remains
+through `P5_MV15` design; the full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a measurement-shift /
-measurement-invariance diagnostic paper. MV09 shows that unconditional dataset
+measurement-validity diagnostic paper. MV09 shows that unconditional dataset
 identity should be treated as a shortcut-risk screen, while conditional
 identity remains high after severity or aligned-item conditioning. MV10 adds a
-label-only PHQ-8/PHQ-9 psychometric screen: both datasets pass the one-factor
-configural screen, loading congruence is `0.998`, `7/8` items pass the
-approximate metric-loading screen, but only `4/8` items pass the approximate
-threshold/scalar screen. Treat MV10 as partial measurement-shift evidence and
-candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 then fits a label-only
-multi-group graded-response IRT confirmation: all four MV10 anchors are
-preserved, no loading-DIF items are strongly flagged, `C02` and `C06` show
-threshold DIF, and AIC/BIC disagree between the partial and scalar core models.
-MV12 then runs that two-stage test. The `X -> theta` head improves same-dataset
-theta MAE versus train mean on E-DAIC and CMDC, and conditional shared-latent
-identity BA falls to `0.602`, but observed-scale reconstruction is worse than
-the direct itemwise floor and external theta transfer does not pass.
-Cross-dataset observed-scale transfer is nevertheless better through the
-latent route than direct item transfer, so treat MV12 as a predictive
-fidelity-dataset identifiability trade-off, not a simple failed model. The
-aggregate MV12
-tradeoff/failure-mode analysis freezes the current latent-target line rather
-than adding another small shallow-head variant. MV13 installs a version-captured
-external R psychometric runtime and reruns the PHQ multi-group graded-response
-model ladder with `mirt::multipleGroup`. It qualitatively replicates MV11:
-four MV10 anchors are confirmed, no loading DIF is strongly flagged, threshold
-DIF remains concentrated on `C02` and `C06`, AIC prefers the partial model, and
-BIC prefers scalar. The configural model retains a convergence warning, so MV13
-is bounded external measurement evidence, not a full-method pass. MV14 then
-runs the predeclared group-wise subject bootstrap with smoke/core/DIF
-R=`10/200/100`: core effective R is `185`, DIF effective R is `100`, all four
-MV10 anchors (`C01`, `C04`, `C05`, `C07`) are bootstrap-stable, threshold DIF
-remains concentrated on `C02` and `C06`, and AIC/BIC still disagree
-(`configural`/`scalar`). This supports cautious PHQ partial-invariance
-wording, not full-method authorization.
+label-only PHQ-8/PHQ-9 psychometric screen with loading congruence `0.998`,
+`7/8` approximate metric-loading items, `4/8` threshold/scalar items, and
+candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 and MV13 preserve that
+anchor/DIF pattern with no strong loading DIF and threshold DIF concentrated on
+`C02` and `C06`, while AIC/BIC remain split and MV13 retains a configural
+convergence warning.
+
+MV14 now uses convergence-safe bootstrap inference. The predeclared
+smoke/core/DIF tiers ran with R=`10/200/100`; full-ladder model selection has
+`120/200` convergence-safe effective core draws after `185/200` fit-success
+draws, configural converges in `120/200`, and the stable metric/partial/scalar
+ladder has `197` effective draws. All four MV10 anchors are stable, loading DIF
+is sparse, threshold DIF remains concentrated on `C02` and `C06`, full-ladder
+AIC/BIC prefer `configural`/`scalar`, and stable-ladder AIC/BIC prefer
+`partial_mv10`/`scalar`. Treat MV14 as item-level measurement-shift evidence
+with global model-selection uncertainty, not as a bootstrap-confirmed global
+partial-invariance win.
+
+MV12 is frozen as bounded diagnostic evidence. The `X -> theta` head improves
+same-dataset theta MAE versus train mean and lowers identity versus upstream
+BGE features (`0.602` conditional predicted-theta BA versus MV09 feature
+reference `0.991`), but observed-scale reconstruction is worse than direct
+itemwise Ridge and zero-shot source-calibrated external theta transfer fails.
+The aggregate tradeoff analysis adds the key caveat: B3 direct itemwise Ridge
+compressed to theta has lower pooled observed macro MAE (`0.692` versus
+`0.701`) and lower conditional identity (`0.579` versus `0.602`) than M12a, so
+M12a is not uniquely more invariant than a dimension-matched severity baseline.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
-now generated from aggregate tables only. Current next action: predeclare
-latent-conditioned dataset identity (`P5_MV15`), then cross-dataset theta
-calibration / few-shot scale linking (`P5_MV16`) if their gates remain
-coherent. Optional MV06 work is
-now agreement uncertainty analysis plus resolving the one incomplete local
-candidate before stronger RQ4 wording. Theta scores, fitted
-parameters, row predictions, transformed features, bootstrap samples,
-calibration parameters, and model artifacts remain local-only.
+now generated from aggregate tables only. Current next action: implement and
+run the predeclared latent-conditioned dataset identity runner (`P5_MV15`) with
+raw, total, predicted-total, item, B3 itemwise-theta, psychometric-theta,
+covariate, predicted-output, and severity-only controls; then predeclare
+DIF-guided few-shot measurement calibration (`P5_MV16`). Optional MV06 work is
+agreement uncertainty analysis plus resolving the one incomplete local
+candidate before stronger RQ4 wording. Theta scores, fitted parameters, row
+predictions, transformed features, bootstrap samples, calibration parameters,
+and model artifacts remain local-only.
 
 ## Key Paths
 
@@ -121,6 +119,7 @@ calibration parameters, and model artifacts remain local-only.
 - MV13 external psychometric replication run: `analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication/`
 - MV14 measurement-uncertainty bootstrap design: `analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap_design/`
 - MV14 measurement-uncertainty bootstrap run: `analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/`
+- MV15 latent-conditioned identity design: `analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity_design/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
@@ -161,14 +160,18 @@ python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
 ```
 
-Phase 5 gate, MV13 external psychometric replication, and MV14 bootstrap design:
+Phase 5 gate, MV13/MV14 psychometric checks, MV12 analysis, and MV15 design:
 
 ```bash
 python scripts/phase5_plan_mv13_external_psychometric_replication.py --overwrite
 python scripts/phase5_run_mv13_external_psychometric_replication.py
 python scripts/phase5_plan_mv14_measurement_uncertainty_bootstrap.py --overwrite
 python scripts/phase5_run_mv14_measurement_uncertainty_bootstrap.py
+python scripts/phase5_analyze_mv12_latent_target_tradeoffs.py
+python scripts/phase5_plan_mv15_latent_conditioned_identity.py --overwrite
 python scripts/phase5_full_method_gate_audit.py
+python scripts/build_diagnostic_paper_claim_tables.py
+python scripts/build_diagnostic_paper_results_sections.py
 ```
 
 ## Version Policy

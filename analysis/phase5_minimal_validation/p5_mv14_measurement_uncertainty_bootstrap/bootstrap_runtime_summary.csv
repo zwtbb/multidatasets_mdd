@@ -1,4 +1,4 @@
 "tier_id","requested_R","attempted_R","primary_effective_draws","elapsed_seconds","claim_status","status"
-"MV14_A_smoke_runtime",10,10,10,28.4922268390656,"not_claimable_smoke","complete"
-"MV14_B_core_model_stability",200,200,185,685.941912174225,"primary_core_stability","complete"
-"MV14_C_item_DIF_stability",100,100,100,885.922986984253,"primary_anchor_and_DIF_stability","complete"
+"MV14_A_smoke_runtime",10,10,9,28.5497422218323,"not_claimable_smoke","complete"
+"MV14_B_core_model_stability",200,200,120,704.048057317734,"primary_core_stability","complete"
+"MV14_C_item_DIF_stability",100,100,100,900.942014217377,"primary_anchor_and_DIF_stability","complete"

@@ -1,6 +1,6 @@
 # Master Experiment Plan
 
-Last updated: 2026-08-11 UTC
+Last updated: 2026-08-13 UTC
 
 ## Principle
 
@@ -161,7 +161,7 @@ data audit
   as a negative follow-up: total anchoring does not rescue the shallow BGE
   shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 36 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 37 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -230,12 +230,23 @@ data audit
   run has now consumed that contract.
 - Phase 5 `P5_MV14 measurement_uncertainty_bootstrap`:
   complete with aggregate-only outputs and local item-response inputs ignored.
-  It ran smoke/core/DIF R=`10/200/100`; core effective R is `185`, DIF
-  effective R is `100`, all four MV10 anchors are stable (`C01`, `C04`,
-  `C05`, `C07`), threshold-DIF frequencies remain top-ranked for `C02` and
-  `C06`, and AIC/BIC prefer `configural`/`scalar`. Treat as cautious
-  measurement-uncertainty support for PHQ partial invariance, not a full-method
-  pass.
+  It ran smoke/core/DIF R=`10/200/100` after the convergence-safe correction:
+  full-ladder effective core R is `120/200` after `185/200` fit-success draws,
+  configural converges in `120/200`, the stable metric/partial/scalar ladder
+  has `197` effective draws, and DIF effective R is `100/100`. All four MV10
+  anchors are stable (`C01`, `C04`, `C05`, `C07`), loading DIF is sparse, and
+  threshold-DIF frequencies remain top-ranked for `C02` and `C06`. Full-ladder
+  AIC/BIC prefer `configural`/`scalar`, while the stable ladder prefers
+  `partial_mv10`/`scalar`. Treat as item-level measurement-shift evidence with
+  global model-selection uncertainty, not a bootstrap-confirmed global
+  partial-invariance pass.
+- Phase 5 `P5_MV15 latent_conditioned_dataset_identity_design`:
+  complete as a predeclaration, not a probe run. It exports aggregate contracts
+  only, with 10 conditioning ladder rows, 7 identity-probe rows, and 8
+  pass/fail gates. The design requires raw, total, predicted-total, observed
+  item, B3 itemwise-theta, psychometric-theta, covariate, predicted-output, and
+  severity-only controls so the future runner can test whether theta
+  conditioning beats dimension-matched severity controls.
 - Diagnostic measurement-audit paper outline:
   initialized at `docs/diagnostic_measurement_audit_paper_outline.md`. It
   freezes allowed versus blocked claim boundaries and proposes the paper
@@ -272,15 +283,15 @@ The audit blocks full M0/M1/M2/M3 construction, transferable direct
 shared-symptom claims, positive EATD SDS claims, EATD-driven
 valence-adversarial design, and positive RQ3 context-conditioning claims. It
 now allows RQ4 only as limited first-round aggregate evidence. The next method
-target is not another shallow BGE head. The psychometric partial
-measurement-invariance direction remains a useful diagnostic framing, but
-MV08/MV08b are both negative or blocked under the current frozen-BGE shallow
-contract. MV09-MV14 move the project into a label-measurement and
-measurement-shift frame: MV10/MV11/MV13 support bounded PHQ partial-invariance
-evidence, MV14 adds bootstrap stability/uncertainty support for cautious
-anchor and DIF wording, and MV12 shows a useful but blocked theta-prediction
-trade-off. The next active step is predeclaring MV15 latent-conditioned
-identity; full method work remains blocked.
+target is not another shallow BGE head. MV08/MV08b are both negative or blocked
+under the current frozen-BGE shallow contract. MV09-MV15 move the project into
+a label-measurement and measurement-shift frame: MV10/MV11/MV13 support
+bounded common-structure and anchor/DIF evidence, MV14 adds convergence-safe
+bootstrap stability for item-level anchors and localized threshold DIF while
+leaving global model selection uncertain, MV12 shows a useful but blocked
+theta-prediction trade-off with a dimension-matched B3 caveat, and MV15 is now
+design-ready. The next active step is implementing and running the MV15
+latent-conditioned identity runner; full method work remains blocked.
 
 ## Updated Method Target
 
@@ -477,8 +488,9 @@ representation without those controls.
   gates. Future shared-latent claims must report conditional identity, and the
   current BGE contract remains highly dataset-identifiable after conditioning.
 - `P5_MV10 classical_psychometric_invariance_baseline` is complete and supports
-  a bounded label-only PHQ partial-invariance screen with anchors `C01`, `C04`,
-  `C05`, and `C07`.
+  a bounded label-only PHQ common-structure screen with candidate anchors
+  `C01`, `C04`, `C05`, and `C07`; exact threshold/scalar equivalence is not
+  uniformly supported.
 - `P5_MV11 formal_ordinal_psychometric_confirmation` is complete and preserves
   the MV10 anchor map with a BIC caveat and threshold DIF on `C02`/`C06`.
 - `P5_MV12 two_stage_latent_target` is complete but blocked as positive method
@@ -486,13 +498,20 @@ representation without those controls.
   line.
 - `P5_MV13 external_psychometric_replication` is complete with a configural
   convergence caveat and qualitatively replicates the MV11 anchor/DIF pattern.
-- `P5_MV14 measurement_uncertainty_bootstrap_design` is complete and ready to
-  implement. It predeclares group-wise subject bootstrap, stability metrics,
-  local-only boundaries, and pass/downgrade rules before any bootstrap run.
-- `P5_MV14 measurement_uncertainty_bootstrap` is complete and supports cautious
-  PHQ partial-invariance wording: core effective R `185/200`, DIF effective R
-  `100/100`, stable anchors `C01/C04/C05/C07`, threshold-DIF concentrated on
-  `C02/C06`, and full-method work still blocked.
+- `P5_MV14 measurement_uncertainty_bootstrap_design` is complete and consumed
+  by the MV14 run. It predeclared group-wise subject bootstrap, stability
+  metrics, local-only boundaries, and pass/downgrade rules before execution.
+- `P5_MV14 measurement_uncertainty_bootstrap` is complete with convergence-safe
+  inference: full-ladder effective R `120/200`, configural converged
+  `120/200`, stable-ladder effective R `197`, DIF effective R `100/100`,
+  stable anchors `C01/C04/C05/C07`, and threshold DIF concentrated on
+  `C02/C06`. Treat it as item-level measurement-shift evidence with uncertain
+  global invariance-model selection.
+- `P5_MV15 latent_conditioned_dataset_identity_design` is complete and design
+  ready. The future runner must compare raw feature identity against total,
+  predicted-total, observed-item, B3 itemwise-theta, psychometric-theta,
+  covariate, predicted-output, and severity-only controls, with all theta,
+  residual, row-level, split, and fitted artifacts kept local-only.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -511,11 +530,12 @@ representation without those controls.
   scripts, and aggregate audits. Any remote history rewrite still requires
   explicit user approval.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
-  as bounded diagnostic evidence, keep MV14 as the completed measurement
-  uncertainty layer, then predeclare MV15 latent-conditioned identity and MV16
-  theta calibration / few-shot scale linking. Optionally add MV06 agreement
-  uncertainty analysis and resolve the one incomplete local candidate before
-  stronger RQ4 wording.
+  as bounded diagnostic evidence, keep MV14 as the completed convergence-safe
+  item-level measurement-uncertainty layer, implement and run the predeclared
+  MV15 latent-conditioned identity runner, then predeclare MV16 DIF-guided
+  few-shot measurement calibration. Optionally add MV06 agreement uncertainty
+  analysis and resolve the one incomplete local candidate before stronger RQ4
+  wording.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

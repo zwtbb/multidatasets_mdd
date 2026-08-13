@@ -4,7 +4,7 @@
     "section_scaffold_status": "ready_for_manuscript_editing",
     "short_read": "Baselines, Failure-Mode Diagnostics, and Measurement Results draft sections are ready from aggregate artifacts; full method remains blocked."
   },
-  "generated_at": "2026-08-13T07:03:36+00:00",
+  "generated_at": "2026-08-13T08:26:14+00:00",
   "input_contract": {
     "aggregate_phase2_audits_read": true,
     "aggregate_phase3_summaries_read": true,
@@ -20,7 +20,7 @@
       "Failure-Mode Diagnostics",
       "Measurement Results"
     ],
-    "source_rows": 11,
+    "source_rows": 12,
     "tracked_outputs": [
       "baselines_failure_modes_measurement_results.md",
       "results_section_artifact_hygiene_audit.json",

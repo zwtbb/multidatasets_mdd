@@ -3,15 +3,16 @@
   "decision": {
     "analysis_status": "complete_freeze_current_mv12_latent_target_line",
     "conditional_identity_ba_m12a": 0.6015151515151514,
+    "dimension_matched_identity_caveat": "M12a low identity is not unique: B3 direct itemwise Ridge has lower conditional and unconditional predicted-theta identity in the aggregate MV12 summary.",
     "external_transfer_theta_gate_passed": false,
     "freeze_current_latent_target_line": true,
     "full_method_allowed": false,
     "mv12_pass_rule_status": "blocked_theta_gain_not_observed_scale_safe",
     "same_dataset_observed_gate_passed": false,
     "same_dataset_theta_gate_passed": true,
-    "short_read": "Aggregate-only MV12 analysis recommends freezing the current latent-target line: latent theta utility and conditional identity improve, but observed-scale safety and external theta transfer remain the decisive blockers."
+    "short_read": "Aggregate-only MV12 analysis recommends freezing the current latent-target line: latent/scalar outputs are less dataset-identifiable than upstream BGE features, but M12a is not better than the dimension-matched B3 severity baseline; observed-scale safety and zero-shot source-calibrated theta transfer remain decisive blockers."
   },
-  "generated_at": "2026-08-11T15:15:42+00:00",
+  "generated_at": "2026-08-13T08:23:42+00:00",
   "input_contract": {
     "aggregate_phase5_summaries_read": true,
     "fitted_parameters_read": false,
@@ -21,7 +22,7 @@
     "theta_score_tables_read": false
   },
   "outputs": {
-    "failure_mode_rows": 6,
+    "failure_mode_rows": 7,
     "gate_rows": 8,
     "mv12_dataset_slice_rows": 14,
     "recommendation_rows": 4,

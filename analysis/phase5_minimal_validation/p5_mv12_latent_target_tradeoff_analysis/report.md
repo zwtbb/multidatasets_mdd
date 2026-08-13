@@ -1,6 +1,6 @@
 # P5_MV12 Latent-Target Trade-Off Analysis
 
-Generated: `2026-08-11T15:15:42+00:00`
+Generated: `2026-08-13T08:23:42+00:00`
 
 ## Scope
 
@@ -13,7 +13,7 @@ This artifact reads aggregate MV07-MV12 summaries only. It decomposes the MV12 g
 - Full method allowed: `False`.
 - Artifact hygiene passed: `True`.
 
-Aggregate-only MV12 analysis recommends freezing the current latent-target line: latent theta utility and conditional identity improve, but observed-scale safety and external theta transfer remain the decisive blockers.
+Aggregate-only MV12 analysis recommends freezing the current latent-target line: latent/scalar outputs are less dataset-identifiable than upstream BGE features, but M12a is not better than the dimension-matched B3 severity baseline; observed-scale safety and zero-shot source-calibrated theta transfer remain decisive blockers.
 
 ## Gate Decomposition
 
@@ -34,8 +34,9 @@ Aggregate-only MV12 analysis recommends freezing the current latent-target line:
 | --- | --- | --- | --- |
 | latent_target_predictable_same_dataset | `use_as_positive_subfinding` | M12a theta MAE deltas vs train mean are E-DAIC -0.078 and CMDC -0.146. | The PHQ latent target is learnable from audited BGE features within each dataset. |
 | theta_to_observed_mapping_loss | `primary_blocker` | M12a observed macro deltas vs direct itemwise Ridge are E-DAIC 0.004 and CMDC 0.067. | A cleaner latent output does not yet preserve dataset-specific item-scale information well enough. |
-| external_theta_transfer_gap | `primary_blocker` | cross_cmdc_to_edaic_phq delta_theta_vs_B0 0.037; cross_edaic_to_cmdc_phq delta_theta_vs_B0 0.077 | The current source-only measurement target does not transfer as a theta target across E-DAIC and CMDC. |
-| conditional_latent_identity_gain | `use_as_positive_subfinding` | M12a conditional predicted-theta identity BA is 0.602; MV09 conditional feature-identity reference is 0.991. | The shared latent prediction layer is less dataset-identifiable than the upstream feature space. |
+| external_theta_transfer_gap | `primary_blocker` | cross_cmdc_to_edaic_phq delta_theta_vs_B0 0.037; cross_edaic_to_cmdc_phq delta_theta_vs_B0 0.077 | Zero-shot source-calibrated latent transfer fails; this mixes X-to-theta predictor transfer with applying the source measurement function to the target dataset. |
+| low_dimensional_output_identity_gain | `bounded_subfinding_with_dimension_matched_caveat` | M12a conditional predicted-theta identity BA is 0.602; MV09 conditional feature-identity reference is 0.991. | The latent/scalar prediction layer is less dataset-identifiable than upstream BGE features, but this alone does not show psychometric theta is uniquely more invariant than other low-dimensional severity outputs. |
+| dimension_matched_severity_baseline_dominates_m12a | `critical_caveat_for_mv12_identity_claim` | B3 observed macro MAE 0.692 and conditional identity BA 0.579; M12a observed macro MAE 0.701 and conditional identity BA 0.602. | M12a is Pareto-dominated by direct itemwise Ridge compressed to theta on the current aggregate fidelity-identity summary; MV15 must add dimension-matched severity controls before any psychometric-invariance wording. |
 | post_mapping_identity_remains_scale_specific | `interpret_with_caution` | M12a post-mapping conditional item identity BA is 0.992. | High identity after mapping to observed items should be described as scale-specific output structure, not as the same hard shared-latent failure. |
 | measurement_target_reliability_not_main_blocker | `supporting_context` | Primary-item Cronbach alpha averages train 0.923 and eval 0.925. | Aggregate reliability is high enough that the main blocker is prediction/mapping/transfer, not an obviously unusable PHQ target. |
 

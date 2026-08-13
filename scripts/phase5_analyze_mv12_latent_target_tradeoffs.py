@@ -327,12 +327,18 @@ def build_dataset_slice_diagnostics(comparison: pd.DataFrame) -> pd.DataFrame:
 
 def build_failure_modes(
     summary: dict[str, Any],
+    comparison: pd.DataFrame,
     transfer: pd.DataFrame,
     identity: pd.DataFrame,
     reliability: pd.DataFrame,
 ) -> pd.DataFrame:
     verdict = summary["verdict"]
     primary_reliability = reliability[reliability["item_group"] == "primary_measurement_items"]
+    pooled_models = mv12_pooled_model_rows(comparison, identity)
+    b3_rows = pooled_models[pooled_models["model"] == MV12_B3]
+    m12a_rows = pooled_models[pooled_models["model"] == MV12_M12A]
+    b3 = b3_rows.iloc[0].to_dict() if not b3_rows.empty else {}
+    m12a = m12a_rows.iloc[0].to_dict() if not m12a_rows.empty else {}
     rows = [
         {
             "failure_mode_id": "latent_target_predictable_same_dataset",
@@ -353,13 +359,24 @@ def build_failure_modes(
                 f"{row.protocol} delta_theta_vs_B0 {fmt(row.m12a_delta_theta_mae_vs_B0)}"
                 for row in transfer.itertuples(index=False)
             ),
-            "interpretation": "The current source-only measurement target does not transfer as a theta target across E-DAIC and CMDC.",
+            "interpretation": "Zero-shot source-calibrated latent transfer fails; this mixes X-to-theta predictor transfer with applying the source measurement function to the target dataset.",
         },
         {
-            "failure_mode_id": "conditional_latent_identity_gain",
-            "status": "use_as_positive_subfinding",
+            "failure_mode_id": "low_dimensional_output_identity_gain",
+            "status": "bounded_subfinding_with_dimension_matched_caveat",
             "evidence": f"M12a conditional predicted-theta identity BA is {fmt(verdict['conditional_identity_ba_m12a'])}; MV09 conditional feature-identity reference is {fmt(verdict['mv09_conditional_identity_ba_reference'])}.",
-            "interpretation": "The shared latent prediction layer is less dataset-identifiable than the upstream feature space.",
+            "interpretation": "The latent/scalar prediction layer is less dataset-identifiable than upstream BGE features, but this alone does not show psychometric theta is uniquely more invariant than other low-dimensional severity outputs.",
+        },
+        {
+            "failure_mode_id": "dimension_matched_severity_baseline_dominates_m12a",
+            "status": "critical_caveat_for_mv12_identity_claim",
+            "evidence": (
+                f"B3 observed macro MAE {fmt(b3.get('mean_observed_macro_mae'))} and conditional identity BA "
+                f"{fmt(b3.get('dataset_identity_ba_conditional_latent'))}; M12a observed macro MAE "
+                f"{fmt(m12a.get('mean_observed_macro_mae'))} and conditional identity BA "
+                f"{fmt(m12a.get('dataset_identity_ba_conditional_latent'))}."
+            ),
+            "interpretation": "M12a is Pareto-dominated by direct itemwise Ridge compressed to theta on the current aggregate fidelity-identity summary; MV15 must add dimension-matched severity controls before any psychometric-invariance wording.",
         },
         {
             "failure_mode_id": "post_mapping_identity_remains_scale_specific",
@@ -610,7 +627,7 @@ def build_outputs(out_dir: Path) -> dict[str, Any]:
 
     gate = build_gate_decomposition(mv12_summary)
     dataset_slice = build_dataset_slice_diagnostics(comparison)
-    failures = build_failure_modes(mv12_summary, transfer, identity, reliability)
+    failures = build_failure_modes(mv12_summary, comparison, transfer, identity, reliability)
     recommendations = build_recommendations(mv12_summary)
     tradeoff = pd.concat(
         [legacy_pareto_rows(mv09_pareto), mv12_pooled_model_rows(comparison, identity)],
@@ -658,10 +675,12 @@ def build_outputs(out_dir: Path) -> dict[str, Any]:
             "same_dataset_observed_gate_passed": verdict["same_dataset_observed_gate_passed"],
             "external_transfer_theta_gate_passed": verdict["external_transfer_theta_gate_passed"],
             "conditional_identity_ba_m12a": verdict["conditional_identity_ba_m12a"],
+            "dimension_matched_identity_caveat": "M12a low identity is not unique: B3 direct itemwise Ridge has lower conditional and unconditional predicted-theta identity in the aggregate MV12 summary.",
             "short_read": (
                 "Aggregate-only MV12 analysis recommends freezing the current latent-target line: "
-                "latent theta utility and conditional identity improve, but observed-scale safety and "
-                "external theta transfer remain the decisive blockers."
+                "latent/scalar outputs are less dataset-identifiable than upstream BGE features, but M12a is "
+                "not better than the dimension-matched B3 severity baseline; observed-scale safety and "
+                "zero-shot source-calibrated theta transfer remain decisive blockers."
             ),
         },
         "artifact_hygiene_passed": False,

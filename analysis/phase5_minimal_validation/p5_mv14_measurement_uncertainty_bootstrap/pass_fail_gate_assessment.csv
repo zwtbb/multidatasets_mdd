@@ -1,5 +1,5 @@
 gate_id,status,evidence,claim_effect
-G3_convergence_visibility,pass,Core effective draws: 185.,Report convergence frequency before interpreting item-level stability.
+G3_convergence_visibility,pass_with_global_model_selection_downgrade,Core attempted 200; full-ladder fit-success 185; full-ladder converged 120; configural converged 120.,Global model-selection and configural LRT wording must be downgraded when convergence is limited.
 G4_anchor_stability,pass,Stable anchors: C01;C04;C05;C07; low anchors: none.,Anchor wording is cautious unless all four MV10 anchors exceed the support threshold.
 G5_loading_DIF_sparsity,pass,High loading-DIF items: none; anchor high-loading items: none.,Diffuse loading DIF downgrades common-metric wording.
 G6_threshold_DIF_localization,pass,Top threshold-DIF items: C02;C06.,C02/C06 wording is strongest only if bootstrap frequencies remain concentrated there.

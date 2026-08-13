@@ -1,0 +1,6 @@
+artifact_class,reason_local_only,tracked_surrogate,git_policy
+theta_scores,Latent scores are participant-grain measurement outputs.,"aggregate coverage, distribution bins, reliability, and identity metrics",ignore local_*theta* files and do not export participant-grain theta tables
+measurement_parameters,Item parameters and uncertainty rows can reconstruct sensitive measurement details.,aggregate anchor/DIF stability already available from MV14,no fitted parameter CSV/JSON/RDS files in Git
+residualized_features,Residualized feature matrices remain participant-grain transformed representations.,"aggregate identity summaries by probe, seed, and conditioning ladder",ignore residualized feature files and nuisance direction artifacts
+row_predictions,"Per-participant model outputs are local diagnostics, not public evidence tables.","aggregate BA, fold-count, sample-count, and split-overlap audits",ignore prediction CSVs and fitted probe artifacts
+split_maps,Fold assignment tables are participant-grain experiment state.,aggregate subject-overlap violation count and fold coverage,track only split audit summaries

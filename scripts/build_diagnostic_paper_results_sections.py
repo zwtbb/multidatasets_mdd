@@ -39,6 +39,9 @@ PAPER_FINDINGS = PAPER_DIR / "key_numeric_findings.csv"
 PAPER_CLAIMS = PAPER_DIR / "paper_claim_boundary.csv"
 FULL_GATE = PHASE5_DIR / "full_method_gate_audit" / "run_summary.json"
 MV12_ANALYSIS = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "run_summary.json"
+MV12_TRADEOFF = (
+    PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "accuracy_identity_tradeoff_summary.csv"
+)
 MV12_FAILURES = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "failure_mode_summary.csv"
 MV12_GATES = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "gate_decomposition.csv"
 MV12_SLICE_DIAGNOSTICS = (
@@ -46,6 +49,7 @@ MV12_SLICE_DIAGNOSTICS = (
 )
 MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
+MV15_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
 DEFAULT_OUT_DIR = PAPER_DIR
 
 TRACKED_FILES = [
@@ -91,14 +95,16 @@ def manuscript_text(value: Any) -> str:
         "full_method_allowed=False": "full method is not allowed",
         "raw primary MAE": "uncontrolled primary MAE",
         "tradeoff_rows=25": "25 trade-off rows",
-        "failure_mode_rows=6": "6 failure-mode rows",
+        "failure_mode_rows=7": "7 failure-mode rows",
         "status complete_partial_invariance_supported_approx": "status supports approximate partial invariance",
         "status complete_formal_partial_invariance_supported_with_bic_caveat": "status supports formal partial invariance with a BIC caveat",
         "status complete_external_mirt_with_convergence_warnings": "status supports external replication with convergence warnings",
         "core converged=False": "the core model ladder retains a convergence warning",
+        "complete_mv14_convergence_safe_item_level_measurement_shift": "complete convergence-aware item-level measurement-shift evidence",
         "status blocked_theta_gain_not_observed_scale_safe": "status is blocked because theta gain is not observed-scale safe",
         "status pass_pdch_only_diagnostic": "status is a PDCH-only diagnostic pass",
         "status blocked_main_task_below_floor": "status is blocked because the main task is below the floor",
+        "ready_to_implement_mv15_latent_conditioned_identity": "a predeclared MV15 latent-conditioned identity design",
     }
     for old, new in replacements.items():
         text = text.replace(old, new)
@@ -124,11 +130,13 @@ def require_inputs() -> None:
         PAPER_CLAIMS,
         FULL_GATE,
         MV12_ANALYSIS,
+        MV12_TRADEOFF,
         MV12_FAILURES,
         MV12_GATES,
         MV12_SLICE_DIAGNOSTICS,
         MV13_SUMMARY,
         MV14_SUMMARY,
+        MV15_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -245,6 +253,9 @@ def phase5_context() -> dict[str, Any]:
     claims = pd.read_csv(PAPER_CLAIMS).set_index("claim_id")
     gate = read_json(FULL_GATE)
     mv12 = read_json(MV12_ANALYSIS)
+    mv14 = read_json(MV14_SUMMARY)
+    mv15 = read_json(MV15_SUMMARY)
+    tradeoff = pd.read_csv(MV12_TRADEOFF)
     failures = pd.read_csv(MV12_FAILURES)
     gates = pd.read_csv(MV12_GATES)
 
@@ -265,6 +276,22 @@ def phase5_context() -> dict[str, Any]:
     cross_cmdc_to_edaic = mv12_slice("cross_cmdc_to_edaic_phq", "edaic", "M12a_BGE_Ridge_X_to_theta")
     cross_edaic_to_cmdc = mv12_slice("cross_edaic_to_cmdc_phq", "cmdc", "M12a_BGE_Ridge_X_to_theta")
     conditional_identity_gate = row_by_value(gates, "gate_id", "G5_conditional_shared_latent_identity")
+    b3_tradeoff = tradeoff[
+        (tradeoff["source_run"] == "P5_MV12")
+        & (tradeoff["model"] == "B3_direct_itemwise_ridge")
+        & (tradeoff["evaluation_scope"] == "pooled_shared_phq_edaic_cmdc_mean")
+    ]
+    m12a_tradeoff = tradeoff[
+        (tradeoff["source_run"] == "P5_MV12")
+        & (tradeoff["model"] == "M12a_BGE_Ridge_X_to_theta")
+        & (tradeoff["evaluation_scope"] == "pooled_shared_phq_edaic_cmdc_mean")
+    ]
+    if b3_tradeoff.empty or m12a_tradeoff.empty:
+        raise ValueError("missing MV12 pooled B3/M12a trade-off rows")
+    b3 = b3_tradeoff.iloc[0]
+    m12a = m12a_tradeoff.iloc[0]
+    mv14_v = mv14["verdict"]
+    mv15_outputs = mv15["outputs"]
 
     return {
         "finding_gate": manuscript_text(findings.loc["gate_status", "finding"]),
@@ -274,6 +301,7 @@ def phase5_context() -> dict[str, Any]:
         "finding_mv11": manuscript_text(findings.loc["mv11_formal_psychometric_confirmation", "finding"]),
         "finding_mv13": manuscript_text(findings.loc["mv13_external_psychometric_replication", "finding"]),
         "finding_mv14": manuscript_text(findings.loc["mv14_measurement_uncertainty_bootstrap", "finding"]),
+        "finding_mv15": manuscript_text(findings.loc["mv15_latent_conditioned_identity_design", "finding"]),
         "finding_mv12_run": manuscript_text(findings.loc["mv12_two_stage_latent_target_run", "finding"]),
         "finding_mv12_analysis": manuscript_text(findings.loc["mv12_tradeoff_freeze_decision", "finding"]),
         "finding_pdch": manuscript_text(findings.loc["pdch_internal_hamd", "finding"]),
@@ -304,6 +332,22 @@ def phase5_context() -> dict[str, Any]:
             "delta_observed_macro_mae_vs_B3"
         ],
         "mv12_conditional_identity_ba": conditional_identity_gate["primary_value"],
+        "mv12_b3_observed_macro_mae": b3["mean_observed_macro_mae"],
+        "mv12_m12a_observed_macro_mae": m12a["mean_observed_macro_mae"],
+        "mv12_b3_conditional_identity_ba": b3["dataset_identity_ba_conditional_latent"],
+        "mv12_b3_unconditional_identity_ba": b3["dataset_identity_ba_prediction_unconditional"],
+        "mv12_m12a_conditional_identity_ba": m12a["dataset_identity_ba_conditional_latent"],
+        "mv12_m12a_unconditional_identity_ba": m12a["dataset_identity_ba_prediction_unconditional"],
+        "mv12_dimension_caveat": mv12["decision"].get("dimension_matched_identity_caveat", ""),
+        "mv14_core_effective_draws": mv14_v["core_effective_draws"],
+        "mv14_core_attempted_draws": mv14_v["core_selection_attempted_draws"],
+        "mv14_core_fit_success_draws": mv14_v["core_all_fit_success_draws"],
+        "mv14_configural_converged_draws": mv14_v["configural_converged_draws"],
+        "mv14_stable_ladder_effective_draws": mv14_v["stable_ladder_effective_draws"],
+        "mv14_stable_ladder_best_aic_model": mv14_v["stable_ladder_best_aic_model"],
+        "mv14_stable_ladder_best_bic_model": mv14_v["stable_ladder_best_bic_model"],
+        "mv15_conditioning_ladder_rows": mv15_outputs["conditioning_ladder_rows"],
+        "mv15_identity_probe_rows": mv15_outputs["identity_probe_rows"],
         "full_method_claim": claims.loc["C_FULL_METHOD_START", "manuscript_guardrail"],
         "rq1_claim": claims.loc["C_RQ1_SHARED_SYMPTOM", "manuscript_guardrail"],
     }
@@ -357,7 +401,7 @@ def build_source_map() -> pd.DataFrame:
             "section": "Measurement Results",
             "source_artifact_id": "key_numeric_findings",
             "source_path": rel(PAPER_FINDINGS),
-            "use": "paper-facing MV08-MV14, PDCH, MODMA, EATD, and MV06 findings",
+            "use": "paper-facing MV08-MV15, PDCH, MODMA, EATD, and MV06 findings",
         },
         {
             "section": "Measurement Results",
@@ -370,6 +414,12 @@ def build_source_map() -> pd.DataFrame:
             "source_artifact_id": "mv14_measurement_uncertainty_bootstrap",
             "source_path": rel(MV14_SUMMARY),
             "use": "MV14 bootstrap anchor, DIF, convergence, and model-selection stability",
+        },
+        {
+            "section": "Measurement Results",
+            "source_artifact_id": "mv15_latent_conditioned_identity_design",
+            "source_path": rel(MV15_SUMMARY),
+            "use": "MV15 predeclared latent-conditioned identity ladder and local-only boundary",
         },
         {
             "section": "Measurement Results",
@@ -484,15 +534,15 @@ def write_markdown(
         "",
         f"The Phase 5 full-method gate now reads `{ctx5['evidence_rows']}` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.",
         "",
-        "The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13/MV14 address the second level by showing partial rather than scalar PHQ invariance with external replication and bootstrap uncertainty; MV12 addresses the third level by separating label measurement from multimodal prediction.",
+        f"The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13/MV14 address the second level by showing substantial common PHQ structure with stable anchors, sparse loading DIF, repeated C02/C06 threshold non-equivalence, and convergence-aware model-selection uncertainty rather than uniformly supported exact scalar or partial invariance; MV12 addresses the third level by separating label measurement from multimodal prediction. {ctx5['finding_mv15']} This is a predeclared follow-up gate with `{ctx5['mv15_conditioning_ladder_rows']}` conditioning rows and `{ctx5['mv15_identity_probe_rows']}` identity probes, not a completed identity result.",
         "",
         "The first measurement sequence is negative or bounded. MV08 improves over the total-score floor on `0/3` pooled active slices, while MV08b improves over both total-score and fixed-map floors on `2/3` slices but raises prediction dataset identity to `0.979`. MV09 then revises the gate semantics: post-head identity is diagnostic when outputs are scale-specific, while shared-latent claims require conditional identity checks. Under that sharper test, E-DAIC/CMDC item-conditioned feature identity remains `0.991`, so direct fixed shared-symptom mappings remain too strong under the current frozen-feature and shallow-head contract.",
         "",
-        f"The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 share a strong one-factor/metric structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Threshold/scalar equivalence is weaker, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. MV13 external R mirt replication preserves the same qualitative anchor/DIF pattern, with no loading-DIF flags and threshold-DIF flags on `C02` and `C06`, but retains a configural convergence warning. {ctx5['finding_mv14']} The conservative manuscript claim is therefore strong structural similarity with bootstrap-stable anchors and localized threshold DIF, not a full scalar-invariance proof or full-method pass.",
+        f"The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 exhibit substantial common PHQ structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Exact threshold/scalar equivalence is not uniformly supported, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. MV13 external R mirt replication preserves the same qualitative anchor/DIF pattern, with no loading-DIF flags and threshold-DIF flags on `C02` and `C06`, but retains a configural convergence warning. MV14 then makes that warning explicit: the convergence-safe full ladder has `{ctx5['mv14_core_effective_draws']}/{ctx5['mv14_core_attempted_draws']}` effective draws after `{ctx5['mv14_core_fit_success_draws']}` fit-success draws, configural converges in `{ctx5['mv14_configural_converged_draws']}/{ctx5['mv14_core_attempted_draws']}`, and the stable metric/partial/scalar ladder has `{ctx5['mv14_stable_ladder_effective_draws']}` effective draws with AIC/BIC favoring `{ctx5['mv14_stable_ladder_best_aic_model']}`/`{ctx5['mv14_stable_ladder_best_bic_model']}`. {ctx5['finding_mv14']} The conservative manuscript claim is therefore substantial structural similarity with bootstrap-stable anchors and localized threshold DIF, not a bootstrap-confirmed global partial-invariance win, a full scalar-invariance proof, or a full-method pass.",
         "",
-        f"MV12 then tests whether multimodal features can predict the label-derived latent target, and the result should not be flattened into a simple failure. Within datasets, `X -> theta` is learnable: M12a improves theta MAE over the train-mean theta floor by `{fmt(ctx5['mv12_edaic_same_theta_delta'])}` on E-DAIC and `{fmt(ctx5['mv12_cmdc_same_theta_delta'])}` on CMDC. The predicted latent target is also far less dataset-identifiable than the upstream conditional feature space, with conditional identity BA `{fmt(ctx5['mv12_conditional_identity_ba'])}` versus the MV09 reference `0.991`.",
+        f"MV12 then tests whether multimodal features can predict the label-derived latent target, and the result should not be flattened into a simple failure. Within datasets, `X -> theta` is learnable: M12a improves theta MAE over the train-mean theta floor by `{fmt(ctx5['mv12_edaic_same_theta_delta'])}` on E-DAIC and `{fmt(ctx5['mv12_cmdc_same_theta_delta'])}` on CMDC. The predicted latent target is also far less dataset-identifiable than the upstream conditional feature space, with conditional identity BA `{fmt(ctx5['mv12_conditional_identity_ba'])}` versus the MV09 reference `0.991`. However, this is a low-dimensional-output result rather than a theta-specific invariance result: B3 direct itemwise Ridge compressed to theta has lower pooled observed macro MAE (`{fmt(ctx5['mv12_b3_observed_macro_mae'])}` versus `{fmt(ctx5['mv12_m12a_observed_macro_mae'])}`) and lower conditional identity BA (`{fmt(ctx5['mv12_b3_conditional_identity_ba'])}` versus `{fmt(ctx5['mv12_m12a_conditional_identity_ba'])}`) than M12a.",
         "",
-        f"The cost is predictive fidelity and latent-scale transfer. Same-dataset observed macro item MAE is worse than direct itemwise Ridge by `{fmt(ctx5['mv12_edaic_same_observed_delta'])}` on E-DAIC and `{fmt(ctx5['mv12_cmdc_same_observed_delta'])}` on CMDC, showing that a one-dimensional latent bottleneck loses item-profile information. Cross-dataset evaluation splits the story even more sharply: the latent route improves observed macro item MAE relative to direct item transfer by `{fmt(ctx5['mv12_cross_cmdc_to_edaic_observed_delta'])}` for CMDC-to-E-DAIC and `{fmt(ctx5['mv12_cross_edaic_to_cmdc_observed_delta'])}` for E-DAIC-to-CMDC, yet theta MAE remains worse than the target train-mean theta floor by `{fmt(ctx5['mv12_cross_cmdc_to_edaic_theta_delta'])}` and `{fmt(ctx5['mv12_cross_edaic_to_cmdc_theta_delta'])}`. The interpretation is therefore a predictive fidelity-dataset identifiability trade-off: psychometric latent compression removes substantial dataset information and can help observed-scale transfer, but it does not yet calibrate a fully transferable latent severity scale. The aggregate tradeoff analysis freezes the current latent-target line as paper-critical diagnostic evidence.",
+        f"The cost is predictive fidelity and zero-shot source-calibrated latent-scale transfer. Same-dataset observed macro item MAE is worse than direct itemwise Ridge by `{fmt(ctx5['mv12_edaic_same_observed_delta'])}` on E-DAIC and `{fmt(ctx5['mv12_cmdc_same_observed_delta'])}` on CMDC, showing that a one-dimensional latent bottleneck loses item-profile information. Cross-dataset evaluation splits the story even more sharply: the latent route improves observed macro item MAE relative to direct item transfer by `{fmt(ctx5['mv12_cross_cmdc_to_edaic_observed_delta'])}` for CMDC-to-E-DAIC and `{fmt(ctx5['mv12_cross_edaic_to_cmdc_observed_delta'])}` for E-DAIC-to-CMDC, yet theta MAE remains worse than the target train-mean theta floor by `{fmt(ctx5['mv12_cross_cmdc_to_edaic_theta_delta'])}` and `{fmt(ctx5['mv12_cross_edaic_to_cmdc_theta_delta'])}`. Because the external theta target is scored with the source measurement function on target subjects, this failure mixes `X -> theta` predictor transfer with target measurement-function mismatch. The interpretation is therefore a predictive fidelity-dataset identifiability trade-off: the latent/scalar prediction layer is less dataset-identifiable than upstream BGE features, but the current M12a head is Pareto-dominated by the dimension-matched B3 severity baseline and does not establish psychometric theta as uniquely more invariant. The aggregate tradeoff analysis freezes the current latent-target line as paper-critical diagnostic evidence.",
         "",
         f"The remaining Phase 5 findings define bounded supporting claims. PDCH supports an internal HAMD diagnostic bridge: item-derived total MAE is `5.693`, direct total MAE is `5.794`, and macro item MAE is `0.727`, but this does not support cross-dataset HAMD transfer. MODMA supports task-control evidence because task projection reduces feature task-identity BA from `0.762` to `0.570` while preserving the main task signal (`0.688`). EATD remains a negative SDS stress test because uncontrolled primary MAE is `28.810` versus a train-mean floor of `7.201`. {ctx5['finding_mv06']} Together, these results support a paper about measurement validity, protocol dependence, and bounded evidence localization, while keeping external HAMD transfer, EATD SDS generalization, positive MPDD context conditioning, and full-method construction blocked.",
         "",

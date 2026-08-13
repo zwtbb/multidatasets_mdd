@@ -63,6 +63,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_47_mv14_measurement_uncertainty_bootstrap_design.md`
   - `/root/autodl-tmp/memory/sessions/session_48_mv06_annotation_import_round2.md`
   - `/root/autodl-tmp/memory/sessions/session_49_mv14_measurement_uncertainty_bootstrap_run.md`
+  - `/root/autodl-tmp/memory/sessions/session_50_mv15_latent_conditioned_identity_design.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -128,11 +129,14 @@ MPDD 2025 is intentionally out of scope for current auditing.
 - Current next stage: measurement-aware validation under the Phase 5
   full-method gate. The current MV12 latent-target line is frozen as bounded
   diagnostic evidence, MV13 external psychometric replication is complete with
-  a convergence caveat, MV14 measurement-uncertainty/bootstrap is complete
-  with aggregate-only stability outputs, the Baselines/Failure-Mode/Measurement
-  Results scaffold is refreshed, and full-method work remains blocked until a
-  genuinely new predeclared mechanism changes the gate. The active next
-  experiment is to predeclare MV15 latent-conditioned dataset identity.
+  a convergence caveat, MV14 measurement-uncertainty/bootstrap has been
+  corrected to require convergence for model selection and LRT, the
+  Baselines/Failure-Mode/Measurement Results scaffold is refreshed with
+  downgraded MV12/MV14 wording, MV15 latent-conditioned identity is
+  predeclared with dimension-matched severity controls, and full-method work
+  remains blocked until a genuinely new runnable mechanism changes the gate.
+  The active next experiment is to implement and run the MV15
+  latent-conditioned identity runner.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -365,7 +369,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 36 Phase 5 run summaries and exports claim gates, evidence
+  It reads 37 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -378,9 +382,9 @@ MPDD 2025 is intentionally out of scope for current auditing.
   RQ4 is now `allowed_limited` as first-round aggregate evidence, while
   blocked claims include full M0/M1/M2/M3 method start, transferable
   shared-symptom representation, positive EATD SDS generalization, EATD
-  valence-adversarial design, and RQ3 context conditioning. After MV14, its
-  ranked next action is
-  `NEXT_PREDECLARE_MV15_LATENT_CONDITIONED_IDENTITY`.
+  valence-adversarial design, and RQ3 context conditioning. After MV15 design,
+  its ranked next action is
+  `NEXT_IMPLEMENT_MV15_LATENT_CONDITIONED_IDENTITY_RUNNER`.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -500,10 +504,15 @@ MPDD 2025 is intentionally out of scope for current auditing.
   It reads only aggregate MV09/MV12 summaries and aggregate MV07-MV12
   accuracy-invariance tables. Treat as
   `complete_freeze_current_mv12_latent_target_line`: current latent-target
-  evidence improves same-dataset theta utility and conditional identity, but
-  observed-scale safety and external theta transfer remain decisive blockers.
-  Artifact hygiene passed; next work is manuscript drafting or optional
-  E-DAIC MV06 strengthening, not another small shallow-head iteration.
+  evidence improves same-dataset theta utility and lowers identity versus
+  upstream BGE features, but observed-scale safety and zero-shot
+  source-calibrated external theta transfer remain decisive blockers. The
+  corrected interpretation is that M12a is not uniquely more invariant than
+  dimension-matched severity outputs: B3 direct itemwise Ridge compressed to
+  theta has lower pooled observed macro MAE (`0.692` vs `0.701`) and lower
+  conditional identity (`0.579` vs `0.602`). Artifact hygiene passed; next work
+  is MV15 with dimension-matched controls, not another small shallow-head
+  iteration.
 - Phase 5 `P5_MV13 external_psychometric_replication_design` and
   `P5_MV13 external_psychometric_replication` are complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication_design/`
@@ -533,18 +542,41 @@ MPDD 2025 is intentionally out of scope for current auditing.
   objects, and detailed logs stay local-only.
 - Phase 5 `P5_MV14 measurement_uncertainty_bootstrap` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/`.
-  It ran the predeclared smoke/core/DIF tiers with R=`10/200/100`; core
-  effective R is `185`, DIF effective R is `100`, and artifact hygiene passed.
-  Bootstrap-stable MV10 anchors are `C01`, `C04`, `C05`, and `C07`; loading DIF
-  remains sparse; threshold-DIF frequency remains concentrated on `C02` and
-  `C06`; and AIC/BIC model selection remains split (`configural`/`scalar`).
-  Treat as cautious PHQ partial-invariance uncertainty evidence only, not full
-  method authorization. Local item-response inputs, bootstrap draws, fitted
-  parameters, CI values, theta/factor scores, model objects, and detailed logs
-  stay local-only.
+  It ran the predeclared smoke/core/DIF tiers with R=`10/200/100` after the
+  convergence-safe correction. Full-ladder model selection and LRT now require
+  `fit_success && converged`; non-converged fits remain visible in attempted
+  and failed denominators. Convergence-safe full-ladder effective core R is
+  `120/200` after `185/200` fit-success draws, configural converges in
+  `120/200`, the stable metric/partial/scalar ladder has `197` effective draws,
+  DIF effective R is `100`, and artifact hygiene passed. Bootstrap-stable MV10
+  anchors are `C01`, `C04`, `C05`, and `C07`; loading DIF remains sparse;
+  threshold-DIF frequency remains concentrated on `C02` and `C06`; full-ladder
+  AIC/BIC model selection remains split (`configural`/`scalar`), while the
+  stable ladder prefers `partial_mv10`/`scalar`. Treat as item-level
+  measurement-shift evidence with global model-selection uncertainty, not as a
+  bootstrap-confirmed global partial-invariance result or full-method
+  authorization. Local item-response inputs, bootstrap draws, fitted parameters,
+  CI values, theta/factor scores, model objects, and detailed logs stay
+  local-only.
+- Phase 5 `P5_MV15 latent_conditioned_dataset_identity_design` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity_design/`.
+  It is a design/predeclaration contract, not an identity-probe run. It reads
+  only aggregate MV09/MV10/MV11/MV12/MV13/MV14/full-gate artifacts and exports
+  dataset-scope, analysis-variable, conditioning-ladder, identity-probe,
+  pass/fail-gate, local-only-boundary, implementation-queue, method-reference,
+  report, run-summary, and hygiene artifacts. The primary future scope is
+  E-DAIC/CMDC PHQ over aligned BGE features; sensitivity scopes are CMDC/PDCH
+  severity and three-way severity-only checks. The design has 10 conditioning
+  ladder rows, 7 identity-probe rows, and 8 pass/fail gates, including raw,
+  total, predicted-total, observed-item, B3 itemwise-theta, psychometric-theta,
+  covariate, predicted-output, and severity-only controls; artifact hygiene
+  passed. Full method remains blocked until the future MV15 runner produces
+  aggregate identity results and MV16 scale calibration is predeclared if still
+  coherent. Theta scores, row predictions, residualized features, nuisance
+  directions, split maps, and model artifacts stay local-only.
 - Diagnostic measurement-audit paper claim tables are complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`. They export
-  paper-facing allowed/blocked claim boundaries, fourteen key numeric findings,
+  paper-facing allowed/blocked claim boundaries, fifteen key numeric findings,
   and seventeen literature-positioning rows from aggregate artifacts plus web-checked
   primary sources. Artifact hygiene passed. Treat them as manuscript
   scaffolding, not a replacement for source experiment artifacts.
@@ -560,10 +592,11 @@ MPDD 2025 is intentionally out of scope for current auditing.
   generated by `scripts/build_diagnostic_paper_results_sections.py` from
   aggregate Phase 2/3/5 artifacts only, and `artifact_hygiene_passed=true`.
   It frames MV12 as a predictive fidelity-dataset identifiability trade-off:
-  same-dataset theta utility and conditional identity improve, cross-dataset
-  observed-scale transfer improves versus direct item transfer, but
-  same-dataset observed-scale safety and external theta transfer still block a
-  positive full-method claim.
+  same-dataset theta utility improves and low-dimensional outputs are less
+  dataset-identifiable than upstream BGE features, but B3 dimension-matched
+  severity dominates M12a on pooled fidelity and identity, while same-dataset
+  observed-scale safety and zero-shot source-calibrated theta transfer still
+  block a positive full-method claim.
 
 Phase 2 gate status:
 
@@ -838,7 +871,7 @@ Key Phase 2 outputs:
   covariates. Treat scale-specific post-head prediction identity as diagnostic
   unless the output space is explicitly shared. Current conditional BGE identity
   remains high, so the project pivots from a generic diagnostic audit toward a
-  measurement-shift / measurement-invariance paper and a label-only
+  measurement-shift / measurement-validity paper and a label-only
   psychometric baseline.
 - MV10 psychometric-baseline decision: the E-DAIC PHQ-8 and CMDC PHQ-9 labels
   support an approximate common one-factor/metric screen, but threshold/scalar
@@ -866,15 +899,17 @@ Key Phase 2 outputs:
   fails. Treat MV12 as bounded measurement-shift evidence.
 - MV12 tradeoff-analysis decision: aggregate-only comparison across MV07-MV12
   closes the current latent-target line. Freeze it as paper-critical diagnostic
-  evidence; do not start full M0/M1/M2/M3 or another small shallow-head RQ1
-  variant unless a genuinely new measurement, feature, or data mechanism is
-  predeclared.
+  evidence with a dimension-matched severity caveat: M12a is lower-identity
+  than upstream BGE features but is Pareto-dominated by B3 direct itemwise Ridge
+  compressed to theta. Do not start full M0/M1/M2/M3 or another small
+  shallow-head RQ1 variant unless a genuinely new measurement, feature, or data
+  mechanism is predeclared.
 - MV13 external-psychometric decision: R/lavaan/mirt are now available and
   version-captured. External R `mirt::multipleGroup` replication preserves the
-  MV10/MV11 qualitative partial-invariance conclusion, but the configural model
-  convergence warning and small CMDC item-labeled N required MV14 uncertainty
-  evidence before stronger item-level DIF wording. Treat MV13 as label-only
-  measurement evidence, not multimodal method success.
+  MV10/MV11 qualitative anchor/DIF localization pattern, but the configural
+  model convergence warning and small CMDC item-labeled N required MV14
+  uncertainty evidence before stronger item-level DIF wording. Treat MV13 as
+  label-only measurement evidence, not multimodal method success.
 - MV14 measurement-uncertainty design decision: use group-wise subject
   bootstrap over the same E-DAIC/CMDC PHQ C01-C08 item-response boundary to
   quantify convergence, AIC/BIC model-selection frequency, anchor support,
@@ -883,27 +918,34 @@ Key Phase 2 outputs:
   stability R=200, item-DIF stability R=100, plus optional `boot.mirt` and
   `boot.LR` sensitivity tiers. MV14 is uncertainty evidence only, not full
   method authorization.
-- MV14 measurement-uncertainty run decision: the default aggregate bootstrap
-  supports cautious PHQ partial-invariance wording. All four MV10 anchors have
+- MV14 measurement-uncertainty run decision: the corrected aggregate bootstrap
+  supports item-level PHQ measurement-shift wording. All four MV10 anchors have
   support frequency at least `0.93`, no item exceeds loading-DIF frequency
   `0.50`, and threshold-DIF frequencies are highest for `C02` (`0.80`) and
-  `C06` (`0.76`). Core model stability retains uncertainty: configural fit
-  succeeds in `185/200` core draws and converges in `120/200`, AIC most often
-  selects configural while BIC most often selects scalar. Do not use MV14 as
-  full-method evidence.
+  `C06` (`0.76`). Convergence-safe full-ladder effective R is `120/200` after
+  `185/200` fit-success draws; configural converges in `120/200`; the stable
+  metric/partial/scalar ladder has `197` effective draws. Use MV14 for stable
+  anchors, sparse loading DIF, localized threshold non-equivalence, and global
+  model-selection uncertainty. Do not use MV14 as bootstrap-confirmed global
+  partial invariance or full-method evidence.
 - Diagnostic results-section decision: use
   `scripts/build_diagnostic_paper_results_sections.py` to regenerate the
   Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold from
   aggregate artifacts only. Its manuscript framing should treat MV12 as a
   predictive fidelity-dataset identifiability trade-off, not as a simple model
   failure or a positive full-method result.
+- MV15 latent-conditioned identity design decision: MV15 is predeclared with
+  dimension-matched controls. The future runner must compare `I(Z;D|theta)` to
+  raw feature identity, observed labels, PHQ total, predicted total, B3
+  itemwise-theta severity, predicted psychometric theta, covariates, and
+  severity-only external sensitivities. A pass can only update identity-gate
+  wording or motivate MV16, not authorize full M0/M1/M2/M3 construction.
 - Next measurement-aware route decision: the next experiments should continue
-  in order as MV15 latent-conditioned dataset identity and MV16 cross-dataset
-  theta calibration / few-shot scale linking. Do not run MV08c-like
-  shallow-head variants, EATD
-  valence-adversarial modules, naive personality conditioning, or a
-  15-dimensional free latent symptom model without new evidence and a new
-  predeclared contract.
+  in order as MV15 latent-conditioned dataset identity runner and MV16
+  DIF-guided few-shot measurement calibration. Do not run MV08c-like
+  shallow-head variants, EATD valence-adversarial modules, naive personality
+  conditioning, or a 15-dimensional free latent symptom model without new
+  evidence and a new predeclared contract.
 
 ## Data Quality Watchlist
 
@@ -1010,19 +1052,20 @@ plaintext credential-like content before committing on the clean remote lineage.
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
    revises identity-gate semantics, MV10 provides an approximate PHQ
-   partial-invariance screen, MV11 provides formal label-only graded-response
+   common-structure screen, MV11 provides formal label-only graded-response
    confirmation with a BIC caveat, MV12 provides a completed but blocked
    two-stage latent-target result, and MV12 aggregate tradeoff analysis freezes
-   the current latent-target line. MV13 externally replicates the MV11
-   qualitative PHQ partial-invariance pattern with R `mirt`, while retaining a
-   configural convergence caveat. MV14 completes the bootstrap uncertainty
-   layer and supports cautious PHQ partial-invariance wording. Full method
-   construction remains blocked.
-   The paper direction is measurement shift / measurement invariance with
-   bounded negative and diagnostic evidence. The Baselines, Failure-Mode
-   Diagnostics, and Measurement Results scaffold is refreshed. The next active
-   task is to predeclare MV15 latent-conditioned identity, followed by MV16
-   cross-dataset theta calibration / few-shot scale linking; secondary MV06
-   work can add agreement uncertainty analysis and resolve the one incomplete
-   local candidate before stronger
-   evidence-localization claims.
+   the current latent-target line with a dimension-matched B3 caveat. MV13
+   externally replicates the MV11 anchor/DIF localization pattern with R
+   `mirt`, while retaining a configural convergence caveat. MV14 completes the
+   corrected convergence-safe bootstrap uncertainty layer and supports
+   item-level stable-anchor/localized-threshold-DIF wording with uncertain
+   global model selection. MV15 is now predeclared with dimension-matched
+   severity controls. Full method construction remains blocked.
+   The paper direction is measurement shift / measurement validity with bounded
+   negative and diagnostic evidence. The Baselines, Failure-Mode Diagnostics,
+   and Measurement Results scaffold is refreshed. The next active task is to
+   implement and run MV15 latent-conditioned identity, followed by MV16
+   DIF-guided few-shot measurement calibration; secondary MV06 work can add
+   agreement uncertainty analysis and resolve the one incomplete local
+   candidate before stronger evidence-localization claims.

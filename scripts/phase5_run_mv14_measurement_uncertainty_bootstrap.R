@@ -38,6 +38,7 @@ item_labels <- c(
 lrt_alpha <- 0.01
 bic_improvement_tol <- 2.0
 core_ids <- c("configural", "metric", "scalar", "partial_mv10")
+stable_ladder_ids <- c("metric", "partial_mv10", "scalar")
 
 responses <- read.csv(input_csv, stringsAsFactors = FALSE, check.names = FALSE)
 roles <- read.csv(roles_csv, stringsAsFactors = FALSE)
@@ -203,20 +204,41 @@ decision_for <- function(p_value, delta_bic, df) {
 lrt_row <- function(tier_id, draw_id, comparison_id, restricted_id, full_id, fit_rows) {
   restricted <- fit_rows[fit_rows$model_id == restricted_id, , drop = FALSE]
   full <- fit_rows[fit_rows$model_id == full_id, , drop = FALSE]
-  ok <- nrow(restricted) == 1 && nrow(full) == 1 && isTRUE(restricted$fit_success[[1]]) && isTRUE(full$fit_success[[1]])
-  if (!ok) {
+  has_rows <- nrow(restricted) == 1 && nrow(full) == 1
+  fit_ok <- has_rows && isTRUE(restricted$fit_success[[1]]) && isTRUE(full$fit_success[[1]])
+  convergence_ok <- fit_ok && isTRUE(restricted$converged[[1]]) && isTRUE(full$converged[[1]])
+  finite_ok <- convergence_ok &&
+    is.finite(restricted$parameter_count[[1]]) && is.finite(full$parameter_count[[1]]) &&
+    is.finite(restricted$log_likelihood[[1]]) && is.finite(full$log_likelihood[[1]]) &&
+    is.finite(restricted$aic[[1]]) && is.finite(full$aic[[1]]) &&
+    is.finite(restricted$bic[[1]]) && is.finite(full$bic[[1]])
+  if (!finite_ok) {
+    failure_reason <- "comparison_failed_missing_fit"
+    if (has_rows && !fit_ok) {
+      failure_reason <- "comparison_failed_fit_error"
+    } else if (fit_ok && !convergence_ok) {
+      failure_reason <- "comparison_failed_nonconverged_fit"
+    } else if (convergence_ok && !finite_ok) {
+      failure_reason <- "comparison_failed_nonfinite_fit"
+    }
     return(data.frame(
       tier_id = tier_id,
       draw_id = draw_id,
       comparison_id = comparison_id,
       restricted_model = restricted_id,
       full_model = full_id,
+      restricted_fit_success = if (nrow(restricted) == 1) restricted$fit_success[[1]] else FALSE,
+      full_fit_success = if (nrow(full) == 1) full$fit_success[[1]] else FALSE,
+      restricted_converged = if (nrow(restricted) == 1) restricted$converged[[1]] else FALSE,
+      full_converged = if (nrow(full) == 1) full$converged[[1]] else FALSE,
+      comparison_valid = FALSE,
+      failure_reason = failure_reason,
       df = NA_integer_,
       lr_statistic = NA_real_,
       p_value = NA_real_,
       delta_aic_restricted_minus_full = NA_real_,
       delta_bic_restricted_minus_full = NA_real_,
-      decision = "comparison_failed_missing_fit",
+      decision = failure_reason,
       stringsAsFactors = FALSE
     ))
   }
@@ -231,6 +253,12 @@ lrt_row <- function(tier_id, draw_id, comparison_id, restricted_id, full_id, fit
     comparison_id = comparison_id,
     restricted_model = restricted_id,
     full_model = full_id,
+    restricted_fit_success = restricted$fit_success[[1]],
+    full_fit_success = full$fit_success[[1]],
+    restricted_converged = restricted$converged[[1]],
+    full_converged = full$converged[[1]],
+    comparison_valid = TRUE,
+    failure_reason = "",
     df = df,
     lr_statistic = lr,
     p_value = p_value,
@@ -504,19 +532,31 @@ summarize_core <- function(rows) {
   do.call(rbind, out)
 }
 
-summarize_selection <- function(rows) {
+summarize_selection_for <- function(rows, model_ids, selection_family) {
   out <- list()
   if (nrow(rows) == 0) {
     return(data.frame())
   }
   for (tier_id in sort(unique(rows$tier_id))) {
-    tier_rows <- rows[rows$tier_id == tier_id & rows$model_id %in% core_ids, , drop = FALSE]
+    tier_rows <- rows[rows$tier_id == tier_id & rows$model_id %in% model_ids, , drop = FALSE]
     draw_ids <- sort(unique(tier_rows$draw_id))
     choices <- data.frame()
+    attempted <- length(draw_ids)
+    all_fit_success_draws <- 0L
+    all_converged_draws <- 0L
     for (draw_id in draw_ids) {
       draw_rows <- tier_rows[tier_rows$draw_id == draw_id, , drop = FALSE]
-      ok <- all(core_ids %in% draw_rows$model_id) && all(draw_rows$fit_success) &&
-        all(is.finite(draw_rows$aic)) && all(is.finite(draw_rows$bic))
+      has_all_models <- all(model_ids %in% draw_rows$model_id)
+      fit_ok <- has_all_models && all(draw_rows$fit_success)
+      convergence_ok <- fit_ok && all(draw_rows$converged)
+      finite_ok <- convergence_ok && all(is.finite(draw_rows$aic)) && all(is.finite(draw_rows$bic))
+      if (fit_ok) {
+        all_fit_success_draws <- all_fit_success_draws + 1L
+      }
+      if (convergence_ok) {
+        all_converged_draws <- all_converged_draws + 1L
+      }
+      ok <- finite_ok
       if (ok) {
         choices <- rbind(
           choices,
@@ -540,12 +580,19 @@ summarize_selection <- function(rows) {
         next
       }
       for (model_id in core_ids) {
+        if (!(model_id %in% model_ids)) {
+          next
+        }
         selected <- sum(criterion_rows$selected_model == model_id)
         bounds <- wilson_bounds(selected, effective)
         out[[length(out) + 1]] <- data.frame(
           tier_id = tier_id,
+          selection_family = selection_family,
           criterion = criterion,
           model_id = model_id,
+          attempted_draws = attempted,
+          all_fit_success_draws = all_fit_success_draws,
+          all_converged_draws = all_converged_draws,
           selected_draws = selected,
           effective_draws = effective,
           selection_frequency = if (effective > 0) selected / effective else NA_real_,
@@ -562,6 +609,14 @@ summarize_selection <- function(rows) {
   do.call(rbind, out)
 }
 
+summarize_selection <- function(rows) {
+  summarize_selection_for(rows, core_ids, "full_ladder_configural_metric_partial_scalar")
+}
+
+summarize_stable_ladder_selection <- function(rows) {
+  summarize_selection_for(rows, stable_ladder_ids, "stable_ladder_metric_partial_scalar")
+}
+
 summarize_decisions <- function(rows) {
   if (nrow(rows) == 0) {
     return(data.frame())
@@ -570,19 +625,27 @@ summarize_decisions <- function(rows) {
   keys <- unique(rows[, c("tier_id", "comparison_id")])
   for (idx in seq_len(nrow(keys))) {
     subset_rows <- rows[rows$tier_id == keys$tier_id[[idx]] & rows$comparison_id == keys$comparison_id[[idx]], , drop = FALSE]
-    effective <- nrow(subset_rows)
+    attempted <- nrow(subset_rows)
+    valid_comparisons <- sum(subset_rows$comparison_valid, na.rm = TRUE)
     for (decision in sort(unique(subset_rows$decision))) {
       count <- sum(subset_rows$decision == decision)
-      bounds <- wilson_bounds(count, effective)
+      bounds <- wilson_bounds(count, attempted)
+      valid_count <- if (startsWith(decision, "comparison_failed")) NA_integer_ else count
+      valid_bounds <- wilson_bounds(valid_count, valid_comparisons)
       out[[length(out) + 1]] <- data.frame(
         tier_id = keys$tier_id[[idx]],
         comparison_id = keys$comparison_id[[idx]],
         decision = decision,
         decision_draws = count,
-        effective_draws = effective,
-        decision_frequency = if (effective > 0) count / effective else NA_real_,
+        attempted_draws = attempted,
+        effective_draws = valid_comparisons,
+        failed_draws = attempted - valid_comparisons,
+        decision_frequency = if (attempted > 0) count / attempted else NA_real_,
+        valid_decision_frequency = if (!is.na(valid_count) && valid_comparisons > 0) valid_count / valid_comparisons else NA_real_,
         decision_ci_low = bounds[[1]],
         decision_ci_high = bounds[[2]],
+        valid_decision_ci_low = valid_bounds[[1]],
+        valid_decision_ci_high = valid_bounds[[2]],
         stringsAsFactors = FALSE
       )
     }
@@ -711,6 +774,7 @@ summarize_runtime_messages <- function(rows) {
 
 core_summary <- summarize_core(fit_rows)
 selection_summary <- summarize_selection(fit_rows)
+stable_ladder_selection_summary <- summarize_stable_ladder_selection(fit_rows)
 decision_summary <- summarize_decisions(comparison_rows)
 itemfit_summary <- summarize_itemfit(itemfit_rows)
 dif_summary <- summarize_dif(dif_rows)
@@ -777,6 +841,7 @@ execution_summary <- data.frame(
 
 write.csv(core_summary, file.path(out_dir, "core_model_stability_summary.csv"), row.names = FALSE)
 write.csv(selection_summary, file.path(out_dir, "model_selection_frequency.csv"), row.names = FALSE)
+write.csv(stable_ladder_selection_summary, file.path(out_dir, "stable_ladder_model_selection_frequency.csv"), row.names = FALSE)
 write.csv(decision_summary, file.path(out_dir, "invariance_decision_frequency.csv"), row.names = FALSE)
 write.csv(itemfit_summary, file.path(out_dir, "itemfit_stability_summary.csv"), row.names = FALSE)
 write.csv(dif_summary, file.path(out_dir, "item_dif_stability_summary.csv"), row.names = FALSE)

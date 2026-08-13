@@ -2,5 +2,6 @@ alignment_id,mv11_value,mv13_value,mv14_value,aligned,interpretation
 mv10_anchor_set_vs_mv14_stable_anchors,C01;C04;C05;C07,C01;C04;C05;C07,C01;C04;C05;C07,True,Stable anchors require bootstrap support frequency at least 0.70.
 loading_dif_sparsity,0,none,none,True,High MV14 loading-DIF frequency uses the predeclared >0.50 rule.
 threshold_dif_localization,2,C02;C06,C02;C06,True,Threshold-DIF wording is strongest if C02 and C06 remain the top two frequencies.
-aic_model_preference,partial_mv10,partial_mv10,configural,False,"AIC/BIC disagreement is reported as uncertainty, not forced into one model."
-bic_model_preference,scalar,scalar,scalar,True,BIC model preference is summarized separately from AIC.
+aic_model_preference,partial_mv10,partial_mv10,configural,False,"AIC full-ladder preference is convergence-safe and reported as model-selection sensitivity, not a global-invariance proof."
+bic_model_preference,scalar,scalar,scalar,True,BIC model preference is summarized separately because its complexity penalty answers a different question from LRT/AIC.
+stable_ladder_sensitivity,metric;partial_mv10;scalar,metric/partial/scalar mostly converged,AIC=partial_mv10;BIC=scalar;effective=197,True,Stable-ladder sensitivity excludes configural because configural convergence is the main numerical instability.
