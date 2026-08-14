@@ -566,9 +566,13 @@ representation without those controls.
   stronger RQ4 wording if available.
 - Paper consolidation: aggregate-only manuscript draft v0.1 is generated under
   `analysis/diagnostic_measurement_audit_paper/` with traceability, open
-  editing items, and artifact-hygiene checks. The next paper task is human
-  manuscript editing, bibliography conversion, and cross-reference cleanup
-  without strengthening claims beyond the full-method gate.
+  editing items, and artifact-hygiene checks. A first bibliography handoff is
+  also generated there as `references.bib`, `citation_registry.csv`, and
+  `citation_source_map.csv`, with the IRT DIF source hint corrected to Bulut
+  and Suh 2017. The next paper task is citation-key insertion,
+  venue-style reference formatting, human manuscript editing, and
+  cross-reference cleanup without strengthening claims beyond the full-method
+  gate.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

@@ -2,7 +2,7 @@
 
 A Measurement-Invariance View of Cross-Dataset Multimodal Depression Detection
 
-Generated: `2026-08-14T06:23:28+00:00`
+Generated: `2026-08-14T06:53:05+00:00`
 
 ## Draft Status
 
@@ -12,6 +12,7 @@ This is a generated manuscript draft for human editing. It consolidates aggregat
 - Claim table status: `ready_for_diagnostic_paper_drafting`.
 - Data-governance section status: `ready_for_manuscript_drafting`.
 - Results scaffold status: `ready_for_manuscript_editing`.
+- Bibliography status: `ready_for_manuscript_citation_editing`; hygiene passed: `True`.
 
 ## Abstract
 
@@ -151,7 +152,7 @@ The full traceability matrix is stored in `manuscript_traceability_matrix.csv`. 
 
 | id | priority | area | item | blocking |
 | --- | --- | --- | --- | --- |
-| M001 | high | manuscript | Convert citation hints and source URLs into the final target venue's bibliography format. | True |
+| M001 | high | manuscript | Insert generated citation keys from references.bib into prose and adapt BibTeX/reference formatting to the final target venue. | True |
 | M002 | high | claim_boundary | Keep full M0/M1/M2/M3 method claims blocked unless a genuinely new predeclared mechanism changes the full-method gate. | True |
 | M003 | medium | RQ4 | Resolve the one incomplete local CMDC MV06 candidate if annotator rows become available; otherwise keep RQ4 as first-round aggregate credibility evidence. | False |
 | M004 | medium | limitations | Decide whether to run a larger corrected MV14 bootstrap only if interval precision becomes reviewer-critical. | False |
@@ -160,32 +161,32 @@ The full traceability matrix is stored in `manuscript_traceability_matrix.csv`. 
 
 ## Source Context
 
-These source hints are for manuscript drafting and bibliography conversion; final submission should use the target venue's citation format.
+These source hints are mapped to citation keys for manuscript drafting; final submission should use the target venue's citation format.
 
-| source | URL | use |
-| --- | --- | --- |
-| Chalmers 2012, Journal of Statistical Software | https://www.jstatsoft.org/article/view/v048i06 | mirt supplies the external multidimensional IRT implementation used in MV13 to replicate the PHQ anchor/DIF and measurement-shift pattern. |
-| Delamain et al. 2024, Journal of Affective Disorders | https://pubmed.ncbi.nlm.nih.gov/37989437/ | PHQ-9 measurement invariance and DIF are active clinical-measurement questions, supporting our decision to frame RQ1 as measurement validity rather than only model architecture. |
-| EATD-Corpus repository | https://github.com/Fancy-Block/EATD-Corpus | Supports EATD as Chinese audio/text depression data with emotion-related tasks. |
-| Fu et al. 2025, ACM MM Challenge | https://hacilab.github.io/MPDDChallenge.github.io/ | The MPDD challenge explicitly foregrounds age, health, living condition, and personality context, supporting our RQ3 treatment of population heterogeneity. |
-| Fu et al. 2026, AAAI | https://ojs.aaai.org/index.php/AAAI/article/view/37159 | P3HF shows strong personality-aware modeling on MPDD-Young, so our paper should not claim generic personality-aware fusion as the novelty. |
-| Galenkamp et al. 2017, BMC Psychiatry | https://pmc.ncbi.nlm.nih.gov/articles/PMC5655879/ | PHQ-9 measurement invariance methods provide the template for the next label-only psychometric baseline before another multimodal head iteration. |
-| Gratch et al. 2014, LREC | https://aclanthology.org/L14-1421/ | DAIC contains clinical interviews with audio, video, questionnaire, transcription, and verbal/nonverbal annotation, supporting our governance-first treatment of interview corpora. |
-| Ishikawa and Duke 2026, arXiv | https://arxiv.org/abs/2605.23977 | A recent multi-probe depression benchmark audit overlaps several datasets, so our novelty should emphasize measurement shift, conditional identity, and measurement validity rather than a generic dataset audit alone. |
-| Jeong and Lee 2017, Frontiers in Education | https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2017.00051/full | IRT likelihood-ratio DIF testing supports MV11 item-level loading and threshold DIF diagnostics. |
-| MODMA dataset description | https://reshare.ukdataservice.ac.uk/854301/ | Supports MODMA as an interview/reading/picture-description task robustness dataset. |
-| MPDD Challenge official page | https://hacilab.github.io/MPDDChallenge.github.io/ | Supports MPDD as the age/personality/health/gait context dataset. |
-| Ma et al. 2021, Frontiers in Psychiatry | https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.747139/full | PHQ-9 and HAMD-17 can correlate strongly while differing in item discrimination and severity assessment, supporting our scale-specific measurement framing. |
-| Nguyen et al. 2022, ACL | https://aclanthology.org/2022.acl-long.578/ | Questionnaire-grounded symptom modeling is prior positive evidence for symptom-aware OOD detection; our paper should position its contribution as measuring when cross-dataset symptom targets are not equivalent. |
-| PDCH dataset page | https://github.com/Miraclemarvel55/PDCH | PDCH provides real consultation audio/text paired with professional HAMD-17 assessments, matching our bounded PDCH-only HAMD diagnostic claim. |
-| PDCH repository and dataset paper | https://github.com/Miraclemarvel55/PDCH | Supports PDCH as a bounded HAMD-17 consultation validation dataset. |
-| Patel et al. 2019, Depression and Anxiety | https://pmc.ncbi.nlm.nih.gov/articles/PMC6736700/ | PHQ-9 measurement-invariance work shows why group and dataset comparisons require psychometric checks before interpreting score or model differences. |
-| Samejima 1969, Psychometrika Monograph 17 | https://www.psychometricsociety.org/sites/main/files/file-attachments/mn17.pdf | The graded-response model provides the ordinal IRT family used by MV11/MV13 to separate label measurement from multimodal prediction. |
-| USC ICT DAIC-WOZ and Extended DAIC download page | https://dcapswoz.ict.usc.edu/ | Official access terms motivate keeping real row-level manifests, paths, and private review material out of the public repository. |
-| Zhang and Poellabauer 2025, Findings of EMNLP | https://aclanthology.org/2025.findings-emnlp.650/ | Recent interviewer-bias work motivates treating question type and dialogue protocol as nuisance factors, while our audit generalizes this concern across datasets, tasks, valence, and scale contracts. |
-| Zhou et al. 2026, Journal of Clinical Epidemiology | https://www.jclinepi.com/article/S0895-4356(26)00082-X/abstract | A 2026 equipercentile-linking study reports significant correlations but systematic differences among depression scales, aligning with our negative shared-space evidence. |
-| Zou et al. 2022, IEEE Transactions on Affective Computing | https://doi.org/10.1109/TAFFC.2022.3181210 | Supports CMDC as Chinese clinical-interview validation with PHQ-9 and HAMD labels. |
-| mirt multipleGroup documentation | https://philchalmers.github.io/mirt/html/multipleGroup.html | The multipleGroup interface documents the multi-group invariance and DIF workflow used for the MV13 external replication. |
+| citation key | source | URL | use |
+| --- | --- | --- | --- |
+| bulut2017detecting | Bulut and Suh 2017, Frontiers in Education | https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2017.00051/full | IRT likelihood-ratio DIF testing supports MV11 item-level loading and threshold DIF diagnostics. |
+| cai2020modma | MODMA dataset description | https://reshare.ukdataservice.ac.uk/854301/ | Supports MODMA as an interview/reading/picture-description task robustness dataset. |
+| chalmers2012mirt | Chalmers 2012, Journal of Statistical Software | https://www.jstatsoft.org/article/view/v048i06 | mirt supplies the external multidimensional IRT implementation used in MV13 to replicate the PHQ anchor/DIF and measurement-shift pattern. |
+| chalmers2026mirtmultiplegroup | mirt multipleGroup documentation | https://philchalmers.github.io/mirt/html/multipleGroup.html | The multipleGroup interface documents the multi-group invariance and DIF workflow used for the MV13 external replication. |
+| delamain2024measurement | Delamain et al. 2024, Journal of Affective Disorders | https://pubmed.ncbi.nlm.nih.gov/37989437/ | PHQ-9 measurement invariance and DIF are active clinical-measurement questions, supporting our decision to frame RQ1 as measurement validity rather than only model architecture. |
+| fu2025mpddchallenge | Fu et al. 2025, ACM MM Challenge | https://hacilab.github.io/MPDDChallenge.github.io/ | The MPDD challenge explicitly foregrounds age, health, living condition, and personality context, supporting our RQ3 treatment of population heterogeneity. |
+| fu2025mpddchallenge | MPDD Challenge official page | https://hacilab.github.io/MPDDChallenge.github.io/ | Supports MPDD as the age/personality/health/gait context dataset. |
+| fu2026p3hf | Fu et al. 2026, AAAI | https://ojs.aaai.org/index.php/AAAI/article/view/37159 | P3HF shows strong personality-aware modeling on MPDD-Young, so our paper should not claim generic personality-aware fusion as the novelty. |
+| galenkamp2017measurement | Galenkamp et al. 2017, BMC Psychiatry | https://pmc.ncbi.nlm.nih.gov/articles/PMC5655879/ | PHQ-9 measurement invariance methods provide the template for the next label-only psychometric baseline before another multimodal head iteration. |
+| gratch2014distress | Gratch et al. 2014, LREC | https://aclanthology.org/L14-1421/ | DAIC contains clinical interviews with audio, video, questionnaire, transcription, and verbal/nonverbal annotation, supporting our governance-first treatment of interview corpora. |
+| ishikawa2026comprehensive | Ishikawa and Duke 2026, arXiv | https://arxiv.org/abs/2605.23977 | A recent multi-probe depression benchmark audit overlaps several datasets, so our novelty should emphasize measurement shift, conditional identity, and measurement validity rather than a generic dataset audit alone. |
+| ma2021phqhamd | Ma et al. 2021, Frontiers in Psychiatry | https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.747139/full | PHQ-9 and HAMD-17 can correlate strongly while differing in item discrimination and severity assessment, supporting our scale-specific measurement framing. |
+| nguyen2022improving | Nguyen et al. 2022, ACL | https://aclanthology.org/2022.acl-long.578/ | Questionnaire-grounded symptom modeling is prior positive evidence for symptom-aware OOD detection; our paper should position its contribution as measuring when cross-dataset symptom targets are not equivalent. |
+| patel2019measurement | Patel et al. 2019, Depression and Anxiety | https://pmc.ncbi.nlm.nih.gov/articles/PMC6736700/ | PHQ-9 measurement-invariance work shows why group and dataset comparisons require psychometric checks before interpreting score or model differences. |
+| pdchrepository2026 | PDCH dataset page | https://github.com/Miraclemarvel55/PDCH | PDCH provides real consultation audio/text paired with professional HAMD-17 assessments, matching our bounded PDCH-only HAMD diagnostic claim. |
+| pdchrepository2026 | PDCH repository and dataset paper | https://github.com/Miraclemarvel55/PDCH | Supports PDCH as a bounded HAMD-17 consultation validation dataset. |
+| samejima1969graded | Samejima 1969, Psychometrika Monograph 17 | https://www.psychometricsociety.org/sites/main/files/file-attachments/mn17.pdf | The graded-response model provides the ordinal IRT family used by MV11/MV13 to separate label measurement from multimodal prediction. |
+| shen2022automatic | EATD-Corpus repository | https://github.com/Fancy-Block/EATD-Corpus | Supports EATD as Chinese audio/text depression data with emotion-related tasks. |
+| uscict2026daic | USC ICT DAIC-WOZ and Extended DAIC download page | https://dcapswoz.ict.usc.edu/ | Official access terms motivate keeping real row-level manifests, paths, and private review material out of the public repository. |
+| zhang2025interviewer | Zhang and Poellabauer 2025, Findings of EMNLP | https://aclanthology.org/2025.findings-emnlp.650/ | Recent interviewer-bias work motivates treating question type and dialogue protocol as nuisance factors, while our audit generalizes this concern across datasets, tasks, valence, and scale contracts. |
+| zhou2026depression | Zhou et al. 2026, Journal of Clinical Epidemiology | https://www.jclinepi.com/article/S0895-4356(26)00082-X/abstract | A 2026 equipercentile-linking study reports significant correlations but systematic differences among depression scales, aligning with our negative shared-space evidence. |
+| zou2023cmdc | Zou et al. 2023, IEEE Transactions on Affective Computing | https://doi.org/10.1109/TAFFC.2022.3181210 | Supports CMDC as Chinese clinical-interview validation with PHQ-9 and HAMD labels. |
 
 ## Artifact Boundary
 

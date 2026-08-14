@@ -41,8 +41,10 @@ beyond the current full-method gate.
 - Do not convert MV12, MV15, or MV16 into a positive method claim.
 - Do not make strong RQ4 evidence-localization claims unless the remaining
   incomplete local CMDC candidate is resolved or explicitly bounded.
-- The next active paper task is human manuscript editing, bibliography
-  conversion, and cross-reference cleanup.
+- A later bibliography session has generated `references.bib`,
+  `citation_registry.csv`, and `citation_source_map.csv`; the next active
+  paper task is citation-key insertion, venue-style reference formatting,
+  human manuscript editing, and cross-reference cleanup.
 
 ## Files Owned Or Touched
 
@@ -92,8 +94,9 @@ python scripts/build_diagnostic_paper_manuscript_draft.py
 
 ## Blockers And Risks
 
-- Bibliography conversion is still required because source context currently
-  stores citation hints and source URLs rather than final reference entries.
+- Bibliography conversion has since produced a first `references.bib` and
+  citation registry. Venue-specific reference styling and in-text citation-key
+  insertion are still required.
 - Human editing is still required for prose quality, section flow,
   cross-references, citation formatting, and journal/conference style.
 - Full M0/M1/M2/M3 method construction remains blocked.
@@ -107,10 +110,11 @@ python scripts/build_diagnostic_paper_manuscript_draft.py
 
 ## Next Handoff
 
-Start from `analysis/diagnostic_measurement_audit_paper/manuscript_draft.md`
-and use `manuscript_traceability_matrix.csv` plus
-`manuscript_open_items.csv` to edit the paper. Convert source URLs/citation
-hints into a formal bibliography, clean cross-references, and keep all claims
-inside the full-method gate. Do not export raw rows, private local workbooks,
-snippets, locators, theta scores, model parameters, learned embeddings,
-bootstrap samples, calibration parameters, or model artifacts.
+Start from `analysis/diagnostic_measurement_audit_paper/manuscript_draft.md`,
+`references.bib`, `citation_registry.csv`, `citation_source_map.csv`,
+`manuscript_traceability_matrix.csv`, and `manuscript_open_items.csv` to edit
+the paper. Insert citation keys, adapt references to the target venue style,
+clean cross-references, and keep all claims inside the full-method gate. Do not
+export raw rows, private local workbooks, snippets, locators, theta scores,
+model parameters, learned embeddings, bootstrap samples, calibration
+parameters, or model artifacts.

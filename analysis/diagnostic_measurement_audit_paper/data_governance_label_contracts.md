@@ -1,6 +1,6 @@
 # Data Governance and Label Contracts
 
-Generated: `2026-08-11T13:01:12+00:00`
+Generated: `2026-08-14T06:50:50+00:00`
 
 ## Draft Section
 
@@ -58,7 +58,7 @@ The release boundary is deliberately conservative. Real identifiers, labels at r
 | --- | --- | --- | --- | --- |
 | E-DAIC/DAIC | official access and consent boundary | USC ICT DAIC-WOZ and Extended DAIC download page | https://dcapswoz.ict.usc.edu/ | Supports restricted-data governance and local-only real manifest policy. |
 | DAIC | clinical-interview corpus origin | Gratch et al. 2014, LREC | https://aclanthology.org/L14-1421/ | Supports the clinical-interview framing and multimodal questionnaire/transcript context. |
-| CMDC | Chinese semi-structured interview corpus | Zou et al. 2022, IEEE Transactions on Affective Computing | https://doi.org/10.1109/TAFFC.2022.3181210 | Supports CMDC as Chinese clinical-interview validation with PHQ-9 and HAMD labels. |
+| CMDC | Chinese semi-structured interview corpus | Zou et al. 2023, IEEE Transactions on Affective Computing | https://doi.org/10.1109/TAFFC.2022.3181210 | Supports CMDC as Chinese clinical-interview validation with PHQ-9 and HAMD labels. |
 | PDCH | real consultation and HAMD-17 source | PDCH repository and dataset paper | https://github.com/Miraclemarvel55/PDCH | Supports PDCH as a bounded HAMD-17 consultation validation dataset. |
 | MODMA | controlled task stress-test source | MODMA dataset description | https://reshare.ukdataservice.ac.uk/854301/ | Supports MODMA as an interview/reading/picture-description task robustness dataset. |
 | EATD-Corpus | Chinese valence stress-test source | EATD-Corpus repository | https://github.com/Fancy-Block/EATD-Corpus | Supports EATD as Chinese audio/text depression data with emotion-related tasks. |

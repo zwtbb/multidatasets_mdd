@@ -69,7 +69,7 @@ SOURCE_ROWS = [
     {
         "dataset_or_topic": "CMDC",
         "source_role": "Chinese semi-structured interview corpus",
-        "citation_hint": "Zou et al. 2022, IEEE Transactions on Affective Computing",
+        "citation_hint": "Zou et al. 2023, IEEE Transactions on Affective Computing",
         "url": "https://doi.org/10.1109/TAFFC.2022.3181210",
         "use_in_section": "Supports CMDC as Chinese clinical-interview validation with PHQ-9 and HAMD labels.",
     },

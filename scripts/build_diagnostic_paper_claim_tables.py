@@ -165,7 +165,7 @@ LITERATURE_ROWS = [
     {
         "source_id": "irt_lr_dif_frontiers_2017",
         "topic": "IRT likelihood-ratio DIF testing",
-        "citation_hint": "Jeong and Lee 2017, Frontiers in Education",
+        "citation_hint": "Bulut and Suh 2017, Frontiers in Education",
         "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2017.00051/full",
         "paper_positioning": "IRT likelihood-ratio DIF testing supports MV11 item-level loading and threshold DIF diagnostics.",
     },

@@ -99,7 +99,10 @@ calibration evidence, not a full method pass. The Baselines, Failure-Mode
 Diagnostics, and Measurement Results scaffold is now generated from aggregate
 tables only, and `manuscript_draft.md` now assembles the first full
 measurement-audit manuscript draft with traceability and hygiene checks.
-Current next action: human manuscript editing and bibliography conversion.
+The bibliography registry and `references.bib` now cover all current
+source-context rows, after correcting the IRT DIF source hint to Bulut and Suh
+2017. Current next action: insert generated citation keys into the manuscript,
+adapt reference formatting to the target venue, and continue human editing.
 Optional MV06 work is resolving the one incomplete local candidate before
 stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap
@@ -139,6 +142,9 @@ samples, calibration parameters, and model artifacts remain local-only.
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
+- Bibliography generator: `scripts/build_diagnostic_paper_bibliography.py`
+- Bibliography file: `analysis/diagnostic_measurement_audit_paper/references.bib`
+- Citation registry: `analysis/diagnostic_measurement_audit_paper/citation_registry.csv`
 - Manuscript draft generator: `scripts/build_diagnostic_paper_manuscript_draft.py`
 - Manuscript draft: `analysis/diagnostic_measurement_audit_paper/manuscript_draft.md`
 
@@ -176,6 +182,7 @@ Diagnostic paper writing scaffolds:
 python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
+python scripts/build_diagnostic_paper_bibliography.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 ```
 
@@ -194,6 +201,7 @@ python scripts/phase5_run_mv16_dif_guided_calibration.py
 python scripts/phase5_full_method_gate_audit.py
 python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_results_sections.py
+python scripts/build_diagnostic_paper_bibliography.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 ```
 

@@ -39,6 +39,9 @@ CLAIM_TABLES_SUMMARY = PAPER_DIR / "run_summary.json"
 DATA_GOVERNANCE_SUMMARY = PAPER_DIR / "data_governance_run_summary.json"
 RESULTS_SUMMARY = PAPER_DIR / "results_section_run_summary.json"
 FULL_GATE_SUMMARY = ROOT / "analysis" / "phase5_minimal_validation" / "full_method_gate_audit" / "run_summary.json"
+BIBLIOGRAPHY_SUMMARY = PAPER_DIR / "bibliography_run_summary.json"
+CITATION_SOURCE_MAP_CSV = PAPER_DIR / "citation_source_map.csv"
+REFERENCES_BIB = PAPER_DIR / "references.bib"
 
 TRACKED_FILES = [
     "manuscript_artifact_hygiene_audit.json",
@@ -171,13 +174,34 @@ def build_traceability(claims: pd.DataFrame, checklist: pd.DataFrame) -> pd.Data
     return pd.DataFrame(rows)
 
 
-def build_open_items() -> pd.DataFrame:
+def bibliography_status() -> dict[str, Any]:
+    if not BIBLIOGRAPHY_SUMMARY.exists() or not REFERENCES_BIB.exists() or not CITATION_SOURCE_MAP_CSV.exists():
+        return {
+            "bibliography_available": False,
+            "bibliography_status": "missing",
+            "artifact_hygiene_passed": False,
+        }
+    summary = read_json(BIBLIOGRAPHY_SUMMARY)
+    return {
+        "bibliography_available": True,
+        "bibliography_status": summary["decision"]["bibliography_status"],
+        "artifact_hygiene_passed": bool(summary["artifact_hygiene_passed"]),
+        "reference_rows": summary["outputs"]["reference_rows"],
+        "source_context_rows": summary["outputs"]["source_context_rows"],
+    }
+
+
+def build_open_items(bib_status: dict[str, Any]) -> pd.DataFrame:
+    if bib_status["bibliography_available"] and bib_status["artifact_hygiene_passed"]:
+        citation_item = "Insert generated citation keys from references.bib into prose and adapt BibTeX/reference formatting to the final target venue."
+    else:
+        citation_item = "Convert citation hints and source URLs into a formal bibliography before venue-specific citation editing."
     rows = [
         {
             "item_id": "M001",
             "priority": "high",
             "area": "manuscript",
-            "open_item": "Convert citation hints and source URLs into the final target venue's bibliography format.",
+            "open_item": citation_item,
             "blocking_for_submission": True,
         },
         {
@@ -220,10 +244,25 @@ def build_open_items() -> pd.DataFrame:
 
 
 def source_reference_rows(literature: pd.DataFrame, governance_sources: pd.DataFrame) -> pd.DataFrame:
+    if CITATION_SOURCE_MAP_CSV.exists():
+        source_map = pd.read_csv(CITATION_SOURCE_MAP_CSV)
+        rows = [
+            {
+                "citation_key": clean_text(row["citation_key"]),
+                "source": clean_text(row["citation_hint"]),
+                "url": clean_text(row["source_url"]),
+                "use": clean_text(row["use_in_paper"]),
+            }
+            for _, row in source_map.iterrows()
+        ]
+        result = pd.DataFrame(rows).drop_duplicates(["citation_key", "source", "url"])
+        return result.sort_values(["citation_key", "source", "url"]).reset_index(drop=True)
+
     rows: list[dict[str, str]] = []
     for _, row in literature.iterrows():
         rows.append(
             {
+                "citation_key": "",
                 "source": clean_text(row["citation_hint"]),
                 "url": clean_text(row["url"]),
                 "use": clean_text(row["paper_positioning"]),
@@ -232,6 +271,7 @@ def source_reference_rows(literature: pd.DataFrame, governance_sources: pd.DataF
     for _, row in governance_sources.iterrows():
         rows.append(
             {
+                "citation_key": "",
                 "source": clean_text(row["citation_hint"]),
                 "url": clean_text(row["url"]),
                 "use": clean_text(row["use_in_section"]),
@@ -267,6 +307,7 @@ def build_manuscript(
     claim_summary = read_json(CLAIM_TABLES_SUMMARY)
     data_summary = read_json(DATA_GOVERNANCE_SUMMARY)
     results_summary = read_json(RESULTS_SUMMARY)
+    bib_status = bibliography_status()
 
     gate = row_by_id(findings, "finding_id", "gate_status")
     rq1 = row_by_id(findings, "finding_id", "rq1_measurement_negative")
@@ -335,6 +376,7 @@ def build_manuscript(
         f"- Claim table status: `{claim_summary['decision']['paper_table_status']}`.",
         f"- Data-governance section status: `{data_summary['decision']['section_status']}`.",
         f"- Results scaffold status: `{results_summary['decision']['section_scaffold_status']}`.",
+        f"- Bibliography status: `{bib_status['bibliography_status']}`; hygiene passed: `{bib_status['artifact_hygiene_passed']}`.",
         "",
         "## Abstract",
         "",
@@ -480,11 +522,11 @@ def build_manuscript(
             "",
             "## Source Context",
             "",
-            "These source hints are for manuscript drafting and bibliography conversion; final submission should use the target venue's citation format.",
+            "These source hints are mapped to citation keys for manuscript drafting; final submission should use the target venue's citation format.",
             "",
         ]
     )
-    lines.extend(markdown_table(source_refs, ["source", "url", "use"], ["source", "URL", "use"]))
+    lines.extend(markdown_table(source_refs, ["citation_key", "source", "url", "use"], ["citation key", "source", "URL", "use"]))
     lines.extend(
         [
             "",
@@ -527,6 +569,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
             "python scripts/build_diagnostic_paper_claim_tables.py",
             "python scripts/build_diagnostic_paper_data_governance_section.py",
             "python scripts/build_diagnostic_paper_results_sections.py",
+            "python scripts/build_diagnostic_paper_bibliography.py",
             "python scripts/build_diagnostic_paper_manuscript_draft.py",
             "```",
         ]
@@ -594,7 +637,7 @@ def main() -> None:
     governance_sources = pd.read_csv(DATA_GOVERNANCE_SOURCE_CSV)
 
     traceability = build_traceability(claims, checklist)
-    open_items = build_open_items()
+    open_items = build_open_items(bibliography_status())
     traceability.to_csv(out_dir / "manuscript_traceability_matrix.csv", index=False)
     open_items.to_csv(out_dir / "manuscript_open_items.csv", index=False)
 
@@ -647,6 +690,7 @@ def main() -> None:
             "data_governance": rel(DATA_GOVERNANCE_SUMMARY),
             "full_method_gate": rel(FULL_GATE_SUMMARY),
             "results_sections": rel(RESULTS_SUMMARY),
+            "bibliography": rel(BIBLIOGRAPHY_SUMMARY) if BIBLIOGRAPHY_SUMMARY.exists() else "",
         },
         "status": "complete",
     }

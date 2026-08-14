@@ -4,7 +4,7 @@
     "manuscript_draft_status": "ready_for_human_manuscript_editing_v0_1",
     "short_read": "A full manuscript draft has been assembled from aggregate, hygiene-passing paper artifacts; full-method claims remain blocked."
   },
-  "generated_at": "2026-08-14T06:23:28+00:00",
+  "generated_at": "2026-08-14T06:53:05+00:00",
   "input_contract": {
     "aggregate_claim_tables_read": true,
     "aggregate_data_governance_section_read": true,
@@ -37,6 +37,7 @@
   },
   "run_id": "diagnostic_paper_manuscript_draft",
   "source_artifacts": {
+    "bibliography": "analysis/diagnostic_measurement_audit_paper/bibliography_run_summary.json",
     "claim_tables": "analysis/diagnostic_measurement_audit_paper/run_summary.json",
     "data_governance": "analysis/diagnostic_measurement_audit_paper/data_governance_run_summary.json",
     "full_method_gate": "analysis/phase5_minimal_validation/full_method_gate_audit/run_summary.json",

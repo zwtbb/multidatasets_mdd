@@ -1,6 +1,6 @@
 # Diagnostic Paper Manuscript Draft Report
 
-Generated: `2026-08-14T06:23:28+00:00`
+Generated: `2026-08-14T06:53:05+00:00`
 
 ## Decision
 
@@ -26,5 +26,6 @@ A full manuscript draft has been assembled from aggregate, hygiene-passing paper
 python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
+python scripts/build_diagnostic_paper_bibliography.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 ```

@@ -455,9 +455,13 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold
 	   is now refreshed with MV16 as bounded/negative calibration evidence, and
 	   manuscript draft v0.1 is generated from aggregate paper artifacts with
-	   traceability, open editing items, and artifact-hygiene checks. The next
-	   active task is human manuscript editing and bibliography conversion. MV06
-	   agreement uncertainty is complete; stronger RQ4 wording still needs
+	   traceability, open editing items, and artifact-hygiene checks. A first
+	   bibliography handoff now maps all current source-context rows to
+	   `references.bib` and a citation registry, with the IRT DIF source hint
+	   corrected to Bulut and Suh 2017. The next active task is citation-key
+	   insertion, venue-style reference formatting, and human manuscript
+	   editing. MV06 agreement uncertainty is complete; stronger RQ4 wording
+	   still needs
 	   completion of the one incomplete local candidate if available and
 	   sampling-limit discussion.
 	   Keep theta scores, fitted parameters, row
@@ -522,10 +526,12 @@ feature identity stays high after dimension-matched severity and theta
 conditioning. MV16 DIF-guided few-shot measurement calibration is complete and
 bounded/negative: its both-direction small-k mechanism gate fails even though
 split, anchor-safety, direct-baseline, output-identity, and hygiene gates pass.
-Manuscript draft v0.1 is generated from completed diagnostic evidence. Next,
-perform human manuscript editing, bibliography conversion, and cross-reference
-cleanup while keeping the full-method gate claim boundary unchanged. MV06
-agreement uncertainty is complete; resolve the remaining incomplete local
+Manuscript draft v0.1 is generated from completed diagnostic evidence, and the
+bibliography handoff now provides `references.bib`, `citation_registry.csv`,
+and `citation_source_map.csv`. Next, insert citation keys, adapt references to
+the target venue style, perform human manuscript editing, and clean
+cross-references while keeping the full-method gate claim boundary unchanged.
+MV06 agreement uncertainty is complete; resolve the remaining incomplete local
 candidate before stronger RQ4 wording if available. Keep
 row-level predictions, real manifests, real integrity/split maps, latent
 scores, learned parameters, learned embeddings, bootstrap samples, calibration

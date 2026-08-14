@@ -1,0 +1,34 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "bibliography_status": "ready_for_manuscript_citation_editing",
+    "short_read": "Formal citation registry and BibTeX references now cover all current source-context rows; manuscript prose still needs venue-specific citation placement."
+  },
+  "generated_at": "2026-08-14T06:53:04+00:00",
+  "input_contract": {
+    "aggregate_source_context_tables_read": true,
+    "private_review_material_read": false,
+    "raw_data_scanned": false,
+    "row_level_outputs_read": false
+  },
+  "outputs": {
+    "reference_rows": 20,
+    "source_context_references_used": 20,
+    "source_context_rows": 26,
+    "tracked_outputs": [
+      "bibliography_artifact_hygiene_audit.json",
+      "bibliography_report.md",
+      "bibliography_run_summary.json",
+      "citation_registry.csv",
+      "citation_source_map.csv",
+      "references.bib"
+    ],
+    "unmapped_source_context_rows": 0
+  },
+  "run_id": "diagnostic_paper_bibliography",
+  "source_artifacts": {
+    "data_governance_sources": "analysis/diagnostic_measurement_audit_paper/source_context_data_governance.csv",
+    "literature_positioning": "analysis/diagnostic_measurement_audit_paper/literature_positioning.csv"
+  },
+  "status": "complete"
+}
