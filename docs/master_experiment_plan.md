@@ -564,6 +564,11 @@ representation without those controls.
   completed bounded/negative few-shot calibration result. MV06 agreement
   uncertainty is complete; resolve the one incomplete local candidate before
   stronger RQ4 wording if available.
+- Paper consolidation: aggregate-only manuscript draft v0.1 is generated under
+  `analysis/diagnostic_measurement_audit_paper/` with traceability, open
+  editing items, and artifact-hygiene checks. The next paper task is human
+  manuscript editing, bibliography conversion, and cross-reference cleanup
+  without strengthening claims beyond the full-method gate.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

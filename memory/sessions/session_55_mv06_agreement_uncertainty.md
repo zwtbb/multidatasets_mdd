@@ -103,7 +103,8 @@ python scripts/build_diagnostic_paper_results_sections.py
 
 ## Next Handoff
 
-Proceed with manuscript consolidation around the completed bounded diagnostic
-evidence. If RQ4 becomes manuscript-critical, resolve the remaining local CMDC
+Manuscript consolidation has since produced aggregate-only draft v0.1. Continue
+with human manuscript editing, bibliography conversion, and cross-reference
+cleanup. If RQ4 becomes manuscript-critical, resolve the remaining local CMDC
 candidate if the annotator rows become available, then rerun the MV06 summary
 gate and downstream paper/gate scripts.

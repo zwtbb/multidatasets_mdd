@@ -1,0 +1,46 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "manuscript_draft_status": "ready_for_human_manuscript_editing_v0_1",
+    "short_read": "A full manuscript draft has been assembled from aggregate, hygiene-passing paper artifacts; full-method claims remain blocked."
+  },
+  "generated_at": "2026-08-14T06:23:28+00:00",
+  "input_contract": {
+    "aggregate_claim_tables_read": true,
+    "aggregate_data_governance_section_read": true,
+    "aggregate_results_sections_read": true,
+    "private_review_material_read": false,
+    "raw_data_scanned": false,
+    "row_level_outputs_read": false
+  },
+  "outputs": {
+    "draft_sections": [
+      "Abstract",
+      "Introduction",
+      "Methods",
+      "Results",
+      "Discussion",
+      "Claim Traceability",
+      "Open Editing Items",
+      "Source Context"
+    ],
+    "open_item_rows": 6,
+    "traceability_rows": 17,
+    "tracked_outputs": [
+      "manuscript_artifact_hygiene_audit.json",
+      "manuscript_draft.md",
+      "manuscript_open_items.csv",
+      "manuscript_report.md",
+      "manuscript_run_summary.json",
+      "manuscript_traceability_matrix.csv"
+    ]
+  },
+  "run_id": "diagnostic_paper_manuscript_draft",
+  "source_artifacts": {
+    "claim_tables": "analysis/diagnostic_measurement_audit_paper/run_summary.json",
+    "data_governance": "analysis/diagnostic_measurement_audit_paper/data_governance_run_summary.json",
+    "full_method_gate": "analysis/phase5_minimal_validation/full_method_gate_audit/run_summary.json",
+    "results_sections": "analysis/diagnostic_measurement_audit_paper/results_section_run_summary.json"
+  },
+  "status": "complete"
+}

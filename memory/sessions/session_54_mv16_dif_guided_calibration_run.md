@@ -49,10 +49,12 @@ calibration parameter values, or claim BGE feature invariance.
   predictor contract.
 - Do not use MV16 as a positive method claim, feature-invariance evidence, or
   full-method authorization.
-- The next primary route is manuscript consolidation around measurement shift,
-  measurement validity, conditional identity, and bounded negative evidence.
-- Optional next evidence is MV06 agreement uncertainty and completion of the
-  one remaining incomplete local candidate before stronger RQ4 wording.
+- Manuscript consolidation has since produced aggregate-only draft v0.1 around
+  measurement shift, measurement validity, conditional identity, and bounded
+  negative evidence.
+- MV06 agreement uncertainty has since been added. The remaining optional
+  evidence step is completion of the one incomplete local candidate before
+  stronger RQ4 wording.
 
 ## Files Owned Or Touched
 
@@ -106,8 +108,8 @@ Primary checked outputs:
 
 ## Next Handoff
 
-Use the refreshed full-method gate and paper scaffolds to consolidate the
-manuscript around a measurement-shift/measurement-validity diagnostic paper.
-Optional follow-up: add MV06 agreement uncertainty and resolve the one
-incomplete local candidate while keeping workbooks, snippets, locators,
-subject-level rows, and notes local-only.
+Use the generated manuscript draft v0.1 for human editing, bibliography
+conversion, and cross-reference cleanup around a
+measurement-shift/measurement-validity diagnostic paper. Optional follow-up:
+resolve the one incomplete local MV06 candidate while keeping workbooks,
+snippets, locators, subject-level rows, and notes local-only.

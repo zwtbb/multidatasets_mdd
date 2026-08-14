@@ -453,10 +453,13 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   RQ4 is allowed only as limited aggregate evidence, and a bounded
 	   measurement-shift / measurement-validity paper direction remains viable.
 	   The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold
-	   is now refreshed with MV16 as bounded/negative calibration evidence. The
-	   next active task is manuscript consolidation. MV06 agreement uncertainty
-	   is complete; stronger RQ4 wording still needs completion of the one
-	   incomplete local candidate if available and sampling-limit discussion.
+	   is now refreshed with MV16 as bounded/negative calibration evidence, and
+	   manuscript draft v0.1 is generated from aggregate paper artifacts with
+	   traceability, open editing items, and artifact-hygiene checks. The next
+	   active task is human manuscript editing and bibliography conversion. MV06
+	   agreement uncertainty is complete; stronger RQ4 wording still needs
+	   completion of the one incomplete local candidate if available and
+	   sampling-limit discussion.
 	   Keep theta scores, fitted parameters, row
 	   predictions, transformed features, projection directions, calibration
 	   parameters, target-shot maps, bootstrap samples, and model artifacts
@@ -519,8 +522,10 @@ feature identity stays high after dimension-matched severity and theta
 conditioning. MV16 DIF-guided few-shot measurement calibration is complete and
 bounded/negative: its both-direction small-k mechanism gate fails even though
 split, anchor-safety, direct-baseline, output-identity, and hygiene gates pass.
-Next consolidate the manuscript around completed diagnostic evidence.
-MV06 agreement uncertainty is complete; resolve the remaining incomplete local
+Manuscript draft v0.1 is generated from completed diagnostic evidence. Next,
+perform human manuscript editing, bibliography conversion, and cross-reference
+cleanup while keeping the full-method gate claim boundary unchanged. MV06
+agreement uncertainty is complete; resolve the remaining incomplete local
 candidate before stronger RQ4 wording if available. Keep
 row-level predictions, real manifests, real integrity/split maps, latent
 scores, learned parameters, learned embeddings, bootstrap samples, calibration

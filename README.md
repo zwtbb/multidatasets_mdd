@@ -97,11 +97,13 @@ both-direction DIF-guided small-k mechanism gate
 (`blocked_no_dif_guided_small_k_gain`). Treat it as bounded/negative
 calibration evidence, not a full method pass. The Baselines, Failure-Mode
 Diagnostics, and Measurement Results scaffold is now generated from aggregate
-tables only. Current next action: consolidate the manuscript framing. Optional
-MV06 work is resolving the one incomplete local candidate before stronger RQ4
-wording; aggregate agreement uncertainty is now available. Theta scores, fitted
-parameters, row predictions, transformed features, bootstrap samples,
-calibration parameters, and model artifacts remain local-only.
+tables only, and `manuscript_draft.md` now assembles the first full
+measurement-audit manuscript draft with traceability and hygiene checks.
+Current next action: human manuscript editing and bibliography conversion.
+Optional MV06 work is resolving the one incomplete local candidate before
+stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
+scores, fitted parameters, row predictions, transformed features, bootstrap
+samples, calibration parameters, and model artifacts remain local-only.
 
 ## Key Paths
 
@@ -137,6 +139,8 @@ calibration parameters, and model artifacts remain local-only.
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
+- Manuscript draft generator: `scripts/build_diagnostic_paper_manuscript_draft.py`
+- Manuscript draft: `analysis/diagnostic_measurement_audit_paper/manuscript_draft.md`
 
 ## Rebuild Commands
 
@@ -172,6 +176,7 @@ Diagnostic paper writing scaffolds:
 python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
+python scripts/build_diagnostic_paper_manuscript_draft.py
 ```
 
 Phase 5 gate, MV13/MV14 psychometric checks, MV12 analysis, MV15, and MV16:
@@ -189,6 +194,7 @@ python scripts/phase5_run_mv16_dif_guided_calibration.py
 python scripts/phase5_full_method_gate_audit.py
 python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_results_sections.py
+python scripts/build_diagnostic_paper_manuscript_draft.py
 ```
 
 ## Version Policy
