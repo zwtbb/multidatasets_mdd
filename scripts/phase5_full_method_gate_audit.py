@@ -306,6 +306,12 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv06 = summaries["P5_MV06_summary"]
     mv06_decision = mv06.get("decision") or {}
     mv06_gate = mv06.get("annotation_gate") or {}
+    mv06_uncertainty = mv06.get("agreement_uncertainty") or {}
+    mv06_evidence_presence_uncertainty = mv06_uncertainty.get("evidence_presence") or []
+    mv06_uncertainty_ready = bool(mv06_evidence_presence_uncertainty) and all(
+        str(row.get("uncertainty_status", "")).startswith("computed_bootstrap_ci")
+        for row in mv06_evidence_presence_uncertainty
+    )
     mv06_status = str(mv06_decision.get("annotation_summary_status", "unknown"))
     mv06_ready = mv06_status == "ready_for_aggregate_evidence_review"
     mv06_pre = summaries["P5_MV06_ai_preannotation"].get("decision") or {}
@@ -414,7 +420,11 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
             "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_design_status}; MV08 result is {mv08_status}, with M2 improving over total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08_result.get('prediction_identity_ba_m2'))}; MV08 error-analysis status is {mv08_error_status}; MV08b design status is {mv08b_design_status}; MV08b result is {mv08b_status}, with M2b beating both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08b_result.get('prediction_identity_ba_m2b'))}; MV09 revises the identity-gate interpretation but finds conditional feature identity remains high after PHQ-item or severity conditioning; MV10 is {mv10_status}; MV11 is {mv11_status} and supports a bounded PHQ item-level measurement-shift target with an AIC/BIC caveat; MV12 design is {mv12_design_status}; MV12 run is {mv12_status}: same-dataset theta gate {mv12_result.get('same_dataset_theta_gate_passed')}, observed-scale safety {mv12_result.get('same_dataset_observed_gate_passed')}, external theta transfer {mv12_result.get('external_transfer_theta_gate_passed')}, conditional identity BA {fmt(mv12_result.get('conditional_identity_ba_m12a'))}; MV12 aggregate analysis is {mv12_analysis_status} and freeze_current_latent_target_line={mv12_analysis.get('freeze_current_latent_target_line')}; {mv12_dimension_caveat}; MV13 design is {mv13_design_status}; MV13 run is {mv13_status}, externally replicating the label-only PHQ anchor/DIF localization pattern but still not testing X-to-theta prediction or cross-dataset calibration; {mv14_anchor_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}.",
-            "required_next_evidence": "Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation or MV06 agreement uncertainty.",
+            "required_next_evidence": (
+                "Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation."
+                if mv06_uncertainty_ready
+                else "Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation or MV06 agreement uncertainty."
+            ),
             "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV12_design;P5_MV12;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_MV15_design;P5_MV15;P5_MV16_design;P5_MV16",
         },
         {
@@ -505,7 +515,9 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
                 f"{mv06_pack.get('review_pack_status', 'not_run')}; AI/review-pack rows remain non-claimable."
             ),
             "required_next_evidence": (
-                "For a stronger manuscript claim, add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows; cite dataset-specific kappas from the MV06 agreement table."
+                "For a stronger manuscript claim, resolve any remaining incomplete local candidate rows and discuss dataset-specific kappa CIs plus sampling limits."
+                if mv06_ready and mv06_uncertainty_ready
+                else "For a stronger manuscript claim, add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows; cite dataset-specific kappas from the MV06 agreement table."
                 if mv06_ready
                 else "Use the local review pack to complete human annotations, then rerun the summary gate with enough double-annotated rows for agreement, prompt-artifact rates, and aggregate-only hygiene pass."
             ),
@@ -517,7 +529,11 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "decision": "allowed_with_reframing",
             "allowed_scope": "A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, and MV16 are bounded diagnostic evidence, not a full-method pass.",
             "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}; MV08b run is {mv08b_status}; MV09 is {mv09_status}; MV10 is {mv10_status}; MV11 is {mv11_status} with {mv11_result.get('confirmed_mv10_anchor_items')} confirmed MV10 PHQ anchors and an AIC/BIC caveat; MV12 design is {mv12_design_status}; MV12 run is {mv12_status} with same-dataset theta gain but observed-scale and zero-shot source-calibrated transfer limits; MV12 analysis is {mv12_analysis_status}, recommends freezing the current latent-target line, and adds the dimension-matched B3 caveat; MV13 is {mv13_status}, externally replicates the MV11 qualitative anchor/DIF localization pattern, and keeps parameter/theta exports local-only; {mv14_anchor_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}; data-governance history cleanup remains a separate approval decision.",
-            "required_next_evidence": "Consolidate the manuscript around bounded diagnostic evidence; optionally add MV06 agreement uncertainty before stronger evidence-localization wording.",
+            "required_next_evidence": (
+                "Consolidate the manuscript around bounded diagnostic evidence; MV06 stronger wording still requires resolving any incomplete local candidate rows and discussing sampling limits."
+                if mv06_uncertainty_ready
+                else "Consolidate the manuscript around bounded diagnostic evidence; optionally add MV06 agreement uncertainty before stronger evidence-localization wording."
+            ),
             "primary_sources": "all_phase5;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_MV15_design;P5_MV15;P5_MV16_design;P5_MV16",
         },
     ]
@@ -553,6 +569,13 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv15_result = summaries["P5_MV15"].get("verdict") or {}
     mv16_design = summaries["P5_MV16_design"].get("decision") or {}
     mv16_result = summaries["P5_MV16"].get("verdict") or {}
+    mv06_summary = summaries["P5_MV06_summary"]
+    mv06_uncertainty = mv06_summary.get("agreement_uncertainty") or {}
+    mv06_evidence_presence_uncertainty = mv06_uncertainty.get("evidence_presence") or []
+    mv06_uncertainty_ready = bool(mv06_evidence_presence_uncertainty) and all(
+        str(row.get("uncertainty_status", "")).startswith("computed_bootstrap_ci")
+        for row in mv06_evidence_presence_uncertainty
+    )
     mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
     if mv16_result.get("pass_rule_status"):
         shared_feature_action = {
@@ -806,7 +829,11 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
         {
             "rank": 2,
             "action_id": "NEXT_MV06_EVIDENCE_STRENGTHENING",
-            "action": "Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally add agreement uncertainty analysis and resolve any incomplete local candidate rows.",
+            "action": (
+                "Use the dataset-stratified MV06 agreement and bootstrap uncertainty summaries as first-round RQ4 evidence, then resolve any incomplete local candidate rows if stronger wording is needed."
+                if mv06_uncertainty_ready
+                else "Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally add agreement uncertainty analysis and resolve any incomplete local candidate rows."
+            ),
             "why_now": "MV06 now strongly exceeds the default completion and double-annotation gate, and E-DAIC evidence-presence agreement is computable; one sampled candidate remains incomplete in the local workbook.",
             "success_gate": "Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators.",
             "version_policy": "Commit aggregate summaries only; keep verbatim excerpts, source maps, local workbooks, and per-subject rationales local-only.",

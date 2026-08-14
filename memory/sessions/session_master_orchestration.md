@@ -155,12 +155,13 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   tracked progress aggregates show 143 completed candidates and 143
   double-annotated candidates.
 - Phase 5 `P5_MV06 evidence_annotation_summary_gate` was updated to compute
-  dataset-stratified kappa. It now reports
+  dataset-stratified kappa and bootstrap agreement uncertainty. It now reports
   `ready_for_aggregate_evidence_review`, with 143 completed candidates and 143
   double-annotated candidates over the 144-candidate local workbench. RQ4 is
   allowed only as limited aggregate first-round evidence; evidence-presence
   kappa is `0.965` overall, `0.967` for CMDC, `0.846` for E-DAIC, and `1.000`
-  for PDCH.
+  for PDCH, with 95 percent CIs `0.922-1.000`, `0.885-1.000`,
+  `0.595-1.000`, and `1.000-1.000`, respectively.
 - Phase 5 `P5_MV07 shared_feature_contract_readiness` completed in the main
   checkout. It did not train a model or scan raw text/media; it inventories
   cached subject-level features and label coverage. After local E-DAIC BGE
@@ -453,9 +454,10 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   measurement-shift / measurement-validity paper direction remains viable.
 	   The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold
 	   is now refreshed with MV16 as bounded/negative calibration evidence. The
-	   next active task is manuscript consolidation, with optional MV06 agreement
-	   uncertainty and completion of the one incomplete local candidate before
-	   stronger RQ4 wording. Keep theta scores, fitted parameters, row
+	   next active task is manuscript consolidation. MV06 agreement uncertainty
+	   is complete; stronger RQ4 wording still needs completion of the one
+	   incomplete local candidate if available and sampling-limit discussion.
+	   Keep theta scores, fitted parameters, row
 	   predictions, transformed features, projection directions, calibration
 	   parameters, target-shot maps, bootstrap samples, and model artifacts
 	   local-only.
@@ -518,8 +520,8 @@ conditioning. MV16 DIF-guided few-shot measurement calibration is complete and
 bounded/negative: its both-direction small-k mechanism gate fails even though
 split, anchor-safety, direct-baseline, output-identity, and hygiene gates pass.
 Next consolidate the manuscript around completed diagnostic evidence.
-Optionally add MV06 agreement uncertainty analysis and resolve the remaining
-incomplete local candidate before stronger RQ4 wording. Keep
+MV06 agreement uncertainty is complete; resolve the remaining incomplete local
+candidate before stronger RQ4 wording if available. Keep
 row-level predictions, real manifests, real integrity/split maps, latent
 scores, learned parameters, learned embeddings, bootstrap samples, calibration
 parameters, and model artifacts local-only, and do not start full method work

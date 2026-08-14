@@ -14,6 +14,7 @@ import argparse
 import itertools
 import json
 import math
+import random
 import re
 from collections import Counter
 from datetime import datetime, timezone
@@ -32,6 +33,8 @@ DEFAULT_PACKET = (
     / "p5_mv06_local_annotation_workbook_predictions.csv"
 )
 DEFAULT_OUT_DIR = ROOT / "analysis" / "phase5_minimal_validation" / "p5_mv06_evidence_annotation_summary"
+DEFAULT_BOOTSTRAP_RESAMPLES = 2000
+DEFAULT_BOOTSTRAP_SEED = 20260814
 
 REQUIRED_PACKET_COLUMNS = {
     "candidate_id",
@@ -81,6 +84,7 @@ TRACKED_FILES = [
     "aggregate_evidence_source_summary.csv",
     "aggregate_prompt_artifact_summary.csv",
     "agreement_summary.csv",
+    "agreement_uncertainty_summary.csv",
     "field_contract.csv",
 ]
 
@@ -297,15 +301,20 @@ def kappa_from_pairs(pairs: list[tuple[str, str]]) -> tuple[float | None, float 
     return safe_float(observed), safe_float(expected), safe_float(kappa), "computed_pairwise_kappa"
 
 
+def pair_values_for_field(complete: pd.DataFrame, field: str) -> list[tuple[str, str]]:
+    pairs: list[tuple[str, str]] = []
+    for _, group in complete.groupby("candidate_id", sort=True):
+        per_annotator = group.drop_duplicates(["annotator_id"], keep="first")
+        values = per_annotator[["annotator_id", field]].dropna().values.tolist()
+        for left, right in itertools.combinations(values, 2):
+            pairs.append((str(left[1]), str(right[1])))
+    return pairs
+
+
 def pairwise_agreement_for_scope(dataset: str, complete: pd.DataFrame) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for field in ANNOTATION_FIELDS:
-        pairs: list[tuple[str, str]] = []
-        for _, group in complete.groupby("candidate_id", sort=True):
-            per_annotator = group.drop_duplicates(["annotator_id"], keep="first")
-            values = per_annotator[["annotator_id", field]].dropna().values.tolist()
-            for left, right in itertools.combinations(values, 2):
-                pairs.append((str(left[1]), str(right[1])))
+        pairs = pair_values_for_field(complete, field)
         observed, expected, kappa, status = kappa_from_pairs(pairs)
         rows.append(
             {
@@ -327,6 +336,105 @@ def pairwise_agreement(frame: pd.DataFrame) -> pd.DataFrame:
     rows.extend(pairwise_agreement_for_scope("ALL", complete))
     for dataset in sorted(frame["dataset"].dropna().unique()):
         rows.extend(pairwise_agreement_for_scope(str(dataset), complete[complete["dataset"] == dataset]))
+    return pd.DataFrame(rows)
+
+
+def percentile(values: list[float], probability: float) -> float | None:
+    if not values:
+        return None
+    if not 0 <= probability <= 1:
+        raise ValueError("percentile probability must be between 0 and 1")
+    ordered = sorted(values)
+    if len(ordered) == 1:
+        return safe_float(ordered[0])
+    position = (len(ordered) - 1) * probability
+    lower = math.floor(position)
+    upper = math.ceil(position)
+    if lower == upper:
+        return safe_float(ordered[lower])
+    weight = position - lower
+    return safe_float(ordered[lower] * (1 - weight) + ordered[upper] * weight)
+
+
+def percentile_ci(values: list[float]) -> tuple[float | None, float | None]:
+    return percentile(values, 0.025), percentile(values, 0.975)
+
+
+def agreement_uncertainty_for_scope(
+    dataset: str,
+    complete: pd.DataFrame,
+    bootstrap_resamples: int,
+    rng: random.Random,
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for field in ANNOTATION_FIELDS:
+        pairs = pair_values_for_field(complete, field)
+        observed, _, kappa, kappa_status = kappa_from_pairs(pairs)
+        agreement_samples: list[float] = []
+        kappa_samples: list[float] = []
+        undefined_kappa_resamples = 0
+        if pairs:
+            for _ in range(bootstrap_resamples):
+                sample = [pairs[rng.randrange(len(pairs))] for _ in range(len(pairs))]
+                sample_observed, _, sample_kappa, _ = kappa_from_pairs(sample)
+                if sample_observed is None:
+                    raise ValueError("bootstrap sample unexpectedly has no pairs")
+                agreement_samples.append(sample_observed)
+                if sample_kappa is None:
+                    undefined_kappa_resamples += 1
+                else:
+                    kappa_samples.append(sample_kappa)
+        agreement_low, agreement_high = percentile_ci(agreement_samples)
+        kappa_low, kappa_high = percentile_ci(kappa_samples)
+        if not pairs:
+            uncertainty_status = "insufficient_pair_annotations"
+        elif not kappa_samples:
+            uncertainty_status = "undefined_bootstrap_kappa_degenerate_marginals"
+        elif undefined_kappa_resamples:
+            uncertainty_status = "computed_bootstrap_ci_with_degenerate_resamples"
+        else:
+            uncertainty_status = "computed_bootstrap_ci"
+        rows.append(
+            {
+                "dataset": dataset,
+                "field": field,
+                "pair_count": int(len(pairs)),
+                "observed_agreement": observed,
+                "agreement_ci95_low": agreement_low,
+                "agreement_ci95_high": agreement_high,
+                "observed_kappa": kappa,
+                "observed_kappa_status": kappa_status,
+                "kappa_ci95_low": kappa_low,
+                "kappa_ci95_high": kappa_high,
+                "bootstrap_resamples_requested": bootstrap_resamples,
+                "bootstrap_resamples_effective_for_kappa": int(len(kappa_samples)),
+                "undefined_kappa_resamples": int(undefined_kappa_resamples),
+                "bootstrap_unit": "double_annotated_candidate_pair",
+                "ci_method": "nonparametric_percentile_bootstrap",
+                "uncertainty_status": uncertainty_status,
+            }
+        )
+    return rows
+
+
+def agreement_uncertainty(
+    frame: pd.DataFrame,
+    bootstrap_resamples: int,
+    bootstrap_seed: int,
+) -> pd.DataFrame:
+    complete = frame[frame["annotation_complete"]].copy()
+    rows: list[dict[str, Any]] = []
+    rng = random.Random(bootstrap_seed)
+    rows.extend(agreement_uncertainty_for_scope("ALL", complete, bootstrap_resamples, rng))
+    for dataset in sorted(frame["dataset"].dropna().unique()):
+        rows.extend(
+            agreement_uncertainty_for_scope(
+                str(dataset),
+                complete[complete["dataset"] == dataset],
+                bootstrap_resamples,
+                rng,
+            )
+        )
     return pd.DataFrame(rows)
 
 
@@ -400,6 +508,8 @@ def write_outputs(
     out_dir: Path,
     min_completed_candidates: int,
     min_double_annotated_candidates: int,
+    bootstrap_resamples: int,
+    bootstrap_seed: int,
     generated_at: str,
 ) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -408,6 +518,11 @@ def write_outputs(
     evidence_source = aggregate_counts(frame, "evidence_source")
     prompt_artifact = aggregate_counts(frame, "prompt_artifact")
     agreement = pairwise_agreement(frame)
+    uncertainty = agreement_uncertainty(
+        frame,
+        bootstrap_resamples=bootstrap_resamples,
+        bootstrap_seed=bootstrap_seed,
+    )
     contract = field_contract()
 
     completion.to_csv(out_dir / "annotation_completion_summary.csv", index=False)
@@ -416,6 +531,7 @@ def write_outputs(
     evidence_source.to_csv(out_dir / "aggregate_evidence_source_summary.csv", index=False)
     prompt_artifact.to_csv(out_dir / "aggregate_prompt_artifact_summary.csv", index=False)
     agreement.to_csv(out_dir / "agreement_summary.csv", index=False)
+    uncertainty.to_csv(out_dir / "agreement_uncertainty_summary.csv", index=False)
     contract.to_csv(out_dir / "field_contract.csv", index=False)
     stale_hygiene = out_dir / "artifact_hygiene_audit.json"
     if stale_hygiene.exists():
@@ -434,6 +550,7 @@ def write_outputs(
             include_groups=False,
         ).sum()
     )
+    evidence_presence_uncertainty = uncertainty[uncertainty["field"] == "evidence_presence"].copy()
     run_summary = {
         "run_id": "P5_MV06_evidence_annotation_summary",
         "generated_at": generated_at,
@@ -457,6 +574,13 @@ def write_outputs(
             if not issues.empty
             else 0,
         },
+        "agreement_uncertainty": {
+            "bootstrap_resamples_requested": bootstrap_resamples,
+            "bootstrap_seed": bootstrap_seed,
+            "ci_method": "nonparametric_percentile_bootstrap",
+            "bootstrap_unit": "double_annotated_candidate_pair",
+            "evidence_presence": evidence_presence_uncertainty.to_dict(orient="records"),
+        },
         "output_policy": {
             "tracked_outputs": TRACKED_FILES,
             "raw_text_written": False,
@@ -467,11 +591,11 @@ def write_outputs(
         "artifact_hygiene_passed": False,
     }
     (out_dir / "run_summary.json").write_text(json.dumps(run_summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    write_report(out_dir, run_summary, completion, issues, agreement)
+    write_report(out_dir, run_summary, completion, issues, agreement, uncertainty)
     hygiene = artifact_hygiene(out_dir)
     run_summary["artifact_hygiene_passed"] = bool(hygiene["artifact_hygiene_passed"])
     (out_dir / "run_summary.json").write_text(json.dumps(run_summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    write_report(out_dir, run_summary, completion, issues, agreement)
+    write_report(out_dir, run_summary, completion, issues, agreement, uncertainty)
     hygiene = artifact_hygiene(out_dir)
     (out_dir / "artifact_hygiene_audit.json").write_text(json.dumps(hygiene, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     if not hygiene["artifact_hygiene_passed"]:
@@ -485,6 +609,7 @@ def write_report(
     completion: pd.DataFrame,
     issues: pd.DataFrame,
     agreement: pd.DataFrame,
+    uncertainty: pd.DataFrame,
 ) -> None:
     lines = [
         "# P5_MV06 Evidence Annotation Summary Gate",
@@ -493,7 +618,7 @@ def write_report(
         "",
         "## Scope",
         "",
-        "This gate validates the local MV06 annotation packet and exports only aggregate annotation completion, evidence-field, prompt-artifact, and agreement summaries. It does not read raw clinical text, local source locators, or raw snippets.",
+        "This gate validates the local MV06 annotation packet and exports only aggregate annotation completion, evidence-field, prompt-artifact, agreement, and agreement-uncertainty summaries. It does not read raw clinical text, local source locators, or raw snippets.",
         "",
         "## Decision",
         "",
@@ -545,6 +670,26 @@ def write_report(
         lines.append(
             f"| {row['dataset']} | {row['field']} | {row['pair_count']} | "
             f"{observed} | {kappa} | {row['agreement_status']} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Evidence-Presence Agreement Uncertainty",
+            "",
+            "| dataset | pairs | observed agreement 95 percent CI | kappa 95 percent CI | effective kappa resamples | status |",
+            "| --- | ---: | ---: | ---: | ---: | --- |",
+        ]
+    )
+    evidence_presence_uncertainty = uncertainty[uncertainty["field"] == "evidence_presence"].copy()
+    for _, row in evidence_presence_uncertainty.iterrows():
+        agreement_low = "" if pd.isna(row["agreement_ci95_low"]) else f"{row['agreement_ci95_low']:.3f}"
+        agreement_high = "" if pd.isna(row["agreement_ci95_high"]) else f"{row['agreement_ci95_high']:.3f}"
+        kappa_low = "" if pd.isna(row["kappa_ci95_low"]) else f"{row['kappa_ci95_low']:.3f}"
+        kappa_high = "" if pd.isna(row["kappa_ci95_high"]) else f"{row['kappa_ci95_high']:.3f}"
+        lines.append(
+            f"| {row['dataset']} | {row['pair_count']} | {agreement_low}-{agreement_high} | "
+            f"{kappa_low}-{kappa_high} | {row['bootstrap_resamples_effective_for_kappa']} | "
+            f"{row['uncertainty_status']} |"
         )
     lines.extend(
         [
@@ -601,10 +746,14 @@ def main() -> None:
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--min-completed-candidates", type=int, default=30)
     parser.add_argument("--min-double-annotated-candidates", type=int, default=20)
+    parser.add_argument("--bootstrap-resamples", type=int, default=DEFAULT_BOOTSTRAP_RESAMPLES)
+    parser.add_argument("--bootstrap-seed", type=int, default=DEFAULT_BOOTSTRAP_SEED)
     args = parser.parse_args()
 
     if args.min_completed_candidates < 1 or args.min_double_annotated_candidates < 1:
         raise ValueError("minimum annotation thresholds must be positive")
+    if args.bootstrap_resamples < 1:
+        raise ValueError("bootstrap resamples must be positive")
     generated_at = utc_now()
     packet = load_packet(args.annotation_packet)
     annotated, issues = validate_annotations(packet)
@@ -614,6 +763,8 @@ def main() -> None:
         args.out_dir,
         min_completed_candidates=args.min_completed_candidates,
         min_double_annotated_candidates=args.min_double_annotated_candidates,
+        bootstrap_resamples=args.bootstrap_resamples,
+        bootstrap_seed=args.bootstrap_seed,
         generated_at=generated_at,
     )
     print(

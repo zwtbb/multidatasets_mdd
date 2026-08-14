@@ -603,7 +603,7 @@ def write_markdown(
         "- Do not use MV12 as positive full-method evidence; its tradeoff analysis freezes the current latent-target line.",
         "- Do not use low one-dimensional output identity as evidence that upstream BGE features are dataset-invariant; MV15 keeps feature identity high after theta and severity conditioning.",
         "- Do not use MV16 as a positive method claim; its few-shot calibration ladder is bounded/negative and keeps full-method construction blocked.",
-        "- Do not strengthen RQ4 beyond first-round aggregate credibility without agreement uncertainty analysis and resolving remaining incomplete candidate rows, if any.",
+        "- Do not strengthen RQ4 beyond first-round aggregate credibility without resolving remaining incomplete candidate rows and discussing agreement uncertainty plus sampling limits.",
         "",
         "## Source Map",
         "",

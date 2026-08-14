@@ -1,6 +1,6 @@
 # Diagnostic Measurement-Audit Paper Tables
 
-Generated: `2026-08-14T05:48:10+00:00`
+Generated: `2026-08-14T06:02:26+00:00`
 
 ## Scope
 
@@ -34,10 +34,10 @@ This writing-prep artifact converts existing aggregate gates into paper-facing c
 | PDCH item-derived total MAE 5.693; direct total MAE 5.794; macro item MAE 0.727; status pass_pdch_only_diagnostic. | PDCH supports bounded internal HAMD measurement evidence only. |
 | MODMA task projection reduces feature task identity BA 0.762 -> 0.570 while preserving main task signal (0.688). | MODMA provides bounded task-control evidence. |
 | EATD valence/SDS remains blocked: raw primary MAE 28.810 versus train-mean floor 7.201; status blocked_main_task_below_floor. | EATD should remain a negative stress test, not a method component driver. |
-| MV06 has 143 completed and 143 double-annotated candidates. Evidence-presence kappa: ALL 0.965 (143 pairs), CMDC 0.967 (59), PDCH 1.000 (60), E-DAIC 0.846 (24). 1 sampled candidate remains incomplete in the local workbook. Field-specific degenerate marginal statuses should be read from agreement_summary.csv. | MV06 can support first-round aggregate credibility; stronger RQ4 claims should add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows. |
+| MV06 has 143 completed and 143 double-annotated candidates. Evidence-presence kappa: ALL 0.965 (95% CI 0.922-1.000; 143 pairs), CMDC 0.967 (95% CI 0.885-1.000; 59 pairs), PDCH 1.000 (95% CI 1.000-1.000; 60 pairs), E-DAIC 0.846 (95% CI 0.595-1.000; 24 pairs). 1 sampled candidate remains incomplete in the local workbook. Field-specific degenerate marginal statuses should be read from agreement_summary.csv. | MV06 can support first-round aggregate credibility; stronger RQ4 claims still need the remaining incomplete local candidate resolved and sampling limits discussed. |
 
 ## Release Rule
 
 - Use these tables as manuscript scaffolding, not as a replacement for the source artifacts.
 - Keep private review material, learned parameters, and row-level model outputs local-only.
-- Any stronger RQ4 claim should first add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows.
+- Any stronger RQ4 claim should first resolve any remaining incomplete local candidate rows and discuss agreement uncertainty plus sampling limits.

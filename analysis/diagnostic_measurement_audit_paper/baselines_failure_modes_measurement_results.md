@@ -1,6 +1,6 @@
 # Baselines, Failure-Mode Diagnostics, and Measurement Results
 
-Generated: `2026-08-14T05:48:11+00:00`
+Generated: `2026-08-14T06:02:30+00:00`
 
 ## Scope
 
@@ -38,7 +38,7 @@ The cost is predictive fidelity and zero-shot source-calibrated latent-scale tra
 
 MV16 tests the most direct positive hypothesis suggested by MV14: if threshold non-equivalence is localized to C02/C06 while C01/C04/C05/C07 are stable anchors, a small target-labeled calibration set might repair cross-dataset measurement mapping. The result is bounded and asymmetric rather than a method pass. The L4 global-plus-C02/C06 row reaches a best small-k theta-MAE delta of `-0.227` versus L0, but the predeclared both-direction small-k gate fails and output identity remains high. This keeps MV16 useful as a falsifying calibration stress test: localized DIF diagnosis alone is not enough to overcome the current BGE cross-dataset prediction and output-identity limits.
 
-The remaining Phase 5 findings define bounded supporting claims. PDCH supports an internal HAMD diagnostic bridge: item-derived total MAE is `5.693`, direct total MAE is `5.794`, and macro item MAE is `0.727`, but this does not support cross-dataset HAMD transfer. MODMA supports task-control evidence because task projection reduces feature task-identity BA from `0.762` to `0.570` while preserving the main task signal (`0.688`). EATD remains a negative SDS stress test because uncontrolled primary MAE is `28.810` versus a train-mean floor of `7.201`. MV06 has 143 completed and 143 double-annotated candidates. Evidence-presence kappa: ALL 0.965 (143 pairs), CMDC 0.967 (59), PDCH 1.000 (60), E-DAIC 0.846 (24). 1 sampled candidate remains incomplete in the local workbook. Field-specific degenerate marginal statuses should be read from agreement_summary.csv. Together, these results support a paper about measurement validity, protocol dependence, and bounded evidence localization, while keeping external HAMD transfer, EATD SDS generalization, positive MPDD context conditioning, and full-method construction blocked.
+The remaining Phase 5 findings define bounded supporting claims. PDCH supports an internal HAMD diagnostic bridge: item-derived total MAE is `5.693`, direct total MAE is `5.794`, and macro item MAE is `0.727`, but this does not support cross-dataset HAMD transfer. MODMA supports task-control evidence because task projection reduces feature task-identity BA from `0.762` to `0.570` while preserving the main task signal (`0.688`). EATD remains a negative SDS stress test because uncontrolled primary MAE is `28.810` versus a train-mean floor of `7.201`. MV06 has 143 completed and 143 double-annotated candidates. Evidence-presence kappa: ALL 0.965 (95% CI 0.922-1.000; 143 pairs), CMDC 0.967 (95% CI 0.885-1.000; 59 pairs), PDCH 1.000 (95% CI 1.000-1.000; 60 pairs), E-DAIC 0.846 (95% CI 0.595-1.000; 24 pairs). 1 sampled candidate remains incomplete in the local workbook. Field-specific degenerate marginal statuses should be read from agreement_summary.csv. Together, these results support a paper about measurement validity, protocol dependence, and bounded evidence localization, while keeping external HAMD transfer, EATD SDS generalization, positive MPDD context conditioning, and full-method construction blocked.
 
 ## Manuscript Guardrails
 
@@ -48,7 +48,7 @@ The remaining Phase 5 findings define bounded supporting claims. PDCH supports a
 - Do not use MV12 as positive full-method evidence; its tradeoff analysis freezes the current latent-target line.
 - Do not use low one-dimensional output identity as evidence that upstream BGE features are dataset-invariant; MV15 keeps feature identity high after theta and severity conditioning.
 - Do not use MV16 as a positive method claim; its few-shot calibration ladder is bounded/negative and keeps full-method construction blocked.
-- Do not strengthen RQ4 beyond first-round aggregate credibility without agreement uncertainty analysis and resolving remaining incomplete candidate rows, if any.
+- Do not strengthen RQ4 beyond first-round aggregate credibility without resolving remaining incomplete candidate rows and discussing agreement uncertainty plus sampling limits.
 
 ## Source Map
 

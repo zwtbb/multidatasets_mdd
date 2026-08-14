@@ -1,4 +1,84 @@
 {
+  "agreement_uncertainty": {
+    "bootstrap_resamples_requested": 2000,
+    "bootstrap_seed": 20260814,
+    "bootstrap_unit": "double_annotated_candidate_pair",
+    "ci_method": "nonparametric_percentile_bootstrap",
+    "evidence_presence": [
+      {
+        "agreement_ci95_high": 1.0,
+        "agreement_ci95_low": 0.951048951048951,
+        "bootstrap_resamples_effective_for_kappa": 2000,
+        "bootstrap_resamples_requested": 2000,
+        "bootstrap_unit": "double_annotated_candidate_pair",
+        "ci_method": "nonparametric_percentile_bootstrap",
+        "dataset": "ALL",
+        "field": "evidence_presence",
+        "kappa_ci95_high": 1.0,
+        "kappa_ci95_low": 0.9224321130133256,
+        "observed_agreement": 0.9790209790209791,
+        "observed_kappa": 0.9647000740557886,
+        "observed_kappa_status": "computed_pairwise_kappa",
+        "pair_count": 143,
+        "uncertainty_status": "computed_bootstrap_ci",
+        "undefined_kappa_resamples": 0
+      },
+      {
+        "agreement_ci95_high": 1.0,
+        "agreement_ci95_low": 0.9491525423728814,
+        "bootstrap_resamples_effective_for_kappa": 2000,
+        "bootstrap_resamples_requested": 2000,
+        "bootstrap_unit": "double_annotated_candidate_pair",
+        "ci_method": "nonparametric_percentile_bootstrap",
+        "dataset": "cmdc",
+        "field": "evidence_presence",
+        "kappa_ci95_high": 1.0,
+        "kappa_ci95_low": 0.8852140077821012,
+        "observed_agreement": 0.9830508474576272,
+        "observed_kappa": 0.9668911335578003,
+        "observed_kappa_status": "computed_pairwise_kappa",
+        "pair_count": 59,
+        "uncertainty_status": "computed_bootstrap_ci",
+        "undefined_kappa_resamples": 0
+      },
+      {
+        "agreement_ci95_high": 1.0,
+        "agreement_ci95_low": 0.7916666666666666,
+        "bootstrap_resamples_effective_for_kappa": 2000,
+        "bootstrap_resamples_requested": 2000,
+        "bootstrap_unit": "double_annotated_candidate_pair",
+        "ci_method": "nonparametric_percentile_bootstrap",
+        "dataset": "edaic",
+        "field": "evidence_presence",
+        "kappa_ci95_high": 1.0,
+        "kappa_ci95_low": 0.5945945945945945,
+        "observed_agreement": 0.9166666666666666,
+        "observed_kappa": 0.846153846153846,
+        "observed_kappa_status": "computed_pairwise_kappa",
+        "pair_count": 24,
+        "uncertainty_status": "computed_bootstrap_ci",
+        "undefined_kappa_resamples": 0
+      },
+      {
+        "agreement_ci95_high": 1.0,
+        "agreement_ci95_low": 1.0,
+        "bootstrap_resamples_effective_for_kappa": 2000,
+        "bootstrap_resamples_requested": 2000,
+        "bootstrap_unit": "double_annotated_candidate_pair",
+        "ci_method": "nonparametric_percentile_bootstrap",
+        "dataset": "pdch",
+        "field": "evidence_presence",
+        "kappa_ci95_high": 1.0,
+        "kappa_ci95_low": 1.0,
+        "observed_agreement": 1.0,
+        "observed_kappa": 1.0,
+        "observed_kappa_status": "computed_pairwise_kappa",
+        "pair_count": 60,
+        "uncertainty_status": "computed_bootstrap_ci",
+        "undefined_kappa_resamples": 0
+      }
+    ]
+  },
   "annotation_gate": {
     "completed_candidates": 143,
     "double_annotated_candidates": 143,
@@ -11,7 +91,7 @@
     "annotation_summary_status": "ready_for_aggregate_evidence_review",
     "short_read": "Aggregate annotation counts and pairwise agreement are ready for human review; raw snippets and subject-level rows remain local-only."
   },
-  "generated_at": "2026-08-13T05:19:02+00:00",
+  "generated_at": "2026-08-14T06:00:36+00:00",
   "input_contract": {
     "candidate_count": 144,
     "local_annotation_packet_rows": 288,
@@ -33,6 +113,7 @@
       "aggregate_evidence_source_summary.csv",
       "aggregate_prompt_artifact_summary.csv",
       "agreement_summary.csv",
+      "agreement_uncertainty_summary.csv",
       "field_contract.csv"
     ]
   },

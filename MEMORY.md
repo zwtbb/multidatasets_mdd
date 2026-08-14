@@ -68,6 +68,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_52_mv16_dif_guided_calibration_design.md`
   - `/root/autodl-tmp/memory/sessions/session_53_mv14_dif_effective_denominator_correction.md`
   - `/root/autodl-tmp/memory/sessions/session_54_mv16_dif_guided_calibration_run.md`
+  - `/root/autodl-tmp/memory/sessions/session_55_mv06_agreement_uncertainty.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -138,11 +139,13 @@ MPDD 2025 is intentionally out of scope for current auditing.
   Baselines/Failure-Mode/Measurement Results scaffold is refreshed with
   downgraded MV12/MV14 wording, MV15 latent-conditioned identity has now run
   with dimension-matched severity controls and blocked feature-invariance
-  wording, and MV16 DIF-guided few-shot measurement calibration has now run as
-  bounded/negative calibration evidence. Full-method work remains blocked
-  until a genuinely new data, feature, or measurement mechanism changes the
-  gate. The active next orchestration step is manuscript consolidation, with
-  optional MV06 agreement uncertainty before stronger RQ4 wording.
+  wording, MV16 DIF-guided few-shot measurement calibration has now run as
+  bounded/negative calibration evidence, and MV06 aggregate agreement
+  uncertainty has been added. Full-method work remains blocked until a
+  genuinely new data, feature, or measurement mechanism changes the gate. The
+  active next orchestration step is manuscript consolidation; stronger RQ4
+  wording still needs the remaining incomplete local candidate resolved, if
+  available, and sampling limits discussed.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -300,13 +303,16 @@ MPDD 2025 is intentionally out of scope for current auditing.
 - Phase 5 `P5_MV06 evidence_annotation_summary_gate` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_evidence_annotation_summary/`.
   It now defaults to the ignored local annotation workbench and exports only
-  aggregate completion, field-issue, evidence-field, prompt-artifact, and
-  dataset-stratified agreement summaries. Current status is
+  aggregate completion, field-issue, evidence-field, prompt-artifact,
+  dataset-stratified agreement, and bootstrap agreement-uncertainty summaries.
+  Current status is
   `ready_for_aggregate_evidence_review`: 143 completed candidates and 143
   double-annotated candidates over the 144-candidate local workbench. One CMDC
   sampled candidate remains incomplete because the imported workbook attachment
   omitted its two annotator rows. Evidence-presence kappa is `0.965` overall,
-  `0.967` for CMDC, `0.846` for E-DAIC, and `1.000` for PDCH. Artifact hygiene
+  `0.967` for CMDC, `0.846` for E-DAIC, and `1.000` for PDCH; bootstrap 95
+  percent kappa CIs are `0.922-1.000` overall, `0.885-1.000` for CMDC,
+  `0.595-1.000` for E-DAIC, and `1.000-1.000` for PDCH. Artifact hygiene
   passes; no raw text, source locator map, or subject-level rows are exported.
 - Phase 5 `P5_MV06 local_ai_preannotation_triage` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv06_ai_preannotation_triage/`.
@@ -822,10 +828,12 @@ Key Phase 2 outputs:
 - P5_MV06 summary-gate decision: use
   `scripts/phase5_summarize_mv06_evidence_annotations.py` as the required
   aggregate-only export path after local annotation. It must report agreement
-  by dataset as well as an `ALL` diagnostic row. First-round MV06 evidence can
-  now be used only as bounded aggregate credibility evidence; stronger RQ4
-  wording should add agreement uncertainty analysis and resolve the remaining
-  incomplete local candidate if needed.
+  by dataset as well as an `ALL` diagnostic row. It now also reports
+  nonparametric percentile bootstrap agreement-uncertainty summaries for the
+  annotation fields, with evidence-presence CIs carried into the paper
+  scaffold. First-round MV06 evidence can now be used only as bounded aggregate
+  credibility evidence; stronger RQ4 wording should resolve the remaining
+  incomplete local candidate if needed and discuss sampling limits.
 - P5_MV06 AI preannotation decision: use
   `scripts/phase5_run_mv06_local_ai_preannotation.py` only as local triage to
   speed human review. Its ignored output can contain local excerpts and
@@ -1018,9 +1026,10 @@ Key Phase 2 outputs:
   small-k DIF-guided gate fails and output identity remains high. Use MV16 as
   a falsifying calibration stress test, not as a positive method result.
 - Next measurement-aware route decision: consolidate the manuscript around the
-  completed bounded diagnostic evidence. Optional next work is MV06 agreement
-  uncertainty and resolving the one incomplete local candidate before stronger
-  RQ4 wording. Do not run MV08c-like shallow-head variants, EATD
+  completed bounded diagnostic evidence. MV06 agreement uncertainty is now
+  complete; optional next RQ4 work is resolving the one incomplete local
+  candidate before stronger RQ4 wording. Do not run MV08c-like shallow-head
+  variants, EATD
   valence-adversarial modules, naive personality conditioning, or a
   15-dimensional free latent symptom model without new evidence and a new
   predeclared contract.
@@ -1146,6 +1155,5 @@ plaintext credential-like content before committing on the clean remote lineage.
    The paper direction is measurement shift / measurement validity with bounded
    negative and diagnostic evidence. The Baselines, Failure-Mode Diagnostics,
    and Measurement Results scaffold is refreshed. The next active task is
-   manuscript consolidation; secondary MV06 work can add agreement uncertainty
-   analysis and resolve the one incomplete local
-   candidate before stronger evidence-localization claims.
+   manuscript consolidation; secondary MV06 work can resolve the one incomplete
+   local candidate before stronger evidence-localization claims.

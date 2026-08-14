@@ -46,8 +46,9 @@ excerpts.
   candidate incomplete.
 - Treat the updated MV06 result as strengthened first-round aggregate evidence,
   not as a full evidence-localization validity proof.
-- Stronger RQ4 wording should add agreement uncertainty analysis and resolve
-  the remaining incomplete local CMDC candidate if available.
+- Stronger RQ4 wording should use the later agreement uncertainty table,
+  discuss sampling limits, and resolve the remaining incomplete local CMDC
+  candidate if available.
 - Keep the updated workbook, backup, review pack, local excerpts, notes,
   source locators, and subject-level rows local-only under Git ignore.
 
@@ -102,14 +103,16 @@ Ignored local-only inputs/artifacts:
 
 - One CMDC sampled candidate is still incomplete because it was absent from the
   uploaded workbook attachment.
-- No agreement uncertainty, Krippendorff alpha, or bootstrap stability analysis
-  has been added yet.
+- Superseded by `session_55_mv06_agreement_uncertainty.md`: aggregate
+  nonparametric bootstrap agreement uncertainty has been added for MV06.
+  Krippendorff alpha remains optional, not required for the current
+  first-round evidence-localization wording.
 - RQ4 remains a limited credibility layer; it does not rescue the blocked RQ1
   shared-symptom/full-method gate.
 
 ## Next Handoff
 
 Use MV06 as first-round aggregate evidence-localization credibility in the
-paper. Next active experiment remains MV14 measurement-uncertainty bootstrap.
-If stronger RQ4 wording is needed, first complete the missing local CMDC
-candidate and add aggregate agreement uncertainty analysis.
+paper. The next active work after MV16 is manuscript consolidation. If stronger
+RQ4 wording is needed, first complete the missing local CMDC candidate and
+discuss the MV06 agreement uncertainty/sampling limits.

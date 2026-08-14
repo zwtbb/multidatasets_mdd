@@ -31,6 +31,7 @@ MV02_SUMMARY = PHASE5_DIR / "p5_mv02_hamd_auxiliary_bridge" / "run_summary.json"
 MV04C_SUMMARY = PHASE5_DIR / "p5_mv04c_protocol_task_valence_control" / "run_summary.json"
 MV06_SUMMARY = PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "run_summary.json"
 MV06_AGREEMENT = PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "agreement_summary.csv"
+MV06_UNCERTAINTY = PHASE5_DIR / "p5_mv06_evidence_annotation_summary" / "agreement_uncertainty_summary.csv"
 MV08_SUMMARY = PHASE5_DIR / "p5_mv08_partial_invariance_measurement" / "run_summary.json"
 MV08B_SUMMARY = PHASE5_DIR / "p5_mv08b_total_anchored_residual_measurement" / "run_summary.json"
 MV09_SUMMARY = PHASE5_DIR / "p5_mv09_conditional_identity_audit" / "run_summary.json"
@@ -250,6 +251,7 @@ def require_inputs() -> None:
         MV15_DESIGN_SUMMARY,
         MV15_RUN_SUMMARY,
         MV16_RUN_SUMMARY,
+        MV06_UNCERTAINTY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -273,12 +275,31 @@ def evidence_presence_kappa(agreement: pd.DataFrame, dataset: str) -> tuple[str,
     return fmt(row["pairwise_kappa"]), str(int(row["pair_count"]))
 
 
+def evidence_presence_ci(uncertainty: pd.DataFrame, dataset: str) -> str:
+    rows = uncertainty[(uncertainty["dataset"] == dataset) & (uncertainty["field"] == "evidence_presence")]
+    if rows.empty:
+        return "NA"
+    row = rows.iloc[0]
+    if pd.isna(row["kappa_ci95_low"]) or pd.isna(row["kappa_ci95_high"]):
+        return "NA"
+    return f"{fmt(row['kappa_ci95_low'])}-{fmt(row['kappa_ci95_high'])}"
+
+
+def evidence_presence_phrase(agreement: pd.DataFrame, uncertainty: pd.DataFrame, dataset: str, label: str) -> str:
+    kappa, pairs = evidence_presence_kappa(agreement, dataset)
+    ci = evidence_presence_ci(uncertainty, dataset)
+    if ci == "NA":
+        return f"{label} {kappa} ({pairs} pairs)"
+    return f"{label} {kappa} (95% CI {ci}; {pairs} pairs)"
+
+
 def build_metric_context() -> dict[str, str]:
     gate = read_json(FULL_GATE_SUMMARY)
     mv02 = read_json(MV02_SUMMARY)
     mv04c = read_json(MV04C_SUMMARY)
     mv06 = read_json(MV06_SUMMARY)
     agreement = pd.read_csv(MV06_AGREEMENT)
+    uncertainty = pd.read_csv(MV06_UNCERTAINTY)
     mv08 = read_json(MV08_SUMMARY)
     mv08b = read_json(MV08B_SUMMARY)
     mv09 = read_json(MV09_SUMMARY)
@@ -311,10 +332,10 @@ def build_metric_context() -> dict[str, str]:
     mv15_d = mv15_design["decision"]
     mv15_v = mv15_run["verdict"]
     mv16_v = mv16_run["verdict"]
-    all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
-    cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
-    edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
-    pdch_kappa, pdch_pairs = evidence_presence_kappa(agreement, "pdch")
+    all_kappa = evidence_presence_phrase(agreement, uncertainty, "ALL", "ALL")
+    cmdc_kappa = evidence_presence_phrase(agreement, uncertainty, "cmdc", "CMDC")
+    edaic_kappa = evidence_presence_phrase(agreement, uncertainty, "edaic", "E-DAIC")
+    pdch_kappa = evidence_presence_phrase(agreement, uncertainty, "pdch", "PDCH")
     remaining_mv06 = max(
         0,
         int(mv06.get("input_contract", {}).get("candidate_count", 0))
@@ -502,8 +523,7 @@ def build_metric_context() -> dict[str, str]:
         "mv06": (
             f"MV06 has {mv06_gate['completed_candidates']} completed and "
             f"{mv06_gate['double_annotated_candidates']} double-annotated candidates. Evidence-presence kappa: "
-            f"ALL {all_kappa} ({all_pairs} pairs), CMDC {cmdc_kappa} ({cmdc_pairs}), "
-            f"PDCH {pdch_kappa} ({pdch_pairs}), E-DAIC {edaic_kappa} ({edaic_pairs})."
+            f"{all_kappa}, {cmdc_kappa}, {pdch_kappa}, {edaic_kappa}."
             f"{mv06_remaining_clause} Field-specific degenerate marginal statuses should be read from agreement_summary.csv."
         ),
     }
@@ -680,7 +700,7 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "mv06_first_round_evidence",
             "paper_section": "Evidence localization",
             "finding": context["mv06"],
-            "interpretation": "MV06 can support first-round aggregate credibility; stronger RQ4 claims should add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows.",
+            "interpretation": "MV06 can support first-round aggregate credibility; stronger RQ4 claims still need the remaining incomplete local candidate resolved and sampling limits discussed.",
             "source_artifact_ids": "P5_MV06_summary",
         },
     ]
@@ -749,7 +769,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any], claims: pd.DataFram
             "",
             "- Use these tables as manuscript scaffolding, not as a replacement for the source artifacts.",
             "- Keep private review material, learned parameters, and row-level model outputs local-only.",
-            "- Any stronger RQ4 claim should first add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows.",
+            "- Any stronger RQ4 claim should first resolve any remaining incomplete local candidate rows and discuss agreement uncertainty plus sampling limits.",
         ]
     )
     (out_dir / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

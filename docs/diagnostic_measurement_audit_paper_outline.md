@@ -220,8 +220,8 @@ Blocked claims:
 
 10. Evidence localization is a credibility layer, not a rescue for weak RQ1.
    MV06 can support bounded aggregate credibility claims, but stronger RQ4
-   claims need agreement uncertainty analysis and completion of the remaining
-   local candidate if available.
+   claims need completion of the remaining local candidate if available and an
+   explicit discussion of agreement-uncertainty and sampling limits.
 
 ## Proposed Sections
 
@@ -539,7 +539,7 @@ Tracked outputs:
    calibration evidence, not a method pass.
 18. Next: consolidate the manuscript around the completed bounded diagnostic
    evidence.
-19. Add MV06 agreement uncertainty analysis and resolve the remaining
+19. Done: add MV06 agreement uncertainty analysis. Resolve the remaining
    incomplete local candidate if stronger RQ4 wording is desired.
 20. Prepare result tables from existing aggregate summaries only; do not export
    row-level predictions, raw text, subject locators, learned parameters, or

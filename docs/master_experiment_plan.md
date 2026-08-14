@@ -113,9 +113,11 @@ data audit
   and aggregate summary gate are complete. The updated human annotation import
   now reaches the aggregate gate with 143 completed and 143 double-annotated
   candidates over the 144-candidate local workbench. Evidence-presence kappa is
-  `0.965` overall, `0.967` for CMDC, `0.846` for E-DAIC, and `1.000` for PDCH.
-  Evidence reporting is allowed only as aggregate, first-round,
-  dataset-stratified credibility evidence.
+  `0.965` overall, `0.967` for CMDC, `0.846` for E-DAIC, and `1.000` for PDCH;
+  bootstrap 95 percent kappa CIs are `0.922-1.000` overall, `0.885-1.000` for
+  CMDC, `0.595-1.000` for E-DAIC, and `1.000-1.000` for PDCH. Evidence
+  reporting is allowed only as aggregate, first-round, dataset-stratified
+  credibility evidence.
 - Phase 5 `P5_MV06 local_ai_preannotation_triage`:
   complete as a local-only review accelerator. It generated ignored AI-triage
   rows for 144 MV06 candidates and tracked only aggregate counts plus hygiene.
@@ -559,9 +561,9 @@ representation without those controls.
   as bounded diagnostic evidence, keep MV14 as the completed convergence-safe
   item-level measurement-uncertainty layer, freeze MV15 as negative
   latent-conditioned feature-identity evidence, and freeze MV16 as a
-  completed bounded/negative few-shot calibration result. Optionally add MV06 agreement uncertainty
-  analysis and resolve the one incomplete local candidate before stronger RQ4
-  wording.
+  completed bounded/negative few-shot calibration result. MV06 agreement
+  uncertainty is complete; resolve the one incomplete local candidate before
+  stronger RQ4 wording if available.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-14T05:48:10+00:00`
+Generated: `2026-08-14T06:01:55+00:00`
 
 ## Decision
 
@@ -15,7 +15,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation or MV06 agreement uncertainty. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation. |
 | C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/bounded diagnostic evidence and reframe RQ1 as measurement-shift and measurement-validity work. | A stronger shared-representation or calibration mechanism would need a genuinely new predeclared data/feature/measurement source; current MV16 is bounded/negative. |
 | C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13/MV14 as label-only PHQ common-structure, stable-anchor, sparse-loading-DIF, and localized-threshold-shift evidence with measured convergence/model-selection uncertainty; use MV12 plus its aggregate tradeoff analysis as bounded two-stage prediction diagnostics; do not present them as multimodal method success or external scale transfer. | Use MV16 as bounded/negative target-calibration evidence; any stronger adaptation claim needs a new predeclared mechanism beyond the current BGE/few-shot ladder. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization. | External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims. |
@@ -24,8 +24,8 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_MODMA_TASK_CONTROL | `allowed_limited` | MODMA task-specific diagnostic protocol-control result. | Integrate with shared-symptom targets and cross-dataset controls before using it as a full method component. |
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
-| C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, add agreement uncertainty analysis and resolve any remaining incomplete local candidate rows; cite dataset-specific kappas from the MV06 agreement table. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, and MV16 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence; optionally add MV06 agreement uncertainty before stronger evidence-localization wording. |
+| C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, resolve any remaining incomplete local candidate rows and discuss dataset-specific kappa CIs plus sampling limits. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, and MV16 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence; MV06 stronger wording still requires resolving any incomplete local candidate rows and discussing sampling limits. |
 
 ## Evidence Inventory
 
@@ -77,7 +77,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | rank | action | success gate |
 | ---: | --- | --- |
 | 1 | Freeze MV16 as bounded/negative calibration evidence and update the manuscript framing. | Paper-facing Results and claim tables treat MV16 as a completed bounded/negative measurement-calibration follow-up, not as feature invariance or full-method authorization. |
-| 2 | Use the dataset-stratified MV06 agreement summary as first-round RQ4 evidence, then optionally add agreement uncertainty analysis and resolve any incomplete local candidate rows. | Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators. |
+| 2 | Use the dataset-stratified MV06 agreement and bootstrap uncertainty summaries as first-round RQ4 evidence, then resolve any incomplete local candidate rows if stronger wording is needed. | Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |
 | 5 | Decide later whether the public remote history needs rewrite or repository recreation. | No force-push or repository recreation happens without an explicit decision from the user. |

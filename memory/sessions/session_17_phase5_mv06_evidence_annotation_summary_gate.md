@@ -27,9 +27,13 @@ the local source locator map, source paths, raw snippets, or train a model.
 - `agreement_summary.csv` is dataset-stratified and also includes an `ALL`
   diagnostic row. Evidence-presence kappa is `0.965` overall, `0.967` for
   CMDC, `0.846` for E-DAIC, and `1.000` for PDCH.
+- Superseded by `session_55_mv06_agreement_uncertainty.md`: the same summary
+  gate now also exports `agreement_uncertainty_summary.csv` with aggregate
+  bootstrap CIs.
 - The gate no longer blocks first-round aggregate MV06 evidence reporting, but
-  stronger cross-dataset RQ4 claims should add agreement uncertainty analysis
-  and resolve the remaining incomplete local candidate if needed.
+  stronger cross-dataset RQ4 claims should use the uncertainty table, discuss
+  sampling limits, and resolve the remaining incomplete local candidate if
+  needed.
 - Artifact hygiene passed for tracked outputs.
 - A temporary synthetic double-annotation test reached
   `ready_for_aggregate_evidence_review`, verifying the agreement path can run
@@ -96,6 +100,6 @@ Versionable artifacts:
 ## Next Handoff
 
 Use the aggregate MV06 outputs as first-round credibility evidence only. For a
-stronger manuscript claim, add uncertainty/alpha-style agreement alongside the
-dataset-stratified kappa table and resolve the remaining incomplete local
+stronger manuscript claim, use the dataset-stratified kappa and uncertainty
+tables, discuss sampling limits, and resolve the remaining incomplete local
 candidate if available.

@@ -98,11 +98,10 @@ both-direction DIF-guided small-k mechanism gate
 calibration evidence, not a full method pass. The Baselines, Failure-Mode
 Diagnostics, and Measurement Results scaffold is now generated from aggregate
 tables only. Current next action: consolidate the manuscript framing. Optional
-MV06 work is
-agreement uncertainty analysis plus resolving the one incomplete local
-candidate before stronger RQ4 wording. Theta scores, fitted parameters, row
-predictions, transformed features, bootstrap samples, calibration parameters,
-and model artifacts remain local-only.
+MV06 work is resolving the one incomplete local candidate before stronger RQ4
+wording; aggregate agreement uncertainty is now available. Theta scores, fitted
+parameters, row predictions, transformed features, bootstrap samples,
+calibration parameters, and model artifacts remain local-only.
 
 ## Key Paths
 

@@ -1,10 +1,10 @@
 # P5_MV06 Evidence Annotation Summary Gate
 
-Generated: `2026-08-13T05:19:02+00:00`
+Generated: `2026-08-14T06:00:36+00:00`
 
 ## Scope
 
-This gate validates the local MV06 annotation packet and exports only aggregate annotation completion, evidence-field, prompt-artifact, and agreement summaries. It does not read raw clinical text, local source locators, or raw snippets.
+This gate validates the local MV06 annotation packet and exports only aggregate annotation completion, evidence-field, prompt-artifact, agreement, and agreement-uncertainty summaries. It does not read raw clinical text, local source locators, or raw snippets.
 
 ## Decision
 
@@ -72,6 +72,15 @@ Aggregate annotation counts and pairwise agreement are ready for human review; r
 | pdch | evidence_strength | 60 | 0.983 | 0.960 | computed_pairwise_kappa |
 | pdch | time_status | 60 | 0.967 | 0.951 | computed_pairwise_kappa |
 | pdch | prompt_artifact | 60 | 1.000 | 1.000 | computed_pairwise_kappa |
+
+## Evidence-Presence Agreement Uncertainty
+
+| dataset | pairs | observed agreement 95 percent CI | kappa 95 percent CI | effective kappa resamples | status |
+| --- | ---: | ---: | ---: | ---: | --- |
+| ALL | 143 | 0.951-1.000 | 0.922-1.000 | 2000 | computed_bootstrap_ci |
+| cmdc | 59 | 0.949-1.000 | 0.885-1.000 | 2000 | computed_bootstrap_ci |
+| edaic | 24 | 0.792-1.000 | 0.595-1.000 | 2000 | computed_bootstrap_ci |
+| pdch | 60 | 1.000-1.000 | 1.000-1.000 | 2000 | computed_bootstrap_ci |
 
 ## Release Rule
 
