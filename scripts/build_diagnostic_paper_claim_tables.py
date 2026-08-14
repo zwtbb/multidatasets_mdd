@@ -43,6 +43,7 @@ MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_s
 MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
 MV15_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
 MV15_RUN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity" / "run_summary.json"
+MV16_RUN_SUMMARY = PHASE5_DIR / "p5_mv16_dif_guided_calibration" / "run_summary.json"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -69,8 +70,8 @@ CLAIM_SECTION = {
 }
 
 PAPER_CLAIM_LANGUAGE = {
-    "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper, with MV15 now completed as a negative latent-conditioned identity audit.",
-    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, external anchor/DIF replication, the frozen MV12 latent-target diagnostic with dimension-matched caveats, and the completed MV15 identity gate.",
+    "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper, with MV15 and MV16 completed as bounded/negative follow-ups.",
+    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative and reframe RQ1 around measurement validity, target measurement shift, external anchor/DIF replication, the frozen MV12 latent-target diagnostic with dimension-matched caveats, completed MV15 identity gate, and bounded/negative MV16 calibration ladder.",
     "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV13/MV14 as label-only PHQ common-structure, stable-anchor, sparse-loading-DIF, and localized-threshold-shift evidence with explicit AIC/BIC and convergence caveats, not as bootstrap-confirmed global partial invariance.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
@@ -79,7 +80,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD context calibration as negative and keep age/personality as later measurement-heterogeneity axes.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate evidence-localization credibility evidence only.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-validity paper with bounded claims, explicit negative evidence, external psychometric replication, convergence-aware bootstrap uncertainty, the completed two-stage latent-target plus aggregate tradeoff analysis, and MV15's completed dimension-matched identity ladder as diagnostic gates.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a measurement-shift / measurement-validity paper with bounded claims, explicit negative evidence, external psychometric replication, convergence-aware bootstrap uncertainty, the completed two-stage latent-target plus aggregate tradeoff analysis, MV15's completed dimension-matched identity ladder, and MV16's bounded few-shot calibration result as diagnostic gates.",
 }
 
 LITERATURE_ROWS = [
@@ -248,6 +249,7 @@ def require_inputs() -> None:
         MV14_SUMMARY,
         MV15_DESIGN_SUMMARY,
         MV15_RUN_SUMMARY,
+        MV16_RUN_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -289,6 +291,7 @@ def build_metric_context() -> dict[str, str]:
     mv14 = read_json(MV14_SUMMARY)
     mv15_design = read_json(MV15_DESIGN_SUMMARY)
     mv15_run = read_json(MV15_RUN_SUMMARY)
+    mv16_run = read_json(MV16_RUN_SUMMARY)
 
     mv02_v = mv02["verdict"]
     modma = next(row for row in mv04c["verdict"]["domain_verdicts"] if row["domain"] == "MODMA")
@@ -307,6 +310,7 @@ def build_metric_context() -> dict[str, str]:
     mv14_dif_attempted = mv14_v.get("dif_attempted_draws", mv14_v.get("requested_dif_R"))
     mv15_d = mv15_design["decision"]
     mv15_v = mv15_run["verdict"]
+    mv16_v = mv16_run["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
     cmdc_kappa, cmdc_pairs = evidence_presence_kappa(agreement, "cmdc")
     edaic_kappa, edaic_pairs = evidence_presence_kappa(agreement, "edaic")
@@ -369,7 +373,15 @@ def build_metric_context() -> dict[str, str]:
             f"{fmt(mv15_v['theta_conditioned_feature_identity_ba'])}, and total/predicted-total/B3-conditioned "
             f"feature BA {fmt(mv15_v['total_conditioned_feature_identity_ba'])}/"
             f"{fmt(mv15_v['predicted_total_conditioned_feature_identity_ba'])}/"
-            f"{fmt(mv15_v['b3_itemwise_theta_conditioned_feature_identity_ba'])}."
+            f"{fmt(mv15_v['b3_itemwise_theta_conditioned_feature_identity_ba'])}. "
+            f"MV16 then completes the DIF-guided few-shot calibration ladder with status "
+            f"{mv16_v['pass_rule_status']}: subject-overlap gate {mv16_v['subject_overlap_gate_passed']}, "
+            f"anchor safety {mv16_v['anchor_safety_gate_passed']}, DIF-guided small-k gate "
+            f"{mv16_v['dif_guided_small_k_gate_passed']}, best supported row "
+            f"{mv16_v['best_supported_direction']}/{mv16_v['best_supported_model']} at k="
+            f"{mv16_v['best_supported_k']}, best L4 small-k delta theta MAE vs L0 "
+            f"{fmt(mv16_v['best_l4_small_k_delta_theta_mae_vs_L0'])}, and L4 small-k "
+            f"output identity BA {fmt(mv16_v['l4_small_k_output_identity_ba_mean'])}."
         ),
         "mv09": (
             f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
@@ -461,6 +473,18 @@ def build_metric_context() -> dict[str, str]:
             f"B3 Pareto dominates predicted theta output={mv15_v['b3_pareto_dominates_predicted_theta_output']}; "
             f"full_method_allowed={mv15_v['full_method_allowed']}."
         ),
+        "mv16_run": (
+            f"MV16 DIF-guided few-shot calibration run: status {mv16_v['pass_rule_status']}; "
+            f"subject-overlap gate {mv16_v['subject_overlap_gate_passed']}; "
+            f"anchor safety {mv16_v['anchor_safety_gate_passed']}; "
+            f"DIF-guided small-k gate {mv16_v['dif_guided_small_k_gate_passed']}; "
+            f"direct-baseline gate {mv16_v['direct_baseline_gate_passed']}; "
+            f"best supported row {mv16_v['best_supported_direction']}/{mv16_v['best_supported_model']} "
+            f"at k={mv16_v['best_supported_k']}; "
+            f"best L4 small-k delta theta MAE vs L0 {fmt(mv16_v['best_l4_small_k_delta_theta_mae_vs_L0'])}; "
+            f"L4 small-k output identity BA {fmt(mv16_v['l4_small_k_output_identity_ba_mean'])}; "
+            f"full_method_allowed={mv16_v['full_method_allowed']}."
+        ),
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
             f"direct total MAE {fmt(mv02_v['best_pdch_direct_total_mae'])}; "
@@ -551,8 +575,8 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "rq1_measurement_negative",
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
-            "interpretation": "Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV13/MV14/MV12 shift RQ1 to measurement-target validity, while MV15 freezes the current BGE latent-conditioned feature-identity line as negative evidence.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_MV12;P5_MV12_analysis;P5_MV15",
+            "interpretation": "Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV13/MV14/MV12 shift RQ1 to measurement-target validity, while MV15 and MV16 freeze the current BGE latent identity/calibration line as bounded or negative evidence.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_MV12;P5_MV12_analysis;P5_MV15;P5_MV16",
         },
         {
             "finding_id": "mv10_psychometric_baseline",
@@ -616,6 +640,13 @@ def build_key_findings() -> pd.DataFrame:
             "finding": context["mv15_run"],
             "interpretation": "MV15 blocks theta-specific feature-invariance wording under the current BGE contract: conditioning on label theta does not reduce feature identity below total, predicted-total, or B3 severity controls, and B3 output remains a dimension-matched caveat.",
             "source_artifact_ids": "P5_MV15",
+        },
+        {
+            "finding_id": "mv16_dif_guided_calibration_run",
+            "paper_section": "Measurement evidence",
+            "finding": context["mv16_run"],
+            "interpretation": "MV16 completes the predeclared localized DIF calibration test but does not pass the both-direction small-k mechanism gate; report it as bounded or negative calibration evidence, not as a full method.",
+            "source_artifact_ids": "P5_MV16",
         },
         {
             "finding_id": "mv09_conditional_identity_gate",

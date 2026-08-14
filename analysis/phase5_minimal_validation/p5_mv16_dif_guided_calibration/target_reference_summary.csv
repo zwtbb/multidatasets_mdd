@@ -1,0 +1,11 @@
+direction_id,source_dataset,target_dataset,seed,fold,source_train_participants,target_reference_participants,target_eval_participants,measurement_items,anchor_items,dif_items,source_measurement_optimizer_success,target_reference_optimizer_success,source_measurement_fallback_count,target_reference_pool_fallback_count,target_eval_reference_fallback_count,target_reference_uses_eval_labels_for_evaluation_truth,target_reference_parameters_written,theta_tables_written
+D1_edaic_source_cmdc_target,edaic,cmdc,0,fold_1,163,77,16,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D2_cmdc_source_edaic_target,cmdc,edaic,0,fold_1,61,219,56,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D1_edaic_source_cmdc_target,edaic,cmdc,1,fold_2,163,77,16,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D2_cmdc_source_edaic_target,cmdc,edaic,1,fold_2,61,219,56,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D1_edaic_source_cmdc_target,edaic,cmdc,2,fold_3,163,77,15,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D2_cmdc_source_edaic_target,cmdc,edaic,2,fold_3,62,219,56,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D1_edaic_source_cmdc_target,edaic,cmdc,3,fold_4,163,77,15,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D2_cmdc_source_edaic_target,cmdc,edaic,3,fold_4,62,219,56,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D1_edaic_source_cmdc_target,edaic,cmdc,4,fold_5,163,77,15,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False
+D2_cmdc_source_edaic_target,cmdc,edaic,4,fold_5,62,219,56,C01;C02;C03;C04;C05;C06;C07;C08,C01;C04;C05;C07,C02;C06,True,True,0,0,0,True,False,False

@@ -1,0 +1,5 @@
+dataset,label_subjects,feature_subjects,joined_subjects,feature_family,model_input_columns,path_like_columns
+edaic,219.0,219,219.0,text_bge,512,
+cmdc,77.0,77,77.0,text_bge,512,
+edaic,,219,,text_bge,512,
+cmdc,,77,,text_bge,512,

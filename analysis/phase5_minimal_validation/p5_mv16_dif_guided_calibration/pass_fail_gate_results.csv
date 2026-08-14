@@ -1,0 +1,9 @@
+gate_id,passed,status,interpretation
+G1_input_scope,True,pass,Runner used manifest-governed PHQ labels and BGE feature caches only.
+G2_subject_level_fewshot_splits,True,pass,All source/calibration/evaluation overlap counts are zero.
+G3_ladder_completeness,True,pass,All L0-L6 rows are complete where feasible; k=0 target-label rows are explicitly skipped.
+G4_dif_guided_small_k_gain,False,fail,Requires L3 or L4 theta gain >=0.03 vs L0 and C02/C06 gain vs L1 in both directions for k<=20.
+G5_anchor_safety,True,pass,L3/L4 anchor MAE must not degrade more than 5 percent versus L1.
+G6_dimension_matched_baseline,True,pass,Direct B2/L6 baselines do not dominate every preferred DIF-guided row on both theta and observed MAE.
+G7_identity_boundary,True,pass,Output identity BA is reported separately from upstream BGE feature invariance.
+G8_artifact_hygiene,True,pass,Tracked outputs are aggregate-only and pass the hygiene scanner.

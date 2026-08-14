@@ -67,6 +67,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_51_mv15_latent_conditioned_identity_run.md`
   - `/root/autodl-tmp/memory/sessions/session_52_mv16_dif_guided_calibration_design.md`
   - `/root/autodl-tmp/memory/sessions/session_53_mv14_dif_effective_denominator_correction.md`
+  - `/root/autodl-tmp/memory/sessions/session_54_mv16_dif_guided_calibration_run.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -137,10 +138,11 @@ MPDD 2025 is intentionally out of scope for current auditing.
   Baselines/Failure-Mode/Measurement Results scaffold is refreshed with
   downgraded MV12/MV14 wording, MV15 latent-conditioned identity has now run
   with dimension-matched severity controls and blocked feature-invariance
-  wording, MV16 DIF-guided few-shot measurement calibration is predeclared, and
-  full-method work remains blocked until a genuinely new runnable mechanism
-  changes the gate. The active next experiment is to implement and run the
-  predeclared MV16 calibration runner.
+  wording, and MV16 DIF-guided few-shot measurement calibration has now run as
+  bounded/negative calibration evidence. Full-method work remains blocked
+  until a genuinely new data, feature, or measurement mechanism changes the
+  gate. The active next orchestration step is manuscript consolidation, with
+  optional MV06 agreement uncertainty before stronger RQ4 wording.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -373,7 +375,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 39 Phase 5 run summaries and exports claim gates, evidence
+  It reads 40 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -382,15 +384,15 @@ MPDD 2025 is intentionally out of scope for current auditing.
   task-control evidence, MV10/MV11/MV13/MV14 label-only psychometric screening,
   confirmation, external replication, and uncertainty evidence, MV12
   design/run/aggregate-tradeoff diagnostic evidence, MV15 aggregate
-  latent-conditioned identity diagnostic evidence, MV16 DIF-guided calibration
-  design evidence, and a reframed
+  latent-conditioned identity diagnostic evidence, MV16 aggregate bounded
+  calibration evidence, and a reframed
   diagnostic/audit-driven paper direction.
   RQ4 is now `allowed_limited` as first-round aggregate evidence, while
   blocked claims include full M0/M1/M2/M3 method start, transferable
   shared-symptom representation, positive EATD SDS generalization, EATD
-  valence-adversarial design, and RQ3 context conditioning. After MV16 design,
-  its ranked next action is
-  `NEXT_IMPLEMENT_MV16_DIF_GUIDED_CALIBRATION_RUNNER`.
+  valence-adversarial design, and RQ3 context conditioning. After the MV16
+  run, its ranked next action is
+  `NEXT_FREEZE_MV16_AND_CONSOLIDATE_PAPER`.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -595,7 +597,8 @@ MPDD 2025 is intentionally out of scope for current auditing.
   theta-only identity is `0.576`; predicted-theta output identity is `0.646`;
   B3 output still Pareto-dominates predicted theta. This freezes the current
   latent-conditioned BGE feature-identity line as diagnostic/negative evidence
-  and moves the next action to MV16 DIF-guided calibration.
+  and motivated MV16 as a measurement-calibration test rather than full-method
+  authorization.
 - Phase 5 `P5_MV16 dif_guided_calibration_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration_design/`.
   It is a design/predeclaration contract, not a calibration run. It reads only
@@ -611,9 +614,22 @@ MPDD 2025 is intentionally out of scope for current auditing.
   remains blocked. Future target-shot maps, theta tables, calibration
   parameters, row predictions, fitted measurement parameters, feature matrices,
   and model artifacts stay local-only.
+- Phase 5 `P5_MV16 dif_guided_calibration` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration/`.
+  It implemented the predeclared E-DAIC->CMDC and CMDC->E-DAIC PHQ
+  calibration ladder for k=`0/5/10/20/40`, using manifest-governed PHQ labels
+  and frozen BGE subject features only. Treat as bounded/negative calibration
+  evidence: `blocked_no_dif_guided_small_k_gain`. Subject-overlap,
+  ladder-completeness, anchor-safety, direct-baseline, output-identity, and
+  artifact-hygiene gates pass, but the both-direction DIF-guided small-k
+  mechanism gate fails. Best supported row is
+  `D1_edaic_source_cmdc_target`/`M16d_global_plus_C02_C06` at k=`10`; best L4
+  small-k delta theta MAE versus L0 is `-0.227`, while L4 small-k output
+  identity BA remains `0.984`. Do not use MV16 as feature invariance, a
+  positive method result, or full M0/M1/M2/M3 authorization.
 - Diagnostic measurement-audit paper claim tables are complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`. They export
-  paper-facing allowed/blocked claim boundaries, fifteen key numeric findings,
+  paper-facing allowed/blocked claim boundaries, seventeen key numeric findings,
   and seventeen literature-positioning rows from aggregate artifacts plus web-checked
   primary sources. Artifact hygiene passed. Treat them as manuscript
   scaffolding, not a replacement for source experiment artifacts.
@@ -991,15 +1007,23 @@ Key Phase 2 outputs:
   E-DAIC->CMDC and CMDC->E-DAIC PHQ calibration directions, k=`0/5/10/20/40`,
   locked anchors `C01/C04/C05/C07`, localized `C02/C06` threshold-DIF
   calibration, global affine/monotonic calibration, all-threshold calibration,
-  zero-shot source measurement, and direct target-adaptation comparators. It
-  can only support target measurement calibration after the future run passes
-  the gates; it cannot override MV15's feature-identity blocker or authorize
-  full M0/M1/M2/M3.
-- Next measurement-aware route decision: the next experiment should implement
-  and run MV16 DIF-guided few-shot measurement calibration. Do not run
-  MV08c-like shallow-head variants, EATD valence-adversarial modules, naive
-  personality conditioning, or a 15-dimensional free latent symptom model
-  without new evidence and a new predeclared contract.
+  zero-shot source measurement, and direct target-adaptation comparators. The
+  subsequent run consumed this design and did not pass the target-calibration
+  mechanism gate; neither the design nor the run can override MV15's
+  feature-identity blocker or authorize full M0/M1/M2/M3.
+- MV16 DIF-guided calibration run decision: the completed few-shot calibration
+  ladder is negative/bounded under the predeclared mechanism gate. L4
+  global-plus-C02/C06 calibration helps only asymmetrically, with the best
+  small-k theta-MAE delta versus L0 in E-DAIC->CMDC, but the both-direction
+  small-k DIF-guided gate fails and output identity remains high. Use MV16 as
+  a falsifying calibration stress test, not as a positive method result.
+- Next measurement-aware route decision: consolidate the manuscript around the
+  completed bounded diagnostic evidence. Optional next work is MV06 agreement
+  uncertainty and resolving the one incomplete local candidate before stronger
+  RQ4 wording. Do not run MV08c-like shallow-head variants, EATD
+  valence-adversarial modules, naive personality conditioning, or a
+  15-dimensional free latent symptom model without new evidence and a new
+  predeclared contract.
 
 ## Data Quality Watchlist
 
@@ -1115,13 +1139,13 @@ plaintext credential-like content before committing on the clean remote lineage.
    corrected convergence-safe bootstrap uncertainty layer and supports
    item-level stable-anchor/localized-threshold-DIF wording with uncertain
    global model selection. MV15 is complete and blocks theta-specific
-   feature-invariance wording under the current BGE contract. MV16
-   DIF-guided few-shot measurement calibration is predeclared and design-ready.
+   feature-invariance wording under the current BGE contract. MV16 is complete
+   and blocks a positive DIF-guided small-k calibration mechanism claim under
+   the current BGE/few-shot ladder.
    Full method construction remains blocked.
    The paper direction is measurement shift / measurement validity with bounded
    negative and diagnostic evidence. The Baselines, Failure-Mode Diagnostics,
-   and Measurement Results scaffold is refreshed. The next active task is to
-   implement/run the predeclared MV16 DIF-guided few-shot measurement
-   calibration; secondary MV06 work can add
-   agreement uncertainty analysis and resolve the one incomplete local
+   and Measurement Results scaffold is refreshed. The next active task is
+   manuscript consolidation; secondary MV06 work can add agreement uncertainty
+   analysis and resolve the one incomplete local
    candidate before stronger evidence-localization claims.

@@ -1,0 +1,451 @@
+direction_id,source_dataset,target_dataset,seed,k_shot,model_id,ladder_id,status,skipped_reason,detail
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,0,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,0,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,0,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,0,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,1,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,1,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,1,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,1,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,2,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,2,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,2,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,2,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,3,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,3,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,3,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,3,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,4,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D1_edaic_source_cmdc_target,edaic,cmdc,4,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16a_global_affine,L1_global_affine_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16b_global_monotonic,L2_global_monotonic_theta_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16e_all_thresholds,L5_all_threshold_target_calibration,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,4,0,M16f_direct_target_theta,L6_direct_target_domain_adaptation,skipped,requires target calibration labels,
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,5,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,10,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,20,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16_B0_zero_shot_source,L0_zero_shot_source_measurement,complete,,source X-to-theta predictor plus source measurement map
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16_B1_train_mean_target_theta,B1_train_mean_target_theta,complete,,target calibration mean floor
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16_B2_direct_itemwise_target,B2_direct_itemwise_target,complete,,target-only direct itemwise Ridge
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16a_global_affine,L1_global_affine_theta_calibration,complete,,global affine theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16b_global_monotonic,L2_global_monotonic_theta_calibration,complete,,global monotonic theta calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16c_dif_guided_C02_C06,L3_dif_guided_C02_C06_threshold_calibration,complete,,C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16d_global_plus_C02_C06,L4_anchor_plus_dif_joint_calibration,complete,,global affine plus C02/C06 threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16e_all_thresholds,L5_all_threshold_target_calibration,complete,,all-item threshold calibration
+D2_cmdc_source_edaic_target,cmdc,edaic,4,40,M16f_direct_target_theta,L6_direct_target_domain_adaptation,complete,,target-only direct theta Ridge

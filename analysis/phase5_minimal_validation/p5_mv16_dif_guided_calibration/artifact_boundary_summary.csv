@@ -1,0 +1,3 @@
+artifact_class,contents,contains_subject_rows,contains_latent_tables,contains_calibration_params
+tracked,"aggregate metrics, learning curves, gate results, identity summaries, reports",False,False,False
+local_only_not_written_by_runner,"target shot maps, row-level predictions, theta tables, fitted measurement parameters, model artifacts",True,True,True

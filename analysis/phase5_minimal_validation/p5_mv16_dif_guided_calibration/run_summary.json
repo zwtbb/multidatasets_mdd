@@ -1,0 +1,132 @@
+{
+  "artifact_hygiene_passed": true,
+  "generated_at": "2026-08-14T05:48:09+00:00",
+  "input_contract": {
+    "anchor_items": [
+      "C01",
+      "C04",
+      "C05",
+      "C07"
+    ],
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "dif_items": [
+      "C02",
+      "C06"
+    ],
+    "feature_family": "text_bge",
+    "k_shots": [
+      0,
+      5,
+      10,
+      20,
+      40
+    ],
+    "measurement_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "model_input_columns": 512,
+    "official_test_labels_used": false,
+    "private_review_material_read": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false
+  },
+  "model_contract": {
+    "directions": [
+      "D1_edaic_source_cmdc_target",
+      "D2_cmdc_source_edaic_target"
+    ],
+    "models": [
+      "M16_B0_zero_shot_source",
+      "M16_B1_train_mean_target_theta",
+      "M16_B2_direct_itemwise_target",
+      "M16a_global_affine",
+      "M16b_global_monotonic",
+      "M16c_dif_guided_C02_C06",
+      "M16d_global_plus_C02_C06",
+      "M16e_all_thresholds",
+      "M16f_direct_target_theta"
+    ],
+    "output_identity_classifier": "standardized_balanced_logistic_regression",
+    "ridge_alpha_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "target_reference_used_for_training_or_calibration": false,
+    "target_reference_uses_eval_labels_for_evaluation_truth": true
+  },
+  "outputs": {
+    "identity_rows": 37,
+    "learning_curve_rows": 74,
+    "local_only_outputs_not_written_by_runner": [
+      "target shot maps",
+      "row-level predictions",
+      "theta tables",
+      "fitted measurement parameters",
+      "calibration parameter values",
+      "model artifacts"
+    ],
+    "metric_seed_rows": 2590,
+    "metric_summary_rows": 518,
+    "split_audit_rows": 50,
+    "tracked_outputs": [
+      "artifact_boundary_summary.csv",
+      "artifact_hygiene_audit.json",
+      "calibration_runtime_summary.csv",
+      "gate_diagnostic_summary.csv",
+      "input_audit.csv",
+      "ladder_completeness_summary.csv",
+      "learning_curve_summary.csv",
+      "metric_by_seed.csv",
+      "metric_summary.csv",
+      "model_comparison_summary.csv",
+      "output_identity_by_seed.csv",
+      "output_identity_summary.csv",
+      "pass_fail_gate_results.csv",
+      "report.md",
+      "run_summary.json",
+      "split_audit_summary.csv",
+      "target_reference_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV16_dif_guided_calibration",
+  "scope": "dif_guided_fewshot_measurement_calibration",
+  "status": "complete",
+  "verdict": {
+    "anchor_safety_gate_passed": true,
+    "artifact_hygiene_passed": true,
+    "best_l4_small_k_delta_theta_mae_vs_L0": -0.226720146122675,
+    "best_supported_direction": "D1_edaic_source_cmdc_target",
+    "best_supported_k": 10,
+    "best_supported_model": "M16d_global_plus_C02_C06",
+    "dif_guided_small_k_gate_passed": false,
+    "direct_baseline_gate_passed": true,
+    "full_method_allowed": false,
+    "l4_small_k_output_identity_ba_mean": 0.9841919191919192,
+    "output_identity_reported": true,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_no_dif_guided_small_k_gain",
+    "short_read": "MV16 completes the predeclared few-shot calibration ladder but does not satisfy the DIF-guided small-k mechanism gate; keep it as negative or bounded diagnostic evidence.",
+    "status": "blocked_no_dif_guided_small_k_gain",
+    "subject_overlap_gate_passed": true
+  }
+}

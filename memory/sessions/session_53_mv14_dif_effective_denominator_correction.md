@@ -100,8 +100,9 @@ Primary checked outputs:
 
 ## Next Handoff
 
-Implement and run `scripts/phase5_run_mv16_dif_guided_calibration.py` from the
-predeclared MV16 design. Keep target-shot maps, theta tables, calibration
+Superseded by
+`memory/sessions/session_54_mv16_dif_guided_calibration_run.md`: MV16 has now
+been implemented and run. Future work should use the refreshed full-method gate
+and paper scaffolds, keeping target-shot maps, theta tables, calibration
 parameters, fitted measurement parameters, row predictions, feature matrices,
-and model artifacts local-only; track only aggregate curves/summaries, gate
-results, reports, docs, and memory.
+and model artifacts local-only.

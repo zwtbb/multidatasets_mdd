@@ -302,10 +302,10 @@ bootstrap stability for item-level anchors and localized threshold DIF while
 leaving global model selection uncertain, MV12 shows a useful but blocked
 theta-prediction trade-off with a dimension-matched B3 caveat, and MV15 now
 blocks theta-specific BGE feature-invariance wording under dimension-matched
-controls. MV16 is now predeclared as a DIF-guided few-shot
-measurement-calibration design with C01/C04/C05/C07 anchors and C02/C06
-threshold calibration. The next active step is implementing and running the
-MV16 runner; full method work remains blocked.
+controls. MV16 now completes the DIF-guided few-shot measurement-calibration
+ladder with C01/C04/C05/C07 anchors and C02/C06 threshold calibration, but it
+fails the both-direction small-k mechanism gate and remains bounded/negative
+calibration evidence. Full method work remains blocked.
 
 ## Updated Method Target
 
@@ -529,12 +529,15 @@ representation without those controls.
   predicted-total, and B3-conditioned feature identity, while theta-only and
   predicted-theta output identity are lower. Keep feature-invariance and
   low-dimensional-output identity separate.
-- `P5_MV16 dif_guided_calibration_design` is complete and design-ready:
-  it predeclares E-DAIC->CMDC and CMDC->E-DAIC PHQ calibration directions,
-  k=`0/5/10/20/40`, locked anchors `C01/C04/C05/C07`, primary threshold-DIF
-  calibration for `C02/C06`, global affine/monotonic, all-threshold, zero-shot,
-  and direct target-adaptation comparators, plus local-only calibration/theta
-  artifact boundaries.
+- `P5_MV16 dif_guided_calibration` is complete:
+  it implements the predeclared E-DAIC->CMDC and CMDC->E-DAIC PHQ calibration
+  directions at k=`0/5/10/20/40`, with locked anchors `C01/C04/C05/C07`,
+  primary threshold-DIF calibration for `C02/C06`, global affine/monotonic,
+  all-threshold, zero-shot, and direct target-adaptation comparators.
+  Subject-overlap, ladder-completeness, anchor-safety, direct-baseline,
+  output-identity, and artifact-hygiene gates pass, but the DIF-guided
+  small-k gate fails in both directions (`blocked_no_dif_guided_small_k_gain`).
+  Treat MV16 as bounded/negative calibration evidence, not a method pass.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -555,8 +558,8 @@ representation without those controls.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
   as bounded diagnostic evidence, keep MV14 as the completed convergence-safe
   item-level measurement-uncertainty layer, freeze MV15 as negative
-  latent-conditioned feature-identity evidence, then implement/run the
-  predeclared MV16 DIF-guided few-shot measurement calibration. Optionally add MV06 agreement uncertainty
+  latent-conditioned feature-identity evidence, and freeze MV16 as a
+  completed bounded/negative few-shot calibration result. Optionally add MV06 agreement uncertainty
   analysis and resolve the one incomplete local candidate before stronger RQ4
   wording.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports

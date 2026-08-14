@@ -1,7 +1,7 @@
 # Session Memory: MV16 DIF-Guided Calibration Design
 
 Status: complete
-Last updated: 2026-08-13 UTC
+Last updated: 2026-08-14 UTC
 Thread/task: main agent continuation
 
 ## Scope
@@ -32,9 +32,9 @@ parameters, export feature matrices, or claim PHQ-HAMD latent scale linking.
   theta calibration, global monotonic theta calibration, DIF-guided C02/C06
   threshold calibration, joint global+C02/C06 calibration, all-threshold target
   calibration, and direct target-domain adaptation.
-- The full-method gate now reads `39` Phase 5 summaries, remains
-  `blocked_but_publishable_diagnostic_direction`, and moves the ranked next
-  action to `NEXT_IMPLEMENT_MV16_DIF_GUIDED_CALIBRATION_RUNNER`.
+- At design time, the full-method gate read `39` Phase 5 summaries and moved
+  the ranked next action to MV16 implementation. This has now been superseded
+  by the completed MV16 run in session 54.
 
 ## Key Decisions
 
@@ -86,7 +86,9 @@ source-evidence, report, run summary, and artifact-hygiene files.
 ## Blockers And Risks
 
 - Full method remains blocked.
-- MV16 is still design-only; no calibration curve or pass/fail result exists.
+- Superseded by
+  `memory/sessions/session_54_mv16_dif_guided_calibration_run.md`: MV16 has now
+  been implemented and run as bounded/negative calibration evidence.
 - E-DAIC/CMDC BGE feature identity remains high from MV15, so MV16 must keep
   calibration claims separate from representation-invariance claims.
 - CMDC item-labeled N is small, so k=40 and reverse-direction analyses require
@@ -96,8 +98,9 @@ source-evidence, report, run summary, and artifact-hygiene files.
 
 ## Next Handoff
 
-Implement and run `scripts/phase5_run_mv16_dif_guided_calibration.py` from the
-design contract. Keep target-shot maps, theta tables, calibration parameters,
+Superseded by
+`memory/sessions/session_54_mv16_dif_guided_calibration_run.md`. Use the
+completed MV16 aggregate outputs and refreshed full-method gate for future
+interpretation. Keep target-shot maps, theta tables, calibration parameters,
 fitted measurement parameters, row predictions, feature matrices, and model
-artifacts local-only. Track only aggregate curves/summaries, gate results,
-reports, docs, and memory.
+artifacts local-only.
