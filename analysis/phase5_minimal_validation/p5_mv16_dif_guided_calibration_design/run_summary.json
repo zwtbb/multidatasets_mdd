@@ -1,0 +1,108 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "design_status": "ready_to_implement_mv16_dif_guided_calibration",
+    "full_method_allowed": false,
+    "k_shots": [
+      0,
+      5,
+      10,
+      20,
+      40
+    ],
+    "primary_anchors": [
+      "C01",
+      "C04",
+      "C05",
+      "C07"
+    ],
+    "primary_calibration_rows": [
+      "L3_dif_guided_C02_C06_threshold_calibration",
+      "L4_anchor_plus_dif_joint_calibration"
+    ],
+    "primary_dif_items": [
+      "C02",
+      "C06"
+    ],
+    "primary_directions": [
+      "D1_edaic_source_cmdc_target",
+      "D2_cmdc_source_edaic_target"
+    ],
+    "recommended_next_action": "implement_scripts_phase5_run_mv16_dif_guided_calibration",
+    "short_read": "MV16 is predeclared as a few-shot measurement-calibration test: use MV14-stable anchors C01/C04/C05/C07, calibrate localized C02/C06 threshold DIF under k=0/5/10/20/40 target-label budgets, and compare against zero-shot, global affine/monotonic, all-threshold, and direct target-adaptation baselines. It is diagnostic only."
+  },
+  "generated_at": "2026-08-14T05:15:00+00:00",
+  "input_contract": {
+    "aggregate_phase5_artifacts_read": true,
+    "full_method_allowed": false,
+    "future_deferred_sensitivity_datasets": [
+      "pdch"
+    ],
+    "future_feature_family": "text_bge",
+    "future_identity_unit": "subject_level",
+    "future_label_budget_k": [
+      0,
+      5,
+      10,
+      20,
+      40
+    ],
+    "future_primary_datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "multimodal_features_read_now": false,
+    "private_review_material_read": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false
+  },
+  "local_only_files": {
+    "calibration_parameters": "all affine, monotonic, threshold-offset, and direct-adaptation fitted parameters",
+    "feature_matrices_and_models": "all BGE matrices and trained prediction heads",
+    "fitted_measurement_parameters": "all IRT loadings, thresholds, posteriors, and model objects",
+    "row_predictions": "all per-participant item/theta/total predictions",
+    "target_shot_sampling_maps": "all sampled target subject identifiers and split assignments",
+    "theta_tables": "all participant-grain source, target, calibrated, and predicted theta tables"
+  },
+  "outputs": {
+    "calibration_item_rows": 8,
+    "calibration_ladder_rows": 7,
+    "dataset_direction_rows": 4,
+    "fewshot_sampling_rows": 5,
+    "implementation_queue_rows": 3,
+    "input_boundary_rows": 4,
+    "local_only_boundary_rows": 6,
+    "method_source_ref_rows": 5,
+    "metric_rows": 8,
+    "model_comparison_rows": 8,
+    "pass_fail_gate_rows": 8,
+    "source_evidence_rows": 7,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "calibration_item_contract.csv",
+      "calibration_ladder_contract.csv",
+      "dataset_direction_contract.csv",
+      "fewshot_sampling_contract.csv",
+      "implementation_queue.csv",
+      "input_boundary_contract.csv",
+      "local_only_boundary_contract.csv",
+      "method_source_refs.csv",
+      "metric_contract.csv",
+      "model_comparison_contract.csv",
+      "pass_fail_gate_contract.csv",
+      "report.md",
+      "run_summary.json",
+      "source_evidence_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV16_dif_guided_calibration_design",
+  "scope": "dif_guided_fewshot_measurement_calibration_predeclaration_no_run",
+  "status": "complete",
+  "verdict": {
+    "full_method_allowed": false,
+    "pass_rule_met": null,
+    "pass_rule_status": "design_ready_full_method_still_blocked",
+    "short_read": "Design is ready; the actual MV16 calibration run is required before any calibration claim can change.",
+    "status": "ready_to_implement_mv16_dif_guided_calibration"
+  }
+}

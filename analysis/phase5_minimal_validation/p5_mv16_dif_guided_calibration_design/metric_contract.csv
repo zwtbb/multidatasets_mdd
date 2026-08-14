@@ -1,0 +1,9 @@
+metric_id,metric,primary,direction,scope,success_interpretation
+M1_theta_mae,Theta MAE,True,lower_is_better,"target held-out subjects, by direction/k/seed/model",Calibration improves latent severity transfer only if it beats zero-shot and target train-mean floors.
+M2_observed_macro_item_mae,Observed Macro Item MAE,True,lower_is_better,C01-C08 reconstructed target item responses,Theta improvement is not safe if observed-scale item reconstruction degrades against direct itemwise baselines.
+M3_dif_item_mae,C02/C06 DIF-aware Item MAE,True,lower_is_better,localized threshold-DIF items only,DIF-guided calibration should improve the items it claims to fix.
+M4_anchor_item_mae,C01/C04/C05/C07 Anchor Item MAE,True,lower_is_better,locked anchor items,C02/C06 threshold calibration must not damage stable-anchor behavior.
+M5_total_mae,Observed Total MAE,False,lower_is_better,target held-out observed PHQ total,Total-score safety guard for clinical severity interpretation.
+M6_rank_correlation,Theta and total Spearman,False,higher_is_better,target held-out subjects,Monotonic calibration should preserve severity ranking.
+M7_output_identity,Predicted-output dataset identity BA,False,lower_is_better,pooled E-DAIC/CMDC predicted theta/items/total outputs,Report shortcut risk; do not conflate output identity with upstream BGE feature invariance.
+M8_learning_curve,Delta versus k=0 and versus direct target baseline,True,contextual,k=0/5/10/20/40 by direction,"MV16 is strongest if DIF-guided calibration helps at small k, not only at k=40."

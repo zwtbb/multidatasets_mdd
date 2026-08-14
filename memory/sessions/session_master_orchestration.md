@@ -297,7 +297,9 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   after the convergence-safe correction, full-ladder effective core R is
   `120/200` after `185/200` fit-success draws, configural converges in
   `120/200`, the stable metric/partial/scalar ladder has `197` effective
-  draws, DIF effective R is `100`, artifact hygiene passed, stable anchors are
+  draws, the DIF tier has minimum anchor-support effective R `77/100`
+  and threshold-DIF comparison effective R `100/100`, artifact hygiene passed,
+  stable anchors are
   `C01/C04/C05/C07`, threshold DIF remains concentrated on `C02/C06`, and
   AIC/BIC model selection remains split. Treat it as item-level
   measurement-shift evidence with global model-selection uncertainty, not a
@@ -443,10 +445,12 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
 	   RQ4 is allowed only as limited aggregate evidence, and a bounded
 	   measurement-shift / measurement-validity paper direction remains viable.
 	   The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold
-	   is now refreshed. The next active task is predeclaring MV16 DIF-guided
-	   few-shot measurement calibration, with theta scores, fitted parameters,
-	   row predictions, transformed features, projection directions, calibration
-	   parameters, bootstrap samples, and model artifacts kept local-only.
+	   is now refreshed. `P5_MV16` DIF-guided few-shot measurement calibration
+	   is now predeclared and design-ready. The next active task is
+	   implementing/running the MV16 calibration runner, with theta scores,
+	   fitted parameters, row predictions, transformed features, projection
+	   directions, calibration parameters, target-shot maps, bootstrap samples,
+	   and model artifacts kept local-only.
 
 ## Version Management Watchlist
 
@@ -502,8 +506,8 @@ convergence-safe, stable anchors and localized C02/C06 threshold DIF are the
 claimable item-level finding, and global invariance-model selection remains
 uncertain. MV15 latent-conditioned identity is now complete and negative:
 feature identity stays high after dimension-matched severity and theta
-conditioning, so next predeclare MV16 DIF-guided few-shot measurement
-calibration.
+conditioning. MV16 DIF-guided few-shot measurement calibration is predeclared
+and design-ready; next implement/run the MV16 runner.
 Optionally add MV06 agreement uncertainty analysis and resolve the remaining
 incomplete local candidate before stronger RQ4 wording. Keep
 row-level predictions, real manifests, real integrity/split maps, latent

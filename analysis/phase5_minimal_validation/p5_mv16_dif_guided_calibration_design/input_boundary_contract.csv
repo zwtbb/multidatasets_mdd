@@ -1,0 +1,5 @@
+input_id,source,used_now,future_runner_use,tracked_policy
+I1_aggregate_design_sources,MV10/MV11/MV12/MV13/MV14/MV15/full-gate aggregate artifacts,True,"read for anchors, DIF items, prior gate status, and baseline numbers",safe to track as aggregate context
+I2_target_item_labels,manifest-governed E-DAIC/CMDC PHQ C01-C08 item labels,False,sample k target-labeled calibration subjects and evaluate held-out target subjects,subject rows and sampled ids stay local-only; aggregate counts only
+I3_aligned_bge_features,existing ignored/local aligned BGE subject features,False,train source X-to-theta and direct target adaptation baselines,feature matrices stay local-only; aggregate feature-family counts only
+I4_measurement_runtime,version-captured local R/mirt and Python measurement scorer,False,fit or replay source/target measurement calibration under the MV16 ladder,runtime versions and aggregate convergence summaries only

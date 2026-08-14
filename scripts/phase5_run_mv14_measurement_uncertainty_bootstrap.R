@@ -387,7 +387,7 @@ run_dif_draw <- function(tier_id, draw_id, draw_data) {
       item_label_short = unname(item_labels[[item]]),
       dif_type = "loading",
       decision = loading$decision,
-      effective = loading$decision != "comparison_failed_missing_fit",
+      effective = isTRUE(loading$comparison_valid[[1]]),
       strong_dif_flag = loading$decision == "restricted_model_rejected_lrt_and_bic",
       stringsAsFactors = FALSE
     )
@@ -398,7 +398,7 @@ run_dif_draw <- function(tier_id, draw_id, draw_data) {
       item_label_short = unname(item_labels[[item]]),
       dif_type = "threshold",
       decision = threshold$decision,
-      effective = threshold$decision != "comparison_failed_missing_fit",
+      effective = isTRUE(threshold$comparison_valid[[1]]),
       strong_dif_flag = threshold$decision == "restricted_model_rejected_lrt_and_bic",
       stringsAsFactors = FALSE
     )
@@ -697,6 +697,8 @@ summarize_dif <- function(rows) {
   for (item in items) {
     loading <- rows[rows$construct_id == item & rows$dif_type == "loading", , drop = FALSE]
     threshold <- rows[rows$construct_id == item & rows$dif_type == "threshold", , drop = FALSE]
+    loading_attempted <- nrow(loading)
+    threshold_attempted <- nrow(threshold)
     loading_eff <- sum(loading$effective, na.rm = TRUE)
     threshold_eff <- sum(threshold$effective, na.rm = TRUE)
     loading_flag <- sum(loading$effective & loading$strong_dif_flag, na.rm = TRUE)
@@ -724,16 +726,21 @@ summarize_dif <- function(rows) {
       construct_id = item,
       item_label_short = unname(item_labels[[item]]),
       mv10_role = role_for(item),
+      loading_attempted_draws = loading_attempted,
       loading_effective_draws = loading_eff,
+      loading_failed_draws = loading_attempted - loading_eff,
       loading_flag_draws = loading_flag,
       loading_flag_frequency = if (loading_eff > 0) loading_flag / loading_eff else NA_real_,
       loading_ci_low = loading_bounds[[1]],
       loading_ci_high = loading_bounds[[2]],
+      threshold_attempted_draws = threshold_attempted,
       threshold_effective_draws = threshold_eff,
+      threshold_failed_draws = threshold_attempted - threshold_eff,
       threshold_flag_draws = threshold_flag,
       threshold_flag_frequency = if (threshold_eff > 0) threshold_flag / threshold_eff else NA_real_,
       threshold_ci_low = threshold_bounds[[1]],
       threshold_ci_high = threshold_bounds[[2]],
+      anchor_support_attempted_draws = length(draw_ids),
       anchor_support_effective_draws = support_eff,
       anchor_support_draws = support_count,
       anchor_support_frequency = if (support_eff > 0) support_count / support_eff else NA_real_,

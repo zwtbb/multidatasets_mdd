@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-13 UTC
+Last updated: 2026-08-14 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -65,6 +65,8 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_49_mv14_measurement_uncertainty_bootstrap_run.md`
   - `/root/autodl-tmp/memory/sessions/session_50_mv15_latent_conditioned_identity_design.md`
   - `/root/autodl-tmp/memory/sessions/session_51_mv15_latent_conditioned_identity_run.md`
+  - `/root/autodl-tmp/memory/sessions/session_52_mv16_dif_guided_calibration_design.md`
+  - `/root/autodl-tmp/memory/sessions/session_53_mv14_dif_effective_denominator_correction.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -135,9 +137,10 @@ MPDD 2025 is intentionally out of scope for current auditing.
   Baselines/Failure-Mode/Measurement Results scaffold is refreshed with
   downgraded MV12/MV14 wording, MV15 latent-conditioned identity has now run
   with dimension-matched severity controls and blocked feature-invariance
-  wording, and full-method work remains blocked until a genuinely new runnable
-  mechanism changes the gate. The active next experiment is to predeclare MV16
-  DIF-guided few-shot measurement calibration.
+  wording, MV16 DIF-guided few-shot measurement calibration is predeclared, and
+  full-method work remains blocked until a genuinely new runnable mechanism
+  changes the gate. The active next experiment is to implement and run the
+  predeclared MV16 calibration runner.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -370,7 +373,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 38 Phase 5 run summaries and exports claim gates, evidence
+  It reads 39 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -379,14 +382,15 @@ MPDD 2025 is intentionally out of scope for current auditing.
   task-control evidence, MV10/MV11/MV13/MV14 label-only psychometric screening,
   confirmation, external replication, and uncertainty evidence, MV12
   design/run/aggregate-tradeoff diagnostic evidence, MV15 aggregate
-  latent-conditioned identity diagnostic evidence, and a reframed
+  latent-conditioned identity diagnostic evidence, MV16 DIF-guided calibration
+  design evidence, and a reframed
   diagnostic/audit-driven paper direction.
   RQ4 is now `allowed_limited` as first-round aggregate evidence, while
   blocked claims include full M0/M1/M2/M3 method start, transferable
   shared-symptom representation, positive EATD SDS generalization, EATD
-  valence-adversarial design, and RQ3 context conditioning. After MV15 run,
+  valence-adversarial design, and RQ3 context conditioning. After MV16 design,
   its ranked next action is
-  `NEXT_PREDECLARE_MV16_DIF_GUIDED_CALIBRATION`.
+  `NEXT_IMPLEMENT_MV16_DIF_GUIDED_CALIBRATION_RUNNER`.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -549,8 +553,10 @@ MPDD 2025 is intentionally out of scope for current auditing.
   `fit_success && converged`; non-converged fits remain visible in attempted
   and failed denominators. Convergence-safe full-ladder effective core R is
   `120/200` after `185/200` fit-success draws, configural converges in
-  `120/200`, the stable metric/partial/scalar ladder has `197` effective draws,
-  DIF effective R is `100`, and artifact hygiene passed. Bootstrap-stable MV10
+  `120/200`, the stable metric/partial/scalar ladder has `197` effective
+  draws, the DIF tier has minimum anchor-support effective R `77/100`
+  (threshold-DIF comparisons remain `100/100` effective), and artifact hygiene
+  passed. Bootstrap-stable MV10
   anchors are `C01`, `C04`, `C05`, and `C07`; loading DIF remains sparse;
   threshold-DIF frequency remains concentrated on `C02` and `C06`; full-ladder
   AIC/BIC model selection remains split (`configural`/`scalar`), while the
@@ -590,6 +596,21 @@ MPDD 2025 is intentionally out of scope for current auditing.
   B3 output still Pareto-dominates predicted theta. This freezes the current
   latent-conditioned BGE feature-identity line as diagnostic/negative evidence
   and moves the next action to MV16 DIF-guided calibration.
+- Phase 5 `P5_MV16 dif_guided_calibration_design` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration_design/`.
+  It is a design/predeclaration contract, not a calibration run. It reads only
+  aggregate MV10/MV11/MV12/MV13/MV14/MV15/full-gate artifacts and exports
+  dataset-direction, k-shot sampling, item-role, calibration-ladder,
+  model-comparison, metric, pass/fail-gate, local-only-boundary,
+  implementation-queue, method-source, report, run-summary, and hygiene
+  artifacts. Primary directions are E-DAIC->CMDC and CMDC->E-DAIC PHQ
+  calibration; k is `0/5/10/20/40`; locked anchors are `C01/C04/C05/C07`; the
+  primary localized threshold-DIF items are `C02/C06`; comparators include
+  zero-shot source measurement, global affine/monotonic theta calibration,
+  all-threshold calibration, and direct target-domain adaptation. Full method
+  remains blocked. Future target-shot maps, theta tables, calibration
+  parameters, row predictions, fitted measurement parameters, feature matrices,
+  and model artifacts stay local-only.
 - Diagnostic measurement-audit paper claim tables are complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/`. They export
   paper-facing allowed/blocked claim boundaries, fifteen key numeric findings,
@@ -940,7 +961,9 @@ Key Phase 2 outputs:
   `0.50`, and threshold-DIF frequencies are highest for `C02` (`0.80`) and
   `C06` (`0.76`). Convergence-safe full-ladder effective R is `120/200` after
   `185/200` fit-success draws; configural converges in `120/200`; the stable
-  metric/partial/scalar ladder has `197` effective draws. Use MV14 for stable
+  metric/partial/scalar ladder has `197` effective draws; the DIF tier has
+  minimum anchor-support effective R `77/100`, while threshold-DIF comparisons
+  are `100/100` effective. Use MV14 for stable
   anchors, sparse loading DIF, localized threshold non-equivalence, and global
   model-selection uncertainty. Do not use MV14 as bootstrap-confirmed global
   partial invariance or full-method evidence.
@@ -964,11 +987,19 @@ Key Phase 2 outputs:
   feature invariance. Freeze this line as negative diagnostic evidence and
   move to MV16 as a measurement-calibration test, not as full-method
   authorization.
-- Next measurement-aware route decision: the next experiments should continue
-  with MV16 DIF-guided few-shot measurement calibration. Do not run MV08c-like
-  shallow-head variants, EATD valence-adversarial modules, naive personality
-  conditioning, or a 15-dimensional free latent symptom model without new
-  evidence and a new predeclared contract.
+- MV16 DIF-guided calibration design decision: MV16 is predeclared with
+  E-DAIC->CMDC and CMDC->E-DAIC PHQ calibration directions, k=`0/5/10/20/40`,
+  locked anchors `C01/C04/C05/C07`, localized `C02/C06` threshold-DIF
+  calibration, global affine/monotonic calibration, all-threshold calibration,
+  zero-shot source measurement, and direct target-adaptation comparators. It
+  can only support target measurement calibration after the future run passes
+  the gates; it cannot override MV15's feature-identity blocker or authorize
+  full M0/M1/M2/M3.
+- Next measurement-aware route decision: the next experiment should implement
+  and run MV16 DIF-guided few-shot measurement calibration. Do not run
+  MV08c-like shallow-head variants, EATD valence-adversarial modules, naive
+  personality conditioning, or a 15-dimensional free latent symptom model
+  without new evidence and a new predeclared contract.
 
 ## Data Quality Watchlist
 
@@ -1084,11 +1115,13 @@ plaintext credential-like content before committing on the clean remote lineage.
    corrected convergence-safe bootstrap uncertainty layer and supports
    item-level stable-anchor/localized-threshold-DIF wording with uncertain
    global model selection. MV15 is complete and blocks theta-specific
-   feature-invariance wording under the current BGE contract. Full method
-   construction remains blocked.
+   feature-invariance wording under the current BGE contract. MV16
+   DIF-guided few-shot measurement calibration is predeclared and design-ready.
+   Full method construction remains blocked.
    The paper direction is measurement shift / measurement validity with bounded
    negative and diagnostic evidence. The Baselines, Failure-Mode Diagnostics,
    and Measurement Results scaffold is refreshed. The next active task is to
-   predeclare MV16 DIF-guided few-shot measurement calibration; secondary MV06 work can add
+   implement/run the predeclared MV16 DIF-guided few-shot measurement
+   calibration; secondary MV06 work can add
    agreement uncertainty analysis and resolve the one incomplete local
    candidate before stronger evidence-localization claims.

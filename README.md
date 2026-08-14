@@ -46,7 +46,7 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Minimal validations are complete
-through the `P5_MV15` latent-conditioned identity run; the full-method gate remains
+through the `P5_MV16` DIF-guided calibration design; the full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a measurement-shift /
@@ -89,8 +89,12 @@ predicted-theta output identity BA is `0.646`. Treat this as evidence that
 low-dimensional output identity is not the same as upstream feature invariance.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
-now generated from aggregate tables only. Current next action: predeclare
-DIF-guided few-shot measurement calibration (`P5_MV16`). Optional MV06 work is
+now generated from aggregate tables only. `P5_MV16` is predeclared as a
+DIF-guided few-shot measurement-calibration test with anchors
+`C01/C04/C05/C07`, localized `C02/C06` threshold calibration, k=`0/5/10/20/40`,
+and zero-shot, global affine/monotonic, all-threshold, and direct
+target-adaptation comparators. Current next action: implement and run the MV16
+runner. Optional MV06 work is
 agreement uncertainty analysis plus resolving the one incomplete local
 candidate before stronger RQ4 wording. Theta scores, fitted parameters, row
 predictions, transformed features, bootstrap samples, calibration parameters,
@@ -125,6 +129,7 @@ and model artifacts remain local-only.
 - MV14 measurement-uncertainty bootstrap run: `analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/`
 - MV15 latent-conditioned identity design: `analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity_design/`
 - MV15 latent-conditioned identity run: `analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/`
+- MV16 DIF-guided calibration design: `analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration_design/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
@@ -165,7 +170,8 @@ python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
 ```
 
-Phase 5 gate, MV13/MV14 psychometric checks, MV12 analysis, and MV15:
+Phase 5 gate, MV13/MV14 psychometric checks, MV12 analysis, MV15, and MV16
+design:
 
 ```bash
 python scripts/phase5_plan_mv13_external_psychometric_replication.py --overwrite
@@ -175,6 +181,7 @@ python scripts/phase5_run_mv14_measurement_uncertainty_bootstrap.py
 python scripts/phase5_analyze_mv12_latent_target_tradeoffs.py
 python scripts/phase5_plan_mv15_latent_conditioned_identity.py --overwrite
 python scripts/phase5_run_mv15_latent_conditioned_identity.py
+python scripts/phase5_plan_mv16_dif_guided_calibration.py --overwrite
 python scripts/phase5_full_method_gate_audit.py
 python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_results_sections.py

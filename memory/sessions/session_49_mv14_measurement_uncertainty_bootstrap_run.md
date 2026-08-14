@@ -1,7 +1,7 @@
 # Session Memory: MV14 Measurement-Uncertainty Bootstrap Run
 
 Status: complete
-Last updated: 2026-08-13 UTC
+Last updated: 2026-08-14 UTC
 Thread/task: main agent continuation
 
 ## Scope
@@ -28,7 +28,11 @@ method construction, or rewrite public Git history.
   is `120/200`; `185/200` is the fit-success denominator; configural converges
   in `120/200`.
 - Stable-ladder sensitivity over metric/partial/scalar has effective R `197`.
-- DIF tier effective R is `100/100`.
+- Correction applied 2026-08-14: item-DIF effective counts now require
+  `comparison_valid == TRUE`, so fit errors and non-converged one-item-free
+  comparisons are excluded from item-DIF denominators.
+- DIF tier minimum anchor-support effective R is `77/100`; threshold-DIF
+  comparisons are `100/100` effective.
 - Bootstrap-stable MV10 anchors are `C01`, `C04`, `C05`, and `C07`.
 - Loading DIF remains sparse: no item exceeds loading-DIF frequency `0.50`.
 - Threshold DIF remains concentrated on `C02` and `C06`, with frequencies

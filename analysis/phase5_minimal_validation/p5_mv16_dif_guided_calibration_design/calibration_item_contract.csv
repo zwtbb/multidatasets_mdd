@@ -1,0 +1,9 @@
+construct_id,item_label_short,mv14_role,mv16_calibration_role,loading_flag_frequency,threshold_flag_frequency,anchor_support_frequency,future_calibration_policy
+C01,depressed_mood,anchor_candidate,locked_anchor,0.0408163265306122,0.0,0.959183673469388,Keep loading and thresholds fixed to the source/common anchor map except for global theta scale calibration.
+C02,anhedonia,metric_only_threshold_free,primary_dif_threshold_calibration,0.0649350649350649,0.8,0.155844155844156,Calibrate target threshold offsets first; keep loading shared unless a later design predeclares loading DIF.
+C03,sleep,metric_only_threshold_free,sensitivity_non_anchor,0.0,0.02,0.979591836734694,Keep fixed in the primary ladder; allow only aggregate sensitivity reporting.
+C04,fatigue,anchor_candidate,locked_anchor,0.0306122448979592,0.04,0.928571428571429,Keep loading and thresholds fixed to the source/common anchor map except for global theta scale calibration.
+C05,appetite,anchor_candidate,locked_anchor,0.0103092783505155,0.02,0.969072164948454,Keep loading and thresholds fixed to the source/common anchor map except for global theta scale calibration.
+C06,self_worth,metric_only_threshold_free,primary_dif_threshold_calibration,0.0,0.76,0.247422680412371,Calibrate target threshold offsets first; keep loading shared unless a later design predeclares loading DIF.
+C07,concentration,anchor_candidate,locked_anchor,0.03125,0.0,0.96875,Keep loading and thresholds fixed to the source/common anchor map except for global theta scale calibration.
+C08,psychomotor,free_loading_or_threshold,sensitivity_possible_loading_or_threshold,0.183673469387755,0.02,0.795918367346939,Report as sensitivity; do not add it to the primary DIF-guided set unless MV16 run evidence and a later design justify it.

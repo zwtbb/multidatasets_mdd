@@ -1,0 +1,9 @@
+model_id,model_family,uses_bge_features,uses_target_labels_for_calibration,expected_role,must_compare_against
+M16_B0_zero_shot_source,source_measurement_baseline,True,False,reproduce the MV12 zero-shot source-calibrated external theta failure under the cleaned MV16 protocol,all MV16 rows
+M16_B1_train_mean_target_theta,target_label_floor,False,True,k-shot target-label floor for theta and observed-scale reconstruction,M16a/M16b/M16c/M16d
+M16_B2_direct_itemwise_target,dimension_matched_direct_baseline,True,True,B3-style direct itemwise comparator under the same k-shot target budget,M16c/M16d
+M16a_global_affine,global_theta_calibration,True,True,separate global scale mismatch from item-specific threshold shift,M16_B0;M16c;M16_B2
+M16b_global_monotonic,monotonic_theta_calibration_sensitivity,True,True,check whether affine calibration is too rigid,M16a;M16c
+M16c_dif_guided_C02_C06,localized_threshold_DIF_calibration,True,True,primary measurement-calibration candidate,M16_B0;M16a;M16d;M16_B2
+M16d_global_plus_C02_C06,joint_global_and_localized_DIF_calibration,True,True,preferred if both global scale and localized thresholds matter,M16_B0;M16a;M16c;M16e;M16_B2
+M16e_all_thresholds,high_flexibility_measurement_calibration,True,True,overfit-risk upper-bound calibration comparator,M16c;M16d;M16_B2

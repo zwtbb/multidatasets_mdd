@@ -24,7 +24,8 @@ fitted psychometric parameters, or rewrite GitHub history directly.
 - MV14 convergence-safe full-ladder effective R is `120/200`; `185/200` is the
   fit-success count, not the effective model-selection count.
 - MV14 configural convergence is `120/200`; stable metric/partial/scalar
-  ladder effective R is `197`; DIF effective R is `100`.
+  ladder effective R is `197`; minimum DIF anchor-support effective R is
+  `77/100`, while threshold-DIF comparisons are `100/100` effective.
 - Stable anchors remain `C01/C04/C05/C07`; loading DIF remains sparse; top
   threshold-DIF items remain `C02/C06`.
 - MV14 manuscript interpretation is downgraded to item-level measurement-shift

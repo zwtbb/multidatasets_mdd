@@ -1,6 +1,6 @@
 # P5 MV14 Measurement-Uncertainty Bootstrap
 
-Generated: `2026-08-13T08:07:49+00:00`
+Generated: `2026-08-14T05:08:56+00:00`
 
 ## Scope
 
@@ -13,7 +13,7 @@ MV14 uses group-wise subject bootstrap over the E-DAIC/CMDC PHQ C01-C08 item-res
 - Core convergence-safe full-ladder draws: `120` / `200`.
 - Core full-ladder fit-success/converged draws: `185` / `120`.
 - Configural fit-success/converged draws: `185` / `120`.
-- DIF minimum effective anchor draws: `100`.
+- DIF minimum effective anchor draws: `77` / `100`.
 - Best full-ladder AIC/BIC model: `configural` / `scalar`.
 - Best stable-ladder AIC/BIC model: `partial_mv10` / `scalar`.
 - Stable anchors: `C01;C04;C05;C07`.
@@ -24,9 +24,9 @@ MV14 uses group-wise subject bootstrap over the E-DAIC/CMDC PHQ C01-C08 item-res
 
 | tier | requested R | effective draws | seconds | claim status |
 | --- | ---: | ---: | ---: | --- |
-| MV14_A_smoke_runtime | 10 | 9 | 28.5 | `not_claimable_smoke` |
-| MV14_B_core_model_stability | 200 | 120 | 704.0 | `primary_core_stability` |
-| MV14_C_item_DIF_stability | 100 | 100 | 900.9 | `primary_anchor_and_DIF_stability` |
+| MV14_A_smoke_runtime | 10 | 9 | 29.5 | `not_claimable_smoke` |
+| MV14_B_core_model_stability | 200 | 120 | 744.2 | `primary_core_stability` |
+| MV14_C_item_DIF_stability | 100 | 77 | 946.7 | `primary_anchor_and_DIF_stability` |
 
 ## Core Stability
 
@@ -103,22 +103,22 @@ MV14 uses group-wise subject bootstrap over the E-DAIC/CMDC PHQ C01-C08 item-res
 
 ## Item Stability
 
-| item | MV10 role | loading DIF freq | threshold DIF freq | anchor support freq | threshold rank |
-| --- | --- | ---: | ---: | ---: | ---: |
-| C01 depressed_mood | `anchor_candidate` | 0.040 | 0.000 | 0.960 | 7 |
-| C02 anhedonia | `metric_only_threshold_free` | 0.050 | 0.800 | 0.180 | 1 |
-| C03 sleep | `metric_only_threshold_free` | 0.000 | 0.020 | 0.980 | 4 |
-| C04 fatigue | `anchor_candidate` | 0.030 | 0.040 | 0.930 | 3 |
-| C05 appetite | `anchor_candidate` | 0.010 | 0.020 | 0.970 | 4 |
-| C06 self_worth | `metric_only_threshold_free` | 0.000 | 0.760 | 0.240 | 2 |
-| C07 concentration | `anchor_candidate` | 0.030 | 0.000 | 0.970 | 7 |
-| C08 psychomotor | `free_loading_or_threshold` | 0.180 | 0.020 | 0.800 | 4 |
+| item | MV10 role | loading DIF freq | loading eff | threshold DIF freq | threshold eff | anchor support freq | anchor eff | threshold rank |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| C01 depressed_mood | `anchor_candidate` | 0.041 | 98/100 | 0.000 | 100/100 | 0.959 | 98/100 | 7 |
+| C02 anhedonia | `metric_only_threshold_free` | 0.065 | 77/100 | 0.800 | 100/100 | 0.156 | 77/100 | 1 |
+| C03 sleep | `metric_only_threshold_free` | 0.000 | 98/100 | 0.020 | 100/100 | 0.980 | 98/100 | 4 |
+| C04 fatigue | `anchor_candidate` | 0.031 | 98/100 | 0.040 | 100/100 | 0.929 | 98/100 | 3 |
+| C05 appetite | `anchor_candidate` | 0.010 | 97/100 | 0.020 | 100/100 | 0.969 | 97/100 | 4 |
+| C06 self_worth | `metric_only_threshold_free` | 0.000 | 97/100 | 0.760 | 100/100 | 0.247 | 97/100 | 2 |
+| C07 concentration | `anchor_candidate` | 0.031 | 96/100 | 0.000 | 100/100 | 0.969 | 96/100 | 7 |
+| C08 psychomotor | `free_loading_or_threshold` | 0.184 | 98/100 | 0.020 | 100/100 | 0.796 | 98/100 | 4 |
 
 ## Gate Recommendations
 
 | recommendation | status | evidence |
 | --- | --- | --- |
-| measurement_uncertainty_boundary | `complete_mv14_convergence_safe_item_level_measurement_shift` | Full-ladder convergence-safe R 120/200; DIF effective R 100. |
+| measurement_uncertainty_boundary | `complete_mv14_convergence_safe_item_level_measurement_shift` | Full-ladder convergence-safe R 120/200; DIF effective R 77/100. |
 | anchor_wording | `stable` | Stable anchors: C01;C04;C05;C07. |
 | dif_wording | `localized` | Top threshold-DIF items: C02;C06. |
 | global_invariance_wording | `downgrade_to_uncertain` | Configural converged 120/200; stable-ladder effective R 197. |

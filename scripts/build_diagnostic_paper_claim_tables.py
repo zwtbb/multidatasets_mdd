@@ -304,6 +304,7 @@ def build_metric_context() -> dict[str, str]:
     mv12_a = mv12_analysis["decision"]
     mv13_v = mv13["verdict"]
     mv14_v = mv14["verdict"]
+    mv14_dif_attempted = mv14_v.get("dif_attempted_draws", mv14_v.get("requested_dif_R"))
     mv15_d = mv15_design["decision"]
     mv15_v = mv15_run["verdict"]
     all_kappa, all_pairs = evidence_presence_kappa(agreement, "ALL")
@@ -351,7 +352,7 @@ def build_metric_context() -> dict[str, str]:
             f"{mv14_v['core_all_fit_success_draws']}, configural converged R "
             f"{mv14_v['configural_converged_draws']}, stable-ladder R "
             f"{mv14_v['stable_ladder_effective_draws']}, DIF effective R "
-            f"{mv14_v['dif_min_anchor_effective_draws']}, stable anchors "
+            f"{mv14_v['dif_min_anchor_effective_draws']}/{mv14_dif_attempted}, stable anchors "
             f"{';'.join(mv14_v['stable_anchor_items'])}, top threshold-DIF items "
             f"{';'.join(mv14_v['top_threshold_dif_items'])}, and best AIC/BIC "
             f"{mv14_v['best_aic_model']}/{mv14_v['best_bic_model']} with stable-ladder "
@@ -409,7 +410,7 @@ def build_metric_context() -> dict[str, str]:
             f"{mv14_v['core_all_fit_success_draws']}; configural converged R "
             f"{mv14_v['configural_converged_draws']}/{mv14_v['core_selection_attempted_draws']}; "
             f"stable-ladder effective R {mv14_v['stable_ladder_effective_draws']}; DIF effective R "
-            f"{mv14_v['dif_min_anchor_effective_draws']}; stable anchors "
+            f"{mv14_v['dif_min_anchor_effective_draws']}/{mv14_dif_attempted}; stable anchors "
             f"{';'.join(mv14_v['stable_anchor_items'])}; top threshold-DIF items "
             f"{';'.join(mv14_v['top_threshold_dif_items'])}; best AIC/BIC models "
             f"{mv14_v['best_aic_model']}/{mv14_v['best_bic_model']}; stable-ladder AIC/BIC "

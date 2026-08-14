@@ -1,6 +1,6 @@
 {
   "artifact_hygiene_passed": true,
-  "generated_at": "2026-08-13T08:07:49+00:00",
+  "generated_at": "2026-08-14T05:08:56+00:00",
   "input_contract": {
     "datasets": [
       "edaic",
@@ -81,8 +81,9 @@
     "core_completed": true,
     "core_effective_draws": 120,
     "core_selection_attempted_draws": 200,
+    "dif_attempted_draws": 100,
     "dif_completed": true,
-    "dif_min_anchor_effective_draws": 100,
+    "dif_min_anchor_effective_draws": 77,
     "external_engine": "R mirt::multipleGroup",
     "full_method_allowed": false,
     "high_loading_dif_items": [],

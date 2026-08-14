@@ -391,6 +391,12 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
     stable_ladder_effective = first_numeric(stable_ref, "effective_draws", 0)
 
     dif_effective = int(pd.to_numeric(dif.get("anchor_support_effective_draws", pd.Series(dtype=float)), errors="coerce").min()) if not dif.empty else 0
+    if not dif.empty and "anchor_support_attempted_draws" in dif.columns:
+        dif_attempted = int(
+            pd.to_numeric(dif["anchor_support_attempted_draws"], errors="coerce").min()
+        )
+    else:
+        dif_attempted = requested["dif_r"]
 
     anchor_items = ["C01", "C04", "C05", "C07"]
     anchor_support = frequency_map(dif, "anchor_support_frequency")
@@ -460,6 +466,7 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
         "configural_converged_draws": int(configural_converged),
         "configural_convergence_rate": configural_convergence_rate,
         "stable_ladder_effective_draws": int(stable_ladder_effective),
+        "dif_attempted_draws": int(dif_attempted),
         "dif_min_anchor_effective_draws": int(dif_effective),
         "best_aic_model": best_aic_model,
         "best_bic_model": best_bic_model,
@@ -614,7 +621,8 @@ def build_gate_recommendations(verdict: dict[str, Any]) -> pd.DataFrame:
                 "evidence": (
                     f"Full-ladder convergence-safe R {verdict['core_effective_draws']}/"
                     f"{verdict['core_selection_attempted_draws']}; DIF effective R "
-                    f"{verdict['dif_min_anchor_effective_draws']}."
+                    f"{verdict['dif_min_anchor_effective_draws']}/"
+                    f"{verdict['dif_attempted_draws']}."
                 ),
             },
             {
@@ -680,7 +688,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         f"- Core convergence-safe full-ladder draws: `{verdict['core_effective_draws']}` / `{verdict['core_selection_attempted_draws']}`.",
         f"- Core full-ladder fit-success/converged draws: `{verdict['core_all_fit_success_draws']}` / `{verdict['core_all_converged_draws']}`.",
         f"- Configural fit-success/converged draws: `{verdict['configural_fit_success_draws']}` / `{verdict['configural_converged_draws']}`.",
-        f"- DIF minimum effective anchor draws: `{verdict['dif_min_anchor_effective_draws']}`.",
+        f"- DIF minimum effective anchor draws: `{verdict['dif_min_anchor_effective_draws']}` / `{verdict['dif_attempted_draws']}`.",
         f"- Best full-ladder AIC/BIC model: `{verdict['best_aic_model']}` / `{verdict['best_bic_model']}`.",
         f"- Best stable-ladder AIC/BIC model: `{verdict['stable_ladder_best_aic_model']}` / `{verdict['stable_ladder_best_bic_model']}`.",
         f"- Stable anchors: `{';'.join(verdict['stable_anchor_items']) or 'none'}`.",
@@ -777,15 +785,22 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
             "",
             "## Item Stability",
             "",
-            "| item | MV10 role | loading DIF freq | threshold DIF freq | anchor support freq | threshold rank |",
-            "| --- | --- | ---: | ---: | ---: | ---: |",
+            "| item | MV10 role | loading DIF freq | loading eff | threshold DIF freq | threshold eff | anchor support freq | anchor eff | threshold rank |",
+            "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
     for _, row in dif.iterrows():
+        loading_eff = int(row["loading_effective_draws"]) if pd.notna(row.get("loading_effective_draws")) else 0
+        loading_attempted = int(row["loading_attempted_draws"]) if pd.notna(row.get("loading_attempted_draws")) else verdict["requested_dif_R"]
+        threshold_eff = int(row["threshold_effective_draws"]) if pd.notna(row.get("threshold_effective_draws")) else 0
+        threshold_attempted = int(row["threshold_attempted_draws"]) if pd.notna(row.get("threshold_attempted_draws")) else verdict["requested_dif_R"]
+        anchor_eff = int(row["anchor_support_effective_draws"]) if pd.notna(row.get("anchor_support_effective_draws")) else 0
+        anchor_attempted = int(row["anchor_support_attempted_draws"]) if pd.notna(row.get("anchor_support_attempted_draws")) else verdict["requested_dif_R"]
         lines.append(
             f"| {row['construct_id']} {row['item_label_short']} | `{row['mv10_role']}` | "
-            f"{fmt(row['loading_flag_frequency'])} | {fmt(row['threshold_flag_frequency'])} | "
-            f"{fmt(row['anchor_support_frequency'])} | "
+            f"{fmt(row['loading_flag_frequency'])} | {loading_eff}/{loading_attempted} | "
+            f"{fmt(row['threshold_flag_frequency'])} | {threshold_eff}/{threshold_attempted} | "
+            f"{fmt(row['anchor_support_frequency'])} | {anchor_eff}/{anchor_attempted} | "
             f"{'' if pd.isna(row['threshold_frequency_rank']) else int(row['threshold_frequency_rank'])} |"
         )
 

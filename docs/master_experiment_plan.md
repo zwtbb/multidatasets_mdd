@@ -161,7 +161,7 @@ data audit
   as a negative follow-up: total anchoring does not rescue the shallow BGE
   shared-symptom row.
 - Phase 5 full-method gate audit:
-  complete. It reads 38 Phase 5 run summaries and writes claim gates, evidence
+  complete. It reads 39 Phase 5 run summaries and writes claim gates, evidence
   inventory, a next-action queue, a report, and an artifact-hygiene audit under
   `analysis/phase5_minimal_validation/full_method_gate_audit/`. Current status
   is `blocked_but_publishable_diagnostic_direction`,
@@ -233,7 +233,8 @@ data audit
   It ran smoke/core/DIF R=`10/200/100` after the convergence-safe correction:
   full-ladder effective core R is `120/200` after `185/200` fit-success draws,
   configural converges in `120/200`, the stable metric/partial/scalar ladder
-  has `197` effective draws, and DIF effective R is `100/100`. All four MV10
+  has `197` effective draws, the DIF tier has minimum anchor-support effective
+  R `77/100`, and threshold-DIF comparisons are `100/100` effective. All four MV10
   anchors are stable (`C01`, `C04`, `C05`, `C07`), loading DIF is sparse, and
   threshold-DIF frequencies remain top-ranked for `C02` and `C06`. Full-ladder
   AIC/BIC prefer `configural`/`scalar`, while the stable ladder prefers
@@ -294,15 +295,17 @@ shared-symptom claims, positive EATD SDS claims, EATD-driven
 valence-adversarial design, and positive RQ3 context-conditioning claims. It
 now allows RQ4 only as limited first-round aggregate evidence. The next method
 target is not another shallow BGE head. MV08/MV08b are both negative or blocked
-under the current frozen-BGE shallow contract. MV09-MV15 move the project into
+under the current frozen-BGE shallow contract. MV09-MV16 move the project into
 a label-measurement and measurement-shift frame: MV10/MV11/MV13 support
 bounded common-structure and anchor/DIF evidence, MV14 adds convergence-safe
 bootstrap stability for item-level anchors and localized threshold DIF while
 leaving global model selection uncertain, MV12 shows a useful but blocked
 theta-prediction trade-off with a dimension-matched B3 caveat, and MV15 now
 blocks theta-specific BGE feature-invariance wording under dimension-matched
-controls. The next active step is predeclaring MV16 DIF-guided few-shot
-measurement calibration; full method work remains blocked.
+controls. MV16 is now predeclared as a DIF-guided few-shot
+measurement-calibration design with C01/C04/C05/C07 anchors and C02/C06
+threshold calibration. The next active step is implementing and running the
+MV16 runner; full method work remains blocked.
 
 ## Updated Method Target
 
@@ -514,7 +517,8 @@ representation without those controls.
   metrics, local-only boundaries, and pass/downgrade rules before execution.
 - `P5_MV14 measurement_uncertainty_bootstrap` is complete with convergence-safe
   inference: full-ladder effective R `120/200`, configural converged
-  `120/200`, stable-ladder effective R `197`, DIF effective R `100/100`,
+  `120/200`, stable-ladder effective R `197`, minimum DIF anchor-support
+  effective R `77/100`, threshold-DIF comparison effective R `100/100`,
   stable anchors `C01/C04/C05/C07`, and threshold DIF concentrated on
   `C02/C06`. Treat it as item-level measurement-shift evidence with uncertain
   global invariance-model selection.
@@ -525,6 +529,12 @@ representation without those controls.
   predicted-total, and B3-conditioned feature identity, while theta-only and
   predicted-theta output identity are lower. Keep feature-invariance and
   low-dimensional-output identity separate.
+- `P5_MV16 dif_guided_calibration_design` is complete and design-ready:
+  it predeclares E-DAIC->CMDC and CMDC->E-DAIC PHQ calibration directions,
+  k=`0/5/10/20/40`, locked anchors `C01/C04/C05/C07`, primary threshold-DIF
+  calibration for `C02/C06`, global affine/monotonic, all-threshold, zero-shot,
+  and direct target-adaptation comparators, plus local-only calibration/theta
+  artifact boundaries.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -545,8 +555,8 @@ representation without those controls.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
   as bounded diagnostic evidence, keep MV14 as the completed convergence-safe
   item-level measurement-uncertainty layer, freeze MV15 as negative
-  latent-conditioned feature-identity evidence, then predeclare MV16
-  DIF-guided few-shot measurement calibration. Optionally add MV06 agreement uncertainty
+  latent-conditioned feature-identity evidence, then implement/run the
+  predeclared MV16 DIF-guided few-shot measurement calibration. Optionally add MV06 agreement uncertainty
   analysis and resolve the one incomplete local candidate before stronger RQ4
   wording.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports

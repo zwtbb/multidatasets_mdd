@@ -1,0 +1,7 @@
+artifact_class,why_local_only,allowed_tracked_derivative,must_not_track
+target_shot_sampling_maps,contains target participant membership and fold assignments,aggregate k/seed/direction counts and skipped-row reasons,True
+theta_tables,participant-grain latent scores are sensitive and can be linked to item labels,aggregate theta MAE/RMSE/Spearman and calibration summaries,True
+calibration_parameters,few-shot target parameters can encode target subject label information,"parameter-count, convergence, and pass/fail summaries",True
+fitted_measurement_parameters,IRT thresholds/loadings and posterior diagnostics are model artifacts from sensitive item rows,aggregate anchor/DIF stability and item-role summaries,True
+row_level_predictions,per-participant predicted items/theta/total can reveal sensitive symptom estimates,aggregate metric curves by model/direction/k/seed,True
+feature_matrices_and_models,"BGE features, fitted heads, vectorizers, and model objects are bulky and participant-grain","aggregate feature counts, model-family labels, and metrics",True
