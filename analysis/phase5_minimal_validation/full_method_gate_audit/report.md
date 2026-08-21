@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-21T18:49:20+00:00`
+Generated: `2026-08-21T19:18:16+00:00`
 
 ## Decision
 
@@ -17,7 +17,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | --- | --- | --- | --- |
 | C_FULL_METHOD_START | `blocked` | No full method construction yet. | Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation. |
 | C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/bounded diagnostic evidence and reframe RQ1 as measurement-shift and measurement-validity work. | A stronger shared-representation or calibration mechanism would need a genuinely new predeclared data/feature/measurement source; current MV16 is bounded/negative. |
-| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13/MV14 as label-only PHQ common-structure, stable-anchor, sparse-loading-DIF, and localized-threshold-shift evidence with measured convergence/model-selection uncertainty; use MV12 plus its aggregate tradeoff analysis as bounded two-stage prediction diagnostics; do not present them as multimodal method success or external scale transfer. | Use MV16 as bounded/negative target-calibration evidence; any stronger adaptation claim needs a new predeclared mechanism beyond the current BGE/few-shot ladder. |
+| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13/MV14/MV19 as label-only PHQ common-structure and dataset-group measurement-shift evidence with explicit finite-sample downgrade: C02/C06 threshold non-equivalence is a repeated localized signal, not a robust standalone DIF conclusion at the observed N. | Use MV19 to downgrade C02/C06 wording to finite-sample-bounded localized measurement-shift evidence; any stronger adaptation claim needs a new predeclared mechanism beyond the current BGE/few-shot ladder. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic plus MV18 exploratory same-HAMD context-shift support; not cross-dataset HAMD generalization. | A stronger CMDC/PDCH-compatible measurement head or larger external HAMD item sample is required before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, conditional identity audits, and MV15 latent-conditioned identity are controls; do not claim invariant representation. | Freeze the current BGE latent-conditioned feature-identity line as diagnostic evidence; keep output-space low identity separate from feature invariance. |
@@ -25,7 +25,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, resolve any remaining incomplete local candidate rows and discuss dataset-specific kappa CIs plus sampling limits. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, and MV18 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence; MV06 stronger wording still requires resolving any incomplete local candidate rows and discussing sampling limits. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, MV18, and MV19 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence and MV19-downgraded C02/C06 wording; MV20 criterion-contamination stress is optional if the manuscript still needs protocol-label overlap support. |
 
 ## Evidence Inventory
 
@@ -73,12 +73,13 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV16 | `complete` | `blocked_no_dif_guided_small_k_gain` | `True` | MV16 completes the predeclared few-shot calibration ladder but does not satisfy the DIF-guided small-k mechanism gate; keep it as negative or bounded diagnostic evidence. |
 | P5_MV17a | `complete` | `complete` | `True` | complete |
 | P5_MV18 | `complete` | `complete_exploratory_same_scale_context_shift_supported` | `True` | MV18 remains exploratory because CMDC HAMD has only 25 subjects, but the same-scale control still shows dataset/context sensitivity through flagged HAMD item/threshold shifts or weak bidirectional transfer. |
+| P5_MV19 | `complete` | `complete_mv19_high_false_localization_downgrade_c02_c06` | `True` | MV19 simulates the observed E-DAIC/CMDC PHQ sample sizes and severity distributions under scalar-invariant and C02/C06 threshold-DIF worlds. It supports cautious C02/C06 wording only if false localization is limited a... |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Predeclare and run MV19 finite-sample PHQ psychometric simulation. | MV19 reports false-DIF rate under scalar-invariant H0, C02/C06 recovery under threshold-DIF H1, and anchor-set recovery using aggregate-only outputs. |
+| 1 | Consolidate the manuscript with MV19 finite-sample-downgraded PHQ wording, then decide whether MV20 criterion-contamination stress is still needed. | Paper claim tables, Results scaffold, and manuscript draft state C02/C06 as repeated but finite-sample-bounded dataset-group threshold-shift evidence; MV20 is optional and predeclared only if protocol-label overlap support is still needed. |
 | 2 | Use the dataset-stratified MV06 agreement and bootstrap uncertainty summaries as first-round RQ4 evidence, then resolve any incomplete local candidate rows if stronger wording is needed. | Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

@@ -78,7 +78,7 @@ def legacy_bge_contract_risk() -> list[dict[str, str]]:
             "affected_chain": "MV07->MV12->MV15->MV16",
             "evidence": "E-DAIC MV07 generator defaults to BAAI/bge-small-zh-v1.5, which is documented as Chinese; E-DAIC transcripts are English.",
             "claim_boundary": "Old Chinese-BGE outputs remain legacy/diagnostic; MV17a now provides multilingual BGE-M3 and multilingual-E5 reruns for MV07/MV12/MV15.",
-            "unaffected_evidence": "Label-only MV10/MV11/MV13/MV14 psychometric findings.",
+            "unaffected_evidence": "Label-only MV10/MV11/MV13/MV14/MV19 psychometric findings.",
         },
         {
             "risk_id": "BGE_R002",
@@ -114,16 +114,16 @@ def experiment_queue() -> list[dict[str, str]]:
         {
             "priority": "3",
             "experiment_id": "MV19_phq_finite_sample_psychometric_simulation",
-            "status": "ready_to_design",
+            "status": "complete",
             "why_now": "Addresses the small E-DAIC/CMDC PHQ item-labeled N and category sparsity before strong DIF language.",
-            "minimum_scope": "Simulate observed N, category frequencies, severity distribution, thresholds, and missingness under scalar-invariant H0 and C02/C06 threshold-DIF H1; run the MV10-MV14 decision pipeline.",
-            "success_readout": "Report false-DIF rate under H0, C02/C06 recovery under H1, and anchor-set recovery.",
-            "stop_rule": "If false-DIF is high, downgrade C02/C06 from robust evidence to hypothesis-generating evidence.",
+            "minimum_scope": "Completed observed-N label-only simulation under scalar-invariant H0 and C02/C06 threshold-DIF H1 using the MV10 decision screen.",
+            "success_readout": "The simulation reports H0 C02/C06 both-flag false rate 0.208, H1 C02/C06 both-flag recovery 0.662, H1 top-two recovery 0.222, and H1 anchor subset recovery 0.178.",
+            "stop_rule": "Downgrade C02/C06 from robust standalone DIF evidence to repeated but finite-sample-bounded dataset-group threshold-shift evidence.",
         },
         {
             "priority": "4",
             "experiment_id": "MV20_criterion_contamination_stress",
-            "status": "recommended_to_design",
+            "status": "optional_to_design_after_manuscript_review",
             "why_now": "Connects protocol/question shortcuts to measurement validity through mirror-like criterion contamination.",
             "minimum_scope": "Compute semantic similarity between interviewer/question text and PHQ/HAMD items, define mirror-like versus non-mirror turns, and test deletion/insertion effects.",
             "success_readout": "Estimate whether label-overlapping elicitation language inflates apparent depression prediction or evidence localization.",
@@ -219,6 +219,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         "- Current paper direction: target measurement validity, not a generic multimodal method.",
         "- MV17a multilingual sensitivity is complete and reproduces the blocked MV07/MV12/MV15 feature-level pattern.",
         "- MV18 same-HAMD exploratory control is complete and supports cautious dataset/context-shift wording, not formal HAMD invariance.",
+        "- MV19 finite-sample PHQ simulation is complete and downgrades strong C02/C06 wording under the observed-N screen.",
         "- Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.",
         "",
         "## Legacy BGE Contract Risks",
@@ -308,8 +309,8 @@ def main() -> None:
     run_summary = {
         "artifact_hygiene_passed": False,
         "decision": {
-            "route_status": "mv17a_mv18_complete_next_mv19_ready",
-            "short_read": "MV17a multilingual feature-contract sensitivity and MV18 same-HAMD exploratory control are complete; next step is MV19 finite-sample PHQ psychometric simulation, not another shallow model variant.",
+            "route_status": "mv17a_mv18_mv19_complete_next_manuscript_or_optional_mv20",
+            "short_read": "MV17a, MV18, and MV19 are complete; next step is manuscript consolidation with finite-sample-downgraded PHQ wording, with MV20 criterion-contamination stress optional.",
         },
         "generated_at": generated_at,
         "input_contract": {

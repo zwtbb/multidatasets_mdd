@@ -42,6 +42,7 @@ MV12_RUN_SUMMARY = PHASE5_DIR / "p5_mv12_two_stage_latent_target" / "run_summary
 MV12_ANALYSIS_SUMMARY = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" / "run_summary.json"
 MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
+MV19_SUMMARY = PHASE5_DIR / "p5_mv19_phq_finite_sample_psychometric_simulation" / "run_summary.json"
 MV15_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
 MV15_RUN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity" / "run_summary.json"
 MV16_RUN_SUMMARY = PHASE5_DIR / "p5_mv16_dif_guided_calibration" / "run_summary.json"
@@ -72,8 +73,8 @@ CLAIM_SECTION = {
 
 PAPER_CLAIM_LANGUAGE = {
     "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper, with MV15 and MV16 completed as bounded/negative follow-ups.",
-    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative under the legacy BGE contract and reframe RQ1 around target measurement validity: feature shift, measurement shift, and prediction shift are distinct; current BGE-linked MV07-MV16 evidence needs multilingual feature-contract sensitivity before any renewed feature-level claim.",
-    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV13/MV14 as label-only E-DAIC/CMDC PHQ common-structure, stable-anchor, sparse-loading-DIF, and localized C02/C06 threshold non-equivalence evidence with explicit AIC/BIC and convergence caveats, not as a PHQ-8-versus-PHQ-9 scale-specific conclusion or bootstrap-confirmed global partial invariance.",
+    "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative under the old BGE contract and the completed MV17a multilingual sensitivity; reframe RQ1 around target measurement validity because feature shift, measurement shift, and prediction shift are distinct.",
+    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV13/MV14/MV19 as label-only E-DAIC/CMDC PHQ common-structure and dataset-group measurement-shift evidence, with MV19 downgrading C02/C06 from robust standalone DIF to a repeated but finite-sample-bounded localized threshold-shift signal.",
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
     "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and use MV15's latent-conditioned identity result as shared-latent diagnostic evidence.",
@@ -81,7 +82,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD age/personality/gait only as population and individual-difference stress tests; do not claim a personality-aware modeling contribution or keep iterating personality gating/calibration.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate credibility evidence for measurement interpretation only; agreement does not prove the model used the evidence.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a target-measurement-validity paper organized around three layers: representation/protocol shift in X, target measurement shift in Y given theta and dataset/group, and prediction shift from X to theta. Treat Phase 3 as motivating evidence, MV10-MV14 as the core psychometric layer, and MV12/MV15/MV16 as bounded consequences for ML transfer under a legacy BGE caveat.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a target-measurement-validity paper organized around three layers: representation/protocol shift in X, target measurement shift in Y given theta and dataset/group, and prediction shift from X to theta. Treat Phase 3 as motivating evidence, MV10-MV14/MV19 as the psychometric layer, and MV12/MV15/MV16/MV17a/MV18 as bounded consequences and controls.",
 }
 
 LITERATURE_ROWS = [
@@ -304,6 +305,7 @@ def require_inputs() -> None:
         MV12_ANALYSIS_SUMMARY,
         MV13_SUMMARY,
         MV14_SUMMARY,
+        MV19_SUMMARY,
         MV15_DESIGN_SUMMARY,
         MV15_RUN_SUMMARY,
         MV16_RUN_SUMMARY,
@@ -366,6 +368,7 @@ def build_metric_context() -> dict[str, str]:
     mv12_analysis = read_json(MV12_ANALYSIS_SUMMARY)
     mv13 = read_json(MV13_SUMMARY)
     mv14 = read_json(MV14_SUMMARY)
+    mv19 = read_json(MV19_SUMMARY)
     mv15_design = read_json(MV15_DESIGN_SUMMARY)
     mv15_run = read_json(MV15_RUN_SUMMARY)
     mv16_run = read_json(MV16_RUN_SUMMARY)
@@ -385,6 +388,7 @@ def build_metric_context() -> dict[str, str]:
     mv13_v = mv13["verdict"]
     mv14_v = mv14["verdict"]
     mv14_dif_attempted = mv14_v.get("dif_attempted_draws", mv14_v.get("requested_dif_R"))
+    mv19_v = mv19["verdict"]
     mv15_d = mv15_design["decision"]
     mv15_v = mv15_run["verdict"]
     mv16_v = mv16_run["verdict"]
@@ -505,6 +509,15 @@ def build_metric_context() -> dict[str, str]:
             f"{mv14_v['best_aic_model']}/{mv14_v['best_bic_model']}; stable-ladder AIC/BIC "
             f"{mv14_v['stable_ladder_best_aic_model']}/{mv14_v['stable_ladder_best_bic_model']}."
         ),
+        "mv19": (
+            f"MV19 finite-sample PHQ simulation: status {mv19_v['pass_rule_status']}; "
+            f"H0 C02/C06 both-flag false rate {fmt(mv19_v['h0_target_both_false_rate'])}; "
+            f"H0 C02/C06 top-two false-localization {fmt(mv19_v['h0_target_top2_false_rate'])}; "
+            f"H1 C02/C06 both-flag recovery {fmt(mv19_v['h1_target_both_recovery_rate'])}; "
+            f"H1 C02/C06 top-two recovery {fmt(mv19_v['h1_target_top2_recovery_rate'])}; "
+            f"H1 anchor subset recovery {fmt(mv19_v['h1_anchor_target_subset_recovery_rate'])}; "
+            f"pass_rule_met={mv19_v['pass_rule_met']}."
+        ),
         "mv12_design": (
             f"MV12 two-stage latent-target design: status {mv12_d['readiness_status']}; "
             f"full_method_allowed={mv12_d['full_method_allowed']}; "
@@ -587,11 +600,11 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']} {context['mv15_design']} {context['mv15_run']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv19']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']} {context['mv15_design']} {context['mv15_run']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
-        return f"{context['rq1']} {context['mv12_analysis']} {context['mv15_run']}"
+        return f"{context['rq1']} {context['mv19']} {context['mv12_analysis']} {context['mv15_run']}"
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
-        return f"{context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
+        return f"{context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv19']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
         return context["pdch"]
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
@@ -651,14 +664,14 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "rq1_measurement_negative",
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
-            "interpretation": "Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV13/MV14/MV12 shift RQ1 to measurement-target validity, while MV15 and MV16 freeze the current BGE latent identity/calibration line as bounded or negative evidence.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_MV12;P5_MV12_analysis;P5_MV15;P5_MV16",
+            "interpretation": "Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV13/MV14/MV19/MV12 shift RQ1 to measurement-target validity, while MV15 and MV16 freeze the current BGE latent identity/calibration line as bounded or negative evidence.",
+            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_MV19;P5_MV12;P5_MV12_analysis;P5_MV15;P5_MV16",
         },
         {
             "finding_id": "legacy_bge_feature_contract_caveat",
             "paper_section": "Feature-contract caveat",
             "finding": "The E-DAIC MV07 feature generator used a Chinese BGE v1.5 model on English transcripts and concatenated available transcript Text rows without speaker filtering; the current transcript CSV contract lacks a speaker column.",
-            "interpretation": "Treat BGE-linked MV07, MV12, MV15, and MV16 feature-level evidence as legacy/diagnostic until a multilingual BGE-M3 plus multilingual-E5 sensitivity regenerates E-DAIC/CMDC/PDCH features and reruns MV07/MV12/MV15. Label-only MV10/MV11/MV13/MV14 psychometric evidence is unaffected.",
+            "interpretation": "Treat the old Chinese-BGE feature-level evidence as legacy/diagnostic; MV17a has regenerated E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5 and reproduces the blocked MV07/MV12/MV15 pattern. Label-only MV10/MV11/MV13/MV14/MV19 psychometric evidence is unaffected.",
             "source_artifact_ids": "phase5_generate_mv07_edaic_bge_features;BGE_model_cards;E-DAIC_transcript_schema",
         },
         {
@@ -679,15 +692,22 @@ def build_key_findings() -> pd.DataFrame:
             "finding_id": "mv13_external_psychometric_replication",
             "paper_section": "Psychometric baseline",
             "finding": context["mv13"],
-            "interpretation": "The external R mirt replication preserves the MV11 qualitative anchor/DIF pattern; MV14 now supplies the bootstrap uncertainty layer needed for cautious item-level wording.",
+            "interpretation": "The external R mirt replication preserves the MV11 qualitative anchor/DIF pattern; MV14 supplies bootstrap uncertainty and MV19 adds the observed-N finite-sample downgrade needed for cautious item-level wording.",
             "source_artifact_ids": "P5_MV13",
         },
         {
             "finding_id": "mv14_measurement_uncertainty_bootstrap",
             "paper_section": "Psychometric baseline",
             "finding": context["mv14"],
-            "interpretation": "The convergence-safe bootstrap supports item-level wording: the four MV10 anchors are stable, loading DIF is sparse, and threshold DIF remains concentrated on C02/C06, while global invariance-model selection remains uncertain.",
+            "interpretation": "The convergence-safe bootstrap supports item-level wording, but MV19 shows the observed-N decision screen is finite-sample sensitive; report C02/C06 as repeated localized threshold-shift evidence with downgrade, not as a robust standalone DIF conclusion.",
             "source_artifact_ids": "P5_MV14",
+        },
+        {
+            "finding_id": "mv19_finite_sample_phq_simulation",
+            "paper_section": "Psychometric baseline",
+            "finding": context["mv19"],
+            "interpretation": "The observed-N simulation closes the small-sample uncertainty layer by showing adequate both-target H1 flagging but high false/localization sensitivity, low top-two recovery, and poor exact anchor-set recovery; C02/C06 wording must be finite-sample-bounded.",
+            "source_artifact_ids": "P5_MV19",
         },
         {
             "finding_id": "mv12_two_stage_latent_target_design",

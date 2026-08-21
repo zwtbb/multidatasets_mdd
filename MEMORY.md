@@ -80,6 +80,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
   - `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
   - `/root/autodl-tmp/memory/sessions/session_61_mv18_cmdc_pdch_hamd_same_scale_control.md`
+  - `/root/autodl-tmp/memory/sessions/session_62_mv19_phq_finite_sample_simulation.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -153,10 +154,12 @@ MPDD 2025 is intentionally out of scope for current auditing.
   must be separated. The current MV12/MV15/MV16 BGE-linked feature-level chain
   is legacy/diagnostic because E-DAIC MV07 used a Chinese BGE encoder on
   English transcripts and the available transcript contract lacks speaker
-  roles. Label-only MV10/MV11/MV13/MV14 psychometric evidence is unaffected and
-  remains the core positive layer: substantial common PHQ structure, stable
-  anchors, sparse loading DIF, localized C02/C06 threshold non-equivalence, and
-  uncertain global model selection. Full-method work remains blocked until a
+  roles. Label-only MV10/MV11/MV13/MV14/MV19 psychometric evidence is
+  unaffected by the BGE feature-contract caveat and remains the core
+  measurement layer: substantial common PHQ structure, repeated C02/C06
+  threshold-shift signals, sparse loading DIF, uncertain global model
+  selection, and an explicit observed-N finite-sample downgrade. Full-method
+  work remains blocked until a
   genuinely new data, feature, or measurement mechanism changes the gate. The
   MV17a multilingual feature-contract sensitivity is complete. BGE-M3 and
   multilingual-E5 subject-level features were generated for E-DAIC/CMDC/PDCH,
@@ -171,9 +174,14 @@ MPDD 2025 is intentionally out of scope for current auditing.
   severity-conditioned residual item-shift flags, 7 threshold-shift flags, and
   weak primary bidirectional transfer under the current frozen-feature
   contract. Treat MV18 as exploratory same-HAMD context-shift support, not
-  formal HAMD invariance. The active next orchestration step is MV19
-  finite-sample PHQ psychometric simulation if still needed for manuscript
-  support.
+  formal HAMD invariance. MV19 finite-sample PHQ psychometric simulation is
+  complete: under the observed E-DAIC/CMDC PHQ N and severity distributions,
+  H0 C02/C06 both-flag false rate is `0.208`, H1 C02/C06 both-flag recovery is
+  `0.662`, H1 top-two recovery is `0.222`, and H1 anchor subset recovery is
+  `0.178`. Treat C02/C06 as repeated but finite-sample-bounded
+  dataset-group threshold-shift evidence, not robust standalone DIF. The active
+  next orchestration step is manuscript consolidation with optional MV20
+  criterion-contamination stress only if still needed.
   Bibliography metadata has been corrected for P3HF, Multi-Probe Audit, and
   EMNLP interviewer bias in the generator, but all references still require
   full primary-source verification before submission.

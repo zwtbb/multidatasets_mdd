@@ -303,11 +303,13 @@ shared-symptom claims, positive EATD SDS claims, EATD-driven
 valence-adversarial design, and positive RQ3 context-conditioning claims. It
 now allows RQ4 only as limited first-round aggregate evidence. The next method
 target is not another shallow BGE head. MV08/MV08b are both negative or blocked
-under the current frozen-BGE shallow contract. MV09-MV16 move the project into
+under the current frozen-BGE shallow contract. MV09-MV19 move the project into
 a label-measurement and measurement-shift frame: MV10/MV11/MV13 support
 bounded common-structure and anchor/DIF evidence, MV14 adds convergence-safe
 bootstrap stability for item-level anchors and localized threshold DIF while
-leaving global model selection uncertain, MV12 shows a useful but blocked
+leaving global model selection uncertain, MV19 downgrades C02/C06 to repeated
+but finite-sample-bounded dataset-group threshold-shift evidence at the
+observed N, MV12 shows a useful but blocked
 theta-prediction trade-off with a dimension-matched B3 caveat, and MV15 now
 blocks theta-specific BGE feature-invariance wording under dimension-matched
 controls. MV16 now completes the DIF-guided few-shot measurement-calibration
@@ -592,10 +594,14 @@ representation without those controls.
      and weak primary bidirectional transfer under the current frozen-feature
      contract. Treat as exploratory context-shift support, not formal HAMD
      invariance.
-  3. MV19 finite-sample PHQ psychometric simulation: quantify false DIF,
-     C02/C06 threshold-DIF recovery, and anchor-set recovery under observed N,
-     sparsity, severity, and missingness.
-  4. MV20 criterion-contamination stress: separate mirror-like
+  3. MV19 finite-sample PHQ psychometric simulation: complete. With 500
+     simulations per world, H0 C02/C06 both-flag false rate is `0.208`, H1
+     C02/C06 both-flag recovery is `0.662`, H1 top-two recovery is `0.222`,
+     and H1 anchor subset recovery is `0.178`. Downgrade C02/C06 from robust
+     standalone DIF to repeated but finite-sample-bounded dataset-group
+     threshold-shift evidence.
+  4. MV20 criterion-contamination stress: optional after manuscript review;
+     separate mirror-like
      interviewer/question turns from non-mirror turns before adding any
      protocol-bias method.
 - Stop lines:
@@ -608,10 +614,11 @@ representation without those controls.
   also generated there as `references.bib`, `citation_registry.csv`, and
   `citation_source_map.csv`, with the IRT DIF source hint corrected to Bulut
   and Suh 2017 plus post-review metadata fixes for P3HF, Multi-Probe Audit, and
-  EMNLP interviewer bias. The active experiment task is MV19; citation-key
-  insertion, venue-style reference formatting, human manuscript editing, and
-  cross-reference cleanup continue as paper-side work without strengthening
-  claims beyond the full-method gate.
+  EMNLP interviewer bias. The active paper task is manuscript consolidation
+  with MV19-downgraded PHQ wording; citation-key insertion, venue-style
+  reference formatting, human manuscript editing, and cross-reference cleanup
+  continue as paper-side work without strengthening claims beyond the
+  full-method gate.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

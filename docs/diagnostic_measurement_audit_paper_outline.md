@@ -60,9 +60,13 @@ psychometric theta is uniquely more invariant than dimension-matched severity
 outputs. MV14 adds the corrected predeclared bootstrap uncertainty layer: with
 smoke/core/DIF R=`10/200/100`, convergence-safe full-ladder effective core R is
 `120/200` after `185/200` fit-success draws, configural converges in `120/200`,
-the stable metric/partial/scalar ladder has `197` effective draws, DIF effective
-R is `100`, all four MV10 anchors remain stable, and threshold DIF stays
-localized to `C02` and `C06`. Together, MV10/MV11/MV13/MV14/MV12 move the
+the stable metric/partial/scalar ladder has `197` effective draws, minimum
+anchor-support DIF effective R is `77/100`, all four MV10 anchors remain
+stable, and threshold DIF stays localized to `C02` and `C06`. MV19 then tests
+the observed-N finite-sample
+behavior and downgrades C02/C06 from robust standalone DIF to repeated but
+finite-sample-bounded dataset-group threshold-shift evidence. Together,
+MV10/MV11/MV13/MV14/MV19/MV12 move the
 project from a generic benchmark audit toward a target-measurement-shift paper;
 they still do not authorize a full method. MV15 now completes the
 latent-conditioned identity audit: BGE feature identity remains high after
@@ -85,7 +89,7 @@ filtering. MV17a now regenerates E-DAIC/CMDC/PDCH features with BGE-M3 and
 multilingual-E5 and reruns MV07/MV12/MV15. Both multilingual encoders reproduce
 the blocked feature-level result, so the negative feature-level conclusion no
 longer depends only on the old Chinese-BGE contract. This does not affect
-label-only MV10/MV11/MV13/MV14.
+label-only MV10/MV11/MV13/MV14/MV19.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate artifacts. The next research route is no longer
@@ -104,8 +108,9 @@ The manuscript should be compressed to three contributions:
 1. Measurement-validity framework:
    feature shift, target measurement shift, and prediction shift are distinct.
 2. Empirical psychometric evidence:
-   E-DAIC/CMDC share substantial PHQ structure but show localized C02/C06
-   threshold non-equivalence with convergence-aware uncertainty.
+   E-DAIC/CMDC share substantial PHQ structure but show repeated,
+   finite-sample-bounded C02/C06 threshold non-equivalence with
+   convergence-aware uncertainty.
 3. Consequence for ML transfer:
    current `X -> theta` models are domain-learnable but do not automatically
    improve observed-scale fidelity, zero-shot transfer, or feature invariance
@@ -162,6 +167,10 @@ Allowed claims:
   wording: stable anchors `C01/C04/C05/C07`, sparse loading DIF, localized
   threshold DIF `C02/C06`, and uncertain global model selection. It does not
   authorize full method work.
+- MV19 provides observed-N finite-sample PHQ simulation evidence: C02/C06
+  recur under the C02/C06 threshold-shift world, but H0 false/localization rates
+  and low anchor-set recovery require wording them as finite-sample-bounded
+  dataset-group threshold-shift evidence, not robust standalone DIF.
 - MV12 provides a predeclared two-stage latent-target design that separates
   label measurement from multimodal prediction and keeps theta scores, fitted
   parameters, row predictions, transformed features, and model artifacts
@@ -221,12 +230,12 @@ Blocked claims:
    4 severity-conditioned residual item shifts, 7 threshold shifts, and weak
    primary bidirectional transfer. Use this only as exploratory same-HAMD
    context-shift support because CMDC HAMD is small.
-3. MV19 finite-sample psychometric simulation:
-   mimic observed E-DAIC/CMDC PHQ N, category frequencies, severity
-   distribution, thresholds, and missingness under scalar-invariant H0 and
-   C02/C06 threshold-DIF H1; report false DIF, C02/C06 recovery, and anchor-set
-   recovery.
-4. MV20 criterion-contamination stress:
+3. Done: MV19 finite-sample PHQ psychometric simulation.
+   With 500 simulations per world, H0 C02/C06 both-flag false rate is `0.208`,
+   H1 C02/C06 both-flag recovery is `0.662`, H1 top-two recovery is `0.222`,
+   and H1 anchor subset recovery is `0.178`. Use this as an observed-N
+   downgrade for C02/C06 and anchor wording.
+4. Optional: MV20 criterion-contamination stress after manuscript review:
    compare mirror-like interview/question turns against non-mirror turns using
    semantic similarity to PHQ/HAMD item content and deletion/insertion effects.
 
@@ -348,6 +357,8 @@ Blocked claims:
    - MV11 formal label-only graded-response IRT confirmation.
    - MV13 external R `mirt` replication and convergence caveat.
    - MV14 measurement-uncertainty/bootstrap run and stability results.
+   - MV19 observed-N finite-sample PHQ simulation and downgraded C02/C06
+     wording.
    - MV12 two-stage latent-target design, blocked run, and aggregate
      tradeoff/failure-mode analysis.
    - Label-only scale linking before multimodal prediction.
@@ -379,9 +390,10 @@ Tracked outputs:
 
 - `paper_claim_boundary.csv` and `paper_claim_boundary.md`: compact
   allowed/blocked claim language, evidence, guardrails, and source artifact IDs.
-- `key_numeric_findings.csv`: thirteen manuscript-ready findings for the full gate,
+- `key_numeric_findings.csv`: manuscript-ready findings for the full gate,
   RQ1 measurement sequence, MV10 psychometric baseline, MV11 formal
-  confirmation, MV13 external replication, MV12 design, MV12 run, MV12
+  confirmation, MV13 external replication, MV19 finite-sample simulation,
+  MV12 design, MV12 run, MV12
   tradeoff freeze decision, MV09 conditional identity, PDCH HAMD, MODMA task
   control, EATD stress, and MV06 evidence localization.
 - `literature_positioning.csv`: web-checked source list for dataset governance,
@@ -665,9 +677,12 @@ Tracked outputs:
 22. Done: run MV17a multilingual BGE-M3 plus multilingual-E5 feature-contract
    sensitivity for MV07/MV12/MV15; both encoders reproduce the blocked result.
 23. Done: run MV18 CMDC-HAMD versus PDCH-HAMD same-scale exploratory control.
-24. Next: predeclare and run MV19 finite-sample PHQ psychometric simulation if
-   still needed for manuscript support.
-25. Parallel writing: prepare manuscript edits from existing aggregate
+24. Done: run MV19 finite-sample PHQ psychometric simulation and downgrade
+   C02/C06 wording to finite-sample-bounded dataset-group threshold-shift
+   evidence.
+25. Next: consolidate manuscript wording and decide whether optional MV20
+   criterion-contamination stress is still needed.
+26. Parallel writing: prepare manuscript edits from existing aggregate
    summaries only; do not export row-level predictions, raw text, subject
    locators, learned parameters, or model files. Insert generated citation keys
    and adapt references to the target venue style after full reference

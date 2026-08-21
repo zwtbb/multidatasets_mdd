@@ -35,8 +35,9 @@ method construction remains blocked by the Phase 5 full-method gate.
 
 Allowed current framing:
 
-- Label-only PHQ measurement evidence: substantial common structure, stable
-  anchors, sparse loading DIF, localized threshold non-equivalence.
+- Label-only PHQ measurement evidence: substantial common structure and
+  repeated C02/C06 threshold-shift signals, with MV19 finite-sample downgrade
+  at the observed E-DAIC/CMDC N.
 - Dataset/protocol/population identity evidence as diagnostic shortcut risk.
 - Negative or bounded multimodal results under the legacy BGE/lightweight-head
   contract, now supported by MV17a multilingual feature-contract sensitivity
@@ -61,10 +62,12 @@ Blocked claims:
 
 Main next task:
 
-- Predeclare and run MV19 finite-sample PHQ psychometric simulation if the
-  manuscript still needs a small-sample uncertainty support layer. The goal is
-  to quantify false-DIF risk, C02/C06 recovery, and anchor-set recovery under
-  the observed E-DAIC/CMDC PHQ N, sparsity, severity, and missingness.
+- Consolidate the manuscript and paper scaffolds around the MV19-downgraded
+  PHQ wording: C02/C06 are repeated but finite-sample-bounded
+  dataset-group threshold-shift signals, not robust standalone DIF.
+- Decide whether MV20 criterion-contamination stress is still needed before
+  submission-facing writing; if run, predeclare it narrowly before touching
+  raw interview/question content.
 - Do not rerun MV16 unless the multilingual MV17a results are explicitly
   reviewed and a new need is identified.
 - Continue manuscript editing only within the target-measurement-validity frame.
@@ -79,18 +82,20 @@ Useful inputs:
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
+- `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/`
 - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
 - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
 - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
 - `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
 - `/root/autodl-tmp/memory/sessions/session_61_mv18_cmdc_pdch_hamd_same_scale_control.md`
+- `/root/autodl-tmp/memory/sessions/session_62_mv19_phq_finite_sample_simulation.md`
 
 Secondary optional task:
 
 - Resolve the one incomplete local CMDC MV06 candidate if the missing workbook
   rows become available, then rerun the aggregate MV06 summary gate.
-- MV20 criterion-contamination stress remains optional after MV19, only if
-  still needed for the manuscript.
+- MV20 criterion-contamination stress remains optional after manuscript review,
+  only if still needed for protocol-label overlap support.
 
 ## Critical Current Results
 
@@ -131,6 +136,15 @@ Secondary optional task:
   the current frozen-feature contract. Status:
   `complete_exploratory_same_scale_context_shift_supported`; interpretation is
   exploratory context-shift support, not formal HAMD invariance.
+- MV19 finite-sample PHQ psychometric simulation is complete. It uses 500
+  simulations per world under observed E-DAIC/CMDC PHQ N and severity
+  distributions. Status:
+  `complete_mv19_high_false_localization_downgrade_c02_c06`. H0 C02/C06
+  both-flag false rate is `0.208`; H0 top-two false-localization is `0.034`;
+  H1 C02/C06 both-flag recovery is `0.662`; H1 top-two recovery is `0.222`;
+  H1 anchor subset recovery is `0.178`. Treat this as a finite-sample
+  downgrade: C02/C06 are repeated localized dataset-group threshold-shift
+  signals, not robust standalone DIF at the observed N.
 
 ## Versioning State
 
@@ -172,8 +186,8 @@ Keep local-only:
     work after the post-review frame correction.
   - I064: bibliography metadata must be verified against primary sources before
     submission.
-  - I066: MV17a and MV18 are complete; next bounded experiment is MV19, then
-    optional MV20.
+  - I066: MV17a, MV18, and MV19 are complete; next work is manuscript
+    consolidation, then optional MV20 only if still needed.
 
 ## Fast Verification Commands
 
@@ -182,6 +196,7 @@ git status --short
 python scripts/build_diagnostic_paper_bibliography.py
 python scripts/phase5_run_mv17a_multilingual_feature_contract.py
 python scripts/phase5_run_mv18_cmdc_pdch_hamd_same_scale_control.py
+python scripts/phase5_run_mv19_phq_finite_sample_simulation.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 python scripts/phase5_full_method_gate_audit.py
 ```

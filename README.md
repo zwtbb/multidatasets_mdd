@@ -75,6 +75,14 @@ AIC/BIC prefer `configural`/`scalar`, and stable-ladder AIC/BIC prefer
 with global model-selection uncertainty, not as a bootstrap-confirmed global
 partial-invariance win.
 
+MV19 now adds the observed-N finite-sample PHQ simulation. With 500 simulations
+per world under the observed E-DAIC/CMDC PHQ N and severity distributions, the
+scalar-invariant H0 has C02/C06 both-flag false rate `0.208` and top-two
+false-localization `0.034`; the C02/C06 threshold-DIF H1 has both-flag recovery
+`0.662`, top-two recovery `0.222`, and C01/C04/C05/C07 anchor subset recovery
+`0.178`. Treat C02/C06 as repeated but finite-sample-bounded dataset-group
+threshold-shift evidence, not robust standalone DIF at the observed N.
+
 MV12 is frozen as bounded diagnostic evidence. The `X -> theta` head improves
 same-dataset theta MAE versus train mean and lowers identity versus upstream
 BGE features (`0.602` conditional predicted-theta BA versus MV09 feature
@@ -111,15 +119,16 @@ E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then rerunning
 MV07/MV12/MV15. Both multilingual encoders reproduce the blocked feature-level
 pattern: MV07 fails the total-allocation/identity gate, MV12 fails observed
 scale-safe theta gain, and MV15 fails theta-conditioned feature identity.
-Label-only MV10/MV11/MV13/MV14 are unaffected. The bibliography registry and
+Label-only MV10/MV11/MV13/MV14/MV19 are unaffected. The bibliography registry and
 `references.bib` now cover all current source-context rows, with corrected
 primary-source metadata for P3HF, Multi-Probe Audit, and EMNLP interviewer
 bias. MV18 now adds the same-language/same-HAMD CMDC versus PDCH exploratory
 control: within the mild/moderate HAMD overlap it flags 4 severity-conditioned
 residual item shifts and 7 threshold shifts, and bidirectional frozen-feature
 transfer remains weak. Treat it as exploratory context-shift support, not
-formal HAMD invariance. Current next action: predeclare and run MV19
-finite-sample PHQ psychometric simulation if still needed.
+formal HAMD invariance. Current next action: consolidate the manuscript with
+MV19-downgraded PHQ wording; MV20 criterion-contamination stress is optional
+only if still needed.
 Optional MV06 work is resolving the one incomplete local candidate before
 stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap
@@ -159,6 +168,8 @@ samples, calibration parameters, and model artifacts remain local-only.
 - MV16 DIF-guided calibration run: `analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration/`
 - MV17 post-review route: `analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
 - MV17a multilingual feature-contract sensitivity: `analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
+- MV18 CMDC-PDCH HAMD same-scale control: `analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
+- MV19 PHQ finite-sample simulation: `analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
