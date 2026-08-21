@@ -1,0 +1,5 @@
+label_scope,dataset,subject_count,hamd_total_mean,hamd_total_sd,hamd_total_min,hamd_total_median,hamd_total_max,severity_bin_counts,hamd_code_9_subjects,min_item_observed_subjects,max_item_observed_subjects,complete_item_subjects
+all_subjects,cmdc,25,15.76,4.2747319604079665,9.0,15.0,24.0,"{""mild"": 16, ""moderate"": 9}",0,25,25,25
+all_subjects,pdch,99,15.868686868686869,7.600545717043392,1.0,15.0,35.0,"{""mild"": 48, ""moderate"": 25, ""normal"": 14, ""severe"": 12}",7,92,99,92
+overlap_mild_moderate,cmdc,25,15.76,4.2747319604079665,9.0,15.0,24.0,"{""mild"": 16, ""moderate"": 9}",0,25,25,25
+overlap_mild_moderate,pdch,73,15.95890410958904,4.843203589006579,8.0,16.0,24.0,"{""mild"": 48, ""moderate"": 25}",3,70,73,70

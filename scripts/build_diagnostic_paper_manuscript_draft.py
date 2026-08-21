@@ -198,13 +198,6 @@ def build_open_items(bib_status: dict[str, Any]) -> pd.DataFrame:
         citation_item = "Convert citation hints and source URLs into a formal bibliography, verify metadata against primary sources, and then perform venue-specific citation editing."
     rows = [
         {
-            "item_id": "M001",
-            "priority": "high",
-            "area": "feature_contract",
-            "open_item": "Predeclare and run MV17 multilingual feature-contract sensitivity with BGE-M3 and multilingual-E5 over E-DAIC, CMDC, and PDCH; rerun MV07, MV12, and MV15 only before making renewed feature-level claims.",
-            "blocking_for_submission": True,
-        },
-        {
             "item_id": "M002",
             "priority": "high",
             "area": "bibliography",
@@ -224,13 +217,6 @@ def build_open_items(bib_status: dict[str, Any]) -> pd.DataFrame:
             "area": "psychometric_uncertainty",
             "open_item": "Predeclare a finite-sample psychometric simulation at the observed E-DAIC/CMDC N, category frequencies, severity distribution, and missingness to quantify false DIF under scalar invariance and C02/C06 recovery under threshold DIF.",
             "blocking_for_submission": True,
-        },
-        {
-            "item_id": "M005",
-            "priority": "medium",
-            "area": "HAMD_control",
-            "open_item": "Predeclare a small-sample CMDC-HAMD versus PDCH-HAMD same-language/same-scale control as exploratory dataset-context measurement-shift evidence.",
-            "blocking_for_submission": False,
         },
         {
             "item_id": "M006",
@@ -513,11 +499,11 @@ def build_manuscript(
             "",
             "### Limitations",
             "",
-            "The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. The BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic until BGE-M3 and multilingual-E5 regenerate the shared feature contract. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. CMDC HAMD supervision is too small for a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.",
+            "The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. MV17a mitigates the old BGE language-contract caveat for the paper-critical MV07/MV12/MV15 chain, but it reproduces the blocked feature-level pattern rather than authorizing a shared-representation claim. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. MV18 adds exploratory same-HAMD CMDC/PDCH context-shift evidence, but CMDC HAMD supervision is too small for formal invariance or a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.",
             "",
             "### Future Work",
             "",
-            "Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. The immediate route is narrow: rerun the paper-critical BGE chain with BGE-M3 and multilingual-E5, add an exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale control, simulate the observed PHQ sample size and sparsity to quantify false DIF and C02/C06 recovery, and design a criterion-contamination stress test over mirror-like versus non-mirror interview turns. Stop lines remain explicit: no extra BGE shallow heads, projection dimensions, DIF-guided calibration variants, personality-gating models, or EATD valence-adversarial modules unless a new design contract changes the gate.",
+            "Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. The immediate route is now narrow: simulate the observed PHQ sample size and sparsity to quantify false DIF and C02/C06 recovery, then design a criterion-contamination stress test over mirror-like versus non-mirror interview turns only if the manuscript still needs that support. MV17a and MV18 are complete. Stop lines remain explicit: no extra BGE shallow heads, projection dimensions, DIF-guided calibration variants, personality-gating models, or EATD valence-adversarial modules unless a new design contract changes the gate.",
             "",
             "## Claim Traceability",
             "",

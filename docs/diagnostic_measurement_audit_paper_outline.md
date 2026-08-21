@@ -216,10 +216,11 @@ Blocked claims:
    reran MV07, MV12, and MV15. Both encoders reproduce the blocked
    feature-level pattern. Do not rerun MV16 unless a new explicit need is
    identified.
-2. MV18 CMDC-HAMD versus PDCH-HAMD same-language/same-scale control:
-   use exploratory item distribution, severity-conditioned ordinal regression,
-   bootstrap threshold differences, or partial-pooling DIF because CMDC HAMD is
-   small.
+2. Done: MV18 CMDC-HAMD versus PDCH-HAMD same-language/same-scale control.
+   The mild/moderate HAMD overlap has 25 CMDC and 73 PDCH subjects. MV18 flags
+   4 severity-conditioned residual item shifts, 7 threshold shifts, and weak
+   primary bidirectional transfer. Use this only as exploratory same-HAMD
+   context-shift support because CMDC HAMD is small.
 3. MV19 finite-sample psychometric simulation:
    mimic observed E-DAIC/CMDC PHQ N, category frequencies, severity
    distribution, thresholds, and missingness under scalar-invariant H0 and
@@ -248,7 +249,9 @@ Blocked claims:
 
 4. HAMD evidence is clinically useful but bounded.
    MV02 supports PDCH-only HAMD item/total prediction as internal diagnostic
-   evidence. CMDC HAMD remains too small and negative as a transfer target.
+   evidence. MV18 adds exploratory same-HAMD CMDC/PDCH context-shift evidence,
+   but CMDC HAMD remains too small for formal invariance or broad HAMD transfer
+   claims.
 
 5. Partial measurement invariance is the right problem framing, but the first
    two lightweight implementations fail.
@@ -661,9 +664,10 @@ Tracked outputs:
    feature-contract caveat.
 22. Done: run MV17a multilingual BGE-M3 plus multilingual-E5 feature-contract
    sensitivity for MV07/MV12/MV15; both encoders reproduce the blocked result.
-23. Next: predeclare and run MV18 CMDC-HAMD versus PDCH-HAMD same-scale
-   exploratory control.
-24. Parallel writing: prepare manuscript edits from existing aggregate
+23. Done: run MV18 CMDC-HAMD versus PDCH-HAMD same-scale exploratory control.
+24. Next: predeclare and run MV19 finite-sample PHQ psychometric simulation if
+   still needed for manuscript support.
+25. Parallel writing: prepare manuscript edits from existing aggregate
    summaries only; do not export row-level predictions, raw text, subject
    locators, learned parameters, or model files. Insert generated citation keys
    and adapt references to the target venue style after full reference

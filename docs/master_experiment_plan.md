@@ -587,8 +587,11 @@ representation without those controls.
      blocked MV07/MV12/MV15 pattern. Do not rerun MV16 unless a new explicit
      need is identified.
   2. MV18 CMDC-HAMD versus PDCH-HAMD same-scale exploratory
-     control: test whether dataset/context measurement shift persists when
-     the HAMD scale is held fixed.
+     control: complete. The mild/moderate HAMD overlap shows 4
+     severity-conditioned residual item-shift flags, 7 threshold-shift flags,
+     and weak primary bidirectional transfer under the current frozen-feature
+     contract. Treat as exploratory context-shift support, not formal HAMD
+     invariance.
   3. MV19 finite-sample PHQ psychometric simulation: quantify false DIF,
      C02/C06 threshold-DIF recovery, and anchor-set recovery under observed N,
      sparsity, severity, and missingness.
@@ -605,7 +608,7 @@ representation without those controls.
   also generated there as `references.bib`, `citation_registry.csv`, and
   `citation_source_map.csv`, with the IRT DIF source hint corrected to Bulut
   and Suh 2017 plus post-review metadata fixes for P3HF, Multi-Probe Audit, and
-  EMNLP interviewer bias. The active experiment task is MV18; citation-key
+  EMNLP interviewer bias. The active experiment task is MV19; citation-key
   insertion, venue-style reference formatting, human manuscript editing, and
   cross-reference cleanup continue as paper-side work without strengthening
   claims beyond the full-method gate.

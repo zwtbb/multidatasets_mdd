@@ -1,11 +1,12 @@
 # MV17 Post-Review Measurement-Validity Route
 
-Generated: `2026-08-21T18:12:12+00:00`
+Generated: `2026-08-21T18:43:15+00:00`
 
 ## Decision
 
 - Current paper direction: target measurement validity, not a generic multimodal method.
 - MV17a multilingual sensitivity is complete and reproduces the blocked MV07/MV12/MV15 feature-level pattern.
+- MV18 same-HAMD exploratory control is complete and supports cautious dataset/context-shift wording, not formal HAMD invariance.
 - Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.
 
 ## Legacy BGE Contract Risks
@@ -20,7 +21,7 @@ Generated: `2026-08-21T18:12:12+00:00`
 | priority | experiment | status | minimum scope | success readout | stop rule |
 | --- | --- | --- | --- | --- | --- |
 | 1 | MV17a_multilingual_feature_contract | complete | Regenerated E-DAIC, CMDC, and PDCH subject features with BGE-M3 and multilingual-E5; reran MV07, MV12, and MV15 only. | Both encoders reproduce the blocked MV07/MV12/MV15 pattern; see p5_mv17a_multilingual_feature_contract outputs. | Do not rerun MV16 unless a new explicit need is identified after MV17a review. |
-| 2 | MV18_cmdc_pdch_hamd_same_scale_control | ready_to_design | Exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale item distribution, severity-conditioned ordinal regression, bootstrap threshold differences, or partial-pooling DIF. | A cautious estimate of whether same-language, same-scale HAMD item behavior still varies by dataset/context. | Do not overclaim formal HAMD invariance because CMDC HAMD item supervision is only a small sanity subset. |
+| 2 | MV18_cmdc_pdch_hamd_same_scale_control | complete | Completed exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale item distribution, total-excluding-item residual shifts, bootstrap threshold differences, and bidirectional frozen-feature transfer. | The mild/moderate HAMD overlap shows 4 severity-conditioned residual item-shift flags, 7 threshold-shift flags, and weak primary bidirectional transfer. | Do not overclaim formal HAMD invariance because CMDC HAMD item supervision is only a small sanity subset. |
 | 3 | MV19_phq_finite_sample_psychometric_simulation | ready_to_design | Simulate observed N, category frequencies, severity distribution, thresholds, and missingness under scalar-invariant H0 and C02/C06 threshold-DIF H1; run the MV10-MV14 decision pipeline. | Report false-DIF rate under H0, C02/C06 recovery under H1, and anchor-set recovery. | If false-DIF is high, downgrade C02/C06 from robust evidence to hypothesis-generating evidence. |
 | 4 | MV20_criterion_contamination_stress | recommended_to_design | Compute semantic similarity between interviewer/question text and PHQ/HAMD items, define mirror-like versus non-mirror turns, and test deletion/insertion effects. | Estimate whether label-overlapping elicitation language inflates apparent depression prediction or evidence localization. | Do not build a new protocol-bias network unless this stress test exposes a mechanism that a simple deletion/control cannot explain. |
 

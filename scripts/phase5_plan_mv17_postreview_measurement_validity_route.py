@@ -105,10 +105,10 @@ def experiment_queue() -> list[dict[str, str]]:
         {
             "priority": "2",
             "experiment_id": "MV18_cmdc_pdch_hamd_same_scale_control",
-            "status": "ready_to_design",
+            "status": "complete",
             "why_now": "Separates dataset/context measurement shift from pure language or PHQ-8/PHQ-9 form differences.",
-            "minimum_scope": "Exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale item distribution, severity-conditioned ordinal regression, bootstrap threshold differences, or partial-pooling DIF.",
-            "success_readout": "A cautious estimate of whether same-language, same-scale HAMD item behavior still varies by dataset/context.",
+            "minimum_scope": "Completed exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale item distribution, total-excluding-item residual shifts, bootstrap threshold differences, and bidirectional frozen-feature transfer.",
+            "success_readout": "The mild/moderate HAMD overlap shows 4 severity-conditioned residual item-shift flags, 7 threshold-shift flags, and weak primary bidirectional transfer.",
             "stop_rule": "Do not overclaim formal HAMD invariance because CMDC HAMD item supervision is only a small sanity subset.",
         },
         {
@@ -218,6 +218,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         "",
         "- Current paper direction: target measurement validity, not a generic multimodal method.",
         "- MV17a multilingual sensitivity is complete and reproduces the blocked MV07/MV12/MV15 feature-level pattern.",
+        "- MV18 same-HAMD exploratory control is complete and supports cautious dataset/context-shift wording, not formal HAMD invariance.",
         "- Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.",
         "",
         "## Legacy BGE Contract Risks",
@@ -307,8 +308,8 @@ def main() -> None:
     run_summary = {
         "artifact_hygiene_passed": False,
         "decision": {
-            "route_status": "mv17a_complete_next_mv18_ready",
-            "short_read": "MV17a multilingual feature-contract sensitivity is complete and reproduces the blocked MV07/MV12/MV15 pattern; next step is MV18 CMDC-HAMD vs PDCH-HAMD same-scale control, not another shallow model variant.",
+            "route_status": "mv17a_mv18_complete_next_mv19_ready",
+            "short_read": "MV17a multilingual feature-contract sensitivity and MV18 same-HAMD exploratory control are complete; next step is MV19 finite-sample PHQ psychometric simulation, not another shallow model variant.",
         },
         "generated_at": generated_at,
         "input_contract": {

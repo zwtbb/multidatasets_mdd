@@ -1,0 +1,11 @@
+dataset,audit_type,feature_space,feature_subjects,joined_subjects,feature_columns,hamd_subjects,severity_bin_counts
+cmdc,label_coverage_all_subjects,,,,,25,"{""mild"": 16, ""moderate"": 9}"
+pdch,label_coverage_all_subjects,,,,,99,"{""mild"": 48, ""moderate"": 25, ""normal"": 14, ""severe"": 12}"
+cmdc,label_coverage_overlap_mild_moderate,,,,,25,"{""mild"": 16, ""moderate"": 9}"
+pdch,label_coverage_overlap_mild_moderate,,,,,73,"{""mild"": 48, ""moderate"": 25}"
+pdch,feature_availability,text_bge,99,99,512,,
+pdch,feature_availability,audio_wavlm,99,99,768,,
+pdch,feature_availability,audio_egemaps,99,99,352,,
+cmdc,feature_availability,text_bge,77,25,512,,
+cmdc,feature_availability,audio_wavlm,77,25,768,,
+cmdc,feature_availability,audio_egemaps,77,25,352,,

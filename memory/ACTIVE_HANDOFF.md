@@ -61,11 +61,10 @@ Blocked claims:
 
 Main next task:
 
-- Predeclare and run MV18 CMDC-HAMD vs PDCH-HAMD same-scale exploratory
-  control. The goal is to separate scale/measurement differences from
-  dataset/protocol/population differences under a same HAMD-17 target family.
-- After MV18, run MV19 finite-sample PHQ psychometric simulation if the
-  manuscript still needs a small-sample uncertainty support layer.
+- Predeclare and run MV19 finite-sample PHQ psychometric simulation if the
+  manuscript still needs a small-sample uncertainty support layer. The goal is
+  to quantify false-DIF risk, C02/C06 recovery, and anchor-set recovery under
+  the observed E-DAIC/CMDC PHQ N, sparsity, severity, and missingness.
 - Do not rerun MV16 unless the multilingual MV17a results are explicitly
   reviewed and a new need is identified.
 - Continue manuscript editing only within the target-measurement-validity frame.
@@ -79,16 +78,18 @@ Useful inputs:
 - `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_open_items.csv`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
+- `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
 - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
 - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
 - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
 - `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
+- `/root/autodl-tmp/memory/sessions/session_61_mv18_cmdc_pdch_hamd_same_scale_control.md`
 
 Secondary optional task:
 
 - Resolve the one incomplete local CMDC MV06 candidate if the missing workbook
   rows become available, then rerun the aggregate MV06 summary gate.
-- MV20 criterion-contamination stress remains optional after MV18/MV19, only if
+- MV20 criterion-contamination stress remains optional after MV19, only if
   still needed for the manuscript.
 
 ## Critical Current Results
@@ -122,6 +123,14 @@ Secondary optional task:
   `1.000` for both. The old Chinese-BGE chain remains legacy/diagnostic, but
   the core negative feature-level conclusion now has multilingual sensitivity
   support. MV10/MV11/MV13/MV14 are label-only and unaffected.
+- MV18 CMDC-HAMD vs PDCH-HAMD same-scale exploratory control is complete. It
+  uses 25 CMDC HAMD subjects and 99 PDCH HAMD subjects, with 25 CMDC and 73
+  PDCH subjects in the mild/moderate overlap. In that overlap it flags 4
+  severity-conditioned residual item shifts (`HAMD08`, `HAMD11`, `HAMD04`,
+  `HAMD09`), 7 threshold shifts, and weak primary bidirectional transfer under
+  the current frozen-feature contract. Status:
+  `complete_exploratory_same_scale_context_shift_supported`; interpretation is
+  exploratory context-shift support, not formal HAMD invariance.
 
 ## Versioning State
 
@@ -163,7 +172,8 @@ Keep local-only:
     work after the post-review frame correction.
   - I064: bibliography metadata must be verified against primary sources before
     submission.
-  - I066: next bounded experiments are MV18, MV19, then optional MV20.
+  - I066: MV17a and MV18 are complete; next bounded experiment is MV19, then
+    optional MV20.
 
 ## Fast Verification Commands
 
@@ -171,6 +181,7 @@ Keep local-only:
 git status --short
 python scripts/build_diagnostic_paper_bibliography.py
 python scripts/phase5_run_mv17a_multilingual_feature_contract.py
+python scripts/phase5_run_mv18_cmdc_pdch_hamd_same_scale_control.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 python scripts/phase5_full_method_gate_audit.py
 ```

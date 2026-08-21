@@ -79,6 +79,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_58_context_token_management.md`
   - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
   - `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
+  - `/root/autodl-tmp/memory/sessions/session_61_mv18_cmdc_pdch_hamd_same_scale_control.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -165,9 +166,14 @@ MPDD 2025 is intentionally out of scope for current auditing.
   of observed-scale-safe theta gain, and MV15 remains blocked by high
   theta-conditioned feature identity. MV16 remains paused unless a future
   review specifically requires rerunning it under the multilingual feature
-  contract. The active next orchestration step is MV18 CMDC-HAMD vs PDCH-HAMD
-  same-scale exploratory control, followed by MV19 finite-sample PHQ
-  psychometric simulation if still needed for manuscript support.
+  contract. MV18 CMDC-HAMD vs PDCH-HAMD same-scale exploratory control is also
+  complete: under the mild/moderate HAMD overlap it finds 4 predeclared
+  severity-conditioned residual item-shift flags, 7 threshold-shift flags, and
+  weak primary bidirectional transfer under the current frozen-feature
+  contract. Treat MV18 as exploratory same-HAMD context-shift support, not
+  formal HAMD invariance. The active next orchestration step is MV19
+  finite-sample PHQ psychometric simulation if still needed for manuscript
+  support.
   Bibliography metadata has been corrected for P3HF, Multi-Probe Audit, and
   EMNLP interviewer bias in the generator, but all references still require
   full primary-source verification before submission.
@@ -707,7 +713,10 @@ MPDD 2025 is intentionally out of scope for current auditing.
   complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
   and reproduces the blocked MV07/MV12/MV15 pattern under BGE-M3 and
-  multilingual-E5. Treat MV18 as the next design-ready route item.
+  multilingual-E5. MV18 is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
+  with status `complete_exploratory_same_scale_context_shift_supported`. Treat
+  MV19 as the next design-ready route item.
 
 Phase 2 gate status:
 
@@ -1093,13 +1102,12 @@ Key Phase 2 outputs:
   extra shallow BGE variants, extra projection dimensions, EATD
   valence-adversarial modules, and MV16 retuning unless a new predeclared
   mechanism changes the gate.
-- Next measurement-aware route decision: MV17a is complete; add only bounded
-  controls with direct relevance to target measurement validity: first MV18
-  CMDC-HAMD versus PDCH-HAMD same-scale exploratory measurement shift, then
-  MV19 finite-N PHQ psychometric simulation, and MV20 criterion-contamination
-  stress only if still needed. MV06 agreement uncertainty is complete; optional
-  next RQ4 work is resolving the one incomplete local candidate before stronger
-  RQ4 wording.
+- Next measurement-aware route decision: MV17a and MV18 are complete; add only
+  bounded controls with direct relevance to target measurement validity. The
+  active next item is MV19 finite-N PHQ psychometric simulation; MV20
+  criterion-contamination stress remains optional only if still needed. MV06
+  agreement uncertainty is complete; optional next RQ4 work is resolving the
+  one incomplete local candidate before stronger RQ4 wording.
 
 ## Data Quality Watchlist
 
@@ -1210,11 +1218,12 @@ plaintext credential-like content before committing on the clean remote lineage.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
    revises identity-gate semantics, MV10/MV11/MV13/MV14 provide the core
    label-only PHQ measurement evidence, MV12/MV15/MV16 remain bounded or
-   negative prediction-consequence evidence, and MV17a shows the blocked
+   negative prediction-consequence evidence, MV17a shows the blocked
    MV07/MV12/MV15 feature-level pattern also holds under BGE-M3 and
-   multilingual-E5. Full method construction remains blocked. The next active
-   task is MV18 CMDC-HAMD versus PDCH-HAMD same-scale control, followed by
-   MV19 finite-sample PHQ psychometric simulation if still needed. Parallel
-   writing work may continue, but the manuscript must use target
+   multilingual-E5, and MV18 gives exploratory same-HAMD context-shift support
+   without formal invariance claims. Full method construction remains blocked.
+   The next active task is MV19 finite-sample PHQ psychometric simulation if
+   still needed. Parallel writing work may continue, but the manuscript must
+   use target
    measurement-validity framing, corrected bibliography metadata, and full
    primary-source verification before submission.

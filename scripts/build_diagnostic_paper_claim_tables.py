@@ -237,14 +237,14 @@ LITERATURE_ROWS = [
         "topic": "Legacy BGE feature-contract caveat",
         "citation_hint": "BAAI bge-small-zh-v1.5 model card",
         "url": "https://huggingface.co/BAAI/bge-small-zh-v1.5",
-        "paper_positioning": "The current E-DAIC MV07 feature generator used a Chinese BGE model on English transcripts, so BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic until multilingual sensitivity is rerun.",
+        "paper_positioning": "The E-DAIC MV07 feature generator used a Chinese BGE model on English transcripts, so the old BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic; MV17a multilingual sensitivity reruns the paper-critical MV07/MV12/MV15 chain and reproduces the blocked pattern.",
     },
     {
         "source_id": "bge_m3_model_card",
         "topic": "Multilingual BGE replacement contract",
         "citation_hint": "BAAI BGE-M3 model card",
         "url": "https://huggingface.co/BAAI/bge-m3",
-        "paper_positioning": "BGE-M3 is the primary multilingual replacement encoder for the next MV17 feature-contract sensitivity over E-DAIC, CMDC, and PDCH.",
+        "paper_positioning": "BGE-M3 is the primary multilingual replacement encoder used in MV17a feature-contract sensitivity over E-DAIC, CMDC, and PDCH.",
     },
     {
         "source_id": "multilingual_e5_model_card",

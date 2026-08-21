@@ -1,0 +1,143 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "encoder_finetuning": false,
+    "feature_column_counts": {
+      "audio_egemaps": 352,
+      "audio_wavlm": 768,
+      "early_fusion_all": 1632,
+      "text_bge": 512
+    },
+    "feature_source": "existing_mv02_phase2_frozen_subject_features",
+    "feature_spaces": [
+      "text_bge",
+      "audio_wavlm",
+      "audio_egemaps",
+      "early_fusion_all"
+    ],
+    "raw_data_scan": false
+  },
+  "generated_at": "2026-08-21T18:39:32+00:00",
+  "interpretation": {
+    "short_read": "MV18 remains exploratory because CMDC HAMD has only 25 subjects, but the same-scale control still shows dataset/context sensitivity through flagged HAMD item/threshold shifts or weak bidirectional transfer."
+  },
+  "label_contract": {
+    "claim_boundary": "exploratory_control_not_formal_hamd_invariance",
+    "cmdc_hamd_subjects": 25,
+    "cmdc_overlap_hamd_subjects": 25,
+    "hamd_code_9_policy": "reuse_mv02_policy_exclude_code_9_from_item_training_evaluation_and_item_total_scoring",
+    "pdch_hamd_subjects": 99,
+    "pdch_overlap_hamd_subjects": 73
+  },
+  "label_shift_contract": {
+    "label_bootstrap_resamples": 500,
+    "label_scopes": [
+      "all_subjects",
+      "overlap_mild_moderate"
+    ],
+    "min_abs_residual_item_diff": 0.3,
+    "min_abs_threshold_rate_diff": 0.2,
+    "model_metric_bootstrap_resamples": 0,
+    "residualized_item_shift": "linear_total_excluding_item"
+  },
+  "local_only_files": [
+    "p5_mv18_local_predictions.csv"
+  ],
+  "model_contract": {
+    "cross_dataset_eval_scopes": [
+      "pdch_all_to_cmdc_overlap",
+      "pdch_overlap_to_cmdc_overlap",
+      "cmdc_overlap_to_pdch_all",
+      "cmdc_overlap_to_pdch_overlap"
+    ],
+    "folds_per_seed": 5,
+    "models": [
+      "train_mean_total",
+      "train_mean_items",
+      "direct_total_ridge",
+      "itemwise_ridge"
+    ],
+    "same_dataset_cv_scopes": [
+      "pdch_cv_all",
+      "pdch_cv_overlap",
+      "cmdc_cv_overlap"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "output_policy": {
+    "feature_matrices": "not_written",
+    "learned_embeddings": "not_written",
+    "media_paths": "not_written",
+    "model_weights": "not_written",
+    "raw_text": "not_written",
+    "row_level_predictions": "local_only_ignored",
+    "source_locators": "not_written"
+  },
+  "run_id": "P5_MV18_cmdc_pdch_hamd_same_scale_control",
+  "scope": "cmdc_pdch_hamd_same_language_same_scale_exploratory_control",
+  "split_audit": {
+    "eval_labels_for_hyperparameters": false,
+    "subject_level_cv": true,
+    "subject_overlap_violations": 0
+  },
+  "status": "complete",
+  "summary_files": [
+    "report.md",
+    "run_summary.json",
+    "artifact_hygiene_audit.json",
+    "label_scope_audit.csv",
+    "item_distribution_summary.csv",
+    "item_shift_summary.csv",
+    "threshold_shift_summary.csv",
+    "label_feature_audit.csv",
+    "metrics_by_seed.csv",
+    "metric_summary.csv",
+    "macro_summary.csv",
+    "transfer_comparison_summary.csv",
+    "model_split_audit.csv",
+    "construct_proxy_map.csv"
+  ],
+  "verdict": {
+    "claim_boundary": "Exploratory same-language/same-HAMD control only; not formal HAMD invariance because CMDC HAMD supervision is small.",
+    "cmdc_overlap_hamd_subjects": 25,
+    "flagged_overlap_residual_item_shifts": 4,
+    "flagged_overlap_threshold_shifts": 7,
+    "min_abs_residual_item_diff": 0.3,
+    "min_abs_threshold_rate_diff": 0.2,
+    "min_transfer_degradation": 0.25,
+    "min_transfer_mae_gain": 0.1,
+    "pass_rule_met": true,
+    "pass_rule_status": "complete_exploratory_same_scale_context_shift_supported",
+    "pdch_overlap_hamd_subjects": 73,
+    "primary_transfer_details": [
+      {
+        "beats_source_mean_by_min_gain": false,
+        "delta_vs_source_train_mean": 0.029221969215811328,
+        "delta_vs_target_cv_same_feature": -0.07073844408361385,
+        "eval_scope": "pdch_overlap_to_cmdc_overlap",
+        "feature_space": "text_bge",
+        "mae": 3.6286583684330322,
+        "model": "itemwise_ridge",
+        "worse_than_target_cv_by_min_degradation": false
+      },
+      {
+        "beats_source_mean_by_min_gain": false,
+        "delta_vs_source_train_mean": 0.22004764222877427,
+        "delta_vs_target_cv_same_feature": 0.3407791896685879,
+        "eval_scope": "cmdc_overlap_to_pdch_overlap",
+        "feature_space": "early_fusion_all",
+        "mae": 4.291828464146582,
+        "model": "itemwise_ridge",
+        "worse_than_target_cv_by_min_degradation": true
+      }
+    ],
+    "short_read": "MV18 remains exploratory because CMDC HAMD has only 25 subjects, but the same-scale control still shows dataset/context sensitivity through flagged HAMD item/threshold shifts or weak bidirectional transfer.",
+    "weak_primary_transfer_directions": 2
+  }
+}

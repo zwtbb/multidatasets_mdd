@@ -114,9 +114,12 @@ scale-safe theta gain, and MV15 fails theta-conditioned feature identity.
 Label-only MV10/MV11/MV13/MV14 are unaffected. The bibliography registry and
 `references.bib` now cover all current source-context rows, with corrected
 primary-source metadata for P3HF, Multi-Probe Audit, and EMNLP interviewer
-bias. Current next action: predeclare and run MV18 CMDC-HAMD vs PDCH-HAMD
-same-scale control, then MV19 finite-sample PHQ psychometric simulation if
-still needed.
+bias. MV18 now adds the same-language/same-HAMD CMDC versus PDCH exploratory
+control: within the mild/moderate HAMD overlap it flags 4 severity-conditioned
+residual item shifts and 7 threshold shifts, and bidirectional frozen-feature
+transfer remains weak. Treat it as exploratory context-shift support, not
+formal HAMD invariance. Current next action: predeclare and run MV19
+finite-sample PHQ psychometric simulation if still needed.
 Optional MV06 work is resolving the one incomplete local candidate before
 stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap

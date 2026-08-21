@@ -2,7 +2,7 @@
 
 A Measurement-Validity Audit of Cross-Corpus Depression Detection
 
-Generated: `2026-08-21T16:15:31+00:00`
+Generated: `2026-08-21T18:49:29+00:00`
 
 ## Draft Status
 
@@ -69,7 +69,7 @@ The analysis sequence is organized into three layers. First, representation/prot
 
 ### Claim Gate
 
-Full gate reads 40 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False.
+Full gate reads 42 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False.
 
 The manuscript therefore reports allowed-limited and blocked claims explicitly. Broad M0/M1/M2/M3 construction remains blocked; the paper is allowed only as a measurement-validity diagnostic contribution.
 
@@ -125,11 +125,11 @@ MV06 can support first-round aggregate credibility; stronger RQ4 claims still ne
 
 ### Limitations
 
-The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. The BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic until BGE-M3 and multilingual-E5 regenerate the shared feature contract. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. CMDC HAMD supervision is too small for a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.
+The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. MV17a mitigates the old BGE language-contract caveat for the paper-critical MV07/MV12/MV15 chain, but it reproduces the blocked feature-level pattern rather than authorizing a shared-representation claim. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. MV18 adds exploratory same-HAMD CMDC/PDCH context-shift evidence, but CMDC HAMD supervision is too small for formal invariance or a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.
 
 ### Future Work
 
-Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. The immediate route is narrow: rerun the paper-critical BGE chain with BGE-M3 and multilingual-E5, add an exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale control, simulate the observed PHQ sample size and sparsity to quantify false DIF and C02/C06 recovery, and design a criterion-contamination stress test over mirror-like versus non-mirror interview turns. Stop lines remain explicit: no extra BGE shallow heads, projection dimensions, DIF-guided calibration variants, personality-gating models, or EATD valence-adversarial modules unless a new design contract changes the gate.
+Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. The immediate route is now narrow: simulate the observed PHQ sample size and sparsity to quantify false DIF and C02/C06 recovery, then design a criterion-contamination stress test over mirror-like versus non-mirror interview turns only if the manuscript still needs that support. MV17a and MV18 are complete. Stop lines remain explicit: no extra BGE shallow heads, projection dimensions, DIF-guided calibration variants, personality-gating models, or EATD valence-adversarial modules unless a new design contract changes the gate.
 
 ## Claim Traceability
 
@@ -137,27 +137,25 @@ The full traceability matrix is stored in `manuscript_traceability_matrix.csv`. 
 
 | section | claim | status | guardrail | source artifacts |
 | --- | --- | --- | --- | --- |
-| Claim boundary | C_FULL_METHOD_START | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 34 |
-| Measurement evidence | C_RQ1_SHARED_SYMPTOM | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 30 |
+| Claim boundary | C_FULL_METHOD_START | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 36 |
+| Measurement evidence | C_RQ1_SHARED_SYMPTOM | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 32 |
 | Psychometric baseline | C_PSYCHOMETRIC_INVARIANCE_BASELINE | allowed_limited | Allowed only with the scoped wording in this table. | 11 |
-| HAMD diagnostic evidence | C_PDCH_HAMD_INTERNAL | allowed_limited | Allowed only with the scoped wording in this table. | 3 |
+| HAMD diagnostic evidence | C_PDCH_HAMD_INTERNAL | allowed_limited | Allowed only with the scoped wording in this table. | 4 |
 | External stress tests | C_EATD_SDS_GENERALIZATION | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 3 |
 | Identity and protocol diagnostics | C_DATASET_IDENTITY_CONTROL | allowed_limited | Allowed only with the scoped wording in this table. | 8 |
 | Identity and protocol diagnostics | C_MODMA_TASK_CONTROL | allowed_limited | Allowed only with the scoped wording in this table. | 2 |
 | External stress tests | C_EATD_VALENCE_ADVERSARIAL | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 3 |
 | Population/context diagnostics | C_RQ3_CONTEXT_CONDITIONING | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 2 |
 | Evidence localization | C_RQ4_EVIDENCE_LOCALIZATION | allowed_limited | Allowed only with the scoped wording in this table. | 6 |
-| Paper framing | C_PUBLISHABLE_PAPER_DIRECTION | allowed_with_reframing | Allowed as paper framing, not as a full-method success claim. | 10 |
+| Paper framing | C_PUBLISHABLE_PAPER_DIRECTION | allowed_with_reframing | Allowed as paper framing, not as a full-method success claim. | 12 |
 
 ## Open Editing Items
 
 | id | priority | area | item | blocking |
 | --- | --- | --- | --- | --- |
-| M001 | high | feature_contract | Predeclare and run MV17 multilingual feature-contract sensitivity with BGE-M3 and multilingual-E5 over E-DAIC, CMDC, and PDCH; rerun MV07, MV12, and MV15 only before making renewed feature-level claims. | True |
 | M002 | high | bibliography | Verify every bibliography row against DOI/publisher/ACL/arXiv metadata, then insert generated citation keys from references.bib into prose and adapt formatting to the target venue. | True |
 | M003 | high | claim_boundary | Keep full M0/M1/M2/M3 method claims blocked unless a genuinely new predeclared mechanism changes the full-method gate. | True |
 | M004 | high | psychometric_uncertainty | Predeclare a finite-sample psychometric simulation at the observed E-DAIC/CMDC N, category frequencies, severity distribution, and missingness to quantify false DIF under scalar invariance and C02/C06 recovery under threshold DIF. | True |
-| M005 | medium | HAMD_control | Predeclare a small-sample CMDC-HAMD versus PDCH-HAMD same-language/same-scale control as exploratory dataset-context measurement-shift evidence. | False |
 | M006 | medium | criterion_contamination | Design a criterion-contamination stress test that separates mirror-like interview/question turns from non-mirror turns before adding any new protocol-bias method. | False |
 | M007 | medium | RQ4 | Resolve the one incomplete local CMDC MV06 candidate if annotator rows become available; otherwise keep RQ4 as first-round aggregate credibility evidence. | False |
 | M008 | medium | limitations | Decide whether to run a larger corrected MV14 bootstrap only if interval precision becomes reviewer-critical. | False |
@@ -170,8 +168,8 @@ These source hints are mapped to citation keys for manuscript drafting; final su
 
 | citation key | source | URL | use |
 | --- | --- | --- | --- |
-| baai2026bgem3 | BAAI BGE-M3 model card | https://huggingface.co/BAAI/bge-m3 | BGE-M3 is the primary multilingual replacement encoder for the next MV17 feature-contract sensitivity over E-DAIC, CMDC, and PDCH. |
-| baai2026bgesmallzh | BAAI bge-small-zh-v1.5 model card | https://huggingface.co/BAAI/bge-small-zh-v1.5 | The current E-DAIC MV07 feature generator used a Chinese BGE model on English transcripts, so BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic until multilingual sensitivity is rerun. |
+| baai2026bgem3 | BAAI BGE-M3 model card | https://huggingface.co/BAAI/bge-m3 | BGE-M3 is the primary multilingual replacement encoder used in MV17a feature-contract sensitivity over E-DAIC, CMDC, and PDCH. |
+| baai2026bgesmallzh | BAAI bge-small-zh-v1.5 model card | https://huggingface.co/BAAI/bge-small-zh-v1.5 | The E-DAIC MV07 feature generator used a Chinese BGE model on English transcripts, so the old BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic; MV17a multilingual sensitivity reruns the paper-critical MV07/MV12/MV15 chain and reproduces the blocked pattern. |
 | bulut2017detecting | Bulut and Suh 2017, Frontiers in Education | https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2017.00051/full | IRT likelihood-ratio DIF testing supports MV11 item-level loading and threshold DIF diagnostics. |
 | cai2020modma | MODMA dataset description | https://reshare.ukdataservice.ac.uk/854301/ | Supports MODMA as an interview/reading/picture-description task robustness dataset. |
 | chalmers2012mirt | Chalmers 2012, Journal of Statistical Software | https://www.jstatsoft.org/article/view/v048i06 | mirt supplies the external multidimensional IRT implementation used in MV13 to replicate the PHQ anchor/DIF and measurement-shift pattern. |

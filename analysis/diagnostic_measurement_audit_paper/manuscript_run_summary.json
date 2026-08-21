@@ -4,7 +4,7 @@
     "manuscript_draft_status": "ready_for_human_manuscript_editing_v0_1",
     "short_read": "A full manuscript draft has been assembled from aggregate, hygiene-passing paper artifacts; full-method claims remain blocked."
   },
-  "generated_at": "2026-08-21T16:15:31+00:00",
+  "generated_at": "2026-08-21T18:49:29+00:00",
   "input_contract": {
     "aggregate_claim_tables_read": true,
     "aggregate_data_governance_section_read": true,
@@ -24,7 +24,7 @@
       "Open Editing Items",
       "Source Context"
     ],
-    "open_item_rows": 10,
+    "open_item_rows": 8,
     "traceability_rows": 17,
     "tracked_outputs": [
       "manuscript_artifact_hygiene_audit.json",

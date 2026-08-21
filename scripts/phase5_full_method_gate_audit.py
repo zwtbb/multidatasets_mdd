@@ -68,6 +68,8 @@ RUN_SUMMARIES = {
     "P5_MV15": PHASE5_DIR / "p5_mv15_latent_conditioned_identity" / "run_summary.json",
     "P5_MV16_design": PHASE5_DIR / "p5_mv16_dif_guided_calibration_design" / "run_summary.json",
     "P5_MV16": PHASE5_DIR / "p5_mv16_dif_guided_calibration" / "run_summary.json",
+    "P5_MV17a": PHASE5_DIR / "p5_mv17a_multilingual_feature_contract" / "run_summary.json",
+    "P5_MV18": PHASE5_DIR / "p5_mv18_cmdc_pdch_hamd_same_scale_control" / "run_summary.json",
 }
 
 STATUS_OVERRIDES = {
@@ -406,6 +408,21 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
         f"{fmt(mv16_result.get('best_l4_small_k_delta_theta_mae_vs_L0'))}, "
         f"and L4 small-k output identity BA {fmt(mv16_result.get('l4_small_k_output_identity_ba_mean'))}"
     )
+    mv17a = summaries["P5_MV17a"]
+    mv17a_status = str(mv17a.get("status", "unknown"))
+    mv17a_summary = (
+        f"MV17a is {mv17a_status}: BGE-M3 and multilingual-E5 rerun MV07/MV12/MV15 "
+        "and reproduce the blocked feature-level pattern under the multilingual feature contract"
+    )
+    mv18_result = summaries["P5_MV18"].get("verdict") or {}
+    mv18_status = str(mv18_result.get("pass_rule_status", "unknown"))
+    mv18_summary = (
+        f"MV18 is {mv18_status}: overlap HAMD subjects CMDC/PDCH "
+        f"{mv18_result.get('cmdc_overlap_hamd_subjects')}/{mv18_result.get('pdch_overlap_hamd_subjects')}, "
+        f"residual item-shift flags {mv18_result.get('flagged_overlap_residual_item_shifts')}, "
+        f"threshold-shift flags {mv18_result.get('flagged_overlap_threshold_shifts')}, "
+        f"weak primary transfer directions {mv18_result.get('weak_primary_transfer_directions')}"
+    )
     mv12_dimension_caveat = str(
         mv12_analysis.get(
             "dimension_matched_identity_caveat",
@@ -419,22 +436,22 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim": "Start the full symptom-aligned method M0/M1/M2/M3.",
             "decision": "blocked",
             "allowed_scope": "No full method construction yet.",
-            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_design_status}; MV08 result is {mv08_status}, with M2 improving over total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08_result.get('prediction_identity_ba_m2'))}; MV08 error-analysis status is {mv08_error_status}; MV08b design status is {mv08b_design_status}; MV08b result is {mv08b_status}, with M2b beating both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08b_result.get('prediction_identity_ba_m2b'))}; MV09 revises the identity-gate interpretation but finds conditional feature identity remains high after PHQ-item or severity conditioning; MV10 is {mv10_status}; MV11 is {mv11_status} and supports a bounded PHQ item-level measurement-shift target with an AIC/BIC caveat; MV12 design is {mv12_design_status}; MV12 run is {mv12_status}: same-dataset theta gate {mv12_result.get('same_dataset_theta_gate_passed')}, observed-scale safety {mv12_result.get('same_dataset_observed_gate_passed')}, external theta transfer {mv12_result.get('external_transfer_theta_gate_passed')}, conditional identity BA {fmt(mv12_result.get('conditional_identity_ba_m12a'))}; MV12 aggregate analysis is {mv12_analysis_status} and freeze_current_latent_target_line={mv12_analysis.get('freeze_current_latent_target_line')}; {mv12_dimension_caveat}; MV13 design is {mv13_design_status}; MV13 run is {mv13_status}, externally replicating the label-only PHQ anchor/DIF localization pattern but still not testing X-to-theta prediction or cross-dataset calibration; {mv14_anchor_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}.",
+            "blocking_evidence": f"P5_MV01 weak/asymmetric; P5_MV04b partial; P5_MV04c mixed; P5_MV03/MV03b/MV05 negative; MV06 summary status is {mv06_status}; MV07 aligned-BGE status is {mv07_result.get('pass_rule_status')}; MV07b reduces BGE identity but remains {mv07b_result.get('pass_rule_status')}; MV07c total anchor remains {mv07c_result.get('pass_rule_status')} with CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 design status is {mv08_design_status}; MV08 result is {mv08_status}, with M2 improving over total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08_result.get('prediction_identity_ba_m2'))}; MV08 error-analysis status is {mv08_error_status}; MV08b design status is {mv08b_design_status}; MV08b result is {mv08b_status}, with M2b beating both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices and prediction identity BA {fmt(mv08b_result.get('prediction_identity_ba_m2b'))}; MV09 revises the identity-gate interpretation but finds conditional feature identity remains high after PHQ-item or severity conditioning; MV10 is {mv10_status}; MV11 is {mv11_status} and supports a bounded PHQ item-level measurement-shift target with an AIC/BIC caveat; MV12 design is {mv12_design_status}; MV12 run is {mv12_status}: same-dataset theta gate {mv12_result.get('same_dataset_theta_gate_passed')}, observed-scale safety {mv12_result.get('same_dataset_observed_gate_passed')}, external theta transfer {mv12_result.get('external_transfer_theta_gate_passed')}, conditional identity BA {fmt(mv12_result.get('conditional_identity_ba_m12a'))}; MV12 aggregate analysis is {mv12_analysis_status} and freeze_current_latent_target_line={mv12_analysis.get('freeze_current_latent_target_line')}; {mv12_dimension_caveat}; MV13 design is {mv13_design_status}; MV13 run is {mv13_status}, externally replicating the label-only PHQ anchor/DIF localization pattern but still not testing X-to-theta prediction or cross-dataset calibration; {mv14_anchor_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}; {mv17a_summary}; {mv18_summary}.",
             "required_next_evidence": (
                 "Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation."
                 if mv06_uncertainty_ready
                 else "Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation or MV06 agreement uncertainty."
             ),
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV12_design;P5_MV12;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_MV15_design;P5_MV15;P5_MV16_design;P5_MV16",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV03;P5_MV03b;P5_MV04;P5_MV04b;P5_MV04c;P5_MV05;P5_MV06_summary;P5_MV06_review_pack;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV12_design;P5_MV12;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_MV15_design;P5_MV15;P5_MV16_design;P5_MV16;P5_MV17a;P5_MV18",
         },
         {
             "claim_id": "C_RQ1_SHARED_SYMPTOM",
             "claim": "Claim a transferable shared symptom representation across scales/datasets.",
             "decision": "blocked",
             "allowed_scope": "Discuss direct shared-symptom mapping as negative/bounded diagnostic evidence and reframe RQ1 as measurement-shift and measurement-validity work.",
-            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 partial-invariance ordinal heads reduce prediction identity to {fmt(mv08_result.get('prediction_identity_ba_m2'))} but improve over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices; MV08b beats both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices but has tiny MAE gains and no independent psychometric latent target; MV09 E-DAIC/CMDC item-conditioned feature identity BA is {fmt(mv09_result.get('edaic_cmdc_item_residualized_ba'))}; MV10 label-only PHQ screen passes configural structure with loading congruence {fmt(mv10_result.get('loading_congruence'))}; MV11 confirms all {mv11_result.get('confirmed_mv10_anchor_items')} MV10 anchors with {mv11_result.get('loading_dif_flagged_items')} loading DIF flags and {mv11_result.get('threshold_dif_flagged_items')} threshold DIF flags, but core AIC/BIC split remains {mv11_result.get('core_model_aic_bic_split')}; MV12 X-to-theta improves same-dataset theta MAE but fails observed-scale safety and zero-shot source-calibrated external theta transfer, with conditional identity BA {fmt(mv12_result.get('conditional_identity_ba_m12a'))}; MV12 aggregate tradeoff analysis recommends freezing the current latent-target line and adds a dimension-matched B3 caveat; MV13 external mirt replication is {mv13_status}, with anchors {mv13_result.get('confirmed_mv10_anchor_items')}, loading DIF flags {mv13_result.get('loading_dif_flagged_items')}, threshold DIF flags {mv13_result.get('threshold_dif_flagged_items')}, and core convergence={mv13_result.get('core_converged')}; {mv14_anchor_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}.",
+            "blocking_evidence": f"PHQ bridge is weak; PDCH HAMD is PDCH-only; EATD SDS audio/text heads do not beat meaningful floors; CMDC HAMD sanity is negative/coverage-limited; MV18 same-HAMD control remains exploratory and flags context-sensitive HAMD item/threshold behavior rather than formal invariance; MV07b reduces prediction identity to {fmt(mv07b_result.get('best_binary_prediction_identity_ba_after'))} but fails the CMDC total-allocation floor; MV07c total anchor reduces prediction identity to {fmt(mv07c_result.get('prediction_identity_ba'))} but still has CMDC delta vs raw total-allocation {fmt(mv07c_result.get('pooled_cmdc_delta_vs_raw_total_alloc'))}; MV08 partial-invariance ordinal heads reduce prediction identity to {fmt(mv08_result.get('prediction_identity_ba_m2'))} but improve over the total-score floor on {mv08_result.get('pooled_m2_improved_vs_total_score_floor_slices')} pooled active slices; MV08b beats both floors on {mv08b_result.get('pooled_m2b_improved_vs_both_floor_slices')} pooled active slices but has tiny MAE gains and no independent psychometric latent target; MV09 E-DAIC/CMDC item-conditioned feature identity BA is {fmt(mv09_result.get('edaic_cmdc_item_residualized_ba'))}; MV10 label-only PHQ screen passes configural structure with loading congruence {fmt(mv10_result.get('loading_congruence'))}; MV11 confirms all {mv11_result.get('confirmed_mv10_anchor_items')} MV10 anchors with {mv11_result.get('loading_dif_flagged_items')} loading DIF flags and {mv11_result.get('threshold_dif_flagged_items')} threshold DIF flags, but core AIC/BIC split remains {mv11_result.get('core_model_aic_bic_split')}; MV12 X-to-theta improves same-dataset theta MAE but fails observed-scale safety and zero-shot source-calibrated external theta transfer, with conditional identity BA {fmt(mv12_result.get('conditional_identity_ba_m12a'))}; MV12 aggregate tradeoff analysis recommends freezing the current latent-target line and adds a dimension-matched B3 caveat; MV13 external mirt replication is {mv13_status}, with anchors {mv13_result.get('confirmed_mv10_anchor_items')}, loading DIF flags {mv13_result.get('loading_dif_flagged_items')}, threshold DIF flags {mv13_result.get('threshold_dif_flagged_items')}, and core convergence={mv13_result.get('core_converged')}; {mv14_anchor_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}; {mv17a_summary}.",
             "required_next_evidence": "A stronger shared-representation or calibration mechanism would need a genuinely new predeclared data/feature/measurement source; current MV16 is bounded/negative.",
-            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV12_design;P5_MV12;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_MV15_design;P5_MV15;P5_MV16_design;P5_MV16",
+            "primary_sources": "P5_MV01;P5_MV02;P5_MV02b;P5_MV03;P5_MV03b;P5_MV04b;P5_MV07_edaic_bge_generation;P5_MV07_readiness;P5_MV07;P5_MV07b;P5_MV07c;P5_MV08_design;P5_MV08;P5_MV08_error_analysis;P5_MV08b_design;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV12_design;P5_MV12;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_MV15_design;P5_MV15;P5_MV16_design;P5_MV16;P5_MV17a;P5_MV18",
         },
         {
             "claim_id": "C_PSYCHOMETRIC_INVARIANCE_BASELINE",
@@ -449,10 +466,10 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim_id": "C_PDCH_HAMD_INTERNAL",
             "claim": "Use PDCH HAMD as bounded internal diagnostic evidence.",
             "decision": "allowed_limited",
-            "allowed_scope": "PDCH-only HAMD item/total diagnostic, not cross-dataset HAMD generalization.",
-            "blocking_evidence": f"Best item-derived total MAE {fmt(mv02.get('best_pdch_item_total_mae'))}; status {mv02.get('pass_rule_status')}. CMDC sanity remains negative.",
-            "required_next_evidence": "External HAMD transfer or stronger CMDC/PDCH-compatible measurement head before cross-dataset HAMD claims.",
-            "primary_sources": "P5_MV02;P5_MV02_readiness;P5_MV02b",
+            "allowed_scope": "PDCH-only HAMD item/total diagnostic plus MV18 exploratory same-HAMD context-shift support; not cross-dataset HAMD generalization.",
+            "blocking_evidence": f"Best item-derived total MAE {fmt(mv02.get('best_pdch_item_total_mae'))}; status {mv02.get('pass_rule_status')}. CMDC sanity remains negative. {mv18_summary}.",
+            "required_next_evidence": "A stronger CMDC/PDCH-compatible measurement head or larger external HAMD item sample is required before cross-dataset HAMD claims.",
+            "primary_sources": "P5_MV02;P5_MV02_readiness;P5_MV02b;P5_MV18",
         },
         {
             "claim_id": "C_EATD_SDS_GENERALIZATION",
@@ -527,14 +544,14 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim_id": "C_PUBLISHABLE_PAPER_DIRECTION",
             "claim": "Continue toward a publishable paper.",
             "decision": "allowed_with_reframing",
-            "allowed_scope": "A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, and MV16 are bounded diagnostic evidence, not a full-method pass.",
-            "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}; MV08b run is {mv08b_status}; MV09 is {mv09_status}; MV10 is {mv10_status}; MV11 is {mv11_status} with {mv11_result.get('confirmed_mv10_anchor_items')} confirmed MV10 PHQ anchors and an AIC/BIC caveat; MV12 design is {mv12_design_status}; MV12 run is {mv12_status} with same-dataset theta gain but observed-scale and zero-shot source-calibrated transfer limits; MV12 analysis is {mv12_analysis_status}, recommends freezing the current latent-target line, and adds the dimension-matched B3 caveat; MV13 is {mv13_status}, externally replicates the MV11 qualitative anchor/DIF localization pattern, and keeps parameter/theta exports local-only; {mv14_anchor_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}; data-governance history cleanup remains a separate approval decision.",
+            "allowed_scope": "A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, and MV18 are bounded diagnostic evidence, not a full-method pass.",
+            "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}; MV08b run is {mv08b_status}; MV09 is {mv09_status}; MV10 is {mv10_status}; MV11 is {mv11_status} with {mv11_result.get('confirmed_mv10_anchor_items')} confirmed MV10 PHQ anchors and an AIC/BIC caveat; MV12 design is {mv12_design_status}; MV12 run is {mv12_status} with same-dataset theta gain but observed-scale and zero-shot source-calibrated transfer limits; MV12 analysis is {mv12_analysis_status}, recommends freezing the current latent-target line, and adds the dimension-matched B3 caveat; MV13 is {mv13_status}, externally replicates the MV11 qualitative anchor/DIF localization pattern, and keeps parameter/theta exports local-only; {mv14_anchor_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}; {mv17a_summary}; {mv18_summary}; data-governance history cleanup remains a separate approval decision.",
             "required_next_evidence": (
                 "Consolidate the manuscript around bounded diagnostic evidence; MV06 stronger wording still requires resolving any incomplete local candidate rows and discussing sampling limits."
                 if mv06_uncertainty_ready
                 else "Consolidate the manuscript around bounded diagnostic evidence; optionally add MV06 agreement uncertainty before stronger evidence-localization wording."
             ),
-            "primary_sources": "all_phase5;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_MV15_design;P5_MV15;P5_MV16_design;P5_MV16",
+            "primary_sources": "all_phase5;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_MV15_design;P5_MV15;P5_MV16_design;P5_MV16;P5_MV17a;P5_MV18",
         },
     ]
     return pd.DataFrame(rows)
@@ -569,6 +586,7 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
     mv15_result = summaries["P5_MV15"].get("verdict") or {}
     mv16_design = summaries["P5_MV16_design"].get("decision") or {}
     mv16_result = summaries["P5_MV16"].get("verdict") or {}
+    mv18_result = summaries["P5_MV18"].get("verdict") or {}
     mv06_summary = summaries["P5_MV06_summary"]
     mv06_uncertainty = mv06_summary.get("agreement_uncertainty") or {}
     mv06_evidence_presence_uncertainty = mv06_uncertainty.get("evidence_presence") or []
@@ -577,7 +595,22 @@ def build_next_actions(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
         for row in mv06_evidence_presence_uncertainty
     )
     mv07_ready = mv07.get("readiness_status") == "ready_to_run_minimal_validation"
-    if mv16_result.get("pass_rule_status"):
+    if mv18_result.get("pass_rule_status"):
+        shared_feature_action = {
+            "rank": 2,
+            "action_id": "NEXT_PREDECLARE_MV19_PHQ_FINITE_SAMPLE_SIMULATION",
+            "action": "Predeclare and run MV19 finite-sample PHQ psychometric simulation.",
+            "why_now": (
+                "MV17a has completed the multilingual feature-contract sensitivity and MV18 has completed the same-HAMD exploratory control. "
+                f"MV18 status is {mv18_result.get('pass_rule_status')}: residual item-shift flags "
+                f"{mv18_result.get('flagged_overlap_residual_item_shifts')}, threshold-shift flags "
+                f"{mv18_result.get('flagged_overlap_threshold_shifts')}, and weak primary transfer directions "
+                f"{mv18_result.get('weak_primary_transfer_directions')}. The remaining high-priority uncertainty layer is whether the PHQ C02/C06 DIF pattern is robust under observed N, sparsity, severity, and missingness."
+            ),
+            "success_gate": "MV19 reports false-DIF rate under scalar-invariant H0, C02/C06 recovery under threshold-DIF H1, and anchor-set recovery using aggregate-only outputs.",
+            "version_policy": "Track MV19 design/run scripts, aggregate simulation summaries, refreshed gates, reports, docs, and memory only; keep simulated row-level draws or subject-grain matrices local-only if generated.",
+        }
+    elif mv16_result.get("pass_rule_status"):
         shared_feature_action = {
             "rank": 2,
             "action_id": "NEXT_FREEZE_MV16_AND_CONSOLIDATE_PAPER",
