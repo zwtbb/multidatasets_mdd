@@ -122,6 +122,7 @@ samples, calibration parameters, and model artifacts remain local-only.
 - Chinese reproduction guide: `docs/reproduction_zh.md`
 - Research direction entrypoint: `docs/experiment_direction.md`
 - Main-agent control plan: `docs/master_experiment_plan.md`
+- Active main-agent handoff: `memory/ACTIVE_HANDOFF.md`
 - Issue and decision log: `docs/experiment_issue_log.md`
 - GitHub publish workflow: `docs/github_publish_workflow.md`
 - Phase 5 full-method gate: `analysis/phase5_minimal_validation/full_method_gate_audit/`

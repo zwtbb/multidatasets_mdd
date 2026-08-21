@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-14 UTC
+Last updated: 2026-08-21 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -12,6 +12,11 @@ session-level memory files under `memory/sessions/`.
   - Owns current project status, global decisions, active gates, and next
     orchestration steps.
   - Do not store long per-run logs or full metric tables here.
+- Active handoff: `/root/autodl-tmp/memory/ACTIVE_HANDOFF.md`
+  - Short working-memory entrypoint for the current main-agent context.
+  - Read it after this master memory and before opening detailed session files.
+  - Update it when the active gate, next task, versioning boundary, or
+    cross-session decision changes.
 - Session memories:
   - `/root/autodl-tmp/memory/sessions/session_00_data_governance.md`
   - `/root/autodl-tmp/memory/sessions/session_01_phase1_phase2_baselines.md`
@@ -71,6 +76,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_55_mv06_agreement_uncertainty.md`
   - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
   - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
+  - `/root/autodl-tmp/memory/sessions/session_58_context_token_management.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -78,10 +84,11 @@ session-level memory files under `memory/sessions/`.
   and audit reports. Memory files should cite those artifacts rather than copy
   large tables.
 
-When starting a new session, read this master memory first, then read only the
-session memory files relevant to that task. Each separate task should maintain
-its own session memory file and update the master only with stable cross-session
-facts, final decisions, blockers, or handoff-worthy results.
+When starting a new session, read this master memory first, then read the active
+handoff, then read only the session memory files relevant to that task. Each
+separate task should maintain its own session memory file and update the master
+only with stable cross-session facts, final decisions, blockers, or
+handoff-worthy results.
 
 For Codex worktree sessions, write code, docs, session memory, and generated
 outputs under the current worktree root. Use the absolute dataset roots recorded
@@ -1150,6 +1157,9 @@ plaintext credential-like content before committing on the clean remote lineage.
 ## Immediate Orchestration Plan
 
 1. Keep using the layered memory hierarchy for all future sessions.
+   Use `memory/ACTIVE_HANDOFF.md` as the short active context after reading this
+   master memory; update it whenever the gate, next task, or versioning boundary
+   changes.
 2. Treat planned Phase 3 diagnostics as complete:
    - E-DAIC/CMDC protocol and interviewer shortcut diagnostics: complete for
      available text controls.
