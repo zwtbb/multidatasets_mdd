@@ -193,50 +193,78 @@ def bibliography_status() -> dict[str, Any]:
 
 def build_open_items(bib_status: dict[str, Any]) -> pd.DataFrame:
     if bib_status["bibliography_available"] and bib_status["artifact_hygiene_passed"]:
-        citation_item = "Insert generated citation keys from references.bib into prose and adapt BibTeX/reference formatting to the final target venue."
+        citation_item = "Verify every bibliography row against DOI/publisher/ACL/arXiv metadata, then insert generated citation keys from references.bib into prose and adapt formatting to the target venue."
     else:
-        citation_item = "Convert citation hints and source URLs into a formal bibliography before venue-specific citation editing."
+        citation_item = "Convert citation hints and source URLs into a formal bibliography, verify metadata against primary sources, and then perform venue-specific citation editing."
     rows = [
         {
             "item_id": "M001",
             "priority": "high",
-            "area": "manuscript",
-            "open_item": citation_item,
+            "area": "feature_contract",
+            "open_item": "Predeclare and run MV17 multilingual feature-contract sensitivity with BGE-M3 and multilingual-E5 over E-DAIC, CMDC, and PDCH; rerun MV07, MV12, and MV15 only before making renewed feature-level claims.",
             "blocking_for_submission": True,
         },
         {
             "item_id": "M002",
+            "priority": "high",
+            "area": "bibliography",
+            "open_item": citation_item,
+            "blocking_for_submission": True,
+        },
+        {
+            "item_id": "M003",
             "priority": "high",
             "area": "claim_boundary",
             "open_item": "Keep full M0/M1/M2/M3 method claims blocked unless a genuinely new predeclared mechanism changes the full-method gate.",
             "blocking_for_submission": True,
         },
         {
-            "item_id": "M003",
+            "item_id": "M004",
+            "priority": "high",
+            "area": "psychometric_uncertainty",
+            "open_item": "Predeclare a finite-sample psychometric simulation at the observed E-DAIC/CMDC N, category frequencies, severity distribution, and missingness to quantify false DIF under scalar invariance and C02/C06 recovery under threshold DIF.",
+            "blocking_for_submission": True,
+        },
+        {
+            "item_id": "M005",
+            "priority": "medium",
+            "area": "HAMD_control",
+            "open_item": "Predeclare a small-sample CMDC-HAMD versus PDCH-HAMD same-language/same-scale control as exploratory dataset-context measurement-shift evidence.",
+            "blocking_for_submission": False,
+        },
+        {
+            "item_id": "M006",
+            "priority": "medium",
+            "area": "criterion_contamination",
+            "open_item": "Design a criterion-contamination stress test that separates mirror-like interview/question turns from non-mirror turns before adding any new protocol-bias method.",
+            "blocking_for_submission": False,
+        },
+        {
+            "item_id": "M007",
             "priority": "medium",
             "area": "RQ4",
             "open_item": "Resolve the one incomplete local CMDC MV06 candidate if annotator rows become available; otherwise keep RQ4 as first-round aggregate credibility evidence.",
             "blocking_for_submission": False,
         },
         {
-            "item_id": "M004",
+            "item_id": "M008",
             "priority": "medium",
             "area": "limitations",
             "open_item": "Decide whether to run a larger corrected MV14 bootstrap only if interval precision becomes reviewer-critical.",
             "blocking_for_submission": False,
         },
         {
-            "item_id": "M005",
+            "item_id": "M009",
             "priority": "medium",
             "area": "protocol",
             "open_item": "Speaker-resolved E-DAIC interviewer/participant controls remain optional unless the Results need a literal speaker-role claim.",
             "blocking_for_submission": False,
         },
         {
-            "item_id": "M006",
+            "item_id": "M010",
             "priority": "medium",
             "area": "MPDD",
-            "open_item": "Recover structured MPDD gender/health metadata only if population-moderation claims become central.",
+            "open_item": "Recover structured MPDD gender/health metadata only if population stress-test claims become central; do not revive personality-aware modeling as a main contribution.",
             "blocking_for_submission": False,
         },
     ]
@@ -311,6 +339,7 @@ def build_manuscript(
 
     gate = row_by_id(findings, "finding_id", "gate_status")
     rq1 = row_by_id(findings, "finding_id", "rq1_measurement_negative")
+    bge_caveat = row_by_id(findings, "finding_id", "legacy_bge_feature_contract_caveat")
     mv06 = row_by_id(findings, "finding_id", "mv06_first_round_evidence")
     mv14 = row_by_id(findings, "finding_id", "mv14_measurement_uncertainty_bootstrap")
     mv16 = row_by_id(findings, "finding_id", "mv16_dif_guided_calibration_run")
@@ -362,9 +391,9 @@ def build_manuscript(
     )
 
     lines = [
-        "# Do Depression Datasets Measure the Same Construct?",
+        "# Before Aligning Representations, Align the Target",
         "",
-        "A Measurement-Invariance View of Cross-Dataset Multimodal Depression Detection",
+        "A Measurement-Validity Audit of Cross-Corpus Depression Detection",
         "",
         f"Generated: `{generated_at}`",
         "",
@@ -380,20 +409,19 @@ def build_manuscript(
         "",
         "## Abstract",
         "",
-        "Cross-dataset depression detection is usually evaluated as a prediction problem, but pooled performance can hide label, protocol, and population shifts. We audit six multimodal depression corpora with registry-governed dataset roles, subject-level split contracts, scale-specific label contracts, and artifact-hygiene gates. The baseline matrix completes 66 applicable runs and serves as a reproducibility floor rather than the central novelty. Failure-mode diagnostics show that dataset and protocol identity are strongly recoverable from common frozen feature spaces, motivating conditional identity checks before shared-representation claims. Label-only PHQ analyses then show substantial common PHQ structure but not uniform threshold or scalar equivalence: stable anchors recur for C01/C04/C05/C07, while threshold non-equivalence is concentrated on C02/C06 with global model-selection uncertainty. Multimodal latent-target prediction improves within-dataset theta utility, but it is Pareto-dominated by a dimension-matched direct severity control and fails zero-shot source-calibrated external theta transfer. A later latent-conditioned identity audit keeps BGE feature identity high after theta and severity conditioning, and the DIF-guided few-shot calibration ladder fails the predeclared both-direction small-k mechanism gate. We therefore frame the contribution as a measurement-validity and measurement-shift audit: the current evidence supports bounded diagnostic claims and first-round evidence-localization credibility, not a transferable full symptom-aligned method.",
+        "Cross-dataset depression detection is usually evaluated as a prediction problem, but pooled performance can hide a prior validity question: do different corpora measure the same target? We audit six depression corpora with registry-governed dataset roles, subject-level split contracts, dataset-group label contracts, and artifact-hygiene gates. The baseline matrix completes 66 applicable runs and serves as a reproducibility floor rather than the central novelty. Failure-mode diagnostics show that dataset and protocol identity are strongly recoverable from common frozen feature spaces, motivating conditional identity checks before shared-representation claims. Label-only E-DAIC/CMDC PHQ analyses then show substantial common structure but not uniform threshold or scalar equivalence: stable anchors recur for C01/C04/C05/C07, while localized threshold non-equivalence is concentrated on C02/C06 with global model-selection uncertainty. The BGE-linked multimodal chain is now treated as legacy/diagnostic because its E-DAIC feature contract used a Chinese encoder on English transcripts and available transcript rows are not speaker-resolved. Under that caveat, latent-target prediction improves within-dataset theta utility, but it is Pareto-dominated by a dimension-matched direct severity control and fails zero-shot source-calibrated external theta transfer. A later latent-conditioned identity audit keeps BGE feature identity high after theta and severity conditioning, and the DIF-guided few-shot calibration ladder fails the predeclared both-direction small-k mechanism gate. We therefore frame the contribution as a measurement-validity audit: feature alignment alone cannot solve cross-corpus learning if the target measurement function also shifts.",
         "",
         "## Contributions",
         "",
-        "1. A registry-first governance and release-boundary workflow for comparing depression datasets without publishing sensitive row-level artifacts.",
-        "2. A failure-mode diagnostic layer showing why dataset identity, protocol/task content, and population context must be audited before pooled depression-transfer claims.",
-        "3. A measurement-validation sequence that separates target measurement (`Y -> theta`) from multimodal prediction (`X -> theta`) and reports accuracy-identity trade-offs rather than only aggregate predictive scores.",
-        "4. A bounded claim map that explains which negative, diagnostic, and first-round evidence-localization findings are currently publishable.",
+        "1. A measurement-validity framework for cross-corpus depression detection: feature shift, target measurement shift, and prediction shift are distinct failure modes.",
+        "2. Empirical label-only psychometric evidence that E-DAIC and CMDC share substantial PHQ structure while exhibiting localized C02/C06 threshold non-equivalence and convergence-aware uncertainty.",
+        "3. A prediction-level consequence: current `X -> theta` models do not automatically improve observed-scale prediction, zero-shot transfer, or representation invariance over dimension-matched severity controls.",
         "",
         "## Introduction",
         "",
-        "Depression-detection datasets differ in more than sample size or modality. They differ in interview protocol, language, clinical setting, scale family, item coverage, and population context. Official DAIC materials describe clinical interviews distributed under access constraints, while the PDCH repository describes real face-to-face consultation data paired with HAMD-17 assessments. Prior questionnaire-grounded depression-detection work shows that symptom instruments can improve out-of-domain generalization, but the present audit asks a preceding measurement question: whether datasets and scales define sufficiently comparable targets for a shared multimodal representation.",
+        "Depression-detection datasets differ in more than sample size or modality. They differ in interview protocol, language, clinical setting, scale family, item coverage, and population context. Official DAIC materials describe clinical interviews distributed under access constraints, while the PDCH repository describes real face-to-face consultation data paired with HAMD-17 assessments. Prior questionnaire-grounded depression-detection work shows that symptom instruments can improve out-of-domain generalization, but the present audit asks a preceding measurement question: whether datasets and scales define sufficiently comparable targets for a shared representation.",
         "",
-        "The core thesis is deliberately conservative. A symptom-aligned framework remains scientifically attractive, but it cannot be assumed from pooled model performance. Classical measurement-invariance and IRT sources, including PHQ invariance work and the graded-response model family used by `mirt`, motivate treating PHQ-8/PHQ-9/HAMD/SDS as related but non-identical measurement contracts. This paper therefore reports a governed sequence of baselines, shortcut diagnostics, label-only psychometric checks, multimodal latent-target tests, identity conditioning, few-shot DIF-guided calibration, and aggregate evidence localization.",
+        "Let `D` denote dataset/protocol/population, `theta` the latent depressive trait, `X` the observed language/audio/video/behavioral signal, and `Y` the observed scale response. The relevant factorization is `P(X,Y | theta,D) = P(X | theta,D) P(Y | theta,D)`. Most domain-alignment work targets the first factor, but cross-corpus validity also requires asking whether the second factor is stable. A symptom-aligned framework remains scientifically attractive, but it cannot be assumed from pooled model performance. Classical measurement-invariance and IRT sources, including PHQ invariance work and the graded-response model family used by `mirt`, motivate treating PHQ-8/PHQ-9/HAMD/SDS as related but non-identical measurement contracts. This paper therefore reports a governed sequence of baselines, shortcut diagnostics, label-only psychometric checks, legacy multimodal latent-target tests, identity conditioning, few-shot DIF-guided calibration, and aggregate evidence localization.",
         "",
         "## Methods",
         "",
@@ -457,7 +485,7 @@ def build_manuscript(
             "",
             "### Analysis Sequence",
             "",
-            "The analysis sequence follows the project gate order: Phase 2 establishes a baseline reproducibility floor; Phase 3 audits dataset, protocol, task, valence, and population-context shortcut risks; Phase 4 defines symptom constructs and scale contracts; Phase 5 tests minimal measurement-aware hypotheses under a full-method claim gate. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.",
+            "The analysis sequence is organized into three layers. First, representation/protocol shift asks how strongly `X` carries dataset, task, question, language, and population signatures. Second, target measurement shift asks whether item response functions vary by dataset/group after accounting for latent severity. Third, prediction shift asks whether an `X -> theta` model transfers once measurement has been harmonized. Phase 2 is a reproducibility floor, Phase 3 is motivating shortcut evidence, MV10-MV14 are the core psychometric layer, and MV12/MV15/MV16 test prediction consequences under the current legacy BGE caveat. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.",
             "",
             "### Claim Gate",
             "",
@@ -471,9 +499,11 @@ def build_manuscript(
             "",
             "## Discussion",
             "",
-            "The central result is not a new state-of-the-art depression detector. It is a measurement audit showing that common cross-dataset shortcuts survive simple feature and head changes, and that label measurement itself is a major source of non-equivalence. The negative MV08/MV08b sequence, the MV12 fidelity-identity trade-off, the MV15 latent-conditioned feature-identity result, and the MV16 calibration failure all point in the same direction: the current frozen-feature and shallow-measurement contract is useful for diagnosis, but not enough for a transferable shared-symptom method claim.",
+            "The central result is not a new state-of-the-art depression detector. It is a measurement audit showing that common cross-dataset shortcuts survive simple feature and head changes, and that label measurement itself is a major source of non-equivalence. The PHQ result should be read as E-DAIC/CMDC dataset-group threshold non-equivalence among shared items, not as a clean PHQ-8-versus-PHQ-9 scale-specific claim. The negative MV08/MV08b sequence, the MV12 fidelity-identity trade-off, the MV15 latent-conditioned feature-identity result, and the MV16 calibration failure all point in the same direction: psychometric harmonization is not representation invariance, and representation alignment is not measurement validity.",
             "",
             compact_sentence(rq1["interpretation"], 900),
+            "",
+            compact_sentence(bge_caveat["interpretation"], 900),
             "",
             compact_sentence(mv14["interpretation"], 900),
             "",
@@ -483,11 +513,11 @@ def build_manuscript(
             "",
             "### Limitations",
             "",
-            "The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. CMDC HAMD supervision is too small for a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.",
+            "The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. The BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic until BGE-M3 and multilingual-E5 regenerate the shared feature contract. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. CMDC HAMD supervision is too small for a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.",
             "",
             "### Future Work",
             "",
-            "Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. Plausible routes include stronger aligned features, additional item-level labels, speaker/protocol recovery, larger evidence annotation, or a measurement model with stronger external validation. Each route should enter through a new design contract and the full-method gate before any broad method claim is made.",
+            "Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. The immediate route is narrow: rerun the paper-critical BGE chain with BGE-M3 and multilingual-E5, add an exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale control, simulate the observed PHQ sample size and sparsity to quantify false DIF and C02/C06 recovery, and design a criterion-contamination stress test over mirror-like versus non-mirror interview turns. Stop lines remain explicit: no extra BGE shallow heads, projection dimensions, DIF-guided calibration variants, personality-gating models, or EATD valence-adversarial modules unless a new design contract changes the gate.",
             "",
             "## Claim Traceability",
             "",

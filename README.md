@@ -5,15 +5,18 @@ aggregate audit reports, and experiment-result summaries for a multimodal
 depression modeling project. Real row-level subject manifests are generated and
 used locally from licensed datasets, but are not part of the public release.
 
-The frozen paper frame is question-first:
+The original research frame was question-first:
 
 - RQ1: cross-scale symptom constructs across PHQ-8, PHQ-9, HAMD-17, and SDS.
 - RQ2: protocol and task-content dependence versus participant symptom evidence.
 - RQ3: individual-difference moderation by age, personality, health status, and gait.
 - RQ4: evidence localization as a credibility layer for severity predictions.
 
-RQ1, RQ2, and RQ3 are the main contributions. RQ4 is used to test whether
-predictions can be grounded in language, acoustic, facial, and gait evidence.
+Post-review framing now compresses these into a target measurement-validity
+paper. RQ1 label measurement is the core positive evidence; RQ2/Phase 3 is
+motivating shortcut evidence; RQ3 is a population/individual-difference stress
+test; RQ4 is a credibility layer, not an evidence-retrieval method
+contribution.
 
 ## Current Status
 
@@ -49,11 +52,12 @@ The active research gate is now Phase 5. Minimal validations are complete
 through the `P5_MV16` DIF-guided calibration run; the full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
-positive full shared-symptom model to a measurement-shift /
-measurement-validity diagnostic paper. MV09 shows that unconditional dataset
+positive full shared-symptom model to a target measurement-validity paper:
+feature shift, target measurement shift, and prediction shift are distinct
+layers. MV09 shows that unconditional dataset
 identity should be treated as a shortcut-risk screen, while conditional
 identity remains high after severity or aligned-item conditioning. MV10 adds a
-label-only PHQ-8/PHQ-9 psychometric screen with loading congruence `0.998`,
+label-only E-DAIC/CMDC PHQ psychometric screen with loading congruence `0.998`,
 `7/8` approximate metric-loading items, `4/8` threshold/scalar items, and
 candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 and MV13 preserve that
 anchor/DIF pattern with no strong loading DIF and threshold DIF concentrated on
@@ -99,10 +103,17 @@ calibration evidence, not a full method pass. The Baselines, Failure-Mode
 Diagnostics, and Measurement Results scaffold is now generated from aggregate
 tables only, and `manuscript_draft.md` now assembles the first full
 measurement-audit manuscript draft with traceability and hygiene checks.
-The bibliography registry and `references.bib` now cover all current
-source-context rows, after correcting the IRT DIF source hint to Bulut and Suh
-2017. Current next action: insert generated citation keys into the manuscript,
-adapt reference formatting to the target venue, and continue human editing.
+Post-review audit adds a major feature-contract caveat: the current
+BGE-linked MV07 -> MV12 -> MV15 -> MV16 chain is legacy/diagnostic because
+E-DAIC MV07 used `BAAI/bge-small-zh-v1.5`, a Chinese encoder, on English
+transcripts and the available E-DAIC transcript CSVs lack speaker roles for
+participant/interviewer filtering. Label-only MV10/MV11/MV13/MV14 are
+unaffected. The bibliography registry and `references.bib` now cover all
+current source-context rows, with corrected primary-source metadata for P3HF,
+Multi-Probe Audit, and EMNLP interviewer bias. Current next action: predeclare
+and run MV17 multilingual BGE-M3 plus multilingual-E5 feature-contract
+sensitivity for MV07/MV12/MV15, then continue manuscript editing within the
+claim boundary.
 Optional MV06 work is resolving the one incomplete local candidate before
 stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap
@@ -140,6 +151,7 @@ samples, calibration parameters, and model artifacts remain local-only.
 - MV15 latent-conditioned identity run: `analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/`
 - MV16 DIF-guided calibration design: `analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration_design/`
 - MV16 DIF-guided calibration run: `analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration/`
+- MV17 post-review route: `analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
@@ -184,6 +196,7 @@ python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
 python scripts/build_diagnostic_paper_bibliography.py
+python scripts/phase5_plan_mv17_postreview_measurement_validity_route.py --overwrite
 python scripts/build_diagnostic_paper_manuscript_draft.py
 ```
 

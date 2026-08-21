@@ -77,6 +77,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
   - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
   - `/root/autodl-tmp/memory/sessions/session_58_context_token_management.md`
+  - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -118,9 +119,13 @@ Frozen RQs:
   gait/psychomotor context.
 - RQ4: evidence localization for symptom and severity predictions.
 
-RQ1-RQ3 are the main contributions. RQ4 is a credibility/evidence layer, not a
-fourth large independent modeling module. Do not freeze a final model
-architecture before diagnostic evidence identifies which failure modes are real.
+Post-review paper framing compresses the original RQs into three contribution
+layers: representation/protocol shift, target measurement shift, and prediction
+shift. RQ1 label measurement is the core positive evidence. RQ2/Phase 3 is
+motivating shortcut evidence. RQ3 is a population/individual-difference stress
+test, not a personality-aware modeling contribution. RQ4 is a
+measurement-interpretation credibility layer, not a separate evidence-retrieval
+method.
 
 ## Dataset Roles
 
@@ -140,26 +145,23 @@ MPDD 2025 is intentionally out of scope for current auditing.
 - Phase 0 data governance: complete.
 - Phase 1 research questions and hypotheses: frozen.
 - Phase 2 unified applicable baseline matrix: complete.
-- Current next stage: measurement-aware validation under the Phase 5
-  full-method gate. The current MV12 latent-target line is frozen as bounded
-  diagnostic evidence, MV13 external psychometric replication is complete with
-  a convergence caveat, MV14 measurement-uncertainty/bootstrap has been
-  corrected to require convergence for model selection and LRT, the
-  Baselines/Failure-Mode/Measurement Results scaffold is refreshed with
-  downgraded MV12/MV14 wording, MV15 latent-conditioned identity has now run
-  with dimension-matched severity controls and blocked feature-invariance
-  wording, MV16 DIF-guided few-shot measurement calibration has now run as
-  bounded/negative calibration evidence, and MV06 aggregate agreement
-  uncertainty has been added. Full-method work remains blocked until a
-  genuinely new data, feature, or measurement mechanism changes the gate. A
-  generated manuscript draft v0.1 is now assembled from aggregate paper
-  artifacts with traceability and hygiene checks. A first bibliography handoff
-  is also generated from all current source-context rows as `references.bib`,
-  `citation_registry.csv`, and `citation_source_map.csv`, with the IRT DIF
-  source hint corrected to Bulut and Suh 2017. The active next orchestration
-  step is citation-key insertion, venue-style reference formatting, and human
-  manuscript editing; stronger RQ4 wording still needs the remaining incomplete
-  local candidate resolved, if available, and sampling limits discussed.
+- Current next stage: post-review measurement-validity triage under the Phase 5
+  full-method gate. The paper direction is now target measurement validity:
+  representation/protocol shift, target measurement shift, and prediction shift
+  must be separated. The current MV12/MV15/MV16 BGE-linked feature-level chain
+  is legacy/diagnostic because E-DAIC MV07 used a Chinese BGE encoder on
+  English transcripts and the available transcript contract lacks speaker
+  roles. Label-only MV10/MV11/MV13/MV14 psychometric evidence is unaffected and
+  remains the core positive layer: substantial common PHQ structure, stable
+  anchors, sparse loading DIF, localized C02/C06 threshold non-equivalence, and
+  uncertain global model selection. Full-method work remains blocked until a
+  genuinely new data, feature, or measurement mechanism changes the gate. The
+  active next orchestration step is MV17 multilingual feature-contract
+  sensitivity with BGE-M3 and multilingual-E5 over E-DAIC/CMDC/PDCH, rerunning
+  MV07/MV12/MV15 only before reconsidering MV16 or feature-level claims.
+  Bibliography metadata has been corrected for P3HF, Multi-Probe Audit, and
+  EMNLP interviewer bias in the generator, but all references still require
+  full primary-source verification before submission.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -684,9 +686,18 @@ MPDD 2025 is intentionally out of scope for current auditing.
   aggregate source-context tables only. It exports `references.bib`,
   `citation_registry.csv`, `citation_source_map.csv`, `bibliography_report.md`,
   `bibliography_run_summary.json`, and
-  `bibliography_artifact_hygiene_audit.json`; all 26 current source-context
-  rows map to 20 BibTeX entries, unmapped rows are zero, and artifact hygiene
-  passes. It corrected the IRT DIF source hint to Bulut and Suh 2017.
+  `bibliography_artifact_hygiene_audit.json`; 34 current source-context rows
+  map to 28 BibTeX entries, unmapped rows are zero, and artifact hygiene
+  passes. It corrected the IRT DIF source hint to Bulut and Suh 2017 and
+  post-review metadata errors for P3HF, Multi-Probe Audit, and EMNLP
+  interviewer bias.
+- Phase 5 post-review measurement-validity route is predeclared at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`.
+  It records the BGE feature-contract caveat, source verification summary,
+  prioritized MV17a/MV18/MV19/MV20 queue, and stop lines. Treat its first
+  action as `ready_for_mv17a_design`: multilingual BGE-M3 plus multilingual-E5
+  feature regeneration for E-DAIC/CMDC/PDCH, followed by MV07/MV12/MV15 reruns
+  only.
 
 Phase 2 gate status:
 
@@ -1056,14 +1067,28 @@ Key Phase 2 outputs:
   small-k theta-MAE delta versus L0 in E-DAIC->CMDC, but the both-direction
   small-k DIF-guided gate fails and output identity remains high. Use MV16 as
   a falsifying calibration stress test, not as a positive method result.
-- Next measurement-aware route decision: consolidate the manuscript around the
-  completed bounded diagnostic evidence. MV06 agreement uncertainty is now
-  complete; optional next RQ4 work is resolving the one incomplete local
-  candidate before stronger RQ4 wording. Do not run MV08c-like shallow-head
-  variants, EATD
-  valence-adversarial modules, naive personality conditioning, or a
-  15-dimensional free latent symptom model without new evidence and a new
-  predeclared contract.
+- Post-review BGE feature-contract decision: the current MV07 -> MV12 -> MV15
+  -> MV16 BGE-linked feature-level chain is legacy/diagnostic because E-DAIC
+  MV07 used `BAAI/bge-small-zh-v1.5`, a Chinese encoder, on English transcripts
+  and the available transcript CSVs do not expose speaker roles for
+  participant/interviewer filtering. Do not interpret high BGE dataset identity
+  or poor BGE transfer as pure participant symptom-representation failure until
+  MV17a multilingual BGE-M3 plus multilingual-E5 sensitivity is complete.
+  MV10/MV11/MV13/MV14 label-only psychometric evidence is unaffected.
+- Post-review paper-framing decision: the manuscript should be a target
+  measurement-validity audit. Phase 3 is motivating benchmark/protocol shortcut
+  evidence; MPDD/RQ3 is a population stress test; MV06/RQ4 is measurement
+  credibility support. Stop personality gating, evidence-network construction,
+  extra shallow BGE variants, extra projection dimensions, EATD
+  valence-adversarial modules, and MV16 retuning unless a new predeclared
+  mechanism changes the gate.
+- Next measurement-aware route decision: first design and run MV17a
+  multilingual feature-contract sensitivity, then add only bounded controls
+  with direct relevance to target measurement validity: CMDC-HAMD versus
+  PDCH-HAMD same-language/same-scale exploratory measurement shift, finite-N
+  PHQ psychometric simulation, and criterion-contamination stress. MV06
+  agreement uncertainty is complete; optional next RQ4 work is resolving the
+  one incomplete local candidate before stronger RQ4 wording.
 
 ## Data Quality Watchlist
 
@@ -1172,26 +1197,14 @@ plaintext credential-like content before committing on the clean remote lineage.
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
-   revises identity-gate semantics, MV10 provides an approximate PHQ
-   common-structure screen, MV11 provides formal label-only graded-response
-   confirmation with a BIC caveat, MV12 provides a completed but blocked
-   two-stage latent-target result, and MV12 aggregate tradeoff analysis freezes
-   the current latent-target line with a dimension-matched B3 caveat. MV13
-   externally replicates the MV11 anchor/DIF localization pattern with R
-   `mirt`, while retaining a configural convergence caveat. MV14 completes the
-   corrected convergence-safe bootstrap uncertainty layer and supports
-   item-level stable-anchor/localized-threshold-DIF wording with uncertain
-   global model selection. MV15 is complete and blocks theta-specific
-   feature-invariance wording under the current BGE contract. MV16 is complete
-   and blocks a positive DIF-guided small-k calibration mechanism claim under
-   the current BGE/few-shot ladder.
-   Full method construction remains blocked.
-   The paper direction is measurement shift / measurement validity with bounded
-   negative and diagnostic evidence. The Baselines, Failure-Mode Diagnostics,
-   and Measurement Results scaffold is refreshed, and manuscript draft v0.1 is
-   generated from aggregate artifacts. The bibliography handoff now provides
-   `references.bib`, `citation_registry.csv`, and `citation_source_map.csv` for
-   all current source-context rows. The next active task is citation-key
-   insertion, venue-style reference formatting, and human manuscript editing;
-   secondary MV06 work can resolve the one incomplete local candidate before
-   stronger evidence-localization claims.
+   revises identity-gate semantics, MV10/MV11/MV13/MV14 provide the core
+   label-only PHQ measurement evidence, MV12/MV15/MV16 remain bounded or
+   negative prediction-consequence evidence, and the post-review BGE caveat
+   makes the current MV07-MV16 feature-level chain legacy/diagnostic until
+   multilingual sensitivity is complete. Full method construction remains
+   blocked. The next active task is MV17a: design and run multilingual BGE-M3
+   plus multilingual-E5 feature-contract sensitivity over E-DAIC/CMDC/PDCH,
+   then rerun MV07/MV12/MV15 only. After that, decide whether MV16 needs a
+   clean rerun. Parallel writing work may continue, but the manuscript must use
+   target measurement-validity framing, corrected bibliography metadata, and
+   full primary-source verification before submission.

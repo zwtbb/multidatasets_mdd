@@ -1,0 +1,3 @@
+risk_id,status,affected_chain,evidence,claim_boundary,unaffected_evidence
+BGE_R001,open,MV07->MV12->MV15->MV16,"E-DAIC MV07 generator defaults to BAAI/bge-small-zh-v1.5, which is documented as Chinese; E-DAIC transcripts are English.",Treat current BGE-linked feature-level findings as legacy/diagnostic until multilingual sensitivity is rerun.,Label-only MV10/MV11/MV13/MV14 psychometric findings.
+BGE_R002,open,E-DAIC text features,"Current E-DAIC transcript contract exposes Text rows but no speaker role in the available CSV header, so participant/interviewer filtering is unavailable.",Do not interpret high BGE identity or poor transfer as pure participant symptom-representation failure.,"Dataset governance, label-only psychometrics, and aggregate MV06 agreement."

@@ -1,22 +1,35 @@
 # Diagnostic Measurement-Audit Paper Outline
 
-Last updated: 2026-08-14 UTC
+Last updated: 2026-08-21 UTC
 
 ## Working Title
 
-Do Depression Datasets Measure the Same Construct? A Measurement-Invariance
-View of Cross-Dataset Multimodal Depression Detection
+Before Aligning Representations, Align the Target: A Measurement-Validity
+Audit of Cross-Corpus Depression Detection
 
 ## Current Thesis
 
-The publishable contribution should be framed as a measurement-shift and
-measurement-validity diagnostic paper rather than a broad state-of-the-art
-model paper. Across E-DAIC, CMDC, PDCH, MODMA, EATD, and MPDD, the evidence
-shows that depression prediction is shaped by dataset identity, protocol/task
-content, label scale, and population context. A symptom-aligned framework is
-still the right scientific direction, but the current frozen-feature and
-shallow-measurement contracts do not justify a transferable shared-symptom
-representation claim.
+The publishable contribution should be framed as a target measurement-validity
+paper rather than a broad state-of-the-art model paper. Across E-DAIC, CMDC,
+PDCH, MODMA, EATD, and MPDD, the evidence shows that depression prediction is
+shaped by dataset identity, protocol/task content, label scale, and population
+context. A symptom-aligned framework is still the right scientific direction,
+but the current frozen-feature and shallow-measurement contracts do not justify
+a transferable shared-symptom representation claim.
+
+The central theoretical frame is:
+
+```text
+P(X,Y | theta,D) = P(X | theta,D) P(Y | theta,D)
+```
+
+Most cross-domain depression-detection methods target `P(X | theta,D)` by
+aligning language, modality, protocol, or population signatures. This project
+now asks the complementary target question: whether `P(Y | theta,D)` is stable
+enough for labels from different corpora to be treated as measuring the same
+clinical target. If the measurement function changes by dataset/group,
+representation alignment alone cannot guarantee clinically comparable
+prediction.
 
 The key conceptual correction after MV09 is that unconditional dataset identity
 is a shortcut-risk screen, not a standalone hard failure. For shared-latent
@@ -24,7 +37,7 @@ claims, the stronger question is conditional identity: whether dataset identity
 remains recoverable after conditioning on severity, aligned item labels, and
 legitimate covariates where available.
 
-MV10 adds the first label-only PHQ-8/PHQ-9 psychometric baseline. It supports
+MV10 adds the first label-only E-DAIC/CMDC PHQ psychometric baseline. It supports
 substantial common PHQ structure and strong loading congruence, but exact
 threshold/scalar agreement is not uniformly supported. MV11 then fits a label-only
 multi-group graded-response IRT confirmation. It preserves the four MV10
@@ -57,6 +70,19 @@ total, predicted-total, observed-item, B3 itemwise-theta, psychometric-theta,
 and shared-covariate conditioning, so low-dimensional theta-output identity
 cannot be used as upstream feature-invariance evidence.
 
+This PHQ result must be written as E-DAIC/CMDC dataset-group localized
+threshold non-equivalence among shared PHQ items, not as a clean PHQ-8 versus
+PHQ-9 scale-specific difference. The current data cannot separate form,
+language, country, protocol, setting, translation, sample severity, and
+population effects.
+
+The current BGE-linked MV07 -> MV12 -> MV15 -> MV16 feature-level chain is now
+legacy/diagnostic until a multilingual feature-contract sensitivity is run.
+Local audit found that E-DAIC MV07 feature generation used
+`BAAI/bge-small-zh-v1.5`, a Chinese model, on English E-DAIC transcripts, and
+the available transcript CSVs do not expose speaker roles for participant-only
+filtering. This does not affect label-only MV10/MV11/MV13/MV14.
+
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate artifacts. The next research route is no longer
 another shallow shared-symptom head. It is: measurement shift -> convergence-safe
@@ -66,6 +92,29 @@ step as bounded/negative evidence, so the next work is manuscript
 editing rather than changing the calibration design after seeing results. A
 full manuscript draft v0.1 is now generated from aggregate paper artifacts with
 traceability, open editing items, and artifact-hygiene checks.
+
+## Post-Review Contribution Shape
+
+The manuscript should be compressed to three contributions:
+
+1. Measurement-validity framework:
+   feature shift, target measurement shift, and prediction shift are distinct.
+2. Empirical psychometric evidence:
+   E-DAIC/CMDC share substantial PHQ structure but show localized C02/C06
+   threshold non-equivalence with convergence-aware uncertainty.
+3. Consequence for ML transfer:
+   current `X -> theta` models are domain-learnable but do not automatically
+   improve observed-scale fidelity, zero-shot transfer, or feature invariance
+   over dimension-matched severity controls.
+
+Supporting evidence should be explicitly demoted:
+
+- Phase 3 is motivating benchmark/protocol shortcut evidence, not the main
+  novelty because nearby benchmark-audit work overlaps this layer.
+- MPDD/RQ3 is a population and individual-difference stress test, not a
+  personality-aware modeling contribution.
+- MV06/RQ4 is measurement-interpretation credibility support, not an evidence
+  retrieval or explanation-model contribution.
 
 ## Claim Boundary
 
@@ -149,6 +198,30 @@ Blocked claims:
 - Positive EATD SDS external generalization.
 - EATD-driven valence-adversarial method design.
 - Positive MPDD context-conditioning or calibration.
+- Strong feature-level claims from the current BGE-linked MV07/MV12/MV15/MV16
+  chain until multilingual feature-contract sensitivity is complete.
+- Personality-aware fusion, evidence-retrieval networks, extra shallow BGE
+  heads, extra projection dimensions, EATD valence-adversarial modules, or
+  additional MV16 tuning without a new predeclared contract.
+
+## Next Critical Experiments
+
+1. MV17a multilingual feature-contract sensitivity:
+   regenerate E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then
+   rerun MV07, MV12, and MV15 only. Do not rerun MV16 before reviewing these
+   results.
+2. MV18 CMDC-HAMD versus PDCH-HAMD same-language/same-scale control:
+   use exploratory item distribution, severity-conditioned ordinal regression,
+   bootstrap threshold differences, or partial-pooling DIF because CMDC HAMD is
+   small.
+3. MV19 finite-sample psychometric simulation:
+   mimic observed E-DAIC/CMDC PHQ N, category frequencies, severity
+   distribution, thresholds, and missingness under scalar-invariant H0 and
+   C02/C06 threshold-DIF H1; report false DIF, C02/C06 recovery, and anchor-set
+   recovery.
+4. MV20 criterion-contamination stress:
+   compare mirror-like interview/question turns against non-mirror turns using
+   semantic similarity to PHQ/HAMD item content and deletion/insertion effects.
 
 ## Core Result Narrative
 
@@ -578,7 +651,12 @@ Tracked outputs:
 20. Done: generate the bibliography registry and `references.bib` from
    source-context rows. The IRT DIF source hint is corrected to Bulut and Suh
    2017.
-21. Prepare final manuscript edits from existing aggregate summaries only; do not export
-   row-level predictions, raw text, subject locators, learned parameters, or
-   model files. Insert generated citation keys and adapt references to the
-   target venue style.
+21. Done: predeclare the post-review MV17 measurement-validity route and
+   feature-contract caveat.
+22. Next: design and run MV17a multilingual BGE-M3 plus multilingual-E5
+   feature-contract sensitivity before any renewed feature-level claim.
+23. Parallel writing: prepare manuscript edits from existing aggregate
+   summaries only; do not export row-level predictions, raw text, subject
+   locators, learned parameters, or model files. Insert generated citation keys
+   and adapt references to the target venue style after full reference
+   verification.

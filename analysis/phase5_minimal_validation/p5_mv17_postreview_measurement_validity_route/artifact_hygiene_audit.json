@@ -1,7 +1,7 @@
 {
   "artifact_hygiene_passed": true,
-  "audit_id": "diagnostic_paper_bibliography_hygiene",
-  "files_checked": 5,
+  "audit_id": "mv17_postreview_measurement_validity_route_hygiene",
+  "files_checked": 6,
   "generated_at": "2026-08-21T16:15:30+00:00",
   "violation_count": 0,
   "violations": []

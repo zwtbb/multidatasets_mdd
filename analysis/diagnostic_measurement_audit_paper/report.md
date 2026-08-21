@@ -1,6 +1,6 @@
 # Diagnostic Measurement-Audit Paper Tables
 
-Generated: `2026-08-14T06:47:06+00:00`
+Generated: `2026-08-21T16:14:44+00:00`
 
 ## Scope
 
@@ -10,8 +10,8 @@ This writing-prep artifact converts existing aggregate gates into paper-facing c
 
 - Allowed or reframed claim rows: `6`.
 - Blocked claim rows: `5`.
-- Key finding rows: `17`.
-- Literature-positioning rows: `17`.
+- Key finding rows: `18`.
+- Literature-positioning rows: `25`.
 - Artifact hygiene passed: `True`.
 
 ## Key Findings
@@ -20,6 +20,7 @@ This writing-prep artifact converts existing aggregate gates into paper-facing c
 | --- | --- |
 | Full gate reads 40 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False. | Full method construction remains blocked; measurement-shift paper framing is allowed with bounded claims. |
 | MV08 improves over total-score floor on 0/3 pooled active slices with prediction identity BA 0.900. MV08b improves over both floors on 2/3 slices, but prediction identity BA 0.979 exceeds gate 0.900. MV09 revises the gate semantics: E-DAIC/CMDC item-conditioned feature identity BA remains 0.991. MV10 adds a label-only PHQ screen with loading congruence 0.998, 7/8 metric items, 4/8 threshold items, and 4/8 candidate anchors. MV11 confirms 4 MV10 anchors with 0 loading-DIF and 2 threshold-DIF flags, but core AIC/BIC split is True. MV13 external mirt replication confirms 4 anchors with 0 loading-DIF and 2 threshold-DIF flags, core convergence False, and 6/6 MV11-aligned decisions. MV14 bootstrap uncertainty is complete_mv14_convergence_safe_item_level_measurement_shift: core effective R 120, attempted R 200, fit-success R 185, configural converged R 120, stable-ladder R 197, DIF effective R 77/100, stable anchors C01;C04;C05;C07, top threshold-DIF items C02;C06, and best AIC/BIC configural/scalar with stable-ladder partial_mv10/scalar. MV12 design is ready_to_implement_mv12_two_stage_latent_target; MV12 run is blocked_theta_gain_not_observed_scale_safe, with same-dataset theta gate True, observed-scale safety False, external theta transfer False, and conditional identity BA 0.602. MV12 aggregate tradeoff analysis is complete_freeze_current_mv12_latent_target_line and recommends freezing the current latent-target line; M12a low identity is not unique: B3 direct itemwise Ridge has lower conditional and unconditional predicted-theta identity in the aggregate MV12 summary. MV15 then blocks latent-conditioned BGE feature-invariance wording: raw feature BA 1.000, theta-conditioned feature BA 1.000, and total/predicted-total/B3-conditioned feature BA 1.000/1.000/1.000. MV16 then completes the DIF-guided few-shot calibration ladder with status blocked_no_dif_guided_small_k_gain: subject-overlap gate True, anchor safety True, DIF-guided small-k gate False, best supported row D1_edaic_source_cmdc_target/M16d_global_plus_C02_C06 at k=10, best L4 small-k delta theta MAE vs L0 -0.227, and L4 small-k output identity BA 0.984. | Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV13/MV14/MV12 shift RQ1 to measurement-target validity, while MV15 and MV16 freeze the current BGE latent identity/calibration line as bounded or negative evidence. |
+| The E-DAIC MV07 feature generator used a Chinese BGE v1.5 model on English transcripts and concatenated available transcript Text rows without speaker filtering; the current transcript CSV contract lacks a speaker column. | Treat BGE-linked MV07, MV12, MV15, and MV16 feature-level evidence as legacy/diagnostic until a multilingual BGE-M3 plus multilingual-E5 sensitivity regenerates E-DAIC/CMDC/PDCH features and reruns MV07/MV12/MV15. Label-only MV10/MV11/MV13/MV14 psychometric evidence is unaffected. |
 | MV10 label-only PHQ screen: configural pass=True; loading congruence 0.998; metric invariant items 7/8; threshold invariant items 4/8; anchor candidates 4/8; status complete_partial_invariance_supported_approx. | The label-only PHQ screen supports substantial common structure and candidate anchors, but exact threshold/scalar equivalence is not uniformly supported. |
 | MV11 formal graded-response IRT confirmation: status complete_formal_partial_invariance_supported_with_bic_caveat; confirmed MV10 anchors 4; loading-DIF flags 0; threshold-DIF flags 2; best AIC core model partial_mv10; best BIC core model scalar. | The formal label-only IRT confirmation preserves the MV10 anchor map but leaves an AIC/BIC caveat, so it supports target design rather than a full method claim. |
 | MV13 external R mirt replication: status complete_external_mirt_with_convergence_warnings; confirmed MV10 anchors 4; loading-DIF flags 0; threshold-DIF flags 2; best AIC/BIC core models partial_mv10/scalar; core converged=False; MV11-aligned decisions 6/6; parameter CI status available_aggregate_only. | The external R mirt replication preserves the MV11 qualitative anchor/DIF pattern; MV14 now supplies the bootstrap uncertainty layer needed for cautious item-level wording. |

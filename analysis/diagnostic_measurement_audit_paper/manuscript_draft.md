@@ -1,8 +1,8 @@
-# Do Depression Datasets Measure the Same Construct?
+# Before Aligning Representations, Align the Target
 
-A Measurement-Invariance View of Cross-Dataset Multimodal Depression Detection
+A Measurement-Validity Audit of Cross-Corpus Depression Detection
 
-Generated: `2026-08-14T06:53:05+00:00`
+Generated: `2026-08-21T16:15:31+00:00`
 
 ## Draft Status
 
@@ -16,20 +16,19 @@ This is a generated manuscript draft for human editing. It consolidates aggregat
 
 ## Abstract
 
-Cross-dataset depression detection is usually evaluated as a prediction problem, but pooled performance can hide label, protocol, and population shifts. We audit six multimodal depression corpora with registry-governed dataset roles, subject-level split contracts, scale-specific label contracts, and artifact-hygiene gates. The baseline matrix completes 66 applicable runs and serves as a reproducibility floor rather than the central novelty. Failure-mode diagnostics show that dataset and protocol identity are strongly recoverable from common frozen feature spaces, motivating conditional identity checks before shared-representation claims. Label-only PHQ analyses then show substantial common PHQ structure but not uniform threshold or scalar equivalence: stable anchors recur for C01/C04/C05/C07, while threshold non-equivalence is concentrated on C02/C06 with global model-selection uncertainty. Multimodal latent-target prediction improves within-dataset theta utility, but it is Pareto-dominated by a dimension-matched direct severity control and fails zero-shot source-calibrated external theta transfer. A later latent-conditioned identity audit keeps BGE feature identity high after theta and severity conditioning, and the DIF-guided few-shot calibration ladder fails the predeclared both-direction small-k mechanism gate. We therefore frame the contribution as a measurement-validity and measurement-shift audit: the current evidence supports bounded diagnostic claims and first-round evidence-localization credibility, not a transferable full symptom-aligned method.
+Cross-dataset depression detection is usually evaluated as a prediction problem, but pooled performance can hide a prior validity question: do different corpora measure the same target? We audit six depression corpora with registry-governed dataset roles, subject-level split contracts, dataset-group label contracts, and artifact-hygiene gates. The baseline matrix completes 66 applicable runs and serves as a reproducibility floor rather than the central novelty. Failure-mode diagnostics show that dataset and protocol identity are strongly recoverable from common frozen feature spaces, motivating conditional identity checks before shared-representation claims. Label-only E-DAIC/CMDC PHQ analyses then show substantial common structure but not uniform threshold or scalar equivalence: stable anchors recur for C01/C04/C05/C07, while localized threshold non-equivalence is concentrated on C02/C06 with global model-selection uncertainty. The BGE-linked multimodal chain is now treated as legacy/diagnostic because its E-DAIC feature contract used a Chinese encoder on English transcripts and available transcript rows are not speaker-resolved. Under that caveat, latent-target prediction improves within-dataset theta utility, but it is Pareto-dominated by a dimension-matched direct severity control and fails zero-shot source-calibrated external theta transfer. A later latent-conditioned identity audit keeps BGE feature identity high after theta and severity conditioning, and the DIF-guided few-shot calibration ladder fails the predeclared both-direction small-k mechanism gate. We therefore frame the contribution as a measurement-validity audit: feature alignment alone cannot solve cross-corpus learning if the target measurement function also shifts.
 
 ## Contributions
 
-1. A registry-first governance and release-boundary workflow for comparing depression datasets without publishing sensitive row-level artifacts.
-2. A failure-mode diagnostic layer showing why dataset identity, protocol/task content, and population context must be audited before pooled depression-transfer claims.
-3. A measurement-validation sequence that separates target measurement (`Y -> theta`) from multimodal prediction (`X -> theta`) and reports accuracy-identity trade-offs rather than only aggregate predictive scores.
-4. A bounded claim map that explains which negative, diagnostic, and first-round evidence-localization findings are currently publishable.
+1. A measurement-validity framework for cross-corpus depression detection: feature shift, target measurement shift, and prediction shift are distinct failure modes.
+2. Empirical label-only psychometric evidence that E-DAIC and CMDC share substantial PHQ structure while exhibiting localized C02/C06 threshold non-equivalence and convergence-aware uncertainty.
+3. A prediction-level consequence: current `X -> theta` models do not automatically improve observed-scale prediction, zero-shot transfer, or representation invariance over dimension-matched severity controls.
 
 ## Introduction
 
-Depression-detection datasets differ in more than sample size or modality. They differ in interview protocol, language, clinical setting, scale family, item coverage, and population context. Official DAIC materials describe clinical interviews distributed under access constraints, while the PDCH repository describes real face-to-face consultation data paired with HAMD-17 assessments. Prior questionnaire-grounded depression-detection work shows that symptom instruments can improve out-of-domain generalization, but the present audit asks a preceding measurement question: whether datasets and scales define sufficiently comparable targets for a shared multimodal representation.
+Depression-detection datasets differ in more than sample size or modality. They differ in interview protocol, language, clinical setting, scale family, item coverage, and population context. Official DAIC materials describe clinical interviews distributed under access constraints, while the PDCH repository describes real face-to-face consultation data paired with HAMD-17 assessments. Prior questionnaire-grounded depression-detection work shows that symptom instruments can improve out-of-domain generalization, but the present audit asks a preceding measurement question: whether datasets and scales define sufficiently comparable targets for a shared representation.
 
-The core thesis is deliberately conservative. A symptom-aligned framework remains scientifically attractive, but it cannot be assumed from pooled model performance. Classical measurement-invariance and IRT sources, including PHQ invariance work and the graded-response model family used by `mirt`, motivate treating PHQ-8/PHQ-9/HAMD/SDS as related but non-identical measurement contracts. This paper therefore reports a governed sequence of baselines, shortcut diagnostics, label-only psychometric checks, multimodal latent-target tests, identity conditioning, few-shot DIF-guided calibration, and aggregate evidence localization.
+Let `D` denote dataset/protocol/population, `theta` the latent depressive trait, `X` the observed language/audio/video/behavioral signal, and `Y` the observed scale response. The relevant factorization is `P(X,Y | theta,D) = P(X | theta,D) P(Y | theta,D)`. Most domain-alignment work targets the first factor, but cross-corpus validity also requires asking whether the second factor is stable. A symptom-aligned framework remains scientifically attractive, but it cannot be assumed from pooled model performance. Classical measurement-invariance and IRT sources, including PHQ invariance work and the graded-response model family used by `mirt`, motivate treating PHQ-8/PHQ-9/HAMD/SDS as related but non-identical measurement contracts. This paper therefore reports a governed sequence of baselines, shortcut diagnostics, label-only psychometric checks, legacy multimodal latent-target tests, identity conditioning, few-shot DIF-guided calibration, and aggregate evidence localization.
 
 ## Methods
 
@@ -66,7 +65,7 @@ Table 2 records the label contracts that determine which datasets can support it
 
 ### Analysis Sequence
 
-The analysis sequence follows the project gate order: Phase 2 establishes a baseline reproducibility floor; Phase 3 audits dataset, protocol, task, valence, and population-context shortcut risks; Phase 4 defines symptom constructs and scale contracts; Phase 5 tests minimal measurement-aware hypotheses under a full-method claim gate. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.
+The analysis sequence is organized into three layers. First, representation/protocol shift asks how strongly `X` carries dataset, task, question, language, and population signatures. Second, target measurement shift asks whether item response functions vary by dataset/group after accounting for latent severity. Third, prediction shift asks whether an `X -> theta` model transfers once measurement has been harmonized. Phase 2 is a reproducibility floor, Phase 3 is motivating shortcut evidence, MV10-MV14 are the core psychometric layer, and MV12/MV15/MV16 test prediction consequences under the current legacy BGE caveat. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.
 
 ### Claim Gate
 
@@ -112,9 +111,11 @@ The remaining Phase 5 findings define bounded supporting claims. PDCH supports a
 
 ## Discussion
 
-The central result is not a new state-of-the-art depression detector. It is a measurement audit showing that common cross-dataset shortcuts survive simple feature and head changes, and that label measurement itself is a major source of non-equivalence. The negative MV08/MV08b sequence, the MV12 fidelity-identity trade-off, the MV15 latent-conditioned feature-identity result, and the MV16 calibration failure all point in the same direction: the current frozen-feature and shallow-measurement contract is useful for diagnosis, but not enough for a transferable shared-symptom method claim.
+The central result is not a new state-of-the-art depression detector. It is a measurement audit showing that common cross-dataset shortcuts survive simple feature and head changes, and that label measurement itself is a major source of non-equivalence. The PHQ result should be read as E-DAIC/CMDC dataset-group threshold non-equivalence among shared items, not as a clean PHQ-8-versus-PHQ-9 scale-specific claim. The negative MV08/MV08b sequence, the MV12 fidelity-identity trade-off, the MV15 latent-conditioned feature-identity result, and the MV16 calibration failure all point in the same direction: psychometric harmonization is not representation invariance, and representation alignment is not measurement validity.
 
 Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV13/MV14/MV12 shift RQ1 to measurement-target validity, while MV15 and MV16 freeze the current BGE latent identity/calibration line as bounded or negative evidence.
+
+Treat BGE-linked MV07, MV12, MV15, and MV16 feature-level evidence as legacy/diagnostic until a multilingual BGE-M3 plus multilingual-E5 sensitivity regenerates E-DAIC/CMDC/PDCH features and reruns MV07/MV12/MV15. Label-only MV10/MV11/MV13/MV14 psychometric evidence is unaffected.
 
 The convergence-safe bootstrap supports item-level wording: the four MV10 anchors are stable, loading DIF is sparse, and threshold DIF remains concentrated on C02/C06, while global invariance-model selection remains uncertain.
 
@@ -124,11 +125,11 @@ MV06 can support first-round aggregate credibility; stronger RQ4 claims still ne
 
 ### Limitations
 
-The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. CMDC HAMD supervision is too small for a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.
+The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. The BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic until BGE-M3 and multilingual-E5 regenerate the shared feature contract. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. CMDC HAMD supervision is too small for a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.
 
 ### Future Work
 
-Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. Plausible routes include stronger aligned features, additional item-level labels, speaker/protocol recovery, larger evidence annotation, or a measurement model with stronger external validation. Each route should enter through a new design contract and the full-method gate before any broad method claim is made.
+Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. The immediate route is narrow: rerun the paper-critical BGE chain with BGE-M3 and multilingual-E5, add an exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale control, simulate the observed PHQ sample size and sparsity to quantify false DIF and C02/C06 recovery, and design a criterion-contamination stress test over mirror-like versus non-mirror interview turns. Stop lines remain explicit: no extra BGE shallow heads, projection dimensions, DIF-guided calibration variants, personality-gating models, or EATD valence-adversarial modules unless a new design contract changes the gate.
 
 ## Claim Traceability
 
@@ -152,12 +153,16 @@ The full traceability matrix is stored in `manuscript_traceability_matrix.csv`. 
 
 | id | priority | area | item | blocking |
 | --- | --- | --- | --- | --- |
-| M001 | high | manuscript | Insert generated citation keys from references.bib into prose and adapt BibTeX/reference formatting to the final target venue. | True |
-| M002 | high | claim_boundary | Keep full M0/M1/M2/M3 method claims blocked unless a genuinely new predeclared mechanism changes the full-method gate. | True |
-| M003 | medium | RQ4 | Resolve the one incomplete local CMDC MV06 candidate if annotator rows become available; otherwise keep RQ4 as first-round aggregate credibility evidence. | False |
-| M004 | medium | limitations | Decide whether to run a larger corrected MV14 bootstrap only if interval precision becomes reviewer-critical. | False |
-| M005 | medium | protocol | Speaker-resolved E-DAIC interviewer/participant controls remain optional unless the Results need a literal speaker-role claim. | False |
-| M006 | medium | MPDD | Recover structured MPDD gender/health metadata only if population-moderation claims become central. | False |
+| M001 | high | feature_contract | Predeclare and run MV17 multilingual feature-contract sensitivity with BGE-M3 and multilingual-E5 over E-DAIC, CMDC, and PDCH; rerun MV07, MV12, and MV15 only before making renewed feature-level claims. | True |
+| M002 | high | bibliography | Verify every bibliography row against DOI/publisher/ACL/arXiv metadata, then insert generated citation keys from references.bib into prose and adapt formatting to the target venue. | True |
+| M003 | high | claim_boundary | Keep full M0/M1/M2/M3 method claims blocked unless a genuinely new predeclared mechanism changes the full-method gate. | True |
+| M004 | high | psychometric_uncertainty | Predeclare a finite-sample psychometric simulation at the observed E-DAIC/CMDC N, category frequencies, severity distribution, and missingness to quantify false DIF under scalar invariance and C02/C06 recovery under threshold DIF. | True |
+| M005 | medium | HAMD_control | Predeclare a small-sample CMDC-HAMD versus PDCH-HAMD same-language/same-scale control as exploratory dataset-context measurement-shift evidence. | False |
+| M006 | medium | criterion_contamination | Design a criterion-contamination stress test that separates mirror-like interview/question turns from non-mirror turns before adding any new protocol-bias method. | False |
+| M007 | medium | RQ4 | Resolve the one incomplete local CMDC MV06 candidate if annotator rows become available; otherwise keep RQ4 as first-round aggregate credibility evidence. | False |
+| M008 | medium | limitations | Decide whether to run a larger corrected MV14 bootstrap only if interval precision becomes reviewer-critical. | False |
+| M009 | medium | protocol | Speaker-resolved E-DAIC interviewer/participant controls remain optional unless the Results need a literal speaker-role claim. | False |
+| M010 | medium | MPDD | Recover structured MPDD gender/health metadata only if population stress-test claims become central; do not revive personality-aware modeling as a main contribution. | False |
 
 ## Source Context
 
@@ -165,26 +170,34 @@ These source hints are mapped to citation keys for manuscript drafting; final su
 
 | citation key | source | URL | use |
 | --- | --- | --- | --- |
+| baai2026bgem3 | BAAI BGE-M3 model card | https://huggingface.co/BAAI/bge-m3 | BGE-M3 is the primary multilingual replacement encoder for the next MV17 feature-contract sensitivity over E-DAIC, CMDC, and PDCH. |
+| baai2026bgesmallzh | BAAI bge-small-zh-v1.5 model card | https://huggingface.co/BAAI/bge-small-zh-v1.5 | The current E-DAIC MV07 feature generator used a Chinese BGE model on English transcripts, so BGE-linked MV07-MV16 feature-level evidence is legacy/diagnostic until multilingual sensitivity is rerun. |
 | bulut2017detecting | Bulut and Suh 2017, Frontiers in Education | https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2017.00051/full | IRT likelihood-ratio DIF testing supports MV11 item-level loading and threshold DIF diagnostics. |
 | cai2020modma | MODMA dataset description | https://reshare.ukdataservice.ac.uk/854301/ | Supports MODMA as an interview/reading/picture-description task robustness dataset. |
 | chalmers2012mirt | Chalmers 2012, Journal of Statistical Software | https://www.jstatsoft.org/article/view/v048i06 | mirt supplies the external multidimensional IRT implementation used in MV13 to replicate the PHQ anchor/DIF and measurement-shift pattern. |
 | chalmers2026mirtmultiplegroup | mirt multipleGroup documentation | https://philchalmers.github.io/mirt/html/multipleGroup.html | The multipleGroup interface documents the multi-group invariance and DIF workflow used for the MV13 external replication. |
+| chen2025scd | Chen et al. 2025, arXiv | https://arxiv.org/abs/2512.06447 | SCD-MLLM occupies the generic multi-dataset robust multimodal-model space; our paper should not compete on fusion architecture but on target comparability assumptions. |
+| deduro2026nlppsychometrics | De Duro et al. 2026, arXiv | https://arxiv.org/abs/2608.07316 | NLP Psychometrics shows the broader framing is emerging; our differentiator is real clinical corpora, scale-item DIF, and multimodal transfer consequences. |
 | delamain2024measurement | Delamain et al. 2024, Journal of Affective Disorders | https://pubmed.ncbi.nlm.nih.gov/37989437/ | PHQ-9 measurement invariance and DIF are active clinical-measurement questions, supporting our decision to frame RQ1 as measurement validity rather than only model architecture. |
 | fu2025mpddchallenge | Fu et al. 2025, ACM MM Challenge | https://hacilab.github.io/MPDDChallenge.github.io/ | The MPDD challenge explicitly foregrounds age, health, living condition, and personality context, supporting our RQ3 treatment of population heterogeneity. |
 | fu2025mpddchallenge | MPDD Challenge official page | https://hacilab.github.io/MPDDChallenge.github.io/ | Supports MPDD as the age/personality/health/gait context dataset. |
 | fu2026p3hf | Fu et al. 2026, AAAI | https://ojs.aaai.org/index.php/AAAI/article/view/37159 | P3HF shows strong personality-aware modeling on MPDD-Young, so our paper should not claim generic personality-aware fusion as the novelty. |
 | galenkamp2017measurement | Galenkamp et al. 2017, BMC Psychiatry | https://pmc.ncbi.nlm.nih.gov/articles/PMC5655879/ | PHQ-9 measurement invariance methods provide the template for the next label-only psychometric baseline before another multimodal head iteration. |
 | gratch2014distress | Gratch et al. 2014, LREC | https://aclanthology.org/L14-1421/ | DAIC contains clinical interviews with audio, video, questionnaire, transcription, and verbal/nonverbal annotation, supporting our governance-first treatment of interview corpora. |
-| ishikawa2026comprehensive | Ishikawa and Duke 2026, arXiv | https://arxiv.org/abs/2605.23977 | A recent multi-probe depression benchmark audit overlaps several datasets, so our novelty should emphasize measurement shift, conditional identity, and measurement validity rather than a generic dataset audit alone. |
-| ma2021phqhamd | Ma et al. 2021, Frontiers in Psychiatry | https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.747139/full | PHQ-9 and HAMD-17 can correlate strongly while differing in item discrimination and severity assessment, supporting our scale-specific measurement framing. |
-| nguyen2022improving | Nguyen et al. 2022, ACL | https://aclanthology.org/2022.acl-long.578/ | Questionnaire-grounded symptom modeling is prior positive evidence for symptom-aware OOD detection; our paper should position its contribution as measuring when cross-dataset symptom targets are not equivalent. |
+| ishikawa2026multiprobe | Ishikawa and Duke 2026, arXiv | https://arxiv.org/abs/2605.23977 | A recent multi-probe depression benchmark audit overlaps Phase 3-style benchmark validity claims, so our novelty must emphasize target measurement validity rather than another generic benchmark audit. |
+| li2025mirror | Li et al. 2025, arXiv | https://arxiv.org/abs/2508.05830 | Mirror/non-mirror criterion contamination provides a direct motivation for a future protocol-label-overlap stress test over interview questions and PHQ/HAMD item semantics. |
+| ma2021phqhamd | Ma et al. 2021, Frontiers in Psychiatry | https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.747139/full | PHQ-9 and HAMD-17 can correlate strongly while differing in item discrimination and severity assessment, supporting scale/linking caution without overstating E-DAIC/CMDC PHQ evidence as scale-specific. |
+| mandal2025questmf | Mandal et al. 2025, CLPsych | https://aclanthology.org/2025.clpsych-1.4/ | QuestMF already targets E-DAIC question-wise modality fusion and item-level PHQ interpretability; our novelty is cross-dataset measurement semantics, not item-level E-DAIC prediction alone. |
+| nguyen2022improving | Nguyen et al. 2022, ACL | https://aclanthology.org/2022.acl-long.578/ | Questionnaire-grounded symptom modeling is prior positive evidence for symptom-aware OOD detection; our paper's tension is that symptom grounding is not sufficient when the target measurement function changes by dataset/group. |
 | patel2019measurement | Patel et al. 2019, Depression and Anxiety | https://pmc.ncbi.nlm.nih.gov/articles/PMC6736700/ | PHQ-9 measurement-invariance work shows why group and dataset comparisons require psychometric checks before interpreting score or model differences. |
 | pdchrepository2026 | PDCH dataset page | https://github.com/Miraclemarvel55/PDCH | PDCH provides real consultation audio/text paired with professional HAMD-17 assessments, matching our bounded PDCH-only HAMD diagnostic claim. |
 | pdchrepository2026 | PDCH repository and dataset paper | https://github.com/Miraclemarvel55/PDCH | Supports PDCH as a bounded HAMD-17 consultation validation dataset. |
 | samejima1969graded | Samejima 1969, Psychometrika Monograph 17 | https://www.psychometricsociety.org/sites/main/files/file-attachments/mn17.pdf | The graded-response model provides the ordinal IRT family used by MV11/MV13 to separate label measurement from multimodal prediction. |
 | shen2022automatic | EATD-Corpus repository | https://github.com/Fancy-Block/EATD-Corpus | Supports EATD as Chinese audio/text depression data with emotion-related tasks. |
 | uscict2026daic | USC ICT DAIC-WOZ and Extended DAIC download page | https://dcapswoz.ict.usc.edu/ | Official access terms motivate keeping real row-level manifests, paths, and private review material out of the public repository. |
-| zhang2025interviewer | Zhang and Poellabauer 2025, Findings of EMNLP | https://aclanthology.org/2025.findings-emnlp.650/ | Recent interviewer-bias work motivates treating question type and dialogue protocol as nuisance factors, while our audit generalizes this concern across datasets, tasks, valence, and scale contracts. |
+| wang2024multilinguale5 | Multilingual-E5-base model card | https://huggingface.co/intfloat/multilingual-e5-base | Multilingual-E5-base is the second encoder sensitivity so the rerun does not hinge on a single multilingual embedding family. |
+| zhang2025interviewer | Zhang and Poellabauer 2025, Findings of EMNLP | https://aclanthology.org/2025.findings-emnlp.650/ | Recent interviewer-bias work motivates treating question type and dialogue protocol as nuisance factors; our paper uses this as a measurement-validity risk rather than as a standalone adversarial-method novelty. |
+| zhang2025red | Zhang et al. 2025, Findings of ACL | https://aclanthology.org/2025.findings-acl.517/ | RED already uses retrieved transcript evidence for explainable depression detection, so MV06 should be framed as measurement-validity credibility support rather than a new evidence-retrieval method. |
 | zhou2026depression | Zhou et al. 2026, Journal of Clinical Epidemiology | https://www.jclinepi.com/article/S0895-4356(26)00082-X/abstract | A 2026 equipercentile-linking study reports significant correlations but systematic differences among depression scales, aligning with our negative shared-space evidence. |
 | zou2023cmdc | Zou et al. 2023, IEEE Transactions on Affective Computing | https://doi.org/10.1109/TAFFC.2022.3181210 | Supports CMDC as Chinese clinical-interview validation with PHQ-9 and HAMD labels. |
 

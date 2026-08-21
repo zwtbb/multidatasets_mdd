@@ -1,6 +1,6 @@
 # Data Governance and Label Contracts
 
-Generated: `2026-08-14T06:50:50+00:00`
+Generated: `2026-08-21T16:14:49+00:00`
 
 ## Draft Section
 

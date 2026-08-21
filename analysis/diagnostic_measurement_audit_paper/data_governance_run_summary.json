@@ -4,7 +4,7 @@
     "section_status": "ready_for_manuscript_drafting",
     "short_read": "Data governance and label-contract draft section is ready from registry and aggregate audit sources."
   },
-  "generated_at": "2026-08-14T06:50:50+00:00",
+  "generated_at": "2026-08-21T16:14:49+00:00",
   "input_contract": {
     "aggregate_dataset_audit_read": true,
     "phase4_label_contract_read": true,

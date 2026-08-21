@@ -1,0 +1,31 @@
+{
+  "artifact_hygiene_passed": true,
+  "decision": {
+    "route_status": "ready_for_mv17a_design",
+    "short_read": "Post-review route is frozen around target measurement validity; first next step is multilingual BGE-M3 plus multilingual-E5 feature-contract sensitivity, not another shallow model variant."
+  },
+  "generated_at": "2026-08-21T16:15:30+00:00",
+  "input_contract": {
+    "feature_matrices_read": false,
+    "private_review_material_read": false,
+    "raw_data_scanned": false,
+    "row_level_outputs_read": false
+  },
+  "outputs": {
+    "experiment_rows": 4,
+    "risk_rows": 2,
+    "source_rows": 6,
+    "stop_line_rows": 5,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "legacy_bge_contract_risk.csv",
+      "postreview_experiment_queue.csv",
+      "report.md",
+      "run_summary.json",
+      "source_verification_summary.csv",
+      "stop_line_summary.csv"
+    ]
+  },
+  "run_id": "p5_mv17_postreview_measurement_validity_route",
+  "status": "complete"
+}

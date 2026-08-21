@@ -20,9 +20,9 @@ Act as the main orchestration agent for the cross-scale depression modeling
 project: manage experiment planning, progress, issue logging, versioning, and
 subtasks until the project reaches bounded publishable results.
 
-The paper direction is now measurement shift / measurement validity, not a
-positive full shared-symptom model. Full M0/M1/M2/M3 method construction remains
-blocked by the Phase 5 full-method gate.
+The paper direction is now target measurement validity, not a positive full
+shared-symptom model or generic robust multimodal model. Full M0/M1/M2/M3
+method construction remains blocked by the Phase 5 full-method gate.
 
 ## Current Gate
 
@@ -38,8 +38,8 @@ Allowed current framing:
 - Label-only PHQ measurement evidence: substantial common structure, stable
   anchors, sparse loading DIF, localized threshold non-equivalence.
 - Dataset/protocol/population identity evidence as diagnostic shortcut risk.
-- Negative or bounded multimodal results under the frozen BGE/lightweight-head
-  contract.
+- Negative or bounded multimodal results under the legacy BGE/lightweight-head
+  contract, only with the post-review feature-contract caveat.
 - First-round aggregate evidence-localization credibility from MV06, with
   sampling and one-candidate incompleteness caveats.
 
@@ -47,6 +47,8 @@ Blocked claims:
 
 - Full M0/M1/M2/M3 construction.
 - Transferable shared-symptom representation from current BGE/WavLM contracts.
+- Strong feature-level claims from current MV07/MV12/MV15/MV16 BGE-linked
+  evidence until multilingual feature-contract sensitivity is complete.
 - Positive EATD SDS generalization.
 - Valence-adversarial method from current EATD evidence.
 - Naive personality/context conditioning as a supported RQ3 method.
@@ -57,11 +59,11 @@ Blocked claims:
 
 Main next task:
 
-- Insert generated citation keys into
-  `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_draft.md`.
-- Adapt references to the selected or provisional venue style.
-- Continue human manuscript editing while preserving the full-method claim
-  boundary.
+- Design and run MV17a multilingual feature-contract sensitivity:
+  regenerate E-DAIC/CMDC/PDCH subject features with BGE-M3 and
+  multilingual-E5, then rerun MV07, MV12, and MV15 only.
+- Do not rerun MV16 until MV17a results are reviewed.
+- Continue manuscript editing only within the target-measurement-validity frame.
 
 Useful inputs:
 
@@ -70,13 +72,18 @@ Useful inputs:
 - `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/citation_source_map.csv`
 - `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_traceability_matrix.csv`
 - `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_open_items.csv`
+- `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
 - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
 - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
+- `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
 
 Secondary optional task:
 
 - Resolve the one incomplete local CMDC MV06 candidate if the missing workbook
   rows become available, then rerun the aggregate MV06 summary gate.
+- After MV17a, predeclare MV18 CMDC-HAMD vs PDCH-HAMD same-scale control,
+  MV19 finite-sample PHQ psychometric simulation, and MV20
+  criterion-contamination stress only if still needed for the manuscript.
 
 ## Critical Current Results
 
@@ -99,16 +106,21 @@ Secondary optional task:
   `blocked_no_dif_guided_small_k_gain`. The best supported row is
   E-DAIC to CMDC, `M16d_global_plus_C02_C06`, k=`10`, but the both-direction
   small-k DIF-guided mechanism gate fails and output identity remains high.
+- Post-review BGE caveat: the current MV07->MV12->MV15->MV16 BGE-linked
+  feature-level chain is legacy/diagnostic because E-DAIC MV07 used
+  `BAAI/bge-small-zh-v1.5`, a Chinese encoder, on English transcripts, and the
+  available E-DAIC transcript CSVs lack speaker roles. MV10/MV11/MV13/MV14 are
+  label-only and unaffected.
 
 ## Versioning State
 
 - Use `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` for GitHub
   updates.
 - Do not push the old local `main` history directly.
-- Latest known local commit before this handoff: `78567d2`
-  (`Add diagnostic paper bibliography`).
+- Latest known local commit before this handoff: `0ea684f`
+  (`Add active context handoff`).
 - Latest known clean remote `main` before this handoff:
-  `5ce777c2570250b2e743faf29c4147852b664d65`.
+  `7b789c6951caf5fd7ef54479f8ab2ba24f8e1f16`.
 - GitHub authentication should use token or `gh` auth. Never write or use
   plaintext passwords in Git, scripts, memory, shell history, or logs.
 
@@ -136,14 +148,19 @@ Keep local-only:
   - I057: MV06 one incomplete CMDC candidate. Bound RQ4 unless resolved.
   - I059: optional larger corrected MV14 bootstrap only if reviewer-facing
     interval precision becomes necessary.
-  - I062: manuscript editing and citation-key insertion are active.
+  - I062: manuscript editing and citation-key insertion continue as paper-side
+    work after the post-review frame correction.
+  - I063: BGE feature-contract caveat. MV17a multilingual sensitivity is the
+    next active experiment route.
+  - I064: bibliography metadata must be verified against primary sources before
+    submission.
 
 ## Fast Verification Commands
 
 ```bash
 git status --short
 python scripts/build_diagnostic_paper_bibliography.py
+python scripts/phase5_plan_mv17_postreview_measurement_validity_route.py --overwrite
 python scripts/build_diagnostic_paper_manuscript_draft.py
 python scripts/phase5_full_method_gate_audit.py
 ```
-

@@ -1,12 +1,18 @@
 # Master Experiment Plan
 
-Last updated: 2026-08-13 UTC
+Last updated: 2026-08-21 UTC
 
 ## Principle
 
 The project proceeds from measurement and diagnostics to modeling. Do not build
 the full symptom-aligned method before Phase 3 has shown which shortcut,
 protocol, valence, or population effects are real.
+
+Post-review correction: the main publishable route is now target measurement
+validity, not a generic robust multimodal model. Treat representation/protocol
+shift, target measurement shift, and prediction shift as separate layers.
+Feature alignment alone cannot solve cross-dataset depression detection if the
+observed label response function also shifts by dataset/group.
 
 Canonical order, reaffirmed by the user on 2026-08-04:
 
@@ -540,6 +546,14 @@ representation without those controls.
   output-identity, and artifact-hygiene gates pass, but the DIF-guided
   small-k gate fails in both directions (`blocked_no_dif_guided_small_k_gain`).
   Treat MV16 as bounded/negative calibration evidence, not a method pass.
+- Post-review feature-contract caveat:
+  the current BGE-linked MV07 -> MV12 -> MV15 -> MV16 chain is now
+  legacy/diagnostic because E-DAIC MV07 feature generation used
+  `BAAI/bge-small-zh-v1.5`, a Chinese model, on English transcripts, and the
+  available E-DAIC transcript CSVs do not expose speaker roles for
+  participant/interviewer filtering. This caveat does not affect label-only
+  MV10/MV11/MV13/MV14 psychometric results. Strong feature-level claims require
+  MV17 multilingual BGE-M3 plus multilingual-E5 sensitivity first.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -560,19 +574,37 @@ representation without those controls.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
   as bounded diagnostic evidence, keep MV14 as the completed convergence-safe
   item-level measurement-uncertainty layer, freeze MV15 as negative
-  latent-conditioned feature-identity evidence, and freeze MV16 as a
-  completed bounded/negative few-shot calibration result. MV06 agreement
-  uncertainty is complete; resolve the one incomplete local candidate before
-  stronger RQ4 wording if available.
+  latent-conditioned feature-identity evidence under the legacy BGE caveat, and
+  freeze MV16 as a completed bounded/negative few-shot calibration result.
+  MV06 agreement uncertainty is complete; resolve the one incomplete local
+  candidate before stronger RQ4 wording if available.
+- Post-review experiment queue:
+  1. MV17a multilingual feature-contract sensitivity: regenerate
+     E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then rerun
+     MV07/MV12/MV15 only before deciding whether MV16 is worth rerunning.
+  2. MV18 CMDC-HAMD versus PDCH-HAMD same-language/same-scale exploratory
+     control: test whether dataset/context measurement shift persists when
+     language and HAMD scale are held fixed.
+  3. MV19 finite-sample PHQ psychometric simulation: quantify false DIF,
+     C02/C06 threshold-DIF recovery, and anchor-set recovery under observed N,
+     sparsity, severity, and missingness.
+  4. MV20 criterion-contamination stress: separate mirror-like
+     interviewer/question turns from non-mirror turns before adding any
+     protocol-bias method.
+- Stop lines:
+  no extra shallow BGE heads, projection dimensions, MV16 calibration variants,
+  personality gating/calibrators, or EATD valence-adversarial modules without a
+  new predeclared mechanism-changing contract.
 - Paper consolidation: aggregate-only manuscript draft v0.1 is generated under
   `analysis/diagnostic_measurement_audit_paper/` with traceability, open
   editing items, and artifact-hygiene checks. A first bibliography handoff is
   also generated there as `references.bib`, `citation_registry.csv`, and
   `citation_source_map.csv`, with the IRT DIF source hint corrected to Bulut
-  and Suh 2017. The next paper task is citation-key insertion,
-  venue-style reference formatting, human manuscript editing, and
-  cross-reference cleanup without strengthening claims beyond the full-method
-  gate.
+  and Suh 2017 plus post-review metadata fixes for P3HF, Multi-Probe Audit, and
+  EMNLP interviewer bias. The active experiment task is MV17a; citation-key
+  insertion, venue-style reference formatting, human manuscript editing, and
+  cross-reference cleanup continue as paper-side work without strengthening
+  claims beyond the full-method gate.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if
