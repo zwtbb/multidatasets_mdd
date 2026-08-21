@@ -1,0 +1,9 @@
+gate_id,status,evidence,full_method_effect
+G1_input_scope,pass,Runner reads manifest-governed BGE/label/covariate inputs and aggregate references only; no raw text or media.,No full method authorization.
+G2_subject_level_splits,pass,Subject overlap violations: 0.,Any overlap blocks MV15 claims.
+G3_theta_local_only,pass,"No participant-grain theta scores, residualized feature matrices, fitted parameters, or row predictions are tracked.",Local-only boundary preserved.
+G4_reference_reporting,pass,Completed primary ladders: L0_D_given_Z_raw;L1_D_given_Z_and_total;L2_D_given_Z_and_predicted_total;L3_D_given_Z_and_items;L4_D_given_Z_and_b3_itemwise_theta;L5_D_given_Z_and_theta;L6_D_given_Z_theta_covariates;L7_D_given_theta_only.,Single favorable BA cannot be cited alone.
+G5_primary_identity_threshold,blocked,Theta-conditioned BA=1.000; total=1.000; predicted_total=1.000; B3=1.000.,Even a pass only motivates MV16 or bounded diagnostic wording.
+G6_output_identity_boundary,pass,B3 output identity=0.529; psychometric predicted theta output identity=0.584; B3 Pareto dominates predicted theta=False.,Output identity remains separate from feature identity.
+G7_external_sensitivity_boundary,pass,CMDC/PDCH and three-way severity-only sensitivity rows completed.,No PHQ-HAMD latent claim from MV15.
+G8_artifact_hygiene,pass,Artifact hygiene passed=True.,Hygiene failure blocks publishing.

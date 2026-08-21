@@ -1,0 +1,3 @@
+dataset,scale,label_participants,feature_participants,joined_participants,model_input_columns,feature_family,path_like_columns_present
+edaic,PHQ-8,219,219,219,768,text_bge,False
+cmdc,PHQ-9,77,77,77,768,text_bge,False

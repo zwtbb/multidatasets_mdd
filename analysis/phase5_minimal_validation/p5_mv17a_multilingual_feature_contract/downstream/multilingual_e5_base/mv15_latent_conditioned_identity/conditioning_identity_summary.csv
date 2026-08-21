@@ -1,0 +1,9 @@
+scope_id,ladder_id,probe_id,datasets,representation,conditioning,metric,mean,std,seed_count,completed_seed_rows,eval_subjects_mean,skipped_reasons
+S1_primary_edaic_cmdc_phq,L0_D_given_Z_raw,P1_primary_feature_identity_given_theta,edaic;cmdc,Z_bge_raw,none,Balanced Accuracy,1.0,0.0,5,5,71.4,
+S1_primary_edaic_cmdc_phq,L1_D_given_Z_and_total,P3_feature_identity_given_total_items_b3_vs_theta_delta,edaic;cmdc,residualized_Z_bge,normalized_total,Balanced Accuracy,1.0,0.0,5,5,71.4,
+S1_primary_edaic_cmdc_phq,L2_D_given_Z_and_predicted_total,P3_feature_identity_given_total_items_b3_vs_theta_delta,edaic;cmdc,residualized_Z_bge,predicted_total,Balanced Accuracy,1.0,0.0,5,5,71.4,
+S1_primary_edaic_cmdc_phq,L3_D_given_Z_and_items,P3_feature_identity_given_total_items_b3_vs_theta_delta,edaic;cmdc,residualized_Z_bge,C01-C08,Balanced Accuracy,0.9870833333333333,0.01770220482187334,5,5,71.4,
+S1_primary_edaic_cmdc_phq,L4_D_given_Z_and_b3_itemwise_theta,P3_feature_identity_given_total_items_b3_vs_theta_delta,edaic;cmdc,residualized_Z_bge,B3_itemwise_theta,Balanced Accuracy,1.0,0.0,5,5,71.4,
+S1_primary_edaic_cmdc_phq,L5_D_given_Z_and_theta,P1_primary_feature_identity_given_theta,edaic;cmdc,residualized_Z_bge,theta_label,Balanced Accuracy,1.0,0.0,5,5,71.4,
+S1_primary_edaic_cmdc_phq,L6_D_given_Z_theta_covariates,P6_covariate_sensitivity,edaic;cmdc,residualized_Z_bge,theta_label_plus_shared_covariates,Balanced Accuracy,1.0,0.0,5,5,71.4,
+S1_primary_edaic_cmdc_phq,L7_D_given_theta_only,P2_theta_distribution_identity,edaic;cmdc,theta_label,none,Balanced Accuracy,0.5763690476190476,0.018280691274385346,5,5,71.4,

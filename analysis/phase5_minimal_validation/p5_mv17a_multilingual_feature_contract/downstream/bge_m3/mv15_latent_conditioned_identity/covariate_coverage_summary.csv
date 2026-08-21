@@ -1,0 +1,5 @@
+scope_id,dataset,covariate,subject_count,finite_coverage,usable_for_primary_sensitivity
+S1_primary_edaic_cmdc_phq,cmdc,age_numeric,77,1.0,True
+S1_primary_edaic_cmdc_phq,cmdc,gender_numeric,77,1.0,True
+S1_primary_edaic_cmdc_phq,edaic,age_numeric,219,0.0,False
+S1_primary_edaic_cmdc_phq,edaic,gender_numeric,219,1.0,True

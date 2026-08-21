@@ -1,10 +1,10 @@
 {
   "artifact_hygiene_passed": true,
   "decision": {
-    "route_status": "ready_for_mv17a_design",
-    "short_read": "Post-review route is frozen around target measurement validity; first next step is multilingual BGE-M3 plus multilingual-E5 feature-contract sensitivity, not another shallow model variant."
+    "route_status": "mv17a_complete_next_mv18_ready",
+    "short_read": "MV17a multilingual feature-contract sensitivity is complete and reproduces the blocked MV07/MV12/MV15 pattern; next step is MV18 CMDC-HAMD vs PDCH-HAMD same-scale control, not another shallow model variant."
   },
-  "generated_at": "2026-08-21T16:15:30+00:00",
+  "generated_at": "2026-08-21T18:12:12+00:00",
   "input_contract": {
     "feature_matrices_read": false,
     "private_review_material_read": false,

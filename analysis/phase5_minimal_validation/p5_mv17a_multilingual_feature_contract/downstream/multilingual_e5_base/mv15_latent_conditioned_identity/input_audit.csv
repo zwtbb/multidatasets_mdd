@@ -1,0 +1,4 @@
+dataset,feature_family,feature_subjects,joined_subjects,model_input_columns,target_family,severity_norm_mean,severity_norm_std,raw_text_or_media_read,row_level_predictions_read,features_written_to_tracked_outputs,path_like_feature_columns
+cmdc,text_bge,77,77,768,phq_core,0.2554112554112554,0.29988804498845123,False,False,False,
+edaic,text_bge,219,219,768,phq_core,0.2766362252663622,0.249436552444385,False,False,False,
+pdch,text_bge,99,99,768,hamd_proxy,0.30516705516705517,0.14542426334577596,False,False,False,

@@ -547,13 +547,15 @@ representation without those controls.
   small-k gate fails in both directions (`blocked_no_dif_guided_small_k_gain`).
   Treat MV16 as bounded/negative calibration evidence, not a method pass.
 - Post-review feature-contract caveat:
-  the current BGE-linked MV07 -> MV12 -> MV15 -> MV16 chain is now
-  legacy/diagnostic because E-DAIC MV07 feature generation used
+  the legacy BGE-linked MV07 -> MV12 -> MV15 -> MV16 chain remains
+  diagnostic because E-DAIC MV07 feature generation used
   `BAAI/bge-small-zh-v1.5`, a Chinese model, on English transcripts, and the
   available E-DAIC transcript CSVs do not expose speaker roles for
   participant/interviewer filtering. This caveat does not affect label-only
-  MV10/MV11/MV13/MV14 psychometric results. Strong feature-level claims require
-  MV17 multilingual BGE-M3 plus multilingual-E5 sensitivity first.
+  MV10/MV11/MV13/MV14 psychometric results. MV17a now completes the
+  paper-critical multilingual sensitivity: BGE-M3 and multilingual-E5 both
+  reproduce the blocked MV07/MV12/MV15 pattern, with feature identity and
+  theta-conditioned feature identity still high.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -574,17 +576,19 @@ representation without those controls.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
   as bounded diagnostic evidence, keep MV14 as the completed convergence-safe
   item-level measurement-uncertainty layer, freeze MV15 as negative
-  latent-conditioned feature-identity evidence under the legacy BGE caveat, and
-  freeze MV16 as a completed bounded/negative few-shot calibration result.
-  MV06 agreement uncertainty is complete; resolve the one incomplete local
-  candidate before stronger RQ4 wording if available.
+  latent-conditioned feature-identity evidence now replicated under the MV17a
+  multilingual feature contract, and freeze MV16 as a completed
+  bounded/negative few-shot calibration result. MV06 agreement uncertainty is
+  complete; resolve the one incomplete local candidate before stronger RQ4
+  wording if available.
 - Post-review experiment queue:
-  1. MV17a multilingual feature-contract sensitivity: regenerate
-     E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then rerun
-     MV07/MV12/MV15 only before deciding whether MV16 is worth rerunning.
-  2. MV18 CMDC-HAMD versus PDCH-HAMD same-language/same-scale exploratory
+  1. MV17a multilingual feature-contract sensitivity: complete. BGE-M3 and
+     multilingual-E5 regenerate E-DAIC/CMDC/PDCH features and reproduce the
+     blocked MV07/MV12/MV15 pattern. Do not rerun MV16 unless a new explicit
+     need is identified.
+  2. MV18 CMDC-HAMD versus PDCH-HAMD same-scale exploratory
      control: test whether dataset/context measurement shift persists when
-     language and HAMD scale are held fixed.
+     the HAMD scale is held fixed.
   3. MV19 finite-sample PHQ psychometric simulation: quantify false DIF,
      C02/C06 threshold-DIF recovery, and anchor-set recovery under observed N,
      sparsity, severity, and missingness.
@@ -601,7 +605,7 @@ representation without those controls.
   also generated there as `references.bib`, `citation_registry.csv`, and
   `citation_source_map.csv`, with the IRT DIF source hint corrected to Bulut
   and Suh 2017 plus post-review metadata fixes for P3HF, Multi-Probe Audit, and
-  EMNLP interviewer bias. The active experiment task is MV17a; citation-key
+  EMNLP interviewer bias. The active experiment task is MV18; citation-key
   insertion, venue-style reference formatting, human manuscript editing, and
   cross-reference cleanup continue as paper-side work without strengthening
   claims beyond the full-method gate.

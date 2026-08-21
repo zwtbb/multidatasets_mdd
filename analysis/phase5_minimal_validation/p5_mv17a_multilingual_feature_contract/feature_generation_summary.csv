@@ -1,0 +1,7 @@
+encoder,dataset,model_name,pooling,input_prefix_used,max_length,feature_rows,feature_columns,text_units,token_count_sum,chunk_count_sum,empty_text_units,generation_status,cache_ref,local_only
+bge_m3,edaic,BAAI/bge-m3,cls,False,512,219,1024,219,350589,795,0,cache_complete,analysis/phase2_baselines/mv17_multilingual_text_features/bge_m3/edaic_text_bge/edaic_bge_subject_features.csv,True
+bge_m3,cmdc,BAAI/bge-m3,cls,False,512,77,1024,908,79880,913,0,generated,analysis/phase2_baselines/mv17_multilingual_text_features/bge_m3/cmdc_pdch_text_encoder_mlp/cmdc_bge_subject_features.csv,True
+bge_m3,pdch,BAAI/bge-m3,cls,False,512,99,1024,165,455069,980,0,generated,analysis/phase2_baselines/mv17_multilingual_text_features/bge_m3/cmdc_pdch_text_encoder_mlp/pdch_bge_subject_features.csv,True
+multilingual_e5_base,edaic,intfloat/multilingual-e5-base,average,True,512,219,768,219,350589,797,0,generated,analysis/phase2_baselines/mv17_multilingual_text_features/multilingual_e5_base/edaic_text_bge/edaic_bge_subject_features.csv,True
+multilingual_e5_base,cmdc,intfloat/multilingual-e5-base,average,True,512,77,768,908,79880,913,0,generated,analysis/phase2_baselines/mv17_multilingual_text_features/multilingual_e5_base/cmdc_pdch_text_encoder_mlp/cmdc_bge_subject_features.csv,True
+multilingual_e5_base,pdch,intfloat/multilingual-e5-base,average,True,512,99,768,165,455069,987,0,generated,analysis/phase2_baselines/mv17_multilingual_text_features/multilingual_e5_base/cmdc_pdch_text_encoder_mlp/pdch_bge_subject_features.csv,True

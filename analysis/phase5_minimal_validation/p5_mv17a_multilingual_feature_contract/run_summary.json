@@ -1,0 +1,55 @@
+{
+  "artifact_hygiene_passed": true,
+  "datasets": [
+    "edaic",
+    "cmdc",
+    "pdch"
+  ],
+  "downstream_chain": [
+    "mv07",
+    "mv12",
+    "mv15"
+  ],
+  "downstream_chain_executed": true,
+  "encoders": [
+    {
+      "chunk_batch_size": 8,
+      "encoder": "bge_m3",
+      "expected_dimension": 1024,
+      "input_prefix_used": false,
+      "max_length": 512,
+      "model_name": "BAAI/bge-m3",
+      "pooling": "cls",
+      "source_url": "https://huggingface.co/BAAI/bge-m3"
+    },
+    {
+      "chunk_batch_size": 16,
+      "encoder": "multilingual_e5_base",
+      "expected_dimension": 768,
+      "input_prefix_used": true,
+      "max_length": 512,
+      "model_name": "intfloat/multilingual-e5-base",
+      "pooling": "average",
+      "source_url": "https://huggingface.co/intfloat/multilingual-e5-base"
+    }
+  ],
+  "feature_summary_rows": 6,
+  "generated_at": "2026-08-21T18:03:31+00:00",
+  "local_feature_root": "analysis/phase2_baselines/mv17_multilingual_text_features",
+  "mv16_rerun_allowed": false,
+  "output_policy": {
+    "local_only_feature_root": "analysis/phase2_baselines/mv17_multilingual_text_features",
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "downstream_run_summary.csv",
+      "encoder_contract.csv",
+      "feature_generation_summary.csv",
+      "local_artifact_manifest.csv",
+      "report.md",
+      "run_summary.json"
+    ]
+  },
+  "run_id": "P5_MV17a_multilingual_feature_contract",
+  "scope": "multilingual_feature_contract_sensitivity",
+  "status": "complete"
+}

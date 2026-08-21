@@ -1,0 +1,4 @@
+dataset,target_family,label_subjects,feature_subjects,joined_subjects,model_input_columns,feature_ref,path_like_columns
+edaic,phq_core,219,219,219,768,edaic_text_bge/edaic_bge_subject_features.csv,
+cmdc,phq_core,77,77,77,768,cmdc_pdch_text_encoder_mlp/cmdc_bge_subject_features.csv,
+pdch,hamd_proxy,99,99,99,768,cmdc_pdch_text_encoder_mlp/pdch_bge_subject_features.csv,

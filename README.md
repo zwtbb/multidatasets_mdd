@@ -103,17 +103,20 @@ calibration evidence, not a full method pass. The Baselines, Failure-Mode
 Diagnostics, and Measurement Results scaffold is now generated from aggregate
 tables only, and `manuscript_draft.md` now assembles the first full
 measurement-audit manuscript draft with traceability and hygiene checks.
-Post-review audit adds a major feature-contract caveat: the current
-BGE-linked MV07 -> MV12 -> MV15 -> MV16 chain is legacy/diagnostic because
-E-DAIC MV07 used `BAAI/bge-small-zh-v1.5`, a Chinese encoder, on English
-transcripts and the available E-DAIC transcript CSVs lack speaker roles for
-participant/interviewer filtering. Label-only MV10/MV11/MV13/MV14 are
-unaffected. The bibliography registry and `references.bib` now cover all
-current source-context rows, with corrected primary-source metadata for P3HF,
-Multi-Probe Audit, and EMNLP interviewer bias. Current next action: predeclare
-and run MV17 multilingual BGE-M3 plus multilingual-E5 feature-contract
-sensitivity for MV07/MV12/MV15, then continue manuscript editing within the
-claim boundary.
+Post-review audit added a major feature-contract caveat: the legacy
+BGE-linked MV07 -> MV12 -> MV15 -> MV16 chain used
+`BAAI/bge-small-zh-v1.5`, a Chinese encoder, for English E-DAIC transcripts.
+MV17a now addresses the paper-critical part of that caveat by regenerating
+E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then rerunning
+MV07/MV12/MV15. Both multilingual encoders reproduce the blocked feature-level
+pattern: MV07 fails the total-allocation/identity gate, MV12 fails observed
+scale-safe theta gain, and MV15 fails theta-conditioned feature identity.
+Label-only MV10/MV11/MV13/MV14 are unaffected. The bibliography registry and
+`references.bib` now cover all current source-context rows, with corrected
+primary-source metadata for P3HF, Multi-Probe Audit, and EMNLP interviewer
+bias. Current next action: predeclare and run MV18 CMDC-HAMD vs PDCH-HAMD
+same-scale control, then MV19 finite-sample PHQ psychometric simulation if
+still needed.
 Optional MV06 work is resolving the one incomplete local candidate before
 stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap
@@ -152,6 +155,7 @@ samples, calibration parameters, and model artifacts remain local-only.
 - MV16 DIF-guided calibration design: `analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration_design/`
 - MV16 DIF-guided calibration run: `analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration/`
 - MV17 post-review route: `analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
+- MV17a multilingual feature-contract sensitivity: `analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`

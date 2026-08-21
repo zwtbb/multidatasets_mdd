@@ -1,0 +1,3 @@
+probe_id,metric,mean,std,seed_count,sample_count_mean
+feature_identity_bge_edaic_cmdc_pdch,Balanced Accuracy,1.0,0.0,5,395.0
+prediction_identity_pooled_phq_edaic_cmdc,Balanced Accuracy,0.9324242424242424,0.02958136900318933,5,71.4

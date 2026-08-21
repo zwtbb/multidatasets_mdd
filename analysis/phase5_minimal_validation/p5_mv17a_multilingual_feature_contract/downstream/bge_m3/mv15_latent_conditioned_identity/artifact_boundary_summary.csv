@@ -1,0 +1,6 @@
+artifact_class,reason_local_only,tracked_surrogate,written_to_tracked_outputs
+theta_scores,participant-grain latent scores,aggregate distribution and identity metrics,False
+measurement_parameters,fitted item parameters and posterior diagnostics,aggregate MV14 anchor/DIF evidence,False
+residualized_features,participant-grain transformed representation,aggregate identity metrics by ladder,False
+row_predictions,per-participant model outputs,aggregate BA and MAE summaries,False
+split_maps,participant-grain fold assignments,aggregate split-overlap audit,False

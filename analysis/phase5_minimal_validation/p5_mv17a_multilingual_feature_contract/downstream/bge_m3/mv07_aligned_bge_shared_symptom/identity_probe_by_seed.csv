@@ -1,0 +1,11 @@
+seed,probe_id,metric,value,sample_count,dataset_count
+0,feature_identity_bge_edaic_cmdc_pdch,Balanced Accuracy,1.0,395,3
+1,feature_identity_bge_edaic_cmdc_pdch,Balanced Accuracy,1.0,395,3
+2,feature_identity_bge_edaic_cmdc_pdch,Balanced Accuracy,1.0,395,3
+3,feature_identity_bge_edaic_cmdc_pdch,Balanced Accuracy,1.0,395,3
+4,feature_identity_bge_edaic_cmdc_pdch,Balanced Accuracy,1.0,395,3
+0,prediction_identity_pooled_phq_edaic_cmdc,Balanced Accuracy,0.9227272727272726,72,2
+1,prediction_identity_pooled_phq_edaic_cmdc,Balanced Accuracy,0.9045454545454545,72,2
+2,prediction_identity_pooled_phq_edaic_cmdc,Balanced Accuracy,0.9219696969696969,71,2
+3,prediction_identity_pooled_phq_edaic_cmdc,Balanced Accuracy,0.9825757575757577,71,2
+4,prediction_identity_pooled_phq_edaic_cmdc,Balanced Accuracy,0.9303030303030303,71,2

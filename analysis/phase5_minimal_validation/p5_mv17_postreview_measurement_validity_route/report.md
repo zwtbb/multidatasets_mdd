@@ -1,25 +1,25 @@
 # MV17 Post-Review Measurement-Validity Route
 
-Generated: `2026-08-21T16:15:30+00:00`
+Generated: `2026-08-21T18:12:12+00:00`
 
 ## Decision
 
 - Current paper direction: target measurement validity, not a generic multimodal method.
-- Current BGE-linked feature-level chain is legacy/diagnostic until multilingual sensitivity is complete.
+- MV17a multilingual sensitivity is complete and reproduces the blocked MV07/MV12/MV15 feature-level pattern.
 - Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.
 
 ## Legacy BGE Contract Risks
 
 | risk | status | chain | evidence | boundary |
 | --- | --- | --- | --- | --- |
-| BGE_R001 | open | MV07->MV12->MV15->MV16 | E-DAIC MV07 generator defaults to BAAI/bge-small-zh-v1.5, which is documented as Chinese; E-DAIC transcripts are English. | Treat current BGE-linked feature-level findings as legacy/diagnostic until multilingual sensitivity is rerun. |
+| BGE_R001 | mitigated_for_mv17a | MV07->MV12->MV15->MV16 | E-DAIC MV07 generator defaults to BAAI/bge-small-zh-v1.5, which is documented as Chinese; E-DAIC transcripts are English. | Old Chinese-BGE outputs remain legacy/diagnostic; MV17a now provides multilingual BGE-M3 and multilingual-E5 reruns for MV07/MV12/MV15. |
 | BGE_R002 | open | E-DAIC text features | Current E-DAIC transcript contract exposes Text rows but no speaker role in the available CSV header, so participant/interviewer filtering is unavailable. | Do not interpret high BGE identity or poor transfer as pure participant symptom-representation failure. |
 
 ## Prioritized Experiment Queue
 
 | priority | experiment | status | minimum scope | success readout | stop rule |
 | --- | --- | --- | --- | --- | --- |
-| 1 | MV17a_multilingual_feature_contract | ready_to_design | Regenerate E-DAIC, CMDC, and PDCH subject features with BGE-M3 and multilingual-E5; rerun MV07, MV12, and MV15 only. | Both encoders reproduce or qualify the B3 direct-severity dominance, external-transfer failure, and latent-conditioned identity pattern. | Do not rerun MV16 or add new shallow heads before MV17a evidence is reviewed. |
+| 1 | MV17a_multilingual_feature_contract | complete | Regenerated E-DAIC, CMDC, and PDCH subject features with BGE-M3 and multilingual-E5; reran MV07, MV12, and MV15 only. | Both encoders reproduce the blocked MV07/MV12/MV15 pattern; see p5_mv17a_multilingual_feature_contract outputs. | Do not rerun MV16 unless a new explicit need is identified after MV17a review. |
 | 2 | MV18_cmdc_pdch_hamd_same_scale_control | ready_to_design | Exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale item distribution, severity-conditioned ordinal regression, bootstrap threshold differences, or partial-pooling DIF. | A cautious estimate of whether same-language, same-scale HAMD item behavior still varies by dataset/context. | Do not overclaim formal HAMD invariance because CMDC HAMD item supervision is only a small sanity subset. |
 | 3 | MV19_phq_finite_sample_psychometric_simulation | ready_to_design | Simulate observed N, category frequencies, severity distribution, thresholds, and missingness under scalar-invariant H0 and C02/C06 threshold-DIF H1; run the MV10-MV14 decision pipeline. | Report false-DIF rate under H0, C02/C06 recovery under H1, and anchor-set recovery. | If false-DIF is high, downgrade C02/C06 from robust evidence to hypothesis-generating evidence. |
 | 4 | MV20_criterion_contamination_stress | recommended_to_design | Compute semantic similarity between interviewer/question text and PHQ/HAMD items, define mirror-like versus non-mirror turns, and test deletion/insertion effects. | Estimate whether label-overlapping elicitation language inflates apparent depression prediction or evidence localization. | Do not build a new protocol-bias network unless this stress test exposes a mechanism that a simple deletion/control cannot explain. |
@@ -29,7 +29,7 @@ Generated: `2026-08-21T16:15:30+00:00`
 | id | area | decision |
 | --- | --- | --- |
 | S001 | BGE variants | Stop extra shallow BGE heads, projection dimensions, or total-anchor variants unless the feature contract changes first. |
-| S002 | MV16 calibration | Do not rerun or tune MV16 until MV17a multilingual features are reviewed. |
+| S002 | MV16 calibration | MV17a is complete; keep MV16 paused unless a new explicit need is identified. |
 | S003 | RQ3 personality | Do not design personality gating/calibrators as a main method contribution; keep MPDD as a population stress test. |
 | S004 | EATD valence | Do not add an EATD valence-adversarial method from current negative SDS evidence. |
 | S005 | Evidence localization | Do not build an evidence network; use MV06 agreement as credibility support unless deletion/sufficiency tests are explicitly predeclared. |

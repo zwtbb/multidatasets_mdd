@@ -1,0 +1,80 @@
+{
+  "artifact_hygiene_passed": true,
+  "data_contract": {
+    "cmdc_subjects": 77,
+    "edaic_subjects": 219,
+    "encoder_finetuned": false,
+    "pdch_subjects": 99,
+    "raw_text_read": false,
+    "raw_text_written": false,
+    "row_level_predictions_written_local_only": true,
+    "source_paths_written": false
+  },
+  "feature_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc",
+      "pdch"
+    ],
+    "encoder_frozen": true,
+    "feature_family": "text_bge",
+    "generated_features_local_only": true,
+    "model_input_columns": 1024
+  },
+  "generated_at": "2026-08-21T18:00:48+00:00",
+  "model_contract": {
+    "heads": [
+      "train_mean",
+      "total_alloc_ridge",
+      "bge_itemwise_ridge"
+    ],
+    "ridge_alpha_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "subject_overlap_violations": 0
+  },
+  "output_policy": {
+    "local_only_outputs": [
+      "p5_mv07_local_predictions.csv"
+    ],
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "comparison_summary.csv",
+      "construct_target_map.csv",
+      "identity_probe_by_seed.csv",
+      "identity_probe_summary.csv",
+      "label_feature_audit.csv",
+      "metric_summary.csv",
+      "metrics_by_seed.csv",
+      "model_split_audit.csv",
+      "report.md",
+      "run_summary.json"
+    ]
+  },
+  "run_id": "P5_MV07_aligned_bge_shared_symptom",
+  "scope": "aligned_bge_shallow_shared_symptom_validation",
+  "status": "complete",
+  "verdict": {
+    "feature_identity_ba": 1.0,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_not_better_than_total_allocation_bge_contract",
+    "pdch_hamd_proxy_delta_vs_train_mean": -0.022497945985458734,
+    "pooled_cmdc_delta_vs_total_alloc": 8.803353079067655e-06,
+    "pooled_cmdc_delta_vs_train_mean": -0.20681959640991798,
+    "pooled_edaic_delta_vs_total_alloc": 0.013887714272296736,
+    "pooled_edaic_delta_vs_train_mean": -0.008604683504508714,
+    "prediction_identity_ba": 0.9324242424242424,
+    "short_read": "Aligned BGE MV07 is a shallow validation result. Interpret it through pooled PHQ gains, PDCH HAMD-proxy sanity, and identity probes; readiness alone is not a shared-symptom claim."
+  }
+}

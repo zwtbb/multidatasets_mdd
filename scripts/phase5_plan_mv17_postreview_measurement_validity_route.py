@@ -74,10 +74,10 @@ def legacy_bge_contract_risk() -> list[dict[str, str]]:
     return [
         {
             "risk_id": "BGE_R001",
-            "status": "open",
+            "status": "mitigated_for_mv17a",
             "affected_chain": "MV07->MV12->MV15->MV16",
             "evidence": "E-DAIC MV07 generator defaults to BAAI/bge-small-zh-v1.5, which is documented as Chinese; E-DAIC transcripts are English.",
-            "claim_boundary": "Treat current BGE-linked feature-level findings as legacy/diagnostic until multilingual sensitivity is rerun.",
+            "claim_boundary": "Old Chinese-BGE outputs remain legacy/diagnostic; MV17a now provides multilingual BGE-M3 and multilingual-E5 reruns for MV07/MV12/MV15.",
             "unaffected_evidence": "Label-only MV10/MV11/MV13/MV14 psychometric findings.",
         },
         {
@@ -96,11 +96,11 @@ def experiment_queue() -> list[dict[str, str]]:
         {
             "priority": "1",
             "experiment_id": "MV17a_multilingual_feature_contract",
-            "status": "ready_to_design",
+            "status": "complete",
             "why_now": "Fixes the paper-critical BGE language contract before renewing feature-level MV07/MV12/MV15 claims.",
-            "minimum_scope": "Regenerate E-DAIC, CMDC, and PDCH subject features with BGE-M3 and multilingual-E5; rerun MV07, MV12, and MV15 only.",
-            "success_readout": "Both encoders reproduce or qualify the B3 direct-severity dominance, external-transfer failure, and latent-conditioned identity pattern.",
-            "stop_rule": "Do not rerun MV16 or add new shallow heads before MV17a evidence is reviewed.",
+            "minimum_scope": "Regenerated E-DAIC, CMDC, and PDCH subject features with BGE-M3 and multilingual-E5; reran MV07, MV12, and MV15 only.",
+            "success_readout": "Both encoders reproduce the blocked MV07/MV12/MV15 pattern; see p5_mv17a_multilingual_feature_contract outputs.",
+            "stop_rule": "Do not rerun MV16 unless a new explicit need is identified after MV17a review.",
         },
         {
             "priority": "2",
@@ -183,7 +183,7 @@ def stop_lines() -> list[dict[str, str]]:
         {
             "stop_id": "S002",
             "area": "MV16 calibration",
-            "decision": "Do not rerun or tune MV16 until MV17a multilingual features are reviewed.",
+            "decision": "MV17a is complete; keep MV16 paused unless a new explicit need is identified.",
         },
         {
             "stop_id": "S003",
@@ -217,7 +217,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         "## Decision",
         "",
         "- Current paper direction: target measurement validity, not a generic multimodal method.",
-        "- Current BGE-linked feature-level chain is legacy/diagnostic until multilingual sensitivity is complete.",
+        "- MV17a multilingual sensitivity is complete and reproduces the blocked MV07/MV12/MV15 feature-level pattern.",
         "- Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.",
         "",
         "## Legacy BGE Contract Risks",
@@ -307,8 +307,8 @@ def main() -> None:
     run_summary = {
         "artifact_hygiene_passed": False,
         "decision": {
-            "route_status": "ready_for_mv17a_design",
-            "short_read": "Post-review route is frozen around target measurement validity; first next step is multilingual BGE-M3 plus multilingual-E5 feature-contract sensitivity, not another shallow model variant.",
+            "route_status": "mv17a_complete_next_mv18_ready",
+            "short_read": "MV17a multilingual feature-contract sensitivity is complete and reproduces the blocked MV07/MV12/MV15 pattern; next step is MV18 CMDC-HAMD vs PDCH-HAMD same-scale control, not another shallow model variant.",
         },
         "generated_at": generated_at,
         "input_contract": {

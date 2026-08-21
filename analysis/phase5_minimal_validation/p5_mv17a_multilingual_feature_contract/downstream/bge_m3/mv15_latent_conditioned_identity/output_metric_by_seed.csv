@@ -1,0 +1,41 @@
+seed,fold,scope_id,output_model,metric,value
+0,fold_1,S2_predicted_theta_output_identity,predicted_total,Normalized Total MAE,0.17724383816186443
+0,fold_1,S2_predicted_theta_output_identity,predicted_total,Raw Total MAE,4.2538521158847455
+0,fold_1,S2_predicted_theta_output_identity,B3_itemwise_theta,Theta MAE,0.6521024704828954
+0,fold_1,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Macro Item MAE,0.715560194574749
+0,fold_1,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Total MAE,4.238449972298036
+0,fold_1,S2_predicted_theta_output_identity,psychometric_predicted_theta,Theta MAE,0.6472144196200736
+0,fold_1,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Macro Item MAE,0.6988314415437041
+0,fold_1,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Total MAE,4.206710944407081
+1,fold_2,S2_predicted_theta_output_identity,predicted_total,Normalized Total MAE,0.18040866053426596
+1,fold_2,S2_predicted_theta_output_identity,predicted_total,Raw Total MAE,4.329807852822383
+1,fold_2,S2_predicted_theta_output_identity,B3_itemwise_theta,Theta MAE,0.6810631327783275
+1,fold_2,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Macro Item MAE,0.7147540180494
+1,fold_2,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Total MAE,4.32741411190717
+1,fold_2,S2_predicted_theta_output_identity,psychometric_predicted_theta,Theta MAE,0.6807477076476784
+1,fold_2,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Macro Item MAE,0.6926640324949633
+1,fold_2,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Total MAE,4.297816508418618
+2,fold_3,S2_predicted_theta_output_identity,predicted_total,Normalized Total MAE,0.17892184768993116
+2,fold_3,S2_predicted_theta_output_identity,predicted_total,Raw Total MAE,4.294124344558348
+2,fold_3,S2_predicted_theta_output_identity,B3_itemwise_theta,Theta MAE,0.6914939459375742
+2,fold_3,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Macro Item MAE,0.7094189337967547
+2,fold_3,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Total MAE,4.288248723210087
+2,fold_3,S2_predicted_theta_output_identity,psychometric_predicted_theta,Theta MAE,0.6890318401884775
+2,fold_3,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Macro Item MAE,0.6949115134682681
+2,fold_3,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Total MAE,4.225566150848646
+3,fold_4,S2_predicted_theta_output_identity,predicted_total,Normalized Total MAE,0.18316440797481284
+3,fold_4,S2_predicted_theta_output_identity,predicted_total,Raw Total MAE,4.395945791395508
+3,fold_4,S2_predicted_theta_output_identity,B3_itemwise_theta,Theta MAE,0.7040752430000715
+3,fold_4,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Macro Item MAE,0.7212800810114316
+3,fold_4,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Total MAE,4.405486882044448
+3,fold_4,S2_predicted_theta_output_identity,psychometric_predicted_theta,Theta MAE,0.6963167833543413
+3,fold_4,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Macro Item MAE,0.7003040949329756
+3,fold_4,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Total MAE,4.304641242982569
+4,fold_5,S2_predicted_theta_output_identity,predicted_total,Normalized Total MAE,0.1680675510984006
+4,fold_5,S2_predicted_theta_output_identity,predicted_total,Raw Total MAE,4.033621226361613
+4,fold_5,S2_predicted_theta_output_identity,B3_itemwise_theta,Theta MAE,0.6293941073894344
+4,fold_5,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Macro Item MAE,0.6795280143799909
+4,fold_5,S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Total MAE,4.022920906717945
+4,fold_5,S2_predicted_theta_output_identity,psychometric_predicted_theta,Theta MAE,0.6326009230127815
+4,fold_5,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Macro Item MAE,0.6642681129481126
+4,fold_5,S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Total MAE,4.012604246769894

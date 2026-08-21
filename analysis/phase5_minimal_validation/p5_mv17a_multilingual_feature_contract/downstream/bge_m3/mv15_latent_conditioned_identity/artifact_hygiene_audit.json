@@ -1,0 +1,13 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "P5_MV15_latent_conditioned_identity_hygiene",
+  "fitted_parameters_written_to_tracked_outputs": false,
+  "forbidden_local_only_file_names": [],
+  "generated_at": "2026-08-21T18:01:41+00:00",
+  "raw_text_or_media_read": false,
+  "residualized_features_written_to_tracked_outputs": false,
+  "row_level_predictions_written_to_tracked_outputs": false,
+  "theta_scores_written_to_tracked_outputs": false,
+  "tracked_output_count": 17,
+  "unexpected_files": []
+}

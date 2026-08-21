@@ -39,7 +39,8 @@ Allowed current framing:
   anchors, sparse loading DIF, localized threshold non-equivalence.
 - Dataset/protocol/population identity evidence as diagnostic shortcut risk.
 - Negative or bounded multimodal results under the legacy BGE/lightweight-head
-  contract, only with the post-review feature-contract caveat.
+  contract, now supported by MV17a multilingual feature-contract sensitivity
+  for the MV07/MV12/MV15 chain.
 - First-round aggregate evidence-localization credibility from MV06, with
   sampling and one-candidate incompleteness caveats.
 
@@ -47,8 +48,9 @@ Blocked claims:
 
 - Full M0/M1/M2/M3 construction.
 - Transferable shared-symptom representation from current BGE/WavLM contracts.
-- Strong feature-level claims from current MV07/MV12/MV15/MV16 BGE-linked
-  evidence until multilingual feature-contract sensitivity is complete.
+- Positive feature-invariance claims from current MV07/MV12/MV15/MV16
+  BGE-linked evidence; MV17a reproduces the blocked pattern under multilingual
+  encoders rather than authorizing the claim.
 - Positive EATD SDS generalization.
 - Valence-adversarial method from current EATD evidence.
 - Naive personality/context conditioning as a supported RQ3 method.
@@ -59,10 +61,13 @@ Blocked claims:
 
 Main next task:
 
-- Design and run MV17a multilingual feature-contract sensitivity:
-  regenerate E-DAIC/CMDC/PDCH subject features with BGE-M3 and
-  multilingual-E5, then rerun MV07, MV12, and MV15 only.
-- Do not rerun MV16 until MV17a results are reviewed.
+- Predeclare and run MV18 CMDC-HAMD vs PDCH-HAMD same-scale exploratory
+  control. The goal is to separate scale/measurement differences from
+  dataset/protocol/population differences under a same HAMD-17 target family.
+- After MV18, run MV19 finite-sample PHQ psychometric simulation if the
+  manuscript still needs a small-sample uncertainty support layer.
+- Do not rerun MV16 unless the multilingual MV17a results are explicitly
+  reviewed and a new need is identified.
 - Continue manuscript editing only within the target-measurement-validity frame.
 
 Useful inputs:
@@ -72,18 +77,19 @@ Useful inputs:
 - `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/citation_source_map.csv`
 - `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_traceability_matrix.csv`
 - `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_open_items.csv`
+- `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
 - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
 - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
 - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
+- `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
 
 Secondary optional task:
 
 - Resolve the one incomplete local CMDC MV06 candidate if the missing workbook
   rows become available, then rerun the aggregate MV06 summary gate.
-- After MV17a, predeclare MV18 CMDC-HAMD vs PDCH-HAMD same-scale control,
-  MV19 finite-sample PHQ psychometric simulation, and MV20
-  criterion-contamination stress only if still needed for the manuscript.
+- MV20 criterion-contamination stress remains optional after MV18/MV19, only if
+  still needed for the manuscript.
 
 ## Critical Current Results
 
@@ -106,11 +112,16 @@ Secondary optional task:
   `blocked_no_dif_guided_small_k_gain`. The best supported row is
   E-DAIC to CMDC, `M16d_global_plus_C02_C06`, k=`10`, but the both-direction
   small-k DIF-guided mechanism gate fails and output identity remains high.
-- Post-review BGE caveat: the current MV07->MV12->MV15->MV16 BGE-linked
-  feature-level chain is legacy/diagnostic because E-DAIC MV07 used
-  `BAAI/bge-small-zh-v1.5`, a Chinese encoder, on English transcripts, and the
-  available E-DAIC transcript CSVs lack speaker roles. MV10/MV11/MV13/MV14 are
-  label-only and unaffected.
+- MV17a multilingual feature-contract sensitivity is complete. BGE-M3 and
+  multilingual-E5 both reproduce the blocked feature-level pattern over
+  MV07/MV12/MV15: MV07 remains
+  `blocked_not_better_than_total_allocation_bge_contract`, MV12 remains
+  `blocked_theta_gain_not_observed_scale_safe`, and MV15 remains
+  `blocked_theta_conditioned_feature_identity_high`. Feature identity BA is
+  `1.000` for both encoders; MV15 theta-conditioned feature identity BA is also
+  `1.000` for both. The old Chinese-BGE chain remains legacy/diagnostic, but
+  the core negative feature-level conclusion now has multilingual sensitivity
+  support. MV10/MV11/MV13/MV14 are label-only and unaffected.
 
 ## Versioning State
 
@@ -150,17 +161,16 @@ Keep local-only:
     interval precision becomes necessary.
   - I062: manuscript editing and citation-key insertion continue as paper-side
     work after the post-review frame correction.
-  - I063: BGE feature-contract caveat. MV17a multilingual sensitivity is the
-    next active experiment route.
   - I064: bibliography metadata must be verified against primary sources before
     submission.
+  - I066: next bounded experiments are MV18, MV19, then optional MV20.
 
 ## Fast Verification Commands
 
 ```bash
 git status --short
 python scripts/build_diagnostic_paper_bibliography.py
-python scripts/phase5_plan_mv17_postreview_measurement_validity_route.py --overwrite
+python scripts/phase5_run_mv17a_multilingual_feature_contract.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 python scripts/phase5_full_method_gate_audit.py
 ```

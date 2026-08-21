@@ -1,0 +1,126 @@
+{
+  "artifact_hygiene_passed": true,
+  "feature_contract": {
+    "encoder_frozen": true,
+    "feature_cache_read_local_only": true,
+    "feature_family": "text_bge",
+    "features_written": false,
+    "model_input_columns": 768
+  },
+  "generated_at": "2026-08-21T18:03:16+00:00",
+  "input_contract": {
+    "anchor_items": [
+      "C01",
+      "C04",
+      "C05",
+      "C07"
+    ],
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "dif_aware_items": [
+      "C02",
+      "C06"
+    ],
+    "measurement_items": [
+      "C01",
+      "C02",
+      "C04",
+      "C05",
+      "C06",
+      "C07"
+    ],
+    "official_test_labels_used": false,
+    "private_review_material_read": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false,
+    "scales": [
+      "PHQ-8",
+      "PHQ-9"
+    ],
+    "sensitivity_items": [
+      "C03",
+      "C08"
+    ]
+  },
+  "model_contract": {
+    "models": [
+      "B0_train_mean_theta",
+      "B1_train_mean_observed_total",
+      "B2_direct_total_allocation_ridge",
+      "B3_direct_itemwise_ridge",
+      "M12a_BGE_Ridge_X_to_theta",
+      "M12b_projected_BGE_X_to_theta"
+    ],
+    "projection_component_count": 10,
+    "ridge_alpha_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "subject_overlap_violations": 0
+  },
+  "outputs": {
+    "comparison_rows": 58,
+    "identity_rows": 9,
+    "local_only_outputs": [
+      "ignored_row_prediction_table"
+    ],
+    "metric_rows": 2900,
+    "target_generation_rows": 25,
+    "tracked_outputs": [
+      "artifact_hygiene_audit.json",
+      "comparison_summary.csv",
+      "construct_target_map.csv",
+      "identity_probe_by_seed.csv",
+      "identity_probe_summary.csv",
+      "label_feature_audit.csv",
+      "leakage_audit.csv",
+      "local_artifact_manifest.csv",
+      "metric_summary.csv",
+      "metrics_by_seed.csv",
+      "model_split_audit.csv",
+      "report.md",
+      "run_summary.json",
+      "target_generation_summary.csv",
+      "target_reliability_summary.csv",
+      "transfer_summary.csv"
+    ],
+    "transfer_rows": 2
+  },
+  "run_id": "P5_MV12_two_stage_latent_target",
+  "scope": "two_stage_phq_latent_target_minimal_validation",
+  "status": "complete",
+  "verdict": {
+    "conditional_identity_ba_m12a": 0.4883333333333333,
+    "conditional_identity_improved_vs_mv09": true,
+    "conditional_identity_preferred_threshold_passed": true,
+    "external_transfer_observed_gate_passed": true,
+    "external_transfer_theta_gate_passed": false,
+    "full_method_allowed": false,
+    "leakage_gate_passed": true,
+    "m12a_cmdc_delta_observed_macro_mae_vs_B3": 0.06240100216092703,
+    "m12a_cmdc_delta_theta_mae_vs_B0": -0.19037858807024066,
+    "m12a_edaic_delta_observed_macro_mae_vs_B3": 0.0086759822152781,
+    "m12a_edaic_delta_theta_mae_vs_B0": -0.08964170075929445,
+    "m12a_pooled_theta_mae": 0.6703545272049528,
+    "measurement_optimizer_all_success": true,
+    "mv09_conditional_identity_ba_reference": 0.9911030655391121,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_theta_gain_not_observed_scale_safe",
+    "preferred_conditional_identity_ba_threshold": 0.7,
+    "same_dataset_observed_gate_passed": false,
+    "same_dataset_theta_gate_passed": true,
+    "short_read": "MV12 runs the predeclared two-stage PHQ latent-target test. A pass requires theta utility, observed-scale safety, external transfer, conditional shared-latent identity, leakage control, and artifact hygiene; design or same-dataset gains alone are not enough."
+  }
+}

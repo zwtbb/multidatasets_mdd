@@ -76,12 +76,16 @@ PHQ-9 scale-specific difference. The current data cannot separate form,
 language, country, protocol, setting, translation, sample severity, and
 population effects.
 
-The current BGE-linked MV07 -> MV12 -> MV15 -> MV16 feature-level chain is now
-legacy/diagnostic until a multilingual feature-contract sensitivity is run.
+The legacy BGE-linked MV07 -> MV12 -> MV15 -> MV16 feature-level chain remains
+diagnostic because its original E-DAIC feature contract used a Chinese encoder.
 Local audit found that E-DAIC MV07 feature generation used
 `BAAI/bge-small-zh-v1.5`, a Chinese model, on English E-DAIC transcripts, and
 the available transcript CSVs do not expose speaker roles for participant-only
-filtering. This does not affect label-only MV10/MV11/MV13/MV14.
+filtering. MV17a now regenerates E-DAIC/CMDC/PDCH features with BGE-M3 and
+multilingual-E5 and reruns MV07/MV12/MV15. Both multilingual encoders reproduce
+the blocked feature-level result, so the negative feature-level conclusion no
+longer depends only on the old Chinese-BGE contract. This does not affect
+label-only MV10/MV11/MV13/MV14.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate artifacts. The next research route is no longer
@@ -198,18 +202,20 @@ Blocked claims:
 - Positive EATD SDS external generalization.
 - EATD-driven valence-adversarial method design.
 - Positive MPDD context-conditioning or calibration.
-- Strong feature-level claims from the current BGE-linked MV07/MV12/MV15/MV16
-  chain until multilingual feature-contract sensitivity is complete.
+- Positive feature-invariance claims from the MV07/MV12/MV15/MV16 chain; MV17a
+  multilingual sensitivity reproduces the blocked result rather than reversing
+  it.
 - Personality-aware fusion, evidence-retrieval networks, extra shallow BGE
   heads, extra projection dimensions, EATD valence-adversarial modules, or
   additional MV16 tuning without a new predeclared contract.
 
 ## Next Critical Experiments
 
-1. MV17a multilingual feature-contract sensitivity:
-   regenerate E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then
-   rerun MV07, MV12, and MV15 only. Do not rerun MV16 before reviewing these
-   results.
+1. Done: MV17a multilingual feature-contract sensitivity.
+   BGE-M3 and multilingual-E5 regenerated E-DAIC/CMDC/PDCH features and
+   reran MV07, MV12, and MV15. Both encoders reproduce the blocked
+   feature-level pattern. Do not rerun MV16 unless a new explicit need is
+   identified.
 2. MV18 CMDC-HAMD versus PDCH-HAMD same-language/same-scale control:
    use exploratory item distribution, severity-conditioned ordinal regression,
    bootstrap threshold differences, or partial-pooling DIF because CMDC HAMD is
@@ -653,9 +659,11 @@ Tracked outputs:
    2017.
 21. Done: predeclare the post-review MV17 measurement-validity route and
    feature-contract caveat.
-22. Next: design and run MV17a multilingual BGE-M3 plus multilingual-E5
-   feature-contract sensitivity before any renewed feature-level claim.
-23. Parallel writing: prepare manuscript edits from existing aggregate
+22. Done: run MV17a multilingual BGE-M3 plus multilingual-E5 feature-contract
+   sensitivity for MV07/MV12/MV15; both encoders reproduce the blocked result.
+23. Next: predeclare and run MV18 CMDC-HAMD versus PDCH-HAMD same-scale
+   exploratory control.
+24. Parallel writing: prepare manuscript edits from existing aggregate
    summaries only; do not export row-level predictions, raw text, subject
    locators, learned parameters, or model files. Insert generated citation keys
    and adapt references to the target venue style after full reference

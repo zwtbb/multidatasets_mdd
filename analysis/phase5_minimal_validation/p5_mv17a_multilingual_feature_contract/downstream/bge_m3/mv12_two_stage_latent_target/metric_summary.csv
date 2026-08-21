@@ -1,0 +1,581 @@
+protocol,model,dataset_slice,metric,mean,std,seed_count,participant_count_mean,ci95_low,ci95_high
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Observed Anchor Item MAE,0.8770657059756741,0.03561766257252746,5,15.4,0.8458454482086402,0.9082859637427081
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Observed DIF-Aware Item MAE,0.828139652741054,0.04729514265863536,5,15.4,0.7866836323768727,0.8695956731052354
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Observed Macro Item MAE,0.8479795742993126,0.019012248514418878,5,15.4,0.8313146037066355,0.8646445448919897
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Observed Sensitivity Item MAE,0.8096472325048476,0.1089601225254316,5,15.4,0.7141394741098477,0.9051549908998475
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Observed Total MAE,6.228574828133263,0.15033737636010042,5,15.4,6.096798307638003,6.360351348628524
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Observed Total RMSE,7.1869362492402145,0.5515769792698278,5,15.4,6.703457710015455,7.670414788464974
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Observed Total Spearman,,0.0,5,15.4,,
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Theta MAE,0.8049904439113883,0.1582242327271474,5,15.4,0.666300789005654,0.9436800988171226
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Theta RMSE,0.9625881566133214,0.14554650999576388,5,15.4,0.8350110156398762,1.0901652975867666
+cmdc_subject_cv_phq,B0_train_mean_theta,cmdc,Theta Spearman,,0.0,5,15.4,,
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Observed Anchor Item MAE,0.8770657059756741,0.03561766257252746,5,15.4,0.8458454482086402,0.9082859637427081
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Observed DIF-Aware Item MAE,0.828139652741054,0.04729514265863536,5,15.4,0.7866836323768727,0.8695956731052354
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Observed Macro Item MAE,0.8479795742993126,0.019012248514418878,5,15.4,0.8313146037066355,0.8646445448919897
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Observed Sensitivity Item MAE,0.8096472325048476,0.1089601225254316,5,15.4,0.7141394741098477,0.9051549908998475
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Observed Total MAE,6.228574828133263,0.15033737636010042,5,15.4,6.096798307638003,6.360351348628524
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Observed Total RMSE,7.1869362492402145,0.5515769792698278,5,15.4,6.703457710015455,7.670414788464974
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Observed Total Spearman,,0.0,5,15.4,,
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Theta MAE,0.8049904439113883,0.1582242327271474,5,15.4,0.666300789005654,0.9436800988171226
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Theta RMSE,0.9625881566133214,0.14554650999576388,5,15.4,0.8350110156398762,1.0901652975867666
+cmdc_subject_cv_phq,B0_train_mean_theta,pooled,Theta Spearman,,0.0,5,15.4,,
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Observed Anchor Item MAE,0.8770657059756741,0.03561766257252746,5,15.4,0.8458454482086402,0.9082859637427081
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Observed DIF-Aware Item MAE,0.828139652741054,0.047295142658635374,5,15.4,0.7866836323768726,0.8695956731052356
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Observed Macro Item MAE,0.8479795742993126,0.019012248514418822,5,15.4,0.8313146037066356,0.8646445448919896
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Observed Sensitivity Item MAE,0.8096472325048474,0.10896012252543152,5,15.4,0.7141394741098476,0.9051549908998472
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Observed Total MAE,6.228574828133263,0.15033737636010042,5,15.4,6.096798307638003,6.360351348628524
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Observed Total RMSE,7.1869362492402145,0.5515769792698278,5,15.4,6.703457710015455,7.670414788464974
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Observed Total Spearman,,0.0,5,15.4,,
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Theta MAE,0.8049904439113883,0.15822423272714742,5,15.4,0.666300789005654,0.9436800988171226
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Theta RMSE,0.9625881566133214,0.14554650999576388,5,15.4,0.8350110156398762,1.0901652975867666
+cmdc_subject_cv_phq,B1_train_mean_observed_total,cmdc,Theta Spearman,,0.0,5,15.4,,
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Observed Anchor Item MAE,0.8770657059756741,0.03561766257252746,5,15.4,0.8458454482086402,0.9082859637427081
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Observed DIF-Aware Item MAE,0.828139652741054,0.047295142658635374,5,15.4,0.7866836323768726,0.8695956731052356
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Observed Macro Item MAE,0.8479795742993126,0.019012248514418822,5,15.4,0.8313146037066356,0.8646445448919896
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Observed Sensitivity Item MAE,0.8096472325048474,0.10896012252543152,5,15.4,0.7141394741098476,0.9051549908998472
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Observed Total MAE,6.228574828133263,0.15033737636010042,5,15.4,6.096798307638003,6.360351348628524
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Observed Total RMSE,7.1869362492402145,0.5515769792698278,5,15.4,6.703457710015455,7.670414788464974
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Observed Total Spearman,,0.0,5,15.4,,
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Theta MAE,0.8049904439113883,0.15822423272714742,5,15.4,0.666300789005654,0.9436800988171226
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Theta RMSE,0.9625881566133214,0.14554650999576388,5,15.4,0.8350110156398762,1.0901652975867666
+cmdc_subject_cv_phq,B1_train_mean_observed_total,pooled,Theta Spearman,,0.0,5,15.4,,
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Observed Anchor Item MAE,0.6532712972835465,0.07987485634379456,5,15.4,0.5832578987602666,0.7232846958068264
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Observed DIF-Aware Item MAE,0.6314787084896996,0.07116397299521696,5,15.4,0.5691007358725239,0.6938566811068753
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Observed Macro Item MAE,0.625808836525799,0.06513818850905391,5,15.4,0.5687126968903224,0.6829049761612755
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Observed Sensitivity Item MAE,0.5652140430464032,0.05443694481065109,5,15.4,0.5174979570854673,0.6129301290073391
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total MAE,3.6820118975371594,0.5826975920031846,5,15.4,3.1712549385276922,4.192768856546627
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total RMSE,4.747020426712326,0.5249948626237837,5,15.4,4.286842140051668,5.207198713372984
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total Spearman,0.6422547958517316,0.09807524404041283,5,15.4,0.5562880541187079,0.7282215375847554
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Theta MAE,0.5889504987972998,0.09185422736220598,5,15.4,0.5084367186074752,0.6694642789871244
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Theta RMSE,0.7061924612747756,0.08629505409788704,5,15.4,0.630551511297496,0.7818334112520553
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,cmdc,Theta Spearman,0.6085644825640479,0.0835668916549224,5,15.4,0.5353148724038115,0.6818140927242844
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Observed Anchor Item MAE,0.6532712972835465,0.07987485634379456,5,15.4,0.5832578987602666,0.7232846958068264
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Observed DIF-Aware Item MAE,0.6314787084896996,0.07116397299521696,5,15.4,0.5691007358725239,0.6938566811068753
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Observed Macro Item MAE,0.625808836525799,0.06513818850905391,5,15.4,0.5687126968903224,0.6829049761612755
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Observed Sensitivity Item MAE,0.5652140430464032,0.05443694481065109,5,15.4,0.5174979570854673,0.6129301290073391
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Observed Total MAE,3.6820118975371594,0.5826975920031846,5,15.4,3.1712549385276922,4.192768856546627
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Observed Total RMSE,4.747020426712326,0.5249948626237837,5,15.4,4.286842140051668,5.207198713372984
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Observed Total Spearman,0.6422547958517316,0.09807524404041283,5,15.4,0.5562880541187079,0.7282215375847554
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Theta MAE,0.5889504987972998,0.09185422736220598,5,15.4,0.5084367186074752,0.6694642789871244
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Theta RMSE,0.7061924612747756,0.08629505409788704,5,15.4,0.630551511297496,0.7818334112520553
+cmdc_subject_cv_phq,B2_direct_total_allocation_ridge,pooled,Theta Spearman,0.6085644825640479,0.0835668916549224,5,15.4,0.5353148724038115,0.6818140927242844
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Observed Anchor Item MAE,0.6439770685950796,0.08116318491767235,5,15.4,0.5728344002865297,0.7151197369036296
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Observed DIF-Aware Item MAE,0.6210840692798852,0.06843939993430717,5,15.4,0.5610942902476623,0.6810738483121082
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Observed Macro Item MAE,0.6138074832215026,0.05837633318473247,5,15.4,0.562638371104433,0.6649765953385721
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Observed Sensitivity Item MAE,0.5461917264159662,0.012284044937326048,5,15.4,0.5354242862847052,0.5569591665472273
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Observed Total MAE,3.4520368542244144,0.5302944666187402,5,15.4,2.9872132598474277,3.916860448601401
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Observed Total RMSE,4.515647243465322,0.5766038104746182,5,15.4,4.010231719473115,5.021062767457529
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Observed Total Spearman,0.6510017542434514,0.09982191915343638,5,15.4,0.5635039842697952,0.7384995242171076
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Theta MAE,0.5900695360898937,0.06183477730998733,5,15.4,0.5358689640379259,0.6442701081418614
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Theta RMSE,0.7104716893324874,0.06641942798898523,5,15.4,0.6522524937765584,0.7686908848884164
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,cmdc,Theta Spearman,0.6121586718209235,0.07579138627307241,5,15.4,0.5457245926292341,0.678592751012613
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Observed Anchor Item MAE,0.6439770685950796,0.08116318491767235,5,15.4,0.5728344002865297,0.7151197369036296
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Observed DIF-Aware Item MAE,0.6210840692798852,0.06843939993430717,5,15.4,0.5610942902476623,0.6810738483121082
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Observed Macro Item MAE,0.6138074832215026,0.05837633318473247,5,15.4,0.562638371104433,0.6649765953385721
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Observed Sensitivity Item MAE,0.5461917264159662,0.012284044937326048,5,15.4,0.5354242862847052,0.5569591665472273
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Observed Total MAE,3.4520368542244144,0.5302944666187402,5,15.4,2.9872132598474277,3.916860448601401
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Observed Total RMSE,4.515647243465322,0.5766038104746182,5,15.4,4.010231719473115,5.021062767457529
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Observed Total Spearman,0.6510017542434514,0.09982191915343638,5,15.4,0.5635039842697952,0.7384995242171076
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Theta MAE,0.5900695360898937,0.06183477730998733,5,15.4,0.5358689640379259,0.6442701081418614
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Theta RMSE,0.7104716893324874,0.06641942798898523,5,15.4,0.6522524937765584,0.7686908848884164
+cmdc_subject_cv_phq,B3_direct_itemwise_ridge,pooled,Theta Spearman,0.6121586718209235,0.07579138627307241,5,15.4,0.5457245926292341,0.678592751012613
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Anchor Item MAE,0.6941148426821264,0.07688376606405074,5,15.4,0.6267232503862461,0.7615064349780067
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed DIF-Aware Item MAE,0.646300571363704,0.06731631080901465,5,15.4,0.5872952233540274,0.7053059193733806
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Macro Item MAE,0.6608791541495717,0.056246303186828654,5,15.4,0.6115770956453174,0.7101812126538259
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Sensitivity Item MAE,0.6089863598703299,0.057645590285283,5,15.4,0.5584577721457802,0.6595149475948796
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total MAE,4.007728736651836,0.41085028983324806,5,15.4,3.6476025794079234,4.367854893895748
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total RMSE,5.081278383756763,0.48282023649957534,5,15.4,4.658067786824338,5.504488980689189
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total Spearman,0.6157297602784715,0.1376557190818775,5,15.4,0.49506920249786385,0.7363903180590792
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta MAE,0.611830061212544,0.09243240013077123,5,15.4,0.530809490246325,0.6928506321787631
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta RMSE,0.7338880717762124,0.0886604529647078,5,15.4,0.6561737582761688,0.811602385276256
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta Spearman,0.595965198029195,0.10193648927809026,5,15.4,0.5066139256191076,0.6853164704392825
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Anchor Item MAE,0.6941148426821264,0.07688376606405074,5,15.4,0.6267232503862461,0.7615064349780067
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed DIF-Aware Item MAE,0.646300571363704,0.06731631080901465,5,15.4,0.5872952233540274,0.7053059193733806
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Macro Item MAE,0.6608791541495717,0.056246303186828654,5,15.4,0.6115770956453174,0.7101812126538259
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Sensitivity Item MAE,0.6089863598703299,0.057645590285283,5,15.4,0.5584577721457802,0.6595149475948796
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total MAE,4.007728736651836,0.41085028983324806,5,15.4,3.6476025794079234,4.367854893895748
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total RMSE,5.081278383756763,0.48282023649957534,5,15.4,4.658067786824338,5.504488980689189
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total Spearman,0.6157297602784715,0.1376557190818775,5,15.4,0.49506920249786385,0.7363903180590792
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta MAE,0.611830061212544,0.09243240013077123,5,15.4,0.530809490246325,0.6928506321787631
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta RMSE,0.7338880717762124,0.0886604529647078,5,15.4,0.6561737582761688,0.811602385276256
+cmdc_subject_cv_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta Spearman,0.595965198029195,0.10193648927809026,5,15.4,0.5066139256191076,0.6853164704392825
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Observed Anchor Item MAE,0.750085933368588,0.00573327554933395,5,56.0,0.745060495774665,0.7551113709625109
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Observed DIF-Aware Item MAE,0.7506987988214853,0.0007916556589534776,5,56.0,0.7500048820411539,0.7513927156018166
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Observed Macro Item MAE,0.7428559624537282,0.0029425069945557395,5,56.0,0.7402767413534028,0.7454351835540536
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Observed Sensitivity Item MAE,0.7205531842562514,0.006701291137537379,5,56.0,0.7146792435881956,0.7264271249243072
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Observed Total MAE,4.742420865755081,0.007559082571843535,5,56.0,4.735795037743636,4.749046693766526
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Observed Total RMSE,5.701927478056183,0.009750239128134774,5,56.0,5.693381016641126,5.710473939471239
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Observed Total Spearman,,0.0,5,56.0,,
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Theta MAE,0.6920670046330775,0.052108262183435776,5,56.0,0.6463920989919122,0.7377419102742427
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Theta RMSE,0.7965305424600706,0.05389644151114314,5,56.0,0.7492882285300817,0.8437728563900595
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,edaic,Theta Spearman,,0.0,5,56.0,,
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Observed Anchor Item MAE,0.750085933368588,0.00573327554933395,5,56.0,0.745060495774665,0.7551113709625109
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Observed DIF-Aware Item MAE,0.7506987988214853,0.0007916556589534776,5,56.0,0.7500048820411539,0.7513927156018166
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Observed Macro Item MAE,0.7428559624537282,0.0029425069945557395,5,56.0,0.7402767413534028,0.7454351835540536
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Observed Sensitivity Item MAE,0.7205531842562514,0.006701291137537379,5,56.0,0.7146792435881956,0.7264271249243072
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Observed Total MAE,4.742420865755081,0.007559082571843535,5,56.0,4.735795037743636,4.749046693766526
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Observed Total RMSE,5.701927478056183,0.009750239128134774,5,56.0,5.693381016641126,5.710473939471239
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Observed Total Spearman,,0.0,5,56.0,,
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Theta MAE,0.6920670046330775,0.052108262183435776,5,56.0,0.6463920989919122,0.7377419102742427
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Theta RMSE,0.7965305424600706,0.05389644151114314,5,56.0,0.7492882285300817,0.8437728563900595
+cross_cmdc_to_edaic_phq,B0_train_mean_theta,pooled,Theta Spearman,,0.0,5,56.0,,
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Observed Anchor Item MAE,0.750085933368588,0.005733275549333923,5,56.0,0.7450604957746652,0.7551113709625108
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Observed DIF-Aware Item MAE,0.7506987988214853,0.0007916556589534776,5,56.0,0.7500048820411539,0.7513927156018166
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Observed Macro Item MAE,0.7428559624537282,0.0029425069945557395,5,56.0,0.7402767413534028,0.7454351835540536
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Observed Sensitivity Item MAE,0.7205531842562514,0.006701291137537379,5,56.0,0.7146792435881956,0.7264271249243072
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Observed Total MAE,4.742420865755081,0.007559082571843535,5,56.0,4.735795037743636,4.749046693766526
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Observed Total RMSE,5.701927478056183,0.009750239128134774,5,56.0,5.693381016641126,5.710473939471239
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Observed Total Spearman,,0.0,5,56.0,,
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Theta MAE,0.6920670046330775,0.052108262183435776,5,56.0,0.6463920989919122,0.7377419102742427
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Theta RMSE,0.7965305424600706,0.053896441511143166,5,56.0,0.7492882285300816,0.8437728563900596
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,edaic,Theta Spearman,,0.0,5,56.0,,
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Observed Anchor Item MAE,0.750085933368588,0.005733275549333923,5,56.0,0.7450604957746652,0.7551113709625108
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Observed DIF-Aware Item MAE,0.7506987988214853,0.0007916556589534776,5,56.0,0.7500048820411539,0.7513927156018166
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Observed Macro Item MAE,0.7428559624537282,0.0029425069945557395,5,56.0,0.7402767413534028,0.7454351835540536
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Observed Sensitivity Item MAE,0.7205531842562514,0.006701291137537379,5,56.0,0.7146792435881956,0.7264271249243072
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Observed Total MAE,4.742420865755081,0.007559082571843535,5,56.0,4.735795037743636,4.749046693766526
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Observed Total RMSE,5.701927478056183,0.009750239128134774,5,56.0,5.693381016641126,5.710473939471239
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Observed Total Spearman,,0.0,5,56.0,,
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Theta MAE,0.6920670046330775,0.052108262183435776,5,56.0,0.6463920989919122,0.7377419102742427
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Theta RMSE,0.7965305424600706,0.053896441511143166,5,56.0,0.7492882285300816,0.8437728563900596
+cross_cmdc_to_edaic_phq,B1_train_mean_observed_total,pooled,Theta Spearman,,0.0,5,56.0,,
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Observed Anchor Item MAE,0.7223071980125109,0.01925756133706787,5,56.0,0.7054272012501331,0.7391871947748886
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Observed DIF-Aware Item MAE,0.7055942246067793,0.028183181251329105,5,56.0,0.680890577039513,0.7302978721740457
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Observed Macro Item MAE,0.712879561084744,0.02057107632136626,5,56.0,0.6948482176749788,0.7309109044945092
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Observed Sensitivity Item MAE,0.701309623707175,0.019152874644790038,5,56.0,0.6845213888764242,0.7180978585379257
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Observed Total MAE,4.400376590653643,0.1260605706725616,5,56.0,4.289879628573588,4.510873552733698
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Observed Total RMSE,5.503402563189006,0.09349300986757442,5,56.0,5.421452326798904,5.585352799579108
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Observed Total Spearman,0.34301739329098835,0.0437046439570786,5,56.0,0.3047085838013707,0.38132620278060597
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Theta MAE,0.6516313557230309,0.032631962113665744,5,56.0,0.623028179797092,0.6802345316489697
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Theta RMSE,0.7815461641209787,0.04069926347122396,5,56.0,0.745871686776693,0.8172206414652643
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,edaic,Theta Spearman,0.3159322887315187,0.043040320072329025,5,56.0,0.27820578480112873,0.35365879266190864
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Observed Anchor Item MAE,0.7223071980125109,0.01925756133706787,5,56.0,0.7054272012501331,0.7391871947748886
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Observed DIF-Aware Item MAE,0.7055942246067793,0.028183181251329105,5,56.0,0.680890577039513,0.7302978721740457
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Observed Macro Item MAE,0.712879561084744,0.02057107632136626,5,56.0,0.6948482176749788,0.7309109044945092
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Observed Sensitivity Item MAE,0.701309623707175,0.019152874644790038,5,56.0,0.6845213888764242,0.7180978585379257
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Observed Total MAE,4.400376590653643,0.1260605706725616,5,56.0,4.289879628573588,4.510873552733698
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Observed Total RMSE,5.503402563189006,0.09349300986757442,5,56.0,5.421452326798904,5.585352799579108
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Observed Total Spearman,0.34301739329098835,0.0437046439570786,5,56.0,0.3047085838013707,0.38132620278060597
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Theta MAE,0.6516313557230309,0.032631962113665744,5,56.0,0.623028179797092,0.6802345316489697
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Theta RMSE,0.7815461641209787,0.04069926347122396,5,56.0,0.745871686776693,0.8172206414652643
+cross_cmdc_to_edaic_phq,B2_direct_total_allocation_ridge,pooled,Theta Spearman,0.3159322887315187,0.043040320072329025,5,56.0,0.27820578480112873,0.35365879266190864
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Observed Anchor Item MAE,0.8348160544021477,0.0581368574843908,5,56.0,0.7838568519914881,0.8857752568128072
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Observed DIF-Aware Item MAE,0.8228603229077098,0.09392699859098477,5,56.0,0.740529678629098,0.9051909671863216
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Observed Macro Item MAE,0.8073983378226434,0.06061782777034017,5,56.0,0.7542644690738441,0.8605322065714426
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Observed Sensitivity Item MAE,0.7371009195785685,0.10093650120453365,5,56.0,0.6486261753616724,0.8255756637954645
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Observed Total MAE,4.687905976179971,0.31483556707597826,5,56.0,4.411940434131071,4.9638715182288715
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Observed Total RMSE,6.007465083317745,0.43780558662172714,5,56.0,5.623711566692527,6.391218599942964
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Observed Total Spearman,0.25624266040949173,0.09921998332056742,5,56.0,0.16927251045646757,0.3432128103625159
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Theta MAE,0.733256077479893,0.061495793547582805,5,56.0,0.6793526377964392,0.7871595171633468
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Theta RMSE,0.8923464300088846,0.084172038893743,5,56.0,0.8185663849065877,0.9661264751111814
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,edaic,Theta Spearman,0.16610101225886473,0.11092703969003803,5,56.0,0.06886917495328577,0.2633328495644437
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Observed Anchor Item MAE,0.8348160544021477,0.0581368574843908,5,56.0,0.7838568519914881,0.8857752568128072
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Observed DIF-Aware Item MAE,0.8228603229077098,0.09392699859098477,5,56.0,0.740529678629098,0.9051909671863216
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Observed Macro Item MAE,0.8073983378226434,0.06061782777034017,5,56.0,0.7542644690738441,0.8605322065714426
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Observed Sensitivity Item MAE,0.7371009195785685,0.10093650120453365,5,56.0,0.6486261753616724,0.8255756637954645
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Observed Total MAE,4.687905976179971,0.31483556707597826,5,56.0,4.411940434131071,4.9638715182288715
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Observed Total RMSE,6.007465083317745,0.43780558662172714,5,56.0,5.623711566692527,6.391218599942964
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Observed Total Spearman,0.25624266040949173,0.09921998332056742,5,56.0,0.16927251045646757,0.3432128103625159
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Theta MAE,0.733256077479893,0.061495793547582805,5,56.0,0.6793526377964392,0.7871595171633468
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Theta RMSE,0.8923464300088846,0.084172038893743,5,56.0,0.8185663849065877,0.9661264751111814
+cross_cmdc_to_edaic_phq,B3_direct_itemwise_ridge,pooled,Theta Spearman,0.16610101225886473,0.11092703969003803,5,56.0,0.06886917495328577,0.2633328495644437
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Anchor Item MAE,0.7648914866176155,0.05434580778148852,5,56.0,0.7172552857849297,0.8125276874503014
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed DIF-Aware Item MAE,0.7516675443748593,0.06082248501232662,5,56.0,0.6983542856440337,0.8049808031056849
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Macro Item MAE,0.7540967789927386,0.05440749270702068,5,56.0,0.7064065089388755,0.8017870490466018
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Sensitivity Item MAE,0.7349365983608642,0.050632853951864426,5,56.0,0.6905549450550387,0.7793182516666898
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total MAE,4.689749191581626,0.3786246865819319,5,56.0,4.357870021016179,5.021628362147073
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total RMSE,5.734248955171101,0.3526595746297244,5,56.0,5.425129208710118,6.043368701632085
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total Spearman,0.259148003008582,0.035472430477522104,5,56.0,0.22805504678563107,0.29024095923153287
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta MAE,0.6704480349458569,0.04449184731332892,5,56.0,0.6314492112912962,0.7094468586004177
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta RMSE,0.81611481249196,0.07702604510639822,5,56.0,0.7485985071167784,0.8836311178671417
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta Spearman,0.24876700815352076,0.03459568801696255,5,56.0,0.21844255058087392,0.2790914657261676
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Anchor Item MAE,0.7648914866176155,0.05434580778148852,5,56.0,0.7172552857849297,0.8125276874503014
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed DIF-Aware Item MAE,0.7516675443748593,0.06082248501232662,5,56.0,0.6983542856440337,0.8049808031056849
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Macro Item MAE,0.7540967789927386,0.05440749270702068,5,56.0,0.7064065089388755,0.8017870490466018
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Sensitivity Item MAE,0.7349365983608642,0.050632853951864426,5,56.0,0.6905549450550387,0.7793182516666898
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total MAE,4.689749191581626,0.3786246865819319,5,56.0,4.357870021016179,5.021628362147073
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total RMSE,5.734248955171101,0.3526595746297244,5,56.0,5.425129208710118,6.043368701632085
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total Spearman,0.259148003008582,0.035472430477522104,5,56.0,0.22805504678563107,0.29024095923153287
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta MAE,0.6704480349458569,0.04449184731332892,5,56.0,0.6314492112912962,0.7094468586004177
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta RMSE,0.81611481249196,0.07702604510639822,5,56.0,0.7485985071167784,0.8836311178671417
+cross_cmdc_to_edaic_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta Spearman,0.24876700815352076,0.03459568801696255,5,56.0,0.21844255058087392,0.2790914657261676
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Observed Anchor Item MAE,0.8900741308793456,0.037340718429902484,5,15.4,0.8573435480620727,0.9228047136966185
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Observed DIF-Aware Item MAE,0.8839289366053171,0.038109778120286056,5,15.4,0.8505242432474348,0.9173336299631994
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Observed Macro Item MAE,0.865198108384458,0.02421639247140521,5,15.4,0.8439715044879945,0.8864247122809215
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Observed Sensitivity Item MAE,0.796715235173824,0.1115375218448932,5,15.4,0.6989482866661009,0.8944821836815472
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Observed Total MAE,6.41461145194274,0.1695084022980403,5,15.4,6.266030786306787,6.563192117578693
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Observed Total RMSE,7.201058986429419,0.5287520623292291,5,15.4,6.737587369021765,7.664530603837073
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Observed Total Spearman,,0.0,5,15.4,,
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Theta MAE,0.9649936082933548,0.10141043026452146,5,15.4,0.8761034469393578,1.0538837696473518
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Theta RMSE,1.1043081797277958,0.06876117337079579,5,15.4,1.0440363538428548,1.164580005612737
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,cmdc,Theta Spearman,,0.0,5,15.4,,
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Observed Anchor Item MAE,0.8900741308793456,0.037340718429902484,5,15.4,0.8573435480620727,0.9228047136966185
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Observed DIF-Aware Item MAE,0.8839289366053171,0.038109778120286056,5,15.4,0.8505242432474348,0.9173336299631994
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Observed Macro Item MAE,0.865198108384458,0.02421639247140521,5,15.4,0.8439715044879945,0.8864247122809215
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Observed Sensitivity Item MAE,0.796715235173824,0.1115375218448932,5,15.4,0.6989482866661009,0.8944821836815472
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Observed Total MAE,6.41461145194274,0.1695084022980403,5,15.4,6.266030786306787,6.563192117578693
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Observed Total RMSE,7.201058986429419,0.5287520623292291,5,15.4,6.737587369021765,7.664530603837073
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Observed Total Spearman,,0.0,5,15.4,,
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Theta MAE,0.9649936082933548,0.10141043026452146,5,15.4,0.8761034469393578,1.0538837696473518
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Theta RMSE,1.1043081797277958,0.06876117337079579,5,15.4,1.0440363538428548,1.164580005612737
+cross_edaic_to_cmdc_phq,B0_train_mean_theta,pooled,Theta Spearman,,0.0,5,15.4,,
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Observed Anchor Item MAE,0.8900741308793456,0.037340718429902484,5,15.4,0.8573435480620727,0.9228047136966185
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Observed DIF-Aware Item MAE,0.8839289366053171,0.038109778120286056,5,15.4,0.8505242432474348,0.9173336299631994
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Observed Macro Item MAE,0.865198108384458,0.02421639247140521,5,15.4,0.8439715044879945,0.8864247122809215
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Observed Sensitivity Item MAE,0.796715235173824,0.1115375218448932,5,15.4,0.6989482866661009,0.8944821836815472
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Observed Total MAE,6.41461145194274,0.1695084022980403,5,15.4,6.266030786306787,6.563192117578693
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Observed Total RMSE,7.201058986429419,0.5287520623292291,5,15.4,6.737587369021765,7.664530603837073
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Observed Total Spearman,,0.0,5,15.4,,
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Theta MAE,0.9649936082933548,0.10141043026452146,5,15.4,0.8761034469393578,1.0538837696473518
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Theta RMSE,1.1043081797277958,0.06876117337079579,5,15.4,1.0440363538428548,1.164580005612737
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,cmdc,Theta Spearman,,0.0,5,15.4,,
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Observed Anchor Item MAE,0.8900741308793456,0.037340718429902484,5,15.4,0.8573435480620727,0.9228047136966185
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Observed DIF-Aware Item MAE,0.8839289366053171,0.038109778120286056,5,15.4,0.8505242432474348,0.9173336299631994
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Observed Macro Item MAE,0.865198108384458,0.02421639247140521,5,15.4,0.8439715044879945,0.8864247122809215
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Observed Sensitivity Item MAE,0.796715235173824,0.1115375218448932,5,15.4,0.6989482866661009,0.8944821836815472
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Observed Total MAE,6.41461145194274,0.1695084022980403,5,15.4,6.266030786306787,6.563192117578693
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Observed Total RMSE,7.201058986429419,0.5287520623292291,5,15.4,6.737587369021765,7.664530603837073
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Observed Total Spearman,,0.0,5,15.4,,
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Theta MAE,0.9649936082933548,0.10141043026452146,5,15.4,0.8761034469393578,1.0538837696473518
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Theta RMSE,1.1043081797277958,0.06876117337079579,5,15.4,1.0440363538428548,1.164580005612737
+cross_edaic_to_cmdc_phq,B1_train_mean_observed_total,pooled,Theta Spearman,,0.0,5,15.4,,
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Observed Anchor Item MAE,0.9026962689989299,0.09110146763924432,5,15.4,0.8228423117983216,0.9825502261995381
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Observed DIF-Aware Item MAE,0.8830449904132633,0.09343751300216377,5,15.4,0.8011433991704908,0.9649465816560359
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Observed Macro Item MAE,0.8744481270450855,0.05993045948772064,5,15.4,0.8219167631608479,0.926979490929323
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Observed Sensitivity Item MAE,0.8093549797692191,0.08885578859564858,5,15.4,0.7314694470394846,0.8872405124989536
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total MAE,6.126336676748609,0.342046132554561,5,15.4,5.826520022446112,6.426153331051107
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total RMSE,6.73260863169952,0.34233006074783234,5,15.4,6.432543103362597,7.032674160036444
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total Spearman,0.4903064932884762,0.13461471189350419,5,15.4,0.3723114958348297,0.6083014907421227
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Theta MAE,0.9138024618849169,0.13566467926632145,5,15.4,0.7948871274507181,1.0327177963191156
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Theta RMSE,1.0569145648186689,0.11977313644584996,5,15.4,0.9519287818299279,1.16190034780741
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,cmdc,Theta Spearman,0.4644022867382184,0.14130247491600254,5,15.4,0.3405452065321713,0.5882593669442655
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Observed Anchor Item MAE,0.9026962689989299,0.09110146763924432,5,15.4,0.8228423117983216,0.9825502261995381
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Observed DIF-Aware Item MAE,0.8830449904132633,0.09343751300216377,5,15.4,0.8011433991704908,0.9649465816560359
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Observed Macro Item MAE,0.8744481270450855,0.05993045948772064,5,15.4,0.8219167631608479,0.926979490929323
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Observed Sensitivity Item MAE,0.8093549797692191,0.08885578859564858,5,15.4,0.7314694470394846,0.8872405124989536
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Observed Total MAE,6.126336676748609,0.342046132554561,5,15.4,5.826520022446112,6.426153331051107
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Observed Total RMSE,6.73260863169952,0.34233006074783234,5,15.4,6.432543103362597,7.032674160036444
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Observed Total Spearman,0.4903064932884762,0.13461471189350419,5,15.4,0.3723114958348297,0.6083014907421227
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Theta MAE,0.9138024618849169,0.13566467926632145,5,15.4,0.7948871274507181,1.0327177963191156
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Theta RMSE,1.0569145648186689,0.11977313644584996,5,15.4,0.9519287818299279,1.16190034780741
+cross_edaic_to_cmdc_phq,B2_direct_total_allocation_ridge,pooled,Theta Spearman,0.4644022867382184,0.14130247491600254,5,15.4,0.3405452065321713,0.5882593669442655
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Observed Anchor Item MAE,0.9065569530607046,0.09278948472475258,5,15.4,0.8252233836475483,0.9878905224738609
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Observed DIF-Aware Item MAE,0.9774622375152859,0.08299189942537503,5,15.4,0.904716630266076,1.050207844764496
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Observed Macro Item MAE,0.8761767161435168,0.06382006289607625,5,15.4,0.8202359645496529,0.9321174677373807
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Observed Sensitivity Item MAE,0.714130720937372,0.07995355613586073,5,15.4,0.6440483390048211,0.7842131028699229
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Observed Total MAE,6.130901003958557,0.3378607945359462,5,15.4,5.834752960180887,6.427049047736227
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Observed Total RMSE,6.734846046050111,0.3405242065171038,5,15.4,6.436363418737594,7.033328673362629
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Observed Total Spearman,0.4903064932884762,0.13461471189350419,5,15.4,0.3723114958348297,0.6083014907421227
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Theta MAE,0.98713053632997,0.11551021302430763,5,15.4,0.8858813704701793,1.0883797021897608
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Theta RMSE,1.1322584834627132,0.10682091686649249,5,15.4,1.0386258215020394,1.225891145423387
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,cmdc,Theta Spearman,0.4584294426174086,0.11146434116153285,5,15.4,0.3607266398068778,0.5561322454279394
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Observed Anchor Item MAE,0.9065569530607046,0.09278948472475258,5,15.4,0.8252233836475483,0.9878905224738609
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Observed DIF-Aware Item MAE,0.9774622375152859,0.08299189942537503,5,15.4,0.904716630266076,1.050207844764496
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Observed Macro Item MAE,0.8761767161435168,0.06382006289607625,5,15.4,0.8202359645496529,0.9321174677373807
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Observed Sensitivity Item MAE,0.714130720937372,0.07995355613586073,5,15.4,0.6440483390048211,0.7842131028699229
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Observed Total MAE,6.130901003958557,0.3378607945359462,5,15.4,5.834752960180887,6.427049047736227
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Observed Total RMSE,6.734846046050111,0.3405242065171038,5,15.4,6.436363418737594,7.033328673362629
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Observed Total Spearman,0.4903064932884762,0.13461471189350419,5,15.4,0.3723114958348297,0.6083014907421227
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Theta MAE,0.98713053632997,0.11551021302430763,5,15.4,0.8858813704701793,1.0883797021897608
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Theta RMSE,1.1322584834627132,0.10682091686649249,5,15.4,1.0386258215020394,1.225891145423387
+cross_edaic_to_cmdc_phq,B3_direct_itemwise_ridge,pooled,Theta Spearman,0.4584294426174086,0.11146434116153285,5,15.4,0.3607266398068778,0.5561322454279394
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Anchor Item MAE,0.963522267096127,0.08016365828326591,5,15.4,0.8932557225115199,1.033788811680734
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed DIF-Aware Item MAE,0.9449612070695853,0.08858911096944042,5,15.4,0.8673094275855604,1.0226129865536102
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Macro Item MAE,0.9305697931498292,0.04989396988359684,5,15.4,0.8868358002856257,0.9743037860140328
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Sensitivity Item MAE,0.8502734313374776,0.10413753060629537,5,15.4,0.7589928611391782,0.941554001535777
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total MAE,6.62858537400101,0.3571189783066974,5,15.4,6.315556787873783,6.941613960128237
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total RMSE,7.198784991689292,0.3087002751720588,5,15.4,6.928197270105907,7.469372713272677
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total Spearman,0.49150486694592815,0.15141021986416348,5,15.4,0.35878795765698046,0.6242217762348758
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta MAE,0.9976092272710394,0.11870871318853449,5,15.4,0.8935564524042925,1.1016620021377863
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta RMSE,1.1446346177145403,0.11397076392453243,5,15.4,1.0447348384860689,1.2445343969430118
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta Spearman,0.45415453555288776,0.13543804851542973,5,15.4,0.33543785173048496,0.5728712193752906
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Anchor Item MAE,0.963522267096127,0.08016365828326591,5,15.4,0.8932557225115199,1.033788811680734
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed DIF-Aware Item MAE,0.9449612070695853,0.08858911096944042,5,15.4,0.8673094275855604,1.0226129865536102
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Macro Item MAE,0.9305697931498292,0.04989396988359684,5,15.4,0.8868358002856257,0.9743037860140328
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Sensitivity Item MAE,0.8502734313374776,0.10413753060629537,5,15.4,0.7589928611391782,0.941554001535777
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total MAE,6.62858537400101,0.3571189783066974,5,15.4,6.315556787873783,6.941613960128237
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total RMSE,7.198784991689292,0.3087002751720588,5,15.4,6.928197270105907,7.469372713272677
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total Spearman,0.49150486694592815,0.15141021986416348,5,15.4,0.35878795765698046,0.6242217762348758
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta MAE,0.9976092272710394,0.11870871318853449,5,15.4,0.8935564524042925,1.1016620021377863
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta RMSE,1.1446346177145403,0.11397076392453243,5,15.4,1.0447348384860689,1.2445343969430118
+cross_edaic_to_cmdc_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta Spearman,0.45415453555288776,0.13543804851542973,5,15.4,0.33543785173048496,0.5728712193752906
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Observed Anchor Item MAE,0.7482197633654688,0.0,5,56.0,0.7482197633654688,0.7482197633654688
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Observed DIF-Aware Item MAE,0.7463847502191061,0.0,5,56.0,0.7463847502191061,0.7463847502191061
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Observed Macro Item MAE,0.7348406003505696,0.0,5,56.0,0.7348406003505696,0.7348406003505696
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Observed Sensitivity Item MAE,0.6965381244522348,0.0,5,56.0,0.6965381244522348,0.6965381244522348
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Observed Total MAE,4.779907975460122,0.0,5,56.0,4.779907975460122,4.779907975460122
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Observed Total RMSE,5.686107275240542,0.0,5,56.0,5.686107275240542,5.686107275240542
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Observed Total Spearman,,0.0,5,56.0,,
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Theta MAE,0.8133639590211384,0.0,5,56.0,0.8133639590211384,0.8133639590211384
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Theta RMSE,0.9400132122279198,0.0,5,56.0,0.9400132122279198,0.9400132122279198
+edaic_same_dataset_phq,B0_train_mean_theta,edaic,Theta Spearman,,0.0,5,56.0,,
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Observed Anchor Item MAE,0.7482197633654688,0.0,5,56.0,0.7482197633654688,0.7482197633654688
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Observed DIF-Aware Item MAE,0.7463847502191061,0.0,5,56.0,0.7463847502191061,0.7463847502191061
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Observed Macro Item MAE,0.7348406003505696,0.0,5,56.0,0.7348406003505696,0.7348406003505696
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Observed Sensitivity Item MAE,0.6965381244522348,0.0,5,56.0,0.6965381244522348,0.6965381244522348
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Observed Total MAE,4.779907975460122,0.0,5,56.0,4.779907975460122,4.779907975460122
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Observed Total RMSE,5.686107275240542,0.0,5,56.0,5.686107275240542,5.686107275240542
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Observed Total Spearman,,0.0,5,56.0,,
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Theta MAE,0.8133639590211384,0.0,5,56.0,0.8133639590211384,0.8133639590211384
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Theta RMSE,0.9400132122279198,0.0,5,56.0,0.9400132122279198,0.9400132122279198
+edaic_same_dataset_phq,B0_train_mean_theta,pooled,Theta Spearman,,0.0,5,56.0,,
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Observed Anchor Item MAE,0.7482197633654688,0.0,5,56.0,0.7482197633654688,0.7482197633654688
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Observed DIF-Aware Item MAE,0.7463847502191061,0.0,5,56.0,0.7463847502191061,0.7463847502191061
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Observed Macro Item MAE,0.7348406003505696,0.0,5,56.0,0.7348406003505696,0.7348406003505696
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Observed Sensitivity Item MAE,0.6965381244522348,0.0,5,56.0,0.6965381244522348,0.6965381244522348
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Observed Total MAE,4.779907975460122,0.0,5,56.0,4.779907975460122,4.779907975460122
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Observed Total RMSE,5.686107275240542,0.0,5,56.0,5.686107275240542,5.686107275240542
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Observed Total Spearman,,0.0,5,56.0,,
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Theta MAE,0.8133639590211384,0.0,5,56.0,0.8133639590211384,0.8133639590211384
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Theta RMSE,0.9400132122279198,0.0,5,56.0,0.9400132122279198,0.9400132122279198
+edaic_same_dataset_phq,B1_train_mean_observed_total,edaic,Theta Spearman,,0.0,5,56.0,,
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Observed Anchor Item MAE,0.7482197633654688,0.0,5,56.0,0.7482197633654688,0.7482197633654688
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Observed DIF-Aware Item MAE,0.7463847502191061,0.0,5,56.0,0.7463847502191061,0.7463847502191061
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Observed Macro Item MAE,0.7348406003505696,0.0,5,56.0,0.7348406003505696,0.7348406003505696
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Observed Sensitivity Item MAE,0.6965381244522348,0.0,5,56.0,0.6965381244522348,0.6965381244522348
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Observed Total MAE,4.779907975460122,0.0,5,56.0,4.779907975460122,4.779907975460122
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Observed Total RMSE,5.686107275240542,0.0,5,56.0,5.686107275240542,5.686107275240542
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Observed Total Spearman,,0.0,5,56.0,,
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Theta MAE,0.8133639590211384,0.0,5,56.0,0.8133639590211384,0.8133639590211384
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Theta RMSE,0.9400132122279198,0.0,5,56.0,0.9400132122279198,0.9400132122279198
+edaic_same_dataset_phq,B1_train_mean_observed_total,pooled,Theta Spearman,,0.0,5,56.0,,
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Observed Anchor Item MAE,0.7212459460270104,0.0,5,56.0,0.7212459460270104,0.7212459460270104
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Observed DIF-Aware Item MAE,0.6805085547392056,0.0,5,56.0,0.6805085547392056,0.6805085547392056
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Observed Macro Item MAE,0.6977541193151304,0.0,5,56.0,0.6977541193151304,0.6977541193151304
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Observed Sensitivity Item MAE,0.6680160304672955,0.0,5,56.0,0.6680160304672955,0.6680160304672955
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Observed Total MAE,4.223143619991362,0.0,5,56.0,4.223143619991362,4.223143619991362
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Observed Total RMSE,5.290422990478804,0.0,5,56.0,5.290422990478804,5.290422990478804
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Observed Total Spearman,0.3661530858586542,0.0,5,56.0,0.3661530858586542,0.3661530858586542
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Theta MAE,0.7188464019573463,0.0,5,56.0,0.7188464019573463,0.7188464019573463
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Theta RMSE,0.8695389280586279,0.0,5,56.0,0.8695389280586279,0.8695389280586279
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,edaic,Theta Spearman,0.36907067844165525,0.0,5,56.0,0.36907067844165525,0.36907067844165525
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Observed Anchor Item MAE,0.7212459460270104,0.0,5,56.0,0.7212459460270104,0.7212459460270104
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Observed DIF-Aware Item MAE,0.6805085547392056,0.0,5,56.0,0.6805085547392056,0.6805085547392056
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Observed Macro Item MAE,0.6977541193151304,0.0,5,56.0,0.6977541193151304,0.6977541193151304
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Observed Sensitivity Item MAE,0.6680160304672955,0.0,5,56.0,0.6680160304672955,0.6680160304672955
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Observed Total MAE,4.223143619991362,0.0,5,56.0,4.223143619991362,4.223143619991362
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Observed Total RMSE,5.290422990478804,0.0,5,56.0,5.290422990478804,5.290422990478804
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Observed Total Spearman,0.3661530858586542,0.0,5,56.0,0.3661530858586542,0.3661530858586542
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Theta MAE,0.7188464019573463,0.0,5,56.0,0.7188464019573463,0.7188464019573463
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Theta RMSE,0.8695389280586279,0.0,5,56.0,0.8695389280586279,0.8695389280586279
+edaic_same_dataset_phq,B2_direct_total_allocation_ridge,pooled,Theta Spearman,0.36907067844165525,0.0,5,56.0,0.36907067844165525,0.36907067844165525
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Observed Anchor Item MAE,0.7293013289193183,0.0,5,56.0,0.7293013289193183,0.7293013289193183
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Observed DIF-Aware Item MAE,0.6967227320395204,0.0,5,56.0,0.6967227320395204,0.6967227320395204
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Observed Macro Item MAE,0.7176592265374062,0.0,5,56.0,0.7176592265374062,0.7176592265374062
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Observed Sensitivity Item MAE,0.7153115162714677,0.0,5,56.0,0.7153115162714677,0.7153115162714677
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Observed Total MAE,4.212065989888163,0.0,5,56.0,4.212065989888163,4.212065989888163
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Observed Total RMSE,5.291856011830242,0.0,5,56.0,5.291856011830242,5.291856011830242
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Observed Total Spearman,0.3613497282855459,0.0,5,56.0,0.3613497282855459,0.3613497282855459
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Theta MAE,0.7066455235421902,0.0,5,56.0,0.7066455235421902,0.7066455235421902
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Theta RMSE,0.851978721741742,0.0,5,56.0,0.851978721741742,0.851978721741742
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,edaic,Theta Spearman,0.4131603108128553,0.0,5,56.0,0.4131603108128553,0.4131603108128553
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Observed Anchor Item MAE,0.7293013289193183,0.0,5,56.0,0.7293013289193183,0.7293013289193183
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Observed DIF-Aware Item MAE,0.6967227320395204,0.0,5,56.0,0.6967227320395204,0.6967227320395204
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Observed Macro Item MAE,0.7176592265374062,0.0,5,56.0,0.7176592265374062,0.7176592265374062
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Observed Sensitivity Item MAE,0.7153115162714677,0.0,5,56.0,0.7153115162714677,0.7153115162714677
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Observed Total MAE,4.212065989888163,0.0,5,56.0,4.212065989888163,4.212065989888163
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Observed Total RMSE,5.291856011830242,0.0,5,56.0,5.291856011830242,5.291856011830242
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Observed Total Spearman,0.3613497282855459,0.0,5,56.0,0.3613497282855459,0.3613497282855459
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Theta MAE,0.7066455235421902,0.0,5,56.0,0.7066455235421902,0.7066455235421902
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Theta RMSE,0.851978721741742,0.0,5,56.0,0.851978721741742,0.851978721741742
+edaic_same_dataset_phq,B3_direct_itemwise_ridge,pooled,Theta Spearman,0.4131603108128553,0.0,5,56.0,0.4131603108128553,0.4131603108128553
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Anchor Item MAE,0.7026752010614309,0.0,5,56.0,0.7026752010614309,0.7026752010614309
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed DIF-Aware Item MAE,0.6622391938217553,0.0,5,56.0,0.6622391938217553,0.6622391938217553
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Macro Item MAE,0.6814317470048978,0.0,5,56.0,0.6814317470048978,0.6814317470048978
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Sensitivity Item MAE,0.6581373920749746,0.0,5,56.0,0.6581373920749746,0.6581373920749746
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total MAE,4.081553146702983,0.0,5,56.0,4.081553146702983,4.081553146702983
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total RMSE,5.167404880846797,0.0,5,56.0,5.167404880846797,5.167404880846797
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total Spearman,0.4212201494646456,0.0,5,56.0,0.4212201494646456,0.4212201494646456
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta MAE,0.70445517707247,0.0,5,56.0,0.70445517707247,0.70445517707247
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta RMSE,0.8520591765298559,0.0,5,56.0,0.8520591765298559,0.8520591765298559
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta Spearman,0.41501166396063516,0.0,5,56.0,0.41501166396063516,0.41501166396063516
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Anchor Item MAE,0.7026752010614309,0.0,5,56.0,0.7026752010614309,0.7026752010614309
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed DIF-Aware Item MAE,0.6622391938217553,0.0,5,56.0,0.6622391938217553,0.6622391938217553
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Macro Item MAE,0.6814317470048978,0.0,5,56.0,0.6814317470048978,0.6814317470048978
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Sensitivity Item MAE,0.6581373920749746,0.0,5,56.0,0.6581373920749746,0.6581373920749746
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total MAE,4.081553146702983,0.0,5,56.0,4.081553146702983,4.081553146702983
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total RMSE,5.167404880846797,0.0,5,56.0,5.167404880846797,5.167404880846797
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total Spearman,0.4212201494646456,0.0,5,56.0,0.4212201494646456,0.4212201494646456
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta MAE,0.70445517707247,0.0,5,56.0,0.70445517707247,0.70445517707247
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta RMSE,0.8520591765298559,0.0,5,56.0,0.8520591765298559,0.8520591765298559
+edaic_same_dataset_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta Spearman,0.41501166396063516,0.0,5,56.0,0.41501166396063516,0.41501166396063516
+pooled_shared_phq,B0_train_mean_theta,cmdc,Observed Anchor Item MAE,0.8834629893812661,0.038022138327020095,5,15.4,0.8501351156892122,0.91679086307332
+pooled_shared_phq,B0_train_mean_theta,cmdc,Observed DIF-Aware Item MAE,0.8437555983214338,0.04685557423133701,5,15.4,0.8026848766718594,0.8848263199710081
+pooled_shared_phq,B0_train_mean_theta,cmdc,Observed Macro Item MAE,0.8594298057215923,0.018065694852527285,5,15.4,0.8435945259951929,0.8752650854479918
+pooled_shared_phq,B0_train_mean_theta,cmdc,Observed Sensitivity Item MAE,0.8270376458024031,0.12406745952402769,5,15.4,0.7182877226721627,0.9357875689326436
+pooled_shared_phq,B0_train_mean_theta,cmdc,Observed Total MAE,6.462327132705825,0.18163363512121064,5,15.4,6.303118231894309,6.621536033517342
+pooled_shared_phq,B0_train_mean_theta,cmdc,Observed Total RMSE,7.2118655448604345,0.5300292850840643,5,15.4,6.74727439234711,7.676456697373759
+pooled_shared_phq,B0_train_mean_theta,cmdc,Observed Total Spearman,,0.0,5,15.4,,
+pooled_shared_phq,B0_train_mean_theta,cmdc,Theta MAE,0.8913571573671171,0.10471722989223671,5,15.4,0.7995684583409475,0.9831458563932867
+pooled_shared_phq,B0_train_mean_theta,cmdc,Theta RMSE,1.0319313281602065,0.08396498533718054,5,15.4,0.9583327735022726,1.1055298828181404
+pooled_shared_phq,B0_train_mean_theta,cmdc,Theta Spearman,,0.0,5,15.4,,
+pooled_shared_phq,B0_train_mean_theta,edaic,Observed Anchor Item MAE,0.7467046543396842,0.0003368782252976895,5,56.0,0.7464093675558174,0.7469999411235511
+pooled_shared_phq,B0_train_mean_theta,edaic,Observed DIF-Aware Item MAE,0.7487467920054215,0.0005475964819860854,5,56.0,0.7482668025259009,0.749226781484942
+pooled_shared_phq,B0_train_mean_theta,edaic,Observed Macro Item MAE,0.7320996695429407,0.0006187656803837482,5,56.0,0.7315572975105358,0.7326420415753456
+pooled_shared_phq,B0_train_mean_theta,edaic,Observed Sensitivity Item MAE,0.6862425774869728,0.002348858488047774,5,56.0,0.6841837122454424,0.6883014427285032
+pooled_shared_phq,B0_train_mean_theta,edaic,Observed Total MAE,4.762524251463069,0.0039852439249547025,5,56.0,4.759031031144407,4.766017471781731
+pooled_shared_phq,B0_train_mean_theta,edaic,Observed Total RMSE,5.686606326292944,0.001066306609007576,5,56.0,5.685671667340405,5.687540985245483
+pooled_shared_phq,B0_train_mean_theta,edaic,Observed Total Spearman,,0.0,5,56.0,,
+pooled_shared_phq,B0_train_mean_theta,edaic,Theta MAE,0.7602444933361326,0.002717902582070038,5,56.0,0.7578621466836781,0.7626268399885872
+pooled_shared_phq,B0_train_mean_theta,edaic,Theta RMSE,0.881329653735175,0.0022247133492733114,5,56.0,0.8793796065056398,0.8832797009647102
+pooled_shared_phq,B0_train_mean_theta,edaic,Theta Spearman,,0.0,5,56.0,,
+pooled_shared_phq,B0_train_mean_theta,pooled,Observed Anchor Item MAE,0.7762721042213989,0.008566626074988636,5,71.4,0.7687631253907322,0.7837810830520656
+pooled_shared_phq,B0_train_mean_theta,pooled,Observed DIF-Aware Item MAE,0.7691673352574238,0.010129996413525789,5,71.4,0.7602880019051744,0.7780466686096731
+pooled_shared_phq,B0_train_mean_theta,pooled,Observed Macro Item MAE,0.759596337660836,0.003848076770626548,5,71.4,0.7562233496540666,0.7629693256676054
+pooled_shared_phq,B0_train_mean_theta,pooled,Observed Sensitivity Item MAE,0.7166738069431223,0.025063619086675003,5,71.4,0.6947045761754554,0.7386430377107892
+pooled_shared_phq,B0_train_mean_theta,pooled,Observed Total MAE,5.1292649936274755,0.039348378796507676,5,71.4,5.0947746189084615,5.163755368346489
+pooled_shared_phq,B0_train_mean_theta,pooled,Observed Total RMSE,6.051073983293067,0.13592005895381584,5,71.4,5.931934798693074,6.17021316789306
+pooled_shared_phq,B0_train_mean_theta,pooled,Observed Total Spearman,-0.0845564410582211,0.03640839464873437,5,71.4,-0.11646980604961527,-0.05264307606682694
+pooled_shared_phq,B0_train_mean_theta,pooled,Theta MAE,0.7883394445089292,0.022634440455873272,5,71.4,0.7684994826920637,0.8081794063257948
+pooled_shared_phq,B0_train_mean_theta,pooled,Theta RMSE,0.9161552802730212,0.019976182871580633,5,71.4,0.8986453839629472,0.9336651765830951
+pooled_shared_phq,B0_train_mean_theta,pooled,Theta Spearman,,0.0,5,71.4,,
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Observed Anchor Item MAE,0.8835308283730159,0.03833572106016695,5,15.4,0.8499280872962705,0.9171335694497613
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Observed DIF-Aware Item MAE,0.8686557870370372,0.036671751906650826,5,15.4,0.8365115792310639,0.9007999948430104
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Observed Macro Item MAE,0.8573303406084657,0.022871705997960727,5,15.4,0.8372824063743164,0.877378274842615
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Observed Sensitivity Item MAE,0.7936039186507936,0.11501355696012071,5,15.4,0.6927900910256191,0.8944177462759682
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Observed Total MAE,6.363558994708994,0.16112837003442299,5,15.4,6.222323751216716,6.504794238201272
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Observed Total RMSE,7.193005412364879,0.5339459028732281,5,15.4,6.72498119299312,7.661029631736637
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Observed Total Spearman,,0.0,5,15.4,,
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Theta MAE,0.8913571573671171,0.10471722989223671,5,15.4,0.7995684583409475,0.9831458563932867
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Theta RMSE,1.0319313281602065,0.08396498533718054,5,15.4,0.9583327735022726,1.1055298828181404
+pooled_shared_phq,B1_train_mean_observed_total,cmdc,Theta Spearman,,0.0,5,15.4,,
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Observed Anchor Item MAE,0.7443344671201814,0.0013187219912875656,5,56.0,0.7431785563299318,0.7454903779104309
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Observed DIF-Aware Item MAE,0.7475673185941043,0.00021204224924167657,5,56.0,0.747381455367809,0.7477531818203996
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Observed Macro Item MAE,0.732406214569161,0.0011352558997107882,5,56.0,0.7314111188986255,0.7334013102396965
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Observed Sensitivity Item MAE,0.6933886054421768,0.002258593684163828,5,56.0,0.6914088607897307,0.695368350094623
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Observed Total MAE,4.769348072562359,0.00247347089879479,5,56.0,4.76717997972689,4.771516165397827
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Observed Total RMSE,5.685119799143189,0.0002252551593025851,5,56.0,5.684922354290584,5.685317243995795
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Observed Total Spearman,,0.0,5,56.0,,
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Theta MAE,0.7602444933361326,0.002717902582070038,5,56.0,0.7578621466836781,0.7626268399885872
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Theta RMSE,0.881329653735175,0.0022247133492733114,5,56.0,0.8793796065056398,0.8832797009647102
+pooled_shared_phq,B1_train_mean_observed_total,edaic,Theta Spearman,,0.0,5,56.0,,
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Observed Anchor Item MAE,0.7744334933210373,0.008417976591385597,5,71.4,0.7670548115076319,0.7818121751344427
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Observed DIF-Aware Item MAE,0.7736986921529174,0.008244438082623547,5,71.4,0.766472123549216,0.7809252607566188
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Observed Macro Item MAE,0.7594094183154482,0.005050309504281966,5,71.4,0.754982626854725,0.7638362097761714
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Observed Sensitivity Item MAE,0.7150719944668008,0.02513848663916094,5,71.4,0.6930371393959602,0.7371068495376414
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Observed Total MAE,5.113462329532752,0.037773228292346986,5,71.4,5.08035263510576,5.146572023959744
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Observed Total RMSE,6.045263316721187,0.13623486402165644,5,71.4,5.925848193312905,6.16467844012947
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Observed Total Spearman,,0.0,5,71.4,,
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Theta MAE,0.7883394445089292,0.022634440455873272,5,71.4,0.7684994826920637,0.8081794063257948
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Theta RMSE,0.9161552802730212,0.019976182871580633,5,71.4,0.8986453839629472,0.9336651765830951
+pooled_shared_phq,B1_train_mean_observed_total,pooled,Theta Spearman,,0.0,5,71.4,,
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Observed Anchor Item MAE,0.6722792245480333,0.08307136175196905,5,15.4,0.5994639654985688,0.7450944835974979
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Observed DIF-Aware Item MAE,0.6764018189020582,0.08536384349848707,5,15.4,0.6015771110038162,0.7512265268003002
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Observed Macro Item MAE,0.6505019408454686,0.06824459336555821,5,15.4,0.5906829172994786,0.7103209643914586
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Observed Sensitivity Item MAE,0.5810474953837494,0.05881445556605974,5,15.4,0.529494352067252,0.6326006387002469
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total MAE,3.879714745915826,0.502824467943558,5,15.4,3.438969667015618,4.320459824816034
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total RMSE,4.968687986193989,0.5893360439519026,5,15.4,4.452112167494024,5.485263804893954
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Observed Total Spearman,0.622471552294835,0.06619463580662412,5,15.4,0.5644493957743293,0.6804937088153407
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Theta MAE,0.6284922703531732,0.1268723104558901,5,15.4,0.5172837869815768,0.7397007537247696
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Theta RMSE,0.768790734805572,0.10561092125096087,5,15.4,0.6762186807648299,0.8613627888463141
+pooled_shared_phq,B2_direct_total_allocation_ridge,cmdc,Theta Spearman,0.6106707037346968,0.07360643315062013,5,15.4,0.5461518203971132,0.6751895870722804
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Observed Anchor Item MAE,0.7352560892776341,0.005760641075882027,5,56.0,0.7302066647420914,0.7403055138131768
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Observed DIF-Aware Item MAE,0.6888334076836513,0.005700332856788272,5,56.0,0.6838368456328869,0.6938299697344157
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Observed Macro Item MAE,0.7099138167923555,0.005390582663957533,5,56.0,0.7051887627565787,0.7146388708281324
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Observed Sensitivity Item MAE,0.6803096809305029,0.005070828618652461,5,56.0,0.6758649036730281,0.6847544581879778
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Observed Total MAE,4.3658944944108296,0.05331579322268595,5,56.0,4.319161141146092,4.412627847675567
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Observed Total RMSE,5.346403500990594,0.07735730844814429,5,56.0,5.278596830493979,5.41421017148721
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Observed Total Spearman,0.3309581987265508,0.02538214360005949,5,56.0,0.30870976891282825,0.35320662854027335
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Theta MAE,0.6940566473620613,0.007800296222906391,5,56.0,0.6872193862632323,0.7008939084608903
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Theta RMSE,0.8259368614795319,0.010189041303595875,5,56.0,0.8170057729992177,0.8348679499598461
+pooled_shared_phq,B2_direct_total_allocation_ridge,edaic,Theta Spearman,0.3429734559214706,0.025980901502906245,5,56.0,0.3202001916655985,0.3657467201773427
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Observed Anchor Item MAE,0.7217584252089904,0.021079621967506956,5,71.4,0.7032813218865277,0.740235528531453
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Observed DIF-Aware Item MAE,0.6863348330289322,0.01980760811117942,5,71.4,0.668972699011289,0.7036969670465754
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Observed Macro Item MAE,0.6972112831650497,0.01697277418025109,5,71.4,0.6823339906462021,0.7120885756838972
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Observed Sensitivity Item MAE,0.6589934492132861,0.012506995567976444,5,71.4,0.6480305842378468,0.6699563141887254
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Observed Total MAE,4.26147026620452,0.13765282654645455,5,71.4,4.140812243842999,4.382128288566041
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Observed Total RMSE,5.273149476932658,0.15053524455800274,5,71.4,5.141199517314888,5.405099436550428
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Observed Total Spearman,0.4539111580071877,0.036740658015078705,5,71.4,0.4217065513341506,0.48611576468022477
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Theta MAE,0.67975247123599,0.031709974569806496,5,71.4,0.6519574530244623,0.7075474894475178
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Theta RMSE,0.8147034404737823,0.027450562966321018,5,71.4,0.7906419611469562,0.8387649198006084
+pooled_shared_phq,B2_direct_total_allocation_ridge,pooled,Theta Spearman,0.4481700638604159,0.03297569003570402,5,71.4,0.41926559712669564,0.4770745305941362
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Observed Anchor Item MAE,0.6707403538351636,0.08099575116483416,5,15.4,0.5997444476818187,0.7417362599885086
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Observed DIF-Aware Item MAE,0.6563582096336991,0.06813737102203885,5,15.4,0.596633170615645,0.7160832486517531
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Observed Macro Item MAE,0.6505107441985477,0.06413451966812891,5,15.4,0.5942943590911122,0.7067271293059832
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Observed Sensitivity Item MAE,0.604204059490165,0.054096544254996264,5,15.4,0.556786347771782,0.6516217712085479
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Observed Total MAE,3.873301407053814,0.517898017914234,5,15.4,3.4193437790541106,4.327259035053517
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Observed Total RMSE,4.966030259504815,0.593399375933298,5,15.4,4.445892773286834,5.4861677457227955
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Observed Total Spearman,0.622471552294835,0.06619463580662412,5,15.4,0.5644493957743293,0.6804937088153407
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Theta MAE,0.6302842251075702,0.12373983656436474,5,15.4,0.5218214761631779,0.7387469740519625
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Theta RMSE,0.773048533908546,0.10311322621217946,5,15.4,0.6826658060981654,0.8634312617189266
+pooled_shared_phq,B3_direct_itemwise_ridge,cmdc,Theta Spearman,0.593412793898439,0.063649748435647,5,15.4,0.5376213295113149,0.6492042582855632
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Observed Anchor Item MAE,0.7404301508963546,0.005705885619142455,5,56.0,0.7354287216347881,0.745431580157921
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Observed DIF-Aware Item MAE,0.7123651506309814,0.008674507462408644,5,56.0,0.7047616095949296,0.7199686916670331
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Observed Macro Item MAE,0.7238015310646523,0.006477463052502144,5,56.0,0.7181237843634541,0.7294792777658504
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Observed Sensitivity Item MAE,0.7019806718349189,0.006989426013271185,5,56.0,0.695854169812682,0.7081071738571557
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Observed Total MAE,4.361400769828988,0.06079576056948449,5,56.0,4.3081109361051375,4.414690603552838
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Observed Total RMSE,5.34801778790456,0.07821395327850025,5,56.0,5.27946023510723,5.41657534070189
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Observed Total Spearman,0.33114347109008496,0.024819308464724844,5,56.0,0.309388388024474,0.35289855415569593
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Theta MAE,0.6832085007388979,0.008142340125355385,5,56.0,0.6760714249405402,0.6903455765372557
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Theta RMSE,0.8149981821780063,0.009514570508485622,5,56.0,0.8066582934160004,0.8233380709400123
+pooled_shared_phq,B3_direct_itemwise_ridge,edaic,Theta Spearman,0.37201227288757205,0.0199483972657219,5,56.0,0.3545267317348686,0.3894978140402755
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Observed Anchor Item MAE,0.7255334870937272,0.020176843791021404,5,71.4,0.7078477037327848,0.7432192704546696
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Observed DIF-Aware Item MAE,0.7004347956386515,0.016946270947179373,5,71.4,0.6855807342278666,0.7152888570494365
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Observed Macro Item MAE,0.7081082483624652,0.01652076423183539,5,71.4,0.6936271600323138,0.7225893366926166
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Observed Sensitivity Item MAE,0.6809312236237549,0.011902380426053665,5,71.4,0.6704983271868811,0.6913641200606288
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Observed Total MAE,4.256504119235537,0.14415172557764222,5,71.4,4.130149560709059,4.382858677762014
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Observed Total RMSE,5.273944984929189,0.15156268955346947,5,71.4,5.141094430065041,5.406795539793337
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Observed Total Spearman,0.45405008390205115,0.03669567022683981,5,71.4,0.4218849107640566,0.4862152570400457
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Theta MAE,0.6716257799176606,0.030419767751271812,5,71.4,0.6449616778454336,0.6982898819898876
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Theta RMSE,0.8068976788276965,0.026563412674259473,5,71.4,0.7836138210177191,0.8301815366376738
+pooled_shared_phq,B3_direct_itemwise_ridge,pooled,Theta Spearman,0.45728993851947675,0.032286427217516726,5,71.4,0.4289896372839618,0.4855902397549917
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Anchor Item MAE,0.6939326811608862,0.07766472533706512,5,15.4,0.6258565478803353,0.7620088144414372
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed DIF-Aware Item MAE,0.6532710933547966,0.07404371565606463,5,15.4,0.5883689150014553,0.7181732717081379
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Macro Item MAE,0.6638268647040062,0.05955329515132412,5,15.4,0.6116260999369583,0.7160276294710541
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Sensitivity Item MAE,0.6141710031394559,0.06950717178013054,5,15.4,0.5532452808179982,0.6750967254609137
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total MAE,4.051485541635362,0.4064537412359834,5,15.4,3.6952131291511567,4.407757954119567
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total RMSE,5.123328314836811,0.5509819406593743,5,15.4,4.640371349950677,5.606285279722944
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Observed Total Spearman,0.6002176106964677,0.1141010046878569,5,15.4,0.5002036704055042,0.7002315509874313
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta MAE,0.6313357445050494,0.11101664202648971,5,15.4,0.5340253672886929,0.7286461217214059
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta RMSE,0.777499799233121,0.09184684338529597,5,15.4,0.6969924913844279,0.858007107081814
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,cmdc,Theta Spearman,0.5811657806215289,0.09966754042849522,5,15.4,0.49380332956658596,0.6685282316764718
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Anchor Item MAE,0.721467201325783,0.00487799168124673,5,56.0,0.7171914530965481,0.725742949555018
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed DIF-Aware Item MAE,0.6767864486246651,0.008748087360072248,5,56.0,0.6691184119646556,0.6844544852846746
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Macro Item MAE,0.6973345604867518,0.005600328648443335,5,56.0,0.6924256559894824,0.7022434649840212
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Sensitivity Item MAE,0.6696173906707757,0.004908269223529593,5,56.0,0.6653151030055883,0.6739196783359632
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total MAE,4.25244000129782,0.05914078030258079,5,56.0,4.200600821738231,4.304279180857408
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total RMSE,5.265564606651365,0.0712635956337983,5,56.0,5.203099310941338,5.328029902361392
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Observed Total Spearman,0.36384747422356223,0.022900629147254766,5,56.0,0.34377418773125856,0.3839207607158659
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta MAE,0.6797998984015269,0.008401496495508661,5,56.0,0.6724356620290669,0.6871641347739869
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta RMSE,0.8151678280759093,0.011500925517708632,5,56.0,0.8050868223812999,0.8252488337705186
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,edaic,Theta Spearman,0.3809261954509562,0.024159808532475693,5,56.0,0.3597491895637741,0.40210320133813826
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Anchor Item MAE,0.7156533537647778,0.019182124375595248,5,71.4,0.6988394804145566,0.732467227114999
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed DIF-Aware Item MAE,0.6717766196792769,0.018196813937656257,5,71.4,0.6558264090073791,0.6877268303511748
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Macro Item MAE,0.6901958390776048,0.014809853243198745,5,71.4,0.6772144303508782,0.7031772478043314
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Sensitivity Item MAE,0.6577000291015865,0.012882215747565453,5,71.4,0.6464082691375357,0.6689917890656374
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total MAE,4.209467818685362,0.11820056500666774,5,71.4,4.105860455338516,4.313075182032208
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total RMSE,5.240799904611018,0.14279125150536723,5,71.4,5.115637854187376,5.36596195503466
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Observed Total Spearman,0.47323993505562567,0.028215113974847914,5,71.4,0.4485082972220853,0.49797157288916605
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta MAE,0.6691823347646705,0.027770613953060592,5,71.4,0.644840318378899,0.693524351150442
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta RMSE,0.8077738095232565,0.025607228589657152,5,71.4,0.7853280840172515,0.8302195350292615
+pooled_shared_phq,M12a_BGE_Ridge_X_to_theta,pooled,Theta Spearman,0.4698704769963524,0.02853296875953892,5,71.4,0.4448602271598393,0.49488072683286555
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Observed Anchor Item MAE,0.7068479958473912,0.08225214411393579,5,15.4,0.6347508127181143,0.7789451789766682
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Observed DIF-Aware Item MAE,0.6693279969116818,0.06644374486200644,5,15.4,0.611087486676771,0.7275685071465925
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Observed Macro Item MAE,0.6804396354666983,0.057371024503598614,5,15.4,0.630151715260988,0.7307275556724085
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Observed Sensitivity Item MAE,0.6387345532603291,0.07495653747900496,5,15.4,0.5730322513011913,0.704436855219467
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Observed Total MAE,4.211833009155786,0.3342636641188773,5,15.4,3.918837989207623,4.504828029103949
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Observed Total RMSE,5.090641165328666,0.4931340162777509,5,15.4,4.658390141822167,5.522892188835165
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Observed Total Spearman,0.625595279603204,0.10218890593326706,5,15.4,0.5360227542396623,0.7151678049667458
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Theta MAE,0.6301107112411872,0.11841355566271697,5,15.4,0.5263166533528254,0.733904769129549
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Theta RMSE,0.7681720999642373,0.11052741079294688,5,15.4,0.6712905528314886,0.865053647096986
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,cmdc,Theta Spearman,0.6059589623259498,0.08791918297957557,5,15.4,0.528894400615869,0.6830235240360306
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Observed Anchor Item MAE,0.718903833507831,0.008318712755815454,5,56.0,0.7116121602825702,0.7261955067330919
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Observed DIF-Aware Item MAE,0.6730772552935618,0.013288485341397073,5,56.0,0.6614293843293434,0.6847251262577801
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Observed Macro Item MAE,0.6927809359287018,0.009035930663317846,5,56.0,0.6848605934890657,0.700701278368338
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Observed Sensitivity Item MAE,0.6602388214055837,0.007486449666808392,5,56.0,0.6536766589424589,0.6668009838687085
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Observed Total MAE,4.264687616797789,0.07648437745127197,5,56.0,4.197646104056253,4.331729129539325
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Observed Total RMSE,5.272747020991985,0.09169243868573658,5,56.0,5.192375054829762,5.3531189871542075
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Observed Total Spearman,0.3661942574949951,0.0317461806198601,5,56.0,0.33836750328133364,0.3940210117086566
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Theta MAE,0.6853594162520578,0.011741551317287869,5,56.0,0.6750674927446086,0.6956513397595069
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Theta RMSE,0.8181568266064726,0.01522311427607015,5,56.0,0.8048131786130608,0.8315004745998844
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,edaic,Theta Spearman,0.38091248172393566,0.030295598656802397,5,56.0,0.35435721866179637,0.40746774478607495
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Observed Anchor Item MAE,0.7164264019403511,0.022948263441370298,5,71.4,0.696311362148324,0.7365414417323782
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Observed DIF-Aware Item MAE,0.6723811816263986,0.019706369537494127,5,71.4,0.6551077871311759,0.6896545761216213
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Observed Macro Item MAE,0.6902085239759114,0.01701174982388719,5,71.4,0.6752970677991181,0.7051199801527046
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Observed Sensitivity Item MAE,0.6556001103965448,0.013237907555731393,5,71.4,0.6439965728161512,0.6672036479769383
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Observed Total MAE,4.253950656860174,0.11345377635112268,5,71.4,4.154504037219908,4.35339727650044
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Observed Total RMSE,5.238583593682867,0.14502828646397728,5,71.4,5.1114606956629105,5.365706491702823
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Observed Total Spearman,0.451346217587119,0.028127567047856895,5,71.4,0.4266913180185281,0.4760011171557099
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Theta MAE,0.673274695609452,0.032482047074468716,5,71.4,0.6448029260091628,0.7017464652097412
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Theta RMSE,0.8084422423367126,0.03285927301492131,5,71.4,0.7796398196208979,0.8372446650525273
+pooled_shared_phq,M12b_projected_BGE_X_to_theta,pooled,Theta Spearman,0.45439855830497783,0.03251893370408935,5,71.4,0.42589445614826194,0.4829026604616937

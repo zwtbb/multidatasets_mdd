@@ -78,6 +78,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
   - `/root/autodl-tmp/memory/sessions/session_58_context_token_management.md`
   - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
+  - `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -156,9 +157,17 @@ MPDD 2025 is intentionally out of scope for current auditing.
   anchors, sparse loading DIF, localized C02/C06 threshold non-equivalence, and
   uncertain global model selection. Full-method work remains blocked until a
   genuinely new data, feature, or measurement mechanism changes the gate. The
-  active next orchestration step is MV17 multilingual feature-contract
-  sensitivity with BGE-M3 and multilingual-E5 over E-DAIC/CMDC/PDCH, rerunning
-  MV07/MV12/MV15 only before reconsidering MV16 or feature-level claims.
+  MV17a multilingual feature-contract sensitivity is complete. BGE-M3 and
+  multilingual-E5 subject-level features were generated for E-DAIC/CMDC/PDCH,
+  then MV07/MV12/MV15 were rerun for both encoders. The negative/blocked
+  feature-level chain replicated under both multilingual encoders: MV07 remains
+  blocked by total-allocation/identity criteria, MV12 remains blocked by lack
+  of observed-scale-safe theta gain, and MV15 remains blocked by high
+  theta-conditioned feature identity. MV16 remains paused unless a future
+  review specifically requires rerunning it under the multilingual feature
+  contract. The active next orchestration step is MV18 CMDC-HAMD vs PDCH-HAMD
+  same-scale exploratory control, followed by MV19 finite-sample PHQ
+  psychometric simulation if still needed for manuscript support.
   Bibliography metadata has been corrected for P3HF, Multi-Probe Audit, and
   EMNLP interviewer bias in the generator, but all references still require
   full primary-source verification before submission.
@@ -694,10 +703,11 @@ MPDD 2025 is intentionally out of scope for current auditing.
 - Phase 5 post-review measurement-validity route is predeclared at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`.
   It records the BGE feature-contract caveat, source verification summary,
-  prioritized MV17a/MV18/MV19/MV20 queue, and stop lines. Treat its first
-  action as `ready_for_mv17a_design`: multilingual BGE-M3 plus multilingual-E5
-  feature regeneration for E-DAIC/CMDC/PDCH, followed by MV07/MV12/MV15 reruns
-  only.
+  prioritized MV17a/MV18/MV19/MV20 queue, and stop lines. MV17a is now
+  complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
+  and reproduces the blocked MV07/MV12/MV15 pattern under BGE-M3 and
+  multilingual-E5. Treat MV18 as the next design-ready route item.
 
 Phase 2 gate status:
 
@@ -1071,9 +1081,10 @@ Key Phase 2 outputs:
   -> MV16 BGE-linked feature-level chain is legacy/diagnostic because E-DAIC
   MV07 used `BAAI/bge-small-zh-v1.5`, a Chinese encoder, on English transcripts
   and the available transcript CSVs do not expose speaker roles for
-  participant/interviewer filtering. Do not interpret high BGE dataset identity
-  or poor BGE transfer as pure participant symptom-representation failure until
-  MV17a multilingual BGE-M3 plus multilingual-E5 sensitivity is complete.
+  participant/interviewer filtering. MV17a now addresses the paper-critical
+  MV07/MV12/MV15 part of this caveat with BGE-M3 and multilingual-E5; both
+  encoders reproduce the blocked result. Do not interpret remaining high
+  dataset identity as a pure participant symptom-representation failure.
   MV10/MV11/MV13/MV14 label-only psychometric evidence is unaffected.
 - Post-review paper-framing decision: the manuscript should be a target
   measurement-validity audit. Phase 3 is motivating benchmark/protocol shortcut
@@ -1082,13 +1093,13 @@ Key Phase 2 outputs:
   extra shallow BGE variants, extra projection dimensions, EATD
   valence-adversarial modules, and MV16 retuning unless a new predeclared
   mechanism changes the gate.
-- Next measurement-aware route decision: first design and run MV17a
-  multilingual feature-contract sensitivity, then add only bounded controls
-  with direct relevance to target measurement validity: CMDC-HAMD versus
-  PDCH-HAMD same-language/same-scale exploratory measurement shift, finite-N
-  PHQ psychometric simulation, and criterion-contamination stress. MV06
-  agreement uncertainty is complete; optional next RQ4 work is resolving the
-  one incomplete local candidate before stronger RQ4 wording.
+- Next measurement-aware route decision: MV17a is complete; add only bounded
+  controls with direct relevance to target measurement validity: first MV18
+  CMDC-HAMD versus PDCH-HAMD same-scale exploratory measurement shift, then
+  MV19 finite-N PHQ psychometric simulation, and MV20 criterion-contamination
+  stress only if still needed. MV06 agreement uncertainty is complete; optional
+  next RQ4 work is resolving the one incomplete local candidate before stronger
+  RQ4 wording.
 
 ## Data Quality Watchlist
 
@@ -1199,12 +1210,11 @@ plaintext credential-like content before committing on the clean remote lineage.
 4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
    revises identity-gate semantics, MV10/MV11/MV13/MV14 provide the core
    label-only PHQ measurement evidence, MV12/MV15/MV16 remain bounded or
-   negative prediction-consequence evidence, and the post-review BGE caveat
-   makes the current MV07-MV16 feature-level chain legacy/diagnostic until
-   multilingual sensitivity is complete. Full method construction remains
-   blocked. The next active task is MV17a: design and run multilingual BGE-M3
-   plus multilingual-E5 feature-contract sensitivity over E-DAIC/CMDC/PDCH,
-   then rerun MV07/MV12/MV15 only. After that, decide whether MV16 needs a
-   clean rerun. Parallel writing work may continue, but the manuscript must use
-   target measurement-validity framing, corrected bibliography metadata, and
-   full primary-source verification before submission.
+   negative prediction-consequence evidence, and MV17a shows the blocked
+   MV07/MV12/MV15 feature-level pattern also holds under BGE-M3 and
+   multilingual-E5. Full method construction remains blocked. The next active
+   task is MV18 CMDC-HAMD versus PDCH-HAMD same-scale control, followed by
+   MV19 finite-sample PHQ psychometric simulation if still needed. Parallel
+   writing work may continue, but the manuscript must use target
+   measurement-validity framing, corrected bibliography metadata, and full
+   primary-source verification before submission.

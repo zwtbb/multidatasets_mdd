@@ -1,0 +1,102 @@
+{
+  "artifact_hygiene_passed": true,
+  "generated_at": "2026-08-21T18:01:41+00:00",
+  "input_contract": {
+    "feature_family": "text_bge",
+    "measurement_items": [
+      "C01",
+      "C02",
+      "C04",
+      "C05",
+      "C06",
+      "C07"
+    ],
+    "model_input_columns": 1024,
+    "official_test_labels_used": false,
+    "primary_datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "private_review_material_read": false,
+    "raw_text_or_media_read": false,
+    "row_level_predictions_read": false,
+    "sensitivity_datasets": [
+      "pdch"
+    ]
+  },
+  "model_contract": {
+    "identity_classifier": "standardized_balanced_logistic_regression",
+    "measurement_scorer": "MV12 local partial PHQ measurement scorer",
+    "primary_split_protocol": "edaic_train_dev_plus_cmdc_subject_cv",
+    "ridge_alpha_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensitivity_split_protocol": "seeded_subject_level_stratified_cv"
+  },
+  "outputs": {
+    "conditioning_identity_rows": 8,
+    "conditioning_identity_seed_rows": 40,
+    "external_sensitivity_rows": 6,
+    "output_identity_rows": 6,
+    "output_metric_rows": 8,
+    "target_generation_rows": 15,
+    "tracked_outputs": [
+      "artifact_boundary_summary.csv",
+      "artifact_hygiene_audit.json",
+      "conditioning_identity_by_seed.csv",
+      "conditioning_identity_summary.csv",
+      "covariate_coverage_summary.csv",
+      "external_sensitivity_by_seed.csv",
+      "external_sensitivity_summary.csv",
+      "input_audit.csv",
+      "output_identity_by_seed.csv",
+      "output_identity_summary.csv",
+      "output_metric_by_seed.csv",
+      "output_metric_summary.csv",
+      "pass_fail_gate_results.csv",
+      "report.md",
+      "run_summary.json",
+      "split_audit_summary.csv",
+      "target_generation_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV15_latent_conditioned_dataset_identity",
+  "scope": "latent_conditioned_dataset_identity_audit",
+  "status": "complete",
+  "verdict": {
+    "b3_itemwise_theta_conditioned_feature_identity_ba": 1.0,
+    "b3_output_identity_ba": 0.5291071428571429,
+    "b3_output_observed_macro_mae": 0.7081082483624652,
+    "b3_pareto_dominates_predicted_theta_output": false,
+    "delta_theta_conditioned_minus_b3_conditioned": 0.0,
+    "delta_theta_conditioned_minus_predicted_total_conditioned": 0.0,
+    "delta_theta_conditioned_minus_total_conditioned": 0.0,
+    "full_method_allowed": false,
+    "item_conditioned_feature_identity_ba": 0.9804166666666667,
+    "pass_rule_met": false,
+    "pass_rule_status": "blocked_theta_conditioned_feature_identity_high",
+    "predicted_total_conditioned_feature_identity_ba": 1.0,
+    "psychometric_predicted_theta_observed_macro_mae": 0.6901958390776047,
+    "psychometric_predicted_theta_output_identity_ba": 0.5844047619047619,
+    "raw_feature_identity_ba": 1.0,
+    "short_read": "MV15 reports feature identity after theta conditioning together with total, predicted-total, item, B3 itemwise-theta, theta-only, predicted-output, covariate, and severity-only controls. It is diagnostic only.",
+    "status": "blocked_theta_conditioned_feature_identity_high",
+    "subject_overlap_violations": 0,
+    "theta_conditioned_feature_identity_ba": 1.0,
+    "theta_lower_than_controls_by_0_03": false,
+    "theta_not_worse_than_controls": true,
+    "theta_only_identity_ba": 0.5763690476190476,
+    "total_conditioned_feature_identity_ba": 1.0
+  }
+}
