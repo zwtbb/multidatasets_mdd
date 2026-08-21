@@ -1,6 +1,6 @@
 # Active Handoff
 
-Last updated: 2026-08-21 UTC
+Last updated: 2026-08-22 UTC
 
 This file is the short working-memory entrypoint for the main-agent thread.
 It does not replace `MEMORY.md` or session memories. Read order for future
@@ -127,7 +127,7 @@ Secondary optional task:
   `1.000` for both encoders; MV15 theta-conditioned feature identity BA is also
   `1.000` for both. The old Chinese-BGE chain remains legacy/diagnostic, but
   the core negative feature-level conclusion now has multilingual sensitivity
-  support. MV10/MV11/MV13/MV14 are label-only and unaffected.
+  support. MV10/MV11/MV13/MV14/MV19 are label-only and unaffected.
 - MV18 CMDC-HAMD vs PDCH-HAMD same-scale exploratory control is complete. It
   uses 25 CMDC HAMD subjects and 99 PDCH HAMD subjects, with 25 CMDC and 73
   PDCH subjects in the mild/moderate overlap. In that overlap it flags 4
@@ -151,10 +151,13 @@ Secondary optional task:
 - Use `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` for GitHub
   updates.
 - Do not push the old local `main` history directly.
-- Latest known local commit before this handoff: `0ea684f`
-  (`Add active context handoff`).
-- Latest known clean remote `main` before this handoff:
-  `7b789c6951caf5fd7ef54479f8ab2ba24f8e1f16`.
+- Current local working branch: `codex/mv19-phq-finite-sample`.
+- MV19 experiment-content local commit: `6def05240bbd5e5d068e8b1bca8bb9eb738f08f2`
+  (`Run MV19 finite-sample PHQ simulation`).
+- MV19 experiment-content clean remote `main` publish:
+  `ab54aabab7b3b29fb157667892a7157639be980e`.
+- A later version-state-only bookkeeping commit may exist after this MV19
+  content publish; it should not change experiment artifacts.
 - GitHub authentication should use token or `gh` auth. Never write or use
   plaintext passwords in Git, scripts, memory, shell history, or logs.
 
