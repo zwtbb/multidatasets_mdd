@@ -1,6 +1,6 @@
 # Results Section Scaffold Report
 
-Generated: `2026-08-22T12:02:57+00:00`
+Generated: `2026-08-22T13:28:01+00:00`
 
 ## Decision
 

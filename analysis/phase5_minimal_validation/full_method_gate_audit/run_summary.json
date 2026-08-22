@@ -12,7 +12,7 @@
     "artifact_hygiene_passed": true,
     "audit_id": "P5_full_method_gate_artifact_hygiene",
     "files_checked": 5,
-    "generated_at": "2026-08-22T12:02:43+00:00",
+    "generated_at": "2026-08-22T13:28:00+00:00",
     "violation_count": 0,
     "violations": []
   },
@@ -27,7 +27,7 @@
   "evidence_rows": 45,
   "full_method_allowed": false,
   "gate_status": "blocked_but_publishable_diagnostic_direction",
-  "generated_at": "2026-08-22T12:02:43+00:00",
+  "generated_at": "2026-08-22T13:28:00+00:00",
   "next_action_rows": 5,
   "source_run_summaries": {
     "P5_MV01": "analysis/phase5_minimal_validation/p5_mv01_phq_core_bridge/run_summary.json",

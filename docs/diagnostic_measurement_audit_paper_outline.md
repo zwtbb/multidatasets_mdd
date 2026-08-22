@@ -47,12 +47,14 @@ psychometric pattern with R `mirt::multipleGroup`: the same four anchors are
 confirmed, loading DIF remains unflagged, threshold DIF remains localized to
 `C02` and `C06`, AIC still prefers the partial model, and BIC still prefers
 scalar, while a configural convergence warning keeps the claim conservative.
-A later code-level mirt audit adds a stronger boundary: MV13/MV14 correctly set
-E-DAIC as reference, link anchors, and use graded `d1-d3` threshold/intercept
-constraints, but the actual calls fix CMDC latent mean/variance. Therefore,
-MV13/MV14 are fixed-hyperparameter qualitative screens until corrected or
-explicitly limited. MV14 adds the predeclared bootstrap uncertainty layer under
-that same current parameterization: with
+A corrected code-level mirt audit now verifies the boundary that matters for
+MV13/MV14: E-DAIC is the reference group, CMDC is the focal group, anchor and
+threshold linking are explicit, and focal mean/variance are freed for
+threshold-constrained anchor-linked models. MV13/MV14 are therefore corrected
+external mirt qualitative/uncertainty corroboration, still bounded by the
+configural convergence warning and observed-N finite-sample behavior. MV14 adds
+the predeclared bootstrap uncertainty layer under that corrected
+parameterization: with
 smoke/core/DIF R=`10/200/100`, convergence-safe full-ladder effective core R is
 `120/200` after `185/200` fit-success draws, configural converges in `120/200`,
 the stable metric/partial/scalar ladder has `197` effective draws, minimum
@@ -61,7 +63,7 @@ stable, and threshold DIF stays localized to `C02` and `C06`. MV19 then tests
 the observed-N finite-sample
 behavior and downgrades C02/C06 from robust standalone DIF to repeated but
 finite-sample-bounded dataset-group threshold-shift evidence. Together,
-MV10/MV11/MV19 plus the bounded MV13/MV14 mirt screens move the
+MV10/MV11/MV19 plus the corrected bounded MV13/MV14 mirt checks move the
 project from a generic benchmark audit toward a target-measurement-shift paper;
 they still do not authorize a full method.
 
@@ -94,8 +96,8 @@ Local audit found that E-DAIC MV07 feature generation used
 the available transcript CSVs do not expose speaker roles for participant-only
 filtering. MV17a addresses the language-encoder mismatch but not the
 speaker/interviewer contamination limitation. This does not affect label-only
-MV10/MV11/MV19 primary psychometric evidence; MV13/MV14 now have a separate
-mirt parameterization caveat.
+MV10/MV11/MV19 primary psychometric evidence or the corrected MV13/MV14 mirt
+corroboration.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate artifacts. The next research route is no longer
@@ -103,18 +105,16 @@ another shallow shared-symptom head. The post-review bounded line is complete:
 MV17a fixed the multilingual feature-contract sensitivity, MV18 added the
 same-HAMD context control, MV19 downgraded PHQ C02/C06 wording under observed
 N, and MV20 closed the criterion-overlap stress as negative/no-excess evidence.
-The mirt parameterization audit adds one submission blocker for MV13/MV14
-wording: corrected anchor-linked focal hyperparameters or explicit limitation.
-The next work is manuscript editing, citation verification, and this
-statistical-correctness resolution rather than changing the calibration or
-protocol-overlap design after seeing results. A full
+The mirt parameterization audit has closed the MV13/MV14 statistical-correctness
+blocker. The next work is manuscript editing and citation verification rather
+than changing the calibration or protocol-overlap design after seeing results. A full
 manuscript draft v0.1 is now generated from aggregate paper artifacts with
 traceability, open editing items, and artifact-hygiene checks.
 
 Phase 5 experiment consolidation now defines the active evidence bundle. The
 manuscript should foreground `MV10/MV11/MV19` as primary paper-core
-psychometric evidence, retain `MV13/MV14` as fixed-hyperparameter qualitative
-mirt screens pending correction, and use
+psychometric evidence, retain corrected `MV13/MV14` as anchor-linked mirt
+corroboration with convergence and finite-sample caveats, and use
 `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20` as bounded support. The
 mirt parameterization audit is a paper guardrail, not a new experiment result.
 Earlier weak or superseded MV rows stay in the repository
@@ -177,22 +177,22 @@ Allowed claims:
   caveat: all four MV10 anchors are preserved, no loading-DIF items are
   strongly flagged, and threshold DIF is strongest for `C02` anhedonia and
   `C06` self-worth.
-- MV13 provides only fixed-hyperparameter external R `mirt::multipleGroup`
-  qualitative repetition of the PHQ measurement pattern until corrected:
+- MV13 provides corrected external R `mirt::multipleGroup` qualitative
+  repetition of the PHQ measurement pattern:
   all four MV10 anchors are confirmed, loading DIF remains unflagged,
   threshold DIF remains `C02`/`C06`, AIC/BIC still split between
   partial/scalar, and all fitted parameters, factor scores, model objects, and
-  local item-response rows stay local-only. The parameterization audit shows
-  this is not final anchor-linked mirt DIF evidence because CMDC latent
-  mean/variance are fixed in the actual call.
-- MV14 is retained as a completed convergence-safe fixed-hyperparameter
+  local item-response rows stay local-only. The parameterization audit verifies
+  reference/focal order, anchor linking, threshold constraints, and freed focal
+  mean/variance for threshold-constrained models.
+- MV14 is retained as a completed convergence-safe corrected anchor-linked
   measurement-uncertainty/bootstrap screen. It executes the predeclared
   smoke/core/DIF tiers, keeps local
-  item-response inputs and draw details out of Git, and supports only
-  fixed-hyperparameter item-level screen wording: stable anchors
+  item-response inputs and draw details out of Git, and supports bounded
+  item-level wording: stable anchors
   `C01/C04/C05/C07`, sparse loading DIF, localized threshold DIF `C02/C06`, and
-  uncertain global model selection. It does not authorize final mirt-backed DIF
-  stability or full method work until corrected or explicitly limited.
+  uncertain global model selection. It does not authorize robust standalone
+  mirt-backed DIF stability or full method work.
 - MV19 provides observed-N finite-sample PHQ simulation evidence: C02/C06
   recur under the C02/C06 threshold-shift world, but H0 false/localization rates
   and low anchor-set recovery require wording them as finite-sample-bounded
@@ -234,9 +234,9 @@ Blocked claims:
 - A transferable shared-symptom representation across PHQ-8, PHQ-9, HAMD-17,
   and SDS.
 - A full PHQ-8/PHQ-9 scalar-invariance claim, a bootstrap-confirmed global
-  partial-invariance claim, final anchor-linked mirt DIF evidence, or robust
-  standalone C02/C06 DIF, because MV10/MV11/MV19 plus the bounded MV13/MV14
-  mirt screens support item-level common-structure and repeated
+  partial-invariance claim, robust standalone mirt DIF evidence, or robust
+  standalone C02/C06 DIF, because MV10/MV11/MV19 plus corrected bounded
+  MV13/MV14 mirt corroboration support item-level common-structure and repeated
   finite-sample-bounded localized threshold-shift evidence while global
   invariance-model selection remains uncertain.
 - Positive EATD SDS external generalization.

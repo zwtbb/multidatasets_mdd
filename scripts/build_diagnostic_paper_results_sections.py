@@ -619,6 +619,27 @@ def build_source_map() -> pd.DataFrame:
 
 
 def build_claim_checklist(ctx2: dict[str, Any], ctx3: dict[str, Any], ctx5: dict[str, Any]) -> pd.DataFrame:
+    mirt_corrected = not bool(ctx5["mirt_param_audit_blocker"])
+    if mirt_corrected:
+        mirt_claim_status = "correctness_gate_passed"
+        mirt_evidence = (
+            f"mirt audit status {ctx5['mirt_param_audit_status']}: "
+            f"statistical correctness blocker {ctx5['mirt_param_audit_blocker']}; "
+            "reference/focal order, anchor constraints, graded threshold constraints, and freed focal mean/variance pass."
+        )
+        mirt_guardrail = (
+            "Use MV13/MV14 as corrected anchor-linked corroboration, but retain convergence and MV19 finite-sample caveats."
+        )
+    else:
+        mirt_claim_status = "statistical_correctness_blocker"
+        mirt_evidence = (
+            f"mirt audit status {ctx5['mirt_param_audit_status']}: "
+            f"statistical correctness blocker {ctx5['mirt_param_audit_blocker']}; "
+            "reference/focal order and anchor constraints pass, but CMDC latent mean/variance are fixed."
+        )
+        mirt_guardrail = (
+            "Do not present MV13/MV14 as final anchor-linked DIF evidence until corrected or explicitly limited."
+        )
     rows = [
         {
             "claim_scope": "Baseline reproducibility floor",
@@ -680,13 +701,9 @@ def build_claim_checklist(ctx2: dict[str, Any], ctx3: dict[str, Any], ctx5: dict
         },
         {
             "claim_scope": "MV13/MV14 mirt parameterization",
-            "claim_status": "statistical_correctness_blocker",
-            "evidence": (
-                f"mirt audit status {ctx5['mirt_param_audit_status']}: "
-                f"statistical correctness blocker {ctx5['mirt_param_audit_blocker']}; "
-                "reference/focal order and anchor constraints pass, but CMDC latent mean/variance are fixed."
-            ),
-            "guardrail": "Do not present MV13/MV14 as final anchor-linked DIF evidence until corrected or explicitly limited.",
+            "claim_status": mirt_claim_status,
+            "evidence": mirt_evidence,
+            "guardrail": mirt_guardrail,
         },
         {
             "claim_scope": "MV17a latent-target feature-contract sensitivity",
@@ -726,6 +743,45 @@ def write_markdown(
     source_map: pd.DataFrame,
     checklist: pd.DataFrame,
 ) -> None:
+    mirt_corrected = not bool(ctx5["mirt_param_audit_blocker"])
+    if mirt_corrected:
+        mirt_layer_sentence = (
+            "corrected MV13/MV14 provide anchor-linked external mirt qualitative and uncertainty "
+            "corroboration under the same convergence and finite-sample caveats"
+        )
+        mirt_sequence_sentence = (
+            "A post-rerun code-level mirt audit verifies the corrected identification contract: "
+            "reference/focal group order, anchor linking, graded `d1-d3` threshold/intercept constraints, "
+            "and freed focal-group mean/variance for threshold-constrained models."
+        )
+        mirt_conservative_boundary = (
+            "not a robust standalone DIF conclusion, a bootstrap-confirmed global partial-invariance win, "
+            "a full scalar-invariance proof, or a full-method pass"
+        )
+        mirt_guardrail = (
+            "Do not use MV13/MV14 as standalone robust DIF proof; state the corrected anchor-linked parameterization "
+            "alongside configural convergence and MV19 finite-sample caveats."
+        )
+    else:
+        mirt_layer_sentence = (
+            "MV13/MV14 are now fixed-hyperparameter mirt qualitative screens because the "
+            f"code-level parameterization audit is `{ctx5['mirt_param_audit_status']}` with "
+            f"statistical correctness blocker `{ctx5['mirt_param_audit_blocker']}`"
+        )
+        mirt_sequence_sentence = (
+            "A post-run code-level mirt audit then limits this external corroboration: "
+            "reference/focal group order, anchor linking, and graded `d1-d3` threshold/intercept constraints pass, "
+            "but the actual MV13/MV14 calls fix CMDC latent mean and variance rather than freeing focal-group "
+            "hyperparameters under anchor linking."
+        )
+        mirt_conservative_boundary = (
+            "not final anchor-linked mirt DIF evidence, a robust standalone DIF conclusion, "
+            "a bootstrap-confirmed global partial-invariance win, a full scalar-invariance proof, or a full-method pass"
+        )
+        mirt_guardrail = (
+            "Do not use MV13/MV14 as final anchor-linked mirt DIF evidence until the focal latent mean/variance "
+            "parameterization is corrected or explicitly limited."
+        )
     lines = [
         "# Baselines, Failure-Mode Diagnostics, and Measurement Results",
         "",
@@ -755,11 +811,11 @@ def write_markdown(
         "",
         f"The Phase 5 full-method gate now reads `{ctx5['evidence_rows']}` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.",
         "",
-        f"The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV19 address the second level as the primary PHQ measurement evidence, while MV13/MV14 are now fixed-hyperparameter mirt qualitative screens because the code-level parameterization audit is `{ctx5['mirt_param_audit_status']}` with statistical correctness blocker `{ctx5['mirt_param_audit_blocker']}`. This still supports substantial common PHQ structure with repeated C02/C06 threshold non-equivalence, convergence-aware model-selection uncertainty, and an observed-N finite-sample downgrade, but not uniformly supported exact scalar or partial invariance; MV17a addresses the third level by testing whether multilingual `X -> theta` heads make measurement harmonization predictive. {ctx5['mv17a_summary_sentence']} MV16 then closes the planned localized-DIF calibration follow-up as `{ctx5['mv16_status']}`: anchor safety passes (`{ctx5['mv16_anchor_safety_gate_passed']}`), but the both-direction small-k DIF-guided gate is `{ctx5['mv16_small_k_gate_passed']}`, the best supported row is `{ctx5['mv16_best_supported_direction']}`/`{ctx5['mv16_best_supported_model']}` at k=`{ctx5['mv16_best_supported_k']}`, and L4 small-k output identity BA remains `{fmt(ctx5['mv16_l4_small_k_output_identity_ba'])}`.",
+        f"The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV19 address the second level as the primary PHQ measurement evidence, while {mirt_layer_sentence}. This supports substantial common PHQ structure with repeated C02/C06 threshold non-equivalence, convergence-aware model-selection uncertainty, and an observed-N finite-sample downgrade, but not uniformly supported exact scalar or partial invariance; MV17a addresses the third level by testing whether multilingual `X -> theta` heads make measurement harmonization predictive. {ctx5['mv17a_summary_sentence']} MV16 then closes the planned localized-DIF calibration follow-up as `{ctx5['mv16_status']}`: anchor safety passes (`{ctx5['mv16_anchor_safety_gate_passed']}`), but the both-direction small-k DIF-guided gate is `{ctx5['mv16_small_k_gate_passed']}`, the best supported row is `{ctx5['mv16_best_supported_direction']}`/`{ctx5['mv16_best_supported_model']}` at k=`{ctx5['mv16_best_supported_k']}`, and L4 small-k output identity BA remains `{fmt(ctx5['mv16_l4_small_k_output_identity_ba'])}`.",
         "",
         "The first measurement sequence is negative or bounded. MV08 improves over the total-score floor on `0/3` pooled active slices, while MV08b improves over both total-score and fixed-map floors on `2/3` slices but raises prediction dataset identity to `0.979`. MV09 then revises the gate semantics: post-head identity is diagnostic when outputs are scale-specific, while shared-latent claims require conditional identity checks. Under that sharper test, E-DAIC/CMDC item-conditioned feature identity remains `0.991`, so direct fixed shared-symptom mappings remain too strong under the current frozen-feature and shallow-head contract.",
         "",
-        f"The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 exhibit substantial common PHQ structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Exact threshold/scalar equivalence is not uniformly supported, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. MV13 external R mirt replication preserves the same qualitative anchor/DIF pattern, with no loading-DIF flags and threshold-DIF flags on `C02` and `C06`, but retains a configural convergence warning. MV14 then makes that warning explicit: the convergence-safe full ladder has `{ctx5['mv14_core_effective_draws']}/{ctx5['mv14_core_attempted_draws']}` effective draws after `{ctx5['mv14_core_fit_success_draws']}` fit-success draws, configural converges in `{ctx5['mv14_configural_converged_draws']}/{ctx5['mv14_core_attempted_draws']}`, and the stable metric/partial/scalar ladder has `{ctx5['mv14_stable_ladder_effective_draws']}` effective draws with AIC/BIC favoring `{ctx5['mv14_stable_ladder_best_aic_model']}`/`{ctx5['mv14_stable_ladder_best_bic_model']}`. A post-run code-level mirt audit then limits this external corroboration: reference/focal group order, anchor linking, and graded `d1-d3` threshold/intercept constraints pass, but the actual MV13/MV14 calls fix CMDC latent mean and variance rather than freeing focal-group hyperparameters under anchor linking. MV19 adds the observed-N stress test: H0 C02/C06 both-flag false rate is `{fmt(ctx5['mv19_h0_target_both_false_rate'])}`, H1 C02/C06 both-flag recovery is `{fmt(ctx5['mv19_h1_target_both_recovery_rate'])}`, H1 top-two recovery is `{fmt(ctx5['mv19_h1_target_top2_recovery_rate'])}`, and H1 anchor subset recovery is `{fmt(ctx5['mv19_h1_anchor_subset_recovery_rate'])}`. {ctx5['finding_mirt_audit']} {ctx5['finding_mv14']} {ctx5['finding_mv19']} The conservative manuscript claim is therefore substantial structural similarity with repeated but finite-sample-bounded localized C02/C06 threshold-shift evidence, not final anchor-linked mirt DIF evidence, a robust standalone DIF conclusion, a bootstrap-confirmed global partial-invariance win, a full scalar-invariance proof, or a full-method pass.",
+        f"The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 exhibit substantial common PHQ structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Exact threshold/scalar equivalence is not uniformly supported, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. MV13 external R mirt replication preserves the same qualitative anchor/DIF pattern, with no loading-DIF flags and threshold-DIF flags on `C02` and `C06`, but retains a configural convergence warning. MV14 then makes that warning explicit: the convergence-safe full ladder has `{ctx5['mv14_core_effective_draws']}/{ctx5['mv14_core_attempted_draws']}` effective draws after `{ctx5['mv14_core_fit_success_draws']}` fit-success draws, configural converges in `{ctx5['mv14_configural_converged_draws']}/{ctx5['mv14_core_attempted_draws']}`, and the stable metric/partial/scalar ladder has `{ctx5['mv14_stable_ladder_effective_draws']}` effective draws with AIC/BIC favoring `{ctx5['mv14_stable_ladder_best_aic_model']}`/`{ctx5['mv14_stable_ladder_best_bic_model']}`. {mirt_sequence_sentence} MV19 adds the observed-N stress test: H0 C02/C06 both-flag false rate is `{fmt(ctx5['mv19_h0_target_both_false_rate'])}`, H1 C02/C06 both-flag recovery is `{fmt(ctx5['mv19_h1_target_both_recovery_rate'])}`, H1 top-two recovery is `{fmt(ctx5['mv19_h1_target_top2_recovery_rate'])}`, and H1 anchor subset recovery is `{fmt(ctx5['mv19_h1_anchor_subset_recovery_rate'])}`. {ctx5['finding_mirt_audit']} {ctx5['finding_mv14']} {ctx5['finding_mv19']} The conservative manuscript claim is therefore substantial structural similarity with repeated but finite-sample-bounded localized C02/C06 threshold-shift evidence, {mirt_conservative_boundary}.",
         "",
         "MV17a then asks whether the legacy Chinese-BGE feature-chain conclusion survives a corrected multilingual feature contract. It makes BGE-M3 the primary encoder and multilingual-E5 the sensitivity encoder, regenerates subject-level text features for E-DAIC, CMDC, and PDCH, and reruns the paper-critical MV07/MV12/MV15 chain. The coarse gates replicate: MV07, MV12, and MV15 remain blocked for both encoders. The fine-grained mechanism, however, is not identical across encoders:",
         "",
@@ -779,7 +835,7 @@ def write_markdown(
         "- Do not claim that high unconditional dataset identity is automatically harmful; use it as a shortcut-risk screen and reserve conditional identity for shared-latent claims.",
         "- Do not call scale-specific post-head identity a hard shared-latent failure unless the output space is explicitly shared.",
         "- Do not use MV12 or MV17a as positive full-method evidence; MV17a keeps the multilingual feature-contract chain blocked.",
-        "- Do not use MV13/MV14 as final anchor-linked mirt DIF evidence until the focal latent mean/variance parameterization is corrected or explicitly limited.",
+        f"- {mirt_guardrail}",
         "- Do not claim universal zero-shot external theta transfer failure or universal B3 Pareto dominance; MV17a shows both are encoder-dependent.",
         "- Do not use low one-dimensional output identity as evidence that upstream BGE features are dataset-invariant; MV15 keeps feature identity high after theta and severity conditioning.",
         "- Do not use MV16 as a positive method claim; its few-shot calibration ladder is bounded/negative and keeps full-method construction blocked.",

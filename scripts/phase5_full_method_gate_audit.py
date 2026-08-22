@@ -224,6 +224,13 @@ def inventory_short_read(evidence_id: str, summary: dict[str, Any]) -> str:
             "anchor map, flags sparse loading DIF and C02/C06 threshold DIF, and keeps an AIC/BIC caveat."
         )
     if evidence_id == "P5_MV13":
+        verdict = summary.get("verdict") or {}
+        if verdict.get("anchor_linked_focal_hyperparameters_corrected"):
+            return (
+                "External R mirt replication preserves the label-only PHQ anchor/DIF localization pattern "
+                "with corrected anchor-linked focal mean/variance handling, a configural convergence warning, "
+                "and local-only parameter/theta artifacts."
+            )
         return (
             "External R mirt replication preserves the label-only PHQ anchor/DIF localization pattern, "
             "with a configural convergence warning and local-only parameter/theta artifacts; a later "
@@ -232,6 +239,8 @@ def inventory_short_read(evidence_id: str, summary: dict[str, Any]) -> str:
     if evidence_id == "P5_MV14":
         verdict = summary.get("verdict") or {}
         if str(verdict.get("status", "")).startswith("complete_mv14"):
+            if verdict.get("anchor_linked_focal_hyperparameters_corrected"):
+                return public_text(verdict.get("short_read", ""))
             return public_text(verdict.get("short_read", "")) + (
                 " A later parameterization audit limits this bootstrap to fixed-hyperparameter "
                 "screen wording until focal latent mean/variance handling is corrected."
@@ -439,6 +448,33 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
         f"statistical_correctness_blocker={mirt_audit_blocker}: "
         f"{public_text(mirt_audit.get('short_read', ''))}"
     )
+    mirt_psychometric_scope = (
+        "Use MV10/MV11/MV19 as primary label-only PHQ common-structure and dataset-group "
+        "measurement-shift evidence with explicit finite-sample downgrade. Use corrected MV13/MV14 "
+        "as anchor-linked external mirt qualitative and uncertainty corroboration, while retaining "
+        "the configural convergence warning and MV19 observed-N caveat."
+        if not mirt_audit_blocker
+        else "Use MV10/MV11/MV19 as primary label-only PHQ common-structure and dataset-group "
+        "measurement-shift evidence with explicit finite-sample downgrade. Use MV13/MV14 only as "
+        "fixed-hyperparameter mirt qualitative screens until corrected or explicitly limited."
+    )
+    mirt_psychometric_next = (
+        "No further mirt correctness rerun is queued; only consider a larger MV14 bootstrap if "
+        "reviewer-facing interval precision becomes critical."
+        if not mirt_audit_blocker
+        else "Use MV19 to downgrade C02/C06 wording to finite-sample-bounded localized measurement-shift "
+        "evidence; correct and rerun MV13/MV14 with anchor-linked focal mean/variance before any stronger "
+        "mirt-backed DIF claim."
+    )
+    mirt_paper_consolidation = (
+        "Consolidate the manuscript around bounded diagnostic evidence, MV19-downgraded C02/C06 wording, "
+        "the corrected mirt parameterization audit, MV17a-calibrated BGE-M3-primary/multilingual-E5-sensitivity "
+        "prediction-consequence wording, and the negative CMDC-only MV20 criterion-overlap stress result."
+        if not mirt_audit_blocker
+        else "Consolidate the manuscript around bounded diagnostic evidence, MV19-downgraded C02/C06 wording, "
+        "the mirt parameterization audit boundary, MV17a-calibrated BGE-M3-primary/multilingual-E5-sensitivity "
+        "prediction-consequence wording, and the negative CMDC-only MV20 criterion-overlap stress result."
+    )
     mv15_design = summaries["P5_MV15_design"].get("decision") or {}
     mv15_design_status = str(mv15_design.get("design_status", "unknown"))
     mv15_design_summary = (
@@ -555,9 +591,9 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "claim_id": "C_PSYCHOMETRIC_INVARIANCE_BASELINE",
             "claim": "Use label-only PHQ psychometric invariance evidence.",
             "decision": "allowed_limited",
-            "allowed_scope": "Use MV10/MV11/MV19 as primary label-only PHQ common-structure and dataset-group measurement-shift evidence with explicit finite-sample downgrade. Use MV13/MV14 only as fixed-hyperparameter mirt qualitative screens until corrected or explicitly limited.",
+            "allowed_scope": mirt_psychometric_scope,
             "blocking_evidence": f"MV10 status {mv10_status}; configural={mv10_result.get('configural_screen_pass')}; loading congruence {fmt(mv10_result.get('loading_congruence'))}; metric items {mv10_result.get('metric_invariant_items')}/8; threshold items {mv10_result.get('threshold_invariant_items')}/8; MV11 status {mv11_status}; confirmed MV10 anchors {mv11_result.get('confirmed_mv10_anchor_items')}; best AIC core model {mv11_result.get('best_aic_model')}; best BIC core model {mv11_result.get('best_bic_model')}; MV13 status {mv13_status}; confirmed MV10 anchors {mv13_result.get('confirmed_mv10_anchor_items')}; loading DIF flags {mv13_result.get('loading_dif_flagged_items')}; threshold DIF flags {mv13_result.get('threshold_dif_flagged_items')}; best AIC/BIC models {mv13_result.get('best_aic_model')}/{mv13_result.get('best_bic_model')}; core converged={mv13_result.get('core_converged')}; {mv14_anchor_summary}; {mirt_audit_summary}; {mv19_summary}; MV12 run status {mv12_status}, same-dataset theta gate {mv12_result.get('same_dataset_theta_gate_passed')}, observed-scale safety {mv12_result.get('same_dataset_observed_gate_passed')}; MV12 analysis status {mv12_analysis_status}.",
-            "required_next_evidence": "Use MV19 to downgrade C02/C06 wording to finite-sample-bounded localized measurement-shift evidence; correct and rerun MV13/MV14 with anchor-linked focal mean/variance before any stronger mirt-backed DIF claim.",
+            "required_next_evidence": mirt_psychometric_next,
             "primary_sources": "P5_MV10;P5_MV11;P5_MV12_design;P5_MV12;P5_MV12_analysis;P5_MV13_design;P5_MV13;P5_MV14_design;P5_MV14;P5_mirt_parameterization_audit;P5_MV16_design;P5_MV16;P5_MV19",
         },
         {
@@ -654,7 +690,7 @@ def build_claim_gate(summaries: dict[str, dict[str, Any]]) -> pd.DataFrame:
             "allowed_scope": "A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, the mirt parameterization audit, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, MV18, MV19, and MV20 are bounded diagnostic evidence, not a full-method pass.",
             "blocking_evidence": f"The positive evidence is currently diagnostic and bounded; broad full method claims remain blocked by RQ1 measurement evidence. MV08 is {mv08_status}; error analysis is {mv08_error_status}; MV08b design is {mv08b_design_status}; MV08b run is {mv08b_status}; MV09 is {mv09_status}; MV10 is {mv10_status}; MV11 is {mv11_status} with {mv11_result.get('confirmed_mv10_anchor_items')} confirmed MV10 PHQ anchors and an AIC/BIC caveat; MV12 design is {mv12_design_status}; legacy MV12 run is {mv12_status} with same-dataset theta gain but observed-scale and old-chain source-calibrated transfer limits; MV12 analysis is {mv12_analysis_status}, recommends freezing the legacy latent-target line, and adds the dimension-matched B3 caveat; MV13 is {mv13_status}, externally replicates the MV11 qualitative anchor/DIF localization pattern, and keeps parameter/theta exports local-only; {mv14_anchor_summary}; {mirt_audit_summary}; {mv15_design_summary}; {mv15_result_summary}; {mv16_design_summary}; {mv16_result_summary}; {mv17a_summary}; {mv18_summary}; {mv19_summary}; {mv20_summary}; data-governance history cleanup remains a separate approval decision.",
             "required_next_evidence": (
-                "Consolidate the manuscript around bounded diagnostic evidence, MV19-downgraded C02/C06 wording, the mirt parameterization audit boundary, MV17a-calibrated BGE-M3-primary/multilingual-E5-sensitivity prediction-consequence wording, and the negative CMDC-only MV20 criterion-overlap stress result."
+                mirt_paper_consolidation
                 if mv06_uncertainty_ready
                 else "Consolidate the manuscript around bounded diagnostic evidence; MV20 is complete and no further criterion-overlap tuning should be added."
             ),

@@ -1,26 +1,26 @@
 # mirt Parameterization Correctness Audit
 
-Generated: `2026-08-22T11:56:52+00:00`
+Generated: `2026-08-22T13:22:45+00:00`
 
 ## Decision
 
-- Audit status: `complete_mirt_parameterization_mismatch`.
-- Statistical correctness blocker: `True`.
-- Short read: MV13/MV14 correctly set E-DAIC as reference, manually link anchors through CONSTRAINB, and use graded d1-d3 threshold/intercept constraints; however, the actual multipleGroup calls do not free CMDC latent mean/variance, so current mirt results must be treated as fixed-hyperparameter qualitative screens until corrected or explicitly limited.
+- Audit status: `complete_mirt_parameterization_consistent`.
+- Statistical correctness blocker: `False`.
+- Short read: MV13/MV14 mirt parameterization matches the audited anchor-linked measurement-invariance contract: E-DAIC is reference, CMDC is focal, anchor/threshold linking is explicit, and focal mean/variance are freed for threshold-constrained models.
 
 ## Key Finding
 
-MV13/MV14 multipleGroup calls omit the invariance argument; mirt design check shows CMDC MEAN_1 and COV_11 fixed under the actual call.
+MV13/MV14 scripts provide mirt invariance terms with free_means/free_var for threshold-constrained models; synthetic mirt design check confirms CMDC MEAN_1 and COV_11 are estimated under anchor items plus free focal hyperparameters.
 
-Current mirt outputs are fixed-group-hyperparameter qualitative screens, not final anchor-linked DIF evidence separated from latent distribution shifts.
+Corrected mirt outputs can support anchor-linked qualitative external DIF evidence, subject to convergence and finite-sample caveats.
 
 ## Checks
 
 | check | status | effect |
 | --- | --- | --- |
 | reference_focal_group_order | pass | Reference/focal naming in reports is code-consistent. |
-| focal_latent_mean_variance | fail | Current mirt outputs are fixed-group-hyperparameter qualitative screens, not final anchor-linked DIF evidence separated from latent distribution shifts. |
-| anchor_linking_partial_mv10 | pass | Manual anchor item linking is internally consistent, apart from the missing focal hyperparameter release. |
+| focal_latent_mean_variance | pass | Corrected mirt outputs can support anchor-linked qualitative external DIF evidence, subject to convergence and finite-sample caveats. |
+| anchor_linking_partial_mv10 | pass | Manual anchor item linking is internally consistent. |
 | graded_threshold_parameterization | pass | Manuscript should call these mirt graded d-parameter threshold/intercept constraints, not exported raw cutpoint values. |
 
 ## Regeneration

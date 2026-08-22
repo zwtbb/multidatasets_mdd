@@ -91,7 +91,10 @@ def audit_r_script(path: Path) -> dict[str, Any]:
         "reference_group_from_factor_order": reference_group,
         "focal_group_from_factor_order": focal_group,
         "itemtype_graded_present": 'itemtype = rep("graded"' in text or 'itemtype <- rep("graded"' in text,
-        "invariance_argument_present": bool(re.search(r"\binvariance\s*=", text)),
+        "invariance_argument_present": bool(
+            re.search(r"\binvariance\s*=", text)
+            or re.search(r"\$invariance\s*<-", text)
+        ),
         "free_means_literal_present": "free_means" in text or "free_mean" in text,
         "free_var_literal_present": "free_var" in text or "free_vars" in text,
         "manual_constrainb_present": "CONSTRAINB" in text,
@@ -220,6 +223,8 @@ def build_syntax_audit() -> pd.DataFrame:
             {
                 "model_id": model_id,
                 "uses_constrainb": "CONSTRAINB" in model_syntax,
+                "mirt_invariance_terms": str(row.get("mirt_invariance_terms", "")),
+                "latent_hyperparameter_policy": str(row.get("latent_hyperparameter_policy", "")),
                 "loading_constrained_items": ";".join(loading_items),
                 "threshold_constrained_items": ";".join(threshold_items),
                 "constrained_item_count": len(constrained_items),
@@ -299,10 +304,10 @@ def build_contract_checks(
     anchor_audit: pd.DataFrame,
     syntax_audit: pd.DataFrame,
 ) -> pd.DataFrame:
-    observed_no_invariance = latent_check[
-        latent_check["parameterization_id"].astype(str) == "actual_no_invariance_argument"
+    expected_anchor_linked = latent_check[
+        latent_check["parameterization_id"].astype(str) == "anchor_items_plus_free_focal_hyperparameters"
     ]
-    focal_rows = observed_no_invariance[observed_no_invariance["group"].astype(str) == "cmdc"]
+    focal_rows = expected_anchor_linked[expected_anchor_linked["group"].astype(str) == "cmdc"]
     focal_mean_free = bool(
         not focal_rows.empty
         and (
@@ -321,8 +326,27 @@ def build_contract_checks(
         (script_audit["reference_group_from_factor_order"] == "edaic").all()
         and (script_audit["focal_group_from_factor_order"] == "cmdc").all()
     )
-    all_scripts_lack_invariance_arg = bool((script_audit["invariance_argument_present"] == False).all())
+    all_scripts_have_invariance_arg = bool((script_audit["invariance_argument_present"] == True).all())
+    all_scripts_have_free_hyperparameter_terms = bool(
+        (script_audit["free_means_literal_present"] == True).all()
+        and (script_audit["free_var_literal_present"] == True).all()
+    )
+    threshold_linked = syntax_audit[syntax_audit["threshold_constrained_item_count"] > 0]
+    all_threshold_linked_models_free_focal_hyperparameters = bool(
+        not threshold_linked.empty
+        and (
+            threshold_linked["latent_hyperparameter_policy"]
+            == "anchor_linked_focal_mean_variance_free"
+        ).all()
+    )
     partial = syntax_audit[syntax_audit["model_id"] == "partial_mv10"].iloc[0]
+    latent_status = (
+        all_scripts_have_invariance_arg
+        and all_scripts_have_free_hyperparameter_terms
+        and focal_mean_free
+        and focal_var_free
+        and all_threshold_linked_models_free_focal_hyperparameters
+    )
     return pd.DataFrame(
         [
             {
@@ -335,16 +359,26 @@ def build_contract_checks(
             {
                 "check_id": "focal_latent_mean_variance",
                 "expected_contract": "Anchor-linked DIF/invariance interpretation should free focal-group latent mean and variance while keeping the reference group fixed.",
-                "observed_contract": "MV13/MV14 multipleGroup calls omit the invariance argument; mirt design check shows CMDC MEAN_1 and COV_11 fixed under the actual call.",
-                "status": "fail" if all_scripts_lack_invariance_arg and not focal_mean_free and not focal_var_free else "pass",
-                "claim_effect": "Current mirt outputs are fixed-group-hyperparameter qualitative screens, not final anchor-linked DIF evidence separated from latent distribution shifts.",
+                "observed_contract": (
+                    "MV13/MV14 scripts provide mirt invariance terms with free_means/free_var for "
+                    "threshold-constrained models; synthetic mirt design check confirms CMDC MEAN_1 "
+                    "and COV_11 are estimated under anchor items plus free focal hyperparameters."
+                    if latent_status
+                    else "MV13/MV14 scripts or generated syntax do not fully show anchor-linked free focal mean/variance; current mirt outputs remain fixed-hyperparameter screens."
+                ),
+                "status": "pass" if latent_status else "fail",
+                "claim_effect": (
+                    "Corrected mirt outputs can support anchor-linked qualitative external DIF evidence, subject to convergence and finite-sample caveats."
+                    if latent_status
+                    else "Current mirt outputs are fixed-group-hyperparameter qualitative screens, not final anchor-linked DIF evidence separated from latent distribution shifts."
+                ),
             },
             {
                 "check_id": "anchor_linking_partial_mv10",
                 "expected_contract": "C01/C04/C05/C07 constrain loadings and thresholds; C02/C03/C06 constrain loadings only; C08 is free.",
                 "observed_contract": "partial_mv10 generated syntax matches MV10 roles by CONSTRAINB.",
                 "status": "pass" if bool((anchor_audit["anchor_linking_status"] == "pass").all()) else "fail",
-                "claim_effect": "Manual anchor item linking is internally consistent, apart from the missing focal hyperparameter release.",
+                "claim_effect": "Manual anchor item linking is internally consistent.",
             },
             {
                 "check_id": "graded_threshold_parameterization",
@@ -371,23 +405,35 @@ def build_claim_impact(contract: pd.DataFrame) -> pd.DataFrame:
             {
                 "claim_scope": "MV13_external_mirt_replication",
                 "audit_result": "parameterization_mismatch" if latent_failed else "parameterization_consistent",
-                "manuscript_boundary": "Use as a qualitative external mirt replication under fixed group hyperparameters; do not present as final anchor-linked DIF proof until rerun with anchor items plus free focal mean/variance.",
-                "action_required": "Correct and rerun MV13, or explicitly state the fixed-hyperparameter limitation.",
-                "blocking_for_submission": True,
+                "manuscript_boundary": (
+                    "Use as corrected anchor-linked external mirt replication, with convergence and finite-sample caveats."
+                    if not latent_failed
+                    else "Use as a qualitative external mirt replication under fixed group hyperparameters; do not present as final anchor-linked DIF proof until rerun with anchor items plus free focal mean/variance."
+                ),
+                "action_required": "No parameterization action remains; refresh manuscript wording from corrected aggregate outputs."
+                if not latent_failed
+                else "Correct and rerun MV13, or explicitly state the fixed-hyperparameter limitation.",
+                "blocking_for_submission": latent_failed,
             },
             {
                 "claim_scope": "MV14_bootstrap_uncertainty",
                 "audit_result": "parameterization_mismatch" if latent_failed else "parameterization_consistent",
-                "manuscript_boundary": "Bootstrap frequencies describe the same fixed-hyperparameter mirt screen; they should not be used as identification-robust DIF stability until corrected.",
-                "action_required": "Correct and rerun the bootstrap if manuscript needs formal mirt-backed DIF stability intervals.",
-                "blocking_for_submission": True,
+                "manuscript_boundary": (
+                    "Bootstrap frequencies use the corrected anchor-linked focal hyperparameter contract; retain convergence and observed-N caveats."
+                    if not latent_failed
+                    else "Bootstrap frequencies describe the same fixed-hyperparameter mirt screen; they should not be used as identification-robust DIF stability until corrected."
+                ),
+                "action_required": "No parameterization action remains; keep MV14 bounded by convergence and finite-sample uncertainty."
+                if not latent_failed
+                else "Correct and rerun the bootstrap if manuscript needs formal mirt-backed DIF stability intervals.",
+                "blocking_for_submission": latent_failed,
             },
             {
                 "claim_scope": "MV10_MV11_MV19_label_only_core",
                 "audit_result": "not_directly_invalidated_by_mirt_audit",
-                "manuscript_boundary": "Keep the broader observed-N and in-repo label-only PHQ measurement caveats, but downgrade MV13/MV14 corroboration until corrected.",
-                "action_required": "Do not strengthen PHQ DIF wording using MV13/MV14 before resolving the mirt parameterization issue.",
-                "blocking_for_submission": True,
+                "manuscript_boundary": "Keep the broader observed-N and in-repo label-only PHQ measurement caveats.",
+                "action_required": "Use MV13/MV14 only within corrected aggregate-result boundaries and do not override MV19 finite-sample downgrade.",
+                "blocking_for_submission": False,
             },
             {
                 "claim_scope": "full_method_gate",
@@ -512,7 +558,7 @@ def build_outputs(out_dir: Path, generated_at: str) -> dict[str, Any]:
             "short_read": (
                 "MV13/MV14 correctly set E-DAIC as reference, manually link anchors through CONSTRAINB, and use graded d1-d3 threshold/intercept constraints; however, the actual multipleGroup calls do not free CMDC latent mean/variance, so current mirt results must be treated as fixed-hyperparameter qualitative screens until corrected or explicitly limited."
                 if blocker
-                else "MV13/MV14 mirt parameterization matches the audited anchor-linked measurement-invariance contract."
+                else "MV13/MV14 mirt parameterization matches the audited anchor-linked measurement-invariance contract: E-DAIC is reference, CMDC is focal, anchor/threshold linking is explicit, and focal mean/variance are freed for threshold-constrained models."
             ),
         },
         "generated_at": generated_at,

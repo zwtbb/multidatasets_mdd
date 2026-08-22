@@ -228,7 +228,9 @@ data audit
   complete with convergence warnings. External R `mirt::multipleGroup`
   qualitatively replicates MV11: four anchors confirmed, zero loading-DIF
   flags, threshold DIF on `C02`/`C06`, AIC partial versus BIC scalar split, and
-  a retained configural convergence caveat.
+  a retained configural convergence caveat. The corrected audit verifies
+  E-DAIC as reference, CMDC as focal, explicit anchor/threshold linking, and
+  freed focal mean/variance for threshold-constrained models.
 - Phase 5 `P5_MV14 measurement_uncertainty_bootstrap_design`:
   complete as a predeclaration, not a run. It fixes smoke/core/DIF/optional
   bootstrap tiers, aggregate stability metrics, local-only boundaries, and
@@ -241,7 +243,7 @@ data audit
   It ran smoke/core/DIF R=`10/200/100` after the convergence-safe correction:
   full-ladder effective core R is `120/200` after `185/200` fit-success draws,
   configural converges in `120/200`, the stable metric/partial/scalar ladder
-  has `197` effective draws, the DIF tier has minimum anchor-support effective
+  has `198` effective draws, the DIF tier has minimum anchor-support effective
   R `77/100`, and threshold-DIF comparisons are `100/100` effective. All four MV10
   anchors are stable (`C01`, `C04`, `C05`, `C07`), loading DIF is sparse, and
   threshold-DIF frequencies remain top-ranked for `C02` and `C06`. Full-ladder
@@ -358,12 +360,11 @@ python scripts/phase5_consolidate_experiment_inventory.py
 The current active paper evidence bundle is:
 
 - Paper core: `MV10/MV11/MV19` primary label-only PHQ psychometrics, with
-  `MV13/MV14` retained only as fixed-hyperparameter mirt qualitative screens
-  until corrected or explicitly limited.
+  corrected `MV13/MV14` retained as anchor-linked mirt corroboration with
+  convergence and finite-sample caveats.
 - Paper support: `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`.
-- Paper guardrail: the mirt parameterization correctness audit blocks final
-  anchor-linked mirt DIF wording until focal latent mean/variance handling is
-  resolved.
+- Paper guardrail: the mirt parameterization correctness audit verifies focal
+  latent mean/variance handling for the corrected MV13/MV14 rerun.
 - Retired historical diagnostics: early weak or superseded MV rows, including
   `MV01`, `MV02b`, `MV03/MV03b`, `MV04/MV04b`, `MV05`,
   `MV07/MV07b/MV07c`, and `MV08/MV08b`.
@@ -555,20 +556,20 @@ representation without those controls.
   line.
 - `P5_MV13 external_psychometric_replication` is complete with a configural
   convergence caveat and qualitatively replicates the MV11 anchor/DIF pattern,
-  but a later code-level audit shows the actual mirt call fixes CMDC latent
-  mean/variance. Treat MV13 as a fixed-hyperparameter qualitative screen until
-  corrected or explicitly limited.
+  with corrected anchor-linked focal mean/variance handling verified by the
+  code-level audit. Treat MV13 as external mirt corroboration with convergence
+  and finite-sample caveats, not as robust standalone DIF proof.
 - `P5_MV14 measurement_uncertainty_bootstrap_design` is complete and consumed
   by the MV14 run. It predeclared group-wise subject bootstrap, stability
   metrics, local-only boundaries, and pass/downgrade rules before execution.
 - `P5_MV14 measurement_uncertainty_bootstrap` is complete with convergence-safe
   inference: full-ladder effective R `120/200`, configural converged
-  `120/200`, stable-ladder effective R `197`, minimum DIF anchor-support
+  `120/200`, stable-ladder effective R `198`, minimum DIF anchor-support
   effective R `77/100`, threshold-DIF comparison effective R `100/100`,
   stable anchors `C01/C04/C05/C07`, and threshold DIF concentrated on
-  `C02/C06`. Treat it as a convergence-aware fixed-hyperparameter mirt screen
-  with uncertain global invariance-model selection, not as final
-  identification-robust DIF stability until corrected.
+  `C02/C06`. Treat it as a convergence-aware corrected anchor-linked mirt
+  uncertainty screen with uncertain global invariance-model selection, not as
+  robust standalone DIF stability.
 - `P5_MV15 latent_conditioned_dataset_identity_design` is complete and design
   consumed by the MV15 run.
 - `P5_MV15 latent_conditioned_dataset_identity` is complete and blocked:
@@ -591,8 +592,8 @@ representation without those controls.
   `BAAI/bge-small-zh-v1.5`, a Chinese model, on English transcripts, and the
   available E-DAIC transcript CSVs do not expose speaker roles for
   participant/interviewer filtering. This caveat does not affect label-only
-  MV10/MV11/MV19 primary psychometric results; MV13/MV14 now have a separate
-  mirt parameterization caveat. MV17a now completes the
+  MV10/MV11/MV19 primary psychometric results or corrected MV13/MV14 mirt
+  corroboration. MV17a now completes the
   paper-critical multilingual sensitivity: BGE-M3 and multilingual-E5 both
   reproduce the blocked MV07/MV12/MV15 pattern, with feature identity and
   theta-conditioned feature identity still high. External theta transfer and
@@ -616,8 +617,8 @@ representation without those controls.
   scripts, and aggregate audits. Any remote history rewrite still requires
   explicit user approval.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
-  as bounded diagnostic evidence, keep MV13/MV14 as fixed-hyperparameter mirt
-  qualitative screens pending the focal hyperparameter correction, freeze MV15 as negative
+  as bounded diagnostic evidence, keep corrected MV13/MV14 as anchor-linked
+  mirt corroboration with convergence and finite-sample caveats, freeze MV15 as negative
   latent-conditioned feature-identity evidence now replicated under the MV17a
   multilingual feature contract, and freeze MV16 as a completed
   bounded/negative few-shot calibration result. MV06 agreement uncertainty is
@@ -652,11 +653,10 @@ representation without those controls.
      than matched random deletion under BGE-M3 primary or multilingual-E5
      sensitivity, so stop overlap-threshold tuning and contamination-aware
      model work.
-  6. mirt parameterization correctness audit: complete and blocking for final
-     mirt-backed DIF wording. Reference/focal order, anchor linking, and graded
-     `d1-d3` threshold/intercept constraints pass, but MV13/MV14 currently fix
-     CMDC latent mean/variance. Correct/rerun MV13/MV14 or explicitly limit
-     them before submission.
+  6. mirt parameterization corrected rerun: complete. Reference/focal order,
+     anchor linking, graded `d1-d3` threshold/intercept constraints, and freed
+     focal mean/variance now pass the audit; remaining limits are configural
+     convergence and MV19 finite-sample caveats.
 - Stop lines:
   no extra shallow BGE heads, projection dimensions, MV16 calibration variants,
   personality gating/calibrators, or EATD valence-adversarial modules without a

@@ -1,11 +1,11 @@
 {
   "artifact_hygiene_passed": true,
   "decision": {
-    "audit_status": "complete_mirt_parameterization_mismatch",
-    "short_read": "MV13/MV14 correctly set E-DAIC as reference, manually link anchors through CONSTRAINB, and use graded d1-d3 threshold/intercept constraints; however, the actual multipleGroup calls do not free CMDC latent mean/variance, so current mirt results must be treated as fixed-hyperparameter qualitative screens until corrected or explicitly limited.",
-    "statistical_correctness_blocker": true
+    "audit_status": "complete_mirt_parameterization_consistent",
+    "short_read": "MV13/MV14 mirt parameterization matches the audited anchor-linked measurement-invariance contract: E-DAIC is reference, CMDC is focal, anchor/threshold linking is explicit, and focal mean/variance are freed for threshold-constrained models.",
+    "statistical_correctness_blocker": false
   },
-  "generated_at": "2026-08-22T11:56:52+00:00",
+  "generated_at": "2026-08-22T13:22:45+00:00",
   "input_contract": {
     "aggregate_artifacts_read": [
       "analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/partial_invariance_summary.csv",

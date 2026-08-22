@@ -102,9 +102,10 @@ run summaries, traceability matrices, and hygiene audits under:
 ## Next Handoff
 
 Continue manuscript editing inside the target measurement-validity frame. This
-handoff is superseded by session 66 for the PHQ psychometric boundary:
-MV10/MV11/MV19 are now the primary PHQ measurement evidence, while MV13/MV14
-are fixed-hyperparameter `mirt` qualitative screens until corrected or
-explicitly limited. Use MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18 as
-bounded support. Do not revive retired small-head or projection experiments
-unless a new predeclared mechanism changes the full-method gate.
+handoff is superseded first by session 66 for the PHQ psychometric audit and
+then by session 67 for the corrected MV13/MV14 rerun: MV10/MV11/MV19 are the
+primary PHQ measurement evidence, while corrected MV13/MV14 provide
+anchor-linked external `mirt` corroboration with convergence and finite-sample
+caveats. Use MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18 as bounded
+support. Do not revive retired small-head or projection experiments unless a
+new predeclared mechanism changes the full-method gate.

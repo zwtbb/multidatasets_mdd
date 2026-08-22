@@ -152,7 +152,7 @@ def decision_for(evidence_id: str) -> dict[str, Any]:
     if evidence_id in PAPER_CORE:
         manuscript_role = "main psychometric measurement-validity evidence"
         if evidence_id in {"P5_MV13", "P5_MV14"}:
-            manuscript_role = "limited mirt qualitative screen pending parameterization correction"
+            manuscript_role = "corrected anchor-linked mirt corroboration with convergence and finite-sample caveats"
         return {
             "evidence_bundle": "paper_core",
             "retention_decision": "keep_primary_aggregate",
@@ -366,9 +366,9 @@ def write_report(inventory: pd.DataFrame, local_cleanup: pd.DataFrame, hygiene: 
         "",
         "Do not physically delete tracked aggregate experiment outputs. They are small, versionable traceability records used by the full-method gate and manuscript claim boundary. Consolidate them by role instead:",
         "",
-        "- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` limited mirt qualitative screens pending parameterization correction).",
+        "- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` corrected anchor-linked mirt corroboration with convergence and finite-sample caveats).",
         "- Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`).",
-        "- Paper guardrail: mirt parameterization correctness audit, kept as a manuscript blocker rather than a new experiment.",
+        "- Paper guardrail: mirt parameterization correctness audit, kept as a statistical wording boundary rather than a new experiment.",
         "- Retired historical: early weak or superseded minimal validations kept only as aggregate background.",
         "- Predeclaration contracts: design/readiness artifacts retained to prove that later runs were predeclared.",
         "- Local workflow: MV06 workbooks and feature-generation boundaries stay local-only; tracked outputs remain schemas/hygiene summaries.",

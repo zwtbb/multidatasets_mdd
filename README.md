@@ -121,9 +121,9 @@ E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then rerunning
 MV07/MV12/MV15. Both multilingual encoders reproduce the blocked feature-level
 pattern, but external theta transfer and B3 severity-control dominance are
 encoder-dependent. Label-only MV10/MV11/MV19 remain the primary PHQ
-psychometric evidence; MV13/MV14 are now fixed-hyperparameter `mirt`
-qualitative screens pending correction of the focal latent mean/variance
-parameterization or explicit manuscript limitation. The
+psychometric evidence; corrected MV13/MV14 now provide anchor-linked `mirt`
+qualitative/uncertainty corroboration while retaining configural convergence
+and MV19 finite-sample caveats. The
 bibliography registry and `references.bib` now cover all current source-context
 rows, with corrected primary-source metadata for P3HF, Multi-Probe Audit,
 EMNLP interviewer bias, and the final Pattern Recognition version of SCD-MLLM.

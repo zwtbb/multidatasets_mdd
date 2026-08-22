@@ -1,6 +1,6 @@
 {
   "artifact_hygiene_passed": true,
-  "generated_at": "2026-08-14T05:08:56+00:00",
+  "generated_at": "2026-08-22T13:20:31+00:00",
   "input_contract": {
     "datasets": [
       "edaic",
@@ -69,6 +69,7 @@
   "scope": "label_only_measurement_uncertainty_bootstrap",
   "status": "complete",
   "verdict": {
+    "anchor_linked_focal_hyperparameters_corrected": true,
     "anchor_loading_dif_high_items": [],
     "anchors_stable": true,
     "best_aic_model": "configural",
@@ -90,12 +91,13 @@
     "itemfit_available": true,
     "loading_dif_sparse": true,
     "low_anchor_items": [],
+    "parameterization_contract": "anchor_linked_focal_mean_variance_free",
     "pass_rule_met": true,
     "r_returncode": 0,
     "requested_core_R": 200,
     "requested_dif_R": 100,
     "requested_smoke_R": 10,
-    "short_read": "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap; its convergence-safe interpretation is item-level threshold/localization evidence, not a global partial-invariance model-selection win or full multimodal method authorization.",
+    "short_read": "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap with anchor-linked focal mean/variance freed for threshold-constrained models; its convergence-safe interpretation is item-level threshold/localization evidence, not a global partial-invariance model-selection win or full multimodal method authorization.",
     "smoke_completed": true,
     "stable_anchor_items": [
       "C01",
@@ -105,7 +107,7 @@
     ],
     "stable_ladder_best_aic_model": "partial_mv10",
     "stable_ladder_best_bic_model": "scalar",
-    "stable_ladder_effective_draws": 197,
+    "stable_ladder_effective_draws": 198,
     "status": "complete_mv14_convergence_safe_item_level_measurement_shift",
     "threshold_dif_localized_to_C02_C06": true,
     "top_threshold_dif_items": [

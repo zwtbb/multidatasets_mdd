@@ -4,6 +4,10 @@ Status: complete
 Last updated: 2026-08-22 UTC
 Thread/task: main orchestration - mirt parameterization correctness audit
 
+Superseded by
+`/root/autodl-tmp/memory/sessions/session_67_mirt_corrected_rerun.md`: the
+parameterization issue identified here has now been corrected and rerun.
+
 ## Scope
 
 This session owns a code-level statistical correctness audit of the MV13/MV14
@@ -17,10 +21,12 @@ matrices, or prediction rows. Those remain local-only.
 
 ## Current State
 
-The audit is complete at
+This session identified the original blocker. The audit snapshot from that
+point was complete at
 `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mirt_parameterization_correctness_audit/`.
-Status is `complete_mirt_parameterization_mismatch`;
-`statistical_correctness_blocker=true`; artifact hygiene passed.
+It was later superseded by a corrected rerun with status
+`complete_mirt_parameterization_consistent`; artifact hygiene passed in both
+snapshots.
 
 The code-level findings are:
 
@@ -32,25 +38,26 @@ The code-level findings are:
 - The scripts use `itemtype = "graded"` and constrain `d1`, `d2`, and `d3`,
   so manuscript wording should call these `mirt` graded d-parameter
   threshold/intercept constraints rather than exported raw cutpoints.
-- The actual MV13/MV14 `multipleGroup` calls omit `invariance`. A synthetic
-  `pars = "values"` design check confirms CMDC `MEAN_1` and `COV_11` are fixed
-  under the actual call, but estimated when anchor items plus
-  `free_means/free_var` are supplied.
+- The original MV13/MV14 `multipleGroup` calls omitted `invariance`. A
+  synthetic `pars = "values"` design check confirmed CMDC `MEAN_1` and
+  `COV_11` were fixed under that original call, but estimated when anchor
+  items plus `free_means/free_var` were supplied.
 
 Current manuscript boundary:
 
 - MV10/MV11/MV19 are the primary PHQ psychometric evidence.
-- MV13/MV14 are retained only as fixed-hyperparameter `mirt` qualitative
-  screens until corrected/rerun or explicitly limited.
-- Do not present MV13/MV14 as final anchor-linked `mirt` DIF evidence or
-  identification-robust bootstrap stability.
+- Session 67 corrected/reran MV13/MV14. Current manuscript wording should use
+  the corrected anchor-linked external `mirt` corroboration with configural
+  convergence and MV19 finite-sample caveats.
+- Do not present MV13/MV14 as robust standalone `mirt` DIF evidence or
+  identification-robust bootstrap stability without the caveats.
 
 ## Key Decisions
 
-- Treat the finding as a statistical correctness blocker for final manuscript
-  wording, not as a reason to open broad new experiments.
-- Keep the experiment queue frozen after MV20 except for a narrowly scoped
-  correctness rerun of MV13/MV14 if chosen.
+- The original finding was treated as a statistical correctness blocker for
+  final manuscript wording, not as a reason to open broad new experiments.
+- The narrow correctness rerun was completed in session 67. Keep the experiment
+  queue frozen after MV20.
 - Track only the audit script, lightweight aggregate audit outputs, refreshed
   gate/paper/consolidation artifacts, docs, and memory. Keep item-response
   matrices, fitted parameters, theta scores, bootstrap draw rows, and model
@@ -104,37 +111,29 @@ python scripts/build_diagnostic_paper_manuscript_draft.py
 python scripts/phase5_plan_mv17_postreview_measurement_validity_route.py --overwrite
 ```
 
-Current refreshed state:
+Historical refreshed state before session 67:
 
 - Full-method gate remains `blocked_but_publishable_diagnostic_direction`.
 - Gate reads 45 Phase 5 summaries.
-- Next action rank 1 is
-  `NEXT_RESOLVE_MIRT_PARAMETERIZATION_BEFORE_SUBMISSION`.
+- Next action rank 1 was the MV13/MV14 parameterization fix.
 - Experiment consolidation has 46 rows, 17 active paper rows, 5 paper-core
   rows, 11 paper-support rows, and 1 paper-guardrail row.
-- Manuscript open item `M011` is blocking for submission.
+- A manuscript open item was blocking for submission before session 67.
 
 ## Blockers And Risks
 
-- I072 is open: MV13/MV14 currently fix CMDC latent mean/variance in the
-  actual `mirt` calls. This blocks final anchor-linked `mirt` DIF or
-  bootstrap-stability wording.
+- I072 was opened here and closed by session 67 after the corrected rerun.
 - Corrected rerun may change full, partial, or unsupported invariance
   conclusions because measurement-invariance results are identification
   sensitive.
-- Existing MV13/MV14 aggregate outputs remain useful only as
-  fixed-hyperparameter qualitative screens.
+- Current MV13/MV14 aggregate outputs are corrected, but still bounded by
+  convergence and finite-sample caveats.
 
 ## Next Handoff
 
-Choose one of two narrow paths before submission:
-
-- Preferred statistical path: patch MV13/MV14 R scripts to use anchor items
-  plus `free_means/free_var` in the `invariance` contract, rerun the corrected
-  aggregate summaries, then refresh gate, consolidation, paper scaffolds, docs,
-  and memory.
-- If no rerun is desired: keep the current results and explicitly limit all
-  manuscript language to fixed-hyperparameter qualitative `mirt` screens.
+The path chosen after this audit was the preferred statistical path: patch and
+rerun MV13/MV14 with anchor items plus `free_means/free_var`, then refresh the
+aggregate summaries, gate, consolidation, paper scaffolds, docs, and memory.
 
 Do not broaden the experiment queue or add new feature/model variants from
 this audit.

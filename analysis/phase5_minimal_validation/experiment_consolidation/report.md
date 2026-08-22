@@ -1,14 +1,14 @@
 # Phase 5 Experiment Consolidation
 
-Generated: 2026-08-22T12:02:47+00:00
+Generated: 2026-08-22T13:28:00+00:00
 
 ## Decision
 
 Do not physically delete tracked aggregate experiment outputs. They are small, versionable traceability records used by the full-method gate and manuscript claim boundary. Consolidate them by role instead:
 
-- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` limited mirt qualitative screens pending parameterization correction).
+- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` corrected anchor-linked mirt corroboration with convergence and finite-sample caveats).
 - Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`).
-- Paper guardrail: mirt parameterization correctness audit, kept as a manuscript blocker rather than a new experiment.
+- Paper guardrail: mirt parameterization correctness audit, kept as a statistical wording boundary rather than a new experiment.
 - Retired historical: early weak or superseded minimal validations kept only as aggregate background.
 - Predeclaration contracts: design/readiness artifacts retained to prove that later runs were predeclared.
 - Local workflow: MV06 workbooks and feature-generation boundaries stay local-only; tracked outputs remain schemas/hygiene summaries.
@@ -29,8 +29,8 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 | --- | --- | --- |
 | `P5_MV10` | `phq_label_only_psychometrics` | main psychometric measurement-validity evidence |
 | `P5_MV11` | `phq_label_only_psychometrics` | main psychometric measurement-validity evidence |
-| `P5_MV13` | `phq_label_only_psychometrics` | limited mirt qualitative screen pending parameterization correction |
-| `P5_MV14` | `phq_label_only_psychometrics` | limited mirt qualitative screen pending parameterization correction |
+| `P5_MV13` | `phq_label_only_psychometrics` | corrected anchor-linked mirt corroboration with convergence and finite-sample caveats |
+| `P5_MV14` | `phq_label_only_psychometrics` | corrected anchor-linked mirt corroboration with convergence and finite-sample caveats |
 | `P5_MV19` | `phq_label_only_psychometrics` | main psychometric measurement-validity evidence |
 | `P5_mirt_parameterization_audit` | `psychometric_parameterization_guardrail` | statistical correctness boundary for mirt-backed psychometric wording |
 | `P5_MV02` | `bounded_hamd_internal_diagnostic` | bounded diagnostic support or negative control |
