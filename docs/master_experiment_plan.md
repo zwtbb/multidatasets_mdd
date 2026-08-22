@@ -1,6 +1,6 @@
 # Master Experiment Plan
 
-Last updated: 2026-08-21 UTC
+Last updated: 2026-08-22 UTC
 
 ## Principle
 
@@ -585,7 +585,9 @@ representation without those controls.
   MV10/MV11/MV13/MV14/MV19 psychometric results. MV17a now completes the
   paper-critical multilingual sensitivity: BGE-M3 and multilingual-E5 both
   reproduce the blocked MV07/MV12/MV15 pattern, with feature identity and
-  theta-conditioned feature identity still high.
+  theta-conditioned feature identity still high. External theta transfer and
+  B3 Pareto dominance are encoder-dependent, so neither should be written as a
+  universal conclusion.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -614,8 +616,10 @@ representation without those controls.
 - Post-review experiment queue:
   1. MV17a multilingual feature-contract sensitivity: complete. BGE-M3 and
      multilingual-E5 regenerate E-DAIC/CMDC/PDCH features and reproduce the
-     blocked MV07/MV12/MV15 pattern. Do not rerun MV16 unless a new explicit
-     need is identified.
+     blocked MV07/MV12/MV15 pattern. BGE-M3 is the primary feature contract
+     and multilingual-E5 is the sensitivity encoder; external theta transfer
+     and B3 Pareto dominance are encoder-dependent. Do not rerun MV16 unless a
+     new explicit need is identified.
   2. MV18 CMDC-HAMD versus PDCH-HAMD same-scale exploratory
      control: complete. The mild/moderate HAMD overlap shows 4
      severity-conditioned residual item-shift flags, 7 threshold-shift flags,
@@ -628,7 +632,11 @@ representation without those controls.
      and H1 anchor subset recovery is `0.178`. Downgrade C02/C06 from robust
      standalone DIF to repeated but finite-sample-bounded dataset-group
      threshold-shift evidence.
-  4. MV20 criterion-contamination stress: optional after manuscript review;
+  4. MV17a manuscript claim calibration: complete. Generated paper scaffolds,
+     gate tables, bibliography, README, outline, issue log, and memory now
+     make MV17a the canonical prediction-consequence layer and keep old
+     Chinese-BGE outputs as legacy/supporting evidence.
+  5. MV20 criterion-contamination stress: optional after manuscript review;
      separate mirror-like
      interviewer/question turns from non-mirror turns before adding any
      protocol-bias method.

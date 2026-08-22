@@ -1,6 +1,6 @@
 # Phase 5 Experiment Consolidation
 
-Generated: 2026-08-22T07:59:27+00:00
+Generated: 2026-08-22T10:19:35+00:00
 
 ## Decision
 
@@ -47,7 +47,7 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 
 ## Local Cleanup Boundary
 
-No bytecode/notebook cache categories remain in the ignored working tree.
+- `python_bytecode_cache`: 1 ignored paths can be deleted without affecting evidence.
 
 Local predictions, features, raw datasets, Phase 2 local outputs, MV06 workbooks, and original plan notes are not deleted by this policy. They require user approval or a storage-specific cleanup request.
 

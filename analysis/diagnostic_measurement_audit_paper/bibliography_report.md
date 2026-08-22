@@ -1,6 +1,6 @@
 # Diagnostic Paper Bibliography Report
 
-Generated: `2026-08-22T07:57:34+00:00`
+Generated: `2026-08-22T10:19:34+00:00`
 
 ## Decision
 
@@ -47,7 +47,7 @@ Recommended insertion points:
 | literature_positioning:questmf_clpsych_2025 | Mandal et al. 2025, CLPsych | mandal2025questmf | primary_acl_anthology |
 | literature_positioning:red_acl_2025 | Zhang et al. 2025, Findings of ACL | zhang2025red | primary_acl_anthology |
 | literature_positioning:mirror_criterion_contamination_2025 | Li et al. 2025, arXiv | li2025mirror | primary_arxiv_preprint |
-| literature_positioning:scd_mllm_2025 | Chen et al. 2025, arXiv | chen2025scd | primary_arxiv_preprint |
+| literature_positioning:scd_mllm_2025 | Chen et al. 2026, Pattern Recognition | chen2025scd | primary_publisher_doi_metadata |
 | literature_positioning:nlp_psychometrics_2026 | De Duro et al. 2026, arXiv | deduro2026nlppsychometrics | primary_arxiv_preprint |
 | literature_positioning:bge_small_zh_model_card | BAAI bge-small-zh-v1.5 model card | baai2026bgesmallzh | primary_model_card |
 | literature_positioning:bge_m3_model_card | BAAI BGE-M3 model card | baai2026bgem3 | primary_model_card |
@@ -73,7 +73,7 @@ Recommended insertion points:
 | cai2020modma | 2020 | A Multi-modal Open Dataset for Mental-disorder Analysis | 1 |
 | chalmers2012mirt | 2012 | {mirt}: A Multidimensional Item Response Theory Package for the {R} Environment | 1 |
 | chalmers2026mirtmultiplegroup | 2026 | {multipleGroup}: Multiple Group Estimation | 1 |
-| chen2025scd | 2025 | Towards Stable Cross-Domain Depression Recognition under Missing Modalities | 1 |
+| chen2025scd | 2026 | Towards Stable Cross-Domain Depression Recognition under Missing Modalities | 1 |
 | deduro2026nlppsychometrics | 2026 | Natural Language Processing Psychometrics | 1 |
 | delamain2024measurement | 2024 | Measurement Invariance and Differential Item Functioning of the {PHQ-9} and {GAD-7} in a Large Primary Care Sample | 2 |
 | fu2025mpddchallenge | 2025 | The First Multimodal Personality-aware Depression Detection Challenge | 2 |

@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-22T07:57:15+00:00`
+Generated: `2026-08-22T10:19:33+00:00`
 
 ## Decision
 
@@ -20,12 +20,12 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13/MV14/MV19 as label-only PHQ common-structure and dataset-group measurement-shift evidence with explicit finite-sample downgrade: C02/C06 threshold non-equivalence is a repeated localized signal, not a robust standalone DIF conclusion at the observed N. | Use MV19 to downgrade C02/C06 wording to finite-sample-bounded localized measurement-shift evidence; any stronger adaptation claim needs a new predeclared mechanism beyond the current BGE/few-shot ladder. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic plus MV18 exploratory same-HAMD context-shift support; not cross-dataset HAMD generalization. | A stronger CMDC/PDCH-compatible measurement head or larger external HAMD item sample is required before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
-| C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, conditional identity audits, and MV15 latent-conditioned identity are controls; do not claim invariant representation. | Freeze the current BGE latent-conditioned feature-identity line as diagnostic evidence; keep output-space low identity separate from feature invariance. |
+| C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, conditional identity audits, MV15 latent-conditioned identity, and MV17a multilingual feature-contract sensitivity are controls; do not claim invariant representation. | Freeze the current latent-conditioned feature-identity line as diagnostic evidence; keep output-space low identity separate from feature invariance and keep encoder-dependent MV17a comparisons explicit. |
 | C_MODMA_TASK_CONTROL | `allowed_limited` | MODMA task-specific diagnostic protocol-control result. | Integrate with shared-symptom targets and cross-dataset controls before using it as a full method component. |
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, resolve any remaining incomplete local candidate rows and discuss dataset-specific kappa CIs plus sampling limits. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, MV18, and MV19 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence and MV19-downgraded C02/C06 wording; MV20 criterion-contamination stress is optional if the manuscript still needs protocol-label overlap support. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, MV18, and MV19 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence, MV19-downgraded C02/C06 wording, and MV17a-calibrated BGE-M3-primary/multilingual-E5-sensitivity prediction-consequence wording; MV20 criterion-contamination stress is optional if the manuscript still needs protocol-label overlap support. |
 
 ## Evidence Inventory
 
@@ -79,7 +79,7 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Consolidate the manuscript with MV19 finite-sample-downgraded PHQ wording, then decide whether MV20 criterion-contamination stress is still needed. | Paper claim tables, Results scaffold, and manuscript draft state C02/C06 as repeated but finite-sample-bounded dataset-group threshold-shift evidence; MV20 is optional and predeclared only if protocol-label overlap support is still needed. |
+| 1 | Continue MV17a-calibrated manuscript review and primary-source citation verification, then decide whether MV20 criterion-contamination stress is still needed. | Paper claim tables, Results scaffold, and manuscript draft state C02/C06 as repeated but finite-sample-bounded dataset-group threshold-shift evidence, make MV17a the BGE-M3-primary/multilingual-E5-sensitivity feature contract, and keep MV20 optional unless protocol-label overlap support is still needed. |
 | 2 | Use the dataset-stratified MV06 agreement and bootstrap uncertainty summaries as first-round RQ4 evidence, then resolve any incomplete local candidate rows if stronger wording is needed. | Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

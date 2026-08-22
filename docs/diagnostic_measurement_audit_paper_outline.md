@@ -1,6 +1,6 @@
 # Diagnostic Measurement-Audit Paper Outline
 
-Last updated: 2026-08-21 UTC
+Last updated: 2026-08-22 UTC
 
 ## Working Title
 
@@ -47,17 +47,7 @@ psychometric pattern with R `mirt::multipleGroup`: the same four anchors are
 confirmed, loading DIF remains unflagged, threshold DIF remains localized to
 `C02` and `C06`, AIC still prefers the partial model, and BIC still prefers
 scalar, while a configural convergence warning keeps the claim conservative.
-MV12 then tests the two-stage latent-target
-experiment: fit local-only `Y -> theta` measurement targets, train `X -> theta`
-predictors, and gate them against direct/floor baselines, conditional identity,
-and external transfer. It improves same-dataset theta MAE and lowers
-conditional predicted-theta identity versus upstream BGE feature identity, but
-fails observed-scale safety and zero-shot source-calibrated external theta
-transfer. The aggregate MV12 tradeoff analysis adds a crucial caveat: M12a is
-Pareto-dominated by B3 direct itemwise Ridge compressed to theta on pooled
-observed macro MAE and conditional identity, so MV12 does not prove
-psychometric theta is uniquely more invariant than dimension-matched severity
-outputs. MV14 adds the corrected predeclared bootstrap uncertainty layer: with
+MV14 adds the corrected predeclared bootstrap uncertainty layer: with
 smoke/core/DIF R=`10/200/100`, convergence-safe full-ladder effective core R is
 `120/200` after `185/200` fit-success draws, configural converges in `120/200`,
 the stable metric/partial/scalar ladder has `197` effective draws, minimum
@@ -66,13 +56,24 @@ stable, and threshold DIF stays localized to `C02` and `C06`. MV19 then tests
 the observed-N finite-sample
 behavior and downgrades C02/C06 from robust standalone DIF to repeated but
 finite-sample-bounded dataset-group threshold-shift evidence. Together,
-MV10/MV11/MV13/MV14/MV19/MV12 move the
+MV10/MV11/MV13/MV14/MV19 move the
 project from a generic benchmark audit toward a target-measurement-shift paper;
-they still do not authorize a full method. MV15 now completes the
-latent-conditioned identity audit: BGE feature identity remains high after
-total, predicted-total, observed-item, B3 itemwise-theta, psychometric-theta,
-and shared-covariate conditioning, so low-dimensional theta-output identity
-cannot be used as upstream feature-invariance evidence.
+they still do not authorize a full method.
+
+MV17a is now the primary prediction-consequence layer. It makes BGE-M3 the
+primary multilingual feature contract and multilingual-E5 the sensitivity
+encoder, regenerates E-DAIC/CMDC/PDCH features, and reruns MV07/MV12/MV15.
+Both encoders show that `X -> theta` is learnable within datasets, output-level
+identity is low, observed-scale safety fails, and theta-conditioned feature
+identity remains `1.000`. External theta transfer is encoder-dependent
+(BGE-M3 passes, multilingual-E5 fails), and B3 Pareto dominance is also
+encoder-dependent (false for BGE-M3, true for multilingual-E5). The correct
+paper claim is therefore not universal transfer failure or universal B3
+dominance. It is that psychometric harmonization can reduce output-level
+dataset identifiability, but the current feature contracts do not establish
+observed-scale-safe or feature-invariant cross-corpus prediction. MV12/MV15
+remain useful as legacy/supporting diagnostics, not as the canonical feature
+contract.
 
 This PHQ result must be written as E-DAIC/CMDC dataset-group localized
 threshold non-equivalence among shared PHQ items, not as a clean PHQ-8 versus
@@ -81,15 +82,14 @@ language, country, protocol, setting, translation, sample severity, and
 population effects.
 
 The legacy BGE-linked MV07 -> MV12 -> MV15 -> MV16 feature-level chain remains
-diagnostic because its original E-DAIC feature contract used a Chinese encoder.
+appendix/historical diagnostic because its original E-DAIC feature contract
+used a Chinese encoder.
 Local audit found that E-DAIC MV07 feature generation used
 `BAAI/bge-small-zh-v1.5`, a Chinese model, on English E-DAIC transcripts, and
 the available transcript CSVs do not expose speaker roles for participant-only
-filtering. MV17a now regenerates E-DAIC/CMDC/PDCH features with BGE-M3 and
-multilingual-E5 and reruns MV07/MV12/MV15. Both multilingual encoders reproduce
-the blocked feature-level result, so the negative feature-level conclusion no
-longer depends only on the old Chinese-BGE contract. This does not affect
-label-only MV10/MV11/MV13/MV14/MV19.
+filtering. MV17a addresses the language-encoder mismatch but not the
+speaker/interviewer contamination limitation. This does not affect label-only
+MV10/MV11/MV13/MV14/MV19.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate artifacts. The next research route is no longer
@@ -119,9 +119,10 @@ The manuscript should be compressed to three contributions:
    finite-sample-bounded C02/C06 threshold non-equivalence with
    convergence-aware uncertainty.
 3. Consequence for ML transfer:
-   current `X -> theta` models are domain-learnable but do not automatically
-   improve observed-scale fidelity, zero-shot transfer, or feature invariance
-   over dimension-matched severity controls.
+   under BGE-M3 primary and multilingual-E5 sensitivity contracts, current
+   `X -> theta` models are domain-learnable and lower output identity, but
+   observed-scale safety and feature invariance remain blocked while external
+   theta transfer and B3 severity-control dominance are encoder-dependent.
 
 Supporting evidence should be explicitly demoted:
 
@@ -182,19 +183,22 @@ Allowed claims:
   label measurement from multimodal prediction and keeps theta scores, fitted
   parameters, row predictions, transformed features, and model artifacts
   local-only.
-- MV12 provides bounded two-stage latent-target run evidence: same-dataset
-  theta prediction improves over train mean and conditional predicted-theta
-  identity BA is `0.602`, but observed-scale reconstruction and zero-shot
-  source-calibrated external theta transfer block a positive shared-latent
-  method claim.
-- MV12 aggregate tradeoff analysis provides the freeze decision: current
-  latent-target evidence improves theta utility and lowers identity versus the
-  upstream feature layer, but same-dataset observed-scale safety and zero-shot
-  source-calibrated external theta transfer remain decisive blockers. B3 direct
-  itemwise Ridge compressed to theta has lower pooled observed macro MAE and
-  lower conditional identity than M12a, so the manuscript should frame MV12 as
-  a predictive fidelity-dataset identifiability trade-off rather than a simple
-  failed model or a theta-specific invariance proof.
+- Legacy MV12 provides bounded two-stage latent-target run evidence:
+  same-dataset theta prediction improves over train mean and conditional
+  predicted-theta identity BA is `0.602`, but observed-scale reconstruction and
+  old-chain source-calibrated external theta transfer block a positive
+  shared-latent method claim.
+- Legacy MV12 aggregate tradeoff analysis provides the freeze decision for the
+  old Chinese-BGE chain: latent-target evidence improves theta utility and
+  lowers identity versus the upstream feature layer, but observed-scale safety
+  remains a blocker and B3 direct itemwise Ridge is a dimension-matched severity
+  caveat.
+- MV17a provides the current prediction-consequence evidence: BGE-M3 primary
+  and multilingual-E5 sensitivity both pass same-dataset theta utility, both
+  fail observed-scale safety, both keep theta-conditioned feature identity at
+  `1.000`, and both keep the full method blocked. External theta transfer
+  passes under BGE-M3 but fails under multilingual-E5; B3 Pareto dominance is
+  false under BGE-M3 and true under multilingual-E5.
 - MV15 provides completed negative latent-conditioned identity evidence:
   raw/theta/total/predicted-total/B3-conditioned BGE feature identity BA remains
   `1.000`, PHQ-item-conditioned feature identity BA is `0.974`, theta-only
@@ -220,8 +224,11 @@ Blocked claims:
 - EATD-driven valence-adversarial method design.
 - Positive MPDD context-conditioning or calibration.
 - Positive feature-invariance claims from the MV07/MV12/MV15/MV16 chain; MV17a
-  multilingual sensitivity reproduces the blocked result rather than reversing
-  it.
+  multilingual sensitivity reproduces the blocked feature-level result rather
+  than reversing it.
+- Universal zero-shot external theta transfer failure or universal B3 Pareto
+  dominance across multilingual encoders; MV17a shows both are
+  encoder-dependent.
 - Personality-aware fusion, evidence-retrieval networks, extra shallow BGE
   heads, extra projection dimensions, EATD valence-adversarial modules, or
   additional MV16 tuning without a new predeclared contract.
@@ -231,7 +238,8 @@ Blocked claims:
 1. Done: MV17a multilingual feature-contract sensitivity.
    BGE-M3 and multilingual-E5 regenerated E-DAIC/CMDC/PDCH features and
    reran MV07, MV12, and MV15. Both encoders reproduce the blocked
-   feature-level pattern. Do not rerun MV16 unless a new explicit need is
+   feature-level pattern; external theta transfer and B3 Pareto dominance are
+   encoder-dependent. Do not rerun MV16 unless a new explicit need is
    identified.
 2. Done: MV18 CMDC-HAMD versus PDCH-HAMD same-language/same-scale control.
    The mild/moderate HAMD overlap has 25 CMDC and 73 PDCH subjects. MV18 flags
@@ -306,18 +314,12 @@ Blocked claims:
    preference remains an uncertainty dimension.
 
 9. Two-stage latent-target prediction is informative but still blocked.
-   MV12 separates `Y -> theta` measurement from `X -> theta` prediction,
-   requires train-fold target generation, direct `X -> Y` floors,
-   theta-to-observed mapping, conditional shared-latent identity, and
-   E-DAIC/CMDC external transfer. The actual run passes same-dataset theta
-   utility and conditional identity but fails same-dataset observed-scale
-   safety and external theta transfer. Cross-dataset observed-scale transfer is
-   better through the latent route than direct item transfer, while theta
-   transfer remains worse than the target train-mean theta floor. This makes
-   MV12 a measurement-shift result about the trade-off between cleaner latent
-   compression and item/scale fidelity, not a positive full method. The
-   aggregate tradeoff analysis compares this against the MV07-MV12 sequence and
-   freezes the current latent-target line.
+   MV17a is now the canonical feature-contract version of this conclusion:
+   BGE-M3 and multilingual-E5 both show learnable within-dataset theta and low
+   output identity, but both fail observed-scale safety and feature invariance.
+   MV12 remains the legacy Chinese-BGE version of the trade-off analysis and is
+   useful as a dimension-matched severity-control warning, not as the primary
+   feature-contract result.
 
 10. Evidence localization is a credibility layer, not a rescue for weak RQ1.
    MV06 can support bounded aggregate credibility claims, but stronger RQ4
@@ -695,14 +697,18 @@ Tracked outputs:
 21. Done: predeclare the post-review MV17 measurement-validity route and
    feature-contract caveat.
 22. Done: run MV17a multilingual BGE-M3 plus multilingual-E5 feature-contract
-   sensitivity for MV07/MV12/MV15; both encoders reproduce the blocked result.
+   sensitivity for MV07/MV12/MV15; both encoders reproduce the blocked result,
+   while external theta transfer and B3 Pareto dominance are encoder-dependent.
 23. Done: run MV18 CMDC-HAMD versus PDCH-HAMD same-scale exploratory control.
 24. Done: run MV19 finite-sample PHQ psychometric simulation and downgrade
    C02/C06 wording to finite-sample-bounded dataset-group threshold-shift
    evidence.
-25. Next: consolidate manuscript wording and decide whether optional MV20
+25. Done: calibrate manuscript wording around MV17a as the canonical
+   prediction-consequence layer and old Chinese-BGE outputs as
+   legacy/supporting diagnostics.
+26. Next: continue citation verification and decide whether optional MV20
    criterion-contamination stress is still needed.
-26. Parallel writing: prepare manuscript edits from existing aggregate
+27. Parallel writing: prepare manuscript edits from existing aggregate
    summaries only; do not export row-level predictions, raw text, subject
    locators, learned parameters, or model files. Insert generated citation keys
    and adapt references to the target venue style after full reference

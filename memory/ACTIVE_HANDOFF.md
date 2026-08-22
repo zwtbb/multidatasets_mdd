@@ -62,16 +62,17 @@ Blocked claims:
 
 Main next task:
 
-- Consolidate the manuscript and paper scaffolds around the MV19-downgraded
-  PHQ wording: C02/C06 are repeated but finite-sample-bounded
-  dataset-group threshold-shift signals, not robust standalone DIF.
+- Continue manuscript review after the MV17a claim calibration: C02/C06 are
+  repeated but finite-sample-bounded dataset-group threshold-shift signals, not
+  robust standalone DIF, and MV17a makes BGE-M3 the primary feature-contract
+  consequence layer with multilingual-E5 as encoder sensitivity.
 - Use the active evidence bundle at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`
   as the default Phase 5 experiment index. Do not revive retired historical MV
   rows unless a new mechanism-changing contract is written.
-- Decide whether MV20 criterion-contamination stress is still needed before
-  submission-facing writing; if run, predeclare it narrowly before touching
-  raw interview/question content.
+- Decide whether MV20 criterion-contamination stress is still needed after the
+  MV17a-calibrated manuscript pass; if run, predeclare it narrowly before
+  touching raw interview/question content.
 - Do not rerun MV16 unless the multilingual MV17a results are explicitly
   reviewed and a new need is identified.
 - Continue manuscript editing only within the target-measurement-validity frame.
@@ -95,6 +96,7 @@ Useful inputs:
 - `/root/autodl-tmp/memory/sessions/session_61_mv18_cmdc_pdch_hamd_same_scale_control.md`
 - `/root/autodl-tmp/memory/sessions/session_62_mv19_phq_finite_sample_simulation.md`
 - `/root/autodl-tmp/memory/sessions/session_63_experiment_consolidation_cleanup.md`
+- `/root/autodl-tmp/memory/sessions/session_64_mv17a_manuscript_claim_calibration.md`
 
 Secondary optional task:
 
@@ -113,10 +115,11 @@ Secondary optional task:
 - MV10/MV11/MV13/MV14 support item-level PHQ measurement-shift wording:
   anchors `C01/C04/C05/C07`, threshold DIF concentrated on `C02/C06`, sparse
   loading DIF, and uncertain global model selection.
-- MV12 is frozen as bounded diagnostic evidence. Same-dataset theta utility
-  improves, but observed-scale safety and zero-shot external theta transfer
-  fail. B3 direct itemwise Ridge compressed to theta Pareto-dominates M12a on
-  pooled observed macro MAE and conditional identity.
+- MV12 is frozen as bounded legacy diagnostic evidence from the old
+  Chinese-BGE chain. Same-dataset theta utility improves, but observed-scale
+  safety and old-chain source-calibrated external theta transfer fail; the B3
+  direct itemwise Ridge comparison remains a dimension-matched severity-control
+  caveat, not the canonical MV17a feature-contract conclusion.
 - MV15 blocks theta-specific BGE feature-invariance wording: raw, total,
   predicted-total, B3, and theta-conditioned feature identity BA all remain
   `1.000`.
@@ -124,16 +127,16 @@ Secondary optional task:
   `blocked_no_dif_guided_small_k_gain`. The best supported row is
   E-DAIC to CMDC, `M16d_global_plus_C02_C06`, k=`10`, but the both-direction
   small-k DIF-guided mechanism gate fails and output identity remains high.
-- MV17a multilingual feature-contract sensitivity is complete. BGE-M3 and
-  multilingual-E5 both reproduce the blocked feature-level pattern over
-  MV07/MV12/MV15: MV07 remains
-  `blocked_not_better_than_total_allocation_bge_contract`, MV12 remains
-  `blocked_theta_gain_not_observed_scale_safe`, and MV15 remains
-  `blocked_theta_conditioned_feature_identity_high`. Feature identity BA is
-  `1.000` for both encoders; MV15 theta-conditioned feature identity BA is also
-  `1.000` for both. The old Chinese-BGE chain remains legacy/diagnostic, but
-  the core negative feature-level conclusion now has multilingual sensitivity
-  support. MV10/MV11/MV13/MV14/MV19 are label-only and unaffected.
+- MV17a multilingual feature-contract sensitivity is complete and now owns the
+  canonical prediction-consequence wording. BGE-M3 is the primary feature
+  contract and multilingual-E5 is the sensitivity encoder. Both reproduce the
+  blocked MV07/MV12/MV15 gate pattern; both pass same-dataset theta utility,
+  fail observed-scale safety, and keep theta-conditioned feature identity BA at
+  `1.000`. External theta transfer is encoder-dependent: BGE-M3 passes and
+  multilingual-E5 fails. B3 Pareto dominance is also encoder-dependent: false
+  for BGE-M3, true for multilingual-E5. The stable claim is lower output-level
+  identity without observed-scale-safe or feature-invariant cross-corpus
+  prediction.
 - MV18 CMDC-HAMD vs PDCH-HAMD same-scale exploratory control is complete. It
   uses 25 CMDC HAMD subjects and 99 PDCH HAMD subjects, with 25 CMDC and 73
   PDCH subjects in the mild/moderate overlap. In that overlap it flags 4
@@ -205,8 +208,12 @@ Keep local-only:
     work after the post-review frame correction.
   - I064: bibliography metadata must be verified against primary sources before
     submission.
-  - I066: MV17a, MV18, and MV19 are complete; next work is manuscript
-    consolidation, then optional MV20 only if still needed.
+  - I066: MV17a, MV18, and MV19 are complete; next work is MV17a-calibrated
+    manuscript review and citation verification, then optional MV20 only if
+    still needed.
+  - I070: MV17a manuscript claim calibration is complete; keep old
+    Chinese-BGE MV12/MV15/MV16 outputs legacy/supporting and keep external
+    theta transfer plus B3 dominance encoder-dependent.
 
 ## Fast Verification Commands
 

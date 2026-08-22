@@ -84,22 +84,23 @@ false-localization `0.034`; the C02/C06 threshold-DIF H1 has both-flag recovery
 `0.178`. Treat C02/C06 as repeated but finite-sample-bounded dataset-group
 threshold-shift evidence, not robust standalone DIF at the observed N.
 
-MV12 is frozen as bounded diagnostic evidence. The `X -> theta` head improves
-same-dataset theta MAE versus train mean and lowers identity versus upstream
-BGE features (`0.602` conditional predicted-theta BA versus MV09 feature
-reference `0.991`), but observed-scale reconstruction is worse than direct
-itemwise Ridge and zero-shot source-calibrated external theta transfer fails.
-The aggregate tradeoff analysis adds the key caveat: B3 direct itemwise Ridge
-compressed to theta has lower pooled observed macro MAE (`0.692` versus
-`0.701`) and lower conditional identity (`0.579` versus `0.602`) than M12a, so
-M12a is not uniquely more invariant than a dimension-matched severity baseline.
+MV12 and MV15 are now legacy/supporting diagnostics from the old Chinese-BGE
+chain. They remain useful because `X -> theta` is learnable within source
+datasets and low-dimensional output identity is lower than upstream feature
+identity, but their universal external-transfer-failure and B3-dominance
+wording has been superseded by MV17a.
 
-MV15 completes that reviewer-control layer and remains negative for feature
-invariance. Raw BGE feature identity BA is `1.000`; theta-conditioned feature
-identity BA remains `1.000`; total-, predicted-total-, and B3-conditioned
-feature identity BA are also `1.000`; theta-only identity BA is `0.576`; and
-predicted-theta output identity BA is `0.646`. Treat this as evidence that
-low-dimensional output identity is not the same as upstream feature invariance.
+MV17a is the current feature-contract consequence layer. It makes BGE-M3 the
+primary multilingual encoder and multilingual-E5 the sensitivity encoder,
+regenerates E-DAIC/CMDC/PDCH features, and reruns MV07/MV12/MV15. Both encoders
+keep MV07/MV12/MV15 blocked; both pass same-dataset theta utility, fail
+same-dataset observed-scale safety, and leave theta-conditioned feature
+identity BA at `1.000`. External theta transfer is encoder-dependent
+(BGE-M3 passes, multilingual-E5 fails), and B3 Pareto dominance is also
+encoder-dependent (false for BGE-M3, true for multilingual-E5). Treat the
+stable claim as: measurement harmonization can reduce output-level dataset
+identifiability, but current features do not establish observed-scale-safe or
+feature-invariant cross-corpus prediction.
 
 MV16 completed the predeclared DIF-guided few-shot measurement-calibration
 test with anchors `C01/C04/C05/C07`, localized `C02/C06` threshold calibration,
@@ -118,12 +119,12 @@ BGE-linked MV07 -> MV12 -> MV15 -> MV16 chain used
 MV17a now addresses the paper-critical part of that caveat by regenerating
 E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then rerunning
 MV07/MV12/MV15. Both multilingual encoders reproduce the blocked feature-level
-pattern: MV07 fails the total-allocation/identity gate, MV12 fails observed
-scale-safe theta gain, and MV15 fails theta-conditioned feature identity.
-Label-only MV10/MV11/MV13/MV14/MV19 are unaffected. The bibliography registry and
-`references.bib` now cover all current source-context rows, with corrected
-primary-source metadata for P3HF, Multi-Probe Audit, and EMNLP interviewer
-bias. MV18 now adds the same-language/same-HAMD CMDC versus PDCH exploratory
+pattern, but external theta transfer and B3 severity-control dominance are
+encoder-dependent. Label-only MV10/MV11/MV13/MV14/MV19 are unaffected. The
+bibliography registry and `references.bib` now cover all current source-context
+rows, with corrected primary-source metadata for P3HF, Multi-Probe Audit,
+EMNLP interviewer bias, and the final Pattern Recognition version of SCD-MLLM.
+MV18 now adds the same-language/same-HAMD CMDC versus PDCH exploratory
 control: within the mild/moderate HAMD overlap it flags 4 severity-conditioned
 residual item shifts and 7 threshold shifts, and bidirectional frozen-feature
 transfer remains weak. Treat it as exploratory context-shift support, not
