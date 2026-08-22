@@ -48,6 +48,10 @@ PAPER_SUPPORT = {
     "P5_MV20",
 }
 
+PAPER_GUARDRAIL = {
+    "P5_mirt_parameterization_audit",
+}
+
 HISTORICAL_DIAGNOSTIC = {
     "P5_MV01",
     "P5_MV02b",
@@ -102,6 +106,7 @@ MERGE_BUCKET = {
     "P5_MV02": "bounded_hamd_internal_diagnostic",
     "P5_MV04c": "protocol_task_control_support",
     "P5_MV09": "conditional_identity_gate",
+    "P5_mirt_parameterization_audit": "psychometric_parameterization_guardrail",
 }
 
 
@@ -129,7 +134,15 @@ def read_gate_inventory() -> pd.DataFrame:
     if not GATE_INVENTORY.exists():
         raise FileNotFoundError(f"run phase5_full_method_gate_audit.py first: {GATE_INVENTORY}")
     df = pd.read_csv(GATE_INVENTORY)
-    missing = set(df["evidence_id"]) - PAPER_CORE - PAPER_SUPPORT - HISTORICAL_DIAGNOSTIC - PREDECLARATION_CONTRACT - LOCAL_WORKFLOW
+    missing = (
+        set(df["evidence_id"])
+        - PAPER_CORE
+        - PAPER_SUPPORT
+        - PAPER_GUARDRAIL
+        - HISTORICAL_DIAGNOSTIC
+        - PREDECLARATION_CONTRACT
+        - LOCAL_WORKFLOW
+    )
     if missing:
         raise ValueError(f"consolidation rules missing evidence ids: {sorted(missing)}")
     return df
@@ -137,11 +150,14 @@ def read_gate_inventory() -> pd.DataFrame:
 
 def decision_for(evidence_id: str) -> dict[str, Any]:
     if evidence_id in PAPER_CORE:
+        manuscript_role = "main psychometric measurement-validity evidence"
+        if evidence_id in {"P5_MV13", "P5_MV14"}:
+            manuscript_role = "limited mirt qualitative screen pending parameterization correction"
         return {
             "evidence_bundle": "paper_core",
             "retention_decision": "keep_primary_aggregate",
             "merge_bucket": MERGE_BUCKET[evidence_id],
-            "manuscript_role": "main psychometric measurement-validity evidence",
+            "manuscript_role": manuscript_role,
             "new_runs_allowed": False,
             "tracked_deletion_allowed": False,
             "physical_cleanup": "keep tracked aggregate outputs; keep local-only detailed artifacts ignored",
@@ -155,6 +171,16 @@ def decision_for(evidence_id: str) -> dict[str, Any]:
             "new_runs_allowed": False,
             "tracked_deletion_allowed": False,
             "physical_cleanup": "keep tracked aggregate outputs; keep local-only detailed artifacts ignored",
+        }
+    if evidence_id in PAPER_GUARDRAIL:
+        return {
+            "evidence_bundle": "paper_guardrail",
+            "retention_decision": "keep_claim_boundary_audit",
+            "merge_bucket": MERGE_BUCKET[evidence_id],
+            "manuscript_role": "statistical correctness boundary for mirt-backed psychometric wording",
+            "new_runs_allowed": False,
+            "tracked_deletion_allowed": False,
+            "physical_cleanup": "keep tracked aggregate audit outputs; keep any detailed mirt artifacts local-only",
         }
     if evidence_id in HISTORICAL_DIAGNOSTIC:
         return {
@@ -197,7 +223,7 @@ def build_inventory(df: pd.DataFrame) -> pd.DataFrame:
             {
                 **row,
                 **decision,
-                "paper_active": decision["evidence_bundle"] in {"paper_core", "paper_support"},
+                "paper_active": decision["evidence_bundle"] in {"paper_core", "paper_support", "paper_guardrail"},
                 "cleanup_rationale": cleanup_rationale(str(row["evidence_id"]), decision["evidence_bundle"]),
             }
         )
@@ -340,8 +366,9 @@ def write_report(inventory: pd.DataFrame, local_cleanup: pd.DataFrame, hygiene: 
         "",
         "Do not physically delete tracked aggregate experiment outputs. They are small, versionable traceability records used by the full-method gate and manuscript claim boundary. Consolidate them by role instead:",
         "",
-        "- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV13/MV14/MV19`).",
+        "- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` limited mirt qualitative screens pending parameterization correction).",
         "- Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`).",
+        "- Paper guardrail: mirt parameterization correctness audit, kept as a manuscript blocker rather than a new experiment.",
         "- Retired historical: early weak or superseded minimal validations kept only as aggregate background.",
         "- Predeclaration contracts: design/readiness artifacts retained to prove that later runs were predeclared.",
         "- Local workflow: MV06 workbooks and feature-generation boundaries stay local-only; tracked outputs remain schemas/hygiene summaries.",

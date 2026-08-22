@@ -35,9 +35,12 @@ method construction remains blocked by the Phase 5 full-method gate.
 
 Allowed current framing:
 
-- Label-only PHQ measurement evidence: substantial common structure and
-  repeated C02/C06 threshold-shift signals, with MV19 finite-sample downgrade
-  at the observed E-DAIC/CMDC N.
+- Label-only MV10/MV11/MV19 PHQ measurement evidence: substantial common
+  structure and repeated C02/C06 threshold-shift signals, with MV19
+  finite-sample downgrade at the observed E-DAIC/CMDC N.
+- MV13/MV14 external `mirt` outputs only as fixed-hyperparameter qualitative
+  screens until the focal latent mean/variance parameterization is corrected
+  and rerun, or the manuscript explicitly limits them.
 - Dataset/protocol/population identity evidence as diagnostic shortcut risk.
 - Negative or bounded multimodal results under the legacy BGE/lightweight-head
   contract, now supported by MV17a multilingual feature-contract sensitivity
@@ -52,6 +55,8 @@ Blocked claims:
 - Positive feature-invariance claims from current MV07/MV12/MV15/MV16
   BGE-linked evidence; MV17a reproduces the blocked pattern under multilingual
   encoders rather than authorizing the claim.
+- Final anchor-linked `mirt` DIF or bootstrap-stability claims from MV13/MV14
+  until the focal latent mean/variance issue is resolved.
 - Positive EATD SDS generalization.
 - Valence-adversarial method from current EATD evidence.
 - Naive personality/context conditioning as a supported RQ3 method.
@@ -62,7 +67,12 @@ Blocked claims:
 
 Main next task:
 
-- Finalize manuscript review after the MV17a/MV18/MV19/MV20 completion line:
+- Resolve the MV13/MV14 `mirt` parameterization blocker before submission:
+  either correct/rerun the anchor-linked focal mean/variance specification, or
+  explicitly limit manuscript wording to the current fixed-hyperparameter
+  qualitative screen.
+- Then finalize manuscript review after the MV17a/MV18/MV19/MV20 completion
+  line:
   C02/C06 are repeated but finite-sample-bounded dataset-group threshold-shift
   signals, not robust standalone DIF; MV17a makes BGE-M3 the primary
   feature-contract consequence layer with multilingual-E5 as encoder
@@ -91,6 +101,7 @@ Useful inputs:
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv20_criterion_overlap_stress/`
+- `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mirt_parameterization_correctness_audit/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`
 - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
 - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
@@ -101,6 +112,7 @@ Useful inputs:
 - `/root/autodl-tmp/memory/sessions/session_63_experiment_consolidation_cleanup.md`
 - `/root/autodl-tmp/memory/sessions/session_64_mv17a_manuscript_claim_calibration.md`
 - `/root/autodl-tmp/memory/sessions/session_65_mv20_criterion_overlap_stress.md`
+- `/root/autodl-tmp/memory/sessions/session_66_mirt_parameterization_correctness_audit.md`
 
 Secondary optional task:
 
@@ -116,9 +128,16 @@ Secondary optional task:
   Evidence-presence kappa is `0.965` overall, `0.967` CMDC, `0.846` E-DAIC,
   and `1.000` PDCH. Bootstrap 95 percent CIs are `0.922-1.000` overall,
   `0.885-1.000` CMDC, `0.595-1.000` E-DAIC, and `1.000-1.000` PDCH.
-- MV10/MV11/MV13/MV14 support item-level PHQ measurement-shift wording:
+- MV10/MV11/MV19 are the primary item-level PHQ measurement-shift evidence:
   anchors `C01/C04/C05/C07`, threshold DIF concentrated on `C02/C06`, sparse
-  loading DIF, and uncertain global model selection.
+  loading DIF, uncertain global model selection, and observed-N finite-sample
+  downgrade.
+- MV13/MV14 `mirt` outputs are fixed-hyperparameter qualitative screens only.
+  Code-level audit passes reference/focal group order, anchor linking, and
+  graded `d1-d3` threshold/intercept constraints, but fails focal latent
+  mean/variance handling because the actual `multipleGroup` calls omit the
+  `invariance` argument that would free CMDC mean/variance under anchor
+  linking. Status: `complete_mirt_parameterization_mismatch`.
 - MV12 is frozen as bounded legacy diagnostic evidence from the old
   Chinese-BGE chain. Same-dataset theta utility improves, but observed-scale
   safety and old-chain source-calibrated external theta transfer fail; the B3
@@ -168,12 +187,14 @@ Secondary optional task:
   `no_excess_criterion_overlap_evidence`. Multilingual-E5 sensitivity has the
   same no-excess gate. Treat MV20 as a bounded negative stress test and stop
   overlap-threshold tuning or contamination-aware model work.
-- Experiment consolidation is complete. The active paper bundle has 16 rows:
-  5 paper-core PHQ psychometric rows (`MV10/MV11/MV13/MV14/MV19`) and 11
-  support rows (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`). Twenty-eight
-  earlier rows are retained only as retired historical diagnostics,
-  predeclaration contracts, or local workflow boundaries. Tracked aggregate
-  outputs should not be physically deleted by default.
+- Experiment consolidation is complete. The active paper bundle has 17 rows:
+  5 paper-core PHQ rows (`MV10/MV11/MV19` primary plus `MV13/MV14` limited
+  `mirt` screens), 11 support rows
+  (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`), and 1 paper
+  guardrail (`P5_mirt_parameterization_audit`). Twenty-eight earlier rows are
+  retained only as retired historical diagnostics, predeclaration contracts,
+  or local workflow boundaries. Tracked aggregate outputs should not be
+  physically deleted by default.
 
 ## Versioning State
 
@@ -181,12 +202,12 @@ Secondary optional task:
   updates.
 - Do not push the old local `main` history directly.
 - Current local working branch: `codex/mv19-phq-finite-sample`; current HEAD
-  is the MV20 criterion-overlap stress and experiment-freeze snapshot.
+  is the MV13/MV14 `mirt` parameterization audit and claim-boundary snapshot.
 - MV19 experiment-content local commit: `6def05240bbd5e5d068e8b1bca8bb9eb738f08f2`
   (`Run MV19 finite-sample PHQ simulation`).
 - MV19 experiment-content clean remote `main` publish:
   `ab54aabab7b3b29fb157667892a7157639be980e`.
-- MV20 clean remote publish should use
+- The next clean remote publish should use
   `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` from the current
   committed source tree rather than pushing this old local branch history.
 - GitHub authentication should use token or `gh` auth. Never write or use
@@ -232,11 +253,15 @@ Keep local-only:
   - I071: closed by MV20 criterion-overlap stress; no clear high-overlap excess
     over matched random deletion under BGE-M3 primary or multilingual-E5
     sensitivity.
+  - I072: open MV13/MV14 `mirt` parameterization blocker. Current outputs fix
+    CMDC latent mean/variance in the actual calls; resolve by corrected rerun
+    or explicit manuscript limitation before submission.
 
 ## Fast Verification Commands
 
 ```bash
 git status --short
+python scripts/phase5_audit_mirt_parameterization_contract.py
 python scripts/build_diagnostic_paper_bibliography.py
 python scripts/phase5_run_mv17a_multilingual_feature_contract.py
 python scripts/phase5_run_mv18_cmdc_pdch_hamd_same_scale_control.py

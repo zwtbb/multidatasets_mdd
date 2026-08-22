@@ -120,7 +120,10 @@ MV17a now addresses the paper-critical part of that caveat by regenerating
 E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then rerunning
 MV07/MV12/MV15. Both multilingual encoders reproduce the blocked feature-level
 pattern, but external theta transfer and B3 severity-control dominance are
-encoder-dependent. Label-only MV10/MV11/MV13/MV14/MV19 are unaffected. The
+encoder-dependent. Label-only MV10/MV11/MV19 remain the primary PHQ
+psychometric evidence; MV13/MV14 are now fixed-hyperparameter `mirt`
+qualitative screens pending correction of the focal latent mean/variance
+parameterization or explicit manuscript limitation. The
 bibliography registry and `references.bib` now cover all current source-context
 rows, with corrected primary-source metadata for P3HF, Multi-Probe Audit,
 EMNLP interviewer bias, and the final Pattern Recognition version of SCD-MLLM.
@@ -142,8 +145,9 @@ samples, calibration parameters, and model artifacts remain local-only.
 
 Experiment consolidation is now explicit. The active paper evidence bundle is
 generated at
-`analysis/phase5_minimal_validation/experiment_consolidation/`: paper core is
-limited to `MV10/MV11/MV13/MV14/MV19`, paper support is
+`analysis/phase5_minimal_validation/experiment_consolidation/`: paper core
+uses `MV10/MV11/MV19` as primary PHQ psychometric evidence and keeps
+`MV13/MV14` only as limited `mirt` qualitative screens, paper support is
 `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and early weak or
 superseded MV rows are frozen as historical diagnostics. Tracked aggregate outputs are not
 deleted because they provide traceability for the gate and manuscript claim

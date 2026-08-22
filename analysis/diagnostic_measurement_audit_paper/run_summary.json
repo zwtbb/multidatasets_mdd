@@ -4,7 +4,7 @@
     "paper_table_status": "ready_for_diagnostic_paper_drafting",
     "short_read": "Paper-facing claim and evidence tables are ready from aggregate gates; full method remains blocked."
   },
-  "generated_at": "2026-08-22T11:24:19+00:00",
+  "generated_at": "2026-08-22T12:02:53+00:00",
   "input_contract": {
     "aggregate_phase5_summaries_read": true,
     "full_method_gate_read": true,
@@ -14,7 +14,7 @@
   },
   "outputs": {
     "claim_rows": 12,
-    "key_finding_rows": 21,
+    "key_finding_rows": 22,
     "literature_positioning_rows": 25,
     "tracked_outputs": [
       "artifact_hygiene_audit.json",

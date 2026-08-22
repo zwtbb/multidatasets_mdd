@@ -78,7 +78,7 @@ def legacy_bge_contract_risk() -> list[dict[str, str]]:
             "affected_chain": "MV07->MV12->MV15->MV16",
             "evidence": "E-DAIC MV07 generator defaults to BAAI/bge-small-zh-v1.5, which is documented as Chinese; E-DAIC transcripts are English.",
             "claim_boundary": "Old Chinese-BGE outputs remain legacy/diagnostic; MV17a now provides multilingual BGE-M3 and multilingual-E5 reruns for MV07/MV12/MV15.",
-            "unaffected_evidence": "Label-only MV10/MV11/MV13/MV14/MV19 psychometric findings.",
+            "unaffected_evidence": "Label-only MV10/MV11/MV19 primary psychometric findings; MV13/MV14 have a separate mirt focal-mean/variance parameterization caveat.",
         },
         {
             "risk_id": "BGE_R002",
@@ -232,7 +232,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         "- MV18 same-HAMD exploratory control is complete and supports cautious dataset/context-shift wording, not formal HAMD invariance.",
         "- MV19 finite-sample PHQ simulation is complete and downgrades strong C02/C06 wording under the observed-N screen.",
         "- MV20 criterion-overlap stress is complete and freezes further protocol-overlap tuning or contamination-aware model work.",
-        "- Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.",
+        "- Label-only MV10/MV11/MV19 PHQ psychometric results remain the primary positive evidence and are unaffected by the BGE feature-contract caveat; MV13/MV14 carry a separate mirt parameterization caveat.",
         "",
         "## Legacy BGE Contract Risks",
         "",

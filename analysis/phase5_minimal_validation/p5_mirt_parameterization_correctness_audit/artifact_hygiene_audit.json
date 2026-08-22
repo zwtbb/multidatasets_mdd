@@ -1,0 +1,8 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "p5_mirt_parameterization_correctness_audit_hygiene",
+  "files_checked": 10,
+  "generated_at": "2026-08-22T11:56:53+00:00",
+  "violation_count": 0,
+  "violations": []
+}

@@ -84,6 +84,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_63_experiment_consolidation_cleanup.md`
   - `/root/autodl-tmp/memory/sessions/session_64_mv17a_manuscript_claim_calibration.md`
   - `/root/autodl-tmp/memory/sessions/session_65_mv20_criterion_overlap_stress.md`
+  - `/root/autodl-tmp/memory/sessions/session_66_mirt_parameterization_correctness_audit.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -157,12 +158,16 @@ MPDD 2025 is intentionally out of scope for current auditing.
   must be separated. The current MV12/MV15/MV16 BGE-linked feature-level chain
   is legacy/diagnostic because E-DAIC MV07 used a Chinese BGE encoder on
   English transcripts and the available transcript contract lacks speaker
-  roles. Label-only MV10/MV11/MV13/MV14/MV19 psychometric evidence is
-  unaffected by the BGE feature-contract caveat and remains the core
-  measurement layer: substantial common PHQ structure, repeated C02/C06
-  threshold-shift signals, sparse loading DIF, uncertain global model
-  selection, and an explicit observed-N finite-sample downgrade. Full-method
-  work remains blocked until a
+  roles. Label-only MV10/MV11/MV19 are the primary PHQ measurement layer:
+  substantial common PHQ structure, repeated C02/C06 threshold-shift signals,
+  sparse loading DIF, uncertain global model selection, and an explicit
+  observed-N finite-sample downgrade. A code-level MV13/MV14 `mirt`
+  parameterization audit is complete: E-DAIC/CMDC reference/focal order,
+  manual anchor linking, and graded `d1-d3` threshold/intercept constraints
+  pass, but the actual calls omit the `invariance` argument needed to free
+  CMDC latent mean/variance under anchor linking. Treat MV13/MV14 as
+  fixed-hyperparameter qualitative screens until corrected or explicitly
+  limited. Full-method work remains blocked until a
   genuinely new data, feature, or measurement mechanism changes the gate. The
   MV17a multilingual feature-contract sensitivity is complete and now owns the
   canonical prediction-consequence wording. BGE-M3 is the primary feature
@@ -189,12 +194,16 @@ MPDD 2025 is intentionally out of scope for current auditing.
   dataset-group threshold-shift evidence, not robust standalone DIF. The active
   evidence bundle is now consolidated at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`:
-  paper core is `MV10/MV11/MV13/MV14/MV19`, paper support is
-  `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and early weak or
+  paper core is `MV10/MV11/MV19` as primary PHQ psychometric evidence plus
+  `MV13/MV14` as limited `mirt` qualitative screens, paper support is
+  `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and
+  `P5_mirt_parameterization_audit` is a paper guardrail. Early weak or
   superseded MV rows are frozen as historical diagnostics rather than active
   experiments. Tracked aggregate outputs are retained for traceability; only
   interpreter/notebook caches were physically removed in the cleanup. The
-  active next orchestration step is manuscript finalization after MV20. MV20
+  active next orchestration step is resolving the MV13/MV14 `mirt`
+  parameterization blocker before submission, either by corrected rerun or
+  explicit manuscript limitation. MV20
   criterion-overlap stress is complete and negative/bounded: CMDC Q1-Q12
   question-position units were feasible, PDCH and E-DAIC were excluded for
   missing clean protocol units, and high-overlap deletion is not clearly worse
@@ -438,15 +447,16 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 44 Phase 5 run summaries and exports claim gates, evidence
+  It reads 45 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
   and `artifact_hygiene_passed=true`. Allowed claims are limited to PDCH-only
   HAMD diagnostic evidence, dataset/protocol controls as diagnostics, MODMA
-  task-control evidence, MV10/MV11/MV13/MV14/MV19 label-only psychometric
-  screening, confirmation, external replication, uncertainty, and finite-sample
-  downgrade evidence, MV12
+  task-control evidence, MV10/MV11/MV19 primary label-only psychometric
+  screening/confirmation/finite-sample downgrade evidence, MV13/MV14
+  fixed-hyperparameter `mirt` qualitative screens pending correction or
+  explicit limitation, MV12
   design/run/aggregate-tradeoff diagnostic evidence, MV15 aggregate
   latent-conditioned identity diagnostic evidence, MV16 aggregate bounded
   calibration evidence, MV20 bounded criterion-overlap stress evidence, and a reframed
@@ -454,8 +464,9 @@ MPDD 2025 is intentionally out of scope for current auditing.
   RQ4 is now `allowed_limited` as first-round aggregate evidence, while
   blocked claims include full M0/M1/M2/M3 method start, transferable
   shared-symptom representation, positive EATD SDS generalization, EATD
-  valence-adversarial design, and RQ3 context conditioning. After MV20, its
-  ranked next action is `NEXT_FINALIZE_MANUSCRIPT_AFTER_MV20`.
+  valence-adversarial design, and RQ3 context conditioning. After the `mirt`
+  parameterization audit, its ranked next action is
+  `NEXT_RESOLVE_MIRT_PARAMETERIZATION_BEFORE_SUBMISSION`.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -1148,7 +1159,9 @@ Key Phase 2 outputs:
   transfer passes for BGE-M3 but fails for multilingual-E5, and B3 dominance is
   false for BGE-M3 but true for multilingual-E5. Do not interpret remaining
   high dataset identity as a pure participant symptom-representation failure.
-  MV10/MV11/MV13/MV14/MV19 label-only psychometric evidence is unaffected.
+  MV10/MV11/MV19 primary label-only psychometric evidence is unaffected by the
+  BGE feature-contract caveat; MV13/MV14 now carry a separate `mirt`
+  focal-mean/variance parameterization caveat.
 - Post-review paper-framing decision: the manuscript should be a target
   measurement-validity audit. Phase 3 is motivating benchmark/protocol shortcut
   evidence; MPDD/RQ3 is a population stress test; MV06/RQ4 is measurement
@@ -1157,10 +1170,11 @@ Key Phase 2 outputs:
   valence-adversarial modules, and MV16 retuning unless a new predeclared
   mechanism changes the gate.
 - Next measurement-aware route decision: MV17a, MV18, MV19, and MV20 are
-  complete. The experiment queue is frozen; the active next item is manuscript
-  finalization and primary-source citation verification. MV06 agreement
-  uncertainty is complete; optional next RQ4 work is resolving the one
-  incomplete local candidate before stronger RQ4 wording.
+  complete. The experiment queue is frozen; the active next item is resolving
+  the MV13/MV14 `mirt` parameterization blocker before submission, then
+  manuscript finalization and primary-source citation verification. MV06
+  agreement uncertainty is complete; optional next RQ4 work is resolving the
+  one incomplete local candidate before stronger RQ4 wording.
 
 ## Data Quality Watchlist
 
@@ -1270,15 +1284,18 @@ plaintext credential-like content before committing on the clean remote lineage.
    `main` history directly.
 4. Use the Phase 5 full-method gate audit and consolidation inventory as the
    active claim boundary. MV09 revises identity-gate semantics,
-   MV10/MV11/MV13/MV14/MV19 provide the core label-only PHQ measurement
-   evidence, MV12/MV15/MV16 remain bounded or negative prediction-consequence
-   evidence, MV17a is the canonical prediction-consequence layer with BGE-M3
+   MV10/MV11/MV19 provide the primary label-only PHQ measurement evidence,
+   MV13/MV14 are fixed-hyperparameter `mirt` qualitative screens until
+   corrected or explicitly limited, MV12/MV15/MV16 remain bounded or negative
+   prediction-consequence evidence, MV17a is the canonical
+   prediction-consequence layer with BGE-M3
    primary and multilingual-E5 sensitivity, MV18 gives exploratory same-HAMD
    context-shift support without formal invariance claims, MV20 closes the
    bounded protocol-label-overlap stress as negative/no-excess evidence, and
    early weak or superseded MV rows are retired from the active experiment
    queue. Full method construction remains blocked. The next active task is
-   manuscript finalization and primary-source citation verification.
+   resolving the MV13/MV14 `mirt` parameterization blocker before submission,
+   then manuscript finalization and primary-source citation verification.
    Parallel writing work may continue, but the manuscript must
    use target
    measurement-validity framing, corrected bibliography metadata, and full

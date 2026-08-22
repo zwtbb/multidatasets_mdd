@@ -1,6 +1,6 @@
 # MV17 Post-Review Measurement-Validity Route
 
-Generated: `2026-08-22T11:24:02+00:00`
+Generated: `2026-08-22T11:56:52+00:00`
 
 ## Decision
 
@@ -9,7 +9,7 @@ Generated: `2026-08-22T11:24:02+00:00`
 - MV18 same-HAMD exploratory control is complete and supports cautious dataset/context-shift wording, not formal HAMD invariance.
 - MV19 finite-sample PHQ simulation is complete and downgrades strong C02/C06 wording under the observed-N screen.
 - MV20 criterion-overlap stress is complete and freezes further protocol-overlap tuning or contamination-aware model work.
-- Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.
+- Label-only MV10/MV11/MV19 PHQ psychometric results remain the primary positive evidence and are unaffected by the BGE feature-contract caveat; MV13/MV14 carry a separate mirt parameterization caveat.
 
 ## Legacy BGE Contract Risks
 

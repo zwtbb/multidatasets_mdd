@@ -26,14 +26,18 @@ consolidation layer under:
 
 - `analysis/phase5_minimal_validation/experiment_consolidation/`
 
-Current generated counts:
+Historical generated counts from this session, superseded by session 66:
 
 - 44 evidence/route rows.
 - 15 paper-active rows.
-- 5 paper-core rows: `MV10/MV11/MV13/MV14/MV19`.
+- 5 historical paper-core rows, now interpreted as `MV10/MV11/MV19` primary
+  PHQ psychometric evidence plus `MV13/MV14` limited `mirt` screens.
 - 10 paper-support rows: `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`.
 - 28 retired/frozen rows: historical diagnostics, predeclaration contracts, or
   local workflow boundaries.
+
+Current bundle counts are in `MEMORY.md`, `memory/ACTIVE_HANDOFF.md`, and
+`analysis/phase5_minimal_validation/experiment_consolidation/run_summary.json`.
 
 ## Key Decisions
 
