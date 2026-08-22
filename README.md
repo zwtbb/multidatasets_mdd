@@ -48,8 +48,9 @@ python scripts/phase2_completion_audit.py
 The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
-The active research gate is now Phase 5. Minimal validations are complete
-through the `P5_MV16` DIF-guided calibration run; the full-method gate remains
+The active research gate is now Phase 5. Post-review minimal validations are
+complete through the `P5_MV19` finite-sample PHQ simulation, and the
+full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a target measurement-validity paper:
@@ -134,6 +135,18 @@ stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap
 samples, calibration parameters, and model artifacts remain local-only.
 
+Experiment consolidation is now explicit. The active paper evidence bundle is
+generated at
+`analysis/phase5_minimal_validation/experiment_consolidation/`: paper core is
+limited to `MV10/MV11/MV13/MV14/MV19`, paper support is
+`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`, and early weak or superseded
+MV rows are frozen as historical diagnostics. Tracked aggregate outputs are not
+deleted because they provide traceability for the gate and manuscript claim
+boundary. Only interpreter and notebook caches were physically removed in this
+cleanup; local predictions, features, Phase 2 outputs, MV06 workbooks, raw
+datasets, and the local original-plan note remain local-only unless a separate
+storage cleanup is approved.
+
 ## Key Paths
 
 - Dataset registry: `datasets/registry.yaml`
@@ -152,6 +165,7 @@ samples, calibration parameters, and model artifacts remain local-only.
 - Issue and decision log: `docs/experiment_issue_log.md`
 - GitHub publish workflow: `docs/github_publish_workflow.md`
 - Phase 5 full-method gate: `analysis/phase5_minimal_validation/full_method_gate_audit/`
+- Phase 5 experiment consolidation: `analysis/phase5_minimal_validation/experiment_consolidation/`
 - MV09 conditional identity audit: `analysis/phase5_minimal_validation/p5_mv09_conditional_identity_audit/`
 - MV10 psychometric invariance baseline: `analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/`
 - MV11 formal psychometric confirmation: `analysis/phase5_minimal_validation/p5_mv11_formal_psychometric_confirmation/`
@@ -214,6 +228,7 @@ python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
 python scripts/build_diagnostic_paper_bibliography.py
+python scripts/phase5_consolidate_experiment_inventory.py
 python scripts/phase5_plan_mv17_postreview_measurement_validity_route.py --overwrite
 python scripts/build_diagnostic_paper_manuscript_draft.py
 ```

@@ -321,8 +321,9 @@ calibration evidence. Full method work remains blocked.
 
 Phase 5 negative and partial results changed the RQ1 target. Directly mapping
 PHQ/HAMD/SDS labels into one fixed shared symptom space is now treated as a
-too-strong hypothesis under the current evidence. The next candidate method
-should model:
+too-strong hypothesis under the current evidence. A future candidate method,
+if the full-method gate is ever reopened by a genuinely new mechanism, should
+model:
 
 ```text
 shared latent symptom constructs
@@ -344,6 +345,33 @@ two pooled active slices but failed prediction identity, so the RQ1 modeling
 sequence is frozen as diagnostic/negative evidence for the current feature
 contract. Keep MPDD as a later measurement-heterogeneity moderator dataset and
 keep EATD/MODMA as stress tests rather than primary training sources.
+
+## Experiment Consolidation Policy
+
+Run the consolidation inventory before manuscript-facing cleanup or new Phase 5
+planning:
+
+```bash
+python scripts/phase5_consolidate_experiment_inventory.py
+```
+
+The current active paper evidence bundle is:
+
+- Paper core: `MV10/MV11/MV13/MV14/MV19` label-only PHQ psychometrics.
+- Paper support: `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`.
+- Retired historical diagnostics: early weak or superseded MV rows, including
+  `MV01`, `MV02b`, `MV03/MV03b`, `MV04/MV04b`, `MV05`,
+  `MV07/MV07b/MV07c`, and `MV08/MV08b`.
+- Predeclaration contracts: readiness/design outputs consumed by later runs;
+  keep them for traceability but do not treat them as standalone results.
+- Local workflows: MV06 workbooks and feature-generation boundaries stay
+  local-only, with only schema/hygiene/aggregate summaries tracked.
+
+Do not physically delete tracked aggregate experiment outputs. They are small
+traceability records used by the gate and paper claim boundary. Physical cleanup
+is allowed only for interpreter/notebook caches by default. Deleting local
+predictions, local features, Phase 2 outputs, MV06 workbooks, raw datasets, or
+the original-plan note requires a separate storage-specific user approval.
 
 Phase 2 validation commands:
 
@@ -554,7 +582,7 @@ representation without those controls.
   `BAAI/bge-small-zh-v1.5`, a Chinese model, on English transcripts, and the
   available E-DAIC transcript CSVs do not expose speaker roles for
   participant/interviewer filtering. This caveat does not affect label-only
-  MV10/MV11/MV13/MV14 psychometric results. MV17a now completes the
+  MV10/MV11/MV13/MV14/MV19 psychometric results. MV17a now completes the
   paper-critical multilingual sensitivity: BGE-M3 and multilingual-E5 both
   reproduce the blocked MV07/MV12/MV15 pattern, with feature identity and
   theta-conditioned feature identity still high.

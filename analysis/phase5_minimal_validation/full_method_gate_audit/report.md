@@ -1,6 +1,6 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-21T19:18:16+00:00`
+Generated: `2026-08-22T07:57:15+00:00`
 
 ## Decision
 

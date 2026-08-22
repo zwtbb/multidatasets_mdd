@@ -2,7 +2,7 @@
 
 A Measurement-Validity Audit of Cross-Corpus Depression Detection
 
-Generated: `2026-08-21T19:27:30+00:00`
+Generated: `2026-08-22T07:57:39+00:00`
 
 ## Draft Status
 
@@ -65,7 +65,7 @@ Table 2 records the label contracts that determine which datasets can support it
 
 ### Analysis Sequence
 
-The analysis sequence is organized into three layers. First, representation/protocol shift asks how strongly `X` carries dataset, task, question, language, and population signatures. Second, target measurement shift asks whether item response functions vary by dataset/group after accounting for latent severity. Third, prediction shift asks whether an `X -> theta` model transfers once measurement has been harmonized. Phase 2 is a reproducibility floor, Phase 3 is motivating shortcut evidence, MV10-MV14/MV19 are the psychometric layer, and MV12/MV15/MV16 test prediction consequences under the old BGE caveat plus the completed MV17a multilingual sensitivity. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.
+The analysis sequence is organized into three layers. First, representation/protocol shift asks how strongly `X` carries dataset, task, question, language, and population signatures. Second, target measurement shift asks whether item response functions vary by dataset/group after accounting for latent severity. Third, prediction shift asks whether an `X -> theta` model transfers once measurement has been harmonized. Phase 2 is a reproducibility floor, Phase 3 is motivating shortcut evidence, MV10/MV11/MV13/MV14/MV19 are the psychometric layer, and MV12/MV15/MV16 test prediction consequences under the old BGE caveat plus the completed MV17a multilingual sensitivity. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.
 
 ### Claim Gate
 

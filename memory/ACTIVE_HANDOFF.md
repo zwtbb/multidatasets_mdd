@@ -65,6 +65,10 @@ Main next task:
 - Consolidate the manuscript and paper scaffolds around the MV19-downgraded
   PHQ wording: C02/C06 are repeated but finite-sample-bounded
   dataset-group threshold-shift signals, not robust standalone DIF.
+- Use the active evidence bundle at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`
+  as the default Phase 5 experiment index. Do not revive retired historical MV
+  rows unless a new mechanism-changing contract is written.
 - Decide whether MV20 criterion-contamination stress is still needed before
   submission-facing writing; if run, predeclare it narrowly before touching
   raw interview/question content.
@@ -83,12 +87,14 @@ Useful inputs:
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/`
+- `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`
 - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
 - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
 - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
 - `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
 - `/root/autodl-tmp/memory/sessions/session_61_mv18_cmdc_pdch_hamd_same_scale_control.md`
 - `/root/autodl-tmp/memory/sessions/session_62_mv19_phq_finite_sample_simulation.md`
+- `/root/autodl-tmp/memory/sessions/session_63_experiment_consolidation_cleanup.md`
 
 Secondary optional task:
 
@@ -145,6 +151,12 @@ Secondary optional task:
   H1 anchor subset recovery is `0.178`. Treat this as a finite-sample
   downgrade: C02/C06 are repeated localized dataset-group threshold-shift
   signals, not robust standalone DIF at the observed N.
+- Experiment consolidation is complete. The active paper bundle has 15 rows:
+  5 paper-core PHQ psychometric rows (`MV10/MV11/MV13/MV14/MV19`) and 10
+  support rows (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`). Twenty-eight
+  earlier rows are retained only as retired historical diagnostics,
+  predeclaration contracts, or local workflow boundaries. Tracked aggregate
+  outputs should not be physically deleted by default.
 
 ## Versioning State
 
@@ -160,6 +172,10 @@ Secondary optional task:
   content publish; it should not change experiment artifacts.
 - GitHub authentication should use token or `gh` auth. Never write or use
   plaintext passwords in Git, scripts, memory, shell history, or logs.
+- Current cleanup policy: interpreter/notebook caches may be deleted without
+  further approval; deleting local predictions, features, Phase 2 outputs,
+  MV06 workbooks, raw datasets, environment caches, or the local original-plan
+  note requires a separate user-approved storage cleanup.
 
 Track:
 
@@ -200,6 +216,7 @@ python scripts/build_diagnostic_paper_bibliography.py
 python scripts/phase5_run_mv17a_multilingual_feature_contract.py
 python scripts/phase5_run_mv18_cmdc_pdch_hamd_same_scale_control.py
 python scripts/phase5_run_mv19_phq_finite_sample_simulation.py
+python scripts/phase5_consolidate_experiment_inventory.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 python scripts/phase5_full_method_gate_audit.py
 ```

@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-21 UTC
+Last updated: 2026-08-22 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -81,6 +81,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
   - `/root/autodl-tmp/memory/sessions/session_61_mv18_cmdc_pdch_hamd_same_scale_control.md`
   - `/root/autodl-tmp/memory/sessions/session_62_mv19_phq_finite_sample_simulation.md`
+  - `/root/autodl-tmp/memory/sessions/session_63_experiment_consolidation_cleanup.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -180,7 +181,14 @@ MPDD 2025 is intentionally out of scope for current auditing.
   `0.662`, H1 top-two recovery is `0.222`, and H1 anchor subset recovery is
   `0.178`. Treat C02/C06 as repeated but finite-sample-bounded
   dataset-group threshold-shift evidence, not robust standalone DIF. The active
-  next orchestration step is manuscript consolidation with optional MV20
+  evidence bundle is now consolidated at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`:
+  paper core is `MV10/MV11/MV13/MV14/MV19`, paper support is
+  `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`, and early weak or
+  superseded MV rows are frozen as historical diagnostics rather than active
+  experiments. Tracked aggregate outputs are retained for traceability; only
+  interpreter/notebook caches were physically removed in the cleanup. The
+  active next orchestration step is manuscript consolidation with optional MV20
   criterion-contamination stress only if still needed.
   Bibliography metadata has been corrected for P3HF, Multi-Probe Audit, and
   EMNLP interviewer bias in the generator, but all references still require
@@ -420,14 +428,15 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 40 Phase 5 run summaries and exports claim gates, evidence
+  It reads 43 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
   and `artifact_hygiene_passed=true`. Allowed claims are limited to PDCH-only
   HAMD diagnostic evidence, dataset/protocol controls as diagnostics, MODMA
-  task-control evidence, MV10/MV11/MV13/MV14 label-only psychometric screening,
-  confirmation, external replication, and uncertainty evidence, MV12
+  task-control evidence, MV10/MV11/MV13/MV14/MV19 label-only psychometric
+  screening, confirmation, external replication, uncertainty, and finite-sample
+  downgrade evidence, MV12
   design/run/aggregate-tradeoff diagnostic evidence, MV15 aggregate
   latent-conditioned identity diagnostic evidence, MV16 aggregate bounded
   calibration evidence, and a reframed
@@ -1102,7 +1111,7 @@ Key Phase 2 outputs:
   MV07/MV12/MV15 part of this caveat with BGE-M3 and multilingual-E5; both
   encoders reproduce the blocked result. Do not interpret remaining high
   dataset identity as a pure participant symptom-representation failure.
-  MV10/MV11/MV13/MV14 label-only psychometric evidence is unaffected.
+  MV10/MV11/MV13/MV14/MV19 label-only psychometric evidence is unaffected.
 - Post-review paper-framing decision: the manuscript should be a target
   measurement-validity audit. Phase 3 is motivating benchmark/protocol shortcut
   evidence; MPDD/RQ3 is a population stress test; MV06/RQ4 is measurement
@@ -1223,15 +1232,17 @@ plaintext credential-like content before committing on the clean remote lineage.
 3. Keep future GitHub updates on the clean remote/main lineage via
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
-4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
-   revises identity-gate semantics, MV10/MV11/MV13/MV14 provide the core
-   label-only PHQ measurement evidence, MV12/MV15/MV16 remain bounded or
-   negative prediction-consequence evidence, MV17a shows the blocked
-   MV07/MV12/MV15 feature-level pattern also holds under BGE-M3 and
-   multilingual-E5, and MV18 gives exploratory same-HAMD context-shift support
-   without formal invariance claims. Full method construction remains blocked.
-   The next active task is MV19 finite-sample PHQ psychometric simulation if
-   still needed. Parallel writing work may continue, but the manuscript must
+4. Use the Phase 5 full-method gate audit and consolidation inventory as the
+   active claim boundary. MV09 revises identity-gate semantics,
+   MV10/MV11/MV13/MV14/MV19 provide the core label-only PHQ measurement
+   evidence, MV12/MV15/MV16 remain bounded or negative prediction-consequence
+   evidence, MV17a shows the blocked MV07/MV12/MV15 feature-level pattern also
+   holds under BGE-M3 and multilingual-E5, MV18 gives exploratory same-HAMD
+   context-shift support without formal invariance claims, and early weak or
+   superseded MV rows are retired from the active experiment queue. Full method
+   construction remains blocked. The next active task is manuscript
+   consolidation, with MV20 optional only if still needed after review.
+   Parallel writing work may continue, but the manuscript must
    use target
    measurement-validity framing, corrected bibliography metadata, and full
    primary-source verification before submission.
