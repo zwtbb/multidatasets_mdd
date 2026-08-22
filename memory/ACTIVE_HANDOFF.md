@@ -62,17 +62,19 @@ Blocked claims:
 
 Main next task:
 
-- Continue manuscript review after the MV17a claim calibration: C02/C06 are
-  repeated but finite-sample-bounded dataset-group threshold-shift signals, not
-  robust standalone DIF, and MV17a makes BGE-M3 the primary feature-contract
-  consequence layer with multilingual-E5 as encoder sensitivity.
+- Finalize manuscript review after the MV17a/MV18/MV19/MV20 completion line:
+  C02/C06 are repeated but finite-sample-bounded dataset-group threshold-shift
+  signals, not robust standalone DIF; MV17a makes BGE-M3 the primary
+  feature-contract consequence layer with multilingual-E5 as encoder
+  sensitivity; MV20 is a bounded negative CMDC-only criterion-overlap stress
+  test.
 - Use the active evidence bundle at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`
   as the default Phase 5 experiment index. Do not revive retired historical MV
   rows unless a new mechanism-changing contract is written.
-- Decide whether MV20 criterion-contamination stress is still needed after the
-  MV17a-calibrated manuscript pass; if run, predeclare it narrowly before
-  touching raw interview/question content.
+- Experiments are frozen after MV20. Do not tune criterion-overlap thresholds,
+  add insertion variants, or design contamination-aware architectures from the
+  negative MV20 result.
 - Do not rerun MV16 unless the multilingual MV17a results are explicitly
   reviewed and a new need is identified.
 - Continue manuscript editing only within the target-measurement-validity frame.
@@ -88,6 +90,7 @@ Useful inputs:
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/`
+- `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv20_criterion_overlap_stress/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`
 - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
 - `/root/autodl-tmp/memory/sessions/session_57_diagnostic_bibliography_handoff.md`
@@ -97,13 +100,14 @@ Useful inputs:
 - `/root/autodl-tmp/memory/sessions/session_62_mv19_phq_finite_sample_simulation.md`
 - `/root/autodl-tmp/memory/sessions/session_63_experiment_consolidation_cleanup.md`
 - `/root/autodl-tmp/memory/sessions/session_64_mv17a_manuscript_claim_calibration.md`
+- `/root/autodl-tmp/memory/sessions/session_65_mv20_criterion_overlap_stress.md`
 
 Secondary optional task:
 
 - Resolve the one incomplete local CMDC MV06 candidate if the missing workbook
   rows become available, then rerun the aggregate MV06 summary gate.
-- MV20 criterion-contamination stress remains optional after manuscript review,
-  only if still needed for protocol-label overlap support.
+- MV20 is complete; no further protocol-label-overlap stress variants should be
+  run unless a genuinely new design contract changes the gate.
 
 ## Critical Current Results
 
@@ -154,9 +158,19 @@ Secondary optional task:
   H1 anchor subset recovery is `0.178`. Treat this as a finite-sample
   downgrade: C02/C06 are repeated localized dataset-group threshold-shift
   signals, not robust standalone DIF at the observed N.
-- Experiment consolidation is complete. The active paper bundle has 15 rows:
-  5 paper-core PHQ psychometric rows (`MV10/MV11/MV13/MV14/MV19`) and 10
-  support rows (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`). Twenty-eight
+- MV20 criterion-overlap stress is complete. It used CMDC because Q1-Q12
+  question-position units are available; PDCH was excluded because available
+  units are coarse consultation segments; E-DAIC was excluded because true
+  prompt/speaker units are unavailable. BGE-M3 primary CMDC PHQ-9 top-20
+  all/minus-high/minus-random/high-only MAE is `3.571`/`3.918`/`3.768`/`4.215`;
+  criterion excess loss versus matched random is `0.150`, 95 percent CI
+  `-0.320` to `0.671`, and the gate status is
+  `no_excess_criterion_overlap_evidence`. Multilingual-E5 sensitivity has the
+  same no-excess gate. Treat MV20 as a bounded negative stress test and stop
+  overlap-threshold tuning or contamination-aware model work.
+- Experiment consolidation is complete. The active paper bundle has 16 rows:
+  5 paper-core PHQ psychometric rows (`MV10/MV11/MV13/MV14/MV19`) and 11
+  support rows (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`). Twenty-eight
   earlier rows are retained only as retired historical diagnostics,
   predeclaration contracts, or local workflow boundaries. Tracked aggregate
   outputs should not be physically deleted by default.
@@ -166,13 +180,15 @@ Secondary optional task:
 - Use `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` for GitHub
   updates.
 - Do not push the old local `main` history directly.
-- Current local working branch: `codex/mv19-phq-finite-sample`.
+- Current local working branch: `codex/mv19-phq-finite-sample`; current HEAD
+  is the MV20 criterion-overlap stress and experiment-freeze snapshot.
 - MV19 experiment-content local commit: `6def05240bbd5e5d068e8b1bca8bb9eb738f08f2`
   (`Run MV19 finite-sample PHQ simulation`).
 - MV19 experiment-content clean remote `main` publish:
   `ab54aabab7b3b29fb157667892a7157639be980e`.
-- A later version-state-only bookkeeping commit may exist after this MV19
-  content publish; it should not change experiment artifacts.
+- MV20 clean remote publish should use
+  `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` from the current
+  committed source tree rather than pushing this old local branch history.
 - GitHub authentication should use token or `gh` auth. Never write or use
   plaintext passwords in Git, scripts, memory, shell history, or logs.
 - Current cleanup policy: interpreter/notebook caches may be deleted without
@@ -208,12 +224,14 @@ Keep local-only:
     work after the post-review frame correction.
   - I064: bibliography metadata must be verified against primary sources before
     submission.
-  - I066: MV17a, MV18, and MV19 are complete; next work is MV17a-calibrated
-    manuscript review and citation verification, then optional MV20 only if
-    still needed.
+  - I066: closed after MV17a, MV18, MV19, and MV20 completed the post-review
+    bounded experiment line; experiments are frozen.
   - I070: MV17a manuscript claim calibration is complete; keep old
     Chinese-BGE MV12/MV15/MV16 outputs legacy/supporting and keep external
     theta transfer plus B3 dominance encoder-dependent.
+  - I071: closed by MV20 criterion-overlap stress; no clear high-overlap excess
+    over matched random deletion under BGE-M3 primary or multilingual-E5
+    sensitivity.
 
 ## Fast Verification Commands
 
@@ -223,6 +241,7 @@ python scripts/build_diagnostic_paper_bibliography.py
 python scripts/phase5_run_mv17a_multilingual_feature_contract.py
 python scripts/phase5_run_mv18_cmdc_pdch_hamd_same_scale_control.py
 python scripts/phase5_run_mv19_phq_finite_sample_simulation.py
+python scripts/phase5_run_mv20_criterion_overlap_stress.py
 python scripts/phase5_consolidate_experiment_inventory.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 python scripts/phase5_full_method_gate_audit.py

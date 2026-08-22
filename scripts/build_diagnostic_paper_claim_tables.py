@@ -43,6 +43,7 @@ MV12_ANALYSIS_SUMMARY = PHASE5_DIR / "p5_mv12_latent_target_tradeoff_analysis" /
 MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
 MV19_SUMMARY = PHASE5_DIR / "p5_mv19_phq_finite_sample_psychometric_simulation" / "run_summary.json"
+MV20_SUMMARY = PHASE5_DIR / "p5_mv20_criterion_overlap_stress" / "run_summary.json"
 MV15_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
 MV15_RUN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity" / "run_summary.json"
 MV16_RUN_SUMMARY = PHASE5_DIR / "p5_mv16_dif_guided_calibration" / "run_summary.json"
@@ -67,6 +68,7 @@ CLAIM_SECTION = {
     "C_PDCH_HAMD_INTERNAL": "HAMD diagnostic evidence",
     "C_EATD_SDS_GENERALIZATION": "External stress tests",
     "C_DATASET_IDENTITY_CONTROL": "Identity and protocol diagnostics",
+    "C_PROTOCOL_CRITERION_OVERLAP": "Identity and protocol diagnostics",
     "C_MODMA_TASK_CONTROL": "Identity and protocol diagnostics",
     "C_EATD_VALENCE_ADVERSARIAL": "External stress tests",
     "C_RQ3_CONTEXT_CONDITIONING": "Population/context diagnostics",
@@ -81,11 +83,12 @@ PAPER_CLAIM_LANGUAGE = {
     "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
     "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and use MV15's latent-conditioned identity result as shared-latent diagnostic evidence.",
+    "C_PROTOCOL_CRITERION_OVERLAP": "Report MV20 as a bounded negative CMDC-only criterion-overlap stress test: high-overlap question-position deletion is not clearly worse than matched random deletion under the primary BGE-M3 PHQ-9 top-20 gate.",
     "C_MODMA_TASK_CONTROL": "Use MODMA task nuisance projection as bounded protocol-control evidence.",
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD age/personality/gait only as population and individual-difference stress tests; do not claim a personality-aware modeling contribution or keep iterating personality gating/calibration.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate credibility evidence for measurement interpretation only; agreement does not prove the model used the evidence.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a target-measurement-validity paper organized around three layers: representation/protocol shift in X, target measurement shift in Y given theta and dataset/group, and prediction shift from X to theta. Treat Phase 3 as motivating evidence, MV10/MV11/MV13/MV14/MV19 as the psychometric layer, BGE-M3 MV17a as the primary feature-contract consequence layer, multilingual-E5 as encoder sensitivity, and MV12/MV15/MV16/MV18 as bounded or legacy support.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a target-measurement-validity paper organized around three layers: representation/protocol shift in X, target measurement shift in Y given theta and dataset/group, and prediction shift from X to theta. Treat Phase 3 as motivating evidence, MV10/MV11/MV13/MV14/MV19 as the psychometric layer, BGE-M3 MV17a as the primary feature-contract consequence layer, multilingual-E5 as encoder sensitivity, and MV12/MV15/MV16/MV18/MV20 as bounded or legacy support.",
 }
 
 LITERATURE_ROWS = [
@@ -220,7 +223,7 @@ LITERATURE_ROWS = [
         "topic": "Criterion contamination in language-based depression prediction",
         "citation_hint": "Li et al. 2025, arXiv",
         "url": "https://arxiv.org/abs/2508.05830",
-        "paper_positioning": "Mirror/non-mirror criterion contamination provides a direct motivation for a future protocol-label-overlap stress test over interview questions and PHQ/HAMD item semantics.",
+        "paper_positioning": "Mirror/non-mirror criterion contamination motivates MV20, our bounded CMDC-only protocol-label-overlap stress test over question-position embeddings and PHQ item semantics.",
     },
     {
         "source_id": "scd_mllm_2025",
@@ -309,6 +312,7 @@ def require_inputs() -> None:
         MV13_SUMMARY,
         MV14_SUMMARY,
         MV19_SUMMARY,
+        MV20_SUMMARY,
         MV15_DESIGN_SUMMARY,
         MV15_RUN_SUMMARY,
         MV16_RUN_SUMMARY,
@@ -430,6 +434,7 @@ def build_metric_context() -> dict[str, str]:
     mv13 = read_json(MV13_SUMMARY)
     mv14 = read_json(MV14_SUMMARY)
     mv19 = read_json(MV19_SUMMARY)
+    mv20 = read_json(MV20_SUMMARY)
     mv15_design = read_json(MV15_DESIGN_SUMMARY)
     mv15_run = read_json(MV15_RUN_SUMMARY)
     mv16_run = read_json(MV16_RUN_SUMMARY)
@@ -450,6 +455,7 @@ def build_metric_context() -> dict[str, str]:
     mv14_v = mv14["verdict"]
     mv14_dif_attempted = mv14_v.get("dif_attempted_draws", mv14_v.get("requested_dif_R"))
     mv19_v = mv19["verdict"]
+    mv20_v = mv20["verdict"]
     mv15_d = mv15_design["decision"]
     mv15_v = mv15_run["verdict"]
     mv16_v = mv16_run["verdict"]
@@ -581,6 +587,18 @@ def build_metric_context() -> dict[str, str]:
             f"H1 anchor subset recovery {fmt(mv19_v['h1_anchor_target_subset_recovery_rate'])}; "
             f"pass_rule_met={mv19_v['pass_rule_met']}."
         ),
+        "mv20": (
+            f"MV20 criterion-overlap stress: status {mv20_v['pass_rule_status']}; "
+            f"primary CMDC PHQ-9 BGE-M3 top-20 gate {mv20_v['primary_gate_status']}; "
+            f"all/minus-high/minus-random/high-only MAE "
+            f"{fmt(mv20_v['primary_all_metric'])}/{fmt(mv20_v['primary_minus_high_metric'])}/"
+            f"{fmt(mv20_v['primary_minus_random_metric'])}/{fmt(mv20_v['primary_high_only_metric'])}; "
+            f"criterion excess loss vs matched random {fmt(mv20_v['primary_criterion_excess_loss_vs_random'])} "
+            f"with 95% CI {fmt(mv20_v['primary_criterion_excess_loss_ci95_low'])}-"
+            f"{fmt(mv20_v['primary_criterion_excess_loss_ci95_high'])}; "
+            f"mE5 sensitivity gate {mv20_v['sensitivity_gate_status']}; "
+            f"stop rule {mv20_v['stop_rule']}."
+        ),
         "mv12_design": (
             f"MV12 two-stage latent-target design: status {mv12_d['readiness_status']}; "
             f"full_method_allowed={mv12_d['full_method_allowed']}; "
@@ -665,7 +683,7 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv19']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']} {context['mv15_design']} {context['mv15_run']} {context['mv16_run']} {context['mv17a']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mv19']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']} {context['mv15_design']} {context['mv15_run']} {context['mv16_run']} {context['mv17a']} {context['mv20']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
         return f"{context['rq1']} {context['mv19']} {context['mv12_analysis']} {context['mv15_run']}"
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
@@ -676,6 +694,8 @@ def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Seri
         return context["eatd"]
     if claim_id == "C_DATASET_IDENTITY_CONTROL":
         return f"{context['mv09']} {context['mv15_run']} {context['mv17a']}"
+    if claim_id == "C_PROTOCOL_CRITERION_OVERLAP":
+        return context["mv20"]
     if claim_id == "C_MODMA_TASK_CONTROL":
         return context["modma"]
     if claim_id == "C_RQ4_EVIDENCE_LOCALIZATION":
@@ -780,6 +800,13 @@ def build_key_findings() -> pd.DataFrame:
             "finding": context["mv19"],
             "interpretation": "The observed-N simulation closes the small-sample uncertainty layer by showing adequate both-target H1 flagging but high false/localization sensitivity, low top-two recovery, and poor exact anchor-set recovery; C02/C06 wording must be finite-sample-bounded.",
             "source_artifact_ids": "P5_MV19",
+        },
+        {
+            "finding_id": "mv20_criterion_overlap_stress",
+            "paper_section": "Identity and protocol diagnostics",
+            "finding": context["mv20"],
+            "interpretation": "MV20 closes the protocol-label-overlap gap as a negative stress test: high-overlap CMDC question-position deletion is directionally worse than random deletion, but the predeclared paired bootstrap interval crosses zero under both BGE-M3 primary and mE5 sensitivity. Do not tune thresholds or add a contamination-aware model from this result.",
+            "source_artifact_ids": "P5_MV20",
         },
         {
             "finding_id": "mv12_two_stage_latent_target_design",

@@ -126,7 +126,7 @@ Local-only MV18 artifact:
 
 ## Next Handoff
 
-Next research step: predeclare and run MV19 finite-sample PHQ psychometric
-simulation if manuscript support still needs an observed-N uncertainty layer.
-Keep MV20 criterion-contamination stress optional unless manuscript review
-requires it.
+Historical handoff superseded by sessions 62 and 65: MV19 finite-sample PHQ
+simulation and MV20 criterion-overlap stress are complete. Current next work is
+manuscript finalization and citation verification; do not revive MV20 variants
+without a genuinely new design contract.

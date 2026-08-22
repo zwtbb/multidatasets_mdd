@@ -50,6 +50,7 @@ MV12_SLICE_DIAGNOSTICS = (
 MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
 MV19_SUMMARY = PHASE5_DIR / "p5_mv19_phq_finite_sample_psychometric_simulation" / "run_summary.json"
+MV20_SUMMARY = PHASE5_DIR / "p5_mv20_criterion_overlap_stress" / "run_summary.json"
 MV15_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
 MV15_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity" / "run_summary.json"
 MV16_SUMMARY = PHASE5_DIR / "p5_mv16_dif_guided_calibration" / "run_summary.json"
@@ -145,6 +146,7 @@ def require_inputs() -> None:
         MV13_SUMMARY,
         MV14_SUMMARY,
         MV19_SUMMARY,
+        MV20_SUMMARY,
         MV15_DESIGN_SUMMARY,
         MV15_SUMMARY,
         MV16_SUMMARY,
@@ -339,6 +341,7 @@ def phase5_context() -> dict[str, Any]:
     mv12 = read_json(MV12_ANALYSIS)
     mv14 = read_json(MV14_SUMMARY)
     mv19 = read_json(MV19_SUMMARY)
+    mv20 = read_json(MV20_SUMMARY)
     mv15_design = read_json(MV15_DESIGN_SUMMARY)
     mv15 = read_json(MV15_SUMMARY)
     mv16 = read_json(MV16_SUMMARY)
@@ -379,6 +382,7 @@ def phase5_context() -> dict[str, Any]:
     m12a = m12a_tradeoff.iloc[0]
     mv14_v = mv14["verdict"]
     mv19_v = mv19["verdict"]
+    mv20_v = mv20["verdict"]
     mv15_d = mv15_design["decision"]
     mv15_v = mv15["verdict"]
     mv15_outputs = mv15["outputs"]
@@ -395,6 +399,7 @@ def phase5_context() -> dict[str, Any]:
         "finding_mv13": manuscript_text(findings.loc["mv13_external_psychometric_replication", "finding"]),
         "finding_mv14": manuscript_text(findings.loc["mv14_measurement_uncertainty_bootstrap", "finding"]),
         "finding_mv19": manuscript_text(findings.loc["mv19_finite_sample_phq_simulation", "finding"]),
+        "finding_mv20": manuscript_text(findings.loc["mv20_criterion_overlap_stress", "finding"]),
         "finding_mv15_design": manuscript_text(findings.loc["mv15_latent_conditioned_identity_design", "finding"]),
         "finding_mv15": manuscript_text(findings.loc["mv15_latent_conditioned_identity_run", "finding"]),
         "finding_mv16": manuscript_text(findings.loc["mv16_dif_guided_calibration_run", "finding"]),
@@ -448,6 +453,17 @@ def phase5_context() -> dict[str, Any]:
         "mv19_h1_target_both_recovery_rate": mv19_v["h1_target_both_recovery_rate"],
         "mv19_h1_target_top2_recovery_rate": mv19_v["h1_target_top2_recovery_rate"],
         "mv19_h1_anchor_subset_recovery_rate": mv19_v["h1_anchor_target_subset_recovery_rate"],
+        "mv20_status": mv20_v["pass_rule_status"],
+        "mv20_primary_gate_status": mv20_v["primary_gate_status"],
+        "mv20_sensitivity_gate_status": mv20_v["sensitivity_gate_status"],
+        "mv20_primary_all_metric": mv20_v["primary_all_metric"],
+        "mv20_primary_minus_high_metric": mv20_v["primary_minus_high_metric"],
+        "mv20_primary_minus_random_metric": mv20_v["primary_minus_random_metric"],
+        "mv20_primary_high_only_metric": mv20_v["primary_high_only_metric"],
+        "mv20_primary_excess_loss": mv20_v["primary_criterion_excess_loss_vs_random"],
+        "mv20_primary_excess_ci_low": mv20_v["primary_criterion_excess_loss_ci95_low"],
+        "mv20_primary_excess_ci_high": mv20_v["primary_criterion_excess_loss_ci95_high"],
+        "mv20_stop_rule": mv20_v["stop_rule"],
         "mv15_design_conditioning_ladder_rows": mv15_design["outputs"]["conditioning_ladder_rows"],
         "mv15_design_identity_probe_rows": mv15_design["outputs"]["identity_probe_rows"],
         "mv15_conditioning_identity_rows": mv15_outputs["conditioning_identity_rows"],
@@ -545,6 +561,12 @@ def build_source_map() -> pd.DataFrame:
             "source_artifact_id": "mv19_finite_sample_phq_simulation",
             "source_path": rel(MV19_SUMMARY),
             "use": "MV19 observed-N PHQ false-DIF, C02/C06 recovery, and anchor recovery simulation",
+        },
+        {
+            "section": "Measurement Results",
+            "source_artifact_id": "mv20_criterion_overlap_stress",
+            "source_path": rel(MV20_SUMMARY),
+            "use": "MV20 CMDC-only criterion-overlap deletion stress and stop rule",
         },
         {
             "section": "Measurement Results",
@@ -650,6 +672,17 @@ def build_claim_checklist(ctx2: dict[str, Any], ctx3: dict[str, Any], ctx5: dict
             ),
             "guardrail": "Do not claim universal external-transfer failure or universal B3 dominance from MV17a.",
         },
+        {
+            "claim_scope": "MV20 criterion-overlap stress",
+            "claim_status": "negative_bounded_stress_test",
+            "evidence": (
+                f"MV20 status {ctx5['mv20_status']}: BGE-M3 CMDC PHQ-9 top-20 excess loss "
+                f"{fmt(ctx5['mv20_primary_excess_loss'])}, CI "
+                f"{fmt(ctx5['mv20_primary_excess_ci_low'])}-{fmt(ctx5['mv20_primary_excess_ci_high'])}; "
+                f"mE5 gate {ctx5['mv20_sensitivity_gate_status']}."
+            ),
+            "guardrail": "Do not tune overlap thresholds or add a contamination-aware model from MV20.",
+        },
     ]
     return pd.DataFrame(rows)
 
@@ -710,6 +743,8 @@ def write_markdown(
         "",
         f"MV16 tests the most direct positive hypothesis suggested by the MV14 single-fit/bootstrap pattern before the MV19 finite-sample downgrade: if threshold non-equivalence is concentrated on C02/C06 while C01/C04/C05/C07 act as candidate anchors, a small target-labeled calibration set might repair cross-dataset measurement mapping. The result is bounded and asymmetric rather than a method pass. The L4 global-plus-C02/C06 row reaches a best small-k theta-MAE delta of `{fmt(ctx5['mv16_best_l4_small_k_delta_theta'])}` versus L0, but the predeclared both-direction small-k gate fails and output identity remains high. This keeps MV16 useful as a falsifying calibration stress test: localized measurement-shift diagnosis alone is not enough to overcome the current BGE cross-dataset prediction and output-identity limits.",
         "",
+        f"MV20 closes the protocol-label-overlap mechanism check as a bounded negative stress test. It includes CMDC because Q1-Q12 question-position units are available, excludes PDCH because available units are coarse consultation segments, and excludes E-DAIC because true prompt/speaker units are unavailable. Under the primary BGE-M3 CMDC PHQ-9 top-20 rule, all/minus-high/minus-random/high-only MAE is `{fmt(ctx5['mv20_primary_all_metric'])}`/`{fmt(ctx5['mv20_primary_minus_high_metric'])}`/`{fmt(ctx5['mv20_primary_minus_random_metric'])}`/`{fmt(ctx5['mv20_primary_high_only_metric'])}`. The high-overlap deletion is directionally worse than matched random deletion, but the predeclared paired bootstrap excess-loss interval crosses zero (`{fmt(ctx5['mv20_primary_excess_loss'])}`, 95 percent CI `{fmt(ctx5['mv20_primary_excess_ci_low'])}` to `{fmt(ctx5['mv20_primary_excess_ci_high'])}`), and the multilingual-E5 sensitivity gate is `{ctx5['mv20_sensitivity_gate_status']}`. The manuscript should therefore report no clear evidence that criterion-overlap question-position content is the dominant shortcut under this CMDC-only stress test, and the MV20 stop rule freezes further threshold tuning or new contamination-aware model work.",
+        "",
         f"The remaining Phase 5 findings define bounded supporting claims. PDCH supports an internal HAMD diagnostic bridge: item-derived total MAE is `5.693`, direct total MAE is `5.794`, and macro item MAE is `0.727`, but this does not support cross-dataset HAMD transfer. MODMA supports task-control evidence because task projection reduces feature task-identity BA from `0.762` to `0.570` while preserving the main task signal (`0.688`). EATD remains a negative SDS stress test because uncontrolled primary MAE is `28.810` versus a train-mean floor of `7.201`. {ctx5['finding_mv06']} Together, these results support a paper about measurement validity, protocol dependence, and bounded evidence localization, while keeping external HAMD transfer, EATD SDS generalization, positive MPDD context conditioning, and full-method construction blocked.",
         "",
         "## Manuscript Guardrails",
@@ -721,6 +756,7 @@ def write_markdown(
         "- Do not claim universal zero-shot external theta transfer failure or universal B3 Pareto dominance; MV17a shows both are encoder-dependent.",
         "- Do not use low one-dimensional output identity as evidence that upstream BGE features are dataset-invariant; MV15 keeps feature identity high after theta and severity conditioning.",
         "- Do not use MV16 as a positive method claim; its few-shot calibration ladder is bounded/negative and keeps full-method construction blocked.",
+        "- Do not use MV20 as a positive criterion-contamination mechanism claim; it is a negative CMDC-only stress test and freezes further overlap-threshold tuning.",
         "- Do not strengthen RQ4 beyond first-round aggregate credibility without resolving remaining incomplete candidate rows and discussing agreement uncertainty plus sampling limits.",
         "",
         "## Source Map",

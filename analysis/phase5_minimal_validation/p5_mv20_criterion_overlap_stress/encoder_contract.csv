@@ -1,0 +1,3 @@
+encoder,model_name,pooling,input_prefix_used,max_length,expected_dimension,mv20_role,contract_source
+bge_m3,BAAI/bge-m3,cls,False,512,1024,primary,inherited_from_mv17a_multilingual_feature_contract
+multilingual_e5_base,intfloat/multilingual-e5-base,average,True,512,768,sensitivity,inherited_from_mv17a_multilingual_feature_contract

@@ -123,8 +123,9 @@ Local-only MV19 artifact:
 
 ## Next Handoff
 
-Next main task: consolidate the manuscript around MV19-downgraded PHQ wording
-and decide whether optional MV20 criterion-contamination stress is still needed
-for protocol-label overlap support. Do not start another shallow BGE head,
-projection dimension, MV16 calibration variant, personality gate, or EATD
-valence method without a new predeclared mechanism-changing contract.
+Historical handoff superseded by session 65: MV20 criterion-overlap stress is
+complete and the experiment queue is frozen. Current next work is manuscript
+finalization and citation verification. Do not start another shallow BGE head,
+projection dimension, MV16 calibration variant, MV20 threshold variant,
+personality gate, or EATD valence method without a genuinely new predeclared
+mechanism-changing contract.

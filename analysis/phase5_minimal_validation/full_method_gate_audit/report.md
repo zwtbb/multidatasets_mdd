@@ -1,13 +1,13 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-22T10:19:33+00:00`
+Generated: `2026-08-22T11:24:06+00:00`
 
 ## Decision
 
 - Full method allowed: `False`.
 - Gate status: `blocked_but_publishable_diagnostic_direction`.
 - Blocked claim count: `5`.
-- Allowed limited/reframed claim count: `6`.
+- Allowed limited/reframed claim count: `7`.
 
 The current evidence supports a careful diagnostic paper direction, but not a broad full symptom-aligned method claim yet.
 
@@ -15,17 +15,18 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Do not start full method construction; interpret MV16/MV20 as bounded or negative mechanism checks and prioritize manuscript finalization. |
 | C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/bounded diagnostic evidence and reframe RQ1 as measurement-shift and measurement-validity work. | A stronger shared-representation or calibration mechanism would need a genuinely new predeclared data/feature/measurement source; current MV16 is bounded/negative. |
 | C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13/MV14/MV19 as label-only PHQ common-structure and dataset-group measurement-shift evidence with explicit finite-sample downgrade: C02/C06 threshold non-equivalence is a repeated localized signal, not a robust standalone DIF conclusion at the observed N. | Use MV19 to downgrade C02/C06 wording to finite-sample-bounded localized measurement-shift evidence; any stronger adaptation claim needs a new predeclared mechanism beyond the current BGE/few-shot ladder. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic plus MV18 exploratory same-HAMD context-shift support; not cross-dataset HAMD generalization. | A stronger CMDC/PDCH-compatible measurement head or larger external HAMD item sample is required before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
 | C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, conditional identity audits, MV15 latent-conditioned identity, and MV17a multilingual feature-contract sensitivity are controls; do not claim invariant representation. | Freeze the current latent-conditioned feature-identity line as diagnostic evidence; keep output-space low identity separate from feature invariance and keep encoder-dependent MV17a comparisons explicit. |
+| C_PROTOCOL_CRITERION_OVERLAP | `allowed_limited` | Use MV20 as a bounded negative CMDC-only criterion-overlap deletion stress test: high-overlap deletion is not clearly worse than matched random deletion under the primary BGE-M3 PHQ-9 top-20 gate. | No further MV20 tuning or new architecture; freeze experiments after MV20 and move to manuscript finalization. |
 | C_MODMA_TASK_CONTROL | `allowed_limited` | MODMA task-specific diagnostic protocol-control result. | Integrate with shared-symptom targets and cross-dataset controls before using it as a full method component. |
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, resolve any remaining incomplete local candidate rows and discuss dataset-specific kappa CIs plus sampling limits. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, MV18, and MV19 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence, MV19-downgraded C02/C06 wording, and MV17a-calibrated BGE-M3-primary/multilingual-E5-sensitivity prediction-consequence wording; MV20 criterion-contamination stress is optional if the manuscript still needs protocol-label overlap support. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, MV18, MV19, and MV20 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence, MV19-downgraded C02/C06 wording, MV17a-calibrated BGE-M3-primary/multilingual-E5-sensitivity prediction-consequence wording, and the negative CMDC-only MV20 criterion-overlap stress result. |
 
 ## Evidence Inventory
 
@@ -74,12 +75,13 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV17a | `complete` | `complete` | `True` | complete |
 | P5_MV18 | `complete` | `complete_exploratory_same_scale_context_shift_supported` | `True` | MV18 remains exploratory because CMDC HAMD has only 25 subjects, but the same-scale control still shows dataset/context sensitivity through flagged HAMD item/threshold shifts or weak bidirectional transfer. |
 | P5_MV19 | `complete` | `complete_mv19_high_false_localization_downgrade_c02_c06` | `True` | MV19 simulates the observed E-DAIC/CMDC PHQ sample sizes and severity distributions under scalar-invariant and C02/C06 threshold-DIF worlds. It supports cautious C02/C06 wording only if false localization is limited a... |
+| P5_MV20 | `complete` | `complete_mv20_no_primary_criterion_overlap_excess` | `True` | complete |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Continue MV17a-calibrated manuscript review and primary-source citation verification, then decide whether MV20 criterion-contamination stress is still needed. | Paper claim tables, Results scaffold, and manuscript draft state C02/C06 as repeated but finite-sample-bounded dataset-group threshold-shift evidence, make MV17a the BGE-M3-primary/multilingual-E5-sensitivity feature contract, and keep MV20 optional unless protocol-label overlap support is still needed. |
+| 1 | Freeze the experiment queue and finalize the measurement-validity manuscript. | Paper claim tables, Results scaffold, and manuscript draft include MV20 as a bounded negative CMDC-only criterion-overlap stress test and do not queue further model or threshold tuning. |
 | 2 | Use the dataset-stratified MV06 agreement and bootstrap uncertainty summaries as first-round RQ4 evidence, then resolve any incomplete local candidate rows if stronger wording is needed. | Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

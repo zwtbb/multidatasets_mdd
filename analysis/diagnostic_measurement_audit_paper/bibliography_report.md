@@ -1,6 +1,6 @@
 # Diagnostic Paper Bibliography Report
 
-Generated: `2026-08-22T10:19:34+00:00`
+Generated: `2026-08-22T11:24:14+00:00`
 
 ## Decision
 
@@ -18,7 +18,7 @@ Use `references.bib` as the first bibliography file for the paper draft. The man
 
 Recommended insertion points:
 
-- Introduction and related work: cite `gratch2014distress`, `nguyen2022improving`, `zhang2025interviewer`, `ishikawa2026multiprobe`, `uscict2026daic`, `deduro2026nlppsychometrics`, and `li2025mirror` where the draft motivates dataset governance, questionnaire grounding, protocol bias, nearby benchmark-audit positioning, psychometric framing, and criterion-contamination risk.
+- Introduction and related work: cite `gratch2014distress`, `nguyen2022improving`, `zhang2025interviewer`, `ishikawa2026multiprobe`, `uscict2026daic`, `deduro2026nlppsychometrics`, and `li2025mirror` where the draft motivates dataset governance, questionnaire grounding, protocol bias, nearby benchmark-audit positioning, psychometric framing, and the completed MV20 criterion-overlap stress framing.
 - Data Governance and Label Contracts: cite `zou2023cmdc`, `pdchrepository2026`, `cai2020modma`, `shen2022automatic`, and `fu2025mpddchallenge` where dataset roles are introduced.
 - Psychometric methods: cite `samejima1969graded`, `chalmers2012mirt`, `chalmers2026mirtmultiplegroup`, `bulut2017detecting`, `galenkamp2017measurement`, `patel2019measurement`, `ma2021phqhamd`, `delamain2024measurement`, and `zhou2026depression` around invariance, IRT, DIF, PHQ/HAMD differences, and cross-scale linking.
 - Feature-contract sensitivity: cite `baai2026bgesmallzh`, `baai2026bgem3`, and `wang2024multilinguale5` when explaining why the old BGE-linked MV07-MV16 chain is legacy/diagnostic and how MV17a tests the paper-critical chain with multilingual encoders.

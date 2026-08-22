@@ -1,13 +1,13 @@
 # Phase 5 Experiment Consolidation
 
-Generated: 2026-08-22T10:19:35+00:00
+Generated: 2026-08-22T11:27:16+00:00
 
 ## Decision
 
 Do not physically delete tracked aggregate experiment outputs. They are small, versionable traceability records used by the full-method gate and manuscript claim boundary. Consolidate them by role instead:
 
 - Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV13/MV14/MV19`).
-- Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`).
+- Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`).
 - Retired historical: early weak or superseded minimal validations kept only as aggregate background.
 - Predeclaration contracts: design/readiness artifacts retained to prove that later runs were predeclared.
 - Local workflow: MV06 workbooks and feature-generation boundaries stay local-only; tracked outputs remain schemas/hygiene summaries.
@@ -16,7 +16,7 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 
 - `local_workflow`: 6
 - `paper_core`: 5
-- `paper_support`: 10
+- `paper_support`: 11
 - `planning_route`: 1
 - `predeclaration_contract`: 9
 - `retired_historical`: 13
@@ -40,6 +40,7 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 | `P5_MV16` | `latent_target_negative_chain` | bounded diagnostic support or negative control |
 | `P5_MV17a` | `feature_contract_sensitivity` | bounded diagnostic support or negative control |
 | `P5_MV18` | `same_scale_hamd_context_control` | bounded diagnostic support or negative control |
+| `P5_MV20` | `criterion_overlap_contamination_stress` | bounded diagnostic support or negative control |
 
 ## Retired Or Frozen Rows
 
@@ -47,7 +48,7 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 
 ## Local Cleanup Boundary
 
-- `python_bytecode_cache`: 1 ignored paths can be deleted without affecting evidence.
+No bytecode/notebook cache categories remain in the ignored working tree.
 
 Local predictions, features, raw datasets, Phase 2 local outputs, MV06 workbooks, and original plan notes are not deleted by this policy. They require user approval or a storage-specific cleanup request.
 

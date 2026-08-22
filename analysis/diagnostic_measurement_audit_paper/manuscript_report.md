@@ -1,12 +1,12 @@
 # Diagnostic Paper Manuscript Draft Report
 
-Generated: `2026-08-22T10:19:35+00:00`
+Generated: `2026-08-22T11:24:27+00:00`
 
 ## Decision
 
 - Manuscript draft status: `ready_for_human_manuscript_editing_v0_1`.
-- Traceability rows: `18`.
-- Open editing items: `7`.
+- Traceability rows: `20`.
+- Open editing items: `6`.
 - Artifact hygiene passed: `True`.
 
 A full manuscript draft has been assembled from aggregate, hygiene-passing paper artifacts; full-method claims remain blocked.

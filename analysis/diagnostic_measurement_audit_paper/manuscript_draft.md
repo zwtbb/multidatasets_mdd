@@ -2,7 +2,7 @@
 
 A Measurement-Validity Audit of Cross-Corpus Depression Detection
 
-Generated: `2026-08-22T10:19:35+00:00`
+Generated: `2026-08-22T11:24:27+00:00`
 
 ## Draft Status
 
@@ -65,11 +65,11 @@ Table 2 records the label contracts that determine which datasets can support it
 
 ### Analysis Sequence
 
-The analysis sequence is organized into three layers. First, representation/protocol shift asks how strongly `X` carries dataset, task, question, language, and population signatures. Second, target measurement shift asks whether item response functions vary by dataset/group after accounting for latent severity. Third, prediction shift asks whether an `X -> theta` model transfers once measurement has been harmonized. Phase 2 is a reproducibility floor, Phase 3 is motivating shortcut evidence, MV10/MV11/MV13/MV14/MV19 are the psychometric layer, MV17a is the primary multilingual feature-contract consequence layer, and MV12/MV15/MV16 are bounded legacy/supporting controls. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.
+The analysis sequence is organized into three layers. First, representation/protocol shift asks how strongly `X` carries dataset, task, question, language, and population signatures. Second, target measurement shift asks whether item response functions vary by dataset/group after accounting for latent severity. Third, prediction shift asks whether an `X -> theta` model transfers once measurement has been harmonized. Phase 2 is a reproducibility floor, Phase 3 is motivating shortcut evidence, MV10/MV11/MV13/MV14/MV19 are the psychometric layer, MV17a is the primary multilingual feature-contract consequence layer, MV20 is the bounded protocol-label-overlap stress test, and MV12/MV15/MV16/MV18 are bounded legacy/supporting controls. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.
 
 ### Claim Gate
 
-Full gate reads 43 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False.
+Full gate reads 44 Phase 5 summaries; status blocked_but_publishable_diagnostic_direction; full_method_allowed=False.
 
 The manuscript therefore reports allowed-limited and blocked claims explicitly. Broad M0/M1/M2/M3 construction remains blocked; the paper is allowed only as a measurement-validity diagnostic contribution.
 
@@ -93,7 +93,7 @@ MPDD supports a population-heterogeneity audit but not a positive context-condit
 
 ### Measurement Results
 
-The Phase 5 full-method gate now reads `43` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.
+The Phase 5 full-method gate now reads `44` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.
 
 The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13/MV14/MV19 address the second level by showing substantial common PHQ structure with repeated C02/C06 threshold non-equivalence, convergence-aware model-selection uncertainty, and an observed-N finite-sample downgrade rather than uniformly supported exact scalar or partial invariance; MV17a addresses the third level by testing whether multilingual `X -> theta` heads make measurement harmonization predictive. MV17a makes BGE-M3 the primary multilingual feature contract and multilingual-E5 a sensitivity encoder. Both encoders keep MV07/MV12/MV15 blocked and both leave theta-conditioned feature identity at 1.000, but external theta transfer and B3 Pareto dominance are encoder-dependent rather than universal conclusions. MV16 then closes the planned localized-DIF calibration follow-up as `blocked_no_dif_guided_small_k_gain`: anchor safety passes (`True`), but the both-direction small-k DIF-guided gate is `False`, the best supported row is `D1_edaic_source_cmdc_target`/`M16d_global_plus_C02_C06` at k=`10`, and L4 small-k output identity BA remains `0.984`.
 
@@ -117,6 +117,8 @@ The stable MV17a result is therefore narrower and more useful than the old unive
 
 MV16 tests the most direct positive hypothesis suggested by the MV14 single-fit/bootstrap pattern before the MV19 finite-sample downgrade: if threshold non-equivalence is concentrated on C02/C06 while C01/C04/C05/C07 act as candidate anchors, a small target-labeled calibration set might repair cross-dataset measurement mapping. The result is bounded and asymmetric rather than a method pass. The L4 global-plus-C02/C06 row reaches a best small-k theta-MAE delta of `-0.227` versus L0, but the predeclared both-direction small-k gate fails and output identity remains high. This keeps MV16 useful as a falsifying calibration stress test: localized measurement-shift diagnosis alone is not enough to overcome the current BGE cross-dataset prediction and output-identity limits.
 
+MV20 closes the protocol-label-overlap mechanism check as a bounded negative stress test. It includes CMDC because Q1-Q12 question-position units are available, excludes PDCH because available units are coarse consultation segments, and excludes E-DAIC because true prompt/speaker units are unavailable. Under the primary BGE-M3 CMDC PHQ-9 top-20 rule, all/minus-high/minus-random/high-only MAE is `3.571`/`3.918`/`3.768`/`4.215`. The high-overlap deletion is directionally worse than matched random deletion, but the predeclared paired bootstrap excess-loss interval crosses zero (`0.150`, 95 percent CI `-0.320` to `0.671`), and the multilingual-E5 sensitivity gate is `no_excess_criterion_overlap_evidence`. The manuscript should therefore report no clear evidence that criterion-overlap question-position content is the dominant shortcut under this CMDC-only stress test, and the MV20 stop rule freezes further threshold tuning or new contamination-aware model work.
+
 The remaining Phase 5 findings define bounded supporting claims. PDCH supports an internal HAMD diagnostic bridge: item-derived total MAE is `5.693`, direct total MAE is `5.794`, and macro item MAE is `0.727`, but this does not support cross-dataset HAMD transfer. MODMA supports task-control evidence because task projection reduces feature task-identity BA from `0.762` to `0.570` while preserving the main task signal (`0.688`). EATD remains a negative SDS stress test because uncontrolled primary MAE is `28.810` versus a train-mean floor of `7.201`. MV06 has 143 completed and 143 double-annotated candidates. Evidence-presence kappa: ALL 0.965 (95% CI 0.922-1.000; 143 pairs), CMDC 0.967 (95% CI 0.885-1.000; 59 pairs), PDCH 1.000 (95% CI 1.000-1.000; 60 pairs), E-DAIC 0.846 (95% CI 0.595-1.000; 24 pairs). 1 sampled candidate remains incomplete in the local workbook. Field-specific degenerate marginal statuses should be read from agreement_summary.csv. Together, these results support a paper about measurement validity, protocol dependence, and bounded evidence localization, while keeping external HAMD transfer, EATD SDS generalization, positive MPDD context conditioning, and full-method construction blocked.
 
 ## Discussion
@@ -133,15 +135,17 @@ The observed-N simulation closes the small-sample uncertainty layer by showing a
 
 MV16 completes the predeclared localized DIF calibration test but does not pass the both-direction small-k mechanism gate; report it as bounded or negative calibration evidence, not as a full method.
 
+MV20 closes the protocol-label-overlap gap as a negative stress test: high-overlap CMDC question-position deletion is directionally worse than random deletion, but the predeclared paired bootstrap interval crosses zero under both BGE-M3 primary and mE5 sensitivity. Do not tune thresholds or add a contamination-aware model from this result.
+
 MV06 can support first-round aggregate credibility; stronger RQ4 claims still need the remaining incomplete local candidate resolved and sampling limits discussed.
 
 ### Limitations
 
-The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. MV17a mitigates the old BGE language-contract caveat for the paper-critical MV07/MV12/MV15 chain, but it does not resolve interviewer/question contamination and it reproduces the blocked feature-level pattern rather than authorizing a shared-representation claim. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. MV19 stress-tests the current item-level screening/localization procedure under observed sample sizes and severity distributions, not formal IRT DIF power; C02/C06 should not be written as robust standalone DIF. MV18 adds exploratory same-HAMD CMDC/PDCH context-shift evidence, but CMDC HAMD supervision is too small for formal invariance or a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.
+The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. MV17a mitigates the old BGE language-contract caveat for the paper-critical MV07/MV12/MV15 chain, but it does not resolve interviewer/question contamination and it reproduces the blocked feature-level pattern rather than authorizing a shared-representation claim. MV20 is CMDC-only and ranks question-position segment embeddings rather than clean prompt-only text; PDCH is excluded because its units are coarse consultation segments, and E-DAIC is excluded because true prompt/speaker units are unavailable. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. MV19 stress-tests the current item-level screening/localization procedure under observed sample sizes and severity distributions, not formal IRT DIF power; C02/C06 should not be written as robust standalone DIF. MV18 adds exploratory same-HAMD CMDC/PDCH context-shift evidence, but CMDC HAMD supervision is too small for formal invariance or a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.
 
 ### Future Work
 
-Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. The immediate route is now narrow: continue MV17a-calibrated manuscript review and primary-source citation verification, then design a criterion-contamination stress test over mirror-like versus non-mirror interview turns only if the manuscript still needs that support. MV17a, MV18, and MV19 are complete. Stop lines remain explicit: no extra BGE shallow heads, projection dimensions, DIF-guided calibration variants, personality-gating models, or EATD valence-adversarial modules unless a new design contract changes the gate.
+Future positive method work should introduce a genuinely new predeclared mechanism rather than another shallow head variant. The immediate route is now manuscript finalization and primary-source citation verification. MV17a, MV18, MV19, and MV20 are complete, and MV20's stop rule freezes further threshold tuning, contamination-aware architecture work, and extra protocol-overlap variants. Stop lines remain explicit: no extra BGE shallow heads, projection dimensions, DIF-guided calibration variants, personality-gating models, or EATD valence-adversarial modules unless a genuinely new design contract changes the gate.
 
 ## Claim Traceability
 
@@ -149,17 +153,18 @@ The full traceability matrix is stored in `manuscript_traceability_matrix.csv`. 
 
 | section | claim | status | guardrail | source artifacts |
 | --- | --- | --- | --- | --- |
-| Claim boundary | C_FULL_METHOD_START | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 37 |
-| Measurement evidence | C_RQ1_SHARED_SYMPTOM | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 33 |
+| Claim boundary | C_FULL_METHOD_START | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 38 |
+| Measurement evidence | C_RQ1_SHARED_SYMPTOM | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 34 |
 | Psychometric baseline | C_PSYCHOMETRIC_INVARIANCE_BASELINE | allowed_limited | Allowed only with the scoped wording in this table. | 12 |
 | HAMD diagnostic evidence | C_PDCH_HAMD_INTERNAL | allowed_limited | Allowed only with the scoped wording in this table. | 4 |
 | External stress tests | C_EATD_SDS_GENERALIZATION | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 3 |
 | Identity and protocol diagnostics | C_DATASET_IDENTITY_CONTROL | allowed_limited | Allowed only with the scoped wording in this table. | 9 |
+| Identity and protocol diagnostics | C_PROTOCOL_CRITERION_OVERLAP | allowed_limited | Allowed only with the scoped wording in this table. | 2 |
 | Identity and protocol diagnostics | C_MODMA_TASK_CONTROL | allowed_limited | Allowed only with the scoped wording in this table. | 2 |
 | External stress tests | C_EATD_VALENCE_ADVERSARIAL | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 3 |
 | Population/context diagnostics | C_RQ3_CONTEXT_CONDITIONING | blocked | Do not use as a positive claim; report as negative or blocked evidence. | 2 |
 | Evidence localization | C_RQ4_EVIDENCE_LOCALIZATION | allowed_limited | Allowed only with the scoped wording in this table. | 6 |
-| Paper framing | C_PUBLISHABLE_PAPER_DIRECTION | allowed_with_reframing | Allowed as paper framing, not as a full-method success claim. | 13 |
+| Paper framing | C_PUBLISHABLE_PAPER_DIRECTION | allowed_with_reframing | Allowed as paper framing, not as a full-method success claim. | 14 |
 
 ## Open Editing Items
 
@@ -167,7 +172,6 @@ The full traceability matrix is stored in `manuscript_traceability_matrix.csv`. 
 | --- | --- | --- | --- | --- |
 | M002 | high | bibliography | Verify every bibliography row against DOI/publisher/ACL/arXiv metadata, then insert generated citation keys from references.bib into prose and adapt formatting to the target venue. | True |
 | M003 | high | claim_boundary | Keep full M0/M1/M2/M3 method claims blocked unless a genuinely new predeclared mechanism changes the full-method gate. | True |
-| M006 | medium | criterion_contamination | Design a criterion-contamination stress test that separates mirror-like interview/question turns from non-mirror turns before adding any new protocol-bias method. | False |
 | M007 | medium | RQ4 | Resolve the one incomplete local CMDC MV06 candidate if annotator rows become available; otherwise keep RQ4 as first-round aggregate credibility evidence. | False |
 | M008 | medium | limitations | Decide whether to run a larger corrected MV14 bootstrap only if interval precision becomes reviewer-critical. | False |
 | M009 | medium | protocol | Speaker-resolved E-DAIC interviewer/participant controls remain optional unless the Results need a literal speaker-role claim. | False |
@@ -194,7 +198,7 @@ These source hints are mapped to citation keys for manuscript drafting; final su
 | galenkamp2017measurement | Galenkamp et al. 2017, BMC Psychiatry | https://pmc.ncbi.nlm.nih.gov/articles/PMC5655879/ | PHQ-9 measurement invariance methods provide the template for the next label-only psychometric baseline before another multimodal head iteration. |
 | gratch2014distress | Gratch et al. 2014, LREC | https://aclanthology.org/L14-1421/ | DAIC contains clinical interviews with audio, video, questionnaire, transcription, and verbal/nonverbal annotation, supporting our governance-first treatment of interview corpora. |
 | ishikawa2026multiprobe | Ishikawa and Duke 2026, arXiv | https://arxiv.org/abs/2605.23977 | A recent multi-probe depression benchmark audit overlaps Phase 3-style benchmark validity claims, so our novelty must emphasize target measurement validity rather than another generic benchmark audit. |
-| li2025mirror | Li et al. 2025, arXiv | https://arxiv.org/abs/2508.05830 | Mirror/non-mirror criterion contamination provides a direct motivation for a future protocol-label-overlap stress test over interview questions and PHQ/HAMD item semantics. |
+| li2025mirror | Li et al. 2025, arXiv | https://arxiv.org/abs/2508.05830 | Mirror/non-mirror criterion contamination motivates MV20, our bounded CMDC-only protocol-label-overlap stress test over question-position embeddings and PHQ item semantics. |
 | ma2021phqhamd | Ma et al. 2021, Frontiers in Psychiatry | https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.747139/full | PHQ-9 and HAMD-17 can correlate strongly while differing in item discrimination and severity assessment, supporting scale/linking caution without overstating E-DAIC/CMDC PHQ evidence as scale-specific. |
 | mandal2025questmf | Mandal et al. 2025, CLPsych | https://aclanthology.org/2025.clpsych-1.4/ | QuestMF already targets E-DAIC question-wise modality fusion and item-level PHQ interpretability; our novelty is cross-dataset measurement semantics, not item-level E-DAIC prediction alone. |
 | nguyen2022improving | Nguyen et al. 2022, ACL | https://aclanthology.org/2022.acl-long.578/ | Questionnaire-grounded symptom modeling is prior positive evidence for symptom-aware OOD detection; our paper's tension is that symptom grounding is not sufficient when the target measurement function changes by dataset/group. |

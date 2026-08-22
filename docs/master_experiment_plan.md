@@ -358,7 +358,7 @@ python scripts/phase5_consolidate_experiment_inventory.py
 The current active paper evidence bundle is:
 
 - Paper core: `MV10/MV11/MV13/MV14/MV19` label-only PHQ psychometrics.
-- Paper support: `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`.
+- Paper support: `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`.
 - Retired historical diagnostics: early weak or superseded MV rows, including
   `MV01`, `MV02b`, `MV03/MV03b`, `MV04/MV04b`, `MV05`,
   `MV07/MV07b/MV07c`, and `MV08/MV08b`.
@@ -636,10 +636,12 @@ representation without those controls.
      gate tables, bibliography, README, outline, issue log, and memory now
      make MV17a the canonical prediction-consequence layer and keep old
      Chinese-BGE outputs as legacy/supporting evidence.
-  5. MV20 criterion-contamination stress: optional after manuscript review;
-     separate mirror-like
-     interviewer/question turns from non-mirror turns before adding any
-     protocol-bias method.
+  5. MV20 criterion-contamination stress: complete. CMDC Q1-Q12
+     question-position units were feasible; PDCH and E-DAIC were excluded for
+     missing clean protocol units. High-overlap deletion is not clearly worse
+     than matched random deletion under BGE-M3 primary or multilingual-E5
+     sensitivity, so stop overlap-threshold tuning and contamination-aware
+     model work.
 - Stop lines:
   no extra shallow BGE heads, projection dimensions, MV16 calibration variants,
   personality gating/calibrators, or EATD valence-adversarial modules without a

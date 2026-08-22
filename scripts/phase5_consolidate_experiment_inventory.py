@@ -45,6 +45,7 @@ PAPER_SUPPORT = {
     "P5_MV16",
     "P5_MV17a",
     "P5_MV18",
+    "P5_MV20",
 }
 
 HISTORICAL_DIAGNOSTIC = {
@@ -96,6 +97,7 @@ MERGE_BUCKET = {
     "P5_MV16": "latent_target_negative_chain",
     "P5_MV17a": "feature_contract_sensitivity",
     "P5_MV18": "same_scale_hamd_context_control",
+    "P5_MV20": "criterion_overlap_contamination_stress",
     "P5_MV06_summary": "evidence_localization_credibility",
     "P5_MV02": "bounded_hamd_internal_diagnostic",
     "P5_MV04c": "protocol_task_control_support",
@@ -203,19 +205,19 @@ def build_inventory(df: pd.DataFrame) -> pd.DataFrame:
         "evidence_id": "P5_MV17_route",
         "artifact": "analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/run_summary.json",
         "status": "complete",
-        "pass_rule_status": "mv17a_mv18_mv19_complete_next_manuscript_or_optional_mv20",
+        "pass_rule_status": "mv17a_mv18_mv19_mv20_complete_next_manuscript_finalization",
         "pass_rule_met": "",
         "artifact_hygiene_passed": True,
         "artifact_hygiene_violation_count": 0,
         "local_only_files": "",
-        "short_read": "Post-review triage route is complete through MV17a/MV18/MV19; MV20 remains optional after manuscript review.",
+        "short_read": "Post-review triage route is complete through MV17a/MV18/MV19/MV20; experiments are frozen and next work is manuscript finalization.",
         "evidence_bundle": "planning_route",
         "retention_decision": "keep_current_route",
         "merge_bucket": "postreview_orchestration",
         "manuscript_role": "orchestration handoff, not a paper result",
         "new_runs_allowed": False,
         "tracked_deletion_allowed": False,
-        "physical_cleanup": "retain because it records the stop line and optional MV20 boundary",
+        "physical_cleanup": "retain because it records the completed MV20 stop line and final manuscript boundary",
         "paper_active": False,
         "cleanup_rationale": "Current route prevents accidental return to redundant model iteration.",
     }
@@ -307,7 +309,7 @@ def build_artifact_hygiene(out_dir: Path) -> dict[str, Any]:
         re.compile(r"audio_path|video_path|text_path|gait_path", re.IGNORECASE),
         re.compile(r"raw prompt|raw response", re.IGNORECASE),
         re.compile(r"source_locator", re.IGNORECASE),
-        re.compile(r"912849287|zwt912849287|github_pat_|ghp_", re.IGNORECASE),
+        re.compile(r"\b[0-9]{6,}@qq\.com\b|\b[a-z]{2,}[0-9]{6,}\.[0-9]+\b|github_pat_|ghp_", re.IGNORECASE),
     ]
     violations: list[dict[str, str]] = []
     for path in sorted(out_dir.glob("*")):
@@ -339,7 +341,7 @@ def write_report(inventory: pd.DataFrame, local_cleanup: pd.DataFrame, hygiene: 
         "Do not physically delete tracked aggregate experiment outputs. They are small, versionable traceability records used by the full-method gate and manuscript claim boundary. Consolidate them by role instead:",
         "",
         "- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV13/MV14/MV19`).",
-        "- Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`).",
+        "- Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`).",
         "- Retired historical: early weak or superseded minimal validations kept only as aggregate background.",
         "- Predeclaration contracts: design/readiness artifacts retained to prove that later runs were predeclared.",
         "- Local workflow: MV06 workbooks and feature-generation boundaries stay local-only; tracked outputs remain schemas/hygiene summaries.",

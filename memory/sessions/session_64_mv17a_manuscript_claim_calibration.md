@@ -95,7 +95,9 @@ run summaries, traceability matrices, and hygiene audits under:
 - Bibliography rows now include the final SCD-MLLM Pattern Recognition DOI
   metadata, but full primary-source verification remains required before
   submission.
-- MV20 criterion-contamination stress remains optional after manuscript review.
+- Historical handoff superseded by session 65: MV20 criterion-overlap stress is
+  complete and negative/bounded; do not run threshold variants or
+  contamination-aware architecture work from this result.
 
 ## Next Handoff
 

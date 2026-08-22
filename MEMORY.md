@@ -83,6 +83,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_62_mv19_phq_finite_sample_simulation.md`
   - `/root/autodl-tmp/memory/sessions/session_63_experiment_consolidation_cleanup.md`
   - `/root/autodl-tmp/memory/sessions/session_64_mv17a_manuscript_claim_calibration.md`
+  - `/root/autodl-tmp/memory/sessions/session_65_mv20_criterion_overlap_stress.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -189,12 +190,16 @@ MPDD 2025 is intentionally out of scope for current auditing.
   evidence bundle is now consolidated at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`:
   paper core is `MV10/MV11/MV13/MV14/MV19`, paper support is
-  `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`, and early weak or
+  `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and early weak or
   superseded MV rows are frozen as historical diagnostics rather than active
   experiments. Tracked aggregate outputs are retained for traceability; only
   interpreter/notebook caches were physically removed in the cleanup. The
-  active next orchestration step is manuscript consolidation with optional MV20
-  criterion-contamination stress only if still needed.
+  active next orchestration step is manuscript finalization after MV20. MV20
+  criterion-overlap stress is complete and negative/bounded: CMDC Q1-Q12
+  question-position units were feasible, PDCH and E-DAIC were excluded for
+  missing clean protocol units, and high-overlap deletion is not clearly worse
+  than matched random deletion under BGE-M3 primary or multilingual-E5
+  sensitivity. The experiment queue is frozen.
   Bibliography metadata has been corrected for P3HF, Multi-Probe Audit, and
   EMNLP interviewer bias in the generator, but all references still require
   full primary-source verification before submission.
@@ -433,7 +438,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 43 Phase 5 run summaries and exports claim gates, evidence
+  It reads 44 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
@@ -444,14 +449,13 @@ MPDD 2025 is intentionally out of scope for current auditing.
   downgrade evidence, MV12
   design/run/aggregate-tradeoff diagnostic evidence, MV15 aggregate
   latent-conditioned identity diagnostic evidence, MV16 aggregate bounded
-  calibration evidence, and a reframed
+  calibration evidence, MV20 bounded criterion-overlap stress evidence, and a reframed
   diagnostic/audit-driven paper direction.
   RQ4 is now `allowed_limited` as first-round aggregate evidence, while
   blocked claims include full M0/M1/M2/M3 method start, transferable
   shared-symptom representation, positive EATD SDS generalization, EATD
-  valence-adversarial design, and RQ3 context conditioning. After the MV16
-  run, its ranked next action is
-  `NEXT_FREEZE_MV16_AND_CONSOLIDATE_PAPER`.
+  valence-adversarial design, and RQ3 context conditioning. After MV20, its
+  ranked next action is `NEXT_FINALIZE_MANUSCRIPT_AFTER_MV20`.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -738,14 +742,27 @@ MPDD 2025 is intentionally out of scope for current auditing.
 - Phase 5 post-review measurement-validity route is predeclared at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`.
   It records the BGE feature-contract caveat, source verification summary,
-  prioritized MV17a/MV18/MV19/MV20 queue, and stop lines. MV17a is now
+  prioritized MV17a/MV18/MV19/MV20 queue, and stop lines. MV17a is
   complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
   and reproduces the blocked MV07/MV12/MV15 pattern under BGE-M3 and
   multilingual-E5. MV18 is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
-  with status `complete_exploratory_same_scale_context_shift_supported`. Treat
-  MV19 as the next design-ready route item.
+  with status `complete_exploratory_same_scale_context_shift_supported`. MV19
+  is complete with status
+  `complete_mv19_high_false_localization_downgrade_c02_c06`. MV20 is complete
+  with status `complete_mv20_no_primary_criterion_overlap_excess`, freezing
+  further overlap-threshold tuning or contamination-aware model work.
+- Phase 5 `P5_MV20 criterion_overlap_stress` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv20_criterion_overlap_stress/`.
+  It uses CMDC because Q1-Q12 question-position units are available, excludes
+  PDCH because available units are coarse consultation segments, and excludes
+  E-DAIC because true prompt/speaker units are unavailable. Primary BGE-M3
+  CMDC PHQ-9 top-20 all/minus-high/minus-random/high-only MAE is
+  `3.571`/`3.918`/`3.768`/`4.215`; criterion excess loss versus matched random
+  is `0.150` with 95 percent CI `-0.320` to `0.671`. Multilingual-E5
+  sensitivity also has `no_excess_criterion_overlap_evidence`. Treat MV20 as a
+  bounded negative stress test, not a new method-development route.
 
 Phase 2 gate status:
 
@@ -1139,11 +1156,9 @@ Key Phase 2 outputs:
   extra shallow BGE variants, extra projection dimensions, EATD
   valence-adversarial modules, and MV16 retuning unless a new predeclared
   mechanism changes the gate.
-- Next measurement-aware route decision: MV17a, MV18, and MV19 are complete;
-  add only bounded controls with direct relevance to target measurement
-  validity. The active next item is MV17a-calibrated manuscript consolidation
-  and primary-source citation verification; MV20 criterion-contamination stress
-  remains optional only if still needed after manuscript review. MV06 agreement
+- Next measurement-aware route decision: MV17a, MV18, MV19, and MV20 are
+  complete. The experiment queue is frozen; the active next item is manuscript
+  finalization and primary-source citation verification. MV06 agreement
   uncertainty is complete; optional next RQ4 work is resolving the one
   incomplete local candidate before stronger RQ4 wording.
 
@@ -1259,10 +1274,11 @@ plaintext credential-like content before committing on the clean remote lineage.
    evidence, MV12/MV15/MV16 remain bounded or negative prediction-consequence
    evidence, MV17a is the canonical prediction-consequence layer with BGE-M3
    primary and multilingual-E5 sensitivity, MV18 gives exploratory same-HAMD
-   context-shift support without formal invariance claims, and early weak or
-   superseded MV rows are retired from the active experiment queue. Full method
-   construction remains blocked. The next active task is manuscript
-   consolidation, with MV20 optional only if still needed after review.
+   context-shift support without formal invariance claims, MV20 closes the
+   bounded protocol-label-overlap stress as negative/no-excess evidence, and
+   early weak or superseded MV rows are retired from the active experiment
+   queue. Full method construction remains blocked. The next active task is
+   manuscript finalization and primary-source citation verification.
    Parallel writing work may continue, but the manuscript must
    use target
    measurement-validity framing, corrected bibliography metadata, and full

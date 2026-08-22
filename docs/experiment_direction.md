@@ -29,7 +29,7 @@ not an evidence-retrieval method contribution.
 For the current manuscript, the active evidence bundle is defined by
 `analysis/phase5_minimal_validation/experiment_consolidation/`. Paper-core
 evidence is `MV10/MV11/MV13/MV14/MV19`; paper-support evidence is
-`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`. Earlier weak or superseded
+`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`. Earlier weak or superseded
 minimal validations remain retained only as historical diagnostics.
 
 ## Dataset Roles

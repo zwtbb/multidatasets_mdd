@@ -1,16 +1,14 @@
 {
-  "generated_at": "2026-08-22T10:19:35+00:00",
+  "generated_at": "2026-08-22T11:27:16+00:00",
   "source_inventory": "analysis/phase5_minimal_validation/full_method_gate_audit/evidence_inventory.csv",
   "consolidation_status": "complete_active_bundle_defined",
-  "experiment_rows": 44,
-  "paper_active_rows": 15,
+  "experiment_rows": 45,
+  "paper_active_rows": 16,
   "paper_core_rows": 5,
-  "paper_support_rows": 10,
+  "paper_support_rows": 11,
   "retired_or_frozen_rows": 28,
   "tracked_experiment_deletion_allowed": false,
-  "safe_delete_without_user_input_categories": [
-    "python_bytecode_cache"
-  ],
+  "safe_delete_without_user_input_categories": [],
   "requires_user_approval_categories": [
     "environment_local_files",
     "external_code_or_model_cache",

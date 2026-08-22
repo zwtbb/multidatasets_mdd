@@ -1,6 +1,6 @@
 # MV17 Post-Review Measurement-Validity Route
 
-Generated: `2026-08-21T19:18:16+00:00`
+Generated: `2026-08-22T11:24:02+00:00`
 
 ## Decision
 
@@ -8,6 +8,7 @@ Generated: `2026-08-21T19:18:16+00:00`
 - MV17a multilingual sensitivity is complete and reproduces the blocked MV07/MV12/MV15 feature-level pattern.
 - MV18 same-HAMD exploratory control is complete and supports cautious dataset/context-shift wording, not formal HAMD invariance.
 - MV19 finite-sample PHQ simulation is complete and downgrades strong C02/C06 wording under the observed-N screen.
+- MV20 criterion-overlap stress is complete and freezes further protocol-overlap tuning or contamination-aware model work.
 - Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.
 
 ## Legacy BGE Contract Risks
@@ -24,7 +25,7 @@ Generated: `2026-08-21T19:18:16+00:00`
 | 1 | MV17a_multilingual_feature_contract | complete | Regenerated E-DAIC, CMDC, and PDCH subject features with BGE-M3 and multilingual-E5; reran MV07, MV12, and MV15 only. | Both encoders reproduce the blocked MV07/MV12/MV15 pattern; see p5_mv17a_multilingual_feature_contract outputs. | Do not rerun MV16 unless a new explicit need is identified after MV17a review. |
 | 2 | MV18_cmdc_pdch_hamd_same_scale_control | complete | Completed exploratory CMDC-HAMD versus PDCH-HAMD same-language/same-scale item distribution, total-excluding-item residual shifts, bootstrap threshold differences, and bidirectional frozen-feature transfer. | The mild/moderate HAMD overlap shows 4 severity-conditioned residual item-shift flags, 7 threshold-shift flags, and weak primary bidirectional transfer. | Do not overclaim formal HAMD invariance because CMDC HAMD item supervision is only a small sanity subset. |
 | 3 | MV19_phq_finite_sample_psychometric_simulation | complete | Completed observed-N label-only simulation under scalar-invariant H0 and C02/C06 threshold-DIF H1 using the MV10 decision screen. | The simulation reports H0 C02/C06 both-flag false rate 0.208, H1 C02/C06 both-flag recovery 0.662, H1 top-two recovery 0.222, and H1 anchor subset recovery 0.178. | Downgrade C02/C06 from robust standalone DIF evidence to repeated but finite-sample-bounded dataset-group threshold-shift evidence. |
-| 4 | MV20_criterion_contamination_stress | optional_to_design_after_manuscript_review | Compute semantic similarity between interviewer/question text and PHQ/HAMD items, define mirror-like versus non-mirror turns, and test deletion/insertion effects. | Estimate whether label-overlapping elicitation language inflates apparent depression prediction or evidence localization. | Do not build a new protocol-bias network unless this stress test exposes a mechanism that a simple deletion/control cannot explain. |
+| 4 | MV20_criterion_contamination_stress | complete_bounded_negative | Completed CMDC-only question-position criterion-overlap ranking with BGE-M3 primary and multilingual-E5 sensitivity, using deletion/high-only comparisons against matched random deletion. | No primary or sensitivity evidence that high-overlap question-position content is clearly worse to remove than matched random content; paired intervals cross zero. | Freeze overlap-threshold tuning and do not build a contamination-aware architecture from this negative bounded stress test. |
 
 ## Stop Lines
 
@@ -35,6 +36,7 @@ Generated: `2026-08-21T19:18:16+00:00`
 | S003 | RQ3 personality | Do not design personality gating/calibrators as a main method contribution; keep MPDD as a population stress test. |
 | S004 | EATD valence | Do not add an EATD valence-adversarial method from current negative SDS evidence. |
 | S005 | Evidence localization | Do not build an evidence network; use MV06 agreement as credibility support unless deletion/sufficiency tests are explicitly predeclared. |
+| S006 | Criterion overlap | MV20 is complete; stop threshold tuning, insertion variants, and contamination-aware model design from this negative bounded stress test. |
 
 ## Source Verification Summary
 
@@ -46,6 +48,7 @@ Generated: `2026-08-21T19:18:16+00:00`
 | multi_probe_audit_2026 | https://arxiv.org/abs/2605.23977 | Title and authors are A Multi-Probe Audit of Clinical-Interview Depression Detection Benchmarks by Takehiro Ishikawa and Jon Duke. | Motivates demoting Phase 3 to supporting benchmark-validity evidence. |
 | interviewer_bias_emnlp_2025 | https://aclanthology.org/2025.findings-emnlp.650/ | Title, authors, pages, and DOI verified from ACL Anthology. | Supports protocol/question-type nuisance framing. |
 | p3hf_aaai_2026 | https://ojs.aaai.org/index.php/AAAI/article/view/37159 | P3HF AAAI title, authors, DOI, and MPDD-Young improvement claim verified from the AAAI page. | Motivates demoting personality-aware modeling from a core contribution. |
+| mirror_criterion_contamination_2025 | https://arxiv.org/abs/2508.05830 | Mirror/non-mirror criterion-contamination framing checked from the arXiv source page. | Motivates MV20 as a bounded protocol-label-overlap stress test rather than a new architecture. |
 
 ## Regeneration
 

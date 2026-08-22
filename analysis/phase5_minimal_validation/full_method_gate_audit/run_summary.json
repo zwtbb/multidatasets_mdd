@@ -3,6 +3,7 @@
     "C_DATASET_IDENTITY_CONTROL",
     "C_MODMA_TASK_CONTROL",
     "C_PDCH_HAMD_INTERNAL",
+    "C_PROTOCOL_CRITERION_OVERLAP",
     "C_PSYCHOMETRIC_INVARIANCE_BASELINE",
     "C_PUBLISHABLE_PAPER_DIRECTION",
     "C_RQ4_EVIDENCE_LOCALIZATION"
@@ -11,7 +12,7 @@
     "artifact_hygiene_passed": true,
     "audit_id": "P5_full_method_gate_artifact_hygiene",
     "files_checked": 5,
-    "generated_at": "2026-08-22T10:19:33+00:00",
+    "generated_at": "2026-08-22T11:24:06+00:00",
     "violation_count": 0,
     "violations": []
   },
@@ -22,11 +23,11 @@
     "C_RQ1_SHARED_SYMPTOM",
     "C_RQ3_CONTEXT_CONDITIONING"
   ],
-  "claim_rows": 11,
-  "evidence_rows": 43,
+  "claim_rows": 12,
+  "evidence_rows": 44,
   "full_method_allowed": false,
   "gate_status": "blocked_but_publishable_diagnostic_direction",
-  "generated_at": "2026-08-22T10:19:33+00:00",
+  "generated_at": "2026-08-22T11:24:06+00:00",
   "next_action_rows": 5,
   "source_run_summaries": {
     "P5_MV01": "analysis/phase5_minimal_validation/p5_mv01_phq_core_bridge/run_summary.json",
@@ -71,6 +72,7 @@
     "P5_MV16_design": "analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration_design/run_summary.json",
     "P5_MV17a": "analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/run_summary.json",
     "P5_MV18": "analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/run_summary.json",
-    "P5_MV19": "analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/run_summary.json"
+    "P5_MV19": "analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/run_summary.json",
+    "P5_MV20": "analysis/phase5_minimal_validation/p5_mv20_criterion_overlap_stress/run_summary.json"
   }
 }

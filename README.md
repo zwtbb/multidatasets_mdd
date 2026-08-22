@@ -49,7 +49,7 @@ The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
 The active research gate is now Phase 5. Post-review minimal validations are
-complete through the `P5_MV19` finite-sample PHQ simulation, and the
+complete through the `P5_MV20` criterion-overlap stress test, and the
 full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
@@ -128,9 +128,13 @@ MV18 now adds the same-language/same-HAMD CMDC versus PDCH exploratory
 control: within the mild/moderate HAMD overlap it flags 4 severity-conditioned
 residual item shifts and 7 threshold shifts, and bidirectional frozen-feature
 transfer remains weak. Treat it as exploratory context-shift support, not
-formal HAMD invariance. Current next action: consolidate the manuscript with
-MV19-downgraded PHQ wording; MV20 criterion-contamination stress is optional
-only if still needed.
+formal HAMD invariance. MV20 closes the bounded protocol-label-overlap stress
+test: CMDC Q1-Q12 question-position units were feasible, PDCH and E-DAIC were
+excluded for missing clean protocol units, and high-overlap deletion was not
+clearly worse than matched random deletion under BGE-M3 primary or
+multilingual-E5 sensitivity. Current next action: freeze experiments and
+finalize the manuscript with MV19-downgraded PHQ wording, MV20 bounded
+negative wording, and primary-source citation verification.
 Optional MV06 work is resolving the one incomplete local candidate before
 stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap
@@ -140,8 +144,8 @@ Experiment consolidation is now explicit. The active paper evidence bundle is
 generated at
 `analysis/phase5_minimal_validation/experiment_consolidation/`: paper core is
 limited to `MV10/MV11/MV13/MV14/MV19`, paper support is
-`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`, and early weak or superseded
-MV rows are frozen as historical diagnostics. Tracked aggregate outputs are not
+`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and early weak or
+superseded MV rows are frozen as historical diagnostics. Tracked aggregate outputs are not
 deleted because they provide traceability for the gate and manuscript claim
 boundary. Only interpreter and notebook caches were physically removed in this
 cleanup; local predictions, features, Phase 2 outputs, MV06 workbooks, raw

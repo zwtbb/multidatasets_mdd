@@ -93,18 +93,20 @@ MV10/MV11/MV13/MV14/MV19.
 
 The Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold is
 now generated from aggregate artifacts. The next research route is no longer
-another shallow shared-symptom head. It is: measurement shift -> convergence-safe
-measurement uncertainty -> dimension-matched latent-conditioned identity ->
-DIF-guided few-shot measurement calibration. MV16 has now completed that last
-step as bounded/negative evidence, so the next work is manuscript
-editing rather than changing the calibration design after seeing results. A
-full manuscript draft v0.1 is now generated from aggregate paper artifacts with
+another shallow shared-symptom head. The post-review bounded line is complete:
+MV17a fixed the multilingual feature-contract sensitivity, MV18 added the
+same-HAMD context control, MV19 downgraded PHQ C02/C06 wording under observed
+N, and MV20 closed the criterion-overlap stress as negative/no-excess evidence.
+The next work is manuscript editing and citation verification rather than
+changing the calibration or protocol-overlap design after seeing results. A full
+manuscript draft v0.1 is now generated from aggregate paper artifacts with
 traceability, open editing items, and artifact-hygiene checks.
 
 Phase 5 experiment consolidation now defines the active evidence bundle. The
 manuscript should foreground `MV10/MV11/MV13/MV14/MV19` as paper-core
-psychometric evidence and use `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18`
-as bounded support. Earlier weak or superseded MV rows stay in the repository
+psychometric evidence and use
+`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20` as bounded support.
+Earlier weak or superseded MV rows stay in the repository
 only as aggregate traceability records, not as active experiments or primary
 paper sections.
 
@@ -706,9 +708,13 @@ Tracked outputs:
 25. Done: calibrate manuscript wording around MV17a as the canonical
    prediction-consequence layer and old Chinese-BGE outputs as
    legacy/supporting diagnostics.
-26. Next: continue citation verification and decide whether optional MV20
-   criterion-contamination stress is still needed.
-27. Parallel writing: prepare manuscript edits from existing aggregate
+26. Done: run MV20 criterion-overlap stress. CMDC Q1-Q12 question-position
+   units were feasible; PDCH and E-DAIC were excluded for missing clean
+   protocol units; BGE-M3 primary and multilingual-E5 sensitivity both show no
+   clear high-overlap excess over matched random deletion.
+27. Next: freeze experiments, finish manuscript editing, and complete
+   primary-source citation verification.
+28. Parallel writing: prepare manuscript edits from existing aggregate
    summaries only; do not export row-level predictions, raw text, subject
    locators, learned parameters, or model files. Insert generated citation keys
    and adapt references to the target venue style after full reference

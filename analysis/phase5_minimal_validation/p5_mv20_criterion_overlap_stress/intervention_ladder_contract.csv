@@ -1,0 +1,11 @@
+threshold_pct,primary_threshold,intervention,definition,selection_uses_labels,selection_uses_prediction_performance
+10,False,minus_high,delete top criterion-overlap question-position units,False,False
+10,False,minus_random,delete equal-count random non-high-overlap question-position units,False,False
+10,False,high_only,retain only top criterion-overlap question-position units,False,False
+20,True,minus_high,delete top criterion-overlap question-position units,False,False
+20,True,minus_random,delete equal-count random non-high-overlap question-position units,False,False
+20,True,high_only,retain only top criterion-overlap question-position units,False,False
+30,False,minus_high,delete top criterion-overlap question-position units,False,False
+30,False,minus_random,delete equal-count random non-high-overlap question-position units,False,False
+30,False,high_only,retain only top criterion-overlap question-position units,False,False
+0,False,all_units,retain all available CMDC question-position units,False,False
