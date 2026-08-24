@@ -1,6 +1,6 @@
 # P5 MV13 External Psychometric Replication
 
-Generated: `2026-08-11T16:36:00+00:00`
+Generated: `2026-08-22T12:44:06+00:00`
 
 ## Scope
 
@@ -10,6 +10,7 @@ MV13 uses R `mirt::multipleGroup` to externally replicate the E-DAIC PHQ-8 / CMD
 
 - Status: `complete_external_mirt_with_convergence_warnings`.
 - External engine: `R mirt::multipleGroup`.
+- Parameterization contract: `anchor_linked_focal_mean_variance_free`.
 - Core fits converged: `False`.
 - Best AIC model: `partial_mv10`.
 - Best BIC model: `scalar`.
@@ -26,18 +27,18 @@ MV13 uses R `mirt::multipleGroup` to externally replicate the E-DAIC PHQ-8 / CMD
 | --- | ---: | ---: | ---: | ---: | --- | ---: |
 | configural | 64 | -2028.091 | 4184.182 | 4420.365 | `False` | 3000 |
 | metric | 56 | -2037.535 | 4187.070 | 4393.730 | `True` | 223 |
-| partial_mv10 | 45 | -2040.981 | 4171.962 | 4338.028 | `True` | 86 |
-| scalar | 32 | -2064.964 | 4193.928 | 4312.020 | `True` | 69 |
+| partial_mv10 | 47 | -2037.287 | 4168.574 | 4342.021 | `True` | 50 |
+| scalar | 34 | -2061.151 | 4190.302 | 4315.775 | `True` | 44 |
 
 ## Invariance Comparisons
 
 | comparison | decision | LR | df | p | delta BIC restricted-minus-full |
 | --- | --- | ---: | ---: | ---: | ---: |
 | metric_vs_configural | `no_strong_evidence_against_restriction` | 18.888 | 8 | 0.0155 | -26.635 |
-| scalar_vs_metric | `restricted_model_rejected_lrt_only` | 54.858 | 24 | 0.0003 | -81.710 |
-| partial_mv10_vs_scalar | `restricted_model_rejected_lrt_only` | 47.966 | 13 | 0.0000 | -26.008 |
-| partial_mv10_vs_configural | `no_strong_evidence_against_restriction` | 25.780 | 19 | 0.1364 | -82.337 |
-| partial_mv10_vs_metric_nonnested | `nonnested_bic_prefers_partial_mv10_aic_prefers_partial_mv10` | NA |  | NA | -55.702 |
+| scalar_vs_metric | `restricted_model_rejected_lrt_only` | 47.232 | 22 | 0.0014 | -77.956 |
+| partial_mv10_vs_scalar | `restricted_model_rejected_lrt_only` | 47.728 | 13 | 0.0000 | -26.246 |
+| partial_mv10_vs_configural | `no_strong_evidence_against_restriction` | 18.392 | 17 | 0.3645 | -78.344 |
+| partial_mv10_vs_metric_nonnested | `nonnested_bic_prefers_partial_mv10_aic_prefers_partial_mv10` | NA |  | NA | -51.709 |
 
 ## External Anchor Map
 
@@ -68,7 +69,7 @@ MV13 uses R `mirt::multipleGroup` to externally replicate the E-DAIC PHQ-8 / CMD
 | recommendation | status | evidence |
 | --- | --- | --- |
 | external_replication_boundary | `complete_external_mirt_with_convergence_warnings` | MV13 status complete_external_mirt_with_convergence_warnings. |
-| parameter_ci_boundary | `available_aggregate_only` | Finite SE count in aggregate audit: 45. |
+| parameter_ci_boundary | `available_aggregate_only` | Finite SE count in aggregate audit: 47. |
 | mv14_measurement_uncertainty | `review_external_mirt_before_bootstrap` | CMDC has 77 PHQ item-labeled subjects, so item-level DIF wording needs uncertainty estimates. |
 | full_method_gate | `keep_blocked` | MV13 checks the Y->theta measurement layer, not X->theta prediction or cross-dataset calibration. |
 

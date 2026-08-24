@@ -71,23 +71,45 @@ model_syntax <- function(slope_items = character(), threshold_items = character(
   paste("F = 1-8", paste("CONSTRAINB =", paste(terms, collapse = ", ")), sep = "\n")
 }
 
+latent_invariance_terms <- function(threshold_items = character()) {
+  if (length(threshold_items) == 0) {
+    return(character())
+  }
+  unique(c(threshold_items, "free_means", "free_var"))
+}
+
+latent_hyperparameter_policy <- function(invariance_terms = character()) {
+  if (all(c("free_means", "free_var") %in% invariance_terms)) {
+    return("anchor_linked_focal_mean_variance_free")
+  }
+  "reference_and_focal_hyperparameters_fixed"
+}
+
 fit_model <- function(model_id, description, slope_items = character(), threshold_items = character(), se = FALSE) {
   warnings <- character()
   syntax <- model_syntax(slope_items, threshold_items)
+  invariance_terms <- latent_invariance_terms(threshold_items)
+  hyperparameter_policy <- latent_hyperparameter_policy(invariance_terms)
   model <- mirt.model(syntax)
   result <- tryCatch(
     withCallingHandlers(
-      multipleGroup(
-        data,
-        model,
-        group = group,
-        itemtype = itemtype,
-        method = "EM",
-        quadpts = 31,
-        SE = se,
-        verbose = FALSE,
-        technical = list(NCYCLES = 3000)
-      ),
+      {
+        mg_args <- list(
+          data = data,
+          model = model,
+          group = group,
+          itemtype = itemtype,
+          method = "EM",
+          quadpts = 31,
+          SE = se,
+          verbose = FALSE,
+          technical = list(NCYCLES = 3000)
+        )
+        if (length(invariance_terms) > 0) {
+          mg_args$invariance <- invariance_terms
+        }
+        do.call(multipleGroup, mg_args)
+      },
       warning = function(w) {
         warnings <<- c(warnings, conditionMessage(w))
         invokeRestart("muffleWarning")
@@ -112,10 +134,12 @@ fit_model <- function(model_id, description, slope_items = character(), threshol
       warning_count = length(warnings),
       warnings = paste(unique(warnings), collapse = " | "),
       error_message = conditionMessage(result),
+      mirt_invariance_terms = paste(invariance_terms, collapse = ";"),
+      latent_hyperparameter_policy = hyperparameter_policy,
       fitted_parameters_exported = FALSE,
       stringsAsFactors = FALSE
     )
-    return(list(model = NULL, row = row, syntax = syntax, warnings = warnings))
+    return(list(model = NULL, row = row, syntax = syntax, invariance = invariance_terms, warnings = warnings))
   }
 
   row <- data.frame(
@@ -133,10 +157,12 @@ fit_model <- function(model_id, description, slope_items = character(), threshol
     warning_count = length(warnings),
     warnings = paste(unique(warnings), collapse = " | "),
     error_message = "",
+    mirt_invariance_terms = paste(invariance_terms, collapse = ";"),
+    latent_hyperparameter_policy = hyperparameter_policy,
     fitted_parameters_exported = FALSE,
     stringsAsFactors = FALSE
   )
-  list(model = result, row = row, syntax = syntax, warnings = warnings)
+  list(model = result, row = row, syntax = syntax, invariance = invariance_terms, warnings = warnings)
 }
 
 lrt_row <- function(comparison_id, restricted_id, full_id, fit_rows, fits, interpretation) {
@@ -491,13 +517,23 @@ runtime_versions <- data.frame(
 write.csv(runtime_versions, file.path(out_dir, "runtime_versions.csv"), row.names = FALSE)
 
 model_syntax_rows <- do.call(rbind, lapply(names(fits), function(name) {
-  data.frame(model_id = name, mirt_model_syntax = fits[[name]]$syntax, stringsAsFactors = FALSE)
+  data.frame(
+    model_id = name,
+    mirt_model_syntax = fits[[name]]$syntax,
+    mirt_invariance_terms = paste(fits[[name]]$invariance, collapse = ";"),
+    latent_hyperparameter_policy = latent_hyperparameter_policy(fits[[name]]$invariance),
+    stringsAsFactors = FALSE
+  )
 }))
 write.csv(model_syntax_rows, file.path(out_dir, "external_model_syntax_summary.csv"), row.names = FALSE)
 
 execution_summary <- data.frame(
   external_engine = "mirt::multipleGroup",
   mirt_version = as.character(packageVersion("mirt")),
+  anchor_linked_focal_hyperparameters_corrected = any(
+    fit_rows$latent_hyperparameter_policy == "anchor_linked_focal_mean_variance_free",
+    na.rm = TRUE
+  ),
   fit_rows = nrow(fit_rows),
   core_fit_success_count = sum(fit_rows$model_id %in% c("configural", "metric", "scalar", "partial_mv10") & fit_rows$fit_success),
   all_core_converged = all(fit_rows$converged[fit_rows$model_id %in% c("configural", "metric", "scalar", "partial_mv10")]),

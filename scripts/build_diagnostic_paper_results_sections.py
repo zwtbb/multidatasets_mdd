@@ -49,9 +49,15 @@ MV12_SLICE_DIAGNOSTICS = (
 )
 MV13_SUMMARY = PHASE5_DIR / "p5_mv13_external_psychometric_replication" / "run_summary.json"
 MV14_SUMMARY = PHASE5_DIR / "p5_mv14_measurement_uncertainty_bootstrap" / "run_summary.json"
+MV19_SUMMARY = PHASE5_DIR / "p5_mv19_phq_finite_sample_psychometric_simulation" / "run_summary.json"
+MV20_SUMMARY = PHASE5_DIR / "p5_mv20_criterion_overlap_stress" / "run_summary.json"
+MIRT_PARAM_AUDIT_SUMMARY = PHASE5_DIR / "p5_mirt_parameterization_correctness_audit" / "run_summary.json"
 MV15_DESIGN_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity_design" / "run_summary.json"
 MV15_SUMMARY = PHASE5_DIR / "p5_mv15_latent_conditioned_identity" / "run_summary.json"
 MV16_SUMMARY = PHASE5_DIR / "p5_mv16_dif_guided_calibration" / "run_summary.json"
+MV17A_DIR = PHASE5_DIR / "p5_mv17a_multilingual_feature_contract"
+MV17A_SUMMARY = MV17A_DIR / "run_summary.json"
+MV17A_DOWNSTREAM = MV17A_DIR / "downstream"
 DEFAULT_OUT_DIR = PAPER_DIR
 
 TRACKED_FILES = [
@@ -103,6 +109,7 @@ def manuscript_text(value: Any) -> str:
         "status complete_external_mirt_with_convergence_warnings": "status supports external replication with convergence warnings",
         "core converged=False": "the core model ladder retains a convergence warning",
         "complete_mv14_convergence_safe_item_level_measurement_shift": "complete convergence-aware item-level measurement-shift evidence",
+        "complete_mv19_high_false_localization_downgrade_c02_c06": "complete finite-sample simulation with downgraded C02/C06 wording",
         "status blocked_theta_gain_not_observed_scale_safe": "status is blocked because theta gain is not observed-scale safe",
         "status pass_pdch_only_diagnostic": "status is a PDCH-only diagnostic pass",
         "status blocked_main_task_below_floor": "status is blocked because the main task is below the floor",
@@ -139,9 +146,13 @@ def require_inputs() -> None:
         MV12_SLICE_DIAGNOSTICS,
         MV13_SUMMARY,
         MV14_SUMMARY,
+        MV19_SUMMARY,
+        MV20_SUMMARY,
+        MIRT_PARAM_AUDIT_SUMMARY,
         MV15_DESIGN_SUMMARY,
         MV15_SUMMARY,
         MV16_SUMMARY,
+        MV17A_SUMMARY,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -152,6 +163,78 @@ def row_by_value(df: pd.DataFrame, column: str, value: str) -> pd.Series:
     if rows.empty:
         raise ValueError(f"missing {column}={value}")
     return rows.iloc[0]
+
+
+def pass_fail(value: Any) -> str:
+    return "pass" if bool(value) else "fail"
+
+
+def yes_no(value: Any) -> str:
+    return "yes" if bool(value) else "no"
+
+
+def load_mv17a_context() -> dict[str, Any]:
+    encoders = ["bge_m3", "multilingual_e5_base"]
+    encoder_label = {
+        "bge_m3": "BGE-M3 primary",
+        "multilingual_e5_base": "multilingual-E5 sensitivity",
+    }
+    values: dict[str, Any] = {}
+    for encoder in encoders:
+        base = MV17A_DOWNSTREAM / encoder
+        mv07 = read_json(base / "mv07_aligned_bge_shared_symptom" / "run_summary.json")["verdict"]
+        mv12 = read_json(base / "mv12_two_stage_latent_target" / "run_summary.json")["verdict"]
+        mv15 = read_json(base / "mv15_latent_conditioned_identity" / "run_summary.json")["verdict"]
+        values[encoder] = {
+            "label": encoder_label[encoder],
+            "mv07_status": mv07["pass_rule_status"],
+            "mv07_feature_identity_ba": mv07["feature_identity_ba"],
+            "mv07_prediction_identity_ba": mv07["prediction_identity_ba"],
+            "mv12_status": mv12["pass_rule_status"],
+            "same_dataset_theta_gate": bool(mv12["same_dataset_theta_gate_passed"]),
+            "same_dataset_observed_gate": bool(mv12["same_dataset_observed_gate_passed"]),
+            "external_theta_gate": bool(mv12["external_transfer_theta_gate_passed"]),
+            "external_observed_gate": bool(mv12["external_transfer_observed_gate_passed"]),
+            "conditional_output_identity_ba": mv12["conditional_identity_ba_m12a"],
+            "edaic_theta_delta": mv12["m12a_edaic_delta_theta_mae_vs_B0"],
+            "cmdc_theta_delta": mv12["m12a_cmdc_delta_theta_mae_vs_B0"],
+            "edaic_observed_delta": mv12["m12a_edaic_delta_observed_macro_mae_vs_B3"],
+            "cmdc_observed_delta": mv12["m12a_cmdc_delta_observed_macro_mae_vs_B3"],
+            "mv15_status": mv15["pass_rule_status"],
+            "raw_feature_identity_ba": mv15["raw_feature_identity_ba"],
+            "theta_conditioned_feature_identity_ba": mv15["theta_conditioned_feature_identity_ba"],
+            "theta_only_identity_ba": mv15["theta_only_identity_ba"],
+            "b3_output_identity_ba": mv15["b3_output_identity_ba"],
+            "b3_output_observed_macro_mae": mv15["b3_output_observed_macro_mae"],
+            "theta_output_identity_ba": mv15["psychometric_predicted_theta_output_identity_ba"],
+            "theta_output_observed_macro_mae": mv15["psychometric_predicted_theta_observed_macro_mae"],
+            "b3_pareto_dominates": bool(mv15["b3_pareto_dominates_predicted_theta_output"]),
+        }
+    bge = values["bge_m3"]
+    e5 = values["multilingual_e5_base"]
+    table = "\n".join(
+        [
+            "| Result | BGE-M3 primary | multilingual-E5 sensitivity | Stable? |",
+            "| --- | ---: | ---: | --- |",
+            f"| Same-dataset theta gate | {pass_fail(bge['same_dataset_theta_gate'])} | {pass_fail(e5['same_dataset_theta_gate'])} | yes |",
+            f"| Same-dataset observed-scale safety | {pass_fail(bge['same_dataset_observed_gate'])} | {pass_fail(e5['same_dataset_observed_gate'])} | yes, failure |",
+            f"| External theta transfer | {pass_fail(bge['external_theta_gate'])} | {pass_fail(e5['external_theta_gate'])} | no |",
+            f"| Conditional output identity BA | {fmt(bge['conditional_output_identity_ba'])} | {fmt(e5['conditional_output_identity_ba'])} | yes, low |",
+            f"| Theta-conditioned feature identity BA | {fmt(bge['theta_conditioned_feature_identity_ba'])} | {fmt(e5['theta_conditioned_feature_identity_ba'])} | yes, failure |",
+            f"| B3 Pareto-dominates predicted theta | {yes_no(bge['b3_pareto_dominates'])} | {yes_no(e5['b3_pareto_dominates'])} | no |",
+            f"| Overall MV17a full gate | blocked | blocked | yes |",
+        ]
+    )
+    return {
+        "mv17a": values,
+        "mv17a_sensitivity_table": table,
+        "mv17a_summary_sentence": (
+            "MV17a makes BGE-M3 the primary multilingual feature contract and multilingual-E5 "
+            "a sensitivity encoder. Both encoders keep MV07/MV12/MV15 blocked and both leave "
+            "theta-conditioned feature identity at 1.000, but external theta transfer and "
+            "B3 Pareto dominance are encoder-dependent rather than universal conclusions."
+        ),
+    }
 
 
 def phase2_context() -> dict[str, Any]:
@@ -259,6 +342,9 @@ def phase5_context() -> dict[str, Any]:
     gate = read_json(FULL_GATE)
     mv12 = read_json(MV12_ANALYSIS)
     mv14 = read_json(MV14_SUMMARY)
+    mv19 = read_json(MV19_SUMMARY)
+    mv20 = read_json(MV20_SUMMARY)
+    mirt_audit = read_json(MIRT_PARAM_AUDIT_SUMMARY)
     mv15_design = read_json(MV15_DESIGN_SUMMARY)
     mv15 = read_json(MV15_SUMMARY)
     mv16 = read_json(MV16_SUMMARY)
@@ -298,12 +384,17 @@ def phase5_context() -> dict[str, Any]:
     b3 = b3_tradeoff.iloc[0]
     m12a = m12a_tradeoff.iloc[0]
     mv14_v = mv14["verdict"]
+    mv19_v = mv19["verdict"]
+    mv20_v = mv20["verdict"]
+    mirt_decision = mirt_audit["decision"]
     mv15_d = mv15_design["decision"]
     mv15_v = mv15["verdict"]
     mv15_outputs = mv15["outputs"]
     mv16_v = mv16["verdict"]
+    mv17a_ctx = load_mv17a_context()
 
     return {
+        **mv17a_ctx,
         "finding_gate": manuscript_text(findings.loc["gate_status", "finding"]),
         "finding_rq1": manuscript_text(findings.loc["rq1_measurement_negative", "finding"]),
         "finding_mv09": manuscript_text(findings.loc["mv09_conditional_identity_gate", "finding"]),
@@ -311,6 +402,11 @@ def phase5_context() -> dict[str, Any]:
         "finding_mv11": manuscript_text(findings.loc["mv11_formal_psychometric_confirmation", "finding"]),
         "finding_mv13": manuscript_text(findings.loc["mv13_external_psychometric_replication", "finding"]),
         "finding_mv14": manuscript_text(findings.loc["mv14_measurement_uncertainty_bootstrap", "finding"]),
+        "finding_mirt_audit": manuscript_text(
+            findings.loc["mirt_parameterization_correctness_audit", "finding"]
+        ),
+        "finding_mv19": manuscript_text(findings.loc["mv19_finite_sample_phq_simulation", "finding"]),
+        "finding_mv20": manuscript_text(findings.loc["mv20_criterion_overlap_stress", "finding"]),
         "finding_mv15_design": manuscript_text(findings.loc["mv15_latent_conditioned_identity_design", "finding"]),
         "finding_mv15": manuscript_text(findings.loc["mv15_latent_conditioned_identity_run", "finding"]),
         "finding_mv16": manuscript_text(findings.loc["mv16_dif_guided_calibration_run", "finding"]),
@@ -358,6 +454,26 @@ def phase5_context() -> dict[str, Any]:
         "mv14_stable_ladder_effective_draws": mv14_v["stable_ladder_effective_draws"],
         "mv14_stable_ladder_best_aic_model": mv14_v["stable_ladder_best_aic_model"],
         "mv14_stable_ladder_best_bic_model": mv14_v["stable_ladder_best_bic_model"],
+        "mirt_param_audit_status": mirt_decision["audit_status"],
+        "mirt_param_audit_blocker": mirt_decision["statistical_correctness_blocker"],
+        "mirt_param_audit_short_read": mirt_decision["short_read"],
+        "mv19_status": mv19_v["pass_rule_status"],
+        "mv19_h0_target_both_false_rate": mv19_v["h0_target_both_false_rate"],
+        "mv19_h0_target_top2_false_rate": mv19_v["h0_target_top2_false_rate"],
+        "mv19_h1_target_both_recovery_rate": mv19_v["h1_target_both_recovery_rate"],
+        "mv19_h1_target_top2_recovery_rate": mv19_v["h1_target_top2_recovery_rate"],
+        "mv19_h1_anchor_subset_recovery_rate": mv19_v["h1_anchor_target_subset_recovery_rate"],
+        "mv20_status": mv20_v["pass_rule_status"],
+        "mv20_primary_gate_status": mv20_v["primary_gate_status"],
+        "mv20_sensitivity_gate_status": mv20_v["sensitivity_gate_status"],
+        "mv20_primary_all_metric": mv20_v["primary_all_metric"],
+        "mv20_primary_minus_high_metric": mv20_v["primary_minus_high_metric"],
+        "mv20_primary_minus_random_metric": mv20_v["primary_minus_random_metric"],
+        "mv20_primary_high_only_metric": mv20_v["primary_high_only_metric"],
+        "mv20_primary_excess_loss": mv20_v["primary_criterion_excess_loss_vs_random"],
+        "mv20_primary_excess_ci_low": mv20_v["primary_criterion_excess_loss_ci95_low"],
+        "mv20_primary_excess_ci_high": mv20_v["primary_criterion_excess_loss_ci95_high"],
+        "mv20_stop_rule": mv20_v["stop_rule"],
         "mv15_design_conditioning_ladder_rows": mv15_design["outputs"]["conditioning_ladder_rows"],
         "mv15_design_identity_probe_rows": mv15_design["outputs"]["identity_probe_rows"],
         "mv15_conditioning_identity_rows": mv15_outputs["conditioning_identity_rows"],
@@ -452,6 +568,24 @@ def build_source_map() -> pd.DataFrame:
         },
         {
             "section": "Measurement Results",
+            "source_artifact_id": "mirt_parameterization_correctness_audit",
+            "source_path": rel(MIRT_PARAM_AUDIT_SUMMARY),
+            "use": "code-level mirt reference/focal, anchor-linking, focal hyperparameter, and threshold-parameterization audit",
+        },
+        {
+            "section": "Measurement Results",
+            "source_artifact_id": "mv19_finite_sample_phq_simulation",
+            "source_path": rel(MV19_SUMMARY),
+            "use": "MV19 observed-N PHQ false-DIF, C02/C06 recovery, and anchor recovery simulation",
+        },
+        {
+            "section": "Measurement Results",
+            "source_artifact_id": "mv20_criterion_overlap_stress",
+            "source_path": rel(MV20_SUMMARY),
+            "use": "MV20 CMDC-only criterion-overlap deletion stress and stop rule",
+        },
+        {
+            "section": "Measurement Results",
             "source_artifact_id": "mv15_latent_conditioned_identity_design",
             "source_path": rel(MV15_DESIGN_SUMMARY),
             "use": "MV15 predeclared latent-conditioned identity ladder and local-only boundary",
@@ -470,15 +604,42 @@ def build_source_map() -> pd.DataFrame:
         },
         {
             "section": "Measurement Results",
+            "source_artifact_id": "mv17a_multilingual_feature_contract",
+            "source_path": rel(MV17A_SUMMARY),
+            "use": "BGE-M3 primary feature contract and multilingual-E5 sensitivity over MV07/MV12/MV15",
+        },
+        {
+            "section": "Measurement Results",
             "source_artifact_id": "mv12_tradeoff_analysis",
             "source_path": rel(MV12_ANALYSIS),
-            "use": "MV12 freeze decision, failure modes, and gate decomposition",
+            "use": "Legacy Chinese-BGE MV12 freeze decision, failure modes, and gate decomposition",
         },
     ]
     return pd.DataFrame(rows)
 
 
 def build_claim_checklist(ctx2: dict[str, Any], ctx3: dict[str, Any], ctx5: dict[str, Any]) -> pd.DataFrame:
+    mirt_corrected = not bool(ctx5["mirt_param_audit_blocker"])
+    if mirt_corrected:
+        mirt_claim_status = "correctness_gate_passed"
+        mirt_evidence = (
+            f"mirt audit status {ctx5['mirt_param_audit_status']}: "
+            f"statistical correctness blocker {ctx5['mirt_param_audit_blocker']}; "
+            "reference/focal order, anchor constraints, graded threshold constraints, and freed focal mean/variance pass."
+        )
+        mirt_guardrail = (
+            "Use MV13/MV14 as corrected anchor-linked corroboration, but retain convergence and MV19 finite-sample caveats."
+        )
+    else:
+        mirt_claim_status = "statistical_correctness_blocker"
+        mirt_evidence = (
+            f"mirt audit status {ctx5['mirt_param_audit_status']}: "
+            f"statistical correctness blocker {ctx5['mirt_param_audit_blocker']}; "
+            "reference/focal order and anchor constraints pass, but CMDC latent mean/variance are fixed."
+        )
+        mirt_guardrail = (
+            "Do not present MV13/MV14 as final anchor-linked DIF evidence until corrected or explicitly limited."
+        )
     rows = [
         {
             "claim_scope": "Baseline reproducibility floor",
@@ -527,13 +688,43 @@ def build_claim_checklist(ctx2: dict[str, Any], ctx3: dict[str, Any], ctx5: dict
             "guardrail": "Report negative and bounded results honestly; no full M0/M1/M2/M3 claim.",
         },
         {
-            "claim_scope": "MV12 latent-target method",
+            "claim_scope": "C02/C06 PHQ threshold-shift wording",
+            "claim_status": "finite_sample_bounded",
+            "evidence": (
+                f"MV19 status {ctx5['mv19_status']}: H0 C02/C06 both-flag false rate "
+                f"{fmt(ctx5['mv19_h0_target_both_false_rate'])}; H1 both-flag recovery "
+                f"{fmt(ctx5['mv19_h1_target_both_recovery_rate'])}; H1 top-two recovery "
+                f"{fmt(ctx5['mv19_h1_target_top2_recovery_rate'])}; anchor subset recovery "
+                f"{fmt(ctx5['mv19_h1_anchor_subset_recovery_rate'])}."
+            ),
+            "guardrail": "Do not call C02/C06 a robust standalone DIF conclusion at the observed N.",
+        },
+        {
+            "claim_scope": "MV13/MV14 mirt parameterization",
+            "claim_status": mirt_claim_status,
+            "evidence": mirt_evidence,
+            "guardrail": mirt_guardrail,
+        },
+        {
+            "claim_scope": "MV17a latent-target feature-contract sensitivity",
             "claim_status": "blocked_positive_method_claim",
             "evidence": (
-                "MV12 improves same-dataset theta utility and conditional identity, but observed-scale "
-                "safety and external theta transfer fail; aggregate analysis freezes the current line."
+                "Across BGE-M3 and multilingual-E5, X-to-theta is learnable and output identity is low, "
+                "but observed-scale safety and feature invariance fail. External theta transfer and B3 "
+                "Pareto dominance are encoder-dependent."
             ),
-            "guardrail": "Future method work needs a genuinely new predeclared mechanism.",
+            "guardrail": "Do not claim universal external-transfer failure or universal B3 dominance from MV17a.",
+        },
+        {
+            "claim_scope": "MV20 criterion-overlap stress",
+            "claim_status": "negative_bounded_stress_test",
+            "evidence": (
+                f"MV20 status {ctx5['mv20_status']}: BGE-M3 CMDC PHQ-9 top-20 excess loss "
+                f"{fmt(ctx5['mv20_primary_excess_loss'])}, CI "
+                f"{fmt(ctx5['mv20_primary_excess_ci_low'])}-{fmt(ctx5['mv20_primary_excess_ci_high'])}; "
+                f"mE5 gate {ctx5['mv20_sensitivity_gate_status']}."
+            ),
+            "guardrail": "Do not tune overlap thresholds or add a contamination-aware model from MV20.",
         },
     ]
     return pd.DataFrame(rows)
@@ -552,6 +743,45 @@ def write_markdown(
     source_map: pd.DataFrame,
     checklist: pd.DataFrame,
 ) -> None:
+    mirt_corrected = not bool(ctx5["mirt_param_audit_blocker"])
+    if mirt_corrected:
+        mirt_layer_sentence = (
+            "corrected MV13/MV14 provide anchor-linked external mirt qualitative and uncertainty "
+            "corroboration under the same convergence and finite-sample caveats"
+        )
+        mirt_sequence_sentence = (
+            "A post-rerun code-level mirt audit verifies the corrected identification contract: "
+            "reference/focal group order, anchor linking, graded `d1-d3` threshold/intercept constraints, "
+            "and freed focal-group mean/variance for threshold-constrained models."
+        )
+        mirt_conservative_boundary = (
+            "not a robust standalone DIF conclusion, a bootstrap-confirmed global partial-invariance win, "
+            "a full scalar-invariance proof, or a full-method pass"
+        )
+        mirt_guardrail = (
+            "Do not use MV13/MV14 as standalone robust DIF proof; state the corrected anchor-linked parameterization "
+            "alongside configural convergence and MV19 finite-sample caveats."
+        )
+    else:
+        mirt_layer_sentence = (
+            "MV13/MV14 are now fixed-hyperparameter mirt qualitative screens because the "
+            f"code-level parameterization audit is `{ctx5['mirt_param_audit_status']}` with "
+            f"statistical correctness blocker `{ctx5['mirt_param_audit_blocker']}`"
+        )
+        mirt_sequence_sentence = (
+            "A post-run code-level mirt audit then limits this external corroboration: "
+            "reference/focal group order, anchor linking, and graded `d1-d3` threshold/intercept constraints pass, "
+            "but the actual MV13/MV14 calls fix CMDC latent mean and variance rather than freeing focal-group "
+            "hyperparameters under anchor linking."
+        )
+        mirt_conservative_boundary = (
+            "not final anchor-linked mirt DIF evidence, a robust standalone DIF conclusion, "
+            "a bootstrap-confirmed global partial-invariance win, a full scalar-invariance proof, or a full-method pass"
+        )
+        mirt_guardrail = (
+            "Do not use MV13/MV14 as final anchor-linked mirt DIF evidence until the focal latent mean/variance "
+            "parameterization is corrected or explicitly limited."
+        )
     lines = [
         "# Baselines, Failure-Mode Diagnostics, and Measurement Results",
         "",
@@ -581,17 +811,21 @@ def write_markdown(
         "",
         f"The Phase 5 full-method gate now reads `{ctx5['evidence_rows']}` aggregate evidence summaries and remains blocked, while allowing a measurement-shift and measurement-invariance paper direction. This is the central Results boundary: the evidence is rich enough to explain why cross-dataset depression transfer is hard, but not for starting or claiming the full M0/M1/M2/M3 symptom-aligned method.",
         "",
-        f"The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV13/MV14 address the second level by showing substantial common PHQ structure with stable anchors, sparse loading DIF, repeated C02/C06 threshold non-equivalence, and convergence-aware model-selection uncertainty rather than uniformly supported exact scalar or partial invariance; MV12 addresses the third level by separating label measurement from multimodal prediction. MV15 was predeclared with `{ctx5['mv15_design_conditioning_ladder_rows']}` conditioning rows and `{ctx5['mv15_design_identity_probe_rows']}` identity probes, then executed as an aggregate-only identity audit. {ctx5['finding_mv15']} The key interpretation is that low-dimensional output identity and feature-level invariance are different: theta-only BA is `{fmt(ctx5['mv15_theta_only_identity_ba'])}` and predicted-theta output identity BA is `{fmt(ctx5['mv15_predicted_theta_output_identity_ba'])}`, but residualized BGE feature identity remains `{fmt(ctx5['mv15_theta_conditioned_feature_identity_ba'])}` after theta conditioning and `{fmt(ctx5['mv15_total_conditioned_feature_identity_ba'])}`/`{fmt(ctx5['mv15_predicted_total_conditioned_feature_identity_ba'])}`/`{fmt(ctx5['mv15_b3_conditioned_feature_identity_ba'])}` after total, predicted-total, and B3 controls. MV16 then closes the planned localized-DIF calibration follow-up as `{ctx5['mv16_status']}`: anchor safety passes (`{ctx5['mv16_anchor_safety_gate_passed']}`), but the both-direction small-k DIF-guided gate is `{ctx5['mv16_small_k_gate_passed']}`, the best supported row is `{ctx5['mv16_best_supported_direction']}`/`{ctx5['mv16_best_supported_model']}` at k=`{ctx5['mv16_best_supported_k']}`, and L4 small-k output identity BA remains `{fmt(ctx5['mv16_l4_small_k_output_identity_ba'])}`.",
+        f"The measurement story is best read at three levels: feature/domain shift (`P(X|D)`), target-measurement shift (`P(Y|theta,D)`), and latent prediction stability (`P(theta_hat|X,D)`). MV09 addresses the first level by showing that dataset identity remains high after legitimate conditioning; MV10/MV11/MV19 address the second level as the primary PHQ measurement evidence, while {mirt_layer_sentence}. This supports substantial common PHQ structure with repeated C02/C06 threshold non-equivalence, convergence-aware model-selection uncertainty, and an observed-N finite-sample downgrade, but not uniformly supported exact scalar or partial invariance; MV17a addresses the third level by testing whether multilingual `X -> theta` heads make measurement harmonization predictive. {ctx5['mv17a_summary_sentence']} MV16 then closes the planned localized-DIF calibration follow-up as `{ctx5['mv16_status']}`: anchor safety passes (`{ctx5['mv16_anchor_safety_gate_passed']}`), but the both-direction small-k DIF-guided gate is `{ctx5['mv16_small_k_gate_passed']}`, the best supported row is `{ctx5['mv16_best_supported_direction']}`/`{ctx5['mv16_best_supported_model']}` at k=`{ctx5['mv16_best_supported_k']}`, and L4 small-k output identity BA remains `{fmt(ctx5['mv16_l4_small_k_output_identity_ba'])}`.",
         "",
         "The first measurement sequence is negative or bounded. MV08 improves over the total-score floor on `0/3` pooled active slices, while MV08b improves over both total-score and fixed-map floors on `2/3` slices but raises prediction dataset identity to `0.979`. MV09 then revises the gate semantics: post-head identity is diagnostic when outputs are scale-specific, while shared-latent claims require conditional identity checks. Under that sharper test, E-DAIC/CMDC item-conditioned feature identity remains `0.991`, so direct fixed shared-symptom mappings remain too strong under the current frozen-feature and shallow-head contract.",
         "",
-        f"The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 exhibit substantial common PHQ structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Exact threshold/scalar equivalence is not uniformly supported, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. MV13 external R mirt replication preserves the same qualitative anchor/DIF pattern, with no loading-DIF flags and threshold-DIF flags on `C02` and `C06`, but retains a configural convergence warning. MV14 then makes that warning explicit: the convergence-safe full ladder has `{ctx5['mv14_core_effective_draws']}/{ctx5['mv14_core_attempted_draws']}` effective draws after `{ctx5['mv14_core_fit_success_draws']}` fit-success draws, configural converges in `{ctx5['mv14_configural_converged_draws']}/{ctx5['mv14_core_attempted_draws']}`, and the stable metric/partial/scalar ladder has `{ctx5['mv14_stable_ladder_effective_draws']}` effective draws with AIC/BIC favoring `{ctx5['mv14_stable_ladder_best_aic_model']}`/`{ctx5['mv14_stable_ladder_best_bic_model']}`. {ctx5['finding_mv14']} The conservative manuscript claim is therefore substantial structural similarity with bootstrap-stable anchors and localized threshold DIF, not a bootstrap-confirmed global partial-invariance win, a full scalar-invariance proof, or a full-method pass.",
+        f"The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 exhibit substantial common PHQ structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Exact threshold/scalar equivalence is not uniformly supported, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. MV13 external R mirt replication preserves the same qualitative anchor/DIF pattern, with no loading-DIF flags and threshold-DIF flags on `C02` and `C06`, but retains a configural convergence warning. MV14 then makes that warning explicit: the convergence-safe full ladder has `{ctx5['mv14_core_effective_draws']}/{ctx5['mv14_core_attempted_draws']}` effective draws after `{ctx5['mv14_core_fit_success_draws']}` fit-success draws, configural converges in `{ctx5['mv14_configural_converged_draws']}/{ctx5['mv14_core_attempted_draws']}`, and the stable metric/partial/scalar ladder has `{ctx5['mv14_stable_ladder_effective_draws']}` effective draws with AIC/BIC favoring `{ctx5['mv14_stable_ladder_best_aic_model']}`/`{ctx5['mv14_stable_ladder_best_bic_model']}`. {mirt_sequence_sentence} MV19 adds the observed-N stress test: H0 C02/C06 both-flag false rate is `{fmt(ctx5['mv19_h0_target_both_false_rate'])}`, H1 C02/C06 both-flag recovery is `{fmt(ctx5['mv19_h1_target_both_recovery_rate'])}`, H1 top-two recovery is `{fmt(ctx5['mv19_h1_target_top2_recovery_rate'])}`, and H1 anchor subset recovery is `{fmt(ctx5['mv19_h1_anchor_subset_recovery_rate'])}`. {ctx5['finding_mirt_audit']} {ctx5['finding_mv14']} {ctx5['finding_mv19']} The conservative manuscript claim is therefore substantial structural similarity with repeated but finite-sample-bounded localized C02/C06 threshold-shift evidence, {mirt_conservative_boundary}.",
         "",
-        f"MV12 then tests whether multimodal features can predict the label-derived latent target, and the result should not be flattened into a simple failure. Within datasets, `X -> theta` is learnable: M12a improves theta MAE over the train-mean theta floor by `{fmt(ctx5['mv12_edaic_same_theta_delta'])}` on E-DAIC and `{fmt(ctx5['mv12_cmdc_same_theta_delta'])}` on CMDC. The predicted latent target is also far less dataset-identifiable than the upstream conditional feature space, with conditional identity BA `{fmt(ctx5['mv12_conditional_identity_ba'])}` versus the MV09 reference `0.991`. However, this is a low-dimensional-output result rather than a theta-specific invariance result: B3 direct itemwise Ridge compressed to theta has lower pooled observed macro MAE (`{fmt(ctx5['mv12_b3_observed_macro_mae'])}` versus `{fmt(ctx5['mv12_m12a_observed_macro_mae'])}`) and lower conditional identity BA (`{fmt(ctx5['mv12_b3_conditional_identity_ba'])}` versus `{fmt(ctx5['mv12_m12a_conditional_identity_ba'])}`) than M12a.",
+        "MV17a then asks whether the legacy Chinese-BGE feature-chain conclusion survives a corrected multilingual feature contract. It makes BGE-M3 the primary encoder and multilingual-E5 the sensitivity encoder, regenerates subject-level text features for E-DAIC, CMDC, and PDCH, and reruns the paper-critical MV07/MV12/MV15 chain. The coarse gates replicate: MV07, MV12, and MV15 remain blocked for both encoders. The fine-grained mechanism, however, is not identical across encoders:",
         "",
-        f"The cost is predictive fidelity and zero-shot source-calibrated latent-scale transfer. Same-dataset observed macro item MAE is worse than direct itemwise Ridge by `{fmt(ctx5['mv12_edaic_same_observed_delta'])}` on E-DAIC and `{fmt(ctx5['mv12_cmdc_same_observed_delta'])}` on CMDC, showing that a one-dimensional latent bottleneck loses item-profile information. Cross-dataset evaluation splits the story even more sharply: the latent route improves observed macro item MAE relative to direct item transfer by `{fmt(ctx5['mv12_cross_cmdc_to_edaic_observed_delta'])}` for CMDC-to-E-DAIC and `{fmt(ctx5['mv12_cross_edaic_to_cmdc_observed_delta'])}` for E-DAIC-to-CMDC, yet theta MAE remains worse than the target train-mean theta floor by `{fmt(ctx5['mv12_cross_cmdc_to_edaic_theta_delta'])}` and `{fmt(ctx5['mv12_cross_edaic_to_cmdc_theta_delta'])}`. Because the external theta target is scored with the source measurement function on target subjects, this failure mixes `X -> theta` predictor transfer with target measurement-function mismatch. The interpretation is therefore a predictive fidelity-dataset identifiability trade-off: the latent/scalar prediction layer is less dataset-identifiable than upstream BGE features, but the current M12a head is Pareto-dominated by the dimension-matched B3 severity baseline and does not establish psychometric theta as uniquely more invariant. The aggregate tradeoff analysis freezes the current latent-target line as paper-critical diagnostic evidence.",
+        ctx5["mv17a_sensitivity_table"],
         "",
-        f"MV16 tests the most direct positive hypothesis suggested by MV14: if threshold non-equivalence is localized to C02/C06 while C01/C04/C05/C07 are stable anchors, a small target-labeled calibration set might repair cross-dataset measurement mapping. The result is bounded and asymmetric rather than a method pass. The L4 global-plus-C02/C06 row reaches a best small-k theta-MAE delta of `{fmt(ctx5['mv16_best_l4_small_k_delta_theta'])}` versus L0, but the predeclared both-direction small-k gate fails and output identity remains high. This keeps MV16 useful as a falsifying calibration stress test: localized DIF diagnosis alone is not enough to overcome the current BGE cross-dataset prediction and output-identity limits.",
+        f"The stable MV17a result is therefore narrower and more useful than the old universal-failure wording. Across both multilingual feature contracts, `X -> theta` is learnable within datasets and predicted-theta output identity is low (`{fmt(ctx5['mv17a']['bge_m3']['conditional_output_identity_ba'])}` for BGE-M3 and `{fmt(ctx5['mv17a']['multilingual_e5_base']['conditional_output_identity_ba'])}` for multilingual-E5), but same-dataset observed-scale safety fails and theta-conditioned feature identity remains `{fmt(ctx5['mv17a']['bge_m3']['theta_conditioned_feature_identity_ba'])}`/`{fmt(ctx5['mv17a']['multilingual_e5_base']['theta_conditioned_feature_identity_ba'])}`. External theta transfer is encoder-dependent: BGE-M3 passes the external theta gate while multilingual-E5 does not. The B3 severity baseline comparison is also encoder-dependent: under BGE-M3, B3 has higher observed macro MAE (`{fmt(ctx5['mv17a']['bge_m3']['b3_output_observed_macro_mae'], 4)}` versus `{fmt(ctx5['mv17a']['bge_m3']['theta_output_observed_macro_mae'], 4)}`) but lower output identity BA (`{fmt(ctx5['mv17a']['bge_m3']['b3_output_identity_ba'], 4)}` versus `{fmt(ctx5['mv17a']['bge_m3']['theta_output_identity_ba'], 4)}`), so it does not strictly Pareto-dominate predicted theta; under multilingual-E5, B3 has both lower observed macro MAE (`{fmt(ctx5['mv17a']['multilingual_e5_base']['b3_output_observed_macro_mae'], 4)}` versus `{fmt(ctx5['mv17a']['multilingual_e5_base']['theta_output_observed_macro_mae'], 4)}`) and lower output identity BA (`{fmt(ctx5['mv17a']['multilingual_e5_base']['b3_output_identity_ba'], 4)}` versus `{fmt(ctx5['mv17a']['multilingual_e5_base']['theta_output_identity_ba'], 4)}`). The manuscript claim should therefore be that measurement harmonization can reduce output-level dataset identifiability, but current features do not establish observed-scale-safe or feature-invariant cross-corpus prediction.",
+        "",
+        f"MV16 tests the most direct positive hypothesis suggested by the MV14 single-fit/bootstrap pattern before the MV19 finite-sample downgrade: if threshold non-equivalence is concentrated on C02/C06 while C01/C04/C05/C07 act as candidate anchors, a small target-labeled calibration set might repair cross-dataset measurement mapping. The result is bounded and asymmetric rather than a method pass. The L4 global-plus-C02/C06 row reaches a best small-k theta-MAE delta of `{fmt(ctx5['mv16_best_l4_small_k_delta_theta'])}` versus L0, but the predeclared both-direction small-k gate fails and output identity remains high. This keeps MV16 useful as a falsifying calibration stress test: localized measurement-shift diagnosis alone is not enough to overcome the current BGE cross-dataset prediction and output-identity limits.",
+        "",
+        f"MV20 closes the protocol-label-overlap mechanism check as a bounded negative stress test. It includes CMDC because Q1-Q12 question-position units are available, excludes PDCH because available units are coarse consultation segments, and excludes E-DAIC because true prompt/speaker units are unavailable. Under the primary BGE-M3 CMDC PHQ-9 top-20 rule, all/minus-high/minus-random/high-only MAE is `{fmt(ctx5['mv20_primary_all_metric'])}`/`{fmt(ctx5['mv20_primary_minus_high_metric'])}`/`{fmt(ctx5['mv20_primary_minus_random_metric'])}`/`{fmt(ctx5['mv20_primary_high_only_metric'])}`. The high-overlap deletion is directionally worse than matched random deletion, but the predeclared paired bootstrap excess-loss interval crosses zero (`{fmt(ctx5['mv20_primary_excess_loss'])}`, 95 percent CI `{fmt(ctx5['mv20_primary_excess_ci_low'])}` to `{fmt(ctx5['mv20_primary_excess_ci_high'])}`), and the multilingual-E5 sensitivity gate is `{ctx5['mv20_sensitivity_gate_status']}`. The manuscript should therefore report no clear evidence that criterion-overlap question-position content is the dominant shortcut under this CMDC-only stress test, and the MV20 stop rule freezes further threshold tuning or new contamination-aware model work.",
         "",
         f"The remaining Phase 5 findings define bounded supporting claims. PDCH supports an internal HAMD diagnostic bridge: item-derived total MAE is `5.693`, direct total MAE is `5.794`, and macro item MAE is `0.727`, but this does not support cross-dataset HAMD transfer. MODMA supports task-control evidence because task projection reduces feature task-identity BA from `0.762` to `0.570` while preserving the main task signal (`0.688`). EATD remains a negative SDS stress test because uncontrolled primary MAE is `28.810` versus a train-mean floor of `7.201`. {ctx5['finding_mv06']} Together, these results support a paper about measurement validity, protocol dependence, and bounded evidence localization, while keeping external HAMD transfer, EATD SDS generalization, positive MPDD context conditioning, and full-method construction blocked.",
         "",
@@ -600,9 +834,12 @@ def write_markdown(
         "- Do not present Phase 2 baseline result artifacts as public release material; use aggregate completion and hygiene only.",
         "- Do not claim that high unconditional dataset identity is automatically harmful; use it as a shortcut-risk screen and reserve conditional identity for shared-latent claims.",
         "- Do not call scale-specific post-head identity a hard shared-latent failure unless the output space is explicitly shared.",
-        "- Do not use MV12 as positive full-method evidence; its tradeoff analysis freezes the current latent-target line.",
+        "- Do not use MV12 or MV17a as positive full-method evidence; MV17a keeps the multilingual feature-contract chain blocked.",
+        f"- {mirt_guardrail}",
+        "- Do not claim universal zero-shot external theta transfer failure or universal B3 Pareto dominance; MV17a shows both are encoder-dependent.",
         "- Do not use low one-dimensional output identity as evidence that upstream BGE features are dataset-invariant; MV15 keeps feature identity high after theta and severity conditioning.",
         "- Do not use MV16 as a positive method claim; its few-shot calibration ladder is bounded/negative and keeps full-method construction blocked.",
+        "- Do not use MV20 as a positive criterion-contamination mechanism claim; it is a negative CMDC-only stress test and freezes further overlap-threshold tuning.",
         "- Do not strengthen RQ4 beyond first-round aggregate credibility without resolving remaining incomplete candidate rows and discussing agreement uncertainty plus sampling limits.",
         "",
         "## Source Map",

@@ -1,0 +1,143 @@
+{
+  "artifact_hygiene_passed": true,
+  "generated_at": "2026-08-21T19:10:57+00:00",
+  "input_contract": {
+    "datasets": [
+      "edaic",
+      "cmdc"
+    ],
+    "full_method_allowed": false,
+    "label_only": true,
+    "manifest_governed_item_loader": true,
+    "multimodal_features_read": false,
+    "raw_text_or_media_read": false,
+    "real_participant_identifiers_exported": false,
+    "row_level_predictions_read": false,
+    "scales": [
+      "PHQ-8",
+      "PHQ-9"
+    ],
+    "shared_items": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "subjects": {
+      "cmdc": 77,
+      "edaic": 219
+    }
+  },
+  "output_policy": {
+    "draw_level_diagnostics_tracked": false,
+    "fitted_generation_models_exported": false,
+    "fitted_parameters_exported": false,
+    "local_only_files": {
+      "ignored_mv19_draw_level_decisions": "per-draw simulation diagnostics without real participant identifiers"
+    },
+    "participant_grain_simulated_rows_exported": false,
+    "real_participant_rows_exported": false,
+    "theta_scores_exported": false,
+    "tracked_outputs": [
+      "anchor_recovery_summary.csv",
+      "artifact_hygiene_audit.json",
+      "effect_size_contract.csv",
+      "gate_recommendations.csv",
+      "input_boundary_contract.csv",
+      "item_flag_rate_summary.csv",
+      "observed_input_audit.csv",
+      "observed_response_category_support.csv",
+      "report.md",
+      "run_summary.json",
+      "simulation_design_contract.csv",
+      "simulation_world_summary.csv"
+    ]
+  },
+  "outputs": {
+    "anchor_recovery_rows": 4,
+    "draw_level_decision_rows_local_only": 1000,
+    "effect_size_rows": 24,
+    "item_flag_rows": 16,
+    "simulation_world_rows": 2,
+    "tracked_outputs": [
+      "anchor_recovery_summary.csv",
+      "artifact_hygiene_audit.json",
+      "effect_size_contract.csv",
+      "gate_recommendations.csv",
+      "input_boundary_contract.csv",
+      "item_flag_rate_summary.csv",
+      "observed_input_audit.csv",
+      "observed_response_category_support.csv",
+      "report.md",
+      "run_summary.json",
+      "simulation_design_contract.csv",
+      "simulation_world_summary.csv"
+    ]
+  },
+  "run_id": "P5_MV19_phq_finite_sample_psychometric_simulation",
+  "scope": "label_only_finite_sample_measurement_simulation",
+  "simulation_contract": {
+    "anchor_items": [
+      "C01",
+      "C04",
+      "C05",
+      "C07"
+    ],
+    "anchor_target_recovery_min": 0.6,
+    "h0_false_localization_max": 0.2,
+    "h1_target_both_flagged_min": 0.6,
+    "h1_target_top2_min": 0.5,
+    "random_seed": 20260822,
+    "simulations_per_world": 500,
+    "target_dif_items": [
+      "C02",
+      "C06"
+    ],
+    "theta_jitter_sd": 0.15,
+    "threshold_location_delta_tolerance": 0.35,
+    "worlds": [
+      "H0_scalar_invariant",
+      "H1_C02_C06_threshold_DIF"
+    ]
+  },
+  "source_artifacts": {
+    "mv10_threshold_dif_summary": "analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/threshold_dif_summary.csv",
+    "mv14_run_summary": "analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap/run_summary.json"
+  },
+  "status": "complete",
+  "timing": {
+    "runtime_seconds": 553.1698400042951
+  },
+  "verdict": {
+    "anchor_items": [
+      "C01",
+      "C04",
+      "C05",
+      "C07"
+    ],
+    "anchor_recovery_gate_passed": false,
+    "false_localization_gate_passed": false,
+    "full_method_allowed": false,
+    "h0_any_non_target_threshold_false_positive_rate": 0.972,
+    "h0_any_threshold_false_positive_rate": 0.988,
+    "h0_target_both_false_rate": 0.208,
+    "h0_target_top2_false_rate": 0.034,
+    "h1_anchor_target_subset_recovery_rate": 0.178,
+    "h1_exact_anchor_set_recovery_rate": 0.036,
+    "h1_exact_target_flag_set_rate": 0.02,
+    "h1_target_both_recovery_rate": 0.662,
+    "h1_target_top2_recovery_rate": 0.222,
+    "pass_rule_met": false,
+    "pass_rule_status": "complete_mv19_high_false_localization_downgrade_c02_c06",
+    "short_read": "MV19 simulates the observed E-DAIC/CMDC PHQ sample sizes and severity distributions under scalar-invariant and C02/C06 threshold-DIF worlds. It supports cautious C02/C06 wording only if false localization is limited and H1 recovery is adequate; it does not authorize a full method.",
+    "target_dif_items": [
+      "C02",
+      "C06"
+    ],
+    "target_recovery_gate_passed": false
+  }
+}

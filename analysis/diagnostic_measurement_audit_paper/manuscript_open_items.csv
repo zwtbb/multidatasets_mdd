@@ -1,8 +1,6 @@
 item_id,priority,area,open_item,blocking_for_submission
 M002,high,bibliography,"Verify every bibliography row against DOI/publisher/ACL/arXiv metadata, then insert generated citation keys from references.bib into prose and adapt formatting to the target venue.",True
 M003,high,claim_boundary,Keep full M0/M1/M2/M3 method claims blocked unless a genuinely new predeclared mechanism changes the full-method gate.,True
-M004,high,psychometric_uncertainty,"Predeclare a finite-sample psychometric simulation at the observed E-DAIC/CMDC N, category frequencies, severity distribution, and missingness to quantify false DIF under scalar invariance and C02/C06 recovery under threshold DIF.",True
-M006,medium,criterion_contamination,Design a criterion-contamination stress test that separates mirror-like interview/question turns from non-mirror turns before adding any new protocol-bias method.,False
 M007,medium,RQ4,Resolve the one incomplete local CMDC MV06 candidate if annotator rows become available; otherwise keep RQ4 as first-round aggregate credibility evidence.,False
 M008,medium,limitations,Decide whether to run a larger corrected MV14 bootstrap only if interval precision becomes reviewer-critical.,False
 M009,medium,protocol,Speaker-resolved E-DAIC interviewer/participant controls remain optional unless the Results need a literal speaker-role claim.,False

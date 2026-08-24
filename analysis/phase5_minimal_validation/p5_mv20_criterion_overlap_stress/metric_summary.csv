@@ -1,0 +1,221 @@
+run_id,dataset,modality,task,model,task_type,metric,mean,std,ci95_low,ci95_high,seed_count,sample_count_mean
+P5_MV20_bge_m3_binary_all_units_p00,CMDC,Text,MDD classification,bge_m3_all_units_ridge_or_logistic,binary_classification,AUPRC,0.9783108695652174,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_all_units_p00,CMDC,Text,MDD classification,bge_m3_all_units_ridge_or_logistic,binary_classification,AUROC,0.9876923076923078,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_all_units_p00,CMDC,Text,MDD classification,bge_m3_all_units_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9230769230769231,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_all_units_p00,CMDC,Text,MDD classification,bge_m3_all_units_ridge_or_logistic,binary_classification,Brier Score,0.06158084256764603,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_all_units_p00,CMDC,Text,MDD classification,bge_m3_all_units_ridge_or_logistic,binary_classification,ECE,0.08505379646677777,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_all_units_p00,CMDC,Text,MDD classification,bge_m3_all_units_ridge_or_logistic,binary_classification,Macro-F1,0.889367816091954,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p10,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,AUPRC,0.8603127162431561,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p10,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,AUROC,0.89,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p10,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Balanced Accuracy,0.8134615384615385,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p10,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Brier Score,0.14078634339702556,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p10,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,ECE,0.15867625255873946,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p10,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Macro-F1,0.8003703703703703,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p20,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,AUPRC,0.9253327893931667,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p20,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,AUROC,0.9399999999999998,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p20,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Balanced Accuracy,0.8430769230769231,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p20,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Brier Score,0.13452000581715925,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p20,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,ECE,0.14971625272157293,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p20,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Macro-F1,0.8288888888888888,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p30,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,AUPRC,0.988327536231884,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p30,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,AUROC,0.9938461538461538,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p30,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9423076923076923,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p30,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Brier Score,0.06387969791182442,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p30,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,ECE,0.10918578728463595,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_high_only_p30,CMDC,Text,MDD classification,bge_m3_high_only_ridge_or_logistic,binary_classification,Macro-F1,0.9158163265306122,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p10,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,AUPRC,0.9630129870129869,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p10,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,AUROC,0.973076923076923,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p10,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9023076923076923,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p10,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Brier Score,0.07133543582536017,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p10,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,ECE,0.09170584111926078,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p10,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Macro-F1,0.8859259259259261,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p20,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,AUPRC,0.9360366557496583,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p20,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,AUROC,0.9538461538461538,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p20,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9319230769230769,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p20,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Brier Score,0.07859887150206091,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p20,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,ECE,0.10441660491182869,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p20,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Macro-F1,0.9144444444444446,1.1102230246251565e-16,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p30,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,AUPRC,0.9267605294964584,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p30,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,AUROC,0.9461538461538461,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p30,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Balanced Accuracy,0.8926923076923077,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p30,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Brier Score,0.09384623341710718,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p30,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,ECE,0.09582732818070729,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_high_p30,CMDC,Text,MDD classification,bge_m3_minus_high_ridge_or_logistic,binary_classification,Macro-F1,0.8727272727272727,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p10,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,AUPRC,0.9744303554979217,0.01666735055641503,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p10,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,AUROC,0.9861538461538462,0.010285855169505708,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p10,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9285384615384615,0.023568357083625976,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p10,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Brier Score,0.06433426018139392,0.014442844071580417,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p10,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,ECE,0.09040455050580375,0.013558171249569505,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p10,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Macro-F1,0.90215163573012,0.027185379166266028,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p20,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,AUPRC,0.9751550382250921,0.016033853462428135,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p20,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,AUROC,0.9866153846153847,0.008163999483951773,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p20,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9206923076923076,0.0192329229563212,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p20,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Brier Score,0.06669300973963209,0.008097222805313494,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p20,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,ECE,0.09411498935799276,0.00873612860708987,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p20,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Macro-F1,0.893646502452409,0.01701078950733764,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p30,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,AUPRC,0.9806884202471396,0.009967788097608208,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p30,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,AUROC,0.9903076923076923,0.00487961585450884,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p30,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9421538461538462,0.012166497796780019,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p30,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Brier Score,0.057297148070255946,0.012681284669101945,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p30,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,ECE,0.09656412695971171,0.007999824945694118,,,5,77.0
+P5_MV20_bge_m3_binary_minus_random_p30,CMDC,Text,MDD classification,bge_m3_minus_random_ridge_or_logistic,binary_classification,Macro-F1,0.9184082291095723,0.017625069576365435,,,5,77.0
+P5_MV20_bge_m3_binary_train_mean_floor_p00,CMDC,Text,MDD classification,bge_m3_train_mean_floor_ridge_or_logistic,binary_classification,AUPRC,0.27307466919277457,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_train_mean_floor_p00,CMDC,Text,MDD classification,bge_m3_train_mean_floor_ridge_or_logistic,binary_classification,AUROC,0.4884615384615384,5.551115123125783e-17,,,5,77.0
+P5_MV20_bge_m3_binary_train_mean_floor_p00,CMDC,Text,MDD classification,bge_m3_train_mean_floor_ridge_or_logistic,binary_classification,Balanced Accuracy,0.5,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_train_mean_floor_p00,CMDC,Text,MDD classification,bge_m3_train_mean_floor_ridge_or_logistic,binary_classification,Brier Score,0.21932157617741116,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_train_mean_floor_p00,CMDC,Text,MDD classification,bge_m3_train_mean_floor_ridge_or_logistic,binary_classification,ECE,0.00010301702528048295,0.0,,,5,77.0
+P5_MV20_bge_m3_binary_train_mean_floor_p00,CMDC,Text,MDD classification,bge_m3_train_mean_floor_ridge_or_logistic,binary_classification,Macro-F1,0.40310077519379844,0.0,,,5,77.0
+P5_MV20_bge_m3_phq9_all_units_p00,CMDC,Text,PHQ-9 regression,bge_m3_all_units_ridge_or_logistic,severity_regression,CCC,0.7545657867862593,0.006072226703526245,,,5,77.0
+P5_MV20_bge_m3_phq9_all_units_p00,CMDC,Text,PHQ-9 regression,bge_m3_all_units_ridge_or_logistic,severity_regression,MAE,3.5708771753754918,0.034440833233771354,,,5,77.0
+P5_MV20_bge_m3_phq9_all_units_p00,CMDC,Text,PHQ-9 regression,bge_m3_all_units_ridge_or_logistic,severity_regression,RMSE,4.740556757800659,0.035898520661360254,,,5,77.0
+P5_MV20_bge_m3_phq9_all_units_p00,CMDC,Text,PHQ-9 regression,bge_m3_all_units_ridge_or_logistic,severity_regression,Spearman,0.6469966267473704,0.002420507136874066,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p10,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,CCC,0.46510166419824195,0.018414701125386488,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p10,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,MAE,5.048591194752395,0.020768414248405368,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p10,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,RMSE,6.398455722061475,0.08583980223266129,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p10,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,Spearman,0.44315152510613204,0.013869220939000292,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p20,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,CCC,0.6611513768673327,0.0018073943910424679,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p20,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,MAE,4.215394853863526,0.00972754674289341,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p20,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,RMSE,5.3898901910219665,0.022299835011173566,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p20,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,Spearman,0.5875688419066594,0.003049862677987824,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p30,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,CCC,0.7084581595794057,0.01015880945167296,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p30,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,MAE,3.928153118971408,0.05126397782227789,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p30,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,RMSE,5.050089962251912,0.053825317343008945,,,5,77.0
+P5_MV20_bge_m3_phq9_high_only_p30,CMDC,Text,PHQ-9 regression,bge_m3_high_only_ridge_or_logistic,severity_regression,Spearman,0.6278326379625403,0.005581776288237212,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p10,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,CCC,0.7274052621081029,0.013318273228506282,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p10,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,MAE,3.7998249606407035,0.038319270885578294,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p10,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,RMSE,4.896540785978658,0.07870476605721227,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p10,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,Spearman,0.6382031121991416,0.008370945421001513,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p20,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,CCC,0.6832657945163241,0.0239748739829999,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p20,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,MAE,3.917719976098455,0.0742975722354848,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p20,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,RMSE,5.1829328150658895,0.13419930225013144,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p20,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,Spearman,0.6434985136399922,0.0036715240990072176,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p30,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,CCC,0.6789043678537683,0.011358070732488425,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p30,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,MAE,4.00101926958365,0.03728236739725167,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p30,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,RMSE,5.202912114131024,0.057390809918650566,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_high_p30,CMDC,Text,PHQ-9 regression,bge_m3_minus_high_ridge_or_logistic,severity_regression,Spearman,0.6026585141944951,0.008863674629993977,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p10,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,CCC,0.7353544388030251,0.03304993978670501,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p10,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,MAE,3.7028158571194716,0.27843378861128065,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p10,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,RMSE,4.84601348851606,0.3084087248114861,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p10,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,Spearman,0.6190617248845368,0.02387027045554272,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p20,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,CCC,0.7206150960835807,0.020428230080966125,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p20,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,MAE,3.7677388568173185,0.18525822700323555,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p20,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,RMSE,4.964717723857311,0.14601788601701796,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p20,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,Spearman,0.6234883241039867,0.016803333621627052,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p30,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,CCC,0.718885433208414,0.03680153765410945,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p30,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,MAE,3.772522649230402,0.2488762766416313,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p30,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,RMSE,4.926602847499364,0.276596226348874,,,5,77.0
+P5_MV20_bge_m3_phq9_minus_random_p30,CMDC,Text,PHQ-9 regression,bge_m3_minus_random_ridge_or_logistic,severity_regression,Spearman,0.6212027892629092,0.031638931607736696,,,5,77.0
+P5_MV20_bge_m3_phq9_train_mean_floor_p00,CMDC,Text,PHQ-9 regression,bge_m3_train_mean_floor_ridge_or_logistic,severity_regression,CCC,-0.002061283712472124,0.0,,,5,77.0
+P5_MV20_bge_m3_phq9_train_mean_floor_p00,CMDC,Text,PHQ-9 regression,bge_m3_train_mean_floor_ridge_or_logistic,severity_regression,MAE,6.636662385736949,0.0,,,5,77.0
+P5_MV20_bge_m3_phq9_train_mean_floor_p00,CMDC,Text,PHQ-9 regression,bge_m3_train_mean_floor_ridge_or_logistic,severity_regression,RMSE,7.642402669012467,8.881784197001252e-16,,,5,77.0
+P5_MV20_bge_m3_phq9_train_mean_floor_p00,CMDC,Text,PHQ-9 regression,bge_m3_train_mean_floor_ridge_or_logistic,severity_regression,Spearman,-0.06388620590737709,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_all_units_p00,CMDC,Text,MDD classification,multilingual_e5_base_all_units_ridge_or_logistic,binary_classification,AUPRC,0.9675908326190192,1.1102230246251565e-16,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_all_units_p00,CMDC,Text,MDD classification,multilingual_e5_base_all_units_ridge_or_logistic,binary_classification,AUROC,0.9815384615384616,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_all_units_p00,CMDC,Text,MDD classification,multilingual_e5_base_all_units_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9223076923076923,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_all_units_p00,CMDC,Text,MDD classification,multilingual_e5_base_all_units_ridge_or_logistic,binary_classification,Brier Score,0.06851833129503687,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_all_units_p00,CMDC,Text,MDD classification,multilingual_e5_base_all_units_ridge_or_logistic,binary_classification,ECE,0.09939856208969958,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_all_units_p00,CMDC,Text,MDD classification,multilingual_e5_base_all_units_ridge_or_logistic,binary_classification,Macro-F1,0.901010101010101,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p10,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,AUPRC,0.8954727577204358,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p10,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,AUROC,0.9399999999999998,1.1102230246251565e-16,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p10,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Balanced Accuracy,0.8334615384615385,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p10,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Brier Score,0.11244159765080666,1.3877787807814457e-17,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p10,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,ECE,0.1335215674579577,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p10,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Macro-F1,0.8161616161616161,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p20,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,AUPRC,0.9049891392693334,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p20,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,AUROC,0.9638461538461538,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p20,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9030769230769231,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p20,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Brier Score,0.08576983610884834,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p20,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,ECE,0.12381573754677042,1.3877787807814457e-17,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p20,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Macro-F1,0.8746608790016277,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p30,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,AUPRC,0.9708633312958661,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p30,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,AUROC,0.9876923076923078,1.1102230246251565e-16,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p30,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9326923076923077,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p30,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Brier Score,0.06740315041558766,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p30,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,ECE,0.10357695623316557,1.3877787807814457e-17,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_high_only_p30,CMDC,Text,MDD classification,multilingual_e5_base_high_only_ridge_or_logistic,binary_classification,Macro-F1,0.902514017001266,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,AUPRC,0.950743388275923,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,AUROC,0.97,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9030769230769231,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Brier Score,0.08139694744964192,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,ECE,0.08875943510668399,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Macro-F1,0.8746608790016277,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,AUPRC,0.9373778139354132,1.1102230246251565e-16,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,AUROC,0.9623076923076923,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9126923076923077,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Brier Score,0.08430506756966653,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,ECE,0.09720152907220424,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Macro-F1,0.8877551020408163,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,AUPRC,0.9286018589328592,1.1102230246251565e-16,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,AUROC,0.9507692307692308,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Balanced Accuracy,0.8630769230769231,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Brier Score,0.10348200213145767,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,ECE,0.11209028659657691,1.3877787807814457e-17,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_high_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_high_ridge_or_logistic,binary_classification,Macro-F1,0.8444444444444444,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,AUPRC,0.9666475047638123,0.01220120774301258,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,AUROC,0.9804615384615385,0.007043398856775137,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9126923076923077,0.008600261451922237,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Brier Score,0.07048970905446574,0.008510261199583547,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,ECE,0.0919110686018582,0.005937617295064446,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p10,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Macro-F1,0.8878194124128548,0.011783774185139118,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,AUPRC,0.9741012778639192,0.010909376464642911,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,AUROC,0.9833846153846153,0.006941854875494452,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Balanced Accuracy,0.9144615384615383,0.024500452839674447,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Brier Score,0.06648678578169634,0.012931914392139017,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,ECE,0.08844530397756063,0.011187385349707405,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p20,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Macro-F1,0.892719803183545,0.024305356955522293,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,AUPRC,0.9787837640099859,0.006823130260752072,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,AUROC,0.9867692307692307,0.004280131613305726,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Balanced Accuracy,0.932076923076923,0.016092557727135325,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Brier Score,0.060766314678806665,0.014350082482215594,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,ECE,0.08860368379121511,0.020048295757483483,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_minus_random_p30,CMDC,Text,MDD classification,multilingual_e5_base_minus_random_ridge_or_logistic,binary_classification,Macro-F1,0.912325534456053,0.022995538970357342,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_train_mean_floor_p00,CMDC,Text,MDD classification,multilingual_e5_base_train_mean_floor_ridge_or_logistic,binary_classification,AUPRC,0.27307466919277457,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_train_mean_floor_p00,CMDC,Text,MDD classification,multilingual_e5_base_train_mean_floor_ridge_or_logistic,binary_classification,AUROC,0.4884615384615384,5.551115123125783e-17,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_train_mean_floor_p00,CMDC,Text,MDD classification,multilingual_e5_base_train_mean_floor_ridge_or_logistic,binary_classification,Balanced Accuracy,0.5,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_train_mean_floor_p00,CMDC,Text,MDD classification,multilingual_e5_base_train_mean_floor_ridge_or_logistic,binary_classification,Brier Score,0.21932157617741116,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_train_mean_floor_p00,CMDC,Text,MDD classification,multilingual_e5_base_train_mean_floor_ridge_or_logistic,binary_classification,ECE,0.00010301702528048295,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_binary_train_mean_floor_p00,CMDC,Text,MDD classification,multilingual_e5_base_train_mean_floor_ridge_or_logistic,binary_classification,Macro-F1,0.40310077519379844,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_all_units_p00,CMDC,Text,PHQ-9 regression,multilingual_e5_base_all_units_ridge_or_logistic,severity_regression,CCC,0.7226031657697771,0.01229103586198675,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_all_units_p00,CMDC,Text,PHQ-9 regression,multilingual_e5_base_all_units_ridge_or_logistic,severity_regression,MAE,3.6424934371524103,0.08567535603122065,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_all_units_p00,CMDC,Text,PHQ-9 regression,multilingual_e5_base_all_units_ridge_or_logistic,severity_regression,RMSE,4.956421992800733,0.07334603334946711,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_all_units_p00,CMDC,Text,PHQ-9 regression,multilingual_e5_base_all_units_ridge_or_logistic,severity_regression,Spearman,0.6312933954489757,0.008890810321307101,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,CCC,0.5503166477578939,0.011288586937937035,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,MAE,4.885200685642279,0.07561864472910389,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,RMSE,6.114886157445356,0.009242670449871539,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,Spearman,0.5433153715931989,0.007673442014017651,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,CCC,0.6355069949919612,0.004655958592617785,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,MAE,4.276153533451891,0.053668353838894206,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,RMSE,5.5233293535799195,0.020865073225304613,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,Spearman,0.5887168238985364,0.006075704564417835,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,CCC,0.6982083083730035,0.010618206870504994,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,MAE,3.8503103402933645,0.08566870918962455,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,RMSE,5.064902190417007,0.05374973488449363,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_high_only_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_high_only_ridge_or_logistic,severity_regression,Spearman,0.677350990734255,0.004789497074011393,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,CCC,0.711746305396383,0.010385602650095247,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,MAE,3.7877115232251626,0.024484184686317783,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,RMSE,5.004660680537568,0.05418180923315172,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,Spearman,0.6114580827704392,0.0027813794525787263,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,CCC,0.6691954949086605,0.012047161226675807,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,MAE,4.079677527582428,0.05368638670300822,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,RMSE,5.2900846669819215,0.07763639998060423,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,Spearman,0.5795403839195203,0.011384610025893763,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,CCC,0.6787336310855314,0.00132123358648492,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,MAE,4.014676774520306,0.004289515449280922,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,RMSE,5.249298031593458,0.0002607079281072252,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_high_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_high_ridge_or_logistic,severity_regression,Spearman,0.5687477789509917,0.0019402462150628907,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,CCC,0.7186774539915424,0.03391602011247175,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,MAE,3.6764838564054285,0.27135902864782846,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,RMSE,4.920447902194181,0.23707520122940612,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p10,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,Spearman,0.6242399056615995,0.03197412790993505,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,CCC,0.7030432734198607,0.028604024727279968,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,MAE,3.7268098765287183,0.18011908302994498,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,RMSE,5.017511818410851,0.18761898567488608,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p20,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,Spearman,0.6091143144176355,0.01872616357681554,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,CCC,0.709974915047461,0.03187758119065549,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,MAE,3.7259318480160553,0.20191693346036663,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,RMSE,5.0147992498789495,0.21567873129168913,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_minus_random_p30,CMDC,Text,PHQ-9 regression,multilingual_e5_base_minus_random_ridge_or_logistic,severity_regression,Spearman,0.6176602338280941,0.023283676576164047,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_train_mean_floor_p00,CMDC,Text,PHQ-9 regression,multilingual_e5_base_train_mean_floor_ridge_or_logistic,severity_regression,CCC,-0.002061283712472124,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_train_mean_floor_p00,CMDC,Text,PHQ-9 regression,multilingual_e5_base_train_mean_floor_ridge_or_logistic,severity_regression,MAE,6.636662385736949,0.0,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_train_mean_floor_p00,CMDC,Text,PHQ-9 regression,multilingual_e5_base_train_mean_floor_ridge_or_logistic,severity_regression,RMSE,7.642402669012467,8.881784197001252e-16,,,5,77.0
+P5_MV20_multilingual_e5_base_phq9_train_mean_floor_p00,CMDC,Text,PHQ-9 regression,multilingual_e5_base_train_mean_floor_ridge_or_logistic,severity_regression,Spearman,-0.06388620590737709,0.0,,,5,77.0

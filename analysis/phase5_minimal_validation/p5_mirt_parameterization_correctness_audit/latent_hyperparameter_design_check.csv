@@ -1,0 +1,9 @@
+parameterization_id,group,parameter,starting_value,estimated
+actual_no_invariance_argument,edaic,MEAN_1,0,False
+actual_no_invariance_argument,edaic,COV_11,1,False
+actual_no_invariance_argument,cmdc,MEAN_1,0,False
+actual_no_invariance_argument,cmdc,COV_11,1,False
+anchor_items_plus_free_focal_hyperparameters,edaic,MEAN_1,0,False
+anchor_items_plus_free_focal_hyperparameters,edaic,COV_11,1,False
+anchor_items_plus_free_focal_hyperparameters,cmdc,MEAN_1,0,True
+anchor_items_plus_free_focal_hyperparameters,cmdc,COV_11,1,True

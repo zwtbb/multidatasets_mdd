@@ -1,6 +1,6 @@
 {
   "artifact_hygiene_passed": true,
-  "generated_at": "2026-08-11T16:36:00+00:00",
+  "generated_at": "2026-08-22T12:44:06+00:00",
   "input_contract": {
     "datasets": [
       "edaic",
@@ -61,6 +61,7 @@
   "scope": "label_only_external_mirt_psychometric_replication",
   "status": "complete",
   "verdict": {
+    "anchor_linked_focal_hyperparameters_corrected": true,
     "best_aic_model": "partial_mv10",
     "best_bic_model": "scalar",
     "confirmed_mv10_anchor_items": 4,
@@ -76,8 +77,9 @@
     "min_confirmed_anchor_items_required": 3,
     "mv11_mv13_aligned_rows": 6,
     "mv11_mv13_alignment_rows": 6,
-    "parameter_ci_finite_se_count": 45,
+    "parameter_ci_finite_se_count": 47,
     "parameter_ci_status": "available_aggregate_only",
+    "parameterization_contract": "anchor_linked_focal_mean_variance_free",
     "partial_mv10_vs_configural_decision": "no_strong_evidence_against_restriction",
     "r_returncode": 0,
     "scalar_vs_metric_decision": "restricted_model_rejected_lrt_only",
@@ -91,7 +93,7 @@
       "C07",
       "C08"
     ],
-    "short_read": "External R mirt replication is complete: the qualitative PHQ partial-invariance claim is externally checked while full item parameters and factor scores remain local-only.",
+    "short_read": "External R mirt replication is complete with anchor-linked focal mean/variance freed for threshold-constrained models; full item parameters and factor scores remain local-only.",
     "status": "complete_external_mirt_with_convergence_warnings",
     "subjects": {
       "cmdc": 77,

@@ -4,3 +4,4 @@ S002,MV16 calibration,MV17a is complete; keep MV16 paused unless a new explicit 
 S003,RQ3 personality,Do not design personality gating/calibrators as a main method contribution; keep MPDD as a population stress test.
 S004,EATD valence,Do not add an EATD valence-adversarial method from current negative SDS evidence.
 S005,Evidence localization,Do not build an evidence network; use MV06 agreement as credibility support unless deletion/sufficiency tests are explicitly predeclared.
+S006,Criterion overlap,"MV20 is complete; stop threshold tuning, insertion variants, and contamination-aware model design from this negative bounded stress test."

@@ -314,21 +314,21 @@ experiment progress, keeps version hygiene, and records cross-session decisions.
   predicted-total/B3-conditioned BGE feature identity BA remains `1.000`,
   PHQ-item-conditioned feature identity BA is `0.974`, theta-only identity BA
   is `0.576`, psychometric predicted-theta output identity BA is `0.646`, and
-  B3 output Pareto-dominates predicted theta. Treat MV15 as negative
-  feature-invariance evidence that motivated MV16 as a bounded calibration
-  follow-up, not full-method construction.
+  B3 output Pareto-dominates predicted theta only in the legacy old
+  Chinese-BGE chain. Treat MV15 as negative feature-invariance evidence that
+  motivated MV16 as a bounded calibration follow-up, not full-method
+  construction; MV17a later supersedes universal B3-dominance wording.
 - Diagnostic paper Baselines, Failure-Mode Diagnostics, and Measurement
   Results sections were drafted in the main checkout by
   `scripts/build_diagnostic_paper_results_sections.py`. The scaffold reads
   aggregate Phase 2/3/5 artifacts only, exports source maps, claim checklist,
   run summary, report, and hygiene audit under
   `analysis/diagnostic_measurement_audit_paper/`, and passes artifact hygiene.
-  It reframes MV12 as a predictive fidelity-dataset identifiability trade-off:
-  same-dataset theta utility improves and low-dimensional outputs are less
-  dataset-identifiable than upstream BGE features, but B3 dimension-matched
-  severity dominates M12a on pooled fidelity and identity, while same-dataset
-  observed-scale safety and zero-shot source-calibrated theta transfer still
-  block a positive full-method claim.
+  It now treats MV17a as the canonical prediction-consequence layer and
+  MV12/MV15 as legacy old-chain support: measurement harmonization can reduce
+  output-level identity, but observed-scale safety and feature invariance
+  remain blocked, while external theta transfer and B3 dominance are
+  encoder-dependent.
 - A diagnostic measurement-audit paper outline now exists at
   `docs/diagnostic_measurement_audit_paper_outline.md`; it frames current
   evidence as a publishable measurement-shift / measurement-invariance

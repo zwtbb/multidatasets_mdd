@@ -1,0 +1,5 @@
+recommendation_id,status,recommendation,evidence
+finite_sample_boundary,complete_mv19_high_false_localization_downgrade_c02_c06,Use MV19 as an observed-N sensitivity layer for E-DAIC/CMDC dataset-group PHQ measurement-shift wording.,H0 C02/C06 both-flag false rate 0.208; H1 C02/C06 both-flag recovery 0.662.
+c02_c06_wording,downgrade_or_hypothesis_generating,Describe C02/C06 as localized dataset-group threshold non-equivalence only with finite-sample caveats.,False-localization gate=False; target-recovery gate=False.
+anchor_wording,downgrade,Keep C01/C04/C05/C07 anchor wording only if the predeclared anchor set is recoverable under H1.,H1 anchor subset recovery 0.178.
+full_method_gate,keep_blocked,Do not use finite-sample label simulation to authorize M0/M1/M2/M3 construction.,MV19 is a label-only measurement-sensitivity analysis; it reads no multimodal features.

@@ -91,6 +91,20 @@ model_syntax <- function(slope_items = character(), threshold_items = character(
   paste("F = 1-8", paste("CONSTRAINB =", paste(terms, collapse = ", ")), sep = "\n")
 }
 
+latent_invariance_terms <- function(threshold_items = character()) {
+  if (length(threshold_items) == 0) {
+    return(character())
+  }
+  unique(c(threshold_items, "free_means", "free_var"))
+}
+
+latent_hyperparameter_policy <- function(invariance_terms = character()) {
+  if (all(c("free_means", "free_var") %in% invariance_terms)) {
+    return("anchor_linked_focal_mean_variance_free")
+  }
+  "reference_and_focal_hyperparameters_fixed"
+}
+
 categorize_runtime <- function(warnings = character(), error_message = "") {
   text <- paste(c(warnings, error_message), collapse = " ")
   if (!nzchar(trimws(text))) {
@@ -123,6 +137,8 @@ safe_extract <- function(model, key, default = NA) {
 fit_model_for <- function(draw_data, model_id, description, slope_items = character(), threshold_items = character()) {
   warnings <- character()
   syntax <- model_syntax(slope_items, threshold_items)
+  invariance_terms <- latent_invariance_terms(threshold_items)
+  hyperparameter_policy <- latent_hyperparameter_policy(invariance_terms)
   model <- mirt.model(syntax)
   current_data <- draw_data[, items]
   current_data[] <- lapply(current_data, function(col) as.integer(col))
@@ -130,17 +146,23 @@ fit_model_for <- function(draw_data, model_id, description, slope_items = charac
 
   result <- tryCatch(
     withCallingHandlers(
-      multipleGroup(
-        current_data,
-        model,
-        group = current_group,
-        itemtype = rep("graded", length(items)),
-        method = "EM",
-        quadpts = 31,
-        SE = FALSE,
-        verbose = FALSE,
-        technical = list(NCYCLES = 3000)
-      ),
+      {
+        mg_args <- list(
+          data = current_data,
+          model = model,
+          group = current_group,
+          itemtype = rep("graded", length(items)),
+          method = "EM",
+          quadpts = 31,
+          SE = FALSE,
+          verbose = FALSE,
+          technical = list(NCYCLES = 3000)
+        )
+        if (length(invariance_terms) > 0) {
+          mg_args$invariance <- invariance_terms
+        }
+        do.call(multipleGroup, mg_args)
+      },
       warning = function(w) {
         warnings <<- c(warnings, conditionMessage(w))
         invokeRestart("muffleWarning")
@@ -163,9 +185,11 @@ fit_model_for <- function(draw_data, model_id, description, slope_items = charac
       iterations = NA_integer_,
       warning_count = length(warnings),
       error_category = categorize_runtime(warnings, error_message),
+      mirt_invariance_terms = paste(invariance_terms, collapse = ";"),
+      latent_hyperparameter_policy = hyperparameter_policy,
       stringsAsFactors = FALSE
     )
-    return(list(model = NULL, row = row, syntax = syntax))
+    return(list(model = NULL, row = row, syntax = syntax, invariance = invariance_terms))
   }
 
   row <- data.frame(
@@ -180,9 +204,11 @@ fit_model_for <- function(draw_data, model_id, description, slope_items = charac
     iterations = as.integer(safe_extract(result, "iterations", NA_integer_)),
     warning_count = length(warnings),
     error_category = categorize_runtime(warnings, ""),
+    mirt_invariance_terms = paste(invariance_terms, collapse = ";"),
+    latent_hyperparameter_policy = hyperparameter_policy,
     stringsAsFactors = FALSE
   )
-  list(model = result, row = row, syntax = syntax)
+  list(model = result, row = row, syntax = syntax, invariance = invariance_terms)
 }
 
 decision_for <- function(p_value, delta_bic, df) {
@@ -838,6 +864,10 @@ execution_summary <- data.frame(
   core_R = core_R,
   dif_R = dif_R,
   collect_itemfit = collect_itemfit,
+  anchor_linked_focal_hyperparameters_corrected = any(
+    fit_rows$latent_hyperparameter_policy == "anchor_linked_focal_mean_variance_free",
+    na.rm = TRUE
+  ),
   fitted_parameters_exported = FALSE,
   factor_scores_exported = FALSE,
   fitted_model_objects_exported = FALSE,

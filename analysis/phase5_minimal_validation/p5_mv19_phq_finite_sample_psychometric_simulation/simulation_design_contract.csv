@@ -1,0 +1,7 @@
+contract_id,world_id,description,decision_readout
+S001_world_H0,H0_scalar_invariant,Same pooled item response functions for both datasets; dataset-specific severity distributions and observed complete-case N are retained.,False-DIF and false-localization rates under the current MV10 screen.
+S002_world_H1,H1_C02_C06_threshold_DIF,C02 and C06 receive CMDC threshold logit offsets copied from the observed MV10 dataset-logit coefficients; other item thresholds remain invariant.,"C02/C06 recovery, top-two localization, and anchor recovery under observed-like threshold DIF."
+S003_sample_size,both,Each simulated dataset keeps the observed complete-item subject counts from MV10.,Finite-sample behavior at the observed E-DAIC/CMDC PHQ item-labeled N.
+S004_severity_distribution,both,Latent severity proxy is sampled from each dataset's empirical shared PHQ total z distribution with Gaussian jitter SD 0.15.,Severity-composition differences are retained instead of equalized away.
+S005_detection_pipeline,both,"Each simulated draw is evaluated with the MV10 approximate loading, threshold, and partial-anchor screen.","Comparable to the MV10/MV14 item-level anchor and threshold-DIF wording, not a new formal mirt bootstrap."
+S006_repetitions,both,500 simulations per world using a fixed RNG seed.,Aggregate recovery and false-positive rates with Wilson 95 percent intervals.
