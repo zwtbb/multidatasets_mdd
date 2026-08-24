@@ -12,6 +12,19 @@ edaic:
   status: uploaded_official
   notes: E-DAIC is the primary development set. PHQ-8 total/binary labels cover all splits; item labels are available where provided by the detailed labels file. Include interviewer-only, participant-only, and prompt perturbation controls.
 
+daicwoz:
+  raw_root: /root/autodl-tmp/datasets/DAIC-WOZ
+  label_type: PHQ8
+  modalities: [text, audio, video]
+  protocol: virtual_interview
+  role: avec2017_daic_woz_benchmark_view
+  main_tasks:
+    - avec2017_phq8_total_regression
+    - avec2017_binary_depression_detection
+    - daicwoz_benchmark_reproduction
+  status: uploaded_official_view_of_edaic
+  notes: DAIC-WOZ is configured as the AVEC2017 benchmark view over the 189 E-DAIC/DAIC-WOZ subjects in the 300-492 ID range. Reuse the extracted subject folders through symlinks under DAIC-WOZ/extracted, but use the DAIC-WOZ official AVEC2017 split and label files under DAIC-WOZ/splits. Do not pool daicwoz with edaic as independent datasets because their 300-492 subjects overlap exactly.
+
 cmdc:
   raw_root: /root/autodl-tmp/datasets/CMDC
   label_type: PHQ9_HAMD17

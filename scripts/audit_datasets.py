@@ -213,6 +213,68 @@ def load_edaic(root: Path, check_audio: bool) -> pd.DataFrame:
     return write_manifest("edaic", rows)
 
 
+def load_daicwoz(root: Path, check_audio: bool) -> pd.DataFrame:
+    split_files = [
+        ("train", root / "splits" / "train_split_Depression_AVEC2017.csv"),
+        ("dev", root / "splits" / "dev_split_Depression_AVEC2017.csv"),
+        ("test", root / "splits" / "full_test_split.csv"),
+    ]
+    frames = []
+    for split, path in split_files:
+        df = pd.read_csv(path)
+        df["official_split"] = split
+        frames.append(df)
+    df = pd.concat(frames, ignore_index=True)
+
+    rows = []
+    item_columns = [
+        "PHQ8_NoInterest",
+        "PHQ8_Depressed",
+        "PHQ8_Sleep",
+        "PHQ8_Tired",
+        "PHQ8_Appetite",
+        "PHQ8_Failure",
+        "PHQ8_Concentrating",
+        "PHQ8_Moving",
+    ]
+    for _, rec in df.iterrows():
+        sid = str(int(rec["Participant_ID"]))
+        row = blank_row("daicwoz", sid)
+        row["phq8_total"] = first_notna(rec.get("PHQ8_Score"), rec.get("PHQ_Score"))
+        row["phq8_items"] = json.dumps({c: rec.get(c) for c in item_columns}, ensure_ascii=True)
+        row["binary_label"] = first_notna(rec.get("PHQ8_Binary"), rec.get("PHQ_Binary"))
+        row["gender"] = rec.get("Gender")
+        row["official_split"] = rec.get("official_split")
+        subject_dir = root / "extracted" / f"{sid}_P"
+        if not subject_dir.exists():
+            row["exclusion_reason"] = "missing_subject_folder"
+            row["file_valid"] = False
+        else:
+            transcript = subject_dir / f"{sid}_Transcript.csv"
+            audio = subject_dir / f"{sid}_AUDIO.wav"
+            features = subject_dir / "features"
+            openface = features / f"{sid}_OpenFace2.1.0_Pose_gaze_AUs.csv"
+            if not openface.exists():
+                openface = features / f"{sid}_BoVW_openFace_2.1.0_Pose_Gaze_AUs.csv"
+            audio_valid, audio_reason = audio_status(audio, check_audio)
+            missing: list[str] = []
+            if not transcript.exists():
+                missing.append("missing_transcript")
+            if not audio_valid and audio_reason:
+                missing.append(audio_reason)
+            if not openface.exists():
+                missing.append("missing_video_features")
+            row["segment_id"] = "interview"
+            row["task_type"] = "virtual_interview"
+            row["text_path"] = norm_path(transcript if transcript.exists() else None)
+            row["audio_path"] = norm_path(audio if audio.exists() else None)
+            row["video_path"] = norm_path(openface if openface.exists() else None)
+            row["exclusion_reason"] = ",".join(missing) if missing else None
+            row["file_valid"] = not missing
+        rows.append(row)
+    return write_manifest("daicwoz", rows)
+
+
 def load_eatd(root: Path, check_audio: bool) -> pd.DataFrame:
     rows = []
     for subj in sorted(p for p in root.iterdir() if p.is_dir() and re.match(r"^[tv]_\d+$", p.name)):
@@ -565,6 +627,7 @@ def build_all(check_audio: bool) -> dict[str, pd.DataFrame]:
     registry = read_registry()
     loaders = {
         "edaic": load_edaic,
+        "daicwoz": load_daicwoz,
         "cmdc": load_cmdc,
         "pdch": load_pdch,
         "modma": load_modma,
@@ -633,6 +696,7 @@ def dataset_inventory(frames: dict[str, pd.DataFrame], registry: dict[str, Any])
             "## Modeling gate",
             "",
             "- Use `edaic` as the primary development dataset.",
+            "- Use `daicwoz` only as the AVEC2017 benchmark view over the overlapping E-DAIC 300-492 subjects; do not pool it with `edaic` as an independent dataset.",
             "- Use `cmdc`, `pdch`, `modma`, `eatd`, and `mpdd_avg_2026` as role-specific validation or stress-test datasets.",
             "- Do not pool segments across datasets until subject-level split and leakage checks pass.",
             "- CMDC is treated as `uploaded_official`; row-level invalidity reflects metadata/modality availability, not an incomplete upload.",

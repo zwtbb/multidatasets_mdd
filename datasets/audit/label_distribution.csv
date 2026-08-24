@@ -5,6 +5,12 @@ edaic,phq9_total,0,275,,,,
 edaic,hamd17_total,0,275,,,,
 edaic,sds_total,0,275,,,,
 edaic,severity_label,275,0,0.0,23.0,6.941818181818181,
+daicwoz,binary_label,189,0,0.0,1.0,0.2962962962962963,56.0
+daicwoz,phq8_total,189,0,0.0,23.0,6.746031746031746,
+daicwoz,phq9_total,0,189,,,,
+daicwoz,hamd17_total,0,189,,,,
+daicwoz,sds_total,0,189,,,,
+daicwoz,severity_label,0,189,,,,
 cmdc,binary_label,78,0,0.0,1.0,0.3333333333333333,26.0
 cmdc,phq8_total,0,78,,,,
 cmdc,phq9_total,77,1,0.0,25.0,6.428571428571429,

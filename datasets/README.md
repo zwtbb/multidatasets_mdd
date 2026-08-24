@@ -1,6 +1,6 @@
 # Dataset Workspace
 
-Last updated: 2026-08-10 UTC
+Last updated: 2026-08-24 UTC
 
 Canonical dataset root:
 
@@ -40,6 +40,7 @@ python /root/autodl-tmp/scripts/audit_datasets.py
 | Dataset | Subjects | Segments | Valid rows | Status | Role |
 | --- | ---: | ---: | ---: | --- | --- |
 | edaic | 275 | 275 | 275 | uploaded_official | primary development |
+| daicwoz | 189 | 189 | 189 | uploaded_official_view_of_edaic | AVEC2017 DAIC-WOZ benchmark view |
 | cmdc | 78 | 936 | 908 | uploaded_official | Chinese cross-protocol validation |
 | pdch | 100 | 167 | 165 | uploaded_extracted | hospital HAMD validation |
 | modma | 52 | 1508 | 1503 | uploaded_official_with_invalid_files | controlled speech-task stress test |
@@ -51,6 +52,7 @@ No subject-level split leakage was detected in the latest audit.
 ## Current Data Quality Notes
 
 - PDCH audio has been extracted from the split archive into `PDCH/audio/wav_data`.
+- DAIC-WOZ is configured as an AVEC2017 benchmark view, not a separate raw-data copy. It reuses the overlapping `edaic` 300-492 extracted subject folders through `DAIC-WOZ/extracted` symlinks and uses DAIC-WOZ official split/label files under `DAIC-WOZ/splits`.
 - PDCH subject `034A` has audio/text but no HAMD annotation and is excluded as `missing_label`.
 - CMDC is treated as an official-layout upload. Its invalid rows reflect
   row-level metadata/modality availability, not an incomplete upload.
@@ -63,6 +65,7 @@ No subject-level split leakage was detected in the latest audit.
 
 - Do not train directly from ad hoc raw-directory scans.
 - Load experiment inputs from generated manifests.
+- Do not pool `daicwoz` and `edaic` as independent datasets; their 300-492 subject folders overlap exactly. Use `daicwoz` only when reproducing the DAIC-WOZ/AVEC2017 benchmark contract.
 - Keep real row-level manifests, integrity rows, and subject split maps
   local-only. Public releases should include only schema, synthetic examples,
   generated aggregate audits, and regeneration scripts unless dataset licenses

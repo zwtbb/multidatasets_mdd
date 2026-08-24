@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-22 UTC
+Last updated: 2026-08-24 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -86,6 +86,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_65_mv20_criterion_overlap_stress.md`
   - `/root/autodl-tmp/memory/sessions/session_66_mirt_parameterization_correctness_audit.md`
   - `/root/autodl-tmp/memory/sessions/session_67_mirt_corrected_rerun.md`
+  - `/root/autodl-tmp/memory/sessions/session_68_daicwoz_benchmark_view.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -140,6 +141,7 @@ method.
 | Dataset | Main role | Primary use |
 | --- | --- | --- |
 | E-DAIC | Primary development dataset | PHQ-8 symptoms, total score, binary label, interviewer prompt bias |
+| DAIC-WOZ | AVEC2017 benchmark view over E-DAIC-overlap subjects | Reproduction only with DAIC-WOZ official split/labels; do not pool independently with E-DAIC |
 | CMDC | Chinese cross-protocol and cross-language validation | Chinese clinical-interview external generalization |
 | PDCH | Real hospital consultation and HAMD validation | HAMD-17 symptom and severity prediction |
 | MODMA | Controlled speech-task stress test | Interview, reading, picture, and affective-task robustness |

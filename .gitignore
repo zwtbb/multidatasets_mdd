@@ -5,6 +5,8 @@ datasets/MODMA/
 datasets/MPDD-AVG-2026/
 datasets/MPDD-2025/
 datasets/PDCH/
+datasets/DAIC-WOZ/*
+!datasets/DAIC-WOZ/README.md
 datasets/edaic/
 cache/
 outputs/
