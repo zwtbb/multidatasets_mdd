@@ -1,6 +1,0 @@
-source_id,source_url,mv20_role
-Burdisso2024_DAIC_WOZ_prompts,https://aclanthology.org/2024.clinicalnlp-1.8/,documents fixed therapist-prompt shortcut risk in DAIC-WOZ-style interviews
-ZhangPoellabauer2025_interviewer_bias,https://aclanthology.org/2025.findings-emnlp.650/,documents interviewer-bias mitigation motivation without turning MV20 into a new adversarial model
-Mirror2025_criterion_contamination,https://arxiv.org/abs/2508.05830,motivates target-criterion semantic-overlap contamination as the tested mechanism
-BGE_M3,https://huggingface.co/BAAI/bge-m3,primary encoder contract inherited from MV17a
-multilingual_E5_base,https://huggingface.co/intfloat/multilingual-e5-base,sensitivity encoder contract inherited from MV17a

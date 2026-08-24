@@ -268,9 +268,9 @@ def run_r_bootstrap(
     if not rscript:
         raise RuntimeError("Rscript is not available on PATH")
     env = os.environ.copy()
-    env["OMP_NUM_THREADS"] = "1"
-    env["OPENBLAS_NUM_THREADS"] = "1"
-    env["MKL_NUM_THREADS"] = "1"
+    env.setdefault("OMP_NUM_THREADS", "1")
+    env.setdefault("OPENBLAS_NUM_THREADS", "1")
+    env.setdefault("MKL_NUM_THREADS", "1")
     result = subprocess.run(
         [
             rscript,
@@ -340,11 +340,6 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
     stable_selection = read_csv(out_dir / "stable_ladder_model_selection_frequency.csv")
     dif = read_csv(out_dir / "item_dif_stability_summary.csv")
     itemfit = read_csv(out_dir / "itemfit_stability_summary.csv")
-    execution = read_csv(out_dir / "r_execution_summary.csv")
-    execution_row = execution.iloc[0].to_dict() if not execution.empty else {}
-    anchor_linked_corrected = str(
-        execution_row.get("anchor_linked_focal_hyperparameters_corrected", "")
-    ).strip().lower() in {"true", "1", "yes", "y"}
 
     smoke_done = requested["smoke_r"] == 0 or (
         not core.empty and (core["tier_id"].astype(str) == "MV14_A_smoke_runtime").any()
@@ -456,10 +451,6 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
     return {
         "status": status,
         "external_engine": "R mirt::multipleGroup",
-        "parameterization_contract": "anchor_linked_focal_mean_variance_free"
-        if anchor_linked_corrected
-        else "fixed_group_hyperparameters",
-        "anchor_linked_focal_hyperparameters_corrected": anchor_linked_corrected,
         "r_returncode": r_meta["returncode"],
         "requested_smoke_R": requested["smoke_r"],
         "requested_core_R": requested["core_r"],
@@ -493,12 +484,9 @@ def determine_verdict(out_dir: Path, requested: dict[str, int], r_meta: dict[str
         "full_method_allowed": False,
         "pass_rule_met": status == "complete_mv14_convergence_safe_item_level_measurement_shift",
         "short_read": (
-            "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap with "
-            "anchor-linked focal mean/variance freed for threshold-constrained models; its "
-            "convergence-safe interpretation is item-level threshold/localization evidence, not a "
-            "global partial-invariance model-selection win or full multimodal method authorization."
-            if anchor_linked_corrected
-            else "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap under fixed group hyperparameters; its interpretation is qualitative screen evidence only."
+            "MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap; "
+            "its convergence-safe interpretation is item-level threshold/localization evidence, "
+            "not a global partial-invariance model-selection win or full multimodal method authorization."
         ),
     }
 
@@ -696,7 +684,6 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         "## Verdict",
         "",
         f"- Status: `{verdict['status']}`.",
-        f"- Parameterization contract: `{verdict['parameterization_contract']}`.",
         f"- Requested R: smoke `{verdict['requested_smoke_R']}`, core `{verdict['requested_core_R']}`, DIF `{verdict['requested_dif_R']}`.",
         f"- Core convergence-safe full-ladder draws: `{verdict['core_effective_draws']}` / `{verdict['core_selection_attempted_draws']}`.",
         f"- Core full-ladder fit-success/converged draws: `{verdict['core_all_fit_success_draws']}` / `{verdict['core_all_converged_draws']}`.",

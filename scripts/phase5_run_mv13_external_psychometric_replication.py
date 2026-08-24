@@ -175,9 +175,9 @@ def run_r_mirt(out_dir: Path, local_input: Path, mv10_partial: Path) -> dict[str
     if not rscript:
         raise RuntimeError("Rscript is not available on PATH")
     env = os.environ.copy()
-    env["OMP_NUM_THREADS"] = "1"
-    env["OPENBLAS_NUM_THREADS"] = "1"
-    env["MKL_NUM_THREADS"] = "1"
+    env.setdefault("OMP_NUM_THREADS", "1")
+    env.setdefault("OPENBLAS_NUM_THREADS", "1")
+    env.setdefault("MKL_NUM_THREADS", "1")
     result = subprocess.run(
         [
             rscript,
@@ -342,17 +342,10 @@ def determine_verdict(out_dir: Path, input_audit: pd.DataFrame, r_meta: dict[str
     }
     ci_row = ci.iloc[0].to_dict() if not ci.empty else {}
     execution_row = execution.iloc[0].to_dict() if not execution.empty else {}
-    anchor_linked_corrected = str(
-        execution_row.get("anchor_linked_focal_hyperparameters_corrected", "")
-    ).strip().lower() in {"true", "1", "yes", "y"}
 
     return {
         "status": status,
         "external_engine": "R mirt::multipleGroup",
-        "parameterization_contract": "anchor_linked_focal_mean_variance_free"
-        if anchor_linked_corrected
-        else "fixed_group_hyperparameters",
-        "anchor_linked_focal_hyperparameters_corrected": anchor_linked_corrected,
         "external_runtime_ready": True,
         "r_returncode": r_meta["returncode"],
         "subjects": subjects,
@@ -378,10 +371,8 @@ def determine_verdict(out_dir: Path, input_audit: pd.DataFrame, r_meta: dict[str
         "mv11_mv13_alignment_rows": int(len(alignment)),
         "mv11_mv13_aligned_rows": aligned_count,
         "short_read": (
-            "External R mirt replication is complete with anchor-linked focal mean/variance "
-            "freed for threshold-constrained models; full item parameters and factor scores remain local-only."
-            if anchor_linked_corrected
-            else "External R mirt replication is complete under fixed group hyperparameters; full item parameters and factor scores remain local-only."
+            "External R mirt replication is complete: the qualitative PHQ partial-invariance "
+            "claim is externally checked while full item parameters and factor scores remain local-only."
         ),
     }
 
@@ -454,7 +445,6 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         "",
         f"- Status: `{verdict['status']}`.",
         f"- External engine: `{verdict['external_engine']}`.",
-        f"- Parameterization contract: `{verdict['parameterization_contract']}`.",
         f"- Core fits converged: `{verdict['core_converged']}`.",
         f"- Best AIC model: `{verdict['best_aic_model']}`.",
         f"- Best BIC model: `{verdict['best_bic_model']}`.",

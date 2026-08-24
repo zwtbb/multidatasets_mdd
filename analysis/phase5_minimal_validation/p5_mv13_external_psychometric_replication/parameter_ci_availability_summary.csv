@@ -1,2 +1,2 @@
 "model_id","se_requested","se_fit_success","se_converged","parameter_count","vcov_available","finite_se_count","ci_value_export_policy","error_message"
-"partial_mv10",TRUE,TRUE,TRUE,47,TRUE,47,"local_only_full_parameter_ci_not_tracked",""
+"partial_mv10",TRUE,TRUE,TRUE,45,TRUE,45,"local_only_full_parameter_ci_not_tracked",""

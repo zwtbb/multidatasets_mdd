@@ -1,3 +1,0 @@
-gate_id,gate_scope,gate_status,pass_rule_met,criterion_excess_loss_vs_random,criterion_excess_loss_ci95_low,criterion_excess_loss_ci95_high,high_only_power_fraction_vs_floor,high_only_retained_position_fraction
-primary_bge_m3_cmdc_phq9_top20,criterion-overlap deletion exceeds matched random deletion and high-only retains disproportionate power,no_excess_criterion_overlap_evidence,False,0.149981119281136,-0.31950476271862865,0.6707933312276575,0.7897707653133188,0.25
-sensitivity_multilingual_e5_cmdc_phq9_top20,criterion-overlap deletion exceeds matched random deletion and high-only retains disproportionate power,no_excess_criterion_overlap_evidence,False,0.352867651053709,-0.016851415916287776,0.7245511891640066,0.7883686234208541,0.25

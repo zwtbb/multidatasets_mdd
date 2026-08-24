@@ -1,3 +1,0 @@
-script,multiple_group_call_count,reference_group_from_factor_order,focal_group_from_factor_order,itemtype_graded_present,invariance_argument_present,free_means_literal_present,free_var_literal_present,manual_constrainb_present,manual_slope_parameter_present,manual_threshold_parameters,manual_threshold_parameter_count
-scripts/phase5_run_mv13_external_psychometric_replication.R,0,edaic,cmdc,True,True,True,True,True,True,d1;d2;d3,3
-scripts/phase5_run_mv14_measurement_uncertainty_bootstrap.R,0,edaic,cmdc,True,True,True,True,True,True,d1;d2;d3,3

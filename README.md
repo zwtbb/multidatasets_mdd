@@ -48,9 +48,8 @@ python scripts/phase2_completion_audit.py
 The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
-The active research gate is now Phase 5. Post-review minimal validations are
-complete through the `P5_MV20` criterion-overlap stress test, and the
-full-method gate remains
+The active research gate is now Phase 5. Minimal validations are complete
+through the `P5_MV16` DIF-guided calibration run; the full-method gate remains
 `blocked_but_publishable_diagnostic_direction` with
 `full_method_allowed=false`. The paper direction is therefore reframed from a
 positive full shared-symptom model to a target measurement-validity paper:
@@ -76,31 +75,22 @@ AIC/BIC prefer `configural`/`scalar`, and stable-ladder AIC/BIC prefer
 with global model-selection uncertainty, not as a bootstrap-confirmed global
 partial-invariance win.
 
-MV19 now adds the observed-N finite-sample PHQ simulation. With 500 simulations
-per world under the observed E-DAIC/CMDC PHQ N and severity distributions, the
-scalar-invariant H0 has C02/C06 both-flag false rate `0.208` and top-two
-false-localization `0.034`; the C02/C06 threshold-DIF H1 has both-flag recovery
-`0.662`, top-two recovery `0.222`, and C01/C04/C05/C07 anchor subset recovery
-`0.178`. Treat C02/C06 as repeated but finite-sample-bounded dataset-group
-threshold-shift evidence, not robust standalone DIF at the observed N.
+MV12 is frozen as bounded diagnostic evidence. The `X -> theta` head improves
+same-dataset theta MAE versus train mean and lowers identity versus upstream
+BGE features (`0.602` conditional predicted-theta BA versus MV09 feature
+reference `0.991`), but observed-scale reconstruction is worse than direct
+itemwise Ridge and zero-shot source-calibrated external theta transfer fails.
+The aggregate tradeoff analysis adds the key caveat: B3 direct itemwise Ridge
+compressed to theta has lower pooled observed macro MAE (`0.692` versus
+`0.701`) and lower conditional identity (`0.579` versus `0.602`) than M12a, so
+M12a is not uniquely more invariant than a dimension-matched severity baseline.
 
-MV12 and MV15 are now legacy/supporting diagnostics from the old Chinese-BGE
-chain. They remain useful because `X -> theta` is learnable within source
-datasets and low-dimensional output identity is lower than upstream feature
-identity, but their universal external-transfer-failure and B3-dominance
-wording has been superseded by MV17a.
-
-MV17a is the current feature-contract consequence layer. It makes BGE-M3 the
-primary multilingual encoder and multilingual-E5 the sensitivity encoder,
-regenerates E-DAIC/CMDC/PDCH features, and reruns MV07/MV12/MV15. Both encoders
-keep MV07/MV12/MV15 blocked; both pass same-dataset theta utility, fail
-same-dataset observed-scale safety, and leave theta-conditioned feature
-identity BA at `1.000`. External theta transfer is encoder-dependent
-(BGE-M3 passes, multilingual-E5 fails), and B3 Pareto dominance is also
-encoder-dependent (false for BGE-M3, true for multilingual-E5). Treat the
-stable claim as: measurement harmonization can reduce output-level dataset
-identifiability, but current features do not establish observed-scale-safe or
-feature-invariant cross-corpus prediction.
+MV15 completes that reviewer-control layer and remains negative for feature
+invariance. Raw BGE feature identity BA is `1.000`; theta-conditioned feature
+identity BA remains `1.000`; total-, predicted-total-, and B3-conditioned
+feature identity BA are also `1.000`; theta-only identity BA is `0.576`; and
+predicted-theta output identity BA is `0.646`. Treat this as evidence that
+low-dimensional output identity is not the same as upstream feature invariance.
 
 MV16 completed the predeclared DIF-guided few-shot measurement-calibration
 test with anchors `C01/C04/C05/C07`, localized `C02/C06` threshold calibration,
@@ -119,42 +109,21 @@ BGE-linked MV07 -> MV12 -> MV15 -> MV16 chain used
 MV17a now addresses the paper-critical part of that caveat by regenerating
 E-DAIC/CMDC/PDCH features with BGE-M3 and multilingual-E5, then rerunning
 MV07/MV12/MV15. Both multilingual encoders reproduce the blocked feature-level
-pattern, but external theta transfer and B3 severity-control dominance are
-encoder-dependent. Label-only MV10/MV11/MV19 remain the primary PHQ
-psychometric evidence; corrected MV13/MV14 now provide anchor-linked `mirt`
-qualitative/uncertainty corroboration while retaining configural convergence
-and MV19 finite-sample caveats. The
-bibliography registry and `references.bib` now cover all current source-context
-rows, with corrected primary-source metadata for P3HF, Multi-Probe Audit,
-EMNLP interviewer bias, and the final Pattern Recognition version of SCD-MLLM.
-MV18 now adds the same-language/same-HAMD CMDC versus PDCH exploratory
+pattern: MV07 fails the total-allocation/identity gate, MV12 fails observed
+scale-safe theta gain, and MV15 fails theta-conditioned feature identity.
+Label-only MV10/MV11/MV13/MV14 are unaffected. The bibliography registry and
+`references.bib` now cover all current source-context rows, with corrected
+primary-source metadata for P3HF, Multi-Probe Audit, and EMNLP interviewer
+bias. MV18 now adds the same-language/same-HAMD CMDC versus PDCH exploratory
 control: within the mild/moderate HAMD overlap it flags 4 severity-conditioned
 residual item shifts and 7 threshold shifts, and bidirectional frozen-feature
 transfer remains weak. Treat it as exploratory context-shift support, not
-formal HAMD invariance. MV20 closes the bounded protocol-label-overlap stress
-test: CMDC Q1-Q12 question-position units were feasible, PDCH and E-DAIC were
-excluded for missing clean protocol units, and high-overlap deletion was not
-clearly worse than matched random deletion under BGE-M3 primary or
-multilingual-E5 sensitivity. Current next action: freeze experiments and
-finalize the manuscript with MV19-downgraded PHQ wording, MV20 bounded
-negative wording, and primary-source citation verification.
+formal HAMD invariance. Current next action: predeclare and run MV19
+finite-sample PHQ psychometric simulation if still needed.
 Optional MV06 work is resolving the one incomplete local candidate before
 stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap
 samples, calibration parameters, and model artifacts remain local-only.
-
-Experiment consolidation is now explicit. The active paper evidence bundle is
-generated at
-`analysis/phase5_minimal_validation/experiment_consolidation/`: paper core
-uses `MV10/MV11/MV19` as primary PHQ psychometric evidence and keeps
-`MV13/MV14` only as limited `mirt` qualitative screens, paper support is
-`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and early weak or
-superseded MV rows are frozen as historical diagnostics. Tracked aggregate outputs are not
-deleted because they provide traceability for the gate and manuscript claim
-boundary. Only interpreter and notebook caches were physically removed in this
-cleanup; local predictions, features, Phase 2 outputs, MV06 workbooks, raw
-datasets, and the local original-plan note remain local-only unless a separate
-storage cleanup is approved.
 
 ## Key Paths
 
@@ -174,7 +143,6 @@ storage cleanup is approved.
 - Issue and decision log: `docs/experiment_issue_log.md`
 - GitHub publish workflow: `docs/github_publish_workflow.md`
 - Phase 5 full-method gate: `analysis/phase5_minimal_validation/full_method_gate_audit/`
-- Phase 5 experiment consolidation: `analysis/phase5_minimal_validation/experiment_consolidation/`
 - MV09 conditional identity audit: `analysis/phase5_minimal_validation/p5_mv09_conditional_identity_audit/`
 - MV10 psychometric invariance baseline: `analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/`
 - MV11 formal psychometric confirmation: `analysis/phase5_minimal_validation/p5_mv11_formal_psychometric_confirmation/`
@@ -191,8 +159,6 @@ storage cleanup is approved.
 - MV16 DIF-guided calibration run: `analysis/phase5_minimal_validation/p5_mv16_dif_guided_calibration/`
 - MV17 post-review route: `analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`
 - MV17a multilingual feature-contract sensitivity: `analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
-- MV18 CMDC-PDCH HAMD same-scale control: `analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
-- MV19 PHQ finite-sample simulation: `analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/`
 - Diagnostic paper outline: `docs/diagnostic_measurement_audit_paper_outline.md`
 - Diagnostic paper scaffolds: `analysis/diagnostic_measurement_audit_paper/`
 - Results-section scaffold generator: `scripts/build_diagnostic_paper_results_sections.py`
@@ -237,7 +203,6 @@ python scripts/build_diagnostic_paper_claim_tables.py
 python scripts/build_diagnostic_paper_data_governance_section.py
 python scripts/build_diagnostic_paper_results_sections.py
 python scripts/build_diagnostic_paper_bibliography.py
-python scripts/phase5_consolidate_experiment_inventory.py
 python scripts/phase5_plan_mv17_postreview_measurement_validity_route.py --overwrite
 python scripts/build_diagnostic_paper_manuscript_draft.py
 ```

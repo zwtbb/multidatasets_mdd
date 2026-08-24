@@ -1,6 +1,6 @@
 # Master Experiment Plan
 
-Last updated: 2026-08-22 UTC
+Last updated: 2026-08-21 UTC
 
 ## Principle
 
@@ -228,9 +228,7 @@ data audit
   complete with convergence warnings. External R `mirt::multipleGroup`
   qualitatively replicates MV11: four anchors confirmed, zero loading-DIF
   flags, threshold DIF on `C02`/`C06`, AIC partial versus BIC scalar split, and
-  a retained configural convergence caveat. The corrected audit verifies
-  E-DAIC as reference, CMDC as focal, explicit anchor/threshold linking, and
-  freed focal mean/variance for threshold-constrained models.
+  a retained configural convergence caveat.
 - Phase 5 `P5_MV14 measurement_uncertainty_bootstrap_design`:
   complete as a predeclaration, not a run. It fixes smoke/core/DIF/optional
   bootstrap tiers, aggregate stability metrics, local-only boundaries, and
@@ -243,7 +241,7 @@ data audit
   It ran smoke/core/DIF R=`10/200/100` after the convergence-safe correction:
   full-ladder effective core R is `120/200` after `185/200` fit-success draws,
   configural converges in `120/200`, the stable metric/partial/scalar ladder
-  has `198` effective draws, the DIF tier has minimum anchor-support effective
+  has `197` effective draws, the DIF tier has minimum anchor-support effective
   R `77/100`, and threshold-DIF comparisons are `100/100` effective. All four MV10
   anchors are stable (`C01`, `C04`, `C05`, `C07`), loading DIF is sparse, and
   threshold-DIF frequencies remain top-ranked for `C02` and `C06`. Full-ladder
@@ -305,13 +303,11 @@ shared-symptom claims, positive EATD SDS claims, EATD-driven
 valence-adversarial design, and positive RQ3 context-conditioning claims. It
 now allows RQ4 only as limited first-round aggregate evidence. The next method
 target is not another shallow BGE head. MV08/MV08b are both negative or blocked
-under the current frozen-BGE shallow contract. MV09-MV19 move the project into
+under the current frozen-BGE shallow contract. MV09-MV16 move the project into
 a label-measurement and measurement-shift frame: MV10/MV11/MV13 support
 bounded common-structure and anchor/DIF evidence, MV14 adds convergence-safe
 bootstrap stability for item-level anchors and localized threshold DIF while
-leaving global model selection uncertain, MV19 downgrades C02/C06 to repeated
-but finite-sample-bounded dataset-group threshold-shift evidence at the
-observed N, MV12 shows a useful but blocked
+leaving global model selection uncertain, MV12 shows a useful but blocked
 theta-prediction trade-off with a dimension-matched B3 caveat, and MV15 now
 blocks theta-specific BGE feature-invariance wording under dimension-matched
 controls. MV16 now completes the DIF-guided few-shot measurement-calibration
@@ -323,9 +319,8 @@ calibration evidence. Full method work remains blocked.
 
 Phase 5 negative and partial results changed the RQ1 target. Directly mapping
 PHQ/HAMD/SDS labels into one fixed shared symptom space is now treated as a
-too-strong hypothesis under the current evidence. A future candidate method,
-if the full-method gate is ever reopened by a genuinely new mechanism, should
-model:
+too-strong hypothesis under the current evidence. The next candidate method
+should model:
 
 ```text
 shared latent symptom constructs
@@ -347,37 +342,6 @@ two pooled active slices but failed prediction identity, so the RQ1 modeling
 sequence is frozen as diagnostic/negative evidence for the current feature
 contract. Keep MPDD as a later measurement-heterogeneity moderator dataset and
 keep EATD/MODMA as stress tests rather than primary training sources.
-
-## Experiment Consolidation Policy
-
-Run the consolidation inventory before manuscript-facing cleanup or new Phase 5
-planning:
-
-```bash
-python scripts/phase5_consolidate_experiment_inventory.py
-```
-
-The current active paper evidence bundle is:
-
-- Paper core: `MV10/MV11/MV19` primary label-only PHQ psychometrics, with
-  corrected `MV13/MV14` retained as anchor-linked mirt corroboration with
-  convergence and finite-sample caveats.
-- Paper support: `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`.
-- Paper guardrail: the mirt parameterization correctness audit verifies focal
-  latent mean/variance handling for the corrected MV13/MV14 rerun.
-- Retired historical diagnostics: early weak or superseded MV rows, including
-  `MV01`, `MV02b`, `MV03/MV03b`, `MV04/MV04b`, `MV05`,
-  `MV07/MV07b/MV07c`, and `MV08/MV08b`.
-- Predeclaration contracts: readiness/design outputs consumed by later runs;
-  keep them for traceability but do not treat them as standalone results.
-- Local workflows: MV06 workbooks and feature-generation boundaries stay
-  local-only, with only schema/hygiene/aggregate summaries tracked.
-
-Do not physically delete tracked aggregate experiment outputs. They are small
-traceability records used by the gate and paper claim boundary. Physical cleanup
-is allowed only for interpreter/notebook caches by default. Deleting local
-predictions, local features, Phase 2 outputs, MV06 workbooks, raw datasets, or
-the original-plan note requires a separate storage-specific user approval.
 
 Phase 2 validation commands:
 
@@ -555,21 +519,17 @@ representation without those controls.
   evidence; the aggregate tradeoff analysis freezes the current latent-target
   line.
 - `P5_MV13 external_psychometric_replication` is complete with a configural
-  convergence caveat and qualitatively replicates the MV11 anchor/DIF pattern,
-  with corrected anchor-linked focal mean/variance handling verified by the
-  code-level audit. Treat MV13 as external mirt corroboration with convergence
-  and finite-sample caveats, not as robust standalone DIF proof.
+  convergence caveat and qualitatively replicates the MV11 anchor/DIF pattern.
 - `P5_MV14 measurement_uncertainty_bootstrap_design` is complete and consumed
   by the MV14 run. It predeclared group-wise subject bootstrap, stability
   metrics, local-only boundaries, and pass/downgrade rules before execution.
 - `P5_MV14 measurement_uncertainty_bootstrap` is complete with convergence-safe
   inference: full-ladder effective R `120/200`, configural converged
-  `120/200`, stable-ladder effective R `198`, minimum DIF anchor-support
+  `120/200`, stable-ladder effective R `197`, minimum DIF anchor-support
   effective R `77/100`, threshold-DIF comparison effective R `100/100`,
   stable anchors `C01/C04/C05/C07`, and threshold DIF concentrated on
-  `C02/C06`. Treat it as a convergence-aware corrected anchor-linked mirt
-  uncertainty screen with uncertain global invariance-model selection, not as
-  robust standalone DIF stability.
+  `C02/C06`. Treat it as item-level measurement-shift evidence with uncertain
+  global invariance-model selection.
 - `P5_MV15 latent_conditioned_dataset_identity_design` is complete and design
   consumed by the MV15 run.
 - `P5_MV15 latent_conditioned_dataset_identity` is complete and blocked:
@@ -592,13 +552,10 @@ representation without those controls.
   `BAAI/bge-small-zh-v1.5`, a Chinese model, on English transcripts, and the
   available E-DAIC transcript CSVs do not expose speaker roles for
   participant/interviewer filtering. This caveat does not affect label-only
-  MV10/MV11/MV19 primary psychometric results or corrected MV13/MV14 mirt
-  corroboration. MV17a now completes the
+  MV10/MV11/MV13/MV14 psychometric results. MV17a now completes the
   paper-critical multilingual sensitivity: BGE-M3 and multilingual-E5 both
   reproduce the blocked MV07/MV12/MV15 pattern, with feature identity and
-  theta-conditioned feature identity still high. External theta transfer and
-  B3 Pareto dominance are encoder-dependent, so neither should be written as a
-  universal conclusion.
+  theta-conditioned feature identity still high.
 - The full-method gate audit is the required synthesis step before full method
   construction. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, not a go signal for M0.
@@ -617,8 +574,8 @@ representation without those controls.
   scripts, and aggregate audits. Any remote history rewrite still requires
   explicit user approval.
 - Phase 5 execution: freeze MV08/MV08b and the current MV12 latent-target line
-  as bounded diagnostic evidence, keep corrected MV13/MV14 as anchor-linked
-  mirt corroboration with convergence and finite-sample caveats, freeze MV15 as negative
+  as bounded diagnostic evidence, keep MV14 as the completed convergence-safe
+  item-level measurement-uncertainty layer, freeze MV15 as negative
   latent-conditioned feature-identity evidence now replicated under the MV17a
   multilingual feature contract, and freeze MV16 as a completed
   bounded/negative few-shot calibration result. MV06 agreement uncertainty is
@@ -627,36 +584,20 @@ representation without those controls.
 - Post-review experiment queue:
   1. MV17a multilingual feature-contract sensitivity: complete. BGE-M3 and
      multilingual-E5 regenerate E-DAIC/CMDC/PDCH features and reproduce the
-     blocked MV07/MV12/MV15 pattern. BGE-M3 is the primary feature contract
-     and multilingual-E5 is the sensitivity encoder; external theta transfer
-     and B3 Pareto dominance are encoder-dependent. Do not rerun MV16 unless a
-     new explicit need is identified.
+     blocked MV07/MV12/MV15 pattern. Do not rerun MV16 unless a new explicit
+     need is identified.
   2. MV18 CMDC-HAMD versus PDCH-HAMD same-scale exploratory
      control: complete. The mild/moderate HAMD overlap shows 4
      severity-conditioned residual item-shift flags, 7 threshold-shift flags,
      and weak primary bidirectional transfer under the current frozen-feature
      contract. Treat as exploratory context-shift support, not formal HAMD
      invariance.
-  3. MV19 finite-sample PHQ psychometric simulation: complete. With 500
-     simulations per world, H0 C02/C06 both-flag false rate is `0.208`, H1
-     C02/C06 both-flag recovery is `0.662`, H1 top-two recovery is `0.222`,
-     and H1 anchor subset recovery is `0.178`. Downgrade C02/C06 from robust
-     standalone DIF to repeated but finite-sample-bounded dataset-group
-     threshold-shift evidence.
-  4. MV17a manuscript claim calibration: complete. Generated paper scaffolds,
-     gate tables, bibliography, README, outline, issue log, and memory now
-     make MV17a the canonical prediction-consequence layer and keep old
-     Chinese-BGE outputs as legacy/supporting evidence.
-  5. MV20 criterion-contamination stress: complete. CMDC Q1-Q12
-     question-position units were feasible; PDCH and E-DAIC were excluded for
-     missing clean protocol units. High-overlap deletion is not clearly worse
-     than matched random deletion under BGE-M3 primary or multilingual-E5
-     sensitivity, so stop overlap-threshold tuning and contamination-aware
-     model work.
-  6. mirt parameterization corrected rerun: complete. Reference/focal order,
-     anchor linking, graded `d1-d3` threshold/intercept constraints, and freed
-     focal mean/variance now pass the audit; remaining limits are configural
-     convergence and MV19 finite-sample caveats.
+  3. MV19 finite-sample PHQ psychometric simulation: quantify false DIF,
+     C02/C06 threshold-DIF recovery, and anchor-set recovery under observed N,
+     sparsity, severity, and missingness.
+  4. MV20 criterion-contamination stress: separate mirror-like
+     interviewer/question turns from non-mirror turns before adding any
+     protocol-bias method.
 - Stop lines:
   no extra shallow BGE heads, projection dimensions, MV16 calibration variants,
   personality gating/calibrators, or EATD valence-adversarial modules without a
@@ -667,12 +608,10 @@ representation without those controls.
   also generated there as `references.bib`, `citation_registry.csv`, and
   `citation_source_map.csv`, with the IRT DIF source hint corrected to Bulut
   and Suh 2017 plus post-review metadata fixes for P3HF, Multi-Probe Audit, and
-  EMNLP interviewer bias. The active paper task is manuscript consolidation
-  with MV19-downgraded PHQ wording and the mirt parameterization boundary;
-  citation-key insertion, venue-style
-  reference formatting, human manuscript editing, and cross-reference cleanup
-  continue as paper-side work without strengthening claims beyond the
-  full-method gate.
+  EMNLP interviewer bias. The active experiment task is MV19; citation-key
+  insertion, venue-style reference formatting, human manuscript editing, and
+  cross-reference cleanup continue as paper-side work without strengthening
+  claims beyond the full-method gate.
 - Phase 6: protocol consistency/adversarial components only if Phase 3 supports
   them.
 - Phase 7: individual-difference and gait-to-psychomotor constraints only if

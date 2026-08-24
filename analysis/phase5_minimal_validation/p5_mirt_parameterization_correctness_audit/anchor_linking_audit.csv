@@ -1,9 +1,0 @@
-construct_id,item_label_short,mv10_role,expected_partial_mv10_loading_constraint,observed_partial_mv10_loading_constraint,expected_partial_mv10_threshold_constraint,observed_partial_mv10_threshold_constraint,anchor_linking_status
-C01,depressed_mood,anchor_candidate,True,True,True,True,pass
-C02,anhedonia,metric_only_threshold_free,True,True,False,False,pass
-C03,sleep,metric_only_threshold_free,True,True,False,False,pass
-C04,fatigue,anchor_candidate,True,True,True,True,pass
-C05,appetite,anchor_candidate,True,True,True,True,pass
-C06,self_worth,metric_only_threshold_free,True,True,False,False,pass
-C07,concentration,anchor_candidate,True,True,True,True,pass
-C08,psychomotor,free_loading_or_threshold,False,False,False,False,pass

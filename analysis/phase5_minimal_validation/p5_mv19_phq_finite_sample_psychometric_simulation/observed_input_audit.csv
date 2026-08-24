@@ -1,3 +1,0 @@
-dataset,scale,raw_valid_subjects,eligible_subjects,complete_item_subjects,item_count,missing_payload_subjects,incomplete_item_subjects,total_score_field,item_payload_field,official_split_filter
-edaic,PHQ-8,275,219,219,8,0,0,phq8_total,phq8_items,train;dev
-cmdc,PHQ-9,77,77,77,8,0,0,phq9_total,phq9_items,all_valid

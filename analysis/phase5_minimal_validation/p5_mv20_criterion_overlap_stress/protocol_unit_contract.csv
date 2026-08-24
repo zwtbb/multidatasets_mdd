@@ -1,4 +1,0 @@
-dataset,mv20_role,unit_level,status,unit_positions,rows,subjects,rationale
-CMDC,primary,question_position_segment_id,included_primary_segment_position_units,12,936,78,"CMDC exposes stable Q1-Q12 clinical-interview question-position segments; high-overlap is ranked at the segment-position level, not by outcome."
-PDCH,candidate_sensitivity,consultation_segment_id,excluded_no_clean_question_level_units,3,167,100,"PDCH has only coarse 1-3 face-to-face consultation segments per subject, so top-percent deletion would remove broad transcript chunks rather than question/protocol units."
-E-DAIC,candidate_secondary,transcript_turn_without_speaker_role,excluded_no_true_prompt_or_speaker_units,1,275,275,E-DAIC manifest speaker rows are 0; MV20 does not use position proxies as prompt units.

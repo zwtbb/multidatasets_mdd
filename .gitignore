@@ -85,7 +85,6 @@ analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/*.joblib
 analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/*.pkl
 analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/*.rds
 analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/*.RData
-analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/local_*
 
 # Keep generated lightweight governance files versionable
 !datasets/registry.yaml

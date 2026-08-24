@@ -1,5 +1,0 @@
-artifact_class,git_policy,reason,allowed_tracked_derivative
-observed_phq_complete_case_rows,not_exported_by_mv19,Real participant-grain PHQ item responses remain analysis input even without identifiers.,dataset-level sample size and response-category support only
-simulated_participant_response_rows,not_exported,Participant-grain simulated rows are unnecessary for paper claims and can be regenerated.,world-level and item-level recovery summaries
-draw_level_decision_table,ignored_local_only,Per-draw diagnostics are debugging material rather than paper evidence.,"rates, counts, and confidence intervals by simulation world and item"
-fitted_generation_models,not_exported,"Generation coefficients are in-memory simulation scaffolding, not a claim artifact.",effect-size contract and positive-rate support

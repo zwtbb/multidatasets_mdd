@@ -1,9 +1,9 @@
 "construct_id","item_label_short","mv10_role","external_role","mv10_anchor_confirmed","loading_dif_flag","threshold_dif_flag","loading_lrt_p_value","threshold_lrt_p_value","loading_delta_bic_restricted_minus_freed","threshold_delta_bic_restricted_minus_freed"
-"C01","depressed_mood","anchor_candidate","external_anchor_supported",TRUE,FALSE,FALSE,0.316718244289766,0.878092310662473,-4.68790878887921,-16.3919092968135
-"C02","anhedonia","metric_only_threshold_free","external_metric_only_threshold_free",FALSE,FALSE,TRUE,0.123765996768501,3.76281468947354e-05,-3.32135549143368,6.0761234380534
-"C03","sleep","metric_only_threshold_free","external_anchor_supported",FALSE,FALSE,FALSE,0.939838718121296,0.569604218641399,-5.6846633449095,-15.0575530123278
-"C04","fatigue","anchor_candidate","external_anchor_supported",TRUE,FALSE,FALSE,0.556731959119322,0.377596498781428,-5.34496515908359,-13.9786739734909
-"C05","appetite","anchor_candidate","external_anchor_supported",TRUE,FALSE,FALSE,0.233847978203296,0.230708172102911,-4.27305737339884,-12.7697229691839
-"C06","self_worth","metric_only_threshold_free","external_metric_only_threshold_free",FALSE,FALSE,TRUE,0.955215103502618,1.79581518801109e-05,-5.68720561549617,7.61510024515974
-"C07","concentration","anchor_candidate","external_anchor_supported",TRUE,FALSE,FALSE,0.13610089116196,0.564182553232159,-3.46886081491994,-15.0312552915693
-"C08","psychomotor","free_loading_or_threshold","external_anchor_supported",FALSE,FALSE,FALSE,0.0496702968609747,0.579239086371087,-1.83780530012609,-15.1038630006333
+"C01","depressed_mood","anchor_candidate","external_anchor_supported",TRUE,FALSE,FALSE,0.316718244289766,0.805391698104263,-4.68790878887921,-16.0881872221698
+"C02","anhedonia","metric_only_threshold_free","external_metric_only_threshold_free",FALSE,FALSE,TRUE,0.123765996768501,4.87553356732181e-05,-3.32135549143368,5.53623214755498
+"C03","sleep","metric_only_threshold_free","external_anchor_supported",FALSE,FALSE,FALSE,0.939838718121296,0.592091436752965,-5.6846633449095,-15.1648305484141
+"C04","fatigue","anchor_candidate","external_anchor_supported",TRUE,FALSE,FALSE,0.556731959119322,0.180326446426726,-5.34496515908359,-12.1849320497031
+"C05","appetite","anchor_candidate","external_anchor_supported",TRUE,FALSE,FALSE,0.233847978203296,0.318781048649863,-4.27305737339884,-13.5557618630646
+"C06","self_worth","metric_only_threshold_free","external_metric_only_threshold_free",FALSE,FALSE,TRUE,0.955215103502618,2.71371750398006e-05,-5.68720561549617,6.75659364687544
+"C07","concentration","anchor_candidate","external_anchor_supported",TRUE,FALSE,FALSE,0.13610089116196,0.69229482239198,-3.46886081491994,-15.6143587224315
+"C08","psychomotor","free_loading_or_threshold","external_anchor_supported",FALSE,FALSE,FALSE,0.0496702968609747,0.535487902728686,-1.83780530012609,-14.8890045806156

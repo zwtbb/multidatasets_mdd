@@ -78,7 +78,7 @@ def legacy_bge_contract_risk() -> list[dict[str, str]]:
             "affected_chain": "MV07->MV12->MV15->MV16",
             "evidence": "E-DAIC MV07 generator defaults to BAAI/bge-small-zh-v1.5, which is documented as Chinese; E-DAIC transcripts are English.",
             "claim_boundary": "Old Chinese-BGE outputs remain legacy/diagnostic; MV17a now provides multilingual BGE-M3 and multilingual-E5 reruns for MV07/MV12/MV15.",
-            "unaffected_evidence": "Label-only MV10/MV11/MV19 primary psychometric findings; MV13/MV14 have a separate mirt focal-mean/variance parameterization caveat.",
+            "unaffected_evidence": "Label-only MV10/MV11/MV13/MV14 psychometric findings.",
         },
         {
             "risk_id": "BGE_R002",
@@ -114,20 +114,20 @@ def experiment_queue() -> list[dict[str, str]]:
         {
             "priority": "3",
             "experiment_id": "MV19_phq_finite_sample_psychometric_simulation",
-            "status": "complete",
+            "status": "ready_to_design",
             "why_now": "Addresses the small E-DAIC/CMDC PHQ item-labeled N and category sparsity before strong DIF language.",
-            "minimum_scope": "Completed observed-N label-only simulation under scalar-invariant H0 and C02/C06 threshold-DIF H1 using the MV10 decision screen.",
-            "success_readout": "The simulation reports H0 C02/C06 both-flag false rate 0.208, H1 C02/C06 both-flag recovery 0.662, H1 top-two recovery 0.222, and H1 anchor subset recovery 0.178.",
-            "stop_rule": "Downgrade C02/C06 from robust standalone DIF evidence to repeated but finite-sample-bounded dataset-group threshold-shift evidence.",
+            "minimum_scope": "Simulate observed N, category frequencies, severity distribution, thresholds, and missingness under scalar-invariant H0 and C02/C06 threshold-DIF H1; run the MV10-MV14 decision pipeline.",
+            "success_readout": "Report false-DIF rate under H0, C02/C06 recovery under H1, and anchor-set recovery.",
+            "stop_rule": "If false-DIF is high, downgrade C02/C06 from robust evidence to hypothesis-generating evidence.",
         },
         {
             "priority": "4",
             "experiment_id": "MV20_criterion_contamination_stress",
-            "status": "complete_bounded_negative",
+            "status": "recommended_to_design",
             "why_now": "Connects protocol/question shortcuts to measurement validity through mirror-like criterion contamination.",
-            "minimum_scope": "Completed CMDC-only question-position criterion-overlap ranking with BGE-M3 primary and multilingual-E5 sensitivity, using deletion/high-only comparisons against matched random deletion.",
-            "success_readout": "No primary or sensitivity evidence that high-overlap question-position content is clearly worse to remove than matched random content; paired intervals cross zero.",
-            "stop_rule": "Freeze overlap-threshold tuning and do not build a contamination-aware architecture from this negative bounded stress test.",
+            "minimum_scope": "Compute semantic similarity between interviewer/question text and PHQ/HAMD items, define mirror-like versus non-mirror turns, and test deletion/insertion effects.",
+            "success_readout": "Estimate whether label-overlapping elicitation language inflates apparent depression prediction or evidence localization.",
+            "stop_rule": "Do not build a new protocol-bias network unless this stress test exposes a mechanism that a simple deletion/control cannot explain.",
         },
     ]
 
@@ -170,12 +170,6 @@ def source_verification() -> list[dict[str, str]]:
             "verified_fact": "P3HF AAAI title, authors, DOI, and MPDD-Young improvement claim verified from the AAAI page.",
             "use": "Motivates demoting personality-aware modeling from a core contribution.",
         },
-        {
-            "source_id": "mirror_criterion_contamination_2025",
-            "url": "https://arxiv.org/abs/2508.05830",
-            "verified_fact": "Mirror/non-mirror criterion-contamination framing checked from the arXiv source page.",
-            "use": "Motivates MV20 as a bounded protocol-label-overlap stress test rather than a new architecture.",
-        },
     ]
 
 
@@ -206,11 +200,6 @@ def stop_lines() -> list[dict[str, str]]:
             "area": "Evidence localization",
             "decision": "Do not build an evidence network; use MV06 agreement as credibility support unless deletion/sufficiency tests are explicitly predeclared.",
         },
-        {
-            "stop_id": "S006",
-            "area": "Criterion overlap",
-            "decision": "MV20 is complete; stop threshold tuning, insertion variants, and contamination-aware model design from this negative bounded stress test.",
-        },
     ]
 
 
@@ -230,9 +219,7 @@ def write_report(out_dir: Path, run_summary: dict[str, Any]) -> None:
         "- Current paper direction: target measurement validity, not a generic multimodal method.",
         "- MV17a multilingual sensitivity is complete and reproduces the blocked MV07/MV12/MV15 feature-level pattern.",
         "- MV18 same-HAMD exploratory control is complete and supports cautious dataset/context-shift wording, not formal HAMD invariance.",
-        "- MV19 finite-sample PHQ simulation is complete and downgrades strong C02/C06 wording under the observed-N screen.",
-        "- MV20 criterion-overlap stress is complete and freezes further protocol-overlap tuning or contamination-aware model work.",
-        "- Label-only MV10/MV11/MV19 PHQ psychometric results remain the primary positive evidence and are unaffected by the BGE feature-contract caveat; MV13/MV14 carry a separate mirt parameterization caveat.",
+        "- Label-only PHQ psychometric results remain the core positive evidence and are unaffected by the BGE feature-contract caveat.",
         "",
         "## Legacy BGE Contract Risks",
         "",
@@ -321,8 +308,8 @@ def main() -> None:
     run_summary = {
         "artifact_hygiene_passed": False,
         "decision": {
-            "route_status": "mv17a_mv18_mv19_mv20_complete_next_manuscript_finalization",
-            "short_read": "MV17a, MV18, MV19, and MV20 are complete; experiments are frozen and next step is manuscript finalization with primary-source citation verification.",
+            "route_status": "mv17a_mv18_complete_next_mv19_ready",
+            "short_read": "MV17a multilingual feature-contract sensitivity and MV18 same-HAMD exploratory control are complete; next step is MV19 finite-sample PHQ psychometric simulation, not another shallow model variant.",
         },
         "generated_at": generated_at,
         "input_contract": {

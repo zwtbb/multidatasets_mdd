@@ -1,4 +1,0 @@
-source_id,source_url,source_type,audit_use,key_point
-mirt_multipleGroup_docs_reference_group,https://philchalmers.github.io/mirt/html/multipleGroup.html,official_package_documentation,reference_and_focal_group_identification,The first factor level is the reference group; focal-group latent means and variances require explicit free_means/free_var invariance terms.
-mirt_DIF_docs_anchor_equating,https://rdrr.io/cran/mirt/man/DIF.html,official_package_documentation,DIF_anchor_linking_contract,DIF examples equate groups through anchor items while freeing focal-group latent hyperparameters; otherwise DIF tests can mix item effects with latent-distribution differences.
-mv14_design_predeclared_source_refs,analysis/phase5_minimal_validation/p5_mv14_measurement_uncertainty_bootstrap_design/method_source_refs.csv,local_aggregate_design_artifact,project_contract_consistency,MV14 design source references include mirt DIF anchor-equating guidance: true.

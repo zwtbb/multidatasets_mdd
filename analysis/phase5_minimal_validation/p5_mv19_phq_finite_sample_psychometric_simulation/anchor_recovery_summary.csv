@@ -1,5 +1,0 @@
-world_id,anchor_rule,items,successes,simulations,recovery_rate,ci95_low,ci95_high
-H0_scalar_invariant,all_predeclared_anchor_items_present,C01;C04;C05;C07,58,500,0.116,0.09081365651103794,0.1470418369634342
-H0_scalar_invariant,exact_predeclared_anchor_set,C01;C04;C05;C07,2,500,0.004,0.0010976305226827923,0.014465715215177035
-H1_C02_C06_threshold_DIF,all_predeclared_anchor_items_present,C01;C04;C05;C07,89,500,0.178,0.14696488670733526,0.21394518854990438
-H1_C02_C06_threshold_DIF,exact_predeclared_anchor_set,C01;C04;C05;C07,18,500,0.036,0.02289106098029272,0.05618432696802776

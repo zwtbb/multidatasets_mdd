@@ -1,5 +1,0 @@
-claim_scope,audit_result,manuscript_boundary,action_required,blocking_for_submission
-MV13_external_mirt_replication,parameterization_consistent,"Use as corrected anchor-linked external mirt replication, with convergence and finite-sample caveats.",No parameterization action remains; refresh manuscript wording from corrected aggregate outputs.,False
-MV14_bootstrap_uncertainty,parameterization_consistent,Bootstrap frequencies use the corrected anchor-linked focal hyperparameter contract; retain convergence and observed-N caveats.,No parameterization action remains; keep MV14 bounded by convergence and finite-sample uncertainty.,False
-MV10_MV11_MV19_label_only_core,not_directly_invalidated_by_mirt_audit,Keep the broader observed-N and in-repo label-only PHQ measurement caveats.,Use MV13/MV14 only within corrected aggregate-result boundaries and do not override MV19 finite-sample downgrade.,False
-full_method_gate,gate_remains_blocked,This audit reinforces the blocked full-method gate rather than opening a new experiment line.,"Treat corrected mirt rerun as statistical correctness work, not as exploratory model iteration.",False

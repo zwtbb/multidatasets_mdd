@@ -1,13 +1,13 @@
 # Phase 5 Full-Method Gate Audit
 
-Generated: `2026-08-22T13:28:00+00:00`
+Generated: `2026-08-21T18:49:20+00:00`
 
 ## Decision
 
 - Full method allowed: `False`.
 - Gate status: `blocked_but_publishable_diagnostic_direction`.
 - Blocked claim count: `5`.
-- Allowed limited/reframed claim count: `7`.
+- Allowed limited/reframed claim count: `6`.
 
 The current evidence supports a careful diagnostic paper direction, but not a broad full symptom-aligned method claim yet.
 
@@ -15,18 +15,17 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 
 | claim | decision | allowed scope | required next evidence |
 | --- | --- | --- | --- |
-| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Do not start full method construction; interpret MV16/MV20 as bounded or negative mechanism checks and prioritize manuscript finalization. |
+| C_FULL_METHOD_START | `blocked` | No full method construction yet. | Do not start full method construction; interpret MV16 as bounded/negative calibration evidence and prioritize manuscript consolidation. |
 | C_RQ1_SHARED_SYMPTOM | `blocked` | Discuss direct shared-symptom mapping as negative/bounded diagnostic evidence and reframe RQ1 as measurement-shift and measurement-validity work. | A stronger shared-representation or calibration mechanism would need a genuinely new predeclared data/feature/measurement source; current MV16 is bounded/negative. |
-| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV19 as primary label-only PHQ common-structure and dataset-group measurement-shift evidence with explicit finite-sample downgrade. Use corrected MV13/MV14 as anchor-linked external mirt qualitative and uncertainty corroboration, while retaining the configural convergence warning and MV19 observed-N caveat. | No further mirt correctness rerun is queued; only consider a larger MV14 bootstrap if reviewer-facing interval precision becomes critical. |
+| C_PSYCHOMETRIC_INVARIANCE_BASELINE | `allowed_limited` | Use MV10/MV11/MV13/MV14 as label-only PHQ common-structure, stable-anchor, sparse-loading-DIF, and localized-threshold-shift evidence with measured convergence/model-selection uncertainty; use MV12 plus its aggregate tradeoff analysis as bounded two-stage prediction diagnostics; do not present them as multimodal method success or external scale transfer. | Use MV16 as bounded/negative target-calibration evidence; any stronger adaptation claim needs a new predeclared mechanism beyond the current BGE/few-shot ladder. |
 | C_PDCH_HAMD_INTERNAL | `allowed_limited` | PDCH-only HAMD item/total diagnostic plus MV18 exploratory same-HAMD context-shift support; not cross-dataset HAMD generalization. | A stronger CMDC/PDCH-compatible measurement head or larger external HAMD item sample is required before cross-dataset HAMD claims. |
 | C_EATD_SDS_GENERALIZATION | `blocked` | Report EATD as negative/weak SDS external stress. | A separately audited feature contract with meaningful SDS improvement over train mean and no stronger valence shortcut. |
-| C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, conditional identity audits, MV15 latent-conditioned identity, and MV17a multilingual feature-contract sensitivity are controls; do not claim invariant representation. | Freeze the current latent-conditioned feature-identity line as diagnostic evidence; keep output-space low identity separate from feature invariance and keep encoder-dependent MV17a comparisons explicit. |
-| C_PROTOCOL_CRITERION_OVERLAP | `allowed_limited` | Use MV20 as a bounded negative CMDC-only criterion-overlap deletion stress test: high-overlap deletion is not clearly worse than matched random deletion under the primary BGE-M3 PHQ-9 top-20 gate. | No further MV20 tuning or new architecture; freeze experiments after MV20 and move to manuscript finalization. |
+| C_DATASET_IDENTITY_CONTROL | `allowed_limited` | Known-dataset centering, source-agnostic WavLM projection, BGE identity projection, BGE total-anchor diagnostics, conditional identity audits, and MV15 latent-conditioned identity are controls; do not claim invariant representation. | Freeze the current BGE latent-conditioned feature-identity line as diagnostic evidence; keep output-space low identity separate from feature invariance. |
 | C_MODMA_TASK_CONTROL | `allowed_limited` | MODMA task-specific diagnostic protocol-control result. | Integrate with shared-symptom targets and cross-dataset controls before using it as a full method component. |
 | C_EATD_VALENCE_ADVERSARIAL | `blocked` | Do not add a valence-adversarial module from current EATD evidence. | Meaningful EATD SDS or depression signal plus demonstrated valence identity/shortcut reduction. |
 | C_RQ3_CONTEXT_CONDITIONING | `blocked` | Report MPDD context calibration as negative and keep age/personality as measurement-heterogeneity audit axes. | A later measurement-invariance/DIF moderator analysis must improve subgroup behavior beyond AV-only recalibration and shuffled controls before positive RQ3 conditioning claims. |
 | C_RQ4_EVIDENCE_LOCALIZATION | `allowed_limited` | Use first-round aggregate MV06 annotation and dataset-stratified agreement as credibility evidence; verbatim excerpts remain local-only. | For a stronger manuscript claim, resolve any remaining incomplete local candidate rows and discuss dataset-specific kappa CIs plus sampling limits. |
-| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, the mirt parameterization audit, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, MV18, MV19, and MV20 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence, MV19-downgraded C02/C06 wording, the corrected mirt parameterization audit, MV17a-calibrated BGE-M3-primary/multilingual-E5-sensitivity prediction-consequence wording, and the negative CMDC-only MV20 criterion-overlap stress result. |
+| C_PUBLISHABLE_PAPER_DIRECTION | `allowed_with_reframing` | A measurement-shift / measurement-validity paper direction is viable now; MV08/MV08b/MV09/MV10/MV11/MV12/MV13/MV14, MV12 aggregate tradeoff analysis, MV15, MV16, MV17a, and MV18 are bounded diagnostic evidence, not a full-method pass. | Consolidate the manuscript around bounded diagnostic evidence; MV06 stronger wording still requires resolving any incomplete local candidate rows and discussing sampling limits. |
 
 ## Evidence Inventory
 
@@ -65,24 +64,21 @@ The current evidence supports a careful diagnostic paper direction, but not a br
 | P5_MV12 | `complete` | `blocked_theta_gain_not_observed_scale_safe` | `True` | MV12 runs the predeclared two-stage PHQ latent-target test. A pass requires theta utility, observed-scale safety, external transfer, conditional shared-latent identity, leakage control, and artifact hygiene; design or... |
 | P5_MV12_analysis | `complete` | `complete_freeze_current_mv12_latent_target_line` | `True` | Aggregate-only MV12 analysis recommends freezing the current latent-target line: latent/scalar outputs are less dataset-identifiable than upstream BGE features, but M12a is not better than the dimension-matched B3 sev... |
 | P5_MV13_design | `complete` | `ready_for_external_replication_run` | `True` | MV13 is predeclared as an external mirt/lavaan psychometric replication. Execution waits for a version-captured external runtime. |
-| P5_MV13 | `complete` | `complete_external_mirt_with_convergence_warnings` | `True` | External R mirt replication preserves the label-only PHQ anchor/DIF localization pattern with corrected anchor-linked focal mean/variance handling, a configural convergence warning, and local-only parameter/theta arti... |
+| P5_MV13 | `complete` | `complete_external_mirt_with_convergence_warnings` | `True` | External R mirt replication preserves the label-only PHQ anchor/DIF localization pattern, with a configural convergence warning and local-only parameter/theta artifacts. |
 | P5_MV14_design | `complete` | `ready_to_implement_mv14_measurement_uncertainty_bootstrap` | `True` | MV14 is predeclared as an aggregate-only bootstrap stability audit for PHQ anchors, DIF flags, model selection, convergence, and uncertainty availability. |
-| P5_MV14 | `complete` | `complete_mv14_convergence_safe_item_level_measurement_shift` | `True` | MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap with anchor-linked focal mean/variance freed for threshold-constrained models; its convergence-safe interpretation is item-level threshold/... |
+| P5_MV14 | `complete` | `complete_mv14_convergence_safe_item_level_measurement_shift` | `True` | MV14 quantifies PHQ measurement uncertainty from group-wise subject bootstrap; its convergence-safe interpretation is item-level threshold/localization evidence, not a global partial-invariance model-selection win or ... |
 | P5_MV15_design | `complete` | `ready_to_implement_mv15_latent_conditioned_identity` | `True` | MV15 design predeclares the latent-conditioned identity ladder; the subsequent P5_MV15 run summary is the current identity result. |
 | P5_MV15 | `complete` | `blocked_theta_conditioned_feature_identity_high` | `True` | MV15 reports feature identity after theta conditioning together with total, predicted-total, item, B3 itemwise-theta, theta-only, predicted-output, covariate, and severity-only controls. It is diagnostic only. |
 | P5_MV16_design | `complete` | `ready_to_implement_mv16_dif_guided_calibration` | `True` | MV16 design predeclares DIF-guided few-shot measurement calibration with C01/C04/C05/C07 anchors, C02/C06 threshold calibration, k=0/5/10/20/40, and direct/zero-shot/global/all-threshold comparators. |
 | P5_MV16 | `complete` | `blocked_no_dif_guided_small_k_gain` | `True` | MV16 completes the predeclared few-shot calibration ladder but does not satisfy the DIF-guided small-k mechanism gate; keep it as negative or bounded diagnostic evidence. |
 | P5_MV17a | `complete` | `complete` | `True` | complete |
 | P5_MV18 | `complete` | `complete_exploratory_same_scale_context_shift_supported` | `True` | MV18 remains exploratory because CMDC HAMD has only 25 subjects, but the same-scale control still shows dataset/context sensitivity through flagged HAMD item/threshold shifts or weak bidirectional transfer. |
-| P5_MV19 | `complete` | `complete_mv19_high_false_localization_downgrade_c02_c06` | `True` | MV19 simulates the observed E-DAIC/CMDC PHQ sample sizes and severity distributions under scalar-invariant and C02/C06 threshold-DIF worlds. It supports cautious C02/C06 wording only if false localization is limited a... |
-| P5_MV20 | `complete` | `complete_mv20_no_primary_criterion_overlap_excess` | `True` | complete |
-| P5_mirt_parameterization_audit | `complete` | `complete_mirt_parameterization_consistent` | `True` | MV13/MV14 mirt parameterization matches the audited anchor-linked measurement-invariance contract: E-DAIC is reference, CMDC is focal, anchor/threshold linking is explicit, and focal mean/variance are freed for thresh... |
 
 ## Next Actions
 
 | rank | action | success gate |
 | ---: | --- | --- |
-| 1 | Freeze the experiment queue and finalize the measurement-validity manuscript. | Paper claim tables, Results scaffold, and manuscript draft include MV20 as a bounded negative CMDC-only criterion-overlap stress test and do not queue further model or threshold tuning. |
+| 1 | Predeclare and run MV19 finite-sample PHQ psychometric simulation. | MV19 reports false-DIF rate under scalar-invariant H0, C02/C06 recovery under threshold-DIF H1, and anchor-set recovery using aggregate-only outputs. |
 | 2 | Use the dataset-stratified MV06 agreement and bootstrap uncertainty summaries as first-round RQ4 evidence, then resolve any incomplete local candidate rows if stronger wording is needed. | Dataset-stratified agreement and uncertainty summaries remain aggregate-only without exporting snippets or source locators. |
 | 3 | Recover or create speaker/protocol labels for E-DAIC participant/interviewer controls if feasible. | Speaker-resolved subject-level controls with no leakage and aggregate-only outputs. |
 | 4 | Try to recover structured MPDD gender/health metadata and official test labels as a governance update. | Registry/manifest update plus audit showing coverage and no split leakage. |

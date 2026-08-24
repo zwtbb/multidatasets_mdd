@@ -1,4 +1,0 @@
-dataset,check,status,count_1_name,count_1_value,count_2_name,count_2_value
-CMDC,stable_question_positions,passed,question_positions,12,subjects_with_all_positions,78
-CMDC,local_segment_embedding_cache,passed,embedding_rows,908,valid_manifest_rows,908
-CMDC,outcome_guided_selection,avoided,labels_used_for_overlap_ranking,0,prediction_metrics_used_for_threshold_choice,0

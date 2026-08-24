@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-22 UTC
+Last updated: 2026-08-21 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -80,12 +80,6 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_59_postreview_measurement_validity_triage.md`
   - `/root/autodl-tmp/memory/sessions/session_60_mv17a_multilingual_feature_contract.md`
   - `/root/autodl-tmp/memory/sessions/session_61_mv18_cmdc_pdch_hamd_same_scale_control.md`
-  - `/root/autodl-tmp/memory/sessions/session_62_mv19_phq_finite_sample_simulation.md`
-  - `/root/autodl-tmp/memory/sessions/session_63_experiment_consolidation_cleanup.md`
-  - `/root/autodl-tmp/memory/sessions/session_64_mv17a_manuscript_claim_calibration.md`
-  - `/root/autodl-tmp/memory/sessions/session_65_mv20_criterion_overlap_stress.md`
-  - `/root/autodl-tmp/memory/sessions/session_66_mirt_parameterization_correctness_audit.md`
-  - `/root/autodl-tmp/memory/sessions/session_67_mirt_corrected_rerun.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -159,57 +153,27 @@ MPDD 2025 is intentionally out of scope for current auditing.
   must be separated. The current MV12/MV15/MV16 BGE-linked feature-level chain
   is legacy/diagnostic because E-DAIC MV07 used a Chinese BGE encoder on
   English transcripts and the available transcript contract lacks speaker
-  roles. Label-only MV10/MV11/MV19 are the primary PHQ measurement layer:
-  substantial common PHQ structure, repeated C02/C06 threshold-shift signals,
-  sparse loading DIF, uncertain global model selection, and an explicit
-  observed-N finite-sample downgrade. The narrow corrected MV13/MV14 `mirt`
-  rerun is complete: E-DAIC/CMDC reference/focal order, manual anchor linking,
-  graded `d1-d3` threshold/intercept constraints, and focal mean/variance
-  freed for threshold-constrained anchor-linked models all pass the code-level
-  audit. Treat MV13/MV14 as corrected external `mirt` qualitative/uncertainty
-  corroboration with the retained configural convergence warning and MV19
-  finite-sample caveat, not as robust standalone DIF proof. Full-method work
-  remains blocked until a
+  roles. Label-only MV10/MV11/MV13/MV14 psychometric evidence is unaffected and
+  remains the core positive layer: substantial common PHQ structure, stable
+  anchors, sparse loading DIF, localized C02/C06 threshold non-equivalence, and
+  uncertain global model selection. Full-method work remains blocked until a
   genuinely new data, feature, or measurement mechanism changes the gate. The
-  MV17a multilingual feature-contract sensitivity is complete and now owns the
-  canonical prediction-consequence wording. BGE-M3 is the primary feature
-  contract and multilingual-E5 is the sensitivity encoder; both regenerate
-  E-DAIC/CMDC/PDCH subject-level features and rerun MV07/MV12/MV15. The
-  stable conclusion is not universal external-theta-transfer failure or
-  universal B3 Pareto dominance: both encoders keep MV07/MV12/MV15 blocked,
-  both pass same-dataset theta utility, both fail observed-scale safety, and
-  both keep theta-conditioned feature identity BA at `1.000`, while external
-  theta transfer is encoder-dependent (BGE-M3 passes, multilingual-E5 fails)
-  and B3 Pareto dominance is encoder-dependent (false for BGE-M3, true for
-  multilingual-E5). MV16 remains paused unless a future
+  MV17a multilingual feature-contract sensitivity is complete. BGE-M3 and
+  multilingual-E5 subject-level features were generated for E-DAIC/CMDC/PDCH,
+  then MV07/MV12/MV15 were rerun for both encoders. The negative/blocked
+  feature-level chain replicated under both multilingual encoders: MV07 remains
+  blocked by total-allocation/identity criteria, MV12 remains blocked by lack
+  of observed-scale-safe theta gain, and MV15 remains blocked by high
+  theta-conditioned feature identity. MV16 remains paused unless a future
   review specifically requires rerunning it under the multilingual feature
   contract. MV18 CMDC-HAMD vs PDCH-HAMD same-scale exploratory control is also
   complete: under the mild/moderate HAMD overlap it finds 4 predeclared
   severity-conditioned residual item-shift flags, 7 threshold-shift flags, and
   weak primary bidirectional transfer under the current frozen-feature
   contract. Treat MV18 as exploratory same-HAMD context-shift support, not
-  formal HAMD invariance. MV19 finite-sample PHQ psychometric simulation is
-  complete: under the observed E-DAIC/CMDC PHQ N and severity distributions,
-  H0 C02/C06 both-flag false rate is `0.208`, H1 C02/C06 both-flag recovery is
-  `0.662`, H1 top-two recovery is `0.222`, and H1 anchor subset recovery is
-  `0.178`. Treat C02/C06 as repeated but finite-sample-bounded
-  dataset-group threshold-shift evidence, not robust standalone DIF. The active
-  evidence bundle is now consolidated at
-  `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`:
-  paper core is `MV10/MV11/MV19` as primary PHQ psychometric evidence plus
-  `MV13/MV14` as corrected anchor-linked `mirt` corroboration, paper support is
-  `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and
-  `P5_mirt_parameterization_audit` is a paper guardrail. Early weak or
-  superseded MV rows are frozen as historical diagnostics rather than active
-  experiments. Tracked aggregate outputs are retained for traceability; only
-  interpreter/notebook caches were physically removed in the cleanup. The
-  active next orchestration step is manuscript finalization and primary-source
-  citation verification. MV20
-  criterion-overlap stress is complete and negative/bounded: CMDC Q1-Q12
-  question-position units were feasible, PDCH and E-DAIC were excluded for
-  missing clean protocol units, and high-overlap deletion is not clearly worse
-  than matched random deletion under BGE-M3 primary or multilingual-E5
-  sensitivity. The experiment queue is frozen.
+  formal HAMD invariance. The active next orchestration step is MV19
+  finite-sample PHQ psychometric simulation if still needed for manuscript
+  support.
   Bibliography metadata has been corrected for P3HF, Multi-Probe Audit, and
   EMNLP interviewer bias in the generator, but all references still require
   full primary-source verification before submission.
@@ -448,25 +412,24 @@ MPDD 2025 is intentionally out of scope for current auditing.
   measurement contract changes.
 - Phase 5 full-method gate audit is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`.
-  It reads 45 Phase 5 run summaries and exports claim gates, evidence
+  It reads 40 Phase 5 run summaries and exports claim gates, evidence
   inventory, a ranked next-action queue, a report, and an artifact-hygiene
   audit. Current gate status is
   `blocked_but_publishable_diagnostic_direction`, `full_method_allowed=false`,
   and `artifact_hygiene_passed=true`. Allowed claims are limited to PDCH-only
   HAMD diagnostic evidence, dataset/protocol controls as diagnostics, MODMA
-  task-control evidence, MV10/MV11/MV19 primary label-only psychometric
-  screening/confirmation/finite-sample downgrade evidence, corrected MV13/MV14
-  anchor-linked external `mirt` corroboration, MV12
+  task-control evidence, MV10/MV11/MV13/MV14 label-only psychometric screening,
+  confirmation, external replication, and uncertainty evidence, MV12
   design/run/aggregate-tradeoff diagnostic evidence, MV15 aggregate
   latent-conditioned identity diagnostic evidence, MV16 aggregate bounded
-  calibration evidence, MV20 bounded criterion-overlap stress evidence, and a reframed
+  calibration evidence, and a reframed
   diagnostic/audit-driven paper direction.
   RQ4 is now `allowed_limited` as first-round aggregate evidence, while
   blocked claims include full M0/M1/M2/M3 method start, transferable
   shared-symptom representation, positive EATD SDS generalization, EATD
-  valence-adversarial design, and RQ3 context conditioning. After the corrected
-  `mirt` rerun, its ranked next action is
-  `NEXT_FINALIZE_MANUSCRIPT_AFTER_CORRECTNESS_GATES`.
+  valence-adversarial design, and RQ3 context conditioning. After the MV16
+  run, its ranked next action is
+  `NEXT_FREEZE_MV16_AND_CONSOLIDATE_PAPER`.
 - Phase 5 `P5_MV08 partial_invariance_measurement_design` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv08_partial_invariance_measurement_design/`.
   It did not train a model or read raw text/media. It converted the RQ1 pivot
@@ -570,8 +533,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   predictions, transformed features, projection directions, and model artifacts
   remain local-only. This is design evidence only, not a multimodal method
   pass.
-- Phase 5 `P5_MV12 two_stage_latent_target` is complete as legacy old
-  Chinese-BGE-chain evidence at
+- Phase 5 `P5_MV12 two_stage_latent_target` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv12_two_stage_latent_target/`.
   It fits local-only label-derived PHQ theta targets for E-DAIC/CMDC, trains
   shallow BGE `X -> theta` heads, compares direct/floor baselines, and exports
@@ -581,22 +543,21 @@ MPDD 2025 is intentionally out of scope for current auditing.
   (`-0.146`), and conditional shared-latent identity BA is `0.602`, but
   observed macro item MAE is worse than direct itemwise Ridge on E-DAIC
   (`+0.004`) and CMDC (`+0.067`), and external theta transfer does not beat the
-  train-mean theta floor under the old-chain source-calibrated setting. Full
-  method remains blocked; MV17a supersedes any universal external-transfer
-  claim.
+  train-mean theta floor. Full method remains blocked.
 - Phase 5 `P5_MV12 latent_target_tradeoff_analysis` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv12_latent_target_tradeoff_analysis/`.
   It reads only aggregate MV09/MV12 summaries and aggregate MV07-MV12
-  accuracy-invariance tables from the old Chinese-BGE chain. Treat as
+  accuracy-invariance tables. Treat as
   `complete_freeze_current_mv12_latent_target_line`: current latent-target
   evidence improves same-dataset theta utility and lowers identity versus
-  upstream BGE features, but observed-scale safety and old-chain
-  source-calibrated external theta transfer remain blockers. The corrected
-  legacy interpretation is that M12a is not uniquely more invariant than
-  dimension-matched severity outputs in that chain: B3 direct itemwise Ridge
-  compressed to theta has lower pooled observed macro MAE (`0.692` vs `0.701`)
-  and lower conditional identity (`0.579` vs `0.602`). MV17a supersedes any
-  universal B3-dominance wording. Artifact hygiene passed.
+  upstream BGE features, but observed-scale safety and zero-shot
+  source-calibrated external theta transfer remain decisive blockers. The
+  corrected interpretation is that M12a is not uniquely more invariant than
+  dimension-matched severity outputs: B3 direct itemwise Ridge compressed to
+  theta has lower pooled observed macro MAE (`0.692` vs `0.701`) and lower
+  conditional identity (`0.579` vs `0.602`). Artifact hygiene passed; next work
+  is MV15 with dimension-matched controls, not another small shallow-head
+  iteration.
 - Phase 5 `P5_MV13 external_psychometric_replication_design` and
   `P5_MV13 external_psychometric_replication` are complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv13_external_psychometric_replication_design/`
@@ -659,8 +620,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   passed. This design contract has now been consumed by the MV15 runner. Theta
   scores, row predictions, residualized features, nuisance directions, split
   maps, and model artifacts stay local-only.
-- Phase 5 `P5_MV15 latent_conditioned_dataset_identity` is complete as legacy
-  old Chinese-BGE-chain evidence at
+- Phase 5 `P5_MV15 latent_conditioned_dataset_identity` is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/`.
   It used aligned E-DAIC/CMDC BGE features, fold-local PHQ theta generation,
   total/predicted-total/item/B3 itemwise-theta/psychometric-theta/covariate
@@ -672,8 +632,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   total/predicted-total/B3-conditioned feature identity BA is
   `1.000`/`1.000`/`1.000`; PHQ-item-conditioned feature identity is `0.974`;
   theta-only identity is `0.576`; predicted-theta output identity is `0.646`;
-  B3 output Pareto-dominates predicted theta only in this legacy chain. MV17a
-  supersedes universal B3-dominance wording. This freezes the current
+  B3 output still Pareto-dominates predicted theta. This freezes the current
   latent-conditioned BGE feature-identity line as diagnostic/negative evidence
   and motivated MV16 as a measurement-calibration test rather than full-method
   authorization.
@@ -724,13 +683,10 @@ MPDD 2025 is intentionally out of scope for current auditing.
   aggregate Phase 2/3/5 artifacts only, and `artifact_hygiene_passed=true`.
   It frames MV12 as a predictive fidelity-dataset identifiability trade-off:
   same-dataset theta utility improves and low-dimensional outputs are less
-  dataset-identifiable than upstream BGE features, but under the legacy
-  old-chain setting same-dataset observed-scale safety and
-  source-calibrated theta transfer still block a positive full-method claim.
-  The current manuscript-facing prediction-consequence layer is MV17a:
-  BGE-M3 primary and multilingual-E5 sensitivity both keep the feature-level
-  chain blocked while external theta transfer and B3 dominance are
-  encoder-dependent.
+  dataset-identifiable than upstream BGE features, but B3 dimension-matched
+  severity dominates M12a on pooled fidelity and identity, while same-dataset
+  observed-scale safety and zero-shot source-calibrated theta transfer still
+  block a positive full-method claim.
 - Diagnostic measurement-audit paper manuscript draft v0.1 is complete at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_draft.md`.
   It is generated by `scripts/build_diagnostic_paper_manuscript_draft.py` from
@@ -753,27 +709,14 @@ MPDD 2025 is intentionally out of scope for current auditing.
 - Phase 5 post-review measurement-validity route is predeclared at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`.
   It records the BGE feature-contract caveat, source verification summary,
-  prioritized MV17a/MV18/MV19/MV20 queue, and stop lines. MV17a is
+  prioritized MV17a/MV18/MV19/MV20 queue, and stop lines. MV17a is now
   complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17a_multilingual_feature_contract/`
   and reproduces the blocked MV07/MV12/MV15 pattern under BGE-M3 and
   multilingual-E5. MV18 is complete at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv18_cmdc_pdch_hamd_same_scale_control/`
-  with status `complete_exploratory_same_scale_context_shift_supported`. MV19
-  is complete with status
-  `complete_mv19_high_false_localization_downgrade_c02_c06`. MV20 is complete
-  with status `complete_mv20_no_primary_criterion_overlap_excess`, freezing
-  further overlap-threshold tuning or contamination-aware model work.
-- Phase 5 `P5_MV20 criterion_overlap_stress` is complete at
-  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv20_criterion_overlap_stress/`.
-  It uses CMDC because Q1-Q12 question-position units are available, excludes
-  PDCH because available units are coarse consultation segments, and excludes
-  E-DAIC because true prompt/speaker units are unavailable. Primary BGE-M3
-  CMDC PHQ-9 top-20 all/minus-high/minus-random/high-only MAE is
-  `3.571`/`3.918`/`3.768`/`4.215`; criterion excess loss versus matched random
-  is `0.150` with 95 percent CI `-0.320` to `0.671`. Multilingual-E5
-  sensitivity also has `no_excess_criterion_overlap_evidence`. Treat MV20 as a
-  bounded negative stress test, not a new method-development route.
+  with status `complete_exploratory_same_scale_context_shift_supported`. Treat
+  MV19 as the next design-ready route item.
 
 Phase 2 gate status:
 
@@ -1072,20 +1015,17 @@ Key Phase 2 outputs:
   passes predictive utility, external transfer, conditional shared-latent
   identity, leakage, and artifact-hygiene gates.
 - MV12 latent-target run decision: the two-stage `X -> theta` test is useful
-  but legacy old Chinese-BGE-chain evidence, not positive method evidence.
-  Same-dataset theta prediction and conditional shared-latent identity improve,
-  but observed-scale reconstruction is not safe versus the direct itemwise
-  floor and old-chain source-calibrated external theta transfer fails. Treat
-  MV12 as bounded measurement-shift evidence and do not generalize its external
-  transfer result across encoders after MV17a.
+  but not positive method evidence. Same-dataset theta prediction and
+  conditional shared-latent identity improve, but observed-scale reconstruction
+  is not safe versus the direct itemwise floor and external theta transfer
+  fails. Treat MV12 as bounded measurement-shift evidence.
 - MV12 tradeoff-analysis decision: aggregate-only comparison across MV07-MV12
-  closes the legacy old-chain latent-target line. Freeze it as diagnostic
+  closes the current latent-target line. Freeze it as paper-critical diagnostic
   evidence with a dimension-matched severity caveat: M12a is lower-identity
   than upstream BGE features but is Pareto-dominated by B3 direct itemwise Ridge
-  compressed to theta in the legacy chain. Do not state universal B3 dominance
-  after MV17a, and do not start full M0/M1/M2/M3 or another small shallow-head
-  RQ1 variant unless a genuinely new measurement, feature, or data mechanism
-  is predeclared.
+  compressed to theta. Do not start full M0/M1/M2/M3 or another small
+  shallow-head RQ1 variant unless a genuinely new measurement, feature, or data
+  mechanism is predeclared.
 - MV13 external-psychometric decision: R/lavaan/mirt are now available and
   version-captured. External R `mirt::multipleGroup` replication preserves the
   MV10/MV11 qualitative anchor/DIF localization pattern, but the configural
@@ -1115,11 +1055,9 @@ Key Phase 2 outputs:
 - Diagnostic results-section decision: use
   `scripts/build_diagnostic_paper_results_sections.py` to regenerate the
   Baselines, Failure-Mode Diagnostics, and Measurement Results scaffold from
-  aggregate artifacts only. Its manuscript framing should treat MV17a as the
-  canonical prediction-consequence layer and MV12/MV15 as legacy old-chain
-  support: measurement harmonization can reduce output-level identity, but
-  observed-scale safety and feature invariance remain blocked, while external
-  theta transfer and B3 dominance are encoder-dependent.
+  aggregate artifacts only. Its manuscript framing should treat MV12 as a
+  predictive fidelity-dataset identifiability trade-off, not as a simple model
+  failure or a positive full-method result.
 - MV15 latent-conditioned identity design decision: MV15 was predeclared with
   dimension-matched controls comparing `I(Z;D|theta)` to raw feature identity,
   observed labels, PHQ total, predicted total, B3 itemwise-theta severity,
@@ -1154,14 +1092,9 @@ Key Phase 2 outputs:
   and the available transcript CSVs do not expose speaker roles for
   participant/interviewer filtering. MV17a now addresses the paper-critical
   MV07/MV12/MV15 part of this caveat with BGE-M3 and multilingual-E5; both
-  encoders reproduce the blocked result, both fail observed-scale safety, and
-  both keep theta-conditioned feature identity BA at `1.000`. External theta
-  transfer passes for BGE-M3 but fails for multilingual-E5, and B3 dominance is
-  false for BGE-M3 but true for multilingual-E5. Do not interpret remaining
-  high dataset identity as a pure participant symptom-representation failure.
-  MV10/MV11/MV19 primary label-only psychometric evidence is unaffected by the
-  BGE feature-contract caveat; corrected MV13/MV14 now provide external
-  `mirt` corroboration with convergence and finite-sample caveats.
+  encoders reproduce the blocked result. Do not interpret remaining high
+  dataset identity as a pure participant symptom-representation failure.
+  MV10/MV11/MV13/MV14 label-only psychometric evidence is unaffected.
 - Post-review paper-framing decision: the manuscript should be a target
   measurement-validity audit. Phase 3 is motivating benchmark/protocol shortcut
   evidence; MPDD/RQ3 is a population stress test; MV06/RQ4 is measurement
@@ -1169,10 +1102,10 @@ Key Phase 2 outputs:
   extra shallow BGE variants, extra projection dimensions, EATD
   valence-adversarial modules, and MV16 retuning unless a new predeclared
   mechanism changes the gate.
-- Next measurement-aware route decision: MV17a, MV18, MV19, MV20, and the
-  corrected MV13/MV14 `mirt` rerun are complete. The experiment queue is
-  frozen; the active next item is manuscript finalization and primary-source
-  citation verification. MV06
+- Next measurement-aware route decision: MV17a and MV18 are complete; add only
+  bounded controls with direct relevance to target measurement validity. The
+  active next item is MV19 finite-N PHQ psychometric simulation; MV20
+  criterion-contamination stress remains optional only if still needed. MV06
   agreement uncertainty is complete; optional next RQ4 work is resolving the
   one incomplete local candidate before stronger RQ4 wording.
 
@@ -1264,9 +1197,6 @@ for future GitHub updates unless replacing it with an equivalently audited clean
 publish path. The helper is dry-run by default and checks the publish tree for
 banned Phase 2 baseline artifacts, bulky prediction/embedding/model paths, and
 plaintext credential-like content before committing on the clean remote lineage.
-For exact current versions, inspect Git directly with `git log -1` for the
-local working branch and `git ls-remote origin refs/heads/main` for the clean
-remote branch instead of treating memory prose as an immutable SHA ledger.
 
 ## Immediate Orchestration Plan
 
@@ -1285,20 +1215,15 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
 3. Keep future GitHub updates on the clean remote/main lineage via
    `scripts/publish_clean_github_snapshot.py`; do not push the old local
    `main` history directly.
-4. Use the Phase 5 full-method gate audit and consolidation inventory as the
-   active claim boundary. MV09 revises identity-gate semantics,
-   MV10/MV11/MV19 provide the primary label-only PHQ measurement evidence,
-   corrected MV13/MV14 provide anchor-linked external `mirt` corroboration with
-   convergence and finite-sample caveats, MV12/MV15/MV16 remain bounded or negative
-   prediction-consequence evidence, MV17a is the canonical
-   prediction-consequence layer with BGE-M3
-   primary and multilingual-E5 sensitivity, MV18 gives exploratory same-HAMD
-   context-shift support without formal invariance claims, MV20 closes the
-   bounded protocol-label-overlap stress as negative/no-excess evidence, and
-   early weak or superseded MV rows are retired from the active experiment
-   queue. Full method construction remains blocked. The next active task is
-   manuscript finalization and primary-source citation verification.
-   Parallel writing work may continue, but the manuscript must
+4. Use the Phase 5 full-method gate audit as the active claim boundary. MV09
+   revises identity-gate semantics, MV10/MV11/MV13/MV14 provide the core
+   label-only PHQ measurement evidence, MV12/MV15/MV16 remain bounded or
+   negative prediction-consequence evidence, MV17a shows the blocked
+   MV07/MV12/MV15 feature-level pattern also holds under BGE-M3 and
+   multilingual-E5, and MV18 gives exploratory same-HAMD context-shift support
+   without formal invariance claims. Full method construction remains blocked.
+   The next active task is MV19 finite-sample PHQ psychometric simulation if
+   still needed. Parallel writing work may continue, but the manuscript must
    use target
    measurement-validity framing, corrected bibliography metadata, and full
    primary-source verification before submission.
