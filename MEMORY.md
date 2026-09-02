@@ -121,6 +121,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_101_bibliography_primary_verification.md`
   - `/root/autodl-tmp/memory/sessions/session_102_mv24_fair_ablation_gate.md`
   - `/root/autodl-tmp/memory/sessions/session_103_mv24_targeted_item_and_dif_simulation.md`
+  - `/root/autodl-tmp/memory/sessions/session_104_remote_github_cleanup.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -1511,13 +1512,6 @@ GitHub CLI is installed and authenticated for account `zwtbb` with token-based
 HTTPS Git operations. Do not use plaintext passwords for GitHub; GitHub
 password authentication is not an acceptable project workflow.
 
-Pre-push history gate: the current working tree tracks zero
-`analysis/phase2_baselines/` files, but local history still contains early
-Phase 2 artifact commits (`be8b52c` plus deletion commit `997a7a5`). Do not push
-this branch history as-is. Before first remote upload, create a clean
-publish/squash branch and verify the push candidate no longer contains Phase 2
-baseline result blobs.
-
 First GitHub publish is complete. Remote
 `https://github.com/zwtbb/multidatasets_mdd` has clean default branch `main`
 starting from root commit `a67cfdb` (`Publish clean experiment skeleton`), built
@@ -1526,6 +1520,14 @@ not contain local Phase 2 baseline result blobs, row-level prediction files,
 model weights, embeddings, raw data, or plaintext credentials. Continue future
 remote updates from the clean remote/main lineage or another verified clean
 publish path; do not push the old local `main` history directly.
+
+Current GitHub cleanup state as of 2026-09-02: local `/root/autodl-tmp` is on
+clean `main` tracking `origin/main`; GitHub exposes only `main` at clean
+publish commit `475360f` (`Publish MV24 fair ablation manuscript snapshot`).
+Old `origin/codex/*` branches were deleted, old local server-working branch
+refs/worktrees were removed, and unreachable Git objects were pruned. Continue
+future GitHub updates from clean `main` through the publish helper; do not
+resurrect old server-working branch history.
 
 Clean GitHub publish workflow is documented at
 `/root/autodl-tmp/docs/github_publish_workflow.md` and implemented by
@@ -1552,9 +1554,9 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    - MPDD individual-difference shortcut and subgroup calibration diagnostics:
      complete, with gender/health blocked by missing structured metadata.
    - Dataset-identity probes over reusable frozen representations: complete.
-3. Keep future GitHub updates on the clean remote/main lineage via
-   `scripts/publish_clean_github_snapshot.py`; do not push the old local
-   `main` history directly.
+3. Keep future GitHub updates on the clean `main`/`origin/main` lineage via
+   `scripts/publish_clean_github_snapshot.py`; do not recreate or push the old
+   server-working branch history.
 4. Use the Phase 5 full-method gate audit and consolidation inventory as the
    active claim boundary. MV09 revises identity-gate semantics,
    MV10/MV11/MV19/MV21 provide the primary label-only PHQ measurement evidence,

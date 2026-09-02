@@ -585,23 +585,29 @@ Secondary optional task:
 
 - Use `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` for GitHub
   updates.
-- Do not push the old local `main` history directly.
-- Current local working branch: `codex/daic-woz`; use `git log -1` for the
-  exact local snapshot and `git ls-remote origin refs/heads/main` for the exact
-  clean remote snapshot.
+- Current local working branch: clean `main`, tracking `origin/main`. Use
+  `git log -1` for the exact local snapshot and
+  `git ls-remote origin refs/heads/main` for the exact clean remote snapshot.
 - MV19 experiment-content local commit: `6def05240bbd5e5d068e8b1bca8bb9eb738f08f2`
   (`Run MV19 finite-sample PHQ simulation`).
 - Historical MV19 experiment-content clean remote `main` publish:
   `ab54aabab7b3b29fb157667892a7157639be980e`.
 - Clean remote publishes should use
   `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` from a committed
-  source tree rather than pushing this old local branch history.
+  source tree on the clean `main` lineage.
+- Latest GitHub cleanup/publish: clean `origin/main` is
+  `475360f` (`Publish MV24 fair ablation manuscript snapshot`), and the old
+  remote `codex/daic-woz`, `codex/main-result-table`, and
+  `codex/measurement-aware-architecture` branches were deleted.
 - GitHub authentication should use token or `gh` auth. Never write or use
   plaintext passwords in Git, scripts, memory, shell history, or logs.
 - Current cleanup policy: interpreter/notebook caches may be deleted without
   further approval; deleting local predictions, features, Phase 2 outputs,
   MV06 workbooks, raw datasets, environment caches, or the local original-plan
   note requires a separate user-approved storage cleanup.
+- MV27 four-domain binary benchmark remains local-only and is ignored by Git
+  unless the user explicitly decides to include it as a negative/diagnostic
+  supplement.
 
 Track:
 

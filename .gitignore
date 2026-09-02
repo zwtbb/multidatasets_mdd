@@ -88,6 +88,9 @@ analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/*.pkl
 analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/*.rds
 analysis/phase5_minimal_validation/p5_mv15_latent_conditioned_identity/*.RData
 analysis/phase5_minimal_validation/p5_mv19_phq_finite_sample_psychometric_simulation/local_*
+analysis/phase5_minimal_validation/p5_mv27_four_domain_binary_benchmark/
+memory/sessions/session_94_mv27_four_domain_binary_benchmark.md
+scripts/phase5_run_mv27_four_domain_binary_benchmark.py
 
 # Keep generated lightweight governance files versionable
 !datasets/registry.yaml
