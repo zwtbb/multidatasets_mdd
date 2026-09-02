@@ -602,11 +602,13 @@ Secondary optional task:
 - Clean remote publishes should use
   `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` from a committed
   source tree on the clean `main` lineage.
-- Latest GitHub cleanup/publish: clean `origin/main` is
-  `dd6dbcb` (`Record remote GitHub cleanup`). The preceding clean content
-  publish snapshot was `475360f` (`Publish MV24 fair ablation manuscript
-  snapshot`). The old remote `codex/daic-woz`, `codex/main-result-table`, and
-  `codex/measurement-aware-architecture` branches were deleted.
+- Latest GitHub cleanup/publish: clean `origin/main` exposes only `main`; use
+  `git ls-remote origin refs/heads/main` for the exact current remote commit.
+  Stable anchors are `475360f` (`Publish MV24 fair ablation manuscript
+  snapshot`) for the MV24 content publish and `dd6dbcb` (`Record remote GitHub
+  cleanup`) for branch/worktree cleanup. The old remote `codex/daic-woz`,
+  `codex/main-result-table`, and `codex/measurement-aware-architecture`
+  branches were deleted.
 - GitHub authentication should use token or `gh` auth. Never write or use
   plaintext passwords in Git, scripts, memory, shell history, or logs.
 - Current cleanup policy: interpreter/notebook caches may be deleted without

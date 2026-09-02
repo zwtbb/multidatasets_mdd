@@ -1529,13 +1529,17 @@ remote updates from the clean remote/main lineage or another verified clean
 publish path; do not push the old local `main` history directly.
 
 Current GitHub cleanup state as of 2026-09-03: local `/root/autodl-tmp` is on
-clean `main` tracking `origin/main`; GitHub exposes only `main` at
-`dd6dbcb` (`Record remote GitHub cleanup`). The preceding clean content publish
-snapshot was `475360f` (`Publish MV24 fair ablation manuscript snapshot`). Old
-`origin/codex/*` branches were deleted, old local server-working branch
-refs/worktrees were removed, and unreachable Git objects were pruned. Continue
-future GitHub updates from clean `main` through the publish helper; do not
-resurrect old server-working branch history.
+clean `main` tracking `origin/main`; GitHub exposes only `main`. Use
+`git ls-remote origin refs/heads/main` for the exact current remote commit,
+because the clean publish helper may recreate a same-tree source commit on the
+clean remote lineage. Stable cleanup anchors are `475360f` (`Publish MV24 fair
+ablation manuscript snapshot`) for the MV24 content publish and `dd6dbcb`
+(`Record remote GitHub cleanup`) for the branch/worktree cleanup record; later
+clean planning snapshots may sit on top. Old `origin/codex/*` branches were
+deleted, old local server-working branch refs/worktrees were removed, and
+unreachable Git objects were pruned. Continue future GitHub updates from clean
+`main` through the publish helper; do not resurrect old server-working branch
+history.
 
 Clean GitHub publish workflow is documented at
 `/root/autodl-tmp/docs/github_publish_workflow.md` and implemented by

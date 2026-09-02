@@ -19,7 +19,9 @@ claims, sync Feishu, delete raw datasets, or delete reusable model/data caches.
 - A cleanup-record commit was later pushed on clean `main` as `dd6dbcb`
   (`Record remote GitHub cleanup`).
 - Local `/root/autodl-tmp` now sits on clean `main` tracking `origin/main`.
-- GitHub remote branch inventory now contains only `main` at `dd6dbcb`.
+- At the end of this cleanup task, GitHub remote branch inventory contained
+  only `main` at `dd6dbcb`; later clean planning snapshots may advance `main`.
+  Use `git ls-remote origin refs/heads/main` for the exact current commit.
 - Old remote branches `codex/daic-woz`, `codex/main-result-table`, and
   `codex/measurement-aware-architecture` were deleted.
 - Old local server-working branch refs and stale worktrees were removed after
