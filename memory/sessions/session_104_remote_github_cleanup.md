@@ -16,8 +16,10 @@ claims, sync Feishu, delete raw datasets, or delete reusable model/data caches.
   branch as `c0cd6e9` (`Update MV24 fair ablations and manuscript claims`).
 - The clean publish helper then published the same tree to GitHub `main` as
   `475360f` (`Publish MV24 fair ablation manuscript snapshot`).
+- A cleanup-record commit was later pushed on clean `main` as `dd6dbcb`
+  (`Record remote GitHub cleanup`).
 - Local `/root/autodl-tmp` now sits on clean `main` tracking `origin/main`.
-- GitHub remote branch inventory now contains only `main` at `475360f`.
+- GitHub remote branch inventory now contains only `main` at `dd6dbcb`.
 - Old remote branches `codex/daic-woz`, `codex/main-result-table`, and
   `codex/measurement-aware-architecture` were deleted.
 - Old local server-working branch refs and stale worktrees were removed after

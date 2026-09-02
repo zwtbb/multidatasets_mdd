@@ -369,6 +369,13 @@ Main next task:
   threshold DIF and does not overturn the real-data near-tie. Session memory:
   `/root/autodl-tmp/memory/sessions/session_103_mv24_targeted_item_and_dif_simulation.md`.
 
+- A 2026-09-03 planning pass recorded the user's current manuscript decisions:
+  write toward ACM-style submission requirements, keep the main positioning as
+  a higher-value measurement-aware framework / benchmark-validity study rather
+  than an architecture-SOTA paper, and leave MV27's four-domain binary negative
+  result out of the main paper. Session memory:
+  `/root/autodl-tmp/memory/sessions/session_105_acm_framework_gap_planning.md`.
+
 - MV27 four-domain binary benchmark has been completed locally but not
   committed. The user flagged two fairness problems in the first version, and
   the current script fixes them: `GraphTargetAwareNet` now uses
@@ -596,8 +603,9 @@ Secondary optional task:
   `/root/autodl-tmp/scripts/publish_clean_github_snapshot.py` from a committed
   source tree on the clean `main` lineage.
 - Latest GitHub cleanup/publish: clean `origin/main` is
-  `475360f` (`Publish MV24 fair ablation manuscript snapshot`), and the old
-  remote `codex/daic-woz`, `codex/main-result-table`, and
+  `dd6dbcb` (`Record remote GitHub cleanup`). The preceding clean content
+  publish snapshot was `475360f` (`Publish MV24 fair ablation manuscript
+  snapshot`). The old remote `codex/daic-woz`, `codex/main-result-table`, and
   `codex/measurement-aware-architecture` branches were deleted.
 - GitHub authentication should use token or `gh` auth. Never write or use
   plaintext passwords in Git, scripts, memory, shell history, or logs.

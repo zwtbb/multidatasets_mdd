@@ -122,6 +122,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_102_mv24_fair_ablation_gate.md`
   - `/root/autodl-tmp/memory/sessions/session_103_mv24_targeted_item_and_dif_simulation.md`
   - `/root/autodl-tmp/memory/sessions/session_104_remote_github_cleanup.md`
+  - `/root/autodl-tmp/memory/sessions/session_105_acm_framework_gap_planning.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -399,6 +400,12 @@ MPDD 2025 is intentionally out of scope for current auditing.
   source+target multitask is best in E-DAIC-to-CMDC. Do not write it as a direct
   full-vs-all zero-shot/unsupervised baseline win, and do not claim that Table 3
   proves target-side measurement modeling as the unique source of the gain.
+  On 2026-09-03 the user confirmed three manuscript decisions for the next
+  revision: use ACM-style submission requirements as the working format target,
+  keep the paper positioned as a higher-value measurement-aware framework /
+  benchmark-validity study rather than an architecture-SOTA paper, and exclude
+  MV27's four-domain binary negative result from the main paper unless later
+  explicitly revived as supplement-only diagnostic evidence.
   MV25 adds the cleaned DAIC/E-DAIC provenance and controlled corpus-identity
   diagnostics at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv25_provenance_controlled_identity/`.
@@ -1521,10 +1528,11 @@ model weights, embeddings, raw data, or plaintext credentials. Continue future
 remote updates from the clean remote/main lineage or another verified clean
 publish path; do not push the old local `main` history directly.
 
-Current GitHub cleanup state as of 2026-09-02: local `/root/autodl-tmp` is on
-clean `main` tracking `origin/main`; GitHub exposes only `main` at clean
-publish commit `475360f` (`Publish MV24 fair ablation manuscript snapshot`).
-Old `origin/codex/*` branches were deleted, old local server-working branch
+Current GitHub cleanup state as of 2026-09-03: local `/root/autodl-tmp` is on
+clean `main` tracking `origin/main`; GitHub exposes only `main` at
+`dd6dbcb` (`Record remote GitHub cleanup`). The preceding clean content publish
+snapshot was `475360f` (`Publish MV24 fair ablation manuscript snapshot`). Old
+`origin/codex/*` branches were deleted, old local server-working branch
 refs/worktrees were removed, and unreachable Git objects were pruned. Continue
 future GitHub updates from clean `main` through the publish helper; do not
 resurrect old server-working branch history.
