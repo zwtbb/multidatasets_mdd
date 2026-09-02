@@ -1,0 +1,9 @@
+scope_id,output_model,metric,mean,std,seed_count
+S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Macro Item MAE,0.6927365787854413,0.008424534323936875,5
+S2_predicted_theta_output_identity,B3_itemwise_theta,Observed Total MAE,4.208973214896838,0.039848694829835773,5
+S2_predicted_theta_output_identity,B3_itemwise_theta,Theta MAE,0.6876405944078792,0.015510289595430457,5
+S2_predicted_theta_output_identity,predicted_total,Normalized Total MAE,0.17616583132264152,0.0018815490495132246,5
+S2_predicted_theta_output_identity,predicted_total,Raw Total MAE,4.227979951743396,0.04515717718831748,5
+S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Macro Item MAE,0.687388128680521,0.008084293976351499,5
+S2_predicted_theta_output_identity,psychometric_predicted_theta,Observed Total MAE,4.283149594358096,0.0521403209717399,5
+S2_predicted_theta_output_identity,psychometric_predicted_theta,Theta MAE,0.6866691265663686,0.014206265264909963,5

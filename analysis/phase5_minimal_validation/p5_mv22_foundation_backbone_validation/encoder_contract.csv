@@ -1,0 +1,2 @@
+encoder,model_name,pooling,input_prefix,max_length,chunk_batch_size,expected_dimension,feature_column_prefix,source_url,source_contract,downstream_feature_column_contract
+qwen3_embedding_0_6b,Qwen/Qwen3-Embedding-0.6B,last_token,,2048,2,1024,bge_,https://huggingface.co/Qwen/Qwen3-Embedding-0.6B,"Qwen3 text embedding foundation backbone; MV22 uses the official last-token pooling pattern, no task instruction, 2048-token chunks, and local-only subject feature caches.",legacy bge_ columns retained for MV07/MV12/MV15 interface compatibility

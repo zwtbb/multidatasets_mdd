@@ -1,0 +1,13 @@
+transfer_id,supervision_regime,method,seeds,target_calibration_labels,labeled_target_calib_n,target_eval_n,macro_item_mae_ci95,calibration_mae_ci95,reconstruction_calibration_score_ci95,total_mae_ci95,post_head_domain_ba_ci95,same_budget_measurement_aware_vs_method
+cmdc_to_edaic_phq_shared,zero_target_label,erm,5,no,0,153,"1.039 [0.983, 1.094]","0.734 [0.673, 0.795]","1.773 [1.657, 1.889]","5.724 [5.436, 6.012]","0.809 [0.560, 1.000]",
+cmdc_to_edaic_phq_shared,zero_target_label,coral,5,no,0,153,"1.014 [0.970, 1.057]","0.677 [0.619, 0.735]","1.691 [1.591, 1.791]","6.498 [5.977, 7.019]","0.343 [0.263, 0.423]",
+cmdc_to_edaic_phq_shared,zero_target_label,mmd,5,no,0,153,"1.044 [0.735, 1.354]","1.030 [0.728, 1.333]","2.074 [1.463, 2.686]","5.870 [4.921, 6.820]","0.746 [0.456, 1.000]",
+cmdc_to_edaic_phq_shared,zero_target_label,dann,5,no,0,153,"1.438 [1.382, 1.494]","0.744 [0.674, 0.815]","2.182 [2.058, 2.306]","7.346 [7.025, 7.667]",,
+cmdc_to_edaic_phq_shared,zero_target_label,strongest_foundation_baseline,5,no,0,153,"0.949 [0.900, 0.998]","0.588 [0.510, 0.666]","1.537 [1.428, 1.646]","6.118 [5.740, 6.497]","0.620 [0.525, 0.715]",
+cmdc_to_edaic_phq_shared,zero_target_label,latent_only,5,no,0,153,"1.055 [1.006, 1.105]","0.735 [0.691, 0.780]","1.791 [1.701, 1.881]","6.751 [6.260, 7.241]","0.553 [0.517, 0.588]",
+edaic_to_cmdc_phq_shared,zero_target_label,erm,5,no,0,20,"1.151 [0.970, 1.331]","0.911 [0.794, 1.029]","2.062 [1.766, 2.358]","7.469 [6.070, 8.867]","1.000 [1.000, 1.000]",
+edaic_to_cmdc_phq_shared,zero_target_label,coral,5,no,0,20,"0.950 [0.899, 1.001]","0.462 [0.361, 0.564]","1.413 [1.280, 1.546]","6.858 [6.402, 7.313]","0.475 [0.418, 0.531]",
+edaic_to_cmdc_phq_shared,zero_target_label,mmd,5,no,0,20,"0.980 [0.904, 1.057]","0.451 [0.350, 0.552]","1.431 [1.316, 1.547]","6.164 [5.625, 6.704]","0.522 [0.462, 0.581]",
+edaic_to_cmdc_phq_shared,zero_target_label,dann,5,no,0,20,"1.264 [1.037, 1.491]","0.910 [0.684, 1.137]","2.174 [1.744, 2.605]","8.599 [6.651, 10.547]",,
+edaic_to_cmdc_phq_shared,zero_target_label,strongest_foundation_baseline,5,no,0,20,"1.738 [1.626, 1.849]","1.625 [1.476, 1.774]","3.363 [3.104, 3.621]","13.143 [12.027, 14.258]","0.979 [0.974, 0.983]",
+edaic_to_cmdc_phq_shared,zero_target_label,latent_only,5,no,0,20,"1.861 [1.763, 1.959]","1.802 [1.684, 1.920]","3.663 [3.449, 3.877]","14.469 [13.547, 15.392]","0.980 [0.973, 0.988]",

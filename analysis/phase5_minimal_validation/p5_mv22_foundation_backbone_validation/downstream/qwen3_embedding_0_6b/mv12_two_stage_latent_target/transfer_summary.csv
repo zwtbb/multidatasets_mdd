@@ -1,0 +1,3 @@
+protocol,target_dataset,m12a_theta_mae,m12a_delta_theta_mae_vs_B0,m12a_delta_theta_mae_vs_B3,m12a_observed_macro_mae,m12a_delta_observed_macro_mae_vs_B3,transfer_theta_beats_B0,transfer_observed_non_degraded_vs_B3
+cross_cmdc_to_edaic_phq,edaic,0.7239404017538589,0.03187339712078141,-0.005067388131717143,0.7332825446955591,-0.13575962658962848,False,True
+cross_edaic_to_cmdc_phq,cmdc,0.9166484013308576,-0.04834520696249722,0.012348005822094832,0.8550781771523829,-0.027631364879168507,True,True

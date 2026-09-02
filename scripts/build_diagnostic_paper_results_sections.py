@@ -58,6 +58,13 @@ MV16_SUMMARY = PHASE5_DIR / "p5_mv16_dif_guided_calibration" / "run_summary.json
 MV17A_DIR = PHASE5_DIR / "p5_mv17a_multilingual_feature_contract"
 MV17A_SUMMARY = MV17A_DIR / "run_summary.json"
 MV17A_DOWNSTREAM = MV17A_DIR / "downstream"
+MV21_DIR = PHASE5_DIR / "p5_mv21_measurement_discrepancy_gradient"
+MV21_SUMMARY = MV21_DIR / "run_summary.json"
+MV21_PHQ_DELTAS = MV21_DIR / "phq_shared_conditioned_deltas.csv"
+MV21_HAMD_DELTAS = MV21_DIR / "hamd_conditioned_deltas.csv"
+MV21_HAMD_CORR_DELTAS = MV21_DIR / "hamd_item_correlation_delta_summary.csv"
+MV21_DAIC_PAIRED = MV21_DIR / "daicwoz_edaic_paired_item_differences.csv"
+MV21_DAIC_DELTAS = MV21_DIR / "daicwoz_edaic_conditioned_deltas.csv"
 DEFAULT_OUT_DIR = PAPER_DIR
 
 TRACKED_FILES = [
@@ -153,6 +160,12 @@ def require_inputs() -> None:
         MV15_SUMMARY,
         MV16_SUMMARY,
         MV17A_SUMMARY,
+        MV21_SUMMARY,
+        MV21_PHQ_DELTAS,
+        MV21_HAMD_DELTAS,
+        MV21_HAMD_CORR_DELTAS,
+        MV21_DAIC_PAIRED,
+        MV21_DAIC_DELTAS,
     ]:
         if not path.exists():
             raise FileNotFoundError(path)
@@ -336,6 +349,56 @@ def phase3_context() -> dict[str, Any]:
     }
 
 
+def top_abs_delta(
+    frame: pd.DataFrame,
+    value_col: str = "item_mean_diff_left_minus_right",
+    sparse_col: str = "sparse_comparison",
+) -> pd.Series:
+    data = frame.copy()
+    if sparse_col in data.columns:
+        data = data[~data[sparse_col].astype(bool)].copy()
+    if data.empty:
+        raise ValueError("no non-sparse MV21 delta rows")
+    data["abs_delta"] = pd.to_numeric(data[value_col], errors="coerce").abs()
+    return data.sort_values("abs_delta", ascending=False, na_position="last").iloc[0]
+
+
+def load_mv21_context() -> dict[str, Any]:
+    summary = read_json(MV21_SUMMARY)
+    phq = pd.read_csv(MV21_PHQ_DELTAS)
+    hamd = pd.read_csv(MV21_HAMD_DELTAS)
+    hamd_corr = pd.read_csv(MV21_HAMD_CORR_DELTAS)
+    daic_paired = pd.read_csv(MV21_DAIC_PAIRED)
+    daic_delta = pd.read_csv(MV21_DAIC_DELTAS)
+
+    phq_top = top_abs_delta(phq)
+    hamd_top = top_abs_delta(hamd)
+    daic_top = top_abs_delta(daic_delta)
+    hamd_corr_top = hamd_corr.dropna(subset=["abs_spearman_delta"]).sort_values(
+        "abs_spearman_delta", ascending=False
+    ).iloc[0]
+    return {
+        "mv21_summary": summary,
+        "mv21_daic_exact_min": float(pd.to_numeric(daic_paired["exact_match_rate"], errors="coerce").min()),
+        "mv21_daic_mean_abs_max": float(pd.to_numeric(daic_paired["mean_abs_difference"], errors="coerce").max()),
+        "mv21_daic_max_conditioned_abs_delta": abs(float(daic_top["item_mean_diff_left_minus_right"])),
+        "mv21_phq_top_item": str(phq_top["item_id"]),
+        "mv21_phq_top_label": str(phq_top["item_label_short"]),
+        "mv21_phq_top_bin": str(phq_top["condition_bin"]),
+        "mv21_phq_top_min_subjects": int(phq_top["min_subjects"]),
+        "mv21_phq_top_mean_delta": float(phq_top["item_mean_diff_left_minus_right"]),
+        "mv21_phq_top_p_ge_2_delta": float(phq_top["p_ge_2_diff_left_minus_right"]),
+        "mv21_hamd_top_item": str(hamd_top["item_id"]),
+        "mv21_hamd_top_scope": str(hamd_top["scope"]),
+        "mv21_hamd_top_bin": str(hamd_top["condition_bin"]),
+        "mv21_hamd_top_min_subjects": int(hamd_top["min_subjects"]),
+        "mv21_hamd_top_mean_delta": float(hamd_top["item_mean_diff_left_minus_right"]),
+        "mv21_hamd_top_p_ge_2_delta": float(hamd_top["p_ge_2_diff_left_minus_right"]),
+        "mv21_hamd_corr_pair": f"{hamd_corr_top['left_item_id']}-{hamd_corr_top['right_item_id']}",
+        "mv21_hamd_corr_abs_delta": float(hamd_corr_top["abs_spearman_delta"]),
+    }
+
+
 def phase5_context() -> dict[str, Any]:
     findings = pd.read_csv(PAPER_FINDINGS).set_index("finding_id")
     claims = pd.read_csv(PAPER_CLAIMS).set_index("claim_id")
@@ -392,9 +455,11 @@ def phase5_context() -> dict[str, Any]:
     mv15_outputs = mv15["outputs"]
     mv16_v = mv16["verdict"]
     mv17a_ctx = load_mv17a_context()
+    mv21_ctx = load_mv21_context()
 
     return {
         **mv17a_ctx,
+        **mv21_ctx,
         "finding_gate": manuscript_text(findings.loc["gate_status", "finding"]),
         "finding_rq1": manuscript_text(findings.loc["rq1_measurement_negative", "finding"]),
         "finding_mv09": manuscript_text(findings.loc["mv09_conditional_identity_gate", "finding"]),
@@ -406,6 +471,7 @@ def phase5_context() -> dict[str, Any]:
             findings.loc["mirt_parameterization_correctness_audit", "finding"]
         ),
         "finding_mv19": manuscript_text(findings.loc["mv19_finite_sample_phq_simulation", "finding"]),
+        "finding_mv21": manuscript_text(findings.loc["mv21_measurement_discrepancy_gradient", "finding"]),
         "finding_mv20": manuscript_text(findings.loc["mv20_criterion_overlap_stress", "finding"]),
         "finding_mv15_design": manuscript_text(findings.loc["mv15_latent_conditioned_identity_design", "finding"]),
         "finding_mv15": manuscript_text(findings.loc["mv15_latent_conditioned_identity_run", "finding"]),
@@ -580,6 +646,12 @@ def build_source_map() -> pd.DataFrame:
         },
         {
             "section": "Measurement Results",
+            "source_artifact_id": "mv21_measurement_discrepancy_gradient",
+            "source_path": rel(MV21_SUMMARY),
+            "use": "MV21 PHQ shared-item descriptive/severity-conditioned analysis, CMDC/PDCH HAMD same-scale descriptive control, and DAIC-WOZ/E-DAIC same-lineage PHQ-8 control",
+        },
+        {
+            "section": "Measurement Results",
             "source_artifact_id": "mv20_criterion_overlap_stress",
             "source_path": rel(MV20_SUMMARY),
             "use": "MV20 CMDC-only criterion-overlap deletion stress and stop rule",
@@ -700,6 +772,19 @@ def build_claim_checklist(ctx2: dict[str, Any], ctx3: dict[str, Any], ctx5: dict
             "guardrail": "Do not call C02/C06 a robust standalone DIF conclusion at the observed N.",
         },
         {
+            "claim_scope": "Measurement-discrepancy gradient",
+            "claim_status": "supported_descriptive",
+            "evidence": (
+                f"MV21 DAIC-WOZ/E-DAIC same-lineage PHQ-8 control has paired exact-match minimum "
+                f"{fmt(ctx5['mv21_daic_exact_min'])} and max severity-conditioned delta "
+                f"{fmt(ctx5['mv21_daic_max_conditioned_abs_delta'])}; E-DAIC/CMDC PHQ top "
+                f"conditioned delta is {ctx5['mv21_phq_top_item']} {fmt(ctx5['mv21_phq_top_mean_delta'])}; "
+                f"CMDC/PDCH HAMD top conditioned delta is {ctx5['mv21_hamd_top_item']} "
+                f"{fmt(ctx5['mv21_hamd_top_mean_delta'])}."
+            ),
+            "guardrail": "Do not treat DAIC-WOZ as an independent corpus and do not call MV21 HAMD a formal invariance or DIF model.",
+        },
+        {
             "claim_scope": "MV13/MV14 mirt parameterization",
             "claim_status": mirt_claim_status,
             "evidence": mirt_evidence,
@@ -817,6 +902,8 @@ def write_markdown(
         "",
         f"The psychometric sequence supplies the paper's sharper target story. MV10 shows that E-DAIC PHQ-8 and CMDC PHQ-9 exhibit substantial common PHQ structure: the configural screen passes, loading congruence is `0.998`, and `7/8` items pass the approximate metric-loading screen. Exact threshold/scalar equivalence is not uniformly supported, with only `4/8` candidate anchors (`C01`, `C04`, `C05`, `C07`). MV11 formal graded-response IRT confirmation preserves those four anchors, flags no strong loading DIF, and flags threshold DIF for `C02` and `C06`, while AIC favors the partial model and BIC favors the scalar model. MV13 external R mirt replication preserves the same qualitative anchor/DIF pattern, with no loading-DIF flags and threshold-DIF flags on `C02` and `C06`, but retains a configural convergence warning. MV14 then makes that warning explicit: the convergence-safe full ladder has `{ctx5['mv14_core_effective_draws']}/{ctx5['mv14_core_attempted_draws']}` effective draws after `{ctx5['mv14_core_fit_success_draws']}` fit-success draws, configural converges in `{ctx5['mv14_configural_converged_draws']}/{ctx5['mv14_core_attempted_draws']}`, and the stable metric/partial/scalar ladder has `{ctx5['mv14_stable_ladder_effective_draws']}` effective draws with AIC/BIC favoring `{ctx5['mv14_stable_ladder_best_aic_model']}`/`{ctx5['mv14_stable_ladder_best_bic_model']}`. {mirt_sequence_sentence} MV19 adds the observed-N stress test: H0 C02/C06 both-flag false rate is `{fmt(ctx5['mv19_h0_target_both_false_rate'])}`, H1 C02/C06 both-flag recovery is `{fmt(ctx5['mv19_h1_target_both_recovery_rate'])}`, H1 top-two recovery is `{fmt(ctx5['mv19_h1_target_top2_recovery_rate'])}`, and H1 anchor subset recovery is `{fmt(ctx5['mv19_h1_anchor_subset_recovery_rate'])}`. {ctx5['finding_mirt_audit']} {ctx5['finding_mv14']} {ctx5['finding_mv19']} The conservative manuscript claim is therefore substantial structural similarity with repeated but finite-sample-bounded localized C02/C06 threshold-shift evidence, {mirt_conservative_boundary}.",
         "",
+        f"MV21 adds the descriptive measurement-discrepancy gradient requested for manuscript readability. Level 1 is a same-scale, same-language, same-protocol-lineage control: DAIC-WOZ train/dev has `{ctx5['mv21_summary']['daicwoz_train_dev_rows']}` official item rows, `{ctx5['mv21_summary']['daicwoz_train_dev_item_subjects']}` complete item-labeled subjects, and `{ctx5['mv21_summary']['daicwoz_incomplete_item_rows']}` incomplete item row. Because DAIC-WOZ and E-DAIC have high source-lineage and subject overlap, this is not an independent-corpus comparison; it is a control view. On paired overlapping train/dev subjects, the minimum item exact-match rate is `{fmt(ctx5['mv21_daic_exact_min'])}`, the maximum mean absolute paired item difference is `{fmt(ctx5['mv21_daic_mean_abs_max'])}`, and the maximum non-sparse item-excluded severity-conditioned item-mean delta is `{fmt(ctx5['mv21_daic_max_conditioned_abs_delta'])}`. Level 2 is the main PHQ shared-item comparison: E-DAIC/CMDC use `{ctx5['mv21_summary']['phq_edaic_subjects']}`/`{ctx5['mv21_summary']['phq_cmdc_subjects']}` item-labeled subjects, and the largest non-sparse severity-conditioned contrast is `{ctx5['mv21_phq_top_item']}` ({ctx5['mv21_phq_top_label']}) in the `{ctx5['mv21_phq_top_bin']}` bin, E-DAIC minus CMDC mean delta `{fmt(ctx5['mv21_phq_top_mean_delta'])}` and P>=2 delta `{fmt(ctx5['mv21_phq_top_p_ge_2_delta'])}`. Level 3 is the same-HAMD exploratory control: CMDC/PDCH use `{ctx5['mv21_summary']['hamd_cmdc_subjects']}`/`{ctx5['mv21_summary']['hamd_pdch_subjects']}` subjects, with the largest non-sparse severity-conditioned item delta `{ctx5['mv21_hamd_top_item']}` in `{ctx5['mv21_hamd_top_scope']}`/`{ctx5['mv21_hamd_top_bin']}` (CMDC minus PDCH mean `{fmt(ctx5['mv21_hamd_top_mean_delta'])}`) and the largest descriptive HAMD item-pair Spearman delta `{ctx5['mv21_hamd_corr_pair']}` (`{fmt(ctx5['mv21_hamd_corr_abs_delta'])}`). This supports a graded discrepancy argument: differences are small in the DAIC-WOZ/E-DAIC same-lineage PHQ-8 control, larger in cross-language/cross-protocol E-DAIC/CMDC PHQ shared items, and still visible under exploratory same-scale CMDC/PDCH HAMD; it does not introduce HAMD MIM/IRT or a formal HAMD invariance claim.",
+        "",
         "MV17a then asks whether the legacy Chinese-BGE feature-chain conclusion survives a corrected multilingual feature contract. It makes BGE-M3 the primary encoder and multilingual-E5 the sensitivity encoder, regenerates subject-level text features for E-DAIC, CMDC, and PDCH, and reruns the paper-critical MV07/MV12/MV15 chain. The coarse gates replicate: MV07, MV12, and MV15 remain blocked for both encoders. The fine-grained mechanism, however, is not identical across encoders:",
         "",
         ctx5["mv17a_sensitivity_table"],
@@ -836,6 +923,7 @@ def write_markdown(
         "- Do not call scale-specific post-head identity a hard shared-latent failure unless the output space is explicitly shared.",
         "- Do not use MV12 or MV17a as positive full-method evidence; MV17a keeps the multilingual feature-contract chain blocked.",
         f"- {mirt_guardrail}",
+        "- Use MV21 as descriptive severity-conditioned reinforcement only: DAIC-WOZ/E-DAIC is a same-lineage control, not an independent corpus; CMDC/PDCH HAMD is exploratory same-scale support, not formal HAMD invariance or MIM/IRT.",
         "- Do not claim universal zero-shot external theta transfer failure or universal B3 Pareto dominance; MV17a shows both are encoder-dependent.",
         "- Do not use low one-dimensional output identity as evidence that upstream BGE features are dataset-invariant; MV15 keeps feature identity high after theta and severity conditioning.",
         "- Do not use MV16 as a positive method claim; its few-shot calibration ladder is bounded/negative and keeps full-method construction blocked.",

@@ -1,0 +1,1561 @@
+transfer_id,method,method_rank,seed,target_calibration_labels_used,target_calibration_count,target_evaluation_count,analysis_level,item_set_id,item_display,item_ids,item_count,audit_role,item_order,item_mae
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item,C01,C01,C01,1,anchor,1,1.2237901874617034
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.2217775918299856
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item,C03,C03,C03,1,other,3,1.1954886243234273
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item,C04,C04,C04,1,anchor,4,1.0793449052798203
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item,C05,C05,C05,1,anchor,5,0.9481578153722426
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8906237782995685
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item,C07,C07,C07,1,anchor,7,1.305842680089614
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item,C08,C08,C08,1,other,8,0.3587021671868617
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.027965968730403
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.139283897050845
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0562006850647772
+cmdc_to_edaic_phq_shared,erm,0,0,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7770953957551445
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item,C01,C01,C01,1,anchor,1,1.0553544985702614
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.0254204693962545
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item,C03,C03,C03,1,other,3,1.2097706514246322
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item,C04,C04,C04,1,anchor,4,1.1332096773035385
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item,C05,C05,C05,1,anchor,5,0.8551771375868056
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8927512075386795
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item,C07,C07,C07,1,anchor,7,1.2967979082095078
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item,C08,C08,C08,1,other,8,0.4069569905598958
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.984429817573697
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0851348054175283
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9590858384674671
+cmdc_to_edaic_phq_shared,erm,0,1,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8083638209922641
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item,C01,C01,C01,1,anchor,1,1.259303173987694
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.1694422305798997
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item,C03,C03,C03,1,other,3,1.1728677188648897
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item,C04,C04,C04,1,anchor,4,1.0817364462060866
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item,C05,C05,C05,1,anchor,5,0.8722173154743669
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8583608483956531
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item,C07,C07,C07,1,anchor,7,1.4003311855341094
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item,C08,C08,C08,1,other,8,0.3451285892062717
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0199234385311213
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.1533970303005643
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0139015394877764
+cmdc_to_edaic_phq_shared,erm,0,2,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7589981540355807
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item,C01,C01,C01,1,anchor,1,1.3509155472898795
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.180999755859375
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item,C03,C03,C03,1,other,3,1.2195534300959967
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item,C04,C04,C04,1,anchor,4,1.0410989250232972
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item,C05,C05,C05,1,anchor,5,0.9004075792100694
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8871213626238256
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item,C07,C07,C07,1,anchor,7,1.4645816578584558
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item,C08,C08,C08,1,other,8,0.3975883808011323
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.055283329845254
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.1892509273454255
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0340605592416003
+cmdc_to_edaic_phq_shared,erm,0,3,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8085709054485645
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item,C01,C01,C01,1,anchor,1,1.3422474580652572
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.2509590971703624
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item,C03,C03,C03,1,other,3,1.2136344161688113
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item,C04,C04,C04,1,anchor,4,1.099819887697307
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item,C05,C05,C05,1,anchor,5,0.909215989455678
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8616930893044067
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item,C07,C07,C07,1,anchor,7,1.744137433619281
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item,C08,C08,C08,1,other,8,0.41951579673617495
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.10515289602716
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.2738551922093808
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0563260932373846
+cmdc_to_edaic_phq_shared,erm,0,4,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8165751064524931
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item,C01,C01,C01,1,anchor,1,1.101006487664444
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.1512889224013276
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item,C03,C03,C03,1,other,3,1.1931834088553206
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item,C04,C04,C04,1,anchor,4,1.1551998749837962
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item,C05,C05,C05,1,anchor,5,1.0340623272692455
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9342586475430555
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item,C07,C07,C07,1,anchor,7,1.036097528011191
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item,C08,C08,C08,1,other,8,0.8296462710949842
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0543429334779206
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0815915544821693
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0427737849721916
+cmdc_to_edaic_phq_shared,coral,1,0,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.0114148399751524
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item,C01,C01,C01,1,anchor,1,1.005137941806145
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.113477950863954
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item,C03,C03,C03,1,other,3,1.210509642069928
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item,C04,C04,C04,1,anchor,4,1.1163742279913884
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item,C05,C05,C05,1,anchor,5,0.9688319546152272
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9104251314085464
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item,C07,C07,C07,1,anchor,7,0.9425463838125366
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item,C08,C08,C08,1,other,8,0.8506397239892786
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0147428695696254
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0082226270563244
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0119515411362503
+cmdc_to_edaic_phq_shared,coral,1,1,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.0305746830296032
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item,C01,C01,C01,1,anchor,1,1.0245473004049725
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.0516285519876512
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item,C03,C03,C03,1,other,3,1.2221867559002895
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item,C04,C04,C04,1,anchor,4,1.1384149830837071
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item,C05,C05,C05,1,anchor,5,1.0256314704383365
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9359773632893765
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item,C07,C07,C07,1,anchor,7,0.9678782565592259
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item,C08,C08,C08,1,other,8,0.8211670467550897
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.023428966052331
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0391180026215605
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9938029576385138
+cmdc_to_edaic_phq_shared,coral,1,2,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.0216769013276896
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item,C01,C01,C01,1,anchor,1,0.9934749930512672
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.0756345229357287
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item,C03,C03,C03,1,other,3,1.1662015514996122
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item,C04,C04,C04,1,anchor,4,1.024578714437381
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item,C05,C05,C05,1,anchor,5,0.8860119293912564
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8757629157135299
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item,C07,C07,C07,1,anchor,7,0.907820535921096
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item,C08,C08,C08,1,other,8,0.7343380803035365
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9579779054066759
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9529715432002501
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9756987193246293
+cmdc_to_edaic_phq_shared,coral,1,3,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9502698159015743
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item,C01,C01,C01,1,anchor,1,1.0665563418487318
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.1381536368524132
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item,C03,C03,C03,1,other,3,1.1322157063515357
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item,C04,C04,C04,1,anchor,4,1.045363443008825
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item,C05,C05,C05,1,anchor,5,1.0143534449276095
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9237552581756723
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item,C07,C07,C07,1,anchor,7,0.9970257574680195
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item,C08,C08,C08,1,other,8,0.8202018941436084
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.017203185347052
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0308247468132965
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0309544475140426
+cmdc_to_edaic_phq_shared,coral,1,4,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9762088002475722
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item,C01,C01,C01,1,anchor,1,0.7320261437908496
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item,C02,C02,C02,1,threshold_shift,2,2.1372549019607843
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item,C03,C03,C03,1,other,3,1.0522875816993464
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item,C04,C04,C04,1,anchor,4,1.1045751633986929
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item,C05,C05,C05,1,anchor,5,0.9607843137254902
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8954248366013072
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item,C07,C07,C07,1,anchor,7,0.6928104575163399
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item,C08,C08,C08,1,other,8,0.35947712418300654
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9918300653594772
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8725490196078431
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.5163398692810457
+cmdc_to_edaic_phq_shared,mmd,2,0,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7058823529411765
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item,C01,C01,C01,1,anchor,1,0.673202614379085
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item,C02,C02,C02,1,threshold_shift,2,2.1633986928104574
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item,C03,C03,C03,1,other,3,1.1111111111111112
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item,C04,C04,C04,1,anchor,4,1.1830065359477124
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item,C05,C05,C05,1,anchor,5,0.869281045751634
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item,C06,C06,C06,1,threshold_shift,6,2.104575163398693
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item,C07,C07,C07,1,anchor,7,0.7516339869281046
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item,C08,C08,C08,1,other,8,2.607843137254902
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.4330065359477124
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.869281045751634
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,2.133986928104575
+cmdc_to_edaic_phq_shared,mmd,2,1,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.8594771241830066
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item,C01,C01,C01,1,anchor,1,0.7254901960784313
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8139691454133177
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item,C03,C03,C03,1,other,3,1.091503267973856
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item,C04,C04,C04,1,anchor,4,1.1176470588235294
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item,C05,C05,C05,1,anchor,5,0.954248366013072
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.869281045751634
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item,C07,C07,C07,1,anchor,7,0.7516339869281046
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item,C08,C08,C08,1,other,8,2.6912088892818278
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.1268727445329716
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8872549019607843
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8416250955824759
+cmdc_to_edaic_phq_shared,mmd,2,2,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.8913560786278418
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item,C01,C01,C01,1,anchor,1,0.7254901960784313
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8300653594771242
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item,C03,C03,C03,1,other,3,1.1372549019607843
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item,C04,C04,C04,1,anchor,4,1.1503267973856208
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item,C05,C05,C05,1,anchor,5,0.954248366013072
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8954248366013072
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item,C07,C07,C07,1,anchor,7,0.7450980392156863
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item,C08,C08,C08,1,other,8,0.35947712418300654
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8496732026143791
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8937908496732027
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8627450980392157
+cmdc_to_edaic_phq_shared,mmd,2,3,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7483660130718954
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item,C01,C01,C01,1,anchor,1,0.6666666666666666
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8300653594771242
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item,C03,C03,C03,1,other,3,1.065359477124183
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item,C04,C04,C04,1,anchor,4,1.1176470588235294
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item,C05,C05,C05,1,anchor,5,0.9607843137254902
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8888888888888888
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item,C07,C07,C07,1,anchor,7,0.7058823529411765
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item,C08,C08,C08,1,other,8,0.32679738562091504
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8202614379084967
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8627450980392157
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8594771241830066
+cmdc_to_edaic_phq_shared,mmd,2,4,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.696078431372549
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item,C01,C01,C01,1,anchor,1,1.3178333067426495
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.661713425435272
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item,C03,C03,C03,1,other,3,1.4982598651857937
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item,C04,C04,C04,1,anchor,4,1.2584104218514136
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item,C05,C05,C05,1,anchor,5,1.2793755575624945
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item,C06,C06,C06,1,threshold_shift,6,1.451450864084406
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item,C07,C07,C07,1,anchor,7,1.4917945406016182
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item,C08,C08,C08,1,other,8,1.0485368519047507
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.3759218541710498
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.336853456689544
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.556582144759839
+cmdc_to_edaic_phq_shared,dann,3,0,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.2733983585452722
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item,C01,C01,C01,1,anchor,1,1.8800351328758242
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.3685768667389364
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item,C03,C03,C03,1,other,3,1.2988695570456437
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item,C04,C04,C04,1,anchor,4,1.3961459084663517
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item,C05,C05,C05,1,anchor,5,1.3715056275425395
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item,C06,C06,C06,1,threshold_shift,6,1.3848914815952964
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item,C07,C07,C07,1,anchor,7,1.368190102912242
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item,C08,C08,C08,1,other,8,1.542524961377281
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.4513424548192644
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.5039691929492394
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.3767341741671164
+cmdc_to_edaic_phq_shared,dann,3,1,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.4206972592114624
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item,C01,C01,C01,1,anchor,1,1.3269918122712303
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.6857098883711825
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item,C03,C03,C03,1,other,3,1.5413820725786531
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item,C04,C04,C04,1,anchor,4,1.4016772451646187
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item,C05,C05,C05,1,anchor,5,1.2623012473965003
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item,C06,C06,C06,1,threshold_shift,6,1.392565584991103
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item,C07,C07,C07,1,anchor,7,1.6400954645443586
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item,C08,C08,C08,1,other,8,1.7187682808029885
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.4961864495150794
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.407766442344177
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.5391377366811427
+cmdc_to_edaic_phq_shared,dann,3,2,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.6300751766908208
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item,C01,C01,C01,1,anchor,1,1.5041671968947827
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.3163331039980346
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item,C03,C03,C03,1,other,3,1.488948176596679
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item,C04,C04,C04,1,anchor,4,1.5419895468291893
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item,C05,C05,C05,1,anchor,5,1.7610298172126408
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item,C06,C06,C06,1,threshold_shift,6,1.2153624340502265
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item,C07,C07,C07,1,anchor,7,1.2030046706885293
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item,C08,C08,C08,1,other,8,1.5805451220777982
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.451422508543485
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.5025478079062855
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.2658477690241305
+cmdc_to_edaic_phq_shared,dann,3,3,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.5347466493372386
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item,C01,C01,C01,1,anchor,1,1.110161417450001
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.159246783575737
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item,C03,C03,C03,1,other,3,1.631136640419368
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item,C04,C04,C04,1,anchor,4,1.5367369536870445
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item,C05,C05,C05,1,anchor,5,1.425879253890195
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item,C06,C06,C06,1,threshold_shift,6,1.5245691292426164
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item,C07,C07,C07,1,anchor,7,1.5313972310692656
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item,C08,C08,C08,1,other,8,1.3988700714571025
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.4147496850989163
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.4010437140241265
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.3419079564091767
+cmdc_to_edaic_phq_shared,dann,3,4,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.5150033559382352
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item,C01,C01,C01,1,anchor,1,1.1275265884823074
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.1349693111880543
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item,C03,C03,C03,1,other,3,1.1585160944956276
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item,C04,C04,C04,1,anchor,4,1.131761101092778
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item,C05,C05,C05,1,anchor,5,1.0652226555021176
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8938332983692865
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item,C07,C07,C07,1,anchor,7,0.9903420056939259
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item,C08,C08,C08,1,other,8,0.49593328603733944
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9997630426076796
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0787130876927822
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0144013047786704
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,0,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8272246902664835
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item,C01,C01,C01,1,anchor,1,0.8982051009056615
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.076270113680877
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item,C03,C03,C03,1,other,3,1.2276537331578998
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item,C04,C04,C04,1,anchor,4,1.0198221884034817
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item,C05,C05,C05,1,anchor,5,0.9493473606561523
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8704081956096286
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item,C07,C07,C07,1,anchor,7,1.0086345053490957
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item,C08,C08,C08,1,other,8,0.5631685204883076
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9516887147813881
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9690022888285978
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9733391546452528
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,1,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8954111268231036
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item,C01,C01,C01,1,anchor,1,0.9649181541518058
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.0436114587279317
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item,C03,C03,C03,1,other,3,1.157700835952377
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item,C04,C04,C04,1,anchor,4,1.0754890898668688
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item,C05,C05,C05,1,anchor,5,0.899722824177516
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.830338049878205
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item,C07,C07,C07,1,anchor,7,0.906320322107895
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item,C08,C08,C08,1,other,8,0.4101463679128524
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9110308878469314
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9616125975760215
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9369747543030683
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,2,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7839236019326147
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item,C01,C01,C01,1,anchor,1,0.918533095347336
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item,C02,C02,C02,1,threshold_shift,2,0.979995040429963
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item,C03,C03,C03,1,other,3,1.1561986047948034
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item,C04,C04,C04,1,anchor,4,1.021348200494947
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item,C05,C05,C05,1,anchor,5,0.9722808493922154
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8381651893662885
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item,C07,C07,C07,1,anchor,7,0.8784046635713453
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item,C08,C08,C08,1,other,8,0.5050567283136831
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9087477964638228
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9476417022014609
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9090801148981258
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,3,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8306276665542432
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item,C01,C01,C01,1,anchor,1,0.9973686705008636
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.2302513813928646
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item,C03,C03,C03,1,other,3,1.1493822624123187
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item,C04,C04,C04,1,anchor,4,1.0345523064237794
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item,C05,C05,C05,1,anchor,5,1.015048746433523
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9036080062030236
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item,C07,C07,C07,1,anchor,7,0.9653800399182668
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item,C08,C08,C08,1,other,8,0.49208388634648453
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9734594124538906
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0030874408191082
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0669296937979442
+cmdc_to_edaic_phq_shared,strongest_foundation_baseline,4,4,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8207330743794016
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item,C01,C01,C01,1,anchor,1,1.1596381387679406
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.113146259504206
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item,C03,C03,C03,1,other,3,1.1864755551020305
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item,C04,C04,C04,1,anchor,4,1.2307401747485391
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item,C05,C05,C05,1,anchor,5,1.1266831915362987
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8908218151648041
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item,C07,C07,C07,1,anchor,7,1.0584846590858659
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item,C08,C08,C08,1,other,8,0.5771704260194471
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0428950274911415
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.143886541034661
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.001984037334505
+cmdc_to_edaic_phq_shared,latent_only,5,0,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8818229905607388
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item,C01,C01,C01,1,anchor,1,1.1054802022728265
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.2928293705765719
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item,C03,C03,C03,1,other,3,1.2372374312550414
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item,C04,C04,C04,1,anchor,4,1.27601151762445
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item,C05,C05,C05,1,anchor,5,1.0176586543812471
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.879680717064897
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item,C07,C07,C07,1,anchor,7,1.0755392379230924
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item,C08,C08,C08,1,other,8,0.5784268702076546
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0578580001632225
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.118672403050404
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0862550438207343
+cmdc_to_edaic_phq_shared,latent_only,5,1,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.907832150731348
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item,C01,C01,C01,1,anchor,1,1.207817028160968
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.1886194278212154
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item,C03,C03,C03,1,other,3,1.2742103961558124
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item,C04,C04,C04,1,anchor,4,1.2177396814028423
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item,C05,C05,C05,1,anchor,5,1.0527693555245992
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8532106564715017
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item,C07,C07,C07,1,anchor,7,1.0309464912009394
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item,C08,C08,C08,1,other,8,0.4604314013535165
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0357180547614242
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.1273181390723372
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0209150421463586
+cmdc_to_edaic_phq_shared,latent_only,5,2,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8673208987546644
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item,C01,C01,C01,1,anchor,1,1.0056191967203727
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.1759169335458792
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item,C03,C03,C03,1,other,3,1.2571995067440607
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item,C04,C04,C04,1,anchor,4,1.1955303982192396
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item,C05,C05,C05,1,anchor,5,1.0699649114234775
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8640532626046075
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item,C07,C07,C07,1,anchor,7,1.0287572410371568
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item,C08,C08,C08,1,other,8,0.5509891630777346
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.018503826671566
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0749679368500615
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0199850980752434
+cmdc_to_edaic_phq_shared,latent_only,5,3,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9040943349108976
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item,C01,C01,C01,1,anchor,1,1.1513064858181026
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item,C02,C02,C02,1,threshold_shift,2,1.3870124688335495
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item,C03,C03,C03,1,other,3,1.2918848496636535
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item,C04,C04,C04,1,anchor,4,1.301870559944826
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item,C05,C05,C05,1,anchor,5,1.193512061062981
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9124283669820799
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item,C07,C07,C07,1,anchor,7,1.129179720005958
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item,C08,C08,C08,1,other,8,0.6106288280661205
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.1222279175471588
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.193967206707967
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.1497204179078147
+cmdc_to_edaic_phq_shared,latent_only,5,4,False,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.951256838864887
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item,C01,C01,C01,1,anchor,1,0.9692655696588404
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9408418941341974
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item,C03,C03,C03,1,other,3,1.153455421036365
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item,C04,C04,C04,1,anchor,4,1.0903563051441916
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item,C05,C05,C05,1,anchor,5,1.0158346135631886
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9454162210420846
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item,C07,C07,C07,1,anchor,7,0.9729854873582429
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item,C08,C08,C08,1,other,8,0.5566970117731032
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9556065654637766
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0121104939311159
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9431290575881409
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,0,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8550762164047341
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item,C01,C01,C01,1,anchor,1,0.9660426518496346
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item,C02,C02,C02,1,threshold_shift,2,1.0628253875994216
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item,C03,C03,C03,1,other,3,1.1993409441966636
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item,C04,C04,C04,1,anchor,4,1.1261521850536071
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item,C05,C05,C05,1,anchor,5,0.9898694718585295
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9033795462714301
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item,C07,C07,C07,1,anchor,7,1.0166256743318893
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item,C08,C08,C08,1,other,8,0.6369422654700435
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9876472658289024
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0246724957734152
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9831024669354258
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,1,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9181416048333536
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item,C01,C01,C01,1,anchor,1,0.937107510816038
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9499382758452222
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item,C03,C03,C03,1,other,3,1.130976226594713
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item,C04,C04,C04,1,anchor,4,1.054698287271986
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item,C05,C05,C05,1,anchor,5,0.9615022127145256
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8913707207230961
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item,C07,C07,C07,1,anchor,7,0.9242503981964261
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item,C08,C08,C08,1,other,8,0.5936317537345138
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.930434423237065
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9693896022497439
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9206544982841591
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,2,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8623039901646135
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item,C01,C01,C01,1,anchor,1,0.8567253507040684
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9944946469824298
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item,C03,C03,C03,1,other,3,1.167832804661171
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item,C04,C04,C04,1,anchor,4,1.0746591059990178
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item,C05,C05,C05,1,anchor,5,0.9713431031875361
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8921355858347775
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item,C07,C07,C07,1,anchor,7,0.9594747408542758
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item,C08,C08,C08,1,other,8,0.6300465495757808
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9433389859748822
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9655505751862246
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9433151164086037
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,3,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8989396771184759
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item,C01,C01,C01,1,anchor,1,1.0113780919243307
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item,C02,C02,C02,1,threshold_shift,2,1.0878885076716056
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item,C03,C03,C03,1,other,3,1.1838122205017438
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item,C04,C04,C04,1,anchor,4,1.1464949191785325
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item,C05,C05,C05,1,anchor,5,1.0711801613078398
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9567423887502134
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item,C07,C07,C07,1,anchor,7,1.0124845890437855
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item,C08,C08,C08,1,other,8,0.6633321927263846
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0166641338880544
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0603844403636222
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0223154482109096
+cmdc_to_edaic_phq_shared,corpus_specific_head,6,4,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9235722066140643
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item,C01,C01,C01,1,anchor,1,0.8448938291351867
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9502549049797547
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item,C03,C03,C03,1,other,3,1.039236468404495
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item,C04,C04,C04,1,anchor,4,0.9347727514827758
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item,C05,C05,C05,1,anchor,5,1.033466596112703
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9261010349147992
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item,C07,C07,C07,1,anchor,7,0.8263328573976574
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item,C08,C08,C08,1,other,8,0.4102656084848242
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8706655063640245
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9098665085320807
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.938177969947277
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,0,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7247510384446596
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item,C01,C01,C01,1,anchor,1,0.7738531844940012
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.7467102851669968
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item,C03,C03,C03,1,other,3,1.1801031667775674
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item,C04,C04,C04,1,anchor,4,0.9576365604922115
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item,C05,C05,C05,1,anchor,5,1.1532288670488116
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8829973215253238
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item,C07,C07,C07,1,anchor,7,0.8511438181846755
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item,C08,C08,C08,1,other,8,0.44453480791987376
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8737760014511827
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.933965607554925
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8148538033461603
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,1,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8123189873487207
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item,C01,C01,C01,1,anchor,1,0.724726151712079
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9120986573101368
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item,C03,C03,C03,1,other,3,1.0100962022285958
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item,C04,C04,C04,1,anchor,4,0.9843759176566618
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item,C05,C05,C05,1,anchor,5,1.0137565440733787
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9544838177069418
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item,C07,C07,C07,1,anchor,7,0.8127793608064702
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item,C08,C08,C08,1,other,8,0.3250836141004044
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8421750331993334
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8839094935621474
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9332912375085394
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,2,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6675899081645
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item,C01,C01,C01,1,anchor,1,0.732437314094901
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8778115756377148
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item,C03,C03,C03,1,other,3,1.1201734916577908
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item,C04,C04,C04,1,anchor,4,1.0573112633730988
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item,C05,C05,C05,1,anchor,5,0.9592119074273213
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9250647844834211
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item,C07,C07,C07,1,anchor,7,0.7381447668627825
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item,C08,C08,C08,1,other,8,0.3921672730583616
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8502902970744239
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.871776312939526
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.901438180060568
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,3,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7561703823580761
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item,C01,C01,C01,1,anchor,1,0.6839785213335691
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.757264924360427
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item,C03,C03,C03,1,other,3,1.0183557331245514
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item,C04,C04,C04,1,anchor,4,0.9147017491506595
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item,C05,C05,C05,1,anchor,5,1.003004733719589
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8112954318029213
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item,C07,C07,C07,1,anchor,7,0.9183905210039347
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item,C08,C08,C08,1,other,8,0.4383223577888975
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8181642465355687
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8800188813019381
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.7842801780816742
+cmdc_to_edaic_phq_shared,direct_target_finetune,7,4,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7283390454567245
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item,C01,C01,C01,1,anchor,1,0.880874159443896
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9066726396246844
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item,C03,C03,C03,1,other,3,1.0485217012830226
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item,C04,C04,C04,1,anchor,4,0.9263425951860115
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item,C05,C05,C05,1,anchor,5,0.9581782922971982
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8672644396838312
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item,C07,C07,C07,1,anchor,7,0.8428069805280151
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item,C08,C08,C08,1,other,8,0.4323518273132304
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8578765794199862
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9020505068637802
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8869685396542578
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,0,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7404367642981264
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item,C01,C01,C01,1,anchor,1,0.9578988222004543
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8655764226515601
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item,C03,C03,C03,1,other,3,1.1857110893816438
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item,C04,C04,C04,1,anchor,4,1.0221822412556731
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item,C05,C05,C05,1,anchor,5,1.148730980554973
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9410704062308879
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item,C07,C07,C07,1,anchor,7,0.9983896835793868
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item,C08,C08,C08,1,other,8,0.4487281194770118
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9460359706664488
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.031800431897622
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.903323414441224
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,1,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8172196044293278
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item,C01,C01,C01,1,anchor,1,0.716799337839939
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8070016480370552
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item,C03,C03,C03,1,other,3,0.9816839566404454
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item,C04,C04,C04,1,anchor,4,0.9229523636597293
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item,C05,C05,C05,1,anchor,5,0.9581740777643288
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8632188699085698
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item,C07,C07,C07,1,anchor,7,0.8704662832695522
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item,C08,C08,C08,1,other,8,0.39844926972380834
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8148432258554286
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8670980156333874
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8351102589728125
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,2,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6900666131821268
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item,C01,C01,C01,1,anchor,1,0.7488214881676767
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8273950341443708
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item,C03,C03,C03,1,other,3,1.1156357195855306
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item,C04,C04,C04,1,anchor,4,1.0297139026468096
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item,C05,C05,C05,1,anchor,5,0.9718688483246498
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9182414655798888
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item,C07,C07,C07,1,anchor,7,0.7907868319280823
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item,C08,C08,C08,1,other,8,0.4190367789814047
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8526875086698017
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8852977677668046
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8728182498621297
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,3,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7673362492834677
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item,C01,C01,C01,1,anchor,1,0.775252566124787
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.858686133538178
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item,C03,C03,C03,1,other,3,1.0297834945046929
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item,C04,C04,C04,1,anchor,4,0.9858641523861759
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item,C05,C05,C05,1,anchor,5,1.058158224749872
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8767169984369508
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item,C07,C07,C07,1,anchor,7,0.8914369134400463
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item,C08,C08,C08,1,other,8,0.5065659526796044
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8728080544825384
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9276779641752202
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8677015659875644
+cmdc_to_edaic_phq_shared,direct_multitask_shared_head,8,4,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7681747235921486
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item,C01,C01,C01,1,anchor,1,0.8510270120614761
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8874215070718373
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item,C03,C03,C03,1,other,3,0.9652059043026122
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item,C04,C04,C04,1,anchor,4,0.9187045350444546
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item,C05,C05,C05,1,anchor,5,0.9144334924678115
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8920252802841587
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item,C07,C07,C07,1,anchor,7,0.7964946826076736
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item,C08,C08,C08,1,other,8,0.4404934988148111
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8332257390818544
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.870164930545354
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.889723393677998
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,0,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7028497015587116
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item,C01,C01,C01,1,anchor,1,0.7188539197758848
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8238518004323921
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item,C03,C03,C03,1,other,3,1.028757906665754
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item,C04,C04,C04,1,anchor,4,0.9555389199252685
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item,C05,C05,C05,1,anchor,5,1.020133135378422
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8725120585465679
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item,C07,C07,C07,1,anchor,7,0.7839551301127042
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item,C08,C08,C08,1,other,8,0.4149273691819452
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8273162800023673
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8696202762980699
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.84818192948948
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,1,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7218426379238496
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item,C01,C01,C01,1,anchor,1,0.6932752257724867
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.787504800355718
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item,C03,C03,C03,1,other,3,0.9441326817655578
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item,C04,C04,C04,1,anchor,4,0.9121033374000999
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item,C05,C05,C05,1,anchor,5,0.9995676890439367
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9199895216485643
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item,C07,C07,C07,1,anchor,7,0.8284772919411125
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item,C08,C08,C08,1,other,8,0.4388848892821609
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8154919296512045
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8583558860394089
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8537471610021411
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,2,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6915087855238593
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item,C01,C01,C01,1,anchor,1,0.7340232886257451
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8493857706944314
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item,C03,C03,C03,1,other,3,1.008660367626918
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item,C04,C04,C04,1,anchor,4,0.9724875634141533
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item,C05,C05,C05,1,anchor,5,0.9957485474538308
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8742274139570868
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item,C07,C07,C07,1,anchor,7,0.7759374068711586
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item,C08,C08,C08,1,other,8,0.41380410609717266
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8280343080925621
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.869549201591222
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8618065923257591
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,3,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7112322368620453
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item,C01,C01,C01,1,anchor,1,0.6858123246574898
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.7612836431054508
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item,C03,C03,C03,1,other,3,0.9868610049384872
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item,C04,C04,C04,1,anchor,4,0.9958284427137936
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item,C05,C05,C05,1,anchor,5,0.8991769108469159
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.7872347027082455
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item,C07,C07,C07,1,anchor,7,0.8035747494443379
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item,C08,C08,C08,1,other,8,0.42226838584537657
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.7927550205325121
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8460981069156344
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.7742591729068481
+cmdc_to_edaic_phq_shared,shared_head_joint_adaptation,9,4,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7045646953919319
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item,C01,C01,C01,1,anchor,1,0.8744897593393284
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9555593069271471
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item,C03,C03,C03,1,other,3,1.104333404093993
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item,C04,C04,C04,1,anchor,4,0.9184321919760479
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item,C05,C05,C05,1,anchor,5,1.0861566139908592
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9353639825804195
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item,C07,C07,C07,1,anchor,7,0.8365783420748116
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item,C08,C08,C08,1,other,8,0.4059074510781643
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8896026315075963
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9289142268452618
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9454616447537834
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,0,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7551204275860787
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item,C01,C01,C01,1,anchor,1,0.7222204528733486
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9138447419326339
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item,C03,C03,C03,1,other,3,1.1042693996941975
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item,C04,C04,C04,1,anchor,4,0.939633581938003
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item,C05,C05,C05,1,anchor,5,1.077544868630593
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9716409589130076
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item,C07,C07,C07,1,anchor,7,0.9336968528172815
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item,C08,C08,C08,1,other,8,0.4645959160605692
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8909308466074543
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9182739390648065
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9427428504228207
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,1,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7844326578773834
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item,C01,C01,C01,1,anchor,1,0.7411861283724088
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.9583992660950125
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item,C03,C03,C03,1,other,3,1.062168366313772
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item,C04,C04,C04,1,anchor,4,0.9137599303758417
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item,C05,C05,C05,1,anchor,5,1.0333622088977303
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9912891603041489
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item,C07,C07,C07,1,anchor,7,0.87347858667336
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item,C08,C08,C08,1,other,8,0.5059246753522995
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8849460402980717
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8904467135798352
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9748442131995807
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,2,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7840465208330357
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item,C01,C01,C01,1,anchor,1,0.7320198610543431
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8494309152452141
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item,C03,C03,C03,1,other,3,1.079560655998553
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item,C04,C04,C04,1,anchor,4,0.9370664335639685
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item,C05,C05,C05,1,anchor,5,0.9836055256511553
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item,C06,C06,C06,1,threshold_shift,6,1.0415749992974483
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item,C07,C07,C07,1,anchor,7,0.807116392818797
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item,C08,C08,C08,1,other,8,0.40127420603344915
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8539561237078661
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.864952053272066
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9455029572713313
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,3,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7404174310160011
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item,C01,C01,C01,1,anchor,1,0.8148646091903846
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8796411134265214
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item,C03,C03,C03,1,other,3,1.0508752747958532
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item,C04,C04,C04,1,anchor,4,0.9075736744402378
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item,C05,C05,C05,1,anchor,5,1.0862958138341425
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item,C06,C06,C06,1,threshold_shift,6,1.0515686512478757
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item,C07,C07,C07,1,anchor,7,0.9126535612592576
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item,C08,C08,C08,1,other,8,0.5066760882536052
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9012685983059847
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9303469146810056
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9656048823371985
+cmdc_to_edaic_phq_shared,generic_target_mlp_head,10,4,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7787756815247292
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item,C01,C01,C01,1,anchor,1,0.8291335887071845
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.861950645649379
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item,C03,C03,C03,1,other,3,0.972715022893859
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item,C04,C04,C04,1,anchor,4,0.8983132971528535
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item,C05,C05,C05,1,anchor,5,0.9247859723468451
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8787252090549654
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item,C07,C07,C07,1,anchor,7,0.797962816036308
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item,C08,C08,C08,1,other,8,0.42182457601380025
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8231763909818993
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8625489185607977
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8703379273521722
+cmdc_to_edaic_phq_shared,full_without_mmd,11,0,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6972697994538296
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item,C01,C01,C01,1,anchor,1,0.6682900787045047
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.7986233102079864
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item,C03,C03,C03,1,other,3,0.9880334723100627
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item,C04,C04,C04,1,anchor,4,0.9388893522989129
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item,C05,C05,C05,1,anchor,5,1.0085891185371991
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8614007881780791
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item,C07,C07,C07,1,anchor,7,0.7744296543996587
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item,C08,C08,C08,1,other,8,0.42843981843129114
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8083369491334619
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8475495509850688
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8300120491930327
+cmdc_to_edaic_phq_shared,full_without_mmd,11,1,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7082366453706769
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item,C01,C01,C01,1,anchor,1,0.6869158883322103
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.7775252527402509
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item,C03,C03,C03,1,other,3,0.9506399023637498
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item,C04,C04,C04,1,anchor,4,0.893870728857377
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item,C05,C05,C05,1,anchor,5,1.0420847468776895
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.9181668676582156
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item,C07,C07,C07,1,anchor,7,0.8310408309608261
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item,C08,C08,C08,1,other,8,0.4537539585342665
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8192497720405733
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8634780487570258
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8478460601992333
+cmdc_to_edaic_phq_shared,full_without_mmd,11,2,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7021969304490082
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item,C01,C01,C01,1,anchor,1,0.7291005986317523
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8295519846587625
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item,C03,C03,C03,1,other,3,0.9890202895101663
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item,C04,C04,C04,1,anchor,4,0.9758840444820379
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item,C05,C05,C05,1,anchor,5,1.0012693293782284
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8856176301673782
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item,C07,C07,C07,1,anchor,7,0.7840013716427949
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item,C08,C08,C08,1,other,8,0.4094946763292236
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.825492490600043
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8725638360337035
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8575848074130703
+cmdc_to_edaic_phq_shared,full_without_mmd,11,3,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6992574829196949
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item,C01,C01,C01,1,anchor,1,0.6775236121969286
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.7787617550176659
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item,C03,C03,C03,1,other,3,1.0276953301527754
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item,C04,C04,C04,1,anchor,4,0.9385713494681065
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item,C05,C05,C05,1,anchor,5,1.0082839862238284
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.822704268172779
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item,C07,C07,C07,1,anchor,7,0.8332322426870509
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item,C08,C08,C08,1,other,8,0.4415327369622992
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8160381601101793
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8644027976439786
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8007330115952224
+cmdc_to_edaic_phq_shared,full_without_mmd,11,4,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7346140335575373
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item,C01,C01,C01,1,anchor,1,0.8335125623657998
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8600130989010473
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item,C03,C03,C03,1,other,3,0.9693097526601943
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item,C04,C04,C04,1,anchor,4,0.9200043132623725
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item,C05,C05,C05,1,anchor,5,0.9210404698922631
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8883097182860703
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item,C07,C07,C07,1,anchor,7,0.8064346019431687
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item,C08,C08,C08,1,other,8,0.4302700462493952
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8286118204450389
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8702479868659012
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8741614085935587
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,0,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6997898994547946
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item,C01,C01,C01,1,anchor,1,0.7682796015846286
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8055745320382461
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item,C03,C03,C03,1,other,3,1.03562046266069
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item,C04,C04,C04,1,anchor,4,0.9613826442259095
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item,C05,C05,C05,1,anchor,5,0.9825075681692576
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8635046437497023
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item,C07,C07,C07,1,anchor,7,0.7450098461833115
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item,C08,C08,C08,1,other,8,0.422092182564659
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8229964351470506
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8642949150407767
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8345395878939742
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,1,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7288563226126745
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item,C01,C01,C01,1,anchor,1,0.6966911834219521
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.7528668092359023
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item,C03,C03,C03,1,other,3,0.9164566829963732
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item,C04,C04,C04,1,anchor,4,0.8745839139994454
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item,C05,C05,C05,1,anchor,5,1.0089160036288518
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8847741625275412
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item,C07,C07,C07,1,anchor,7,0.8234361371571639
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item,C08,C08,C08,1,other,8,0.4077608627507715
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.7956857194647502
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8509068095518533
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8188204858817217
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,2,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6621087728735724
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item,C01,C01,C01,1,anchor,1,0.7106795938315509
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.8814089633151763
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item,C03,C03,C03,1,other,3,0.9920948073496737
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item,C04,C04,C04,1,anchor,4,0.9905512344603445
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item,C05,C05,C05,1,anchor,5,1.0169124241191048
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8918550279792957
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item,C07,C07,C07,1,anchor,7,0.782246449037754
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item,C08,C08,C08,1,other,8,0.44935674704894424
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8393881558927305
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8750974253621885
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.886631995647236
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,3,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.720725777199309
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item,C01,C01,C01,1,anchor,1,0.6544319192568461
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item,C02,C02,C02,1,threshold_shift,2,0.7693794338402631
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item,C03,C03,C03,1,other,3,1.0146361585665147
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item,C04,C04,C04,1,anchor,4,0.9014804741136389
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item,C05,C05,C05,1,anchor,5,0.9786367104594376
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item,C06,C06,C06,1,threshold_shift,6,0.8082873086350446
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item,C07,C07,C07,1,anchor,7,0.80936149444452
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item,C08,C08,C08,1,other,8,0.48456621259586224
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.8025974639890159
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.8359776495686106
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.7888333712376538
+cmdc_to_edaic_phq_shared,full_measurement_aware,12,4,True,66,153,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7496011855811885
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item,C01,C01,C01,1,anchor,1,1.0941854506731032
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item,C02,C02,C02,1,threshold_shift,2,0.9730526253581047
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item,C03,C03,C03,1,other,3,1.8
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item,C04,C04,C04,1,anchor,4,0.9135380834341049
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item,C05,C05,C05,1,anchor,5,1.061794438958168
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.7877690255641937
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item,C07,C07,C07,1,anchor,7,1.0214125767350197
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item,C08,C08,C08,1,other,8,0.8003840237855911
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0565170280635356
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.022732637450099
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8804108254611492
+edaic_to_cmdc_phq_shared,erm,0,0,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.3001920118927957
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item,C01,C01,C01,1,anchor,1,1.0208203867077827
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.249478006362915
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item,C03,C03,C03,1,other,3,1.85
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item,C04,C04,C04,1,anchor,4,1.6339733004570007
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item,C05,C05,C05,1,anchor,5,1.1004991829395294
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item,C06,C06,C06,1,threshold_shift,6,1.1180048614740372
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item,C07,C07,C07,1,anchor,7,1.669994330406189
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item,C08,C08,C08,1,other,8,0.8983562014997005
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.3176407837308943
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.3563218001276254
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.1837414339184762
+edaic_to_cmdc_phq_shared,erm,0,1,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.3741781007498504
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item,C01,C01,C01,1,anchor,1,1.1
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item,C02,C02,C02,1,threshold_shift,2,0.9844911903142929
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item,C03,C03,C03,1,other,3,1.9423584938049316
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item,C04,C04,C04,1,anchor,4,0.9564589738845826
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item,C05,C05,C05,1,anchor,5,0.85
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.5530153274536133
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item,C07,C07,C07,1,anchor,7,0.7876638680696487
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item,C08,C08,C08,1,other,8,0.45681457668542863
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9538503037765622
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9235307104885578
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.7687532588839531
+edaic_to_cmdc_phq_shared,erm,0,2,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.1995865352451802
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item,C01,C01,C01,1,anchor,1,1.1
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.1200068205595017
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item,C03,C03,C03,1,other,3,1.85
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item,C04,C04,C04,1,anchor,4,1.6445101499557495
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item,C05,C05,C05,1,anchor,5,1.0855727031826974
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.6701633900403976
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item,C07,C07,C07,1,anchor,7,1.638184878230095
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item,C08,C08,C08,1,other,8,0.7901813060045242
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.2373274059966206
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.3670669328421354
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8950851052999497
+edaic_to_cmdc_phq_shared,erm,0,3,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.320090653002262
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item,C01,C01,C01,1,anchor,1,0.8533177137374878
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.6495869040489197
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item,C03,C03,C03,1,other,3,1.8
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item,C04,C04,C04,1,anchor,4,1.6076912999153137
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item,C05,C05,C05,1,anchor,5,1.1361867874860763
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.6
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item,C07,C07,C07,1,anchor,7,1.1408465325832366
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item,C08,C08,C08,1,other,8,0.7098425388336181
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.1871839720755815
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.1845105834305287
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.1247934520244598
+edaic_to_cmdc_phq_shared,erm,0,4,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.254921269416809
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item,C01,C01,C01,1,anchor,1,0.9392717882990838
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item,C02,C02,C02,1,threshold_shift,2,0.9077789232134819
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item,C03,C03,C03,1,other,3,1.078007660806179
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item,C04,C04,C04,1,anchor,4,1.038391101360321
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item,C05,C05,C05,1,anchor,5,0.9029521830379963
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.8453178621828557
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item,C07,C07,C07,1,anchor,7,0.8135517865419388
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item,C08,C08,C08,1,other,8,0.8165309945121407
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9177252874942496
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9235417148098349
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.8765483926981688
+edaic_to_cmdc_phq_shared,coral,1,0,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9472693276591599
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item,C01,C01,C01,1,anchor,1,0.9479287691414356
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8994827140122652
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item,C03,C03,C03,1,other,3,0.9957760289311409
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item,C04,C04,C04,1,anchor,4,1.0655775502324105
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item,C05,C05,C05,1,anchor,5,0.9807639665901661
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.8486512951552868
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item,C07,C07,C07,1,anchor,7,1.0580754704773425
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item,C08,C08,C08,1,other,8,0.9113620956428349
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9634522362728604
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0130864391103387
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.874067004583776
+edaic_to_cmdc_phq_shared,coral,1,1,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9535690622869879
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item,C01,C01,C01,1,anchor,1,1.0660297721624374
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.0502245277166367
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item,C03,C03,C03,1,other,3,1.0570459321141243
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item,C04,C04,C04,1,anchor,4,0.9463051095604896
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item,C05,C05,C05,1,anchor,5,0.7305779669433832
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.9704348027706147
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item,C07,C07,C07,1,anchor,7,1.0355429641902447
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item,C08,C08,C08,1,other,8,0.5388772889971734
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.924379795556888
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9446139532141388
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0103296652436256
+edaic_to_cmdc_phq_shared,coral,1,2,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7979616105556488
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item,C01,C01,C01,1,anchor,1,1.0114536136388779
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.1630026131868363
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item,C03,C03,C03,1,other,3,1.16307417973876
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item,C04,C04,C04,1,anchor,4,1.2123621344566344
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item,C05,C05,C05,1,anchor,5,0.8036150455474853
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.9216613069176673
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item,C07,C07,C07,1,anchor,7,0.994492570310831
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item,C08,C08,C08,1,other,8,0.865471743606031
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0168916509253905
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0054808409884572
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0423319600522518
+edaic_to_cmdc_phq_shared,coral,1,3,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.0142729616723956
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item,C01,C01,C01,1,anchor,1,1.0742335099726916
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.1144059009850025
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item,C03,C03,C03,1,other,3,0.9696833908557891
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item,C04,C04,C04,1,anchor,4,0.8816701807081699
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item,C05,C05,C05,1,anchor,5,0.8145914413034916
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.8735939025878906
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item,C07,C07,C07,1,anchor,7,0.9397895969450474
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item,C08,C08,C08,1,other,8,0.7620395939797163
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9287509396672249
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9275711822323501
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9939999017864466
+edaic_to_cmdc_phq_shared,coral,1,4,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8658614924177528
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item,C01,C01,C01,1,anchor,1,0.9110742032527923
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item,C02,C02,C02,1,threshold_shift,2,0.9928248852491379
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item,C03,C03,C03,1,other,3,1.0009126543998719
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item,C04,C04,C04,1,anchor,4,0.9402115732431412
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item,C05,C05,C05,1,anchor,5,0.9694206237792968
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item,C06,C06,C06,1,threshold_shift,6,1.2268217861652375
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item,C07,C07,C07,1,anchor,7,1.0312928229570388
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item,C08,C08,C08,1,other,8,0.7055972814559937
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9722694788128138
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9629998058080673
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.1098233357071876
+edaic_to_cmdc_phq_shared,mmd,2,0,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8532549679279328
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item,C01,C01,C01,1,anchor,1,1.0207363769412041
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item,C02,C02,C02,1,threshold_shift,2,0.943229004740715
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item,C03,C03,C03,1,other,3,1.0743794560432434
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item,C04,C04,C04,1,anchor,4,1.1102282106876373
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item,C05,C05,C05,1,anchor,5,0.9202943667769432
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.9889873459935188
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item,C07,C07,C07,1,anchor,7,1.2564580470323563
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item,C08,C08,C08,1,other,8,0.8952306143939495
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0261929278261959
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0769292503595351
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9661081753671169
+edaic_to_cmdc_phq_shared,mmd,2,1,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9848050352185964
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item,C01,C01,C01,1,anchor,1,0.9916331231594085
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.0223668038845062
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item,C03,C03,C03,1,other,3,0.8300745904445648
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item,C04,C04,C04,1,anchor,4,0.9520754784345626
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item,C05,C05,C05,1,anchor,5,0.6635045409202576
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item,C06,C06,C06,1,threshold_shift,6,1.1508306562900543
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item,C07,C07,C07,1,anchor,7,1.3260810136795045
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item,C08,C08,C08,1,other,8,0.5949779927730561
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9414430249482393
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9833235390484333
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0865987300872804
+edaic_to_cmdc_phq_shared,mmd,2,2,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7125262916088104
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item,C01,C01,C01,1,anchor,1,1.0174692451953888
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.102774015069008
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item,C03,C03,C03,1,other,3,1.031220829486847
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item,C04,C04,C04,1,anchor,4,1.0734722882509231
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item,C05,C05,C05,1,anchor,5,0.9839031457901001
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.961455100774765
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item,C07,C07,C07,1,anchor,7,1.365418204665184
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item,C08,C08,C08,1,other,8,0.9229729920625687
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.057335727661848
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.110065720975399
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0321145579218864
+edaic_to_cmdc_phq_shared,mmd,2,3,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.9770969107747078
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item,C01,C01,C01,1,anchor,1,0.8666578814387321
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.0096656143665315
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item,C03,C03,C03,1,other,3,0.7244359016418457
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item,C04,C04,C04,1,anchor,4,0.7158819437026978
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item,C05,C05,C05,1,anchor,5,1.0308140218257904
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.9709776043891907
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item,C07,C07,C07,1,anchor,7,1.2296722561120987
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item,C08,C08,C08,1,other,8,0.6910978958010674
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.9049003899097443
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.9607565257698297
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9903216093778611
+edaic_to_cmdc_phq_shared,mmd,2,4,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7077668987214565
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item,C01,C01,C01,1,anchor,1,1.4974160313606262
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item,C02,C02,C02,1,threshold_shift,2,0.9527994364500045
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item,C03,C03,C03,1,other,3,1.0147957928478717
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item,C04,C04,C04,1,anchor,4,1.1349950730800629
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item,C05,C05,C05,1,anchor,5,0.9053615719079972
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item,C06,C06,C06,1,threshold_shift,6,1.0062852784991265
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item,C07,C07,C07,1,anchor,7,1.3629795730113983
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item,C08,C08,C08,1,other,8,1.2387693658471108
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.1391752653755247
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.225188062340021
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.9795423574745655
+edaic_to_cmdc_phq_shared,dann,3,0,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.1267825793474913
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item,C01,C01,C01,1,anchor,1,1.2241277918219566
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item,C02,C02,C02,1,threshold_shift,2,0.9406235963106155
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item,C03,C03,C03,1,other,3,1.4384252831339837
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item,C04,C04,C04,1,anchor,4,1.6131506204605102
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item,C05,C05,C05,1,anchor,5,0.9712646033614873
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item,C06,C06,C06,1,threshold_shift,6,1.7936740279197694
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item,C07,C07,C07,1,anchor,7,1.4294083893299103
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item,C08,C08,C08,1,other,8,1.0199806347489357
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.303831868385896
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.3094878512434662
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.3671488121151925
+edaic_to_cmdc_phq_shared,dann,3,1,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.2292029589414597
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item,C01,C01,C01,1,anchor,1,1.676073384284973
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.5863937795162202
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item,C03,C03,C03,1,other,3,1.1171950619667768
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item,C04,C04,C04,1,anchor,4,1.0185761719942092
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item,C05,C05,C05,1,anchor,5,0.6591422678902745
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item,C06,C06,C06,1,threshold_shift,6,0.5674149774014949
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item,C07,C07,C07,1,anchor,7,1.0334725871682167
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item,C08,C08,C08,1,other,8,0.48849184475839136
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.0183450093725697
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.0968161028344183
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.0769043784588574
+edaic_to_cmdc_phq_shared,dann,3,2,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.8028434533625841
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item,C01,C01,C01,1,anchor,1,1.230750972032547
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.455328392982483
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item,C03,C03,C03,1,other,3,1.145119297504425
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item,C04,C04,C04,1,anchor,4,1.396351845562458
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item,C05,C05,C05,1,anchor,5,1.2348050057888031
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.395776116847992
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item,C07,C07,C07,1,anchor,7,1.5004252731800078
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item,C08,C08,C08,1,other,8,0.8477843695320189
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.4007926591788418
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.340583274140954
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.9255522549152375
+edaic_to_cmdc_phq_shared,dann,3,3,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.996451833518222
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item,C01,C01,C01,1,anchor,1,1.1098159193992614
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.6071559607982635
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item,C03,C03,C03,1,other,3,1.708957552909851
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item,C04,C04,C04,1,anchor,4,1.5942630410194396
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item,C05,C05,C05,1,anchor,5,0.9723939381539821
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.115419811010361
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item,C07,C07,C07,1,anchor,7,1.4592710703611373
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item,C08,C08,C08,1,other,8,1.088801346719265
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.4570098300464451
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.2839359922334552
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.861287885904312
+edaic_to_cmdc_phq_shared,dann,3,4,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.398879449814558
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item,C01,C01,C01,1,anchor,1,1.547735583782196
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.4916126489639283
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item,C03,C03,C03,1,other,3,1.4797643899917603
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item,C04,C04,C04,1,anchor,4,0.951391214132309
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item,C05,C05,C05,1,anchor,5,1.648676061630249
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.0933971762657166
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item,C07,C07,C07,1,anchor,7,1.858246088027954
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item,C08,C08,C08,1,other,8,1.9750820636749267
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.63073815330863
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.501512236893177
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.7925049126148225
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,0,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.7274232268333436
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item,C01,C01,C01,1,anchor,1,1.2368084728717803
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.894526982307434
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item,C03,C03,C03,1,other,3,1.5606395483016968
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item,C04,C04,C04,1,anchor,4,1.4428191423416137
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item,C05,C05,C05,1,anchor,5,1.745834767818451
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.1476742744445803
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item,C07,C07,C07,1,anchor,7,1.7977434754371644
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item,C08,C08,C08,1,other,8,2.069036614894867
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.7368854098021984
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.5558014646172524
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,2.021100628376007
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,1,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.8148380815982819
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item,C01,C01,C01,1,anchor,1,1.6053717374801635
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.2798279583454133
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item,C03,C03,C03,1,other,3,1.5241146981716156
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item,C04,C04,C04,1,anchor,4,1.1827311873435975
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item,C05,C05,C05,1,anchor,5,1.513819044828415
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item,C06,C06,C06,1,threshold_shift,6,1.8405062079429626
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item,C07,C07,C07,1,anchor,7,2.0795761346817017
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item,C08,C08,C08,1,other,8,2.35889208316803
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.6731048814952374
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.5953745260834693
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.5601670831441878
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,2,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.9415033906698227
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item,C01,C01,C01,1,anchor,1,1.5106842935085296
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.558527910709381
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item,C03,C03,C03,1,other,3,1.5956979155540467
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item,C04,C04,C04,1,anchor,4,1.5834150195121766
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item,C05,C05,C05,1,anchor,5,1.8188584804534913
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.1719632029533384
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item,C07,C07,C07,1,anchor,7,1.9899553298950194
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item,C08,C08,C08,1,other,8,2.129180908203125
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.7947853825986386
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.7257282808423042
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.86524555683136
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,3,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.8624394118785859
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item,C01,C01,C01,1,anchor,1,1.6041855931282043
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.592694342136383
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item,C03,C03,C03,1,other,3,1.5659737825393676
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item,C04,C04,C04,1,anchor,4,1.6364150166511535
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item,C05,C05,C05,1,anchor,5,1.9048308372497558
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.0861631870269775
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item,C07,C07,C07,1,anchor,7,2.164240074157715
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item,C08,C08,C08,1,other,8,2.2695581674575807
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.8530076250433922
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.8274178802967072
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.8394287645816803
+edaic_to_cmdc_phq_shared,strongest_foundation_baseline,4,4,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.9177659749984741
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item,C01,C01,C01,1,anchor,1,1.5931163072586059
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.5490515589714051
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item,C03,C03,C03,1,other,3,1.631786698102951
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item,C04,C04,C04,1,anchor,4,1.0903083086013794
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item,C05,C05,C05,1,anchor,5,1.7541640281677247
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.1969454407691957
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item,C07,C07,C07,1,anchor,7,1.9865744233131408
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item,C08,C08,C08,1,other,8,2.069097602367401
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.7338805459439754
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.6060407668352128
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.8729984998703002
+edaic_to_cmdc_phq_shared,latent_only,5,0,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.850442150235176
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item,C01,C01,C01,1,anchor,1,1.3752521693706512
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.9701442480087281
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item,C03,C03,C03,1,other,3,1.7958597183227538
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item,C04,C04,C04,1,anchor,4,1.5852739810943604
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item,C05,C05,C05,1,anchor,5,1.8306758284568787
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.343388617038727
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item,C07,C07,C07,1,anchor,7,1.9019819259643556
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item,C08,C08,C08,1,other,8,2.121390867233276
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.8654959194362164
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.6732959762215613
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,2.1567664325237272
+edaic_to_cmdc_phq_shared,latent_only,5,1,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.9586252927780152
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item,C01,C01,C01,1,anchor,1,1.673438036441803
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.641644686460495
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item,C03,C03,C03,1,other,3,1.7896438360214233
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item,C04,C04,C04,1,anchor,4,1.285465556383133
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item,C05,C05,C05,1,anchor,5,1.6768941819667815
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.2372846484184263
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item,C07,C07,C07,1,anchor,7,2.140135931968689
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item,C08,C08,C08,1,other,8,2.4213505148887635
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.8582321740686893
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.6939834266901017
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.9394646674394607
+edaic_to_cmdc_phq_shared,latent_only,5,2,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,2.1054971754550933
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item,C01,C01,C01,1,anchor,1,1.647895383834839
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.6568061113357544
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item,C03,C03,C03,1,other,3,1.792442524433136
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item,C04,C04,C04,1,anchor,4,1.683235514163971
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item,C05,C05,C05,1,anchor,5,1.8789146661758422
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.3376819491386414
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item,C07,C07,C07,1,anchor,7,2.024487257003784
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item,C08,C08,C08,1,other,8,2.1745046377182007
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.899496005475521
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.808633205294609
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.9972440302371979
+edaic_to_cmdc_phq_shared,latent_only,5,3,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.9834735810756683
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item,C01,C01,C01,1,anchor,1,1.6624223113059997
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item,C02,C02,C02,1,threshold_shift,2,1.660984420776367
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item,C03,C03,C03,1,other,3,1.7270658135414123
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item,C04,C04,C04,1,anchor,4,1.7040935039520264
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item,C05,C05,C05,1,anchor,5,2.027167594432831
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item,C06,C06,C06,1,threshold_shift,6,2.288922595977783
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item,C07,C07,C07,1,anchor,7,2.1913876295089723
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item,C08,C08,C08,1,other,8,2.3147178411483766
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.9470952138304711
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.8962677597999573
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.9749535083770753
+edaic_to_cmdc_phq_shared,latent_only,5,4,False,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,2.0208918273448946
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item,C01,C01,C01,1,anchor,1,1.0887823820114135
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item,C02,C02,C02,1,threshold_shift,2,1.047165709733963
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item,C03,C03,C03,1,other,3,1.1407918453216552
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item,C04,C04,C04,1,anchor,4,0.8583589941263199
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item,C05,C05,C05,1,anchor,5,1.1936472415924073
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item,C06,C06,C06,1,threshold_shift,6,1.34610755443573
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item,C07,C07,C07,1,anchor,7,1.4095300912857056
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item,C08,C08,C08,1,other,8,1.358155369758606
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.1803173985332251
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.1375796772539615
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.1966366320848465
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,0,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.2494736075401307
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item,C01,C01,C01,1,anchor,1,0.9834333539009095
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item,C02,C02,C02,1,threshold_shift,2,1.5586224257946015
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item,C03,C03,C03,1,other,3,1.3740992665290832
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item,C04,C04,C04,1,anchor,4,1.2185081005096436
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item,C05,C05,C05,1,anchor,5,1.3952687323093413
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item,C06,C06,C06,1,threshold_shift,6,1.4303160190582276
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item,C07,C07,C07,1,anchor,7,1.5006723523139953
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item,C08,C08,C08,1,other,8,1.4852729499340058
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.3682741500437259
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.2744706347584724
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.4944692224264144
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,1,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.4296861082315444
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item,C01,C01,C01,1,anchor,1,1.1878517329692841
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item,C02,C02,C02,1,threshold_shift,2,1.1720221400260926
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item,C03,C03,C03,1,other,3,1.3420376658439637
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item,C04,C04,C04,1,anchor,4,0.9150052696466446
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item,C05,C05,C05,1,anchor,5,1.0190327376127244
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item,C06,C06,C06,1,threshold_shift,6,1.3006912887096405
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item,C07,C07,C07,1,anchor,7,1.616868829727173
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item,C08,C08,C08,1,other,8,1.6527469217777253
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.275782073289156
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.1846896424889564
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.2363567143678664
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,2,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.4973922938108444
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item,C01,C01,C01,1,anchor,1,1.1997128129005432
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item,C02,C02,C02,1,threshold_shift,2,1.2581885159015656
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item,C03,C03,C03,1,other,3,1.3801640927791596
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item,C04,C04,C04,1,anchor,4,1.2706095576286316
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item,C05,C05,C05,1,anchor,5,1.442324560880661
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item,C06,C06,C06,1,threshold_shift,6,1.5669025599956512
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item,C07,C07,C07,1,anchor,7,1.4936276495456695
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item,C08,C08,C08,1,other,8,1.6601687312126159
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.4089623101055622
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.3515686452388764
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.4125455379486085
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,3,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.5201664119958878
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item,C01,C01,C01,1,anchor,1,1.2068188667297364
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item,C02,C02,C02,1,threshold_shift,2,1.3694348752498626
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item,C03,C03,C03,1,other,3,1.318903511762619
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item,C04,C04,C04,1,anchor,4,1.280291312932968
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item,C05,C05,C05,1,anchor,5,1.5864466071128844
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item,C06,C06,C06,1,threshold_shift,6,1.5133388221263886
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item,C07,C07,C07,1,anchor,7,1.916620409488678
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item,C08,C08,C08,1,other,8,1.7746730327606202
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,1.4958159297704696
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,1.4975442990660668
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,1.4413868486881256
+edaic_to_cmdc_phq_shared,corpus_specific_head,6,4,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,1.5467882722616195
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item,C01,C01,C01,1,anchor,1,0.6718921639025212
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.5546591455000452
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item,C03,C03,C03,1,other,3,0.6144861127715557
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item,C04,C04,C04,1,anchor,4,0.4920533645432442
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item,C05,C05,C05,1,anchor,5,0.573506859317422
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.4277215940179303
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item,C07,C07,C07,1,anchor,7,0.701330664465786
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item,C08,C08,C08,1,other,8,0.672271206118603
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5884901388296384
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6096957630572433
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.4911903697589878
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,0,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6433786594450794
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item,C01,C01,C01,1,anchor,1,0.7456107276608236
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.7836484768195078
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item,C03,C03,C03,1,other,3,0.7316408314043656
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item,C04,C04,C04,1,anchor,4,0.5855387054383755
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item,C05,C05,C05,1,anchor,5,0.7869696687092074
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.47015587117130053
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item,C07,C07,C07,1,anchor,7,0.7173552706546615
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item,C08,C08,C08,1,other,8,0.5900772280649107
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6763745974903941
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.708868593115767
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6269021739954042
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,1,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6608590297346382
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item,C01,C01,C01,1,anchor,1,0.5273221956449561
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.5718264463357627
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item,C03,C03,C03,1,other,3,0.7145283615216613
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item,C04,C04,C04,1,anchor,4,0.39802097228821365
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item,C05,C05,C05,1,anchor,5,0.5602899874327705
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.33855409637562844
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item,C07,C07,C07,1,anchor,7,0.49247080250643194
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item,C08,C08,C08,1,other,8,0.5299462711758679
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5166198916601615
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.494525989468093
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.45519027135569556
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,2,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6222373163487646
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item,C01,C01,C01,1,anchor,1,0.6035666535783093
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.7189923625672237
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item,C03,C03,C03,1,other,3,0.5609763147309422
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item,C04,C04,C04,1,anchor,4,0.508481047290843
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item,C05,C05,C05,1,anchor,5,0.6522825468804513
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.45578934343575384
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item,C07,C07,C07,1,anchor,7,0.6954411965853069
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item,C08,C08,C08,1,other,8,0.6514432064741413
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6058715839428714
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6149428610837276
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.5873908530014887
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,3,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6062097606025418
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item,C01,C01,C01,1,anchor,1,0.8531460786703974
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8574440809432418
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item,C03,C03,C03,1,other,3,0.7174193269107491
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item,C04,C04,C04,1,anchor,4,0.6106904649641365
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item,C05,C05,C05,1,anchor,5,0.7137422098894604
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.448316204385992
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item,C07,C07,C07,1,anchor,7,0.5451106919790618
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item,C08,C08,C08,1,other,8,0.4508100617906166
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6495848899417069
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.680672361375764
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6528801426646169
+edaic_to_cmdc_phq_shared,direct_target_finetune,7,4,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.5841146943506829
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item,C01,C01,C01,1,anchor,1,0.6296434744261206
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.5228438072372228
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item,C03,C03,C03,1,other,3,0.6802545656915754
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item,C04,C04,C04,1,anchor,4,0.484156633540988
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item,C05,C05,C05,1,anchor,5,0.4984220940619707
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.40733499613415913
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item,C07,C07,C07,1,anchor,7,0.6620940467284526
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item,C08,C08,C08,1,other,8,0.6647387363191228
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5686860442674515
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.5685790621893829
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.46508940168569096
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,0,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6724966510053492
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item,C01,C01,C01,1,anchor,1,0.7011474779515993
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.7970608173171059
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item,C03,C03,C03,1,other,3,0.7385270719882101
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item,C04,C04,C04,1,anchor,4,0.5522602457553148
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item,C05,C05,C05,1,anchor,5,0.7452107485849411
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.44707593642087884
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item,C07,C07,C07,1,anchor,7,0.7247509074684786
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item,C08,C08,C08,1,other,8,0.6048904168390437
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6638654527906965
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6808423449400834
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6220683768689923
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,1,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6717087444136268
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item,C01,C01,C01,1,anchor,1,0.5714540458167903
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.5651111470069736
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item,C03,C03,C03,1,other,3,0.7630652647465468
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item,C04,C04,C04,1,anchor,4,0.3724554432556033
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item,C05,C05,C05,1,anchor,5,0.5293370998464525
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.3508828979644022
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item,C07,C07,C07,1,anchor,7,0.5039302640594542
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item,C08,C08,C08,1,other,8,0.5351815552043263
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5239272147375686
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.49429421324457506
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.4579970224856879
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,2,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6491234099754365
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item,C01,C01,C01,1,anchor,1,0.639965014817426
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.6812536552781239
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item,C03,C03,C03,1,other,3,0.5922607152722776
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item,C04,C04,C04,1,anchor,4,0.5401703763287514
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item,C05,C05,C05,1,anchor,5,0.6850865201849956
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.4804585227786447
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item,C07,C07,C07,1,anchor,7,0.722591265803203
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item,C08,C08,C08,1,other,8,0.6814145204516535
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6279000738643845
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.646953294283594
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.5808560890283843
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,3,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6368376178619656
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item,C01,C01,C01,1,anchor,1,0.8558418676373549
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8459169110516086
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item,C03,C03,C03,1,other,3,0.729480423592031
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item,C04,C04,C04,1,anchor,4,0.5798591031692922
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item,C05,C05,C05,1,anchor,5,0.7720441045123152
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.41630436856194136
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item,C07,C07,C07,1,anchor,7,0.5260857113229577
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item,C08,C08,C08,1,other,8,0.4619374905170844
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6484337475455731
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.68345769666048
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.631110639806775
+edaic_to_cmdc_phq_shared,direct_multitask_shared_head,8,4,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.5957089570545577
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item,C01,C01,C01,1,anchor,1,0.6664104461669922
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.5990452140569686
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item,C03,C03,C03,1,other,3,0.6617210149765015
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item,C04,C04,C04,1,anchor,4,0.5061650395393371
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item,C05,C05,C05,1,anchor,5,0.6811998277902603
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.4267927765846252
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item,C07,C07,C07,1,anchor,7,0.6177411615848541
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item,C08,C08,C08,1,other,8,0.5296157364026385
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5860864021377722
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.617879118770361
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.512918995320797
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,0,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.59566837568957
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item,C01,C01,C01,1,anchor,1,0.731122025847435
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.7977566182613373
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item,C03,C03,C03,1,other,3,0.798787134885788
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item,C04,C04,C04,1,anchor,4,0.6495834797620773
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item,C05,C05,C05,1,anchor,5,0.7673542261123657
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.4832201779876414
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item,C07,C07,C07,1,anchor,7,0.7208704710006714
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item,C08,C08,C08,1,other,8,0.6708029300962153
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.7024371329941914
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.7172325506806374
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6404883981244893
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,1,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7347950324910016
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item,C01,C01,C01,1,anchor,1,0.6111171990633011
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.6848987579345703
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item,C03,C03,C03,1,other,3,0.8726890772581101
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item,C04,C04,C04,1,anchor,4,0.4019267916679382
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item,C05,C05,C05,1,anchor,5,0.6249318718910217
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.3939813643693924
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item,C07,C07,C07,1,anchor,7,0.5437925696372986
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item,C08,C08,C08,1,other,8,0.37299391935212045
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5632914438967191
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.5454421080648899
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.5394400611519814
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,2,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6228414983051153
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item,C01,C01,C01,1,anchor,1,0.6803586632013321
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8232726186513901
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item,C03,C03,C03,1,other,3,0.7102631509304047
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item,C04,C04,C04,1,anchor,4,0.5618804305791855
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item,C05,C05,C05,1,anchor,5,0.6694295555353165
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.5454833388328553
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item,C07,C07,C07,1,anchor,7,0.782122015953064
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item,C08,C08,C08,1,other,8,0.6119805216789246
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6730987869203091
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6734476663172245
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6843779787421227
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,3,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6611218363046646
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item,C01,C01,C01,1,anchor,1,0.9287032634019852
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8917937964200974
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item,C03,C03,C03,1,other,3,0.8621234178543091
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item,C04,C04,C04,1,anchor,4,0.5958791971206665
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item,C05,C05,C05,1,anchor,5,0.7435052067041397
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.5323718875646591
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item,C07,C07,C07,1,anchor,7,0.5495127707719802
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item,C08,C08,C08,1,other,8,0.4756498578174728
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6974424247069138
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.7044001094996929
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.7120828419923783
+edaic_to_cmdc_phq_shared,shared_head_joint_adaptation,9,4,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.668886637835891
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item,C01,C01,C01,1,anchor,1,0.7463948912918568
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.5406828814186155
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item,C03,C03,C03,1,other,3,0.5915897250175476
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item,C04,C04,C04,1,anchor,4,0.4907396584749222
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item,C05,C05,C05,1,anchor,5,0.6218535173684359
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.42196599561543735
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item,C07,C07,C07,1,anchor,7,0.7119647468338371
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item,C08,C08,C08,1,other,8,0.6575860413176997
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.597847182167294
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.642738203492263
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.48132443851702644
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,0,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6245878831676237
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item,C01,C01,C01,1,anchor,1,0.7935771373100579
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8472966791829094
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item,C03,C03,C03,1,other,3,0.8319511579262325
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item,C04,C04,C04,1,anchor,4,0.6732185624539853
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item,C05,C05,C05,1,anchor,5,0.7530373605433851
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.41485801457101845
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item,C07,C07,C07,1,anchor,7,0.6722283077569955
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item,C08,C08,C08,1,other,8,0.586074055072109
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6965301593520866
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.723015342016106
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6310773468769639
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,1,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7090126064991707
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item,C01,C01,C01,1,anchor,1,0.608667083014734
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.6219756685197353
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item,C03,C03,C03,1,other,3,0.737040872592479
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item,C04,C04,C04,1,anchor,4,0.45549288475885985
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item,C05,C05,C05,1,anchor,5,0.5317459970712661
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.3526361730706412
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item,C07,C07,C07,1,anchor,7,0.5747215406503529
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item,C08,C08,C08,1,other,8,0.42665830332698534
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5386173153756317
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.5426568763738032
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.4873059207951883
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,2,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.5818495879597322
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item,C01,C01,C01,1,anchor,1,0.6828265977906994
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.722465742751956
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item,C03,C03,C03,1,other,3,0.6544053889811039
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item,C04,C04,C04,1,anchor,4,0.5483593705343083
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item,C05,C05,C05,1,anchor,5,0.6053680467361119
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.43211903989977146
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item,C07,C07,C07,1,anchor,7,0.696232406841591
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item,C08,C08,C08,1,other,8,0.5894549527698473
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6164039432881736
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6331966054756777
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.5772923913258637
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,3,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6219301708754756
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item,C01,C01,C01,1,anchor,1,0.8349812594125978
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.9251558326883241
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item,C03,C03,C03,1,other,3,0.7889496338379104
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item,C04,C04,C04,1,anchor,4,0.6051619922742247
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item,C05,C05,C05,1,anchor,5,0.6915106735192239
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.43826691702951737
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item,C07,C07,C07,1,anchor,7,0.525983204919612
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item,C08,C08,C08,1,other,8,0.4939462485999684
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6629944702851723
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6644092825314146
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6817113748589207
+edaic_to_cmdc_phq_shared,generic_target_mlp_head,10,4,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6414479412189393
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item,C01,C01,C01,1,anchor,1,0.6616182953119278
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.603384131193161
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item,C03,C03,C03,1,other,3,0.6718580186367035
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item,C04,C04,C04,1,anchor,4,0.5093837141990661
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item,C05,C05,C05,1,anchor,5,0.6785699874162674
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.42974377870559693
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item,C07,C07,C07,1,anchor,7,0.6279696494340896
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item,C08,C08,C08,1,other,8,0.532385367451343
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5893641177935194
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6193854115903378
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.516563954949379
+edaic_to_cmdc_phq_shared,full_without_mmd,11,0,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6021216930440232
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item,C01,C01,C01,1,anchor,1,0.7320141494274139
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.7969450742006302
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item,C03,C03,C03,1,other,3,0.7988530784845352
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item,C04,C04,C04,1,anchor,4,0.6462447941303253
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item,C05,C05,C05,1,anchor,5,0.767071259021759
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.48871733258110905
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item,C07,C07,C07,1,anchor,7,0.7253891825675964
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item,C08,C08,C08,1,other,8,0.6482838303838434
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.7004398375996516
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.7176798462867737
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6428312033908696
+edaic_to_cmdc_phq_shared,full_without_mmd,11,1,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7235684544341894
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item,C01,C01,C01,1,anchor,1,0.6173080176115036
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.6802596062421798
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item,C03,C03,C03,1,other,3,0.8725612372159958
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item,C04,C04,C04,1,anchor,4,0.40966356694698336
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item,C05,C05,C05,1,anchor,5,0.6246780514717102
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.39154877960681916
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item,C07,C07,C07,1,anchor,7,0.545275655388832
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item,C08,C08,C08,1,other,8,0.37452451298577216
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5644774284337245
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.5492313228547573
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.5359041929244995
+edaic_to_cmdc_phq_shared,full_without_mmd,11,2,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.623542875100884
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item,C01,C01,C01,1,anchor,1,0.680294668674469
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8167489886283874
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item,C03,C03,C03,1,other,3,0.7129632890224457
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item,C04,C04,C04,1,anchor,4,0.5632470458745956
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item,C05,C05,C05,1,anchor,5,0.6795614063739777
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.5437491536140442
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item,C07,C07,C07,1,anchor,7,0.7851055562496185
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item,C08,C08,C08,1,other,8,0.6232414305210113
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6756139423698186
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6770521692931653
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6802490711212158
+edaic_to_cmdc_phq_shared,full_without_mmd,11,3,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6681023597717285
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item,C01,C01,C01,1,anchor,1,0.92914297580719
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8855648189783096
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item,C03,C03,C03,1,other,3,0.8635788321495056
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item,C04,C04,C04,1,anchor,4,0.5926225453615188
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item,C05,C05,C05,1,anchor,5,0.7306658416986466
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.5257825881242753
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item,C07,C07,C07,1,anchor,7,0.540240004658699
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item,C08,C08,C08,1,other,8,0.47687150865627925
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.693058639429303
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6981678418815136
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.7056737035512924
+edaic_to_cmdc_phq_shared,full_without_mmd,11,4,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6702251704028924
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item,C01,C01,C01,1,anchor,1,0.6616170465946197
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.6035168588161468
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item,C03,C03,C03,1,other,3,0.6717887341976165
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item,C04,C04,C04,1,anchor,4,0.5092720359563827
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item,C05,C05,C05,1,anchor,5,0.6784051060676575
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.429840686917305
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item,C07,C07,C07,1,anchor,7,0.627903762459755
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item,C08,C08,C08,1,other,8,0.5323430332523913
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5893359080327343
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6192994877696038
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.5166787728667259
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,0,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6020658837250039
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item,C01,C01,C01,1,anchor,1,0.7319729626178741
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.796970334649086
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item,C03,C03,C03,1,other,3,0.798885029554367
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item,C04,C04,C04,1,anchor,4,0.6461916029453277
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item,C05,C05,C05,1,anchor,5,0.7670684069395065
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.48874109099251656
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item,C07,C07,C07,1,anchor,7,0.7253893077373504
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item,C08,C08,C08,1,other,8,0.6482631624732675
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.700435237238662
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.7176555700600147
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6428557128208012
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,1,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.7235740960138173
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item,C01,C01,C01,1,anchor,1,0.6173507630825043
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.6803197085857391
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item,C03,C03,C03,1,other,3,0.8726020812988281
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item,C04,C04,C04,1,anchor,4,0.40972783267498014
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item,C05,C05,C05,1,anchor,5,0.6247582852840423
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.3915484607219696
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item,C07,C07,C07,1,anchor,7,0.5453093558549881
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item,C08,C08,C08,1,other,8,0.37460037479741004
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.5645271077875578
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.5492865592241287
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.5359340846538544
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,2,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6236012280481191
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item,C01,C01,C01,1,anchor,1,0.6803006023168564
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8166720479726791
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item,C03,C03,C03,1,other,3,0.7130948066711426
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item,C04,C04,C04,1,anchor,4,0.5632190853357315
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item,C05,C05,C05,1,anchor,5,0.6797252207994461
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.5438609838485717
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item,C07,C07,C07,1,anchor,7,0.7850639313459397
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item,C08,C08,C08,1,other,8,0.6234764933586121
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6756766464561224
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6770772099494934
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.6802665159106255
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,3,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6682856500148773
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item,C01,C01,C01,1,anchor,1,0.9293682456016541
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item,C02,C02,C02,1,threshold_shift,2,0.8855134069919586
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item,C03,C03,C03,1,other,3,0.8635421574115754
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item,C04,C04,C04,1,anchor,4,0.5928134530782699
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item,C05,C05,C05,1,anchor,5,0.7307423263788223
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item,C06,C06,C06,1,threshold_shift,6,0.5259116530418396
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item,C07,C07,C07,1,anchor,7,0.5403396904468536
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item,C08,C08,C08,1,other,8,0.4769910189492862
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,0.6931527439875325
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,0.6983159288764
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,0.7057125300168992
+edaic_to_cmdc_phq_shared,full_measurement_aware,12,4,True,24,20,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,0.6702665881804307

@@ -1,0 +1,221 @@
+{
+  "run_id": "P5_MV24_measurement_aware_ordinal_model",
+  "generated_at": "2026-09-02T02:07:33+00:00",
+  "git_commit": "b2b49f8",
+  "status": "complete",
+  "official_view_id": "qwen3_wavlm_openface_official",
+  "directions": [
+    "edaic_to_cmdc_phq_shared",
+    "cmdc_to_edaic_phq_shared"
+  ],
+  "methods": [
+    "erm",
+    "coral",
+    "mmd",
+    "dann",
+    "strongest_foundation_baseline",
+    "latent_only",
+    "corpus_specific_head",
+    "direct_target_finetune",
+    "direct_multitask_shared_head",
+    "shared_head_joint_adaptation",
+    "generic_target_mlp_head",
+    "full_without_mmd",
+    "full_measurement_aware"
+  ],
+  "seed_count": 5,
+  "co_primary_metrics": [
+    "target_macro_item_mae",
+    "target_calibration_mae"
+  ],
+  "compact_summary_metric": "reconstruction_calibration_score",
+  "secondary_severity_metrics": [
+    "target_total_mae",
+    "target_total_ccc"
+  ],
+  "secondary_clinical_classification_endpoint": "shared PHQ total >= 10",
+  "secondary_clinical_classification_metrics": [
+    "target_binary_macro_f1",
+    "target_binary_balanced_accuracy",
+    "target_binary_auroc",
+    "target_binary_auprc",
+    "target_binary_sensitivity",
+    "target_binary_specificity"
+  ],
+  "supervision_regimes": {
+    "zero_target_label": [
+      "erm",
+      "coral",
+      "mmd",
+      "dann",
+      "strongest_foundation_baseline",
+      "latent_only"
+    ],
+    "target_calibrated": [
+      "corpus_specific_head",
+      "direct_target_finetune",
+      "direct_multitask_shared_head",
+      "shared_head_joint_adaptation",
+      "generic_target_mlp_head",
+      "full_without_mmd",
+      "full_measurement_aware"
+    ]
+  },
+  "mmd_sensitivity_weights": [
+    0.0,
+    0.0001,
+    0.001,
+    0.01,
+    0.1
+  ],
+  "cross_regime_direct_superiority_claim_allowed": false,
+  "target_calibrated_measurement_aware_family_best_on_compact_score": false,
+  "fair_ablation_gate": {
+    "gate": "fair_shared_layer_calibrated_ablation",
+    "status": "not_passed_uniform_measurement_pathway_superiority",
+    "criterion": "core measurement-aware must beat every calibrated shared-layer baseline in both transfer directions on paired reconstruction_calibration_score at one-sided p<0.05",
+    "comparisons": [
+      {
+        "transfer_id": "cmdc_to_edaic_phq_shared",
+        "baseline": "direct_multitask_shared_head",
+        "mean_delta_other_minus_core": 0.0924342818842101,
+        "p_value_core_better_one_sided": 0.09472463290747067,
+        "core_better_significance": "trend",
+        "passed": false
+      },
+      {
+        "transfer_id": "cmdc_to_edaic_phq_shared",
+        "baseline": "direct_target_finetune",
+        "mean_delta_other_minus_core": 0.08127802660610906,
+        "p_value_core_better_one_sided": 0.02214853154525524,
+        "core_better_significance": "*",
+        "passed": true
+      },
+      {
+        "transfer_id": "cmdc_to_edaic_phq_shared",
+        "baseline": "generic_target_mlp_head",
+        "mean_delta_other_minus_core": 0.08792474527817853,
+        "p_value_core_better_one_sided": 0.022488450606458182,
+        "core_better_significance": "*",
+        "passed": true
+      },
+      {
+        "transfer_id": "cmdc_to_edaic_phq_shared",
+        "baseline": "shared_head_joint_adaptation",
+        "mean_delta_other_minus_core": 0.0010488752906005594,
+        "p_value_core_better_one_sided": 0.4703376192475175,
+        "core_better_significance": "ns",
+        "passed": false
+      },
+      {
+        "transfer_id": "edaic_to_cmdc_phq_shared",
+        "baseline": "direct_multitask_shared_head",
+        "mean_delta_other_minus_core": -0.04001970345844086,
+        "p_value_core_better_one_sided": 0.9944645048970621,
+        "core_better_significance": "ns",
+        "passed": false
+      },
+      {
+        "transfer_id": "edaic_to_cmdc_phq_shared",
+        "baseline": "direct_target_finetune",
+        "mean_delta_other_minus_core": -0.02106961484595842,
+        "p_value_core_better_one_sided": 0.7383910371341011,
+        "core_better_significance": "ns",
+        "passed": false
+      },
+      {
+        "transfer_id": "edaic_to_cmdc_phq_shared",
+        "baseline": "generic_target_mlp_head",
+        "mean_delta_other_minus_core": -0.003659583033518277,
+        "p_value_core_better_one_sided": 0.551829301674466,
+        "core_better_significance": "ns",
+        "passed": false
+      },
+      {
+        "transfer_id": "edaic_to_cmdc_phq_shared",
+        "baseline": "shared_head_joint_adaptation",
+        "mean_delta_other_minus_core": 0.001038767402340035,
+        "p_value_core_better_one_sided": 0.38331953052943846,
+        "core_better_significance": "ns",
+        "passed": false
+      }
+    ],
+    "missing_comparisons": [],
+    "interpretation": "Large gains over the frozen corpus-specific-head baseline cannot be attributed uniquely to the measurement-aware target pathway"
+  },
+  "targeted_item_analysis": {
+    "comparison": "shared_head_joint_adaptation versus full_without_mmd",
+    "positive_delta_definition": "shared ordinal head item MAE minus measurement-aware item MAE",
+    "claim_policy": "descriptive targeted analysis, not a primary superiority gate",
+    "focus_item_set_rows": [
+      {
+        "transfer_id": "cmdc_to_edaic_phq_shared",
+        "item_set_id": "threshold_shift_items",
+        "item_ids": "C02/C06",
+        "audit_role": "measurement-gate threshold-shift items",
+        "delta_shared_minus_measurement_aware_mean": 0.0042408787,
+        "measurement_aware_lower_error_seed_count": 4,
+        "paired_seed_count": 5,
+        "directional_reading": "near tie"
+      },
+      {
+        "transfer_id": "cmdc_to_edaic_phq_shared",
+        "item_set_id": "anchor_items",
+        "item_ids": "C01/C04/C05/C07",
+        "audit_role": "measurement-gate anchor items",
+        "delta_shared_minus_measurement_aware_mean": 0.0006490499,
+        "measurement_aware_lower_error_seed_count": 2,
+        "paired_seed_count": 5,
+        "directional_reading": "near tie"
+      },
+      {
+        "transfer_id": "edaic_to_cmdc_phq_shared",
+        "item_set_id": "threshold_shift_items",
+        "item_ids": "C02/C06",
+        "audit_role": "measurement-gate threshold-shift items",
+        "delta_shared_minus_measurement_aware_mean": 0.0016172299,
+        "measurement_aware_lower_error_seed_count": 3,
+        "paired_seed_count": 5,
+        "directional_reading": "near tie"
+      },
+      {
+        "transfer_id": "edaic_to_cmdc_phq_shared",
+        "item_set_id": "anchor_items",
+        "item_ids": "C01/C04/C05/C07",
+        "audit_role": "measurement-gate anchor items",
+        "delta_shared_minus_measurement_aware_mean": -0.0006230077,
+        "measurement_aware_lower_error_seed_count": 1,
+        "paired_seed_count": 5,
+        "directional_reading": "near tie"
+      }
+    ],
+    "table": "targeted_item_analysis_table.md"
+  },
+  "best_by_transfer_and_regime": [
+    {
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "supervision_regime": "target_calibrated",
+      "method": "full_measurement_aware",
+      "reconstruction_calibration_score_mean": 1.2434066599241058
+    },
+    {
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "supervision_regime": "zero_target_label",
+      "method": "strongest_foundation_baseline",
+      "reconstruction_calibration_score_mean": 1.5367262045310164
+    },
+    {
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "supervision_regime": "target_calibrated",
+      "method": "direct_multitask_shared_head",
+      "reconstruction_calibration_score_mean": 0.9467449202528405
+    },
+    {
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "supervision_regime": "zero_target_label",
+      "method": "coral",
+      "reconstruction_calibration_score_mean": 1.4126442036917433
+    }
+  ],
+  "aggregate_outputs_only": true
+}

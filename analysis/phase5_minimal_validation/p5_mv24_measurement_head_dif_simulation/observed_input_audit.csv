@@ -1,0 +1,3 @@
+dataset,scale,mv24_label_feature_intersection_n,default_target_calibration_n_if_target,default_target_evaluation_n_if_target,mean_shared_phq_total,sd_shared_phq_total
+edaic,PHQ-8,219,66,153,6.639269406392694,6.000192001173002
+cmdc,PHQ-9,44,24,20,7.454545454545454,7.555852638247327

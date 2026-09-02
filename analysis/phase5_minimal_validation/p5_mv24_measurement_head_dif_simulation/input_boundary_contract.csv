@@ -1,0 +1,4 @@
+artifact_class,git_policy,reason,allowed_tracked_derivative
+observed_mv24_complete_case_rows,not_exported,Real participant-grain PHQ item responses are analysis input.,"dataset counts, split counts, and aggregate severity summaries"
+simulated_participant_response_rows,not_exported,Participant-grain simulated responses are unnecessary for the claim and can be regenerated.,draw-level aggregate item and item-set MAE only
+fitted_head_parameters,not_exported,Head parameters are simulation internals rather than paper evidence.,aggregate shared-vs-corpus-specific error summaries

@@ -2,22 +2,24 @@
 
 Status: complete
 Last updated: 2026-08-24 UTC
-Thread/task: Configure DAIC-WOZ as an E-DAIC-overlap benchmark view
+Thread/task: Configure DAIC-WOZ as a DAIC-lineage benchmark/control view
 
 ## Scope
 
-This session configures DAIC-WOZ for benchmark reproduction without
-re-downloading or duplicating the overlapping E-DAIC subject folders.
+This session configures DAIC-WOZ for benchmark reproduction and same-lineage
+PHQ-8 control analyses without re-downloading or duplicating locally
+overlapping subject folders.
 
 ## Current State
 
 - DAIC-WOZ official AVEC2017 split files are present under
   `/root/autodl-tmp/datasets/DAIC-WOZ/splits/`.
-- DAIC-WOZ local `extracted/` contains symlinks to
-  `/root/autodl-tmp/datasets/edaic/extracted/` for 189 official subject IDs in
-  the 300-492 range.
+- DAIC-WOZ local `extracted/` contains symlinks to the locally available
+  `/root/autodl-tmp/datasets/edaic/extracted/` folders for 189 official subject
+  IDs in the 300-492 range.
 - Local verification found exact subject-ID overlap between the official
-  DAIC-WOZ split subjects and E-DAIC extracted folders in the 300-492 range:
+  DAIC-WOZ split subjects and the locally available E-DAIC extracted folders in
+  the 300-492 range:
   189 matched, 0 missing locally, 0 extra local 300-492 folders outside the
   official DAIC-WOZ splits.
 - The official DAIC-WOZ file index lists one `300_P.zip`; no duplicate
@@ -26,14 +28,13 @@ re-downloading or duplicating the overlapping E-DAIC subject folders.
 ## Key Decisions
 
 - Do not download DAIC-WOZ raw archives from Baidu Netdisk because the
-  overlapping DAIC-WOZ subject folders are already extracted locally as part
-  of E-DAIC.
-- Register `daicwoz` as `uploaded_official_view_of_edaic`, not as an
-  independent dataset upload.
+  overlapping DAIC-WOZ subject folders are already available locally.
+- Register `daicwoz` as an AVEC2017 Wizard-of-Oz benchmark/control from the
+  DAIC lineage, not as an independent dataset upload.
 - Use DAIC-WOZ official AVEC2017 split/label files for `daicwoz`; use E-DAIC
   split/label files for `edaic`.
-- Do not pool `daicwoz` and `edaic` as independent datasets because subject
-  overlap is exact for DAIC-WOZ IDs.
+- E-DAIC is the extended DAIC dataset. Do not pool `daicwoz` and `edaic` as
+  independent datasets because their 300-492 subjects overlap heavily.
 
 ## Files Owned Or Touched
 
@@ -67,13 +68,14 @@ Audit completed successfully on 2026-08-24 UTC. `daicwoz` has 189 subjects,
 
 ## Blockers And Risks
 
-- DAIC-WOZ is an overlapping benchmark view. Any pooled experiment must exclude
-  duplicate subject use across `daicwoz` and `edaic`.
+- DAIC-WOZ is a same-lineage benchmark/control view. Any pooled experiment must
+  exclude duplicate subject use across `daicwoz` and `edaic`.
 - DAIC-WOZ official test labels are limited compared with train/dev item-level
   files: `full_test_split.csv` supplies PHQ total/binary/gender, while
   item-level PHQ8 columns are present for train/dev.
 
 ## Next Handoff
 
-Use `daicwoz` only when reproducing DAIC-WOZ/AVEC2017 benchmark results. Use
-`edaic` for the current 275-subject E-DAIC project contract.
+Use `daicwoz` when reproducing DAIC-WOZ/AVEC2017 benchmark results or when a
+same-scale PHQ-8 lineage control is explicitly needed. Use `edaic` for the
+current 275-subject E-DAIC project contract.

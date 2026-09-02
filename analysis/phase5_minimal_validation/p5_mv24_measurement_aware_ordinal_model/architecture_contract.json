@@ -1,0 +1,188 @@
+{
+  "artifact_id": "P5_MV24_measurement_aware_ordinal_architecture",
+  "generated_at": "2026-09-02T02:07:33+00:00",
+  "git_commit": "b2b49f8",
+  "architecture": {
+    "input": "frozen subject-level foundation representation from Qwen3 text, WavLM speech, and OpenFace video statistics",
+    "projector": "Linear-PCA(128) -> Linear(256) -> GELU -> Dropout(0.08) -> LayerNorm -> Linear(256) -> GELU",
+    "shared_symptom_layer": "Linear(hidden_dim, 8) mapped to the eight PHQ shared symptom items",
+    "measurement_heads": "one corpus-specific cumulative-logit ordinal head per corpus; each item has a positive discrimination slope and three ordered thresholds",
+    "core_losses": [
+      "source ordinal reconstruction negative log likelihood",
+      "target calibration ordinal reconstruction negative log likelihood",
+      "small latent L2 regularizer"
+    ],
+    "auxiliary_losses": [
+      "optional RBF-MMD alignment on the shared symptom layer for the measurement-aware + MMD variant"
+    ],
+    "formal_loss": "L_MA = NLL_src + lambda_cal*NLL_tgt_cal + lambda_l2*(||S_src||^2+||S_tgt||^2); L_MA+MMD = L_MA + lambda_mmd*MMD(S_src,S_tgt)",
+    "training_protocol": "source warm-start of projector, shared symptom layer, and source ordinal head; source head initialization of the target ordinal head; core measurement-aware adaptation with source and target-calibration ordinal reconstruction; optional MMD evaluated as an auxiliary variant",
+    "fixed_lambdas": {
+      "lambda_cal": 16.0,
+      "lambda_mmd_auxiliary": 0.001,
+      "lambda_l2": 0.0001
+    },
+    "secondary_endpoint": {
+      "definition": "shared-PHQ screening endpoint derived from the eight predicted/observed shared item scores",
+      "threshold": 10.0,
+      "metrics": [
+        "macro-F1",
+        "balanced accuracy",
+        "AUROC",
+        "AUPRC",
+        "sensitivity",
+        "specificity"
+      ]
+    },
+    "ablation_contracts": {
+      "latent_only": "same shared symptom layer and source ordinal head, no target measurement head",
+      "corpus_specific_head": "source-trained shared symptom layer plus target ordinal head fit on calibration labels; retained as a weak legacy calibrated baseline",
+      "direct_target_finetune": "source-warm-started direct item regressor; target calibration labels update the same shared layers without ordinal measurement heads",
+      "direct_multitask_shared_head": "direct shared item regressor jointly optimized on source reconstruction and target calibration labels",
+      "shared_head_joint_adaptation": "measurement-aware training schedule with source and target forced to share one ordinal head",
+      "generic_target_mlp_head": "shared symptom/projector layers with corpus-specific generic MLP item heads instead of ordinal measurement parameterization",
+      "full_without_mmd": "core measurement-aware pathway with joint source and target-calibration ordinal reconstruction",
+      "full_measurement_aware": "measurement-aware + MMD auxiliary variant with the same ordinal reconstruction losses plus latent symptom MMD"
+    }
+  },
+  "evaluation": {
+    "directions": [
+      "edaic_to_cmdc_phq_shared",
+      "cmdc_to_edaic_phq_shared"
+    ],
+    "methods": [
+      "erm",
+      "coral",
+      "mmd",
+      "dann",
+      "strongest_foundation_baseline",
+      "latent_only",
+      "corpus_specific_head",
+      "direct_target_finetune",
+      "direct_multitask_shared_head",
+      "shared_head_joint_adaptation",
+      "generic_target_mlp_head",
+      "full_without_mmd",
+      "full_measurement_aware"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "target_calibration_fraction": 0.3,
+    "target_calibration_min": 24,
+    "co_primary_metrics": [
+      "target_macro_item_mae",
+      "target_calibration_mae"
+    ],
+    "compact_summary_metric": "reconstruction_calibration_score = target_macro_item_mae + target_calibration_mae",
+    "secondary_severity_metrics": [
+      "target_total_mae",
+      "target_total_ccc"
+    ],
+    "secondary_clinical_classification_metrics": [
+      "target_binary_macro_f1",
+      "target_binary_balanced_accuracy",
+      "target_binary_auroc",
+      "target_binary_auprc",
+      "target_binary_sensitivity",
+      "target_binary_specificity"
+    ],
+    "supervision_regimes": {
+      "zero_target_label": [
+        "erm",
+        "coral",
+        "mmd",
+        "dann",
+        "strongest_foundation_baseline",
+        "latent_only"
+      ],
+      "target_calibrated": [
+        "corpus_specific_head",
+        "direct_target_finetune",
+        "direct_multitask_shared_head",
+        "shared_head_joint_adaptation",
+        "generic_target_mlp_head",
+        "full_without_mmd",
+        "full_measurement_aware"
+      ]
+    },
+    "statistical_test": "paired t-test over seed-level reconstruction_calibration_score, core measurement-aware model versus target-calibrated variants with matched labeled target exposure",
+    "cross_regime_policy": "zero-target-label baselines and target-calibrated measurement-aware methods are reported together for context, but direct superiority claims are made only within a matched target-label budget",
+    "fair_ablation_policy": "measurement-aware target-pathway claims require comparison against calibrated baselines that also allow target labels to update shared layers; corpus_specific_head alone is not used to identify the source of the gain",
+    "fair_ablation_gate_source": "run_summary.json:fair_ablation_gate",
+    "targeted_item_analysis": {
+      "comparison": "shared_head_joint_adaptation versus full_without_mmd",
+      "focus_item_sets": {
+        "anchors": "C01/C04/C05/C07",
+        "threshold_shift": "C02/C06"
+      },
+      "claim_policy": "descriptive item-level and item-set analysis for linking the measurement audit to model behavior; not a primary superiority test"
+    }
+  },
+  "feature_coverage": [
+    {
+      "view_id": "qwen3_wavlm_openface_official",
+      "dataset": "edaic",
+      "asset_id": "text_qwen3",
+      "modality": "text",
+      "model_name": "Qwen/Qwen3-Embedding-0.6B",
+      "rows": 219,
+      "feature_columns": 1024,
+      "cache_ref": "analysis/phase2_baselines/mv22_foundation_text_features/qwen3_embedding_0_6b/edaic_text_bge/edaic_bge_subject_features.csv"
+    },
+    {
+      "view_id": "qwen3_wavlm_openface_official",
+      "dataset": "cmdc",
+      "asset_id": "text_qwen3",
+      "modality": "text",
+      "model_name": "Qwen/Qwen3-Embedding-0.6B",
+      "rows": 77,
+      "feature_columns": 1024,
+      "cache_ref": "analysis/phase2_baselines/mv22_foundation_text_features/qwen3_embedding_0_6b/cmdc_pdch_text_encoder_mlp/cmdc_bge_subject_features.csv"
+    },
+    {
+      "view_id": "qwen3_wavlm_openface_official",
+      "dataset": "edaic",
+      "asset_id": "audio_wavlm_base_plus",
+      "modality": "audio",
+      "model_name": "microsoft/wavlm-base-plus",
+      "rows": 219,
+      "feature_columns": 768,
+      "cache_ref": "analysis/phase2_baselines/edaic_audio_frozen_encoders/wavlm_subject_features.csv"
+    },
+    {
+      "view_id": "qwen3_wavlm_openface_official",
+      "dataset": "cmdc",
+      "asset_id": "audio_wavlm_base_plus",
+      "modality": "audio",
+      "model_name": "microsoft/wavlm-base-plus",
+      "rows": 77,
+      "feature_columns": 768,
+      "cache_ref": "analysis/phase2_baselines/cmdc_audio_frozen_encoders/cmdc_wavlm_subject_features.csv"
+    },
+    {
+      "view_id": "qwen3_wavlm_openface_official",
+      "dataset": "edaic",
+      "asset_id": "video_openface_common",
+      "modality": "video",
+      "model_name": "OpenFace subject statistics",
+      "rows": 219,
+      "feature_columns": 204,
+      "cache_ref": "analysis/phase2_baselines/edaic_video_features/edaic_openface_subject_features.csv"
+    },
+    {
+      "view_id": "qwen3_wavlm_openface_official",
+      "dataset": "cmdc",
+      "asset_id": "video_openface_common",
+      "modality": "video",
+      "model_name": "OpenFace subject statistics",
+      "rows": 44,
+      "feature_columns": 204,
+      "cache_ref": "analysis/phase2_baselines/cmdc_video_features/openface_statistics_subject_features.csv"
+    }
+  ]
+}

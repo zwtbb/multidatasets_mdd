@@ -51,6 +51,23 @@ MV16_RUN_SUMMARY = PHASE5_DIR / "p5_mv16_dif_guided_calibration" / "run_summary.
 MV17A_DIR = PHASE5_DIR / "p5_mv17a_multilingual_feature_contract"
 MV17A_SUMMARY = MV17A_DIR / "run_summary.json"
 MV17A_DOWNSTREAM = MV17A_DIR / "downstream"
+MV21_DIR = PHASE5_DIR / "p5_mv21_measurement_discrepancy_gradient"
+MV21_SUMMARY = MV21_DIR / "run_summary.json"
+MV21_PHQ_DELTAS = MV21_DIR / "phq_shared_conditioned_deltas.csv"
+MV21_HAMD_DELTAS = MV21_DIR / "hamd_conditioned_deltas.csv"
+MV21_HAMD_CORR_DELTAS = MV21_DIR / "hamd_item_correlation_delta_summary.csv"
+MV21_DAIC_PAIRED = MV21_DIR / "daicwoz_edaic_paired_item_differences.csv"
+MV21_DAIC_DELTAS = MV21_DIR / "daicwoz_edaic_conditioned_deltas.csv"
+MV22_DIR = PHASE5_DIR / "p5_mv22_foundation_backbone_validation"
+MV22_SUMMARY = MV22_DIR / "run_summary.json"
+MV22_DOWNSTREAM_METRICS = MV22_DIR / "downstream_metric_extract.csv"
+MV22_MODEL_COMPARISON = MV22_DIR / "model_comparison_summary.csv"
+MV22_AUDIO_SUMMARY = MV22_DIR / "audio_foundation_proxy_summary.csv"
+MV23_DIR = PHASE5_DIR / "p5_mv23_foundation_multimodal_completion"
+MV23_SUMMARY = MV23_DIR / "run_summary.json"
+MV23_HEAD_COMPARISON = MV23_DIR / "head_comparison_summary.csv"
+MV23_MEASUREMENT_PROXY = MV23_DIR / "measurement_proxy_summary.csv"
+MV23_COVERAGE = MV23_DIR / "cache_coverage_summary.csv"
 
 TRACKED_FILES = [
     "artifact_hygiene_audit.json",
@@ -80,8 +97,8 @@ CLAIM_SECTION = {
 PAPER_CLAIM_LANGUAGE = {
     "C_FULL_METHOD_START": "Do not claim the full M0/M1/M2/M3 method; the evidence currently supports a governed measurement-shift diagnostic paper, with MV15 and MV16 completed as bounded/negative follow-ups.",
     "C_RQ1_SHARED_SYMPTOM": "Report direct shared-symptom mapping as negative under the old BGE contract and the completed MV17a multilingual sensitivity; make BGE-M3 the primary feature contract, multilingual-E5 the sensitivity, and reframe RQ1 around target measurement validity because feature shift, measurement shift, and prediction shift are distinct.",
-    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV19 as the primary label-only E-DAIC/CMDC PHQ common-structure and dataset-group measurement-shift evidence. Use corrected MV13/MV14 as anchor-linked external mirt qualitative and uncertainty corroboration, while retaining the configural convergence warning and MV19 observed-N caveat.",
-    "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence, not as cross-dataset HAMD transfer.",
+    "C_PSYCHOMETRIC_INVARIANCE_BASELINE": "Use MV10/MV11/MV19 plus MV21 PHQ shared-item descriptive/severity-conditioned results as the primary E-DAIC/CMDC PHQ common-structure and dataset-group measurement-shift evidence. Use corrected MV13/MV14 as anchor-linked external mirt qualitative and uncertainty corroboration, while retaining the configural convergence warning and MV19 observed-N caveat.",
+    "C_PDCH_HAMD_INTERNAL": "Use PDCH HAMD-17 as bounded internal diagnostic evidence and MV21 CMDC/PDCH HAMD as exploratory same-scale context-shift support, not as formal HAMD invariance or cross-dataset HAMD transfer.",
     "C_EATD_SDS_GENERALIZATION": "Report EATD SDS as a negative or weak external stress result.",
     "C_DATASET_IDENTITY_CONTROL": "Report unconditional dataset identity as a shortcut-risk screen and use MV15's latent-conditioned identity result as shared-latent diagnostic evidence.",
     "C_PROTOCOL_CRITERION_OVERLAP": "Report MV20 as a bounded negative CMDC-only criterion-overlap stress test: high-overlap question-position deletion is not clearly worse than matched random deletion under the primary BGE-M3 PHQ-9 top-20 gate.",
@@ -89,7 +106,7 @@ PAPER_CLAIM_LANGUAGE = {
     "C_EATD_VALENCE_ADVERSARIAL": "Do not add or claim an EATD-driven valence-adversarial module from current evidence.",
     "C_RQ3_CONTEXT_CONDITIONING": "Report MPDD age/personality/gait only as population and individual-difference stress tests; do not claim a personality-aware modeling contribution or keep iterating personality gating/calibration.",
     "C_RQ4_EVIDENCE_LOCALIZATION": "Use MV06 as first-round aggregate credibility evidence for measurement interpretation only; agreement does not prove the model used the evidence.",
-    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a target-measurement-validity paper organized around three layers: representation/protocol shift in X, target measurement shift in Y given theta and dataset/group, and prediction shift from X to theta. Treat Phase 3 as motivating evidence, MV10/MV11/MV19 as the primary psychometric layer, corrected MV13/MV14 as anchor-linked mirt corroboration with convergence and finite-sample caveats, BGE-M3 MV17a as the primary feature-contract consequence layer, multilingual-E5 as encoder sensitivity, and MV12/MV15/MV16/MV18/MV20 as bounded or legacy support.",
+    "C_PUBLISHABLE_PAPER_DIRECTION": "Proceed as a target-measurement-validity paper organized around three layers: representation/protocol shift in X, target measurement shift in Y given theta and dataset/group, and prediction shift from X to theta. Treat Phase 3 as motivating evidence, MV10/MV11/MV19/MV21 as the primary PHQ measurement layer, corrected MV13/MV14 as anchor-linked mirt corroboration with convergence and finite-sample caveats, BGE-M3 MV17a as the primary feature-contract consequence layer, multilingual-E5 as encoder sensitivity, MV22/MV23 as foundation-backbone and lightweight multimodal stress tests, and MV12/MV15/MV16/MV18/MV20/MV21 HAMD/DAIC controls as bounded or legacy support.",
 }
 
 LITERATURE_ROWS = [
@@ -113,6 +130,13 @@ LITERATURE_ROWS = [
         "citation_hint": "Zhang and Poellabauer 2025, Findings of EMNLP",
         "url": "https://aclanthology.org/2025.findings-emnlp.650/",
         "paper_positioning": "Recent interviewer-bias work motivates treating question type and dialogue protocol as nuisance factors; our paper uses this as a measurement-validity risk rather than as a standalone adversarial-method novelty.",
+    },
+    {
+        "source_id": "burdisso2024daicprompts",
+        "topic": "DAIC prompt validity and protocol leakage",
+        "citation_hint": "Burdisso et al. 2024, ClinicalNLP",
+        "url": "https://aclanthology.org/2024.clinicalnlp-1.8/",
+        "paper_positioning": "DAIC prompt-validity work motivates treating therapist/interviewer prompts as protocol-side signals rather than participant symptom evidence.",
     },
     {
         "source_id": "multi_probe_audit_2026",
@@ -169,6 +193,27 @@ LITERATURE_ROWS = [
         "citation_hint": "mirt multipleGroup documentation",
         "url": "https://philchalmers.github.io/mirt/html/multipleGroup.html",
         "paper_positioning": "The multipleGroup interface documents the multi-group invariance and DIF workflow used for the MV13 external replication.",
+    },
+    {
+        "source_id": "meredith1993measurement",
+        "topic": "Measurement invariance foundation",
+        "citation_hint": "Meredith 1993, Psychometrika",
+        "url": "https://link.springer.com/article/10.1007/BF02294825",
+        "paper_positioning": "Classical measurement-invariance theory grounds the paper's separation between latent constructs and observed scale responses.",
+    },
+    {
+        "source_id": "vandenberg2000review",
+        "topic": "Measurement invariance review",
+        "citation_hint": "Vandenberg and Lance 2000, Organizational Research Methods",
+        "url": "https://journals.sagepub.com/doi/10.1177/109442810031002",
+        "paper_positioning": "The measurement-invariance review supports the paper's target-contract and comparability-check framing.",
+    },
+    {
+        "source_id": "muthen2014irt",
+        "topic": "Approximate measurement alignment",
+        "citation_hint": "Muthen and Asparouhov 2014, Frontiers in Psychology",
+        "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2014.00978/full",
+        "paper_positioning": "IRT alignment motivates approximate rather than all-or-nothing treatment of imperfect cross-group measurement comparability.",
     },
     {
         "source_id": "irt_lr_dif_frontiers_2017",
@@ -234,6 +279,13 @@ LITERATURE_ROWS = [
         "paper_positioning": "SCD-MLLM occupies the generic multi-dataset robust multimodal-model space; our paper should not compete on fusion architecture but on target comparability assumptions.",
     },
     {
+        "source_id": "teng2026depressionllm",
+        "topic": "Foundation-model depression detection",
+        "citation_hint": "Teng et al. 2026, Displays",
+        "url": "https://doi.org/10.1016/j.displa.2025.103304",
+        "paper_positioning": "DepressionLLM motivates treating multimodal foundation depression systems as strong representation-side baselines rather than solutions to target measurement validity.",
+    },
+    {
         "source_id": "nlp_psychometrics_2026",
         "topic": "Emerging NLP psychometrics framing",
         "citation_hint": "De Duro et al. 2026, arXiv",
@@ -260,6 +312,97 @@ LITERATURE_ROWS = [
         "citation_hint": "Multilingual-E5-base model card",
         "url": "https://huggingface.co/intfloat/multilingual-e5-base",
         "paper_positioning": "Multilingual-E5-base is the second encoder sensitivity so the rerun does not hinge on a single multilingual embedding family.",
+    },
+    {
+        "source_id": "qwen3_embedding_text_foundation_2025",
+        "topic": "Text foundation embedding",
+        "citation_hint": "Zhang et al. 2025, arXiv",
+        "url": "https://arxiv.org/abs/2506.05176",
+        "paper_positioning": "Qwen3-Embedding supports the executed MV22 strong text-backbone slice; the current paper does not claim instruction-tuned LLM fine-tuning.",
+    },
+    {
+        "source_id": "qwen2024qwen25",
+        "topic": "Instruction-tuned LLM family",
+        "citation_hint": "Qwen Team 2024, official blog",
+        "url": "https://qwenlm.github.io/blog/qwen2.5/",
+        "paper_positioning": "Qwen2.5 motivates the design-compatible instruction-tuned LLM extension; it is not an executed fine-tuning result in the current paper.",
+    },
+    {
+        "source_id": "wavlm_speech_foundation_2022",
+        "topic": "Speech foundation representation",
+        "citation_hint": "Chen et al. 2022, arXiv",
+        "url": "https://arxiv.org/abs/2110.13900",
+        "paper_positioning": "WavLM supports the speech-foundation framing; MV22/MV23 execute cached WavLM base-plus proxy features, while WavLM Large remains future scope.",
+    },
+    {
+        "source_id": "wav2vec2_speech_foundation_2020",
+        "topic": "Speech foundation representation",
+        "citation_hint": "Baevski et al. 2020, arXiv",
+        "url": "https://arxiv.org/abs/2006.11477",
+        "paper_positioning": "wav2vec2 supports the speech-foundation sensitivity framing; MV23 executes cached wav2vec2-base proxy features, not wav2vec2-large.",
+    },
+    {
+        "source_id": "hubert_speech_foundation_2021",
+        "topic": "Speech foundation representation",
+        "citation_hint": "Hsu et al. 2021, arXiv",
+        "url": "https://arxiv.org/abs/2106.07447",
+        "paper_positioning": "HuBERT motivates a future large speech-backbone sensitivity; HuBERT Large is not executed in the current bounded experiment set.",
+    },
+    {
+        "source_id": "videomae_video_foundation_2022",
+        "topic": "Video foundation representation",
+        "citation_hint": "Tong et al. 2022, arXiv",
+        "url": "https://arxiv.org/abs/2203.12602",
+        "paper_positioning": "VideoMAE motivates future video-foundation sensitivity; MV23 uses OpenFace subject statistics as a lightweight video proxy, not VideoMAE.",
+    },
+    {
+        "source_id": "ganin2016domain",
+        "topic": "Domain-adversarial baseline",
+        "citation_hint": "Ganin et al. 2016, JMLR",
+        "url": "https://jmlr.org/papers/v17/15-239.html",
+        "paper_positioning": "Domain-adversarial training motivates DANN as a representation-alignment baseline family for MV22/MV23.",
+    },
+    {
+        "source_id": "sun2016deepcoral",
+        "topic": "Correlation-alignment baseline",
+        "citation_hint": "Sun et al. 2016, AAAI",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/10306",
+        "paper_positioning": "CORAL motivates covariance-alignment baselines that pressure representation shift without directly modeling target measurement.",
+    },
+    {
+        "source_id": "long2015dan",
+        "topic": "MMD distribution-alignment baseline",
+        "citation_hint": "Long et al. 2015, ICML",
+        "url": "https://proceedings.mlr.press/v37/long15.html",
+        "paper_positioning": "Deep Adaptation Networks motivate MMD-style distribution matching as a representation-side adaptation baseline.",
+    },
+    {
+        "source_id": "arjovsky2019irm",
+        "topic": "Invariant-risk baseline",
+        "citation_hint": "Arjovsky et al. 2019, arXiv",
+        "url": "https://arxiv.org/abs/1907.02893",
+        "paper_positioning": "IRM motivates invariant-predictor baselines; current PHQ transfer uses severity-environment proxies rather than a full multi-environment IRM claim.",
+    },
+    {
+        "source_id": "sagawa2019groupdro",
+        "topic": "Group robustness baseline",
+        "citation_hint": "Sagawa et al. 2019, arXiv",
+        "url": "https://arxiv.org/abs/1911.08731",
+        "paper_positioning": "GroupDRO motivates worst-group robustness baselines; current PHQ transfer uses severity-environment proxies under the bounded setting.",
+    },
+    {
+        "source_id": "guo2017calibration",
+        "topic": "Prediction calibration",
+        "citation_hint": "Guo et al. 2017, ICML",
+        "url": "https://proceedings.mlr.press/v70/guo17a.html",
+        "paper_positioning": "Modern neural calibration work supports reporting observed-scale safety and calibration gates alongside raw error.",
+    },
+    {
+        "source_id": "lipton2018labelshift",
+        "topic": "Label shift",
+        "citation_hint": "Lipton et al. 2018, ICML",
+        "url": "https://proceedings.mlr.press/v80/lipton18a.html",
+        "paper_positioning": "Label-shift correction motivates separating representation shift from target-distribution and target-measurement assumptions.",
     },
     {
         "source_id": "pdch_dataset",
@@ -319,6 +462,20 @@ def require_inputs() -> None:
         MV15_RUN_SUMMARY,
         MV16_RUN_SUMMARY,
         MV17A_SUMMARY,
+        MV21_SUMMARY,
+        MV21_PHQ_DELTAS,
+        MV21_HAMD_DELTAS,
+        MV21_HAMD_CORR_DELTAS,
+        MV21_DAIC_PAIRED,
+        MV21_DAIC_DELTAS,
+        MV22_SUMMARY,
+        MV22_DOWNSTREAM_METRICS,
+        MV22_MODEL_COMPARISON,
+        MV22_AUDIO_SUMMARY,
+        MV23_SUMMARY,
+        MV23_HEAD_COMPARISON,
+        MV23_MEASUREMENT_PROXY,
+        MV23_COVERAGE,
         MV06_UNCERTAINTY,
     ]:
         if not path.exists():
@@ -418,6 +575,227 @@ def load_mv17a_context() -> dict[str, Any]:
     }
 
 
+def top_abs_delta(
+    frame: pd.DataFrame,
+    value_col: str = "item_mean_diff_left_minus_right",
+    sparse_col: str = "sparse_comparison",
+) -> pd.Series:
+    data = frame.copy()
+    if sparse_col in data.columns:
+        data = data[~data[sparse_col].astype(bool)].copy()
+    if data.empty:
+        raise ValueError("no non-sparse MV21 delta rows")
+    data["abs_delta"] = pd.to_numeric(data[value_col], errors="coerce").abs()
+    data = data.sort_values("abs_delta", ascending=False, na_position="last")
+    return data.iloc[0]
+
+
+def load_mv21_context() -> dict[str, Any]:
+    summary = read_json(MV21_SUMMARY)
+    phq = pd.read_csv(MV21_PHQ_DELTAS)
+    hamd = pd.read_csv(MV21_HAMD_DELTAS)
+    hamd_corr = pd.read_csv(MV21_HAMD_CORR_DELTAS)
+    daic_paired = pd.read_csv(MV21_DAIC_PAIRED)
+    daic_delta = pd.read_csv(MV21_DAIC_DELTAS)
+
+    phq_top = top_abs_delta(phq)
+    hamd_top = top_abs_delta(hamd)
+    daic_top = top_abs_delta(daic_delta)
+    hamd_corr_top = hamd_corr.dropna(subset=["abs_spearman_delta"]).sort_values(
+        "abs_spearman_delta", ascending=False
+    ).iloc[0]
+    daic_exact_min = float(pd.to_numeric(daic_paired["exact_match_rate"], errors="coerce").min())
+    daic_mean_abs_max = float(pd.to_numeric(daic_paired["mean_abs_difference"], errors="coerce").max())
+
+    return {
+        "mv21_summary": summary,
+        "mv21_sentence": (
+            "MV21 descriptive measurement-discrepancy gradient: DAIC-WOZ/E-DAIC same-PHQ-8 lineage control "
+            f"uses {summary['daicwoz_train_dev_rows']} train/dev rows with "
+            f"{summary['daicwoz_train_dev_item_subjects']} complete item-labeled subjects "
+            f"({summary['daicwoz_incomplete_item_rows']} incomplete item row), paired overlap "
+            f"{summary['daicwoz_edaic_paired_subjects']}, minimum item exact-match rate "
+            f"{fmt(daic_exact_min)}, maximum mean absolute paired item difference {fmt(daic_mean_abs_max)}, "
+            f"and maximum non-sparse severity-conditioned DAIC-WOZ minus E-DAIC item-mean delta "
+            f"{fmt(abs(float(daic_top['item_mean_diff_left_minus_right'])))}. "
+            f"E-DAIC/CMDC PHQ shared-item descriptive analysis uses {summary['phq_edaic_subjects']}/"
+            f"{summary['phq_cmdc_subjects']} subjects; the largest non-sparse item-excluded severity-conditioned "
+            f"delta is {phq_top['item_id']} {phq_top['item_label_short']} in the {phq_top['condition_bin']} bin "
+            f"(E-DAIC minus CMDC mean {fmt(phq_top['item_mean_diff_left_minus_right'])}, "
+            f"P>=2 delta {fmt(phq_top['p_ge_2_diff_left_minus_right'])}). "
+            f"CMDC/PDCH HAMD same-scale descriptive analysis uses {summary['hamd_cmdc_subjects']}/"
+            f"{summary['hamd_pdch_subjects']} subjects; the largest non-sparse item-excluded "
+            f"severity-conditioned delta is {hamd_top['item_id']} in {hamd_top['scope']} "
+            f"{hamd_top['condition_bin']} (CMDC minus PDCH mean {fmt(hamd_top['item_mean_diff_left_minus_right'])}), "
+            f"and the largest descriptive Spearman structure delta is {hamd_corr_top['left_item_id']}-"
+            f"{hamd_corr_top['right_item_id']} ({fmt(hamd_corr_top['abs_spearman_delta'])})."
+        ),
+        "mv21_daic_exact_min": daic_exact_min,
+        "mv21_daic_mean_abs_max": daic_mean_abs_max,
+        "mv21_daic_max_conditioned_abs_delta": abs(float(daic_top["item_mean_diff_left_minus_right"])),
+        "mv21_phq_top_item": str(phq_top["item_id"]),
+        "mv21_phq_top_label": str(phq_top["item_label_short"]),
+        "mv21_phq_top_bin": str(phq_top["condition_bin"]),
+        "mv21_phq_top_mean_delta": float(phq_top["item_mean_diff_left_minus_right"]),
+        "mv21_phq_top_p_ge_2_delta": float(phq_top["p_ge_2_diff_left_minus_right"]),
+        "mv21_hamd_top_item": str(hamd_top["item_id"]),
+        "mv21_hamd_top_scope": str(hamd_top["scope"]),
+        "mv21_hamd_top_bin": str(hamd_top["condition_bin"]),
+        "mv21_hamd_top_mean_delta": float(hamd_top["item_mean_diff_left_minus_right"]),
+        "mv21_hamd_corr_pair": f"{hamd_corr_top['left_item_id']}-{hamd_corr_top['right_item_id']}",
+        "mv21_hamd_corr_abs_delta": float(hamd_corr_top["abs_spearman_delta"]),
+    }
+
+
+def load_mv22_context() -> dict[str, Any]:
+    summary = read_json(MV22_SUMMARY)
+    downstream = pd.read_csv(MV22_DOWNSTREAM_METRICS)
+    comparison = pd.read_csv(MV22_MODEL_COMPARISON)
+    audio = pd.read_csv(MV22_AUDIO_SUMMARY)
+
+    def metric(encoder: str, experiment: str, name: str) -> float:
+        rows = downstream[
+            downstream["encoder"].astype(str).eq(encoder)
+            & downstream["experiment"].astype(str).eq(experiment)
+            & downstream["metric"].astype(str).eq(name)
+        ]
+        if rows.empty:
+            raise ValueError(f"missing MV22 metric {encoder}/{experiment}/{name}")
+        return float(rows.iloc[0]["value"])
+
+    def comparison_metric(feature_view: str, transfer_id: str, method: str, column: str) -> float:
+        rows = comparison[
+            comparison["feature_view"].astype(str).eq(feature_view)
+            & comparison["transfer_id"].astype(str).eq(transfer_id)
+            & comparison["method"].astype(str).eq(method)
+        ]
+        if rows.empty:
+            raise ValueError(f"missing MV22 comparison {feature_view}/{transfer_id}/{method}/{column}")
+        return float(rows.iloc[0][column])
+
+    qwen_feature_identity = metric("qwen3_embedding_0_6b", "mv07", "feature_identity_ba")
+    qwen_prediction_identity = metric("qwen3_embedding_0_6b", "mv07", "prediction_identity_ba")
+    qwen_conditional_identity = metric("qwen3_embedding_0_6b", "mv12", "conditional_identity_ba_m12a")
+    qwen_pooled_theta_mae = metric("qwen3_embedding_0_6b", "mv12", "m12a_pooled_theta_mae")
+    qwen_theta_feature_identity = metric("qwen3_embedding_0_6b", "mv15", "theta_conditioned_feature_identity_ba")
+    qwen_theta_output_identity = metric("qwen3_embedding_0_6b", "mv15", "psychometric_predicted_theta_output_identity_ba")
+
+    qwen_cmdc_to_edaic_macro = comparison_metric(
+        "qwen3_embedding_0_6b_text",
+        "cmdc_to_edaic_phq_shared",
+        "measurement_aware_mv12_reference",
+        "observed_macro_item_mae",
+    )
+    qwen_cmdc_to_edaic_direct_macro = comparison_metric(
+        "qwen3_embedding_0_6b_text",
+        "cmdc_to_edaic_phq_shared",
+        "mv12_direct_itemwise_reference",
+        "observed_macro_item_mae",
+    )
+    qwen_edaic_to_cmdc_macro = comparison_metric(
+        "qwen3_embedding_0_6b_text",
+        "edaic_to_cmdc_phq_shared",
+        "measurement_aware_mv12_reference",
+        "observed_macro_item_mae",
+    )
+    qwen_edaic_to_cmdc_direct_macro = comparison_metric(
+        "qwen3_embedding_0_6b_text",
+        "edaic_to_cmdc_phq_shared",
+        "mv12_direct_itemwise_reference",
+        "observed_macro_item_mae",
+    )
+    qwen_cmdc_to_edaic_total = comparison_metric(
+        "qwen3_embedding_0_6b_text",
+        "cmdc_to_edaic_phq_shared",
+        "measurement_aware_mv12_reference",
+        "observed_total_mae",
+    )
+    qwen_edaic_to_cmdc_total = comparison_metric(
+        "qwen3_embedding_0_6b_text",
+        "edaic_to_cmdc_phq_shared",
+        "measurement_aware_mv12_reference",
+        "observed_total_mae",
+    )
+    audio_available = audio[audio["status"].astype(str).eq("available_as_audio_foundation_proxy")]
+    wavlm_large_status = audio[audio["model_name"].astype(str).eq("microsoft/wavlm-large")]["status"].iloc[0]
+
+    return {
+        "mv22_sentence": (
+            "MV22 foundation-backbone validation: Qwen3-Embedding-0.6B subject features are complete for "
+            f"E-DAIC/CMDC/PDCH, the Qwen MV07/MV12/MV15 chain remains blocked, Qwen feature identity BA "
+            f"{fmt(qwen_feature_identity)}, prediction identity BA {fmt(qwen_prediction_identity)}, "
+            f"MV12 conditional output identity BA {fmt(qwen_conditional_identity)}, pooled theta MAE "
+            f"{fmt(qwen_pooled_theta_mae)}, theta-conditioned feature identity BA "
+            f"{fmt(qwen_theta_feature_identity)}, and predicted-theta output identity BA "
+            f"{fmt(qwen_theta_output_identity)}. Under the Qwen text contract, the measurement-aware MV12 "
+            f"reference improves shared-item macro MAE over the direct itemwise reference in both PHQ transfer "
+            f"directions ({fmt(qwen_cmdc_to_edaic_macro)} vs {fmt(qwen_cmdc_to_edaic_direct_macro)} for "
+            f"CMDC-to-E-DAIC; {fmt(qwen_edaic_to_cmdc_macro)} vs {fmt(qwen_edaic_to_cmdc_direct_macro)} for "
+            f"E-DAIC-to-CMDC) with total MAE {fmt(qwen_cmdc_to_edaic_total)}/{fmt(qwen_edaic_to_cmdc_total)}. "
+            f"WavLM base-plus audio proxy caches are available for {len(audio_available)} corpus rows; "
+            f"WavLM Large status is {wavlm_large_status}."
+        ),
+        "qwen_feature_identity_ba": qwen_feature_identity,
+        "qwen_prediction_identity_ba": qwen_prediction_identity,
+        "qwen_conditional_identity_ba": qwen_conditional_identity,
+        "qwen_pooled_theta_mae": qwen_pooled_theta_mae,
+        "qwen_theta_feature_identity_ba": qwen_theta_feature_identity,
+        "qwen_theta_output_identity_ba": qwen_theta_output_identity,
+        "artifact_hygiene_passed": bool(summary["artifact_hygiene_passed"]),
+    }
+
+
+def load_mv23_context() -> dict[str, Any]:
+    summary = read_json(MV23_SUMMARY)
+    comparison = pd.read_csv(MV23_HEAD_COMPARISON)
+    measurement = pd.read_csv(MV23_MEASUREMENT_PROXY)
+    coverage = pd.read_csv(MV23_COVERAGE)
+
+    def best_row(transfer_id: str) -> pd.Series:
+        rows = comparison[comparison["transfer_id"].astype(str).eq(transfer_id)].copy()
+        if rows.empty:
+            raise ValueError(f"missing MV23 transfer rows: {transfer_id}")
+        return rows.sort_values(["observed_macro_item_mae", "observed_total_mae"]).iloc[0]
+
+    def best_measurement_row(transfer_id: str) -> pd.Series:
+        rows = measurement[measurement["transfer_id"].astype(str).eq(transfer_id)].copy()
+        if rows.empty:
+            raise ValueError(f"missing MV23 measurement rows: {transfer_id}")
+        return rows.sort_values(["target_macro_item_mae_mean", "target_total_mae_mean"]).iloc[0]
+
+    cmdc_to_edaic_best = best_row("cmdc_to_edaic_phq_shared")
+    edaic_to_cmdc_best = best_row("edaic_to_cmdc_phq_shared")
+    cmdc_to_edaic_measurement = best_measurement_row("cmdc_to_edaic_phq_shared")
+    edaic_to_cmdc_measurement = best_measurement_row("edaic_to_cmdc_phq_shared")
+    multimodal_views = comparison[
+        comparison["modality_set"].astype(str).eq("text_audio_video")
+    ]["view_id"].nunique()
+
+    return {
+        "mv23_sentence": (
+            f"MV23 lightweight multimodal completion executes {int(summary['view_count'])} foundation/proxy views "
+            f"over E-DAIC/CMDC PHQ shared-item transfer, with {int(summary['adapter_row_count'])} adapter aggregate rows "
+            f"and {int(summary['measurement_proxy_row_count'])} measurement-aware proxy rows. Coverage spans "
+            f"{coverage['asset_id'].nunique()} reusable local assets and {multimodal_views} text-audio-video fusion views. "
+            f"The best CMDC-to-E-DAIC row is {cmdc_to_edaic_best['view_id']}/{cmdc_to_edaic_best['method']} "
+            f"with macro MAE {fmt(cmdc_to_edaic_best['observed_macro_item_mae'])}; the best E-DAIC-to-CMDC row is "
+            f"{edaic_to_cmdc_best['view_id']}/{edaic_to_cmdc_best['method']} with macro MAE "
+            f"{fmt(edaic_to_cmdc_best['observed_macro_item_mae'])}. The best measurement-aware proxy rows are "
+            f"{cmdc_to_edaic_measurement['view_id']} macro MAE {fmt(cmdc_to_edaic_measurement['target_macro_item_mae_mean'])} "
+            f"and {edaic_to_cmdc_measurement['view_id']} macro MAE {fmt(edaic_to_cmdc_measurement['target_macro_item_mae_mean'])}. "
+            "WavLM Large, HuBERT Large, VideoMAE, and end-to-end multimodal fine-tuning remain unclaimed future scope."
+        ),
+        "view_count": int(summary["view_count"]),
+        "adapter_row_count": int(summary["adapter_row_count"]),
+        "measurement_proxy_row_count": int(summary["measurement_proxy_row_count"]),
+        "best_cmdc_to_edaic_macro_mae": float(cmdc_to_edaic_best["observed_macro_item_mae"]),
+        "best_edaic_to_cmdc_macro_mae": float(edaic_to_cmdc_best["observed_macro_item_mae"]),
+        "best_cmdc_to_edaic_measurement_macro_mae": float(cmdc_to_edaic_measurement["target_macro_item_mae_mean"]),
+        "best_edaic_to_cmdc_measurement_macro_mae": float(edaic_to_cmdc_measurement["target_macro_item_mae_mean"]),
+        "artifact_hygiene_passed": bool(summary["artifact_hygiene_passed"]),
+    }
+
+
 def build_metric_context() -> dict[str, str]:
     gate = read_json(FULL_GATE_SUMMARY)
     mv02 = read_json(MV02_SUMMARY)
@@ -464,6 +842,9 @@ def build_metric_context() -> dict[str, str]:
     mv15_v = mv15_run["verdict"]
     mv16_v = mv16_run["verdict"]
     mv17a_context = load_mv17a_context()
+    mv21_context = load_mv21_context()
+    mv22_context = load_mv22_context()
+    mv23_context = load_mv23_context()
     mirt_parameterization_corrected = not bool(mirt_decision["statistical_correctness_blocker"])
     mv13_parameterization_note = (
         "The corrected code-level audit verifies E-DAIC as reference, CMDC as focal, explicit "
@@ -554,7 +935,7 @@ def build_metric_context() -> dict[str, str]:
             f"{mv16_v['best_supported_k']}, best L4 small-k delta theta MAE vs L0 "
             f"{fmt(mv16_v['best_l4_small_k_delta_theta_mae_vs_L0'])}, and L4 small-k "
             f"output identity BA {fmt(mv16_v['l4_small_k_output_identity_ba_mean'])}. "
-            f"{mv17a_context['mv17a_summary']}"
+            f"{mv17a_context['mv17a_summary']} {mv22_context['mv22_sentence']} {mv23_context['mv23_sentence']}"
         ),
         "mv09": (
             f"MV09 conditional identity audit: E-DAIC/CMDC raw BA {fmt(mv09_v['edaic_cmdc_raw_ba'])}, "
@@ -690,6 +1071,9 @@ def build_metric_context() -> dict[str, str]:
             f"full_method_allowed={mv16_v['full_method_allowed']}."
         ),
         "mv17a": mv17a_context["mv17a_summary"],
+        "mv21": mv21_context["mv21_sentence"],
+        "mv22": mv22_context["mv22_sentence"],
+        "mv23": mv23_context["mv23_sentence"],
         "pdch": (
             f"PDCH item-derived total MAE {fmt(mv02_v['best_pdch_item_total_mae'])}; "
             f"direct total MAE {fmt(mv02_v['best_pdch_direct_total_mae'])}; "
@@ -715,17 +1099,17 @@ def build_metric_context() -> dict[str, str]:
 
 def claim_evidence_sentence(claim_id: str, context: dict[str, str], row: pd.Series) -> str:
     if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION"}:
-        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mirt_param_audit']} {context['mv19']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']} {context['mv15_design']} {context['mv15_run']} {context['mv16_run']} {context['mv17a']} {context['mv20']}"
+        return f"{context['gate']} {context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mirt_param_audit']} {context['mv19']} {context['mv21']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']} {context['mv15_design']} {context['mv15_run']} {context['mv16_run']} {context['mv17a']} {context['mv22']} {context['mv20']}"
     if claim_id == "C_RQ1_SHARED_SYMPTOM":
-        return f"{context['rq1']} {context['mv19']} {context['mv12_analysis']} {context['mv15_run']}"
+        return f"{context['rq1']} {context['mv19']} {context['mv21']} {context['mv12_analysis']} {context['mv15_run']} {context['mv22']}"
     if claim_id == "C_PSYCHOMETRIC_INVARIANCE_BASELINE":
-        return f"{context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mirt_param_audit']} {context['mv19']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
+        return f"{context['mv10']} {context['mv11']} {context['mv13']} {context['mv14']} {context['mirt_param_audit']} {context['mv19']} {context['mv21']} {context['mv12_design']} {context['mv12_run']} {context['mv12_analysis']}"
     if claim_id == "C_PDCH_HAMD_INTERNAL":
-        return context["pdch"]
+        return f"{context['pdch']} {context['mv21']}"
     if claim_id in {"C_EATD_SDS_GENERALIZATION", "C_EATD_VALENCE_ADVERSARIAL"}:
         return context["eatd"]
     if claim_id == "C_DATASET_IDENTITY_CONTROL":
-        return f"{context['mv09']} {context['mv15_run']} {context['mv17a']}"
+        return f"{context['mv09']} {context['mv15_run']} {context['mv17a']} {context['mv22']}"
     if claim_id == "C_PROTOCOL_CRITERION_OVERLAP":
         return context["mv20"]
     if claim_id == "C_MODMA_TASK_CONTROL":
@@ -751,6 +1135,9 @@ def build_claim_boundary() -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for _, row in claims.iterrows():
         claim_id = str(row["claim_id"])
+        source_artifact_ids = str(row["primary_sources"])
+        if claim_id in {"C_FULL_METHOD_START", "C_PUBLISHABLE_PAPER_DIRECTION", "C_RQ1_SHARED_SYMPTOM", "C_DATASET_IDENTITY_CONTROL"}:
+            source_artifact_ids = f"{source_artifact_ids};P5_MV22;P5_MV23"
         rows.append(
             {
                 "claim_id": claim_id,
@@ -761,7 +1148,7 @@ def build_claim_boundary() -> pd.DataFrame:
                 "evidence_to_report": paper_text(claim_evidence_sentence(claim_id, context, row)),
                 "manuscript_guardrail": blocked_language(str(row["decision"])),
                 "next_evidence_needed": paper_text(row["required_next_evidence"]),
-                "source_artifact_ids": row["primary_sources"],
+                "source_artifact_ids": source_artifact_ids,
             }
         )
     return pd.DataFrame(rows)
@@ -782,7 +1169,7 @@ def build_key_findings() -> pd.DataFrame:
             "paper_section": "Measurement evidence",
             "finding": context["rq1"],
             "interpretation": "Measurement screens and residual measurement heads are diagnostic under current features; MV10/MV11/MV19 shift RQ1 to measurement-target validity while corrected MV13/MV14 provide anchor-linked external mirt corroboration under convergence and finite-sample caveats. MV17a makes BGE-M3 the primary feature-contract consequence layer and shows that observed-scale safety and feature invariance remain blocked under multilingual encoders.",
-            "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_mirt_parameterization_audit;P5_MV19;P5_MV12;P5_MV12_analysis;P5_MV15;P5_MV16;P5_MV17a",
+                "source_artifact_ids": "P5_MV08;P5_MV08b;P5_MV09;P5_MV10;P5_MV11;P5_MV13;P5_MV14;P5_mirt_parameterization_audit;P5_MV19;P5_MV21;P5_MV12;P5_MV12_analysis;P5_MV15;P5_MV16;P5_MV17a;P5_MV22;P5_MV23",
         },
         {
             "finding_id": "legacy_bge_feature_contract_caveat",
@@ -797,6 +1184,20 @@ def build_key_findings() -> pd.DataFrame:
             "finding": context["mv17a"],
             "interpretation": "MV17a resolves the old language-encoder caveat for the paper-critical feature chain. Stable conclusions are domain-learnable theta, low output-level identity, failed observed-scale safety, and failed feature invariance; external theta transfer and B3 Pareto dominance are encoder-dependent.",
             "source_artifact_ids": "P5_MV17a",
+        },
+        {
+            "finding_id": "mv22_foundation_backbone_validation",
+            "paper_section": "Measurement-aware foundation stress test",
+            "finding": context["mv22"],
+            "interpretation": "MV22 closes the immediate foundation-model validation gap without claiming SOTA: Qwen strengthens the text backbone, WavLM base-plus supplies an audio proxy view, adaptation baselines pressure representation alignment, and the measurement-aware reference remains useful while feature identity and observed-scale safety gates stay visible.",
+            "source_artifact_ids": "P5_MV22",
+        },
+        {
+            "finding_id": "mv23_foundation_multimodal_completion",
+            "paper_section": "Measurement-aware foundation stress test",
+            "finding": context["mv23"],
+            "interpretation": "MV23 adds the lightweight multimodal completion layer: audio-only, video-proxy, text-audio, and text-audio-video views are evaluated under the same PHQ shared-item transfer contract, with direct/alignment baselines and a measurement-aware latent-total proxy head. It supports the foundation-era framework argument without claiming WavLM Large, HuBERT Large, VideoMAE, or full end-to-end multimodal completion.",
+            "source_artifact_ids": "P5_MV23",
         },
         {
             "finding_id": "mv10_psychometric_baseline",
@@ -839,6 +1240,13 @@ def build_key_findings() -> pd.DataFrame:
             "finding": context["mv19"],
             "interpretation": "The observed-N simulation closes the small-sample uncertainty layer by showing adequate both-target H1 flagging but high false/localization sensitivity, low top-two recovery, and poor exact anchor-set recovery; C02/C06 wording must be finite-sample-bounded.",
             "source_artifact_ids": "P5_MV19",
+        },
+        {
+            "finding_id": "mv21_measurement_discrepancy_gradient",
+            "paper_section": "Psychometric baseline",
+            "finding": context["mv21"],
+            "interpretation": "MV21 reframes the added analyses as a discrepancy gradient: DAIC-WOZ/E-DAIC is a same-lineage PHQ-8 control with tiny paired/conditioned label-contract differences, E-DAIC/CMDC is the main PHQ shared-item dataset-group comparison, and CMDC/PDCH HAMD is exploratory same-scale context-shift support. It is descriptive and severity-conditioned, not a new formal MIM/IRT model.",
+            "source_artifact_ids": "P5_MV21",
         },
         {
             "finding_id": "mv20_criterion_overlap_stress",

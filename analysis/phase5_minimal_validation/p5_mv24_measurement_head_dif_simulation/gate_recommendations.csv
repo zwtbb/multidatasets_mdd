@@ -1,0 +1,4 @@
+recommendation_id,status,recommendation,evidence
+mechanism_sanity_check,weak_item_local_mechanism_consistent_but_small,Use the simulation only as bounded item-local mechanism evidence under known threshold DIF.,H0 max abs C02/C06-set delta=0.013; H1 min C02/C06-set delta=0.002; H1 min lower-error rate=0.602.
+real_data_claim_boundary,keep_bounded,Do not override the real MV24 fair-ablation and targeted-item near-tie results.,This simulation fixes the latent input and plants a known response-process shift; real MV24 still estimates latent representations from frozen multimodal features.
+paper_positioning,framework_instantiation_not_sota_claim,Present corpus-specific ordinal heads as a constructive instantiation whose value depends on observed target measurement shift and calibration budget.,"The intended claim is audit-to-model coherence, not universal architecture superiority."

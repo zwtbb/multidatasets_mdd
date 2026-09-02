@@ -1,0 +1,5 @@
+transfer_id,supervision_regime,methods,target_calibration_labels_used,labeled_target_calib_n,target_eval_n,direct_claim_scope
+cmdc_to_edaic_phq_shared,target_calibrated,corpus_specific_head;direct_target_finetune;direct_multitask_shared_head;shared_head_joint_adaptation;generic_target_mlp_head;full_without_mmd;full_measurement_aware,True,66,153,methods in this row share the same target-label budget
+cmdc_to_edaic_phq_shared,zero_target_label,erm;coral;mmd;dann;strongest_foundation_baseline;latent_only,False,0,153,zero target clinical labels; compare only with other zero-label rows
+edaic_to_cmdc_phq_shared,target_calibrated,corpus_specific_head;direct_target_finetune;direct_multitask_shared_head;shared_head_joint_adaptation;generic_target_mlp_head;full_without_mmd;full_measurement_aware,True,24,20,methods in this row share the same target-label budget
+edaic_to_cmdc_phq_shared,zero_target_label,erm;coral;mmd;dann;strongest_foundation_baseline;latent_only,False,0,20,zero target clinical labels; compare only with other zero-label rows

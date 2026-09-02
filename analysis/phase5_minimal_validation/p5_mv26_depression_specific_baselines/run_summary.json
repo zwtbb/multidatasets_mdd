@@ -1,0 +1,49 @@
+{
+  "run_id": "P5_MV26_depression_specific_baselines",
+  "generated_at": "2026-08-29T12:11:32+00:00",
+  "git_commit": "462ab9f",
+  "status": "complete_combined",
+  "directions": [
+    "edaic_to_cmdc_phq_shared",
+    "cmdc_to_edaic_phq_shared"
+  ],
+  "methods": [
+    "gnn_sda_style_direct_head",
+    "gnn_sda_style_measurement_aware",
+    "questmf_style_direct_head",
+    "questmf_style_measurement_aware",
+    "scd_mllm_style_direct_head",
+    "scd_mllm_style_measurement_aware"
+  ],
+  "baseline_families": [
+    "gnn_sda_style",
+    "questmf_style",
+    "scd_mllm_style"
+  ],
+  "seed_count": 5,
+  "official_view_id": "qwen3_wavlm_openface_official",
+  "target_calibration_fraction": 0.3,
+  "target_calibration_min": 24,
+  "target_calibration_labels_used_by_all_rows": true,
+  "primary_metric": "reconstruction_calibration_score",
+  "primary_metric_components": [
+    "target_macro_item_mae",
+    "target_calibration_mae"
+  ],
+  "secondary_severity_metrics": [
+    "target_total_mae",
+    "target_total_ccc"
+  ],
+  "secondary_clinical_classification_endpoint": "shared PHQ total >= 10",
+  "secondary_clinical_classification_metrics": [
+    "target_binary_macro_f1",
+    "target_binary_balanced_accuracy",
+    "target_binary_auroc",
+    "target_binary_auprc",
+    "target_binary_sensitivity",
+    "target_binary_specificity"
+  ],
+  "comparison_scope": "within-family direct target head versus measurement-aware target layer under the same target calibration labels",
+  "aggregate_outputs_only": true,
+  "combined_package_note": "This folder contains the public MV26 close-baseline families used for manuscript comparison."
+}

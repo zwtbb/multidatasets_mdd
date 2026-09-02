@@ -166,11 +166,12 @@ def load_encoder(
 ) -> tuple[Any, torch.nn.Module, torch.device, int]:
     device = torch.device(device_name if device_name != "auto" else ("cuda" if torch.cuda.is_available() else "cpu"))
     tokenizer = AutoTokenizer.from_pretrained(encoder.model_name, local_files_only=not allow_download)
-    model = AutoModel.from_pretrained(
-        encoder.model_name,
-        local_files_only=not allow_download,
-        use_safetensors=False,
-    )
+    if encoder.pooling == "last_token":
+        tokenizer.padding_side = "left"
+    model_kwargs: dict[str, Any] = {"local_files_only": not allow_download}
+    if not encoder.model_name.startswith("Qwen/"):
+        model_kwargs["use_safetensors"] = False
+    model = AutoModel.from_pretrained(encoder.model_name, **model_kwargs)
     model.eval()
     for param in model.parameters():
         param.requires_grad_(False)
@@ -196,6 +197,14 @@ def pooled_output(output: Any, attention_mask: torch.Tensor, pooling: str) -> to
         mask = attention_mask[..., None].bool()
         masked = output.last_hidden_state.masked_fill(~mask, 0.0)
         pooled = masked.sum(dim=1) / attention_mask.sum(dim=1)[..., None].clamp(min=1)
+    elif pooling == "last_token":
+        left_padded = bool(attention_mask[:, -1].sum().item() == attention_mask.shape[0])
+        if left_padded:
+            pooled = output.last_hidden_state[:, -1, :]
+        else:
+            sequence_lengths = attention_mask.sum(dim=1).long() - 1
+            batch_indices = torch.arange(output.last_hidden_state.shape[0], device=output.last_hidden_state.device)
+            pooled = output.last_hidden_state[batch_indices, sequence_lengths, :]
     else:
         raise ValueError(f"unsupported pooling policy: {pooling}")
     return F.normalize(pooled, p=2, dim=1)
@@ -241,7 +250,7 @@ def embed_text(
         with torch.inference_mode():
             output = model(**batch)
             pooled = pooled_output(output, batch["attention_mask"], encoder.pooling)
-        embeddings.extend(pooled.detach().cpu().numpy())
+        embeddings.extend(pooled.detach().float().cpu().numpy())
         weights.extend(float(max(1, len(ids))) for ids in batch_ids)
 
     stacked = np.vstack(embeddings).astype(np.float64)

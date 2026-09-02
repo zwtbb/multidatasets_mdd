@@ -1,0 +1,7 @@
+figure,recommended_location,file_stem,status,purpose
+Figure 1,Introduction or end of Method overview,fig1_benchmark_validity_framework,ready_as_conceptual_schematic,Defines benchmark-validity audit and separates representation vs measurement heterogeneity.
+Figure 2,Datasets / Experimental design,fig2_dataset_view_role_map,ready_but_can_be_hand_polished,Shows how the seven corpus/views support RQ1-RQ3 after adding DAIC-WOZ.
+Figure 3,Main RQ2 results,fig3_measurement_discrepancy_gradient,main_text_priority,"Single strongest figure for the new DAIC-WOZ/E-DAIC, E-DAIC/CMDC, CMDC/PDCH measurement-gradient story."
+Figure 4,Main RQ3 results or Discussion,fig4_prediction_consequence_gate_matrix,main_text_priority,Summarizes why alignment/calibration/latent-target attempts remain diagnostic rather than a complete method.
+Supplementary Figure S1,Appendix / measurement evidence,supp_fig_phq_shared_item_conditioned_deltas,supplement_priority,Item-level PHQ shared-symptom severity-conditioned evidence.
+Supplementary Figure S2,Appendix / measurement evidence,supp_fig_hamd_same_scale_exploratory,supplement_priority,Exploratory HAMD same-scale item and correlation-structure differences.

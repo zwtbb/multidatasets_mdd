@@ -1,0 +1,8 @@
+{
+  "audit_id": "P5_MV24_measurement_aware_ordinal_hygiene",
+  "generated_at": "2026-09-02T02:07:33+00:00",
+  "files_checked": 27,
+  "artifact_hygiene_passed": true,
+  "violation_count": 0,
+  "violations": []
+}

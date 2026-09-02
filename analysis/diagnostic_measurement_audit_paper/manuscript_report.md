@@ -1,11 +1,11 @@
 # Diagnostic Paper Manuscript Draft Report
 
-Generated: `2026-08-22T13:28:02+00:00`
+Generated: `2026-09-01T15:54:30+00:00`
 
 ## Decision
 
 - Manuscript draft status: `ready_for_human_manuscript_editing_v0_1`.
-- Traceability rows: `21`.
+- Traceability rows: `22`.
 - Open editing items: `6`.
 - Artifact hygiene passed: `True`.
 

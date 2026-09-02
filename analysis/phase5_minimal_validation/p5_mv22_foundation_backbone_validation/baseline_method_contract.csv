@@ -1,0 +1,8 @@
+method,status,contract
+erm_itemwise_ridge,executed,direct observed shared-item prediction on frozen foundation features
+coral_itemwise_ridge,executed,unsupervised target-feature covariance alignment followed by itemwise ridge
+mmd_mean_itemwise_ridge,executed,unsupervised target-feature mean alignment as an MMD/DAN-style lightweight proxy
+dann_itemwise_mlp,executed,domain-adversarial hidden representation with source item reconstruction
+irm_severity_env_proxy,executed_proxy,IRM penalty over source severity environments because each PHQ transfer has one source corpus
+groupdro_severity_proxy,executed_proxy,worst-source-severity-group optimization because each PHQ transfer has one source corpus
+measurement_aware_mv12_reference,aggregate_reference,existing two-stage latent target plus corpus measurement reconstruction head aggregate

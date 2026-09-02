@@ -17,13 +17,13 @@ daicwoz:
   label_type: PHQ8
   modalities: [text, audio, video]
   protocol: virtual_interview
-  role: avec2017_daic_woz_benchmark_view
+  role: avec2017_daic_woz_benchmark_control
   main_tasks:
     - avec2017_phq8_total_regression
     - avec2017_binary_depression_detection
     - daicwoz_benchmark_reproduction
-  status: uploaded_official_view_of_edaic
-  notes: DAIC-WOZ is configured as the AVEC2017 benchmark view over the 189 E-DAIC/DAIC-WOZ subjects in the 300-492 ID range. Reuse the extracted subject folders through symlinks under DAIC-WOZ/extracted, but use the DAIC-WOZ official AVEC2017 split and label files under DAIC-WOZ/splits. Do not pool daicwoz with edaic as independent datasets because their 300-492 subjects overlap exactly.
+  status: uploaded_same_lineage_benchmark_control
+  notes: DAIC-WOZ is configured as the AVEC2017 Wizard-of-Oz benchmark/control from the DAIC lineage, not as an independent corpus from E-DAIC. Reuse the locally overlapping extracted subject folders through symlinks under DAIC-WOZ/extracted, but use the DAIC-WOZ official AVEC2017 split and label files under DAIC-WOZ/splits. E-DAIC is the extended DAIC dataset; do not pool daicwoz with edaic as independent datasets because their 300-492 subjects overlap heavily.
 
 cmdc:
   raw_root: /root/autodl-tmp/datasets/CMDC

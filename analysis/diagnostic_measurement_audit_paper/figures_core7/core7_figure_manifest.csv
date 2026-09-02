@@ -1,0 +1,9 @@
+figure,recommended_location,file_stem,purpose
+Figure 1,Introduction / Method opening,fig1_framework_overview,Target-contract-centered measurement-aware transfer framework.
+Figure 2,Datasets / design,fig2_dataset_relationship_map,Formal target-contract contrasts and auxiliary stress-test roles.
+Figure 3,RQ1 results,fig3_controlled_identity_probe,Control-dependent corpus identity under length/severity controls.
+Supplementary Figure S2,RQ1 supplement,fig3_representation_identity_heatmap,Raw dataset identity recoverability from comparable frozen feature spaces.
+Figure 4,RQ2 PHQ results,fig4_phq_shared_item_measurement_analysis,PHQ shared-item mean and severity-conditioned endorsement analysis.
+Figure 5,RQ2 controlled comparison,fig5_daicwoz_edaic_controlled_comparison,DAIC-WOZ/E-DAIC same-lineage control plus bounded PHQ/HAMD stress views.
+Supplementary Figure S3,RQ3 supplement,fig6_latent_target_tradeoff,Latent target identity/transfer/observed-scale validity tradeoff.
+Supplementary Figure S4,Discussion supplement,fig7_evidence_summary,Final evidence summary and claim boundary.

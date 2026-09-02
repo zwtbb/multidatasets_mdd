@@ -1,0 +1,7 @@
+contract_id,scope,description,readout
+S001_latent_input,both,The measurement head observes the simulated latent severity coordinate directly; feature encoders and representation adaptation are not part of this simulation.,Isolates the measurement-head parameterization from target-supervised representation adaptation.
+S002_world_H0,H0_scalar_invariant,Both corpora share the same ordinal response process conditional on latent severity.,Shared and corpus-specific ordinal heads should be close; extra corpus-specific offsets should not create a broad gain.
+S003_world_H1,H1_C02_C06_threshold_DIF,CMDC receives the MV19/MV10 C02 and C06 threshold-logit offsets; other items remain invariant.,Corpus-specific ordinal heads should mainly improve C02/C06 when the target corpus is affected by the planted threshold shift.
+S004_sample_budget,both,"Each draw uses the MV24 official label-feature intersection and target calibration split rule: fraction=0.3, minimum=24.",Matches the calibration exposure that bounds Table 3.
+S005_heads,both,Shared head fits cumulative threshold logits from latent severity only; corpus-specific head fits the same logits plus a target-domain threshold-offset indicator.,Tests whether corpus-specific ordinal threshold parameterization has value when latent evidence is held fixed.
+S006_repetitions,both,500 simulated draws with seed 20260902.,Draw-level mean differences and descriptive confidence intervals.

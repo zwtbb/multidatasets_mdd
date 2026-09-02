@@ -1,0 +1,21 @@
+{
+  "artifact_hygiene_passed": true,
+  "daicwoz_edaic_paired_subjects": 141,
+  "daicwoz_incomplete_item_rows": 1,
+  "daicwoz_split_dir": "datasets/DAIC-WOZ/splits",
+  "daicwoz_train_dev_item_subjects": 141,
+  "daicwoz_train_dev_rows": 142,
+  "edaic_train_dev_item_subjects": 219,
+  "formal_psychometric_model": "not_run",
+  "generated_at_utc": "2026-08-24T03:54:50+00:00",
+  "hamd_cmdc_subjects": 25,
+  "hamd_mim_irt": "not_run",
+  "hamd_pdch_subjects": 99,
+  "manifest_dir": "datasets/manifests",
+  "output_dir": "analysis/phase5_minimal_validation/p5_mv21_measurement_discrepancy_gradient",
+  "phq_cmdc_subjects": 77,
+  "phq_edaic_subjects": 219,
+  "privacy_boundary": "aggregate_only",
+  "run_id": "P5_MV21_measurement_discrepancy_gradient",
+  "status": "complete_descriptive_measurement_gradient_reinforcement"
+}

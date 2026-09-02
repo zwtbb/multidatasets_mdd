@@ -1,0 +1,2 @@
+view_id,modality_set,assets,role,input_columns_total,architecture_status,large_artifact_policy
+qwen3_wavlm_openface_official,text_audio_video,text_qwen3;audio_wavlm_base_plus;video_openface_common,official foundation representation for MV24 main table,1996,official_mv24_main_table_view,read-only external cache; aggregate outputs only

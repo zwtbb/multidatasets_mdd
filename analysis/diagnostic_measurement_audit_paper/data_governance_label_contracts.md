@@ -1,12 +1,12 @@
 # Data Governance and Label Contracts
 
-Generated: `2026-08-21T16:14:49+00:00`
+Generated: `2026-08-24T03:59:23+00:00`
 
 ## Draft Section
 
 This study treats cross-dataset depression detection as a measurement problem before it treats it as a model-capacity problem. The data layer is governed by a registry-first workflow: each corpus is assigned a scientific role, protocol axis, modality set, and label contract before any pooled modeling claim is considered. Raw datasets and real row-level tables remain local-only; the public repository contains scripts, schemas, synthetic examples, aggregate audits, claim gates, and paper-critical summaries.
 
-The governed corpus currently spans `6` datasets and `891` audited subjects. Phase 4 defines `15` symptom constructs and `54` mapped scale items. Item-level supervision is available for `4` dataset-scale contracts and absent or total-only for `3` contracts. This difference is central to the paper: PHQ-8/PHQ-9 provide the cleanest C01-C08 shared bridge, PDCH provides the strongest HAMD-17 item-level clinical validation, CMDC HAMD remains a small sanity subset, and EATD/MODMA/MPDD primarily serve stress-test or context roles rather than item-level construct supervision.
+The governed corpus currently spans `7` datasets and `1080` audited subjects. Phase 4 defines `15` symptom constructs and `54` mapped scale items. Item-level supervision is available for `4` dataset-scale contracts and absent or total-only for `3` contracts. This difference is central to the paper: PHQ-8/PHQ-9 provide the cleanest C01-C08 shared bridge, PDCH provides the strongest HAMD-17 item-level clinical validation, CMDC HAMD remains a small sanity subset, and EATD/MODMA/MPDD primarily serve stress-test or context roles rather than item-level construct supervision.
 
 The release boundary is deliberately conservative. Real identifiers, labels at row granularity, local file references, media, raw transcripts, learned parameters, embeddings, row predictions, private evidence workbooks, and verbatim evidence excerpts remain local-only. Public artifacts are limited to code, schemas, synthetic examples, aggregate audit summaries, and paper-facing tables that pass artifact hygiene. This policy preserves reproducibility of the experimental logic without redistributing licensed or privacy-sensitive material.
 
@@ -15,6 +15,7 @@ The release boundary is deliberately conservative. Real identifiers, labels at r
 | dataset | role | protocol | modalities | subjects | valid rows | main label | claim role | quality note |
 | --- | --- | --- | --- | ---: | ---: | --- | --- | --- |
 | E-DAIC | primary_development | virtual_interview | text;audio;video | 275 | 275 | PHQ8 | E-DAIC is the primary development set | E-DAIC is the primary development set |
+| daicwoz | avec2017_daic_woz_benchmark_control | virtual_interview | text;audio;video | 189 | 189 | PHQ8 | DAIC-WOZ is configured as the AVEC2017 Wizard-of-Oz benchmark/control from the DAIC lineage, not as an independent corpus from E-DAIC | DAIC-WOZ is configured as the AVEC2017 Wizard-of-Oz benchmark/control from the DAIC lineage, not as an independent corpus from E-DAIC |
 | CMDC | chinese_cross_protocol_language_validation | clinical_interview | text;audio;video | 78 | 908 | PHQ9_HAMD17 | Local files match the official-style layout | Metadata has duplicate/omitted subject-info entries; modality availability varies by row. |
 | PDCH | hospital_consultation_hamd_validation | face_to_face_consultation | text;audio | 100 | 165 | HAMD17 | Annotation files are present | One consultation subject lacks HAMD annotation; supervised HAMD rows use labeled subset only. |
 | MODMA | controlled_speech_task_stress_test | interview_reading_picture | audio | 52 | 1503 | diagnosis_or_PHQ9 | Official-style layout is present | 5 invalid audio rows are excluded; task type is a stress-test axis. |

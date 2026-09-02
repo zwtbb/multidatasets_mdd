@@ -1,0 +1,15 @@
+transfer_id,supervision_regime,method,seeds,target_calibration_labels,labeled_target_calib_n,target_eval_n,macro_item_mae_ci95,calibration_mae_ci95,reconstruction_calibration_score_ci95,total_mae_ci95,post_head_domain_ba_ci95,same_budget_measurement_aware_vs_method
+cmdc_to_edaic_phq_shared,target_calibrated,corpus_specific_head,5,yes,66,153,"0.967 [0.923, 1.010]","0.599 [0.561, 0.637]","1.565 [1.488, 1.643]","6.296 [5.992, 6.600]","0.551 [0.489, 0.614]",**
+cmdc_to_edaic_phq_shared,target_calibrated,direct_target_finetune,5,yes,66,153,"0.851 [0.823, 0.879]","0.482 [0.401, 0.562]","1.333 [1.232, 1.433]","5.579 [5.255, 5.903]","0.725 [0.668, 0.782]",*
+cmdc_to_edaic_phq_shared,target_calibrated,direct_multitask_shared_head,5,yes,66,153,"0.869 [0.809, 0.929]","0.475 [0.390, 0.559]","1.344 [1.216, 1.472]","5.707 [5.327, 6.086]","0.673 [0.629, 0.717]",trend
+cmdc_to_edaic_phq_shared,target_calibrated,shared_head_joint_adaptation,5,yes,66,153,"0.819 [0.799, 0.840]","0.433 [0.394, 0.472]","1.252 [1.208, 1.297]","5.297 [5.133, 5.461]","0.699 [0.660, 0.739]",ns
+cmdc_to_edaic_phq_shared,target_calibrated,generic_target_mlp_head,5,yes,66,153,"0.884 [0.862, 0.906]","0.455 [0.401, 0.509]","1.339 [1.275, 1.404]","5.618 [5.406, 5.829]","0.745 [0.675, 0.816]",*
+cmdc_to_edaic_phq_shared,target_calibrated,full_without_mmd,5,yes,66,153,"0.818 [0.810, 0.827]","0.433 [0.384, 0.482]","1.251 [1.194, 1.309]","5.304 [5.160, 5.448]","0.705 [0.673, 0.738]",ref
+cmdc_to_edaic_phq_shared,target_calibrated,full_measurement_aware,5,yes,66,153,"0.818 [0.795, 0.840]","0.426 [0.371, 0.480]","1.243 [1.170, 1.317]","5.331 [5.093, 5.568]","0.701 [0.641, 0.760]",ns
+edaic_to_cmdc_phq_shared,target_calibrated,corpus_specific_head,5,yes,24,20,"1.346 [1.195, 1.497]","1.059 [0.892, 1.227]","2.405 [2.095, 2.716]","9.665 [8.408, 10.921]","0.943 [0.927, 0.959]",***
+edaic_to_cmdc_phq_shared,target_calibrated,direct_target_finetune,5,yes,24,20,"0.607 [0.531, 0.684]","0.358 [0.268, 0.449]","0.966 [0.809, 1.123]","3.220 [2.811, 3.629]","0.782 [0.732, 0.831]",ns
+edaic_to_cmdc_phq_shared,target_calibrated,direct_multitask_shared_head,5,yes,24,20,"0.607 [0.534, 0.679]","0.340 [0.284, 0.396]","0.947 [0.843, 1.051]","3.194 [2.731, 3.656]","0.744 [0.694, 0.794]",ns
+edaic_to_cmdc_phq_shared,target_calibrated,shared_head_joint_adaptation,5,yes,24,20,"0.644 [0.564, 0.725]","0.343 [0.267, 0.419]","0.988 [0.856, 1.120]","3.239 [2.562, 3.915]","0.769 [0.700, 0.837]",ns
+edaic_to_cmdc_phq_shared,target_calibrated,generic_target_mlp_head,5,yes,24,20,"0.622 [0.547, 0.698]","0.361 [0.292, 0.429]","0.983 [0.851, 1.115]","3.363 [2.745, 3.980]","0.761 [0.717, 0.806]",ns
+edaic_to_cmdc_phq_shared,target_calibrated,full_without_mmd,5,yes,24,20,"0.645 [0.566, 0.723]","0.342 [0.271, 0.413]","0.987 [0.863, 1.111]","3.255 [2.588, 3.922]","0.766 [0.700, 0.832]",ref
+edaic_to_cmdc_phq_shared,target_calibrated,full_measurement_aware,5,yes,24,20,"0.645 [0.566, 0.723]","0.342 [0.271, 0.413]","0.987 [0.863, 1.111]","3.255 [2.588, 3.922]","0.766 [0.700, 0.832]",trend

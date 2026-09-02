@@ -1,6 +1,6 @@
 # Data Governance Section Build Report
 
-Generated: `2026-08-21T16:14:49+00:00`
+Generated: `2026-08-24T03:59:23+00:00`
 
 ## Scope
 
@@ -8,7 +8,7 @@ This artifact prepares the diagnostic paper's Data Governance and Label Contract
 
 ## Outputs
 
-- Dataset governance rows: `6`.
+- Dataset governance rows: `7`.
 - Label contract rows: `7`.
 - Construct coverage rows: `4`.
 - Release-boundary rows: `5`.

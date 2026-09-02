@@ -1,0 +1,18 @@
+{
+  "run_id": "P5_MV25_provenance_controlled_identity",
+  "generated_at": "2026-08-27T11:14:44+00:00",
+  "git_commit": "af91629",
+  "status": "complete",
+  "daic_edaic_role": "same_lineage_phq8_sanity_control_not_independent_corpus",
+  "identity_probe_count": 8,
+  "control_sets": [
+    "raw",
+    "length_residualized",
+    "severity_residualized",
+    "length_severity_residualized"
+  ],
+  "seed_count": 5,
+  "minimum_length_severity_controlled_ba": 0.4840509161381254,
+  "identity_claim_policy": "do not interpret the cross-language text probe alone; use non-text and same-language controlled probes to support the acquisition/protocol identity claim",
+  "aggregate_outputs_only": true
+}

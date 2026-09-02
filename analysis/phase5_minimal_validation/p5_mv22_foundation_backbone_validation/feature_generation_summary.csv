@@ -1,0 +1,4 @@
+encoder,dataset,model_name,pooling,input_prefix_used,max_length,feature_rows,feature_columns,text_units,token_count_sum,chunk_count_sum,empty_text_units,generation_status,cache_ref,local_only
+qwen3_embedding_0_6b,edaic,Qwen/Qwen3-Embedding-0.6B,last_token,False,2048,219,1024,219,342089,269,0,cache_complete,analysis/phase2_baselines/mv22_foundation_text_features/qwen3_embedding_0_6b/edaic_text_bge/edaic_bge_subject_features.csv,True
+qwen3_embedding_0_6b,cmdc,Qwen/Qwen3-Embedding-0.6B,last_token,False,2048,77,1024,908,74836,908,0,cache_complete,analysis/phase2_baselines/mv22_foundation_text_features/qwen3_embedding_0_6b/cmdc_pdch_text_encoder_mlp/cmdc_bge_subject_features.csv,True
+qwen3_embedding_0_6b,pdch,Qwen/Qwen3-Embedding-0.6B,last_token,False,2048,99,1024,165,434596,293,0,cache_complete,analysis/phase2_baselines/mv22_foundation_text_features/qwen3_embedding_0_6b/cmdc_pdch_text_encoder_mlp/pdch_bge_subject_features.csv,True

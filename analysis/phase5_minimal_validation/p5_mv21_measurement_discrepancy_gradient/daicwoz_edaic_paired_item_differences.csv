@@ -1,0 +1,9 @@
+analysis,item_id,item_label_short,paired_subjects,exact_match_subjects,exact_match_rate,mean_daicwoz_minus_edaic,mean_abs_difference,max_abs_difference,interpretation
+daicwoz_edaic_same_phq8_lineage_control,C01,depressed_mood,141,141,1.0,0.0,0.0,0.0,paired_label_contract_check_on_overlapping_subject_ids
+daicwoz_edaic_same_phq8_lineage_control,C02,anhedonia,141,139,0.9858156028368794,0.0,0.014184397163120567,1.0,paired_label_contract_check_on_overlapping_subject_ids
+daicwoz_edaic_same_phq8_lineage_control,C03,sleep,141,141,1.0,0.0,0.0,0.0,paired_label_contract_check_on_overlapping_subject_ids
+daicwoz_edaic_same_phq8_lineage_control,C04,fatigue,141,139,0.9858156028368794,0.0,0.014184397163120567,1.0,paired_label_contract_check_on_overlapping_subject_ids
+daicwoz_edaic_same_phq8_lineage_control,C05,appetite,141,141,1.0,0.0,0.0,0.0,paired_label_contract_check_on_overlapping_subject_ids
+daicwoz_edaic_same_phq8_lineage_control,C06,self_worth,141,139,0.9858156028368794,0.0,0.014184397163120567,1.0,paired_label_contract_check_on_overlapping_subject_ids
+daicwoz_edaic_same_phq8_lineage_control,C07,concentration,141,141,1.0,0.0,0.0,0.0,paired_label_contract_check_on_overlapping_subject_ids
+daicwoz_edaic_same_phq8_lineage_control,C08,psychomotor,141,139,0.9858156028368794,0.0,0.014184397163120567,1.0,paired_label_contract_check_on_overlapping_subject_ids

@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-08-24 UTC
+Last updated: 2026-09-02 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -87,6 +87,40 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_66_mirt_parameterization_correctness_audit.md`
   - `/root/autodl-tmp/memory/sessions/session_67_mirt_corrected_rerun.md`
   - `/root/autodl-tmp/memory/sessions/session_68_daicwoz_benchmark_view.md`
+  - `/root/autodl-tmp/memory/sessions/session_69_main_takeover_manuscript_orchestration.md`
+  - `/root/autodl-tmp/memory/sessions/session_70_mv21_measurement_discrepancy_gradient.md`
+  - `/root/autodl-tmp/memory/sessions/session_71_manuscript_rq_reframe.md`
+  - `/root/autodl-tmp/memory/sessions/session_72_reframed_rq_figure_package.md`
+  - `/root/autodl-tmp/memory/sessions/session_73_core7_paper_figures.md`
+  - `/root/autodl-tmp/memory/sessions/session_74_measurement_aware_framework.md`
+  - `/root/autodl-tmp/memory/sessions/session_75_manuscript_positioning_tune.md`
+  - `/root/autodl-tmp/memory/sessions/session_76_foundation_backbone_framework_contract.md`
+  - `/root/autodl-tmp/memory/sessions/session_77_mv22_foundation_backbone_validation.md`
+  - `/root/autodl-tmp/memory/sessions/session_78_mv23_foundation_multimodal_completion.md`
+  - `/root/autodl-tmp/memory/sessions/session_79_template_paper_writing_blueprint.md`
+  - `/root/autodl-tmp/memory/sessions/session_80_abstract_introduction_rewrite.md`
+  - `/root/autodl-tmp/memory/sessions/session_81_related_work_and_citeproc.md`
+  - `/root/autodl-tmp/memory/sessions/session_82_framework_methods_rewrite.md`
+  - `/root/autodl-tmp/memory/sessions/session_83_results_gate_rewrite.md`
+  - `/root/autodl-tmp/memory/sessions/session_84_framework_implications_discussion_polish.md`
+  - `/root/autodl-tmp/memory/sessions/session_85_figure_table_integration.md`
+  - `/root/autodl-tmp/memory/sessions/session_87_lark_cli_codex_integration.md`
+  - `/root/autodl-tmp/memory/sessions/session_88_mv24_measurement_aware_ordinal_model.md`
+  - `/root/autodl-tmp/memory/sessions/session_89_mv25_provenance_controlled_identity.md`
+  - `/root/autodl-tmp/memory/sessions/session_90_manuscript_structure_claim_alignment.md`
+  - `/root/autodl-tmp/memory/sessions/session_91_feishu_precise_sync.md`
+  - `/root/autodl-tmp/memory/sessions/session_92_mv26_depression_specific_baselines.md`
+  - `/root/autodl-tmp/memory/sessions/session_93_mv26_scd_mllm_baseline.md`
+  - `/root/autodl-tmp/memory/sessions/session_94_mv27_four_domain_binary_benchmark.md`
+  - `/root/autodl-tmp/memory/sessions/session_95_manuscript_evidence_rank_alignment.md`
+  - `/root/autodl-tmp/memory/sessions/session_96_manuscript_rq3_slimming.md`
+  - `/root/autodl-tmp/memory/sessions/session_97_manuscript_mmd_core_and_claim_tone.md`
+  - `/root/autodl-tmp/memory/sessions/session_98_manuscript_abstract_intro_density.md`
+  - `/root/autodl-tmp/memory/sessions/session_99_manuscript_related_methods_weighting.md`
+  - `/root/autodl-tmp/memory/sessions/session_100_manuscript_layout_discussion_sync.md`
+  - `/root/autodl-tmp/memory/sessions/session_101_bibliography_primary_verification.md`
+  - `/root/autodl-tmp/memory/sessions/session_102_mv24_fair_ablation_gate.md`
+  - `/root/autodl-tmp/memory/sessions/session_103_mv24_targeted_item_and_dif_simulation.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -141,7 +175,7 @@ method.
 | Dataset | Main role | Primary use |
 | --- | --- | --- |
 | E-DAIC | Primary development dataset | PHQ-8 symptoms, total score, binary label, interviewer prompt bias |
-| DAIC-WOZ | AVEC2017 benchmark view over E-DAIC-overlap subjects | Reproduction only with DAIC-WOZ official split/labels; do not pool independently with E-DAIC |
+| DAIC-WOZ | AVEC2017 Wizard-of-Oz benchmark/control from the DAIC lineage | Reproduction and same-PHQ-8 lineage controls only; E-DAIC is the extended DAIC dataset, and DAIC-WOZ must not be pooled independently with E-DAIC |
 | CMDC | Chinese cross-protocol and cross-language validation | Chinese clinical-interview external generalization |
 | PDCH | Real hospital consultation and HAMD validation | HAMD-17 symptom and severity prediction |
 | MODMA | Controlled speech-task stress test | Interview, reading, picture, and affective-task robustness |
@@ -179,7 +213,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   E-DAIC/CMDC/PDCH subject-level features and rerun MV07/MV12/MV15. The
   stable conclusion is not universal external-theta-transfer failure or
   universal B3 Pareto dominance: both encoders keep MV07/MV12/MV15 blocked,
-  both pass same-dataset theta utility, both fail observed-scale safety, and
+  both pass same-dataset theta utility, both fail observed-scale validity, and
   both keep theta-conditioned feature identity BA at `1.000`, while external
   theta transfer is encoder-dependent (BGE-M3 passes, multilingual-E5 fails)
   and B3 Pareto dominance is encoder-dependent (false for BGE-M3, true for
@@ -195,12 +229,88 @@ MPDD 2025 is intentionally out of scope for current auditing.
   H0 C02/C06 both-flag false rate is `0.208`, H1 C02/C06 both-flag recovery is
   `0.662`, H1 top-two recovery is `0.222`, and H1 anchor subset recovery is
   `0.178`. Treat C02/C06 as repeated but finite-sample-bounded
-  dataset-group threshold-shift evidence, not robust standalone DIF. The active
+  dataset-group threshold-shift evidence, not robust standalone DIF. MV21
+  descriptive measurement-discrepancy contrast audit is complete as user-directed
+  manuscript reinforcement: DAIC-WOZ/E-DAIC is a same-lineage PHQ-8 control
+  with tiny paired/conditioned item differences, E-DAIC/CMDC supplies PHQ
+  shared-item descriptive and item-excluded severity-conditioned contrasts,
+  and CMDC/PDCH supplies exploratory same-HAMD item distribution,
+  severity-conditioned, and correlation-structure support. MV21 does not add
+  HAMD MIM/IRT or formal HAMD invariance. MV24 formal measurement-aware
+  ordinal modeling is complete after the user-approved mechanism change. It
+  fixes the PHQ shared-item method to frozen Qwen3+WavLM+OpenFace subject
+  representations, a trainable projector, a shared eight-dimensional symptom
+  layer, and corpus-specific cumulative-logit ordinal heads. Its main table
+  now separates supervision budgets. ERM/CORAL/MMD/DANN, the strongest direct
+  foundation baseline, and latent-only are zero-target-label rows; the
+  target-calibrated block now includes corpus-specific-head, direct target
+  fine-tuning, direct source+target multitask, shared ordinal head, generic
+  target MLP head, measurement-aware, and measurement-aware + MMD under the
+  same target calibration label split. The fair shared-layer calibrated ablation
+  gate is `not_passed_uniform_measurement_pathway_superiority`: the large gain
+  over frozen corpus-specific-head is mainly evidence for target
+  calibration/shared-layer adaptation, while the corpus-specific ordinal
+  pathway is competitive and direction-dependent rather than uniformly superior.
+  MV24 now also includes a targeted item-level analysis comparing shared
+  ordinal and corpus-specific ordinal heads on the measurement-gate anchor
+  items `C01/C04/C05/C07` and threshold-shift items `C02/C06`. Real-data
+  C02/C06 item-set deltas are near ties (`0.004` for CMDC-to-E-DAIC and
+  `0.002` for E-DAIC-to-CMDC, both with intervals crossing zero), so the
+  targeted analysis does not support an independent overall or item-local
+  performance gain from corpus-specific ordinal parameterization. The companion
+  fixed-latent DIF simulation is complete: under scalar invariance,
+  corpus-specific heads do not help, and under planted `C02/C06` threshold DIF
+  they show only weak item-local mechanism consistency (`0.002` and `0.011`
+  C02/C06-set MAE deltas; `301/500` and `311/500` lower-error draws), while
+  anchors do not improve. Treat the simulation as mechanism sanity checking,
+  not as real-data superiority evidence. MV24 now also reports secondary
+  clinical-reader metrics following
+  cross-domain MDD reporting practice: total MAE/CCC plus a shared-PHQ total
+  >=10 endpoint with Macro-F1, Balanced Accuracy, AUROC, AUPRC, Sensitivity,
+  and Specificity. The lambda-MMD sweep is nearly flat, so treat MMD as a mild
+  regularizer rather than the core empirical mechanism. Treat MV24 as the
+  current formal method result for the PHQ shared-item manuscript story, while
+  the old
+  M0/M1/M2/M3 full-method gate still blocks overbroad cross-scale claims.
+  MV25 provenance and controlled identity diagnostics are also complete:
+  DAIC-WOZ/E-DAIC is explicitly documented as a same-lineage PHQ-8 sanity
+  control (`141` paired train/dev subjects, all-item exact match `0.993`, mean
+  absolute item difference `0.007`), not independent-corpus evidence. MV25
+  also shows that the raw E-DAIC/CMDC corpus-identity `1.000` should not carry
+  the representation claim alone because fold-internal length/severity controls
+  explain much of that cross-language separability; same-language E-DAIC
+  lineage probes remain high after controls (`0.839` Qwen3 text, `0.897` WavLM
+  audio), supporting acquisition/protocol identity beyond simple language
+  detection. MV26 depression-specific baseline stress testing is complete and
+  now holds the public close-baseline rows in one canonical folder:
+  GNN-SDA-style, QuestMF-style, and SCD-MLLM-style under the same official MV24
+  Qwen3+WavLM+OpenFace representation, E-DAIC<->CMDC PHQ shared-item split,
+  five seeds, and target calibration label budget. QuestMF-style
+  measurement-aware improves reconstruction-plus-calibration in both
+  directions (`1.203 -> 1.159`, `1.133 -> 1.096`), and SCD-MLLM-style
+  measurement-aware also improves both directions (`1.485 -> 1.238`, `1.100 ->
+  1.084`). GNN-SDA-style is direction-sensitive (`1.121 -> 1.066` for
+  E-DAIC-to-CMDC but `1.339 -> 1.431` for CMDC-to-E-DAIC). Treat MV26 as
+  a close-baseline stress test and not a direct external leaderboard
+  reproduction or universal win claim. MV27 four-domain binary benchmarking
+  was completed locally after fairness fixes requested by the user: GNN
+  target-aware now uses `shared_head + corpus_specific_residual`, and GNN/DIL
+  target-aware rows share the same pseudo-label/diversity/teacher adaptation
+  recipes and target-label budget as their direct counterparts. The corrected
+  DAIC-WOZ+CMDC+MODMA+EATD binary result did not pass the automatic submission
+  gate: Table B balanced-accuracy improvements are 18/72 family-direction
+  cells, and Table C Full beats the strongest same-budget ablation in 3/12
+  directions. Treat MV27 as local negative/diagnostic stress-test evidence
+  unless the user explicitly decides to commit or manuscript-include it. See
+  `memory/sessions/session_94_mv27_four_domain_binary_benchmark.md` and
+  `analysis/phase5_minimal_validation/p5_mv27_four_domain_binary_benchmark/`.
+  The active
   evidence bundle is now consolidated at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`:
-  paper core is `MV10/MV11/MV19` as primary PHQ psychometric evidence plus
-  `MV13/MV14` as corrected anchor-linked `mirt` corroboration, paper support is
-  `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and
+  paper core is `MV10/MV11/MV19/MV21` as primary PHQ psychometric/descriptive
+  evidence plus `MV13/MV14` as corrected anchor-linked `mirt` corroboration
+  (`MV21` also carries the bounded HAMD/DAIC descriptive controls), paper
+  support is `MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`, and
   `P5_mirt_parameterization_audit` is a paper guardrail. Early weak or
   superseded MV rows are frozen as historical diagnostics rather than active
   experiments. Tracked aggregate outputs are retained for traceability; only
@@ -211,10 +321,161 @@ MPDD 2025 is intentionally out of scope for current auditing.
   question-position units were feasible, PDCH and E-DAIC were excluded for
   missing clean protocol units, and high-overlap deletion is not clearly worse
   than matched random deletion under BGE-M3 primary or multilingual-E5
-  sensitivity. The experiment queue is frozen.
-  Bibliography metadata has been corrected for P3HF, Multi-Probe Audit, and
-  EMNLP interviewer bias in the generator, but all references still require
-  full primary-source verification before submission.
+  sensitivity. After the user-requested MV21 reinforcement, the experiment
+  queue is frozen again for manuscript integration and source verification. On
+  2026-08-24, the current
+  Codex task took over from legacy main thread
+  `019fcd77-cf81-7c11-a53e-f37e776d9e1d` as the active main-agent
+  orchestration entrypoint for experiment reinforcement triage and manuscript
+  writing. A new human-facing RQ-reframed manuscript draft has been created
+  from the user's uploaded `论文撰写.docx` at
+  `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_reframed_rq_draft.md`
+  and
+  `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/论文撰写_修订版.docx`.
+  It elevates RQ1 representation heterogeneity, reorganizes RQ2 around the
+  DAIC-WOZ/E-DAIC, E-DAIC/CMDC, and CMDC/PDCH measurement-discrepancy
+  contrasts, and treats RQ3 negative model-generalization results as a
+  contribution without changing the full-method gate.
+  A legacy reframed-RQ figure recommendation package has been generated at
+  `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/figures_reframed_rq/`.
+  Prefer the newer core7 package for current manuscript layout. Regenerate the
+  legacy package with
+  `python /root/autodl-tmp/scripts/build_paper_reframed_rq_figures.py`.
+  A newer user-requested seven-core-figure package is now available at
+  `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/figures_core7/`
+  and should be treated as the default manuscript figure package. It includes:
+  framework overview, dataset relationship map, raw-to-controlled
+  representation identity probe, raw identity heatmap as Supplementary Figure
+  S2, PHQ shared-item measurement analysis, DAIC-WOZ/E-DAIC controlled
+  comparison, latent target tradeoff, and evidence summary. Regenerate with
+  `python /root/autodl-tmp/scripts/build_paper_core7_figures.py`.
+  A lightweight measurement-aware cross-corpus depression detection framework
+  has been added to the RQ-reframed manuscript as a constructive
+  audit-to-model scaffold. It separates shared symptom evidence from
+  corpus-specific measurement heads and requires target-contract,
+  measurement-comparability, observed-scale validity, calibration, and transfer
+  gates before strong pooling/generalization claims. Treat it as a proposed
+  framework grounded in psychometrics and ML shift/calibration literature, not
+  as permission to start full M0/M1/M2/M3 construction or new experiments.
+  After user review, the draft was repositioned more assertively as a
+  measurement-aware framework paper rather than only a benchmark-validity
+  audit. The title is now `Before Aligning Representations, Validate the
+  Target: A Measurement-Aware Framework for Cross-Corpus Depression Detection`;
+  Results are explicitly organized as three main experiments; RQ3 stress-test
+  results are framed as validity stress-test evidence; and limitations were
+  rewritten as scope choices. Negative/bounded results should be presented as
+  contribution-bearing stress tests where appropriate, not as a list of defects.
+  In response to the foundation-model validation critique, the manuscript and
+  framework note now position the solution as foundation-backbone compatible:
+  strong text/audio/video/multimodal encoders feed a shared depression
+  representation, a latent symptom layer, corpus-specific measurement heads,
+  and measurement-validity gates. MV22 has executed the first
+  foundation-backbone text validation slice at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv22_foundation_backbone_validation/`;
+  it uses frozen Qwen3-Embedding-0.6B text features, a WavLM base-plus audio
+  proxy, MV07/MV12/MV15 Qwen reruns, and ERM/CORAL/MMD/DANN/IRM/GroupDRO-style
+  aggregate baselines. Qwen keeps feature identity BA at `1.000`, prediction
+  identity BA at `0.978`, MV12 blocked on observed-scale validity, and MV15
+  theta-conditioned feature identity BA at `1.000`; Qwen measurement-aware
+  MV12 references improve shared-item macro MAE over direct itemwise references
+  in both PHQ transfer directions. MV23 has also executed the practical
+  lightweight foundation-multimodal completion slice at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv23_foundation_multimodal_completion/`;
+  it uses WavLM/wav2vec2 audio proxies, OpenFace video proxy,
+  Qwen3/BGE-M3/multilingual-E5 text-audio-video fusion views, the same
+  adaptation baseline family, and a measurement-aware latent-total proxy head
+  over E-DAIC/CMDC PHQ shared-item transfer. The supporting contract is
+  `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/foundation_backbone_measurement_aware_validation_contract.md`.
+  MV24 now replaces the proxy method row with a formal measurement-aware
+  ordinal main table at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv24_measurement_aware_ordinal_model/`.
+  It uses the official Qwen3+WavLM+OpenFace representation, shared PHQ symptom
+  layer, and corpus-specific ordinal heads; its 2026-09-01/02 fair-ablation
+  rerun adds direct target fine-tuning, direct source+target multitask, shared
+  ordinal head, and generic target MLP head under the same calibrated target
+  split and trainable shared-layer exposure. The fair gate does not pass:
+  measurement-aware is best or near-best in CMDC-to-E-DAIC, but direct
+  source+target multitask is best in E-DAIC-to-CMDC. Do not write it as a direct
+  full-vs-all zero-shot/unsupervised baseline win, and do not claim that Table 3
+  proves target-side measurement modeling as the unique source of the gain.
+  MV25 adds the cleaned DAIC/E-DAIC provenance and controlled corpus-identity
+  diagnostics at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv25_provenance_controlled_identity/`.
+  WavLM Large/HuBERT Large/VideoMAE/end-to-end multimodal fine-tuning remain
+  future scope under a new compute contract. Bibliography metadata has been
+  corrected for P3HF, Multi-Probe Audit, EMNLP interviewer bias, the Zhou et al.
+  2026 scale-linking author list, the foundation/backbone/baseline citations,
+  and DIL-MDD, but all references still require full primary-source
+  verification before submission. The manuscript's Framework, Methods, Results,
+  Discussion, Scope, and Conclusion sections have now been rewritten within the
+  measurement-aware benchmark-validity frame.
+  Figure/table integration now covers five main figures, Table 1 dataset-role
+  summary, Table 2 validity-gate summary, and a two-panel Table 3 for the MV24
+  co-primary main result. Binary endpoint metrics are now Supplementary Table
+  S3; the latent-target transfer and evidence-localization figures are
+  generated as supplementary/backup figures rather than main-text anchors. A
+  2026-08-29 structure/claim-alignment pass compressed
+  the former Section 7 into Discussion, made the MV25 raw-to-controlled identity
+  probe the main Figure 3, kept the raw identity heatmap as Supplementary Figure
+  S2, defined Calibration MAE mathematically, and made MMD an auxiliary
+  regularizer rather than the core method claim. A 2026-08-30 evidence-rank
+  alignment pass further changed the RQ1 conclusion to: raw corpus identity is
+  strong, but residual identity after length and severity controls is
+  contrast-dependent. It also compressed DAIC-WOZ/E-DAIC to a provenance sanity
+  control, downgraded CMDC/PDCH HAMD to a bounded exploratory same-scale check,
+  and made Macro Item MAE plus Calibration MAE the co-primary MV24 metrics; the
+  reconstruction-plus-calibration sum is now only a compact summary. A
+  2026-08-30 RQ3 slimming pass then reordered Section 6.3 around the formal
+  measurement-aware ordinal model and Table 3 first, made zero-target-label
+  baselines explicit context rather than same-budget efficacy claims, moved
+  foundation/multimodal/depression-specific/binary/MMD/few-shot/protocol-overlap
+  checks into supporting or supplementary prose, and removed internal MV labels
+  from the main manuscript body and Feishu doc. A 2026-08-30 MMD/core-method
+  tone pass then made `Measurement-aware` the core no-MMD ordinal pathway,
+  demoted `Measurement-aware + MMD` to an auxiliary variant, and replaced broad
+  clinical-safety wording with validity/comparability language. A 2026-08-30
+  Abstract/Introduction density pass compressed the Abstract to target
+  comparability, evidence, method, and main-result layers; changed Contribution
+  2 to a structured three-target-contract audit; and changed RQ3 to ask which
+  validity conditions remain unresolved. A 2026-08-30 Related Work/Methods
+  weighting pass then compressed the foundation/domain-adaptation survey,
+  strengthened Section 2.4 as the measurement-invariance/DIF novelty source,
+  removed unnecessary missing-backbone wording from Methods, expanded the
+  psychometric decision rules and target-calibration protocol, and aligned the
+  MV24 script wording around a core measurement-aware pathway plus an auxiliary
+  MMD variant. A 2026-08-31 layout/discussion sync pass then redesigned Figure
+  1 around the target contract, simplified Figure 2 to formal contrasts versus
+  stress views, retitled Figure 3 as control-dependent corpus identity,
+  enlarged Figure 4, weakened Figure 5's HAMD panel as exploratory support,
+  split Table 3 into two narrow transfer panels, moved the binary endpoint
+  table to the supplement, rewrote Discussion around conceptual/modeling/
+  benchmark implications, and shortened Scope and Conclusion. Feishu was
+  verified at revision 211 after targeted updates, with no matched old
+  high-risk phrases and no hard `<br/>` artifacts. The core7 programmatic
+  figure script has been polished and regenerated, and a hand-drawn total-figure
+  guide has been written.
+  `lark-cli` is installed and authenticated in this Codex shell; a minimal
+  Feishu document create/fetch smoke test passed at
+  `https://tcn9unqodkum.feishu.cn/docx/IsKDdFHAWoYGJxx1cBAcMkwvnqg`. The
+  user-provided Feishu wiki page
+  `https://tcn9unqodkum.feishu.cn/wiki/FeR4wSHOdiydQJkiQsBcqShcn0d` has been
+  precisely synced through 2026-08-31 to latest verified revision 211 using
+  targeted block-level `docs +update` operations, not whole-document overwrite.
+  The Feishu document now matches the current manuscript: compressed Abstract,
+  three Introduction contributions with the structured target-contract audit
+  wording, Section 3.2 as the single formal architecture/loss definition, MMD
+  as an auxiliary regularizer, MV25 raw-to-controlled identity as main Figure
+  3, weighted Related Work with measurement invariance/DIF as the novelty
+  endpoint, expanded Methods rules for measurement screening and target
+  calibration, supervision-aware two-panel MV24 Table 3, the MV26
+  GNN-SDA/QuestMF/SCD-MLLM close-baseline stress-test paragraph and six-row
+  Supplementary Table S2, Supplementary Table S3 for secondary clinical
+  endpoint metrics, and Sections 7-9 as Discussion, Scope, and Conclusion.
+  Verification found zero hard `<br/>` line-break artifacts and preserved the
+  existing comment reference in the full document during the latest layout sync;
+  future Feishu manuscript edits should remain targeted block-level updates
+  after `docs +fetch` to preserve modification traceability. The 2026-09-02
+  MV24 fair-ablation manuscript revision has not yet been synced to Feishu.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -592,7 +853,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   accuracy-invariance tables from the old Chinese-BGE chain. Treat as
   `complete_freeze_current_mv12_latent_target_line`: current latent-target
   evidence improves same-dataset theta utility and lowers identity versus
-  upstream BGE features, but observed-scale safety and old-chain
+  upstream BGE features, but observed-scale validity and old-chain
   source-calibrated external theta transfer remain blockers. The corrected
   legacy interpretation is that M12a is not uniquely more invariant than
   dimension-matched severity outputs in that chain: B3 direct itemwise Ridge
@@ -727,7 +988,7 @@ MPDD 2025 is intentionally out of scope for current auditing.
   It frames MV12 as a predictive fidelity-dataset identifiability trade-off:
   same-dataset theta utility improves and low-dimensional outputs are less
   dataset-identifiable than upstream BGE features, but under the legacy
-  old-chain setting same-dataset observed-scale safety and
+  old-chain setting same-dataset observed-scale validity and
   source-calibrated theta transfer still block a positive full-method claim.
   The current manuscript-facing prediction-consequence layer is MV17a:
   BGE-M3 primary and multilingual-E5 sensitivity both keep the feature-level
@@ -747,11 +1008,17 @@ MPDD 2025 is intentionally out of scope for current auditing.
   aggregate source-context tables only. It exports `references.bib`,
   `citation_registry.csv`, `citation_source_map.csv`, `bibliography_report.md`,
   `bibliography_run_summary.json`, and
-  `bibliography_artifact_hygiene_audit.json`; 34 current source-context rows
-  map to 28 BibTeX entries, unmapped rows are zero, and artifact hygiene
-  passes. It corrected the IRT DIF source hint to Bulut and Suh 2017 and
-  post-review metadata errors for P3HF, Multi-Probe Audit, and EMNLP
-  interviewer bias.
+  `bibliography_artifact_hygiene_audit.json`; 53 current source-context rows
+  map to 48 BibTeX entries, unmapped rows are zero, and artifact hygiene
+  passes. `scripts/build_diagnostic_paper_bibliography_verification.py`
+  generates the submission ledger with 48/48 primary-source spot checks and
+  zero pending source-verification rows as of session 101. Confirmed metadata
+  corrections include MODMA as the 2022 Scientific Data descriptor with
+  ReShare as the access page, Ma 2021 author names, Patel 2019 `Youngha Oh`,
+  WavLM's full arXiv author list, and the formal MPDD Challenge title. M002 is
+  no longer blocked on primary-source verification, but remains open for
+  current-prose citation coverage confirmation, target-venue citation style,
+  and a final pre-submission metadata refresh.
 - Phase 5 post-review measurement-validity route is predeclared at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/`.
   It records the BGE feature-contract caveat, source verification summary,
@@ -1120,7 +1387,7 @@ Key Phase 2 outputs:
   aggregate artifacts only. Its manuscript framing should treat MV17a as the
   canonical prediction-consequence layer and MV12/MV15 as legacy old-chain
   support: measurement harmonization can reduce output-level identity, but
-  observed-scale safety and feature invariance remain blocked, while external
+  observed-scale validity and feature invariance remain blocked, while external
   theta transfer and B3 dominance are encoder-dependent.
 - MV15 latent-conditioned identity design decision: MV15 was predeclared with
   dimension-matched controls comparing `I(Z;D|theta)` to raw feature identity,
@@ -1156,7 +1423,7 @@ Key Phase 2 outputs:
   and the available transcript CSVs do not expose speaker roles for
   participant/interviewer filtering. MV17a now addresses the paper-critical
   MV07/MV12/MV15 part of this caveat with BGE-M3 and multilingual-E5; both
-  encoders reproduce the blocked result, both fail observed-scale safety, and
+  encoders reproduce the blocked result, both fail observed-scale validity, and
   both keep theta-conditioned feature identity BA at `1.000`. External theta
   transfer passes for BGE-M3 but fails for multilingual-E5, and B3 dominance is
   false for BGE-M3 but true for multilingual-E5. Do not interpret remaining
@@ -1171,10 +1438,11 @@ Key Phase 2 outputs:
   extra shallow BGE variants, extra projection dimensions, EATD
   valence-adversarial modules, and MV16 retuning unless a new predeclared
   mechanism changes the gate.
-- Next measurement-aware route decision: MV17a, MV18, MV19, MV20, and the
-  corrected MV13/MV14 `mirt` rerun are complete. The experiment queue is
-  frozen; the active next item is manuscript finalization and primary-source
-  citation verification. MV06
+- Next measurement-aware route decision: MV17a, MV18, MV19, MV20, MV21, MV24,
+  and the corrected MV13/MV14 `mirt` rerun are complete. The experiment queue
+  can freeze again after MV24; the active next item is manuscript integration
+  of the fixed ordinal-head method/table and primary-source citation
+  verification. MV06
   agreement uncertainty is complete; optional next RQ4 work is resolving the
   one incomplete local candidate before stronger RQ4 wording.
 
@@ -1289,7 +1557,7 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    `main` history directly.
 4. Use the Phase 5 full-method gate audit and consolidation inventory as the
    active claim boundary. MV09 revises identity-gate semantics,
-   MV10/MV11/MV19 provide the primary label-only PHQ measurement evidence,
+   MV10/MV11/MV19/MV21 provide the primary label-only PHQ measurement evidence,
    corrected MV13/MV14 provide anchor-linked external `mirt` corroboration with
    convergence and finite-sample caveats, MV12/MV15/MV16 remain bounded or negative
    prediction-consequence evidence, MV17a is the canonical
@@ -1297,10 +1565,20 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    primary and multilingual-E5 sensitivity, MV18 gives exploratory same-HAMD
    context-shift support without formal invariance claims, MV20 closes the
    bounded protocol-label-overlap stress as negative/no-excess evidence, and
+   MV21 also supplies the same-lineage DAIC-WOZ/E-DAIC PHQ-8 control and
+   descriptive same-HAMD reinforcement, while MV24 supplies the formal
+   measurement-aware ordinal method table with a failed fair shared-layer
+   calibrated ablation gate, a real-data targeted item analysis showing
+   shared-head versus corpus-specific-head near ties on `C02/C06`, and a
+   companion fixed-latent DIF simulation that supports only weak item-local
+   mechanism consistency under planted threshold shift;
    early weak or superseded MV rows are retired from the active experiment
-   queue. Full method construction remains blocked. The next active task is
-   manuscript finalization and primary-source citation verification.
+   queue. Old M0/M1/M2/M3 full method construction remains blocked, but MV24
+   is the current formal PHQ shared-item method result with bounded,
+   direction-dependent architecture attribution. The next active task is
+   current-prose citation coverage confirmation, target-venue formatting, and
+   final pre-submission metadata refresh around the already verified bibliography.
    Parallel writing work may continue, but the manuscript must
-   use target
-   measurement-validity framing, corrected bibliography metadata, and full
-   primary-source verification before submission.
+   use target measurement-validity framing, corrected bibliography metadata,
+   the session-101 primary-source verification ledger, and the session-102
+   fair-ablation claim boundary before submission.

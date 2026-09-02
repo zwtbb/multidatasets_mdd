@@ -1,11 +1,10 @@
 local_category,ignored_path_count,recommended_action,safe_to_delete_without_user_input,needs_user_approval,example_ignored_paths
-python_bytecode_cache,1,delete_if_present,True,False,scripts/__pycache__/
 environment_local_files,2,ask_before_delete_environment_files,False,True,
 external_code_or_model_cache,1,keep_local_environment_cache_unless storage cleanup requested,False,True,cache/
-local_dataset_or_manifest,20,keep_local_governed_data,False,False,
+local_dataset_or_manifest,25,keep_local_governed_data,False,False,
 local_features_or_embeddings,3,keep_local_for_recompute_or_delete_only_if storage constrained,False,True,analysis/<local-feature-or-embedding-artifact>;analysis/<local-feature-or-embedding-artifact>;analysis/<local-feature-or-embedding-artifact>
 local_original_plan_note,1,keep_or_manually_archive_after confirming master plan fully absorbs it,False,True,untitled.md
-local_row_predictions,30,keep_local_for_recompute_or_delete_only_after confirming summaries are enough,False,True,analysis/<local-row-prediction-artifact>;analysis/<local-row-prediction-artifact>;analysis/<local-row-prediction-artifact>;analysis/<local-row-prediction-artifact>;analysis/<local-row-prediction-artifact>
+local_row_predictions,32,keep_local_for_recompute_or_delete_only_after confirming summaries are enough,False,True,analysis/<local-row-prediction-artifact>;analysis/<local-row-prediction-artifact>;analysis/<local-row-prediction-artifact>;analysis/<local-row-prediction-artifact>;analysis/<local-row-prediction-artifact>
 mv06_local_human_review_files,5,keep_local_until_mv06_candidate_resolved,False,False,analysis/phase5_minimal_validation/p5_mv06_<local-review-file>;analysis/phase5_minimal_validation/p5_mv06_<local-review-file>;analysis/phase5_minimal_validation/p5_mv06_<local-review-file>;analysis/phase5_minimal_validation/p5_mv06_<local-review-file>;analysis/phase5_minimal_validation/p5_mv06_<local-review-file>
 other_ignored_local,3,review_before_delete,False,True,analysis/phase5_minimal_validation/<local-detail-artifact>;analysis/phase5_minimal_validation/<local-detail-artifact>;analysis/phase5_minimal_validation/<local-detail-artifact>
 phase2_local_results,1,keep_local_for_baseline_rebuild_or_manual_purge_after_archive,False,True,analysis/phase2_baselines/

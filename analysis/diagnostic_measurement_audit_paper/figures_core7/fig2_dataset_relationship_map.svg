@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="684pt" height="358.128pt" viewBox="0 0 684 358.128" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-30T20:56:07.839729</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.5, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 358.128
+L 684 358.128
+L 684 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 44.6976 128.192256
+L 418.3344 128.192256
+Q 430.3872 128.192256 430.3872 122.005152
+L 430.3872 81.445248
+Q 430.3872 75.258144 418.3344 75.258144
+L 44.6976 75.258144
+Q 32.6448 75.258144 32.6448 81.445248
+L 32.6448 122.005152
+Q 32.6448 128.192256 44.6976 128.192256
+z
+" clip-path="url(#p659820f989)" style="fill: #d9f2ee; stroke: #2a9d8f; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 44.6976 200.375136
+L 418.3344 200.375136
+Q 430.3872 200.375136 430.3872 194.188032
+L 430.3872 150.190848
+Q 430.3872 144.003744 418.3344 144.003744
+L 44.6976 144.003744
+Q 32.6448 144.003744 32.6448 150.190848
+L 32.6448 194.188032
+Q 32.6448 200.375136 44.6976 200.375136
+z
+" clip-path="url(#p659820f989)" style="fill: #f7e5c5; stroke: #d9902f; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 44.6976 269.120736
+L 418.3344 269.120736
+Q 430.3872 269.120736 430.3872 262.933632
+L 430.3872 222.373728
+Q 430.3872 216.186624 418.3344 216.186624
+L 44.6976 216.186624
+Q 32.6448 216.186624 32.6448 222.373728
+L 32.6448 262.933632
+Q 32.6448 269.120736 44.6976 269.120736
+z
+" clip-path="url(#p659820f989)" style="fill: #f5d8dd; stroke: #c93c4f; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 479.9376 231.310656
+L 625.9104 231.310656
+Q 637.9632 231.310656 637.9632 225.123552
+L 637.9632 115.818048
+Q 637.9632 109.630944 625.9104 109.630944
+L 479.9376 109.630944
+Q 467.8848 109.630944 467.8848 115.818048
+L 467.8848 225.123552
+Q 467.8848 231.310656 479.9376 231.310656
+z
+" clip-path="url(#p659820f989)" style="fill: #e8eef2; stroke: #8a98a5; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 47.376 333.7416
+L 59.4288 333.7416
+L 59.4288 327.554496
+L 47.376 327.554496
+z
+" clip-path="url(#p659820f989)" style="fill: #2a9d8f; stroke: #2a9d8f; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 194.688 333.7416
+L 206.7408 333.7416
+L 206.7408 327.554496
+L 194.688 327.554496
+z
+" clip-path="url(#p659820f989)" style="fill: #d9902f; stroke: #d9902f; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 382.176 333.7416
+L 394.2288 333.7416
+L 394.2288 327.554496
+L 382.176 327.554496
+z
+" clip-path="url(#p659820f989)" style="fill: #c93c4f; stroke: #c93c4f; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 556.272 333.7416
+L 568.3248 333.7416
+L 568.3248 327.554496
+L 556.272 327.554496
+z
+" clip-path="url(#p659820f989)" style="fill: #8a98a5; stroke: #8a98a5; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 435.744 173.90808
+L 475.92 173.90808
+" clip-path="url(#p659820f989)" style="fill: none; stroke-dasharray: 4.81,2.08; stroke-dashoffset: 0; stroke: #8a98a5; stroke-width: 1.3"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="20.592" y="25.472216" transform="rotate(-0 20.592 25.472216)">Target-contract contrasts and stress views</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #697987" x="20.592" y="48.44736" transform="rotate(-0 20.592 48.44736)">The design separates formal target-contract contrasts from acquisition, task, and population stress views.</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(133.663937 94.239491)">L1 same-lineage PHQ-8 sanity control</text>
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(171.383219 104.263825)">DAIC-WOZ  &lt;-&gt;  E-DAIC</text>
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(62.338781 114.216284)">near-identical provenance should yield near-identical item labels</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(134.479 164.703731)">L2 primary shared-PHQ item contrast</text>
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(182.826437 174.728065)">E-DAIC  &lt;-&gt;  CMDC</text>
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(58.315219 184.680524)">same symptom family; different language, population, and setting</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(139.404516 235.330703)">Exploratory same-HAMD stress view</text>
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(186.918891 245.137118)">CMDC  &lt;-&gt;  PDCH</text>
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(55.713656 254.873219)">small aligned subset; tests whether the concern is PHQ-form specific</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(493.279187 138.52685)">Additional stress views</text>
+    <text style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(552.924 148.37113)"/>
+    <text style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(532.701383 158.215411)">MODMA</text>
+    <text style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(539.765969 168.059691)">EATD</text>
+    <text style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(525.06307 177.903971)">MPDD-AVG</text>
+    <text style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(552.924 187.748252)"/>
+    <text style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(472.688305 197.592532)">acquisition, emotional-context,</text>
+    <text style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(489.570937 207.436813)">and population variation</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #697987" x="40.68" y="309.68064" transform="rotate(-0 40.68 309.68064)">Table 1 carries dataset sizes, modalities, and label details; this figure shows only analytical role.</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #697987" x="64.116" y="332.965923" transform="rotate(-0 64.116 332.965923)">formal PHQ control</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #697987" x="211.428" y="332.965923" transform="rotate(-0 211.428 332.965923)">primary measurement contrast</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #697987" x="398.916" y="332.965923" transform="rotate(-0 398.916 332.965923)">exploratory same-scale view</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #697987" x="573.012" y="332.965923" transform="rotate(-0 573.012 332.965923)">stress views</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p659820f989">
+   <rect x="7.2" y="7.2" width="669.6" height="343.728"/>
+  </clipPath>
+ </defs>
+</svg>

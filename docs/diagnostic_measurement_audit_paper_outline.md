@@ -71,16 +71,25 @@ MV17a is now the primary prediction-consequence layer. It makes BGE-M3 the
 primary multilingual feature contract and multilingual-E5 the sensitivity
 encoder, regenerates E-DAIC/CMDC/PDCH features, and reruns MV07/MV12/MV15.
 Both encoders show that `X -> theta` is learnable within datasets, output-level
-identity is low, observed-scale safety fails, and theta-conditioned feature
+identity is low, observed-scale validity fails, and theta-conditioned feature
 identity remains `1.000`. External theta transfer is encoder-dependent
 (BGE-M3 passes, multilingual-E5 fails), and B3 Pareto dominance is also
 encoder-dependent (false for BGE-M3, true for multilingual-E5). The correct
 paper claim is therefore not universal transfer failure or universal B3
 dominance. It is that psychometric harmonization can reduce output-level
 dataset identifiability, but the current feature contracts do not establish
-observed-scale-safe or feature-invariant cross-corpus prediction. MV12/MV15
+observed-scale-valid or feature-invariant cross-corpus prediction. MV12/MV15
 remain useful as legacy/supporting diagnostics, not as the canonical feature
 contract.
+
+MV22 adds the first foundation-backbone stress test. Qwen3-Embedding-0.6B
+features rerun MV07/MV12/MV15 and preserve the blocked pattern: feature
+identity BA is `1.000`, prediction identity BA is `0.978`, MV12 remains
+`blocked_theta_gain_not_observed_scale_safe`, and theta-conditioned feature
+identity remains `1.000`. The Qwen measurement-aware MV12 reference improves
+shared-item macro MAE over the direct itemwise reference in both PHQ transfer
+directions. Treat MV22 as bounded foundation-era validation, not as full
+WavLM Large/video/end-to-end multimodal method completion.
 
 This PHQ result must be written as E-DAIC/CMDC dataset-group localized
 threshold non-equivalence among shared PHQ items, not as a clean PHQ-8 versus
@@ -134,7 +143,7 @@ The manuscript should be compressed to three contributions:
 3. Consequence for ML transfer:
    under BGE-M3 primary and multilingual-E5 sensitivity contracts, current
    `X -> theta` models are domain-learnable and lower output identity, but
-   observed-scale safety and feature invariance remain blocked while external
+   observed-scale validity and feature invariance remain blocked while external
    theta transfer and B3 severity-control dominance are encoder-dependent.
 
 Supporting evidence should be explicitly demoted:
@@ -208,15 +217,43 @@ Allowed claims:
   shared-latent method claim.
 - Legacy MV12 aggregate tradeoff analysis provides the freeze decision for the
   old Chinese-BGE chain: latent-target evidence improves theta utility and
-  lowers identity versus the upstream feature layer, but observed-scale safety
+  lowers identity versus the upstream feature layer, but observed-scale validity
   remains a blocker and B3 direct itemwise Ridge is a dimension-matched severity
   caveat.
 - MV17a provides the current prediction-consequence evidence: BGE-M3 primary
   and multilingual-E5 sensitivity both pass same-dataset theta utility, both
-  fail observed-scale safety, both keep theta-conditioned feature identity at
+  fail observed-scale validity, both keep theta-conditioned feature identity at
   `1.000`, and both keep the full method blocked. External theta transfer
   passes under BGE-M3 but fails under multilingual-E5; B3 Pareto dominance is
   false under BGE-M3 and true under multilingual-E5.
+- MV22 adds the foundation-backbone stress test: Qwen3 text features keep
+  feature identity and observed-scale gates visible, while the
+  measurement-aware reference improves Qwen shared-item reconstruction over a
+  direct itemwise reference in both PHQ transfer directions.
+- MV23 adds the lightweight multimodal completion stress test: WavLM/wav2vec2
+  audio proxies, OpenFace video proxy, and Qwen3/BGE-M3/multilingual-E5
+  text-audio-video fusion views are evaluated under the same PHQ shared-item
+  transfer contract with adaptation baselines and a measurement-aware proxy
+  head. It is supporting foundation-era evidence, not WavLM Large, VideoMAE, or
+  end-to-end multimodal completion.
+- MV24 is the formal method-facing result for the current manuscript. It fixes
+  the measurement-aware model to a frozen Qwen3+WavLM+OpenFace representation,
+  shared eight-item PHQ symptom layer, and corpus-specific cumulative-logit
+  ordinal heads. The regenerated table separates target-label supervision
+  budgets: zero-target-label baselines are contextual comparisons, while
+  corpus-specific-head, measurement-aware, and measurement-aware + MMD are the same-budget
+  target-calibrated comparison. Measurement-aware modeling beats the corpus-specific-head
+  ablation on both co-primary metrics in both
+  E-DAIC<->CMDC PHQ shared-item directions over 5 seeds with paired
+  significance.
+- MV25 repairs two likely reviewer attacks. DAIC-WOZ/E-DAIC is explicitly
+  documented as a same-lineage PHQ-8 sanity control, not an independent corpus.
+  Corpus identity is re-probed with fold-internal length and severity controls:
+  E-DAIC/CMDC raw identity is largely explained by length/protocol controls,
+  while same-language E-DAIC lineage identity remains high after controls
+  (`0.839` Qwen3 text, `0.897` WavLM audio). Use this to write representation
+  heterogeneity as acquisition/protocol evidence rather than a naive
+  English-vs-Chinese language-detector claim.
 - MV15 provides completed negative latent-conditioned identity evidence:
   raw/theta/total/predicted-total/B3-conditioned BGE feature identity BA remains
   `1.000`, PHQ-item-conditioned feature identity BA is `0.974`, theta-only
@@ -284,7 +321,7 @@ Blocked claims:
 2. Dataset and protocol identity are measurable shortcut risks.
    Phase 3 identity and protocol diagnostics show that frozen/lightweight
    features often retain dataset/protocol information strongly enough to make
-   direct pooled training scientifically unsafe.
+   direct pooled training insufficiently supported.
 
 3. Simple cross-scale symptom bridges are not enough.
    MV01 and MV07/MV07b/MV07c show that PHQ itemwise heads can beat train means
@@ -335,7 +372,7 @@ Blocked claims:
 9. Two-stage latent-target prediction is informative but still blocked.
    MV17a is now the canonical feature-contract version of this conclusion:
    BGE-M3 and multilingual-E5 both show learnable within-dataset theta and low
-   output identity, but both fail observed-scale safety and feature invariance.
+   output identity, but both fail observed-scale validity and feature invariance.
    MV12 remains the legacy Chinese-BGE version of the trade-off analysis and is
    useful as a dimension-matched severity-control warning, not as the primary
    feature-contract result.
@@ -729,9 +766,16 @@ Tracked outputs:
    units were feasible; PDCH and E-DAIC were excluded for missing clean
    protocol units; BGE-M3 primary and multilingual-E5 sensitivity both show no
    clear high-overlap excess over matched random deletion.
-27. Next: freeze experiments, finish manuscript editing, and complete
+27. Done: run MV22 foundation-backbone validation with Qwen3 text features,
+   WavLM base-plus audio proxy coverage, MV07/MV12/MV15 Qwen reruns, and
+   ERM/CORAL/MMD/DANN/IRM/GroupDRO-style aggregate baselines.
+28. Done: run MV23 lightweight foundation-multimodal completion with
+   WavLM/wav2vec2 audio proxies, OpenFace video proxy, text-audio-video fusion
+   views, adaptation baselines, and a measurement-aware latent-total proxy
+   head.
+29. Next: freeze experiments, finish manuscript editing, and complete
    primary-source citation verification.
-28. Parallel writing: prepare manuscript edits from existing aggregate
+30. Parallel writing: prepare manuscript edits from existing aggregate
    summaries only; do not export row-level predictions, raw text, subject
    locators, learned parameters, or model files. Insert generated citation keys
    and adapt references to the target venue style after full reference

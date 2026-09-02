@@ -1,0 +1,7 @@
+scope_id,ladder_id,probe_id,datasets,representation,conditioning,metric,mean,std,seed_count,completed_seed_rows,eval_subjects_mean,skipped_reasons
+S3_cmdc_pdch_total_sensitivity,L0_D_given_Z_raw,P7_severity_only_external_sensitivity,cmdc;pdch,raw_bge_unconditional,none,Balanced Accuracy,1.0,0.0,5,25,35.2,
+S3_cmdc_pdch_total_sensitivity,L9_severity_only_sensitivity,P7_severity_only_external_sensitivity,cmdc;pdch,normalized_total_residualized_bge,normalized_total,Balanced Accuracy,1.0,0.0,5,25,35.2,
+S3_cmdc_pdch_total_sensitivity,L9_severity_only_sensitivity,P7_severity_only_external_sensitivity,cmdc;pdch,severity_only_control,normalized_total,Balanced Accuracy,0.6130350877192982,0.08537387965506275,5,25,35.2,
+S4_three_way_total_norm_sensitivity,L0_D_given_Z_raw,P7_severity_only_external_sensitivity,edaic;cmdc;pdch,raw_bge_unconditional,none,Balanced Accuracy,1.0,0.0,5,25,79.0,
+S4_three_way_total_norm_sensitivity,L9_severity_only_sensitivity,P7_severity_only_external_sensitivity,edaic;cmdc;pdch,normalized_total_residualized_bge,normalized_total,Balanced Accuracy,1.0,0.0,5,25,79.0,
+S4_three_way_total_norm_sensitivity,L9_severity_only_sensitivity,P7_severity_only_external_sensitivity,edaic;cmdc;pdch,severity_only_control,normalized_total,Balanced Accuracy,0.3996424959509415,0.028227694752494214,5,25,79.0,

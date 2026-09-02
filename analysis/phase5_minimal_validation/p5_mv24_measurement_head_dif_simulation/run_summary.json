@@ -1,0 +1,208 @@
+{
+  "run_id": "P5_MV24_measurement_head_dif_simulation",
+  "generated_at": "2026-09-02T02:20:17+00:00",
+  "git_commit": "b2b49f8",
+  "status": "complete",
+  "scope": "fixed_latent_measurement_head_simulation",
+  "worlds": [
+    "H0_scalar_invariant",
+    "H1_C02_C06_threshold_DIF"
+  ],
+  "head_methods": [
+    "shared_ordinal_head",
+    "corpus_specific_ordinal_head"
+  ],
+  "simulations_per_world": 500,
+  "seed": 20260902,
+  "target_calibration_fraction": 0.3,
+  "target_calibration_min": 24,
+  "mv24_official_view_rows": [
+    {
+      "dataset": "edaic",
+      "scale": "PHQ-8",
+      "mv24_label_feature_intersection_n": 219,
+      "default_target_calibration_n_if_target": 66,
+      "default_target_evaluation_n_if_target": 153,
+      "mean_shared_phq_total": 6.6392694064,
+      "sd_shared_phq_total": 6.0001920012
+    },
+    {
+      "dataset": "cmdc",
+      "scale": "PHQ-9",
+      "mv24_label_feature_intersection_n": 44,
+      "default_target_calibration_n_if_target": 24,
+      "default_target_evaluation_n_if_target": 20,
+      "mean_shared_phq_total": 7.4545454545,
+      "sd_shared_phq_total": 7.5558526382
+    }
+  ],
+  "feature_coverage_rows": 6,
+  "world_summary_rows": [
+    {
+      "world_id": "H0_scalar_invariant",
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "item_set_id": "all_shared_items",
+      "item_ids": "C01/C02/C03/C04/C05/C06/C07/C08",
+      "target_calibration_count": 66,
+      "target_evaluation_count": 153,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0007477292,
+      "corpus_specific_lower_error_rate": 0.414
+    },
+    {
+      "world_id": "H0_scalar_invariant",
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "item_set_id": "anchor_items",
+      "item_ids": "C01/C04/C05/C07",
+      "target_calibration_count": 66,
+      "target_evaluation_count": 153,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0007922038,
+      "corpus_specific_lower_error_rate": 0.436
+    },
+    {
+      "world_id": "H0_scalar_invariant",
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "item_set_id": "threshold_shift_items",
+      "item_ids": "C02/C06",
+      "target_calibration_count": 66,
+      "target_evaluation_count": 153,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0009528502,
+      "corpus_specific_lower_error_rate": 0.462
+    },
+    {
+      "world_id": "H0_scalar_invariant",
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "item_set_id": "all_shared_items",
+      "item_ids": "C01/C02/C03/C04/C05/C06/C07/C08",
+      "target_calibration_count": 24,
+      "target_evaluation_count": 20,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0131849701,
+      "corpus_specific_lower_error_rate": 0.182
+    },
+    {
+      "world_id": "H0_scalar_invariant",
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "item_set_id": "anchor_items",
+      "item_ids": "C01/C04/C05/C07",
+      "target_calibration_count": 24,
+      "target_evaluation_count": 20,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0130232385,
+      "corpus_specific_lower_error_rate": 0.276
+    },
+    {
+      "world_id": "H0_scalar_invariant",
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "item_set_id": "threshold_shift_items",
+      "item_ids": "C02/C06",
+      "target_calibration_count": 24,
+      "target_evaluation_count": 20,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0128272453,
+      "corpus_specific_lower_error_rate": 0.358
+    },
+    {
+      "world_id": "H1_C02_C06_threshold_DIF",
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "item_set_id": "all_shared_items",
+      "item_ids": "C01/C02/C03/C04/C05/C06/C07/C08",
+      "target_calibration_count": 66,
+      "target_evaluation_count": 153,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": 2.78059e-05,
+      "corpus_specific_lower_error_rate": 0.504
+    },
+    {
+      "world_id": "H1_C02_C06_threshold_DIF",
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "item_set_id": "anchor_items",
+      "item_ids": "C01/C04/C05/C07",
+      "target_calibration_count": 66,
+      "target_evaluation_count": 153,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0005419021,
+      "corpus_specific_lower_error_rate": 0.444
+    },
+    {
+      "world_id": "H1_C02_C06_threshold_DIF",
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "item_set_id": "threshold_shift_items",
+      "item_ids": "C02/C06",
+      "target_calibration_count": 66,
+      "target_evaluation_count": 153,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": 0.0022941478,
+      "corpus_specific_lower_error_rate": 0.602
+    },
+    {
+      "world_id": "H1_C02_C06_threshold_DIF",
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "item_set_id": "all_shared_items",
+      "item_ids": "C01/C02/C03/C04/C05/C06/C07/C08",
+      "target_calibration_count": 24,
+      "target_evaluation_count": 20,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0061265054,
+      "corpus_specific_lower_error_rate": 0.356
+    },
+    {
+      "world_id": "H1_C02_C06_threshold_DIF",
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "item_set_id": "anchor_items",
+      "item_ids": "C01/C04/C05/C07",
+      "target_calibration_count": 24,
+      "target_evaluation_count": 20,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": -0.0108305238,
+      "corpus_specific_lower_error_rate": 0.278
+    },
+    {
+      "world_id": "H1_C02_C06_threshold_DIF",
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "item_set_id": "threshold_shift_items",
+      "item_ids": "C02/C06",
+      "target_calibration_count": 24,
+      "target_evaluation_count": 20,
+      "draw_count": 500,
+      "delta_shared_minus_corpus_specific_mean": 0.010966027,
+      "corpus_specific_lower_error_rate": 0.622
+    }
+  ],
+  "gate_recommendations": [
+    {
+      "recommendation_id": "mechanism_sanity_check",
+      "status": "weak_item_local_mechanism_consistent_but_small",
+      "recommendation": "Use the simulation only as bounded item-local mechanism evidence under known threshold DIF.",
+      "evidence": "H0 max abs C02/C06-set delta=0.013; H1 min C02/C06-set delta=0.002; H1 min lower-error rate=0.602."
+    },
+    {
+      "recommendation_id": "real_data_claim_boundary",
+      "status": "keep_bounded",
+      "recommendation": "Do not override the real MV24 fair-ablation and targeted-item near-tie results.",
+      "evidence": "This simulation fixes the latent input and plants a known response-process shift; real MV24 still estimates latent representations from frozen multimodal features."
+    },
+    {
+      "recommendation_id": "paper_positioning",
+      "status": "framework_instantiation_not_sota_claim",
+      "recommendation": "Present corpus-specific ordinal heads as a constructive instantiation whose value depends on observed target measurement shift and calibration budget.",
+      "evidence": "The intended claim is audit-to-model coherence, not universal architecture superiority."
+    }
+  ],
+  "aggregate_outputs_only": true,
+  "tracked_outputs": [
+    "artifact_hygiene_audit.json",
+    "comparison_by_draw.csv",
+    "gate_recommendations.csv",
+    "head_comparison_summary.csv",
+    "head_comparison_table.md",
+    "input_boundary_contract.csv",
+    "observed_input_audit.csv",
+    "report.md",
+    "run_summary.json",
+    "simulation_design_contract.csv"
+  ],
+  "artifact_hygiene_passed": true
+}

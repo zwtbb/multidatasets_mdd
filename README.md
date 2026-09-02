@@ -48,14 +48,51 @@ python scripts/phase2_completion_audit.py
 The expected completion audit verdict is `phase2_goal_complete=true` and
 `method_design_gate_recommendation=ready`.
 
-The active research gate is now Phase 5. Post-review minimal validations are
-complete through the `P5_MV20` criterion-overlap stress test, and the
-full-method gate remains
-`blocked_but_publishable_diagnostic_direction` with
-`full_method_allowed=false`. The paper direction is therefore reframed from a
-positive full shared-symptom model to a target measurement-validity paper:
-feature shift, target measurement shift, and prediction shift are distinct
-layers. MV09 shows that unconditional dataset
+The active research gate is now Phase 5. Post-review minimal validations have
+advanced from foundation-era stress tests to a formal measurement-aware PHQ
+shared-item method table. MV22 executes the first stronger
+foundation-backbone stress-test slice: frozen Qwen3-Embedding-0.6B text
+features for E-DAIC/CMDC/PDCH, a WavLM base-plus audio proxy view,
+MV07/MV12/MV15 reruns, and lightweight ERM/CORAL/MMD/DANN/IRM/GroupDRO-style
+baselines against measurement-aware MV12 aggregate references. MV23 adds the
+practical multimodal completion slice: WavLM/wav2vec2 audio proxies, OpenFace
+video proxy, Qwen3/BGE-M3/multilingual-E5 text-audio-video fusion views, the
+same adaptation baselines, and a lightweight measurement-aware latent-total
+proxy head over E-DAIC/CMDC PHQ shared-item transfer. MV24 is the current
+formal method result: the official Qwen3+WavLM+OpenFace representation feeds a
+shared eight-symptom layer and corpus-specific cumulative-logit ordinal heads,
+with source warm-start, target-head initialization, target calibration
+reconstruction. Shared-symptom MMD is now treated as an auxiliary variant rather
+than part of the core measurement-aware model. MV24 now reports two explicit
+supervision regimes: zero-target-label baselines are compared with each other,
+while corpus-specific-head, direct target fine-tuning, direct source+target
+multitask, shared ordinal head, generic target MLP head, measurement-aware, and
+measurement-aware + MMD are compared under the same target-calibration label
+budget. The fair shared-layer calibrated ablation gate does not pass uniformly:
+the large gain over the frozen corpus-specific-head baseline is mainly evidence
+for target calibration/shared-layer adaptation, while the ordinal measurement
+pathway is competitive and direction-dependent. A targeted item-level analysis
+does not rescue a stronger corpus-specific-head claim: shared ordinal and
+measurement-aware corpus-specific ordinal heads are near tied overall and on
+the measurement-gate `C02/C06` threshold-shift item set. A fixed-latent
+companion simulation shows only weak item-local mechanism consistency under
+planted `C02/C06` threshold DIF, so use it as an audit-to-model sanity check
+rather than a real-data superiority result. MV25 then hardens
+the two most
+attackable diagnostics: DAIC-WOZ
+is explicitly demoted to a same-lineage PHQ-8 sanity control, and corpus
+identity is re-probed with language/protocol/length/severity controls. MV26
+adds targeted depression-specific baseline stress tests with GNN-SDA-style
+semi-supervised graph domain adaptation and QuestMF-style question-wise ordinal
+fusion under the same target calibration budget. The same MV26 package now
+also includes an SCD-MLLM-style heterogeneous multimodal adapter/fusion stress
+test under the same contract. The SCD-MLLM-style measurement-aware row improves
+reconstruction-plus-calibration in both directions, strengthening the
+foundation/fusion baseline reinforcement. Treat MV22/MV23/MV26 as
+supporting stress tests and MV24 as the main method table, not
+as a depression-detection SOTA or a WavLM Large/HuBERT Large/VideoMAE/end-to-end
+fine-tuning claim. Those heavier variants require a separate raw audio/video
+feature-generation and training contract, not just a backbone-name swap. MV09 shows that unconditional dataset
 identity should be treated as a shortcut-risk screen, while conditional
 identity remains high after severity or aligned-item conditioning. MV10 adds a
 label-only E-DAIC/CMDC PHQ psychometric screen with loading congruence `0.998`,
@@ -94,22 +131,117 @@ MV17a is the current feature-contract consequence layer. It makes BGE-M3 the
 primary multilingual encoder and multilingual-E5 the sensitivity encoder,
 regenerates E-DAIC/CMDC/PDCH features, and reruns MV07/MV12/MV15. Both encoders
 keep MV07/MV12/MV15 blocked; both pass same-dataset theta utility, fail
-same-dataset observed-scale safety, and leave theta-conditioned feature
+same-dataset observed-scale validity, and leave theta-conditioned feature
 identity BA at `1.000`. External theta transfer is encoder-dependent
 (BGE-M3 passes, multilingual-E5 fails), and B3 Pareto dominance is also
 encoder-dependent (false for BGE-M3, true for multilingual-E5). Treat the
 stable claim as: measurement harmonization can reduce output-level dataset
-identifiability, but current features do not establish observed-scale-safe or
-feature-invariant cross-corpus prediction.
+identifiability, while representation identity and observed-scale validity remain
+required gates for stronger cross-corpus claims.
+
+MV22 adds the foundation-backbone stress-test layer on top of MV17a. Qwen3
+features keep MV07/MV12/MV15 blocked: feature identity BA remains `1.000`,
+prediction identity BA is `0.978`, MV12 remains
+`blocked_theta_gain_not_observed_scale_safe`, and theta-conditioned feature
+identity remains `1.000`. Under Qwen text features, the measurement-aware MV12
+reference improves shared-item macro MAE over the direct itemwise reference in
+both PHQ transfer directions (`0.733` vs `0.869` for CMDC-to-E-DAIC; `0.855`
+vs `0.883` for E-DAIC-to-CMDC). Treat this as evidence that foundation
+backbones do not remove the target-validity gate.
+
+MV23 adds the lightweight multimodal completion layer. It executes 8
+foundation/proxy views over E-DAIC/CMDC PHQ shared-item transfer, with 288
+adapter aggregate rows and 48 measurement-aware proxy rows. The best
+CMDC-to-E-DAIC row is Qwen3+WavLM+OpenFace with MMD-style alignment (macro item
+MAE `0.833`); the best E-DAIC-to-CMDC row is Qwen3+wav2vec2 with MMD-style
+alignment (macro item MAE `0.597`). The best measurement-aware proxy rows are
+Qwen3+WavLM+OpenFace for CMDC-to-E-DAIC (macro item MAE `0.859`) and
+multilingual-E5+WavLM+OpenFace for E-DAIC-to-CMDC (macro item MAE `0.754`).
+Treat MV23 as a lightweight multimodal foundation stress test, not as a
+WavLM Large, HuBERT Large, VideoMAE, or full end-to-end multimodal success
+claim.
+
+MV24 replaces the proxy method row with a single formal measurement-aware
+ordinal architecture and the clean main table requested for the manuscript.
+The architecture is fixed as frozen Qwen3 text + WavLM speech + OpenFace video
+subject features, a trainable projector, an eight-dimensional shared PHQ
+symptom layer, and corpus-specific cumulative-logit ordinal item heads. The
+core method trains with source ordinal reconstruction and target calibration
+ordinal reconstruction after source warm-start and target-head initialization;
+shared-symptom MMD is reported as an auxiliary variant. The result table now separates target-label
+budgets: ERM, CORAL, MMD, DANN, the strongest direct foundation baseline, and
+latent-only are zero-target-label rows, while the calibrated block adds direct
+target fine-tuning, direct source+target multitask, shared ordinal head, and a
+generic target MLP head alongside corpus-specific-head, measurement-aware, and
+measurement-aware + MMD. The fair-ablation gate is
+`not_passed_uniform_measurement_pathway_superiority`: measurement-aware is best
+or near-best in CMDC-to-E-DAIC, but direct source+target multitask is best in
+E-DAIC-to-CMDC. The targeted item analysis also shows near ties between the
+shared ordinal and corpus-specific ordinal heads on both all shared PHQ items
+and the `C02/C06` threshold-shift item set. The companion fixed-latent
+simulation behaves as expected directionally only under planted threshold DIF,
+but the effects are small and anchors do not improve. MV24 now also reports
+secondary clinical-reader metrics
+following cross-domain MDD reporting practice: total MAE/CCC and a shared-PHQ
+total >=10 endpoint with Macro-F1, Balanced Accuracy, AUROC, AUPRC,
+Sensitivity, and Specificity. The lambda-MMD sweep is nearly flat, so the
+manuscript should present MMD as a mild regularizer and present target
+calibration/shared-layer adaptation separately from ordinal measurement
+parameterization. The aggregate
+outputs are in
+`analysis/phase5_minimal_validation/p5_mv24_measurement_aware_ordinal_model/`
+and pass artifact hygiene.
+
+MV26 adds the requested depression-specific baseline stress table. It uses the
+same E-DAIC<->CMDC PHQ shared-item split, the same official MV24
+Qwen3+WavLM+OpenFace subject representation, the same five seeds, and the same
+target calibration label budget for all rows. The two families are
+GNN-SDA-style semi-supervised graph domain adaptation and QuestMF-style
+question-wise modality fusion. Each is evaluated with a direct ordinal item
+head and with the paper's target-calibrated measurement-aware variant. QuestMF-style gains
+are consistent on the primary reconstruction-plus-calibration score (`1.203 ->
+1.159` for CMDC-to-E-DAIC; `1.133 -> 1.096` for E-DAIC-to-CMDC). GNN-SDA-style
+is direction-sensitive (`1.121 -> 1.066` for E-DAIC-to-CMDC, but `1.339 ->
+1.431` for CMDC-to-E-DAIC because calibration worsens). Use MV26 as a close
+baseline stress test: it supports complementarity for question-wise ordinal
+fusion and exposes that graph/domain adaptation does not by itself make the
+measurement pathway trivial. The aggregate outputs are in
+`analysis/phase5_minimal_validation/p5_mv26_depression_specific_baselines/`
+and pass artifact hygiene.
+
+The MV26 package also completes the requested public close-baseline sweep with
+an SCD-MLLM-style heterogeneous multimodal/foundation fusion stress test.
+SCD-MLLM-style measurement-aware target modeling improves the primary
+reconstruction-plus-calibration score in both directions (`1.485 -> 1.238` for
+CMDC-to-E-DAIC; `1.100 -> 1.084` for E-DAIC-to-CMDC), making it the cleanest
+foundation/fusion baseline reinforcement. These rows are merged into the same
+aggregate outputs at
+`analysis/phase5_minimal_validation/p5_mv26_depression_specific_baselines/`,
+which now contains 60 seed-level rows and passes artifact hygiene.
+
+MV25 reruns the two most reviewer-sensitive diagnostics. DAIC-WOZ/E-DAIC is
+now documented with explicit label provenance: the 141 complete item-labeled
+DAIC-WOZ train/dev subjects overlap the E-DAIC train/dev label rows, the
+all-item exact-match rate is `0.993`, and the mean absolute item difference is
+`0.007`; this is a same-lineage sanity control, not independent-corpus
+evidence. Controlled identity probes show why the old raw `1.000` corpus
+identity should be used carefully: the cross-language E-DAIC/CMDC identity
+score is largely explained by length/protocol controls, while same-language
+E-DAIC lineage probes remain high after fold-internal length and severity
+residualization (`0.839` Qwen3 text, `0.897` WavLM audio). The aggregate
+outputs are in
+`analysis/phase5_minimal_validation/p5_mv25_provenance_controlled_identity/`
+and pass artifact hygiene.
 
 MV16 completed the predeclared DIF-guided few-shot measurement-calibration
 test with anchors `C01/C04/C05/C07`, localized `C02/C06` threshold calibration,
 k=`0/5/10/20/40`, and zero-shot, global affine/monotonic, all-threshold, and
-direct target-adaptation comparators. It passes split, anchor-safety, direct
+direct target-adaptation comparators. It passes split, anchor-consistency, direct
 baseline, output-identity-reporting, and artifact-hygiene gates, but fails the
 both-direction DIF-guided small-k mechanism gate
-(`blocked_no_dif_guided_small_k_gain`). Treat it as bounded/negative
-calibration evidence, not a full method pass. The Baselines, Failure-Mode
+(`blocked_no_dif_guided_small_k_gain`). Treat it as a calibration stress test:
+localized measurement information can be actionable, but a robust framework
+needs corpus-specific measurement heads and validity gates. The Baselines, Failure-Mode
 Diagnostics, and Measurement Results scaffold is now generated from aggregate
 tables only, and `manuscript_draft.md` now assembles the first full
 measurement-audit manuscript draft with traceability and hygiene checks.
@@ -137,7 +269,8 @@ excluded for missing clean protocol units, and high-overlap deletion was not
 clearly worse than matched random deletion under BGE-M3 primary or
 multilingual-E5 sensitivity. Current next action: freeze experiments and
 finalize the manuscript with MV19-downgraded PHQ wording, MV20 bounded
-negative wording, and primary-source citation verification.
+negative wording, the foundation-backbone framework positioning, and
+primary-source citation verification.
 Optional MV06 work is resolving the one incomplete local candidate before
 stronger RQ4 wording; aggregate agreement uncertainty is now available. Theta
 scores, fitted parameters, row predictions, transformed features, bootstrap
@@ -175,6 +308,13 @@ storage cleanup is approved.
 - GitHub publish workflow: `docs/github_publish_workflow.md`
 - Phase 5 full-method gate: `analysis/phase5_minimal_validation/full_method_gate_audit/`
 - Phase 5 experiment consolidation: `analysis/phase5_minimal_validation/experiment_consolidation/`
+- Foundation-backbone validation contract: `analysis/diagnostic_measurement_audit_paper/foundation_backbone_measurement_aware_validation_contract.md`
+- MV22 foundation-backbone validation: `analysis/phase5_minimal_validation/p5_mv22_foundation_backbone_validation/`
+- MV23 foundation multimodal completion: `analysis/phase5_minimal_validation/p5_mv23_foundation_multimodal_completion/`
+- MV24 formal measurement-aware ordinal main table: `analysis/phase5_minimal_validation/p5_mv24_measurement_aware_ordinal_model/`
+- MV24 fixed-latent measurement-head DIF simulation: `analysis/phase5_minimal_validation/p5_mv24_measurement_head_dif_simulation/`
+- MV25 provenance and controlled corpus-identity diagnostics: `analysis/phase5_minimal_validation/p5_mv25_provenance_controlled_identity/`
+- MV26 depression-specific baseline stress test: `analysis/phase5_minimal_validation/p5_mv26_depression_specific_baselines/`
 - MV09 conditional identity audit: `analysis/phase5_minimal_validation/p5_mv09_conditional_identity_audit/`
 - MV10 psychometric invariance baseline: `analysis/phase5_minimal_validation/p5_mv10_psychometric_invariance_baseline/`
 - MV11 formal psychometric confirmation: `analysis/phase5_minimal_validation/p5_mv11_formal_psychometric_confirmation/`

@@ -1,0 +1,10 @@
+analysis_scope,item_id,paired_overlap_n,exact_match_rate,mean_daicwoz_minus_edaic,mean_abs_difference,max_abs_difference,paper_role
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,C01,141,1.0,0.0,0.0,0.0,sanity_control_label_contract_check
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,C02,141,0.9858156028368794,0.0,0.014184397163120567,1.0,sanity_control_label_contract_check
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,C03,141,1.0,0.0,0.0,0.0,sanity_control_label_contract_check
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,C04,141,0.9858156028368794,0.0,0.014184397163120567,1.0,sanity_control_label_contract_check
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,C05,141,1.0,0.0,0.0,0.0,sanity_control_label_contract_check
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,C06,141,0.9858156028368794,0.0,0.014184397163120567,1.0,sanity_control_label_contract_check
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,C07,141,1.0,0.0,0.0,0.0,sanity_control_label_contract_check
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,C08,141,0.9858156028368794,0.0,0.014184397163120567,1.0,sanity_control_label_contract_check
+DAIC-WOZ_E-DAIC_same-lineage_train_dev_overlap,all_shared_phq8_items,1128,0.9929078014184397,0.0,0.0070921985815602835,1.0,sanity_control_label_contract_check

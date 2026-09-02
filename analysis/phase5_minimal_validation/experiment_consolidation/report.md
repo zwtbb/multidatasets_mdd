@@ -1,12 +1,12 @@
 # Phase 5 Experiment Consolidation
 
-Generated: 2026-08-22T13:28:00+00:00
+Generated: 2026-08-24T13:07:50+00:00
 
 ## Decision
 
 Do not physically delete tracked aggregate experiment outputs. They are small, versionable traceability records used by the full-method gate and manuscript claim boundary. Consolidate them by role instead:
 
-- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` corrected anchor-linked mirt corroboration with convergence and finite-sample caveats).
+- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` corrected anchor-linked mirt corroboration with convergence and finite-sample caveats) plus `MV21` descriptive measurement-gradient controls.
 - Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`).
 - Paper guardrail: mirt parameterization correctness audit, kept as a statistical wording boundary rather than a new experiment.
 - Retired historical: early weak or superseded minimal validations kept only as aggregate background.
@@ -16,9 +16,9 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 ## Counts
 
 - `local_workflow`: 6
-- `paper_core`: 5
+- `paper_core`: 6
 - `paper_guardrail`: 1
-- `paper_support`: 11
+- `paper_support`: 13
 - `planning_route`: 1
 - `predeclaration_contract`: 9
 - `retired_historical`: 13
@@ -32,6 +32,7 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 | `P5_MV13` | `phq_label_only_psychometrics` | corrected anchor-linked mirt corroboration with convergence and finite-sample caveats |
 | `P5_MV14` | `phq_label_only_psychometrics` | corrected anchor-linked mirt corroboration with convergence and finite-sample caveats |
 | `P5_MV19` | `phq_label_only_psychometrics` | main psychometric measurement-validity evidence |
+| `P5_MV21` | `measurement_discrepancy_gradient_controls` | descriptive measurement-discrepancy gradient and same-scale controls; not formal HAMD MIM/IRT |
 | `P5_mirt_parameterization_audit` | `psychometric_parameterization_guardrail` | statistical correctness boundary for mirt-backed psychometric wording |
 | `P5_MV02` | `bounded_hamd_internal_diagnostic` | bounded diagnostic support or negative control |
 | `P5_MV04c` | `protocol_task_control_support` | bounded diagnostic support or negative control |
@@ -44,6 +45,8 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 | `P5_MV17a` | `feature_contract_sensitivity` | bounded diagnostic support or negative control |
 | `P5_MV18` | `same_scale_hamd_context_control` | bounded diagnostic support or negative control |
 | `P5_MV20` | `criterion_overlap_contamination_stress` | bounded diagnostic support or negative control |
+| `P5_MV22` | `foundation_backbone_stress_test` | foundation-backbone stress test for the measurement-aware framework; not a SOTA or full-method success claim |
+| `P5_MV23` | `foundation_multimodal_completion_stress_test` | lightweight multimodal foundation completion stress test; not WavLM Large, VideoMAE, or end-to-end multimodal success |
 
 ## Retired Or Frozen Rows
 
@@ -51,7 +54,7 @@ Do not physically delete tracked aggregate experiment outputs. They are small, v
 
 ## Local Cleanup Boundary
 
-- `python_bytecode_cache`: 1 ignored paths can be deleted without affecting evidence.
+No bytecode/notebook cache categories remain in the ignored working tree.
 
 Local predictions, features, raw datasets, Phase 2 local outputs, MV06 workbooks, and original plan notes are not deleted by this policy. They require user approval or a storage-specific cleanup request.
 

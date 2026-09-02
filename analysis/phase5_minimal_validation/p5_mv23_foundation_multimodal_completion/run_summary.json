@@ -1,0 +1,46 @@
+{
+  "adapter_row_count": 288,
+  "artifact_hygiene_passed": true,
+  "executed_views": [
+    "audio_wavlm_base_plus",
+    "audio_wav2vec2_base",
+    "video_openface_common",
+    "qwen3_plus_wavlm_audio",
+    "qwen3_plus_wav2vec2_audio",
+    "qwen3_plus_wavlm_audio_plus_openface_video",
+    "bge_m3_plus_wavlm_audio_plus_openface_video",
+    "multilingual_e5_plus_wavlm_audio_plus_openface_video"
+  ],
+  "generated_at": "2026-08-24T13:01:06+00:00",
+  "measurement_proxy_row_count": 48,
+  "output_policy": {
+    "feature_matrices": "not_written",
+    "local_only_input_caches": "analysis/phase2_baselines/",
+    "row_predictions": "not_written",
+    "tracked_outputs": [
+      "adapter_metrics_by_seed.csv",
+      "adapter_summary.csv",
+      "artifact_hygiene_audit.json",
+      "cache_coverage_summary.csv",
+      "head_comparison_summary.csv",
+      "measurement_proxy_summary.csv",
+      "modality_view_contract.csv",
+      "report.md",
+      "run_summary.json"
+    ]
+  },
+  "run_id": "P5_MV23_foundation_multimodal_completion",
+  "scope": "foundation_multimodal_measurement_aware_completion_stress_test",
+  "status": "complete",
+  "transfer_directions": [
+    "edaic_to_cmdc_phq_shared",
+    "cmdc_to_edaic_phq_shared"
+  ],
+  "unclaimed_future_scope": [
+    "wavlm_large_audio",
+    "hubert_large_audio",
+    "videomae_video",
+    "end_to_end_multimodal_finetuning"
+  ],
+  "view_count": 8
+}

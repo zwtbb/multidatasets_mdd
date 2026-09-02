@@ -1,0 +1,50 @@
+[
+  {
+    "figure": "Figure 1",
+    "recommended_location": "Introduction / Method opening",
+    "file_stem": "fig1_framework_overview",
+    "purpose": "Target-contract-centered measurement-aware transfer framework."
+  },
+  {
+    "figure": "Figure 2",
+    "recommended_location": "Datasets / design",
+    "file_stem": "fig2_dataset_relationship_map",
+    "purpose": "Formal target-contract contrasts and auxiliary stress-test roles."
+  },
+  {
+    "figure": "Figure 3",
+    "recommended_location": "RQ1 results",
+    "file_stem": "fig3_controlled_identity_probe",
+    "purpose": "Control-dependent corpus identity under length/severity controls."
+  },
+  {
+    "figure": "Supplementary Figure S2",
+    "recommended_location": "RQ1 supplement",
+    "file_stem": "fig3_representation_identity_heatmap",
+    "purpose": "Raw dataset identity recoverability from comparable frozen feature spaces."
+  },
+  {
+    "figure": "Figure 4",
+    "recommended_location": "RQ2 PHQ results",
+    "file_stem": "fig4_phq_shared_item_measurement_analysis",
+    "purpose": "PHQ shared-item mean and severity-conditioned endorsement analysis."
+  },
+  {
+    "figure": "Figure 5",
+    "recommended_location": "RQ2 controlled comparison",
+    "file_stem": "fig5_daicwoz_edaic_controlled_comparison",
+    "purpose": "DAIC-WOZ/E-DAIC same-lineage control plus bounded PHQ/HAMD stress views."
+  },
+  {
+    "figure": "Supplementary Figure S3",
+    "recommended_location": "RQ3 supplement",
+    "file_stem": "fig6_latent_target_tradeoff",
+    "purpose": "Latent target identity/transfer/observed-scale validity tradeoff."
+  },
+  {
+    "figure": "Supplementary Figure S4",
+    "recommended_location": "Discussion supplement",
+    "file_stem": "fig7_evidence_summary",
+    "purpose": "Final evidence summary and claim boundary."
+  }
+]

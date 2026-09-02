@@ -1,14 +1,17 @@
 # Session Memory: 主对话 Master Orchestration
 
 Status: active
-Last updated: 2026-08-14 UTC
-Thread/task: main agent (`019fcd77-cf81-7c11-a53e-f37e776d9e1d`)
+Last updated: 2026-08-24 UTC
+Thread/task: legacy main agent (`019fcd77-cf81-7c11-a53e-f37e776d9e1d`);
+superseded by current main-agent takeover task on 2026-08-24
 
 ## Scope
 
 This session is the coordinating agent for the full experiment program. It
 maintains the master memory, dispatches focused task sessions, watches
 experiment progress, keeps version hygiene, and records cross-session decisions.
+The live orchestration entrypoint has moved to
+`/root/autodl-tmp/memory/sessions/session_69_main_takeover_manuscript_orchestration.md`.
 
 ## Current State
 

@@ -40,6 +40,7 @@ DATA_GOVERNANCE_SUMMARY = PAPER_DIR / "data_governance_run_summary.json"
 RESULTS_SUMMARY = PAPER_DIR / "results_section_run_summary.json"
 FULL_GATE_SUMMARY = ROOT / "analysis" / "phase5_minimal_validation" / "full_method_gate_audit" / "run_summary.json"
 BIBLIOGRAPHY_SUMMARY = PAPER_DIR / "bibliography_run_summary.json"
+BIBLIOGRAPHY_VERIFICATION_SUMMARY = PAPER_DIR / "bibliography_verification_run_summary.json"
 CITATION_SOURCE_MAP_CSV = PAPER_DIR / "citation_source_map.csv"
 REFERENCES_BIB = PAPER_DIR / "references.bib"
 
@@ -182,18 +183,26 @@ def bibliography_status() -> dict[str, Any]:
             "artifact_hygiene_passed": False,
         }
     summary = read_json(BIBLIOGRAPHY_SUMMARY)
-    return {
+    status = {
         "bibliography_available": True,
         "bibliography_status": summary["decision"]["bibliography_status"],
         "artifact_hygiene_passed": bool(summary["artifact_hygiene_passed"]),
         "reference_rows": summary["outputs"]["reference_rows"],
         "source_context_rows": summary["outputs"]["source_context_rows"],
     }
+    if BIBLIOGRAPHY_VERIFICATION_SUMMARY.exists():
+        verification = read_json(BIBLIOGRAPHY_VERIFICATION_SUMMARY)
+        status["verification_pending_rows"] = verification["counts"]["pending_rows"]
+        status["verification_spot_checked_rows"] = verification["counts"]["spot_checked_rows"]
+    return status
 
 
 def build_open_items(bib_status: dict[str, Any]) -> pd.DataFrame:
     if bib_status["bibliography_available"] and bib_status["artifact_hygiene_passed"]:
-        citation_item = "Verify every bibliography row against DOI/publisher/ACL/arXiv metadata, then insert generated citation keys from references.bib into prose and adapt formatting to the target venue."
+        if bib_status.get("verification_pending_rows") == 0:
+            citation_item = "Confirm generated citation-key coverage in the current prose, adapt formatting to the target venue, and perform a final pre-submission metadata refresh."
+        else:
+            citation_item = "Verify every bibliography row against DOI/publisher/ACL/arXiv metadata, then insert generated citation keys from references.bib into prose and adapt formatting to the target venue."
     else:
         citation_item = "Convert citation hints and source URLs into a formal bibliography, verify metadata against primary sources, and then perform venue-specific citation editing."
     rows = [
@@ -316,6 +325,7 @@ def build_manuscript(
     mv14 = row_by_id(findings, "finding_id", "mv14_measurement_uncertainty_bootstrap")
     mirt_audit = row_by_id(findings, "finding_id", "mirt_parameterization_correctness_audit")
     mv19 = row_by_id(findings, "finding_id", "mv19_finite_sample_phq_simulation")
+    mv21 = row_by_id(findings, "finding_id", "mv21_measurement_discrepancy_gradient")
     mv16 = row_by_id(findings, "finding_id", "mv16_dif_guided_calibration_run")
 
     governance_body = read_section(DATA_GOVERNANCE_MD, "## Draft Section", "## Dataset Governance Summary")
@@ -383,12 +393,12 @@ def build_manuscript(
         "",
         "## Abstract",
         "",
-        "Cross-dataset depression detection is usually evaluated as a prediction problem, but pooled performance can hide a prior validity question: do different corpora measure the same target? We audit six depression corpora with registry-governed dataset roles, subject-level split contracts, dataset-group label contracts, and artifact-hygiene gates. The baseline matrix completes 66 applicable runs and serves as a reproducibility floor rather than the central novelty. Failure-mode diagnostics show that dataset and protocol identity are strongly recoverable from common frozen feature spaces, motivating conditional identity checks before shared-representation claims. Label-only E-DAIC/CMDC PHQ analyses then show substantial common structure but not uniform threshold or scalar equivalence: C01/C04/C05/C07 recur as anchors and C02/C06 recur as localized threshold-shift items, while finite-sample simulation downgrades those item-level claims from robust standalone DIF to observed-N-bounded dataset-group evidence. A corrected code-level mirt audit verifies MV13/MV14 reference/focal ordering, anchor linking, graded threshold constraints, and freed focal mean/variance for threshold-constrained models; these external corroboration results still retain convergence and finite-sample caveats. MV17a resolves the old Chinese-BGE language-encoder caveat for the paper-critical feature chain by using BGE-M3 as the primary multilingual feature contract and multilingual-E5 as sensitivity. Across both encoders, latent-target prediction is learnable within datasets and reduces output-level dataset identifiability, but it does not establish observed-scale safety or feature-level invariance; external theta transfer and Pareto dominance relative to a dimension-matched severity baseline are encoder-dependent. The DIF-guided few-shot calibration ladder also fails the predeclared both-direction small-k mechanism gate. We therefore frame the contribution as a measurement-validity audit: feature alignment alone cannot solve cross-corpus learning if the target measurement function also shifts.",
+        "Cross-dataset depression detection is usually evaluated as a prediction problem, but pooled performance can hide a prior validity question: do different corpora measure the same target? We audit six depression corpora with registry-governed dataset roles, subject-level split contracts, dataset-group label contracts, and artifact-hygiene gates. The baseline matrix completes 66 applicable runs and serves as a reproducibility floor rather than the central novelty. Failure-mode diagnostics show that dataset and protocol identity are strongly recoverable from common frozen feature spaces, motivating conditional identity checks before shared-representation claims. Label-only E-DAIC/CMDC PHQ analyses then show substantial common structure but not uniform threshold or scalar equivalence: C01/C04/C05/C07 recur as anchors and C02/C06 recur as localized threshold-shift items, while finite-sample simulation downgrades those item-level claims from robust standalone DIF to observed-N-bounded dataset-group evidence. A new descriptive gradient adds a same-lineage DAIC-WOZ/E-DAIC PHQ-8 control, PHQ shared-item severity-conditioned E-DAIC/CMDC contrasts, and exploratory CMDC/PDCH same-HAMD contrasts without adding a full HAMD psychometric model. A corrected code-level mirt audit verifies MV13/MV14 reference/focal ordering, anchor linking, graded threshold constraints, and freed focal mean/variance for threshold-constrained models; these external corroboration results still retain convergence and finite-sample caveats. MV17a resolves the old Chinese-BGE language-encoder caveat for the paper-critical feature chain by using BGE-M3 as the primary multilingual feature contract and multilingual-E5 as sensitivity. Across both encoders, latent-target prediction is learnable within datasets and reduces output-level dataset identifiability, but it does not establish observed-scale safety or feature-level invariance; external theta transfer and Pareto dominance relative to a dimension-matched severity baseline are encoder-dependent. The DIF-guided few-shot calibration ladder also fails the predeclared both-direction small-k mechanism gate. We therefore frame the contribution as a measurement-validity audit: feature alignment alone cannot solve cross-corpus learning if the target measurement function also shifts.",
         "",
         "## Contributions",
         "",
         "1. A measurement-validity framework for cross-corpus depression detection: feature shift, target measurement shift, and prediction shift are distinct failure modes.",
-        "2. Empirical label-only psychometric evidence that E-DAIC and CMDC share substantial PHQ structure while exhibiting repeated but finite-sample-bounded C02/C06 threshold non-equivalence, convergence-aware uncertainty, and an explicit mirt parameterization audit boundary.",
+        "2. Empirical label-only evidence that E-DAIC and CMDC share substantial PHQ structure while exhibiting repeated but finite-sample-bounded item-level non-equivalence, now supplemented by PHQ shared-item descriptive/severity-conditioned analysis, a DAIC-WOZ/E-DAIC same-lineage PHQ-8 control, and exploratory CMDC/PDCH same-HAMD support.",
         "3. A prediction-level consequence: under BGE-M3 primary and multilingual-E5 sensitivity contracts, current `X -> theta` models are domain-learnable and lower output identity, but observed-scale safety and feature invariance remain blocked while external theta transfer and B3 severity-control dominance are encoder-dependent.",
         "",
         "## Introduction",
@@ -459,7 +469,7 @@ def build_manuscript(
             "",
             "### Analysis Sequence",
             "",
-            "The analysis sequence is organized into three layers. First, representation/protocol shift asks how strongly `X` carries dataset, task, question, language, and population signatures. Second, target measurement shift asks whether item response functions vary by dataset/group after accounting for latent severity. Third, prediction shift asks whether an `X -> theta` model transfers once measurement has been harmonized. Phase 2 is a reproducibility floor, Phase 3 is motivating shortcut evidence, MV10/MV11/MV19 are the primary psychometric layer, corrected MV13/MV14 are anchor-linked external mirt corroboration with convergence and finite-sample caveats, MV17a is the primary multilingual feature-contract consequence layer, MV20 is the bounded protocol-label-overlap stress test, and MV12/MV15/MV16/MV18 are bounded legacy/supporting controls. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.",
+            "The analysis sequence is organized into three layers. First, representation/protocol shift asks how strongly `X` carries dataset, task, question, language, and population signatures. Second, target measurement shift asks whether item response functions vary by dataset/group after accounting for latent severity. Third, prediction shift asks whether an `X -> theta` model transfers once measurement has been harmonized. Phase 2 is a reproducibility floor, Phase 3 is motivating shortcut evidence, MV10/MV11/MV19/MV21 are the primary PHQ measurement layer, corrected MV13/MV14 are anchor-linked external mirt corroboration with convergence and finite-sample caveats, MV21 also supplies DAIC-WOZ/E-DAIC same-lineage PHQ-8 and CMDC/PDCH same-HAMD descriptive controls, MV17a is the primary multilingual feature-contract consequence layer, MV20 is the bounded protocol-label-overlap stress test, and MV12/MV15/MV16/MV18 are bounded legacy/supporting controls. All modeling rows use subject-level splits. Generated row predictions, learned parameters, feature caches, theta scores, source locators, evidence workbooks, and private clinical text remain local-only.",
             "",
             "### Claim Gate",
             "",
@@ -485,6 +495,8 @@ def build_manuscript(
             "",
             compact_sentence(mv19["interpretation"], 900),
             "",
+            compact_sentence(mv21["interpretation"], 900),
+            "",
             compact_sentence(mv16["interpretation"], 900),
             "",
             compact_sentence(row_by_id(findings, "finding_id", "mv20_criterion_overlap_stress")["interpretation"], 900),
@@ -493,7 +505,7 @@ def build_manuscript(
             "",
             "### Limitations",
             "",
-            "The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. MV17a mitigates the old BGE language-contract caveat for the paper-critical MV07/MV12/MV15 chain, but it does not resolve interviewer/question contamination and it reproduces the blocked feature-level pattern rather than authorizing a shared-representation claim. MV20 is CMDC-only and ranks question-position segment embeddings rather than clean prompt-only text; PDCH is excluded because its units are coarse consultation segments, and E-DAIC is excluded because true prompt/speaker units are unavailable. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift. Corrected MV13/MV14 free focal mean/variance for threshold-constrained anchor-linked models, but they still retain a configural convergence warning and should be read with MV19 finite-sample bounds. MV19 stress-tests the current item-level screening/localization procedure under observed sample sizes and severity distributions, not formal IRT DIF power; C02/C06 should not be written as robust standalone DIF. MV18 adds exploratory same-HAMD CMDC/PDCH context-shift evidence, but CMDC HAMD supervision is too small for formal invariance or a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.",
+            "The draft remains bounded by the current manifest and artifact policy. E-DAIC speaker-resolved participant/interviewer controls are blocked by missing speaker labels in the available transcript CSVs. DAIC-WOZ is a Wizard-of-Oz benchmark/control view from the DAIC lineage, and E-DAIC is the extended dataset; the two must not be pooled as independent corpora because of high subject/source overlap. MV17a mitigates the old BGE language-contract caveat for the paper-critical MV07/MV12/MV15 chain, but it does not resolve interviewer/question contamination and it reproduces the blocked feature-level pattern rather than authorizing a shared-representation claim. MV20 is CMDC-only and ranks question-position segment embeddings rather than clean prompt-only text; PDCH is excluded because its units are coarse consultation segments, and E-DAIC is excluded because true prompt/speaker units are unavailable. The E-DAIC/CMDC PHQ evidence cannot separate language, country, protocol, clinical setting, sample severity, translation, and PHQ-8/PHQ-9 form effects; report it as dataset-group measurement shift over shared PHQ items. Corrected MV13/MV14 free focal mean/variance for threshold-constrained anchor-linked models, but they still retain a configural convergence warning and should be read with MV19 finite-sample bounds. MV19 stress-tests the current item-level screening/localization procedure under observed sample sizes and severity distributions, not formal IRT DIF power; C02/C06 should not be written as robust standalone DIF. MV21/MV18 add exploratory same-HAMD CMDC/PDCH context-shift evidence, but CMDC HAMD supervision is too small for formal invariance, MIM/IRT, or a complete bridge claim. EATD and MPDD are total-only for current item-level construct purposes. The MV06 evidence-localization set has one incomplete CMDC candidate and a wide E-DAIC agreement interval because the completed E-DAIC double-annotation set has 24 pairs. MV14 bootstrap uncertainty is convergence-aware but still uses the currently predeclared R=200/R=100 tiers.",
             "",
             "### Future Work",
             "",

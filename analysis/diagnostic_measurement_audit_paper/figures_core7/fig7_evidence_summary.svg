@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1087.89225pt" height="330.408pt" viewBox="0 0 1087.89225 330.408" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-30T20:56:15.808413</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.5, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 330.408
+L 1087.89225 330.408
+L 1087.89225 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 26.451 116.854776
+L 616.815 116.854776
+L 616.815 89.36208
+L 26.451 89.36208
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 29.6595 109.9026
+L 38.6433 109.9026
+L 38.6433 94.1022
+L 29.6595 94.1022
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #2f6f9f; stroke: #2f6f9f; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 26.451 156.355776
+L 616.815 156.355776
+L 616.815 128.86308
+L 26.451 128.86308
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #f8fafc"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 29.6595 149.4036
+L 38.6433 149.4036
+L 38.6433 133.6032
+L 29.6595 133.6032
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #d9902f; stroke: #d9902f; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 26.451 195.856776
+L 616.815 195.856776
+L 616.815 168.36408
+L 26.451 168.36408
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 29.6595 188.9046
+L 38.6433 188.9046
+L 38.6433 173.1042
+L 29.6595 173.1042
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #2a9d8f; stroke: #2a9d8f; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 26.451 235.357776
+L 616.815 235.357776
+L 616.815 207.86508
+L 26.451 207.86508
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #f8fafc"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 29.6595 228.4056
+L 38.6433 228.4056
+L 38.6433 212.6052
+L 29.6595 212.6052
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #6d5bd0; stroke: #6d5bd0; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 26.451 274.858776
+L 616.815 274.858776
+L 616.815 247.36608
+L 26.451 247.36608
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 29.6595 267.9066
+L 38.6433 267.9066
+L 38.6433 252.1062
+L 29.6595 252.1062
+z
+" clip-path="url(#p4018bff2f4)" style="fill: #c93c4f; stroke: #c93c4f; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 32.868 75.14172
+L 193.293 75.14172
+" clip-path="url(#p4018bff2f4)" style="fill: none; stroke: #cbd5df; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 225.378 75.14172
+L 456.39 75.14172
+" clip-path="url(#p4018bff2f4)" style="fill: none; stroke: #cbd5df; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 482.058 75.14172
+L 610.398 75.14172
+" clip-path="url(#p4018bff2f4)" style="fill: none; stroke: #cbd5df; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="20.034" y="24.537894" transform="rotate(-0 20.034 24.537894)">Evidence summary: benchmark targets are not automatically interchangeable</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #697987" x="20.034" y="45.12096" transform="rotate(-0 20.034 45.12096)">The contribution is a bounded validity audit: representation signatures, measurement heterogeneity, and prediction instability are separated.</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="32.868" y="67.24152" transform="rotate(-0 32.868 67.24152)">Question layer</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="225.378" y="67.24152" transform="rotate(-0 225.378 67.24152)">Aggregate evidence</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="482.058" y="67.24152" transform="rotate(-0 482.058 67.24152)">Conclusion</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="44.4186" y="104.6514" transform="rotate(-0 44.4186 104.6514)">Input representations</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="225.378" y="104.485837" transform="rotate(-0 225.378 104.485837)">Dataset identity BA 0.99-1.00</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="482.058" y="104.450681" transform="rotate(-0 482.058 104.450681)">Not interchangeable</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="44.4186" y="144.1149" transform="rotate(-0 44.4186 144.1149)">Clinical targets</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="225.378" y="143.986837" transform="rotate(-0 225.378 143.986837)">L1/L2/L3 max item deltas 0.12/0.83/0.97</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(482.058 139.219439)">Partially aligned,</text>
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(482.058 148.683923)">heterogeneous</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="44.4186" y="183.5784" transform="rotate(-0 44.4186 183.5784)">Latent target</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="225.378" y="183.487837" transform="rotate(-0 225.378 183.487837)">Identity lower, transfer validity inconsistent</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="482.058" y="183.452681" transform="rotate(-0 482.058 183.452681)">Diagnostic target layer</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="44.4186" y="223.1544" transform="rotate(-0 44.4186 223.1544)">Calibration</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(225.378 218.291752)">Target-side calibration output identity BA &gt;=</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(225.378 227.685923)">0.96</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="482.058" y="222.988837" transform="rotate(-0 482.058 222.988837)">Needs broader adaptation</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="44.4186" y="262.6179" transform="rotate(-0 44.4186 262.6179)">Supervision boundary</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(225.378 257.792752)">Target-calibrated gains are same-budget, not</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #1f2933" transform="translate(225.378 267.186923)">zero-label wins</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f2933" x="482.058" y="262.489837" transform="rotate(-0 482.058 262.489837)">Measured method result</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #697987" x="32.868" y="304.24752" transform="rotate(-0 32.868 304.24752)">Recommended Discussion phrasing: systematic empirical evidence for representation discrepancies and potential measurement heterogeneity, challenging interchangeable clinical targets without claiming universal construct divergence.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p4018bff2f4">
+   <rect x="7.2" y="7.2" width="641.7" height="316.008"/>
+  </clipPath>
+ </defs>
+</svg>

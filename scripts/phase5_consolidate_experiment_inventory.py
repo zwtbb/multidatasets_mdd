@@ -32,6 +32,7 @@ PAPER_CORE = {
     "P5_MV13",
     "P5_MV14",
     "P5_MV19",
+    "P5_MV21",
 }
 
 PAPER_SUPPORT = {
@@ -95,6 +96,7 @@ MERGE_BUCKET = {
     "P5_MV13": "phq_label_only_psychometrics",
     "P5_MV14": "phq_label_only_psychometrics",
     "P5_MV19": "phq_label_only_psychometrics",
+    "P5_MV21": "measurement_discrepancy_gradient_controls",
     "P5_MV12": "latent_target_negative_chain",
     "P5_MV12_analysis": "latent_target_negative_chain",
     "P5_MV15": "latent_target_negative_chain",
@@ -102,6 +104,8 @@ MERGE_BUCKET = {
     "P5_MV17a": "feature_contract_sensitivity",
     "P5_MV18": "same_scale_hamd_context_control",
     "P5_MV20": "criterion_overlap_contamination_stress",
+    "P5_MV22": "foundation_backbone_stress_test",
+    "P5_MV23": "foundation_multimodal_completion_stress_test",
     "P5_MV06_summary": "evidence_localization_credibility",
     "P5_MV02": "bounded_hamd_internal_diagnostic",
     "P5_MV04c": "protocol_task_control_support",
@@ -153,6 +157,8 @@ def decision_for(evidence_id: str) -> dict[str, Any]:
         manuscript_role = "main psychometric measurement-validity evidence"
         if evidence_id in {"P5_MV13", "P5_MV14"}:
             manuscript_role = "corrected anchor-linked mirt corroboration with convergence and finite-sample caveats"
+        if evidence_id == "P5_MV21":
+            manuscript_role = "descriptive measurement-discrepancy gradient and same-scale controls; not formal HAMD MIM/IRT"
         return {
             "evidence_bundle": "paper_core",
             "retention_decision": "keep_primary_aggregate",
@@ -231,23 +237,65 @@ def build_inventory(df: pd.DataFrame) -> pd.DataFrame:
         "evidence_id": "P5_MV17_route",
         "artifact": "analysis/phase5_minimal_validation/p5_mv17_postreview_measurement_validity_route/run_summary.json",
         "status": "complete",
-        "pass_rule_status": "mv17a_mv18_mv19_mv20_complete_next_manuscript_finalization",
+        "pass_rule_status": "mv17a_mv18_mv19_mv20_mv21_complete_next_manuscript_finalization",
         "pass_rule_met": "",
         "artifact_hygiene_passed": True,
         "artifact_hygiene_violation_count": 0,
         "local_only_files": "",
-        "short_read": "Post-review triage route is complete through MV17a/MV18/MV19/MV20; experiments are frozen and next work is manuscript finalization.",
+        "short_read": "Post-review triage route is complete through MV17a/MV18/MV19/MV20 plus user-directed MV21; experiments are frozen and next work is manuscript finalization.",
         "evidence_bundle": "planning_route",
         "retention_decision": "keep_current_route",
         "merge_bucket": "postreview_orchestration",
         "manuscript_role": "orchestration handoff, not a paper result",
         "new_runs_allowed": False,
         "tracked_deletion_allowed": False,
-        "physical_cleanup": "retain because it records the completed MV20 stop line and final manuscript boundary",
+        "physical_cleanup": "retain because it records the completed MV21 reinforcement line and final manuscript boundary",
         "paper_active": False,
         "cleanup_rationale": "Current route prevents accidental return to redundant model iteration.",
     }
     rows.append(extra)
+    mv22 = {
+        "evidence_id": "P5_MV22",
+        "artifact": "analysis/phase5_minimal_validation/p5_mv22_foundation_backbone_validation/run_summary.json",
+        "status": "complete",
+        "pass_rule_status": "complete_foundation_backbone_stress_test_gates_remain_visible",
+        "pass_rule_met": "",
+        "artifact_hygiene_passed": True,
+        "artifact_hygiene_violation_count": 0,
+        "local_only_files": "qwen_subject_feature_caches;downstream_prediction_outputs",
+        "short_read": "Qwen3-Embedding-0.6B reruns MV07/MV12/MV15 and remains blocked on feature identity/observed-scale gates; lightweight ERM/CORAL/MMD/DANN/IRM/GroupDRO-style baselines and WavLM audio proxy coverage are aggregate-only.",
+        "evidence_bundle": "paper_support",
+        "retention_decision": "keep_supporting_aggregate",
+        "merge_bucket": MERGE_BUCKET["P5_MV22"],
+        "manuscript_role": "foundation-backbone stress test for the measurement-aware framework; not a SOTA or full-method success claim",
+        "new_runs_allowed": False,
+        "tracked_deletion_allowed": False,
+        "physical_cleanup": "keep tracked aggregate outputs; keep Qwen feature caches and downstream predictions local-only/ignored",
+        "paper_active": True,
+        "cleanup_rationale": "Closes the immediate foundation-model validation gap while preserving the blocked full-method gate.",
+    }
+    rows.append(mv22)
+    mv23 = {
+        "evidence_id": "P5_MV23",
+        "artifact": "analysis/phase5_minimal_validation/p5_mv23_foundation_multimodal_completion/run_summary.json",
+        "status": "complete",
+        "pass_rule_status": "complete_lightweight_foundation_multimodal_stress_test",
+        "pass_rule_met": "",
+        "artifact_hygiene_passed": True,
+        "artifact_hygiene_violation_count": 0,
+        "local_only_files": "reused_phase2_feature_caches;no_row_predictions_written",
+        "short_read": "Eight audio, video-proxy, text-audio, and text-audio-video feature views are evaluated on E-DAIC/CMDC PHQ shared-item transfer with ERM/CORAL/MMD/DANN/IRM/GroupDRO-style baselines plus a lightweight measurement-aware latent-total proxy head.",
+        "evidence_bundle": "paper_support",
+        "retention_decision": "keep_supporting_aggregate",
+        "merge_bucket": MERGE_BUCKET["P5_MV23"],
+        "manuscript_role": "lightweight multimodal foundation completion stress test; not WavLM Large, VideoMAE, or end-to-end multimodal success",
+        "new_runs_allowed": False,
+        "tracked_deletion_allowed": False,
+        "physical_cleanup": "keep tracked aggregate outputs; input feature caches remain local-only/ignored",
+        "paper_active": True,
+        "cleanup_rationale": "Closes the practical multimodal baseline gap while preserving the bounded framework claim.",
+    }
+    rows.append(mv23)
     return pd.DataFrame(rows)
 
 
@@ -366,7 +414,7 @@ def write_report(inventory: pd.DataFrame, local_cleanup: pd.DataFrame, hygiene: 
         "",
         "Do not physically delete tracked aggregate experiment outputs. They are small, versionable traceability records used by the full-method gate and manuscript claim boundary. Consolidate them by role instead:",
         "",
-        "- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` corrected anchor-linked mirt corroboration with convergence and finite-sample caveats).",
+        "- Paper core: label-only PHQ psychometric evidence (`MV10/MV11/MV19` primary; `MV13/MV14` corrected anchor-linked mirt corroboration with convergence and finite-sample caveats) plus `MV21` descriptive measurement-gradient controls.",
         "- Paper support: bounded controls and negative consequences (`MV02/MV04c/MV06/MV09/MV12/MV15/MV16/MV17a/MV18/MV20`).",
         "- Paper guardrail: mirt parameterization correctness audit, kept as a statistical wording boundary rather than a new experiment.",
         "- Retired historical: early weak or superseded minimal validations kept only as aggregate background.",

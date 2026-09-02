@@ -1,0 +1,44 @@
+{
+  "adaptation_baselines_executed": true,
+  "artifact_hygiene_passed": true,
+  "baseline_feature_views": [
+    "bge_m3_text",
+    "multilingual_e5_base_text",
+    "qwen3_embedding_0_6b_text",
+    "qwen3_embedding_0_6b_plus_wavlm_audio_proxy"
+  ],
+  "generated_at": "2026-08-24T12:34:57+00:00",
+  "output_policy": {
+    "downstream_prediction_outputs": "ignored_by_git",
+    "local_only_qwen_feature_root": "analysis/phase2_baselines/mv22_foundation_text_features",
+    "tracked_outputs": [
+      "adaptation_metrics_by_seed.csv",
+      "adaptation_summary.csv",
+      "artifact_hygiene_audit.json",
+      "audio_foundation_proxy_summary.csv",
+      "baseline_method_contract.csv",
+      "downstream_metric_extract.csv",
+      "downstream_run_summary.csv",
+      "encoder_contract.csv",
+      "feature_generation_summary.csv",
+      "local_artifact_manifest.csv",
+      "measurement_aware_reference_summary.csv",
+      "model_comparison_summary.csv",
+      "report.md",
+      "run_summary.json"
+    ]
+  },
+  "qwen_downstream_executed": true,
+  "qwen_encoder": {
+    "chunk_batch_size": 2,
+    "expected_dimension": 1024,
+    "max_length": 2048,
+    "model_name": "Qwen/Qwen3-Embedding-0.6B",
+    "pooling": "last_token",
+    "slug": "qwen3_embedding_0_6b"
+  },
+  "qwen_feature_generation_executed": true,
+  "run_id": "P5_MV22_foundation_backbone_validation",
+  "scope": "foundation_backbone_measurement_aware_validation",
+  "status": "complete"
+}
