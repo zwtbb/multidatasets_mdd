@@ -35,6 +35,12 @@ architecture-development line.
 - MV20 remains the bounded CMDC criterion-overlap stress: high-overlap
   deletion is not clearly worse than matched random deletion under BGE-M3
   primary (excess MAE 0.150, 95 percent interval -0.320 to 0.671).
+- The user Feishu wiki manuscript was synced with targeted block-level updates
+  and verified at revision 235. The no-match scan covered the old
+  target-validity, same-budget, five-seed, and target-pathway-superiority
+  phrases; the positive scan confirmed the new target-comparability title,
+  local-independence caveat, RQ2 sample-size caveat, leakage boundary, and
+  target-calibrated Table 3 wording.
 
 ## Key Decisions
 
@@ -80,13 +86,12 @@ architecture-development line.
   source.
 - The current PHQ GRM/DIF layer remains low-sample and should be treated as
   bounded measurement-audit evidence.
-- Feishu has not yet been synced after this 2026-09-04 local revision.
 
 ## Next Handoff
 
-- Keep the local manuscript and Word exports as the current formal paper
-  source.
-- If Feishu needs updating, fetch the document first and apply targeted
+- Keep the local manuscript, Word exports, and Feishu revision 235 as the
+  current formal paper sources.
+- For future Feishu edits, fetch the document first and apply targeted
   block-level edits; do not whole-document overwrite.
 - Next paper-side work should be ACM style/length polish and final
   current-prose citation coverage, not new model tuning.

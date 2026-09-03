@@ -474,23 +474,21 @@ MPDD 2025 is intentionally out of scope for current auditing.
   `https://tcn9unqodkum.feishu.cn/docx/IsKDdFHAWoYGJxx1cBAcMkwvnqg`. The
   user-provided Feishu wiki page
   `https://tcn9unqodkum.feishu.cn/wiki/FeR4wSHOdiydQJkiQsBcqShcn0d` has been
-  precisely synced through 2026-08-31 to latest verified revision 211 using
-  targeted block-level `docs +update` operations, not whole-document overwrite.
-  The Feishu document now matches the current manuscript: compressed Abstract,
-  three Introduction contributions with the structured target-contract audit
-  wording, Section 3.2 as the single formal architecture/loss definition, MMD
-  as an auxiliary regularizer, MV25 raw-to-controlled identity as main Figure
-  3, weighted Related Work with measurement invariance/DIF as the novelty
-  endpoint, expanded Methods rules for measurement screening and target
-  calibration, supervision-aware two-panel MV24 Table 3, the MV26
-  GNN-SDA/QuestMF/SCD-MLLM close-baseline stress-test paragraph and six-row
-  Supplementary Table S2, Supplementary Table S3 for secondary clinical
-  endpoint metrics, and Sections 7-9 as Discussion, Scope, and Conclusion.
-  Verification found zero hard `<br/>` line-break artifacts and preserved the
-  existing comment reference in the full document during the latest layout sync;
-  future Feishu manuscript edits should remain targeted block-level updates
-  after `docs +fetch` to preserve modification traceability. The 2026-09-02
-  MV24 fair-ablation manuscript revision has not yet been synced to Feishu.
+  precisely synced through the 2026-09-04 target-comparability revision to
+  latest verified revision 235 using targeted block-level `docs +update`
+  operations, not whole-document overwrite. The Feishu document now matches the
+  current manuscript identity: `Audit Target Comparability Before Aligning
+  Representations`, a narrowed cross-corpus score-comparability / measurement-
+  contract audit claim, Section 3.2 local-independence wording as a working
+  abstraction rather than a data-generating identity, C02/C06 as
+  hypothesis-generating localized threshold-shift candidates, RQ2 low-sample
+  GRM/MGRM caveats, bounded leakage/criterion-contamination checks, and a
+  repeated-split target-calibrated Table 3 that does not claim independent
+  corpus-specific-head superiority. Verification at revision 235 found zero
+  matches for the old high-risk target-validity, same-budget, five-seed, or
+  target-pathway-superiority phrases; future Feishu manuscript edits should
+  remain targeted block-level updates after `docs +fetch` to preserve
+  modification traceability.
 - Phase 3 dataset/protocol identity probe: complete. Seven grouped-CV probes
   finished with zero skipped probes, zero train/test group-overlap violations,
   and `artifact_hygiene_passed=true`. Dataset identity is nearly perfectly
@@ -1619,8 +1617,9 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    the title, abstract, contributions, Section 3.2 local-independence wording,
    calibration definitions, RQ2 finite-sample terminology, RQ1 leakage
    sensitivity, Table 3, Discussion, Scope, Conclusion, Word export, MV31
-   prompt-proxy artifacts, and bibliography artifacts have been updated;
-   early weak or superseded MV rows are retired from the active experiment
+   prompt-proxy artifacts, and bibliography artifacts have been updated. The
+   user Feishu manuscript has also been synced and verified at revision 235.
+   Early weak or superseded MV rows are retired from the active experiment
    queue. Old M0/M1/M2/M3 full method construction remains blocked, but MV24
    is the current formal PHQ shared-item method result with MV28-bounded
    architecture attribution. The next active task is

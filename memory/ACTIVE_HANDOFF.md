@@ -385,71 +385,24 @@ Main next task:
   memory:
   `/root/autodl-tmp/memory/sessions/session_100_manuscript_layout_discussion_sync.md`.
 
-- A 2026-09-02 MV24 fair-ablation pass is complete locally and not yet synced
-  to Feishu. The user raised the major concern that the original
-  corpus-specific-head comparator froze the source-trained symptom layer, while
-  measurement-aware used target calibration labels to adapt shared layers. MV24
-  now includes direct target fine-tuning, direct source+target multitask, shared
-  ordinal head, and generic target MLP head baselines under the same target
-  calibration split and shared-layer adaptation exposure. The fair gate is
-  `not_passed_uniform_measurement_pathway_superiority`; manuscript wording now
-  treats the original gain as a calibration/adaptation-regime effect and keeps
-  the ordinal measurement pathway as a tested but not independently supported
-  mechanism. Session memory:
-  `/root/autodl-tmp/memory/sessions/session_102_mv24_fair_ablation_gate.md`.
-
-- A 2026-09-02 MV24 targeted-item and fixed-latent DIF-simulation pass is
-  complete locally and not yet synced to Feishu. Real-data targeted analysis
-  shows shared ordinal and corpus-specific ordinal heads are near tied overall,
-  on `C01/C04/C05/C07` anchors, and on `C02/C06` threshold-shift items. The
-  companion simulation behaves as expected only weakly under planted `C02/C06`
-  threshold DIF and does not overturn the real-data near-tie. Session memory:
-  `/root/autodl-tmp/memory/sessions/session_103_mv24_targeted_item_and_dif_simulation.md`.
-
-- A 2026-09-03 planning pass recorded the user's current manuscript decisions:
-  write toward ACM-style submission requirements, keep the main positioning as
-  a higher-value measurement-aware framework / benchmark-validity study rather
-  than an architecture-SOTA paper, and leave MV27's four-domain binary negative
-  result out of the main paper. Session memory:
-  `/root/autodl-tmp/memory/sessions/session_105_acm_framework_gap_planning.md`.
-
-- A 2026-09-03 MV28/MV29/MV30 reviewer-response execution pass is complete
-  locally and not yet synced to Feishu. MV28 adds target-only direct and
-  ordinal baselines, target-label budget sweeps, MV24 default-budget repeated
-  splits, and participant-bootstrap paired deltas. The new RQ3 wording is:
-  target-only direct calibration is the strongest Macro Item MAE comparator,
-  source-plus-target calibrated rows can improve calibration-in-the-large, and
-  corpus-specific ordinal heads do not show independent overall gains over a
-  shared ordinal head or target-only/direct calibrated alternatives. MV29
-  stabilizes C01/C04/C05/C07 anchors and C02/C06 threshold-shift readings
-  under heuristic tolerance sensitivity. MV30 makes RQ1 representation identity
-  control- and probe-dependent, with nonlinear Qwen3 residual identity retained.
-  Session memory:
-  `/root/autodl-tmp/memory/sessions/session_106_mv28_mv29_mv30_reviewer_response.md`.
-
-- A 2026-09-03 target-validity audit manuscript revision is complete locally
-  and not yet synced to Feishu. It implements the latest review advice by
-  changing the title and identity from measurement-aware framework first to
-  target-validity audit first, promoting repeated-split target-only and
-  matched calibrated baselines into main Table 3, moving zero-label/fixed-split
-  rows to supplementary context, defining CITL and calibration slope in
-  Methods, demoting binned calibration MAE to a secondary curve summary,
-  renaming the heuristic RQ2 layer to structural compatibility screen, and
-  cleaning formal-manuscript `MVxx`/reviewer-facing/Strongest-foundation
-  language. The Word exports have been regenerated. Session memory:
-  `/root/autodl-tmp/memory/sessions/session_107_target_validity_audit_revision.md`.
-
-- A 2026-09-04 target-comparability and leakage-sensitivity revision is
-  complete locally and not yet synced to Feishu. It narrows the title and
-  abstract from broad target-validity language to cross-corpus
-  score-comparability / measurement-contract auditing, states that the paper
-  does not validate PHQ/HAMD/SDS construct, criterion, or clinical validity,
-  rewrites Section 3.2 so the $P_D(X,Y|\theta)$ factorization is a
-  local-independence approximation rather than a data-generating identity,
-  downgrades C02/C06 to hypothesis-generating localized threshold-shift
-  candidates, adds GRM/MGRM sample-size citations, and integrates MV31 Qwen3
-  prompt-proxy sensitivity plus MV20 criterion-overlap stress as bounded
-  contamination checks. Session memory:
+- The 2026-09-02 to 2026-09-04 reviewer-response manuscript chain is complete
+  locally and synced to the user Feishu wiki at verified revision 235. It
+  includes the MV24 fair calibrated ablation gate, MV24 targeted-item and
+  fixed-latent DIF simulation, MV28 target-only/repeated-split uncertainty
+  update, MV29 PHQ measurement-sensitivity audit, MV30 representation-control
+  sensitivity, and the session-108 target-comparability/leakage revision. The
+  active claim boundary is: target calibration and adaptation regime are the
+  robust empirical effect; C02/C06 are hypothesis-generating localized
+  threshold-shift candidates; the Section 3.2 factorization is only a
+  local-independence working abstraction; and corpus-specific ordinal heads do
+  not yet show independent overall superiority over shared-ordinal, target-only,
+  generic calibrated, or direct multitask alternatives. Session memories:
+  `/root/autodl-tmp/memory/sessions/session_102_mv24_fair_ablation_gate.md`,
+  `/root/autodl-tmp/memory/sessions/session_103_mv24_targeted_item_and_dif_simulation.md`,
+  `/root/autodl-tmp/memory/sessions/session_105_acm_framework_gap_planning.md`,
+  `/root/autodl-tmp/memory/sessions/session_106_mv28_mv29_mv30_reviewer_response.md`,
+  `/root/autodl-tmp/memory/sessions/session_107_target_validity_audit_revision.md`,
+  and
   `/root/autodl-tmp/memory/sessions/session_108_target_comparability_and_leakage_revision.md`.
 
 - MV27 four-domain binary benchmark has been completed locally but not
