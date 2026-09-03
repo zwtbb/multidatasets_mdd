@@ -308,6 +308,13 @@ SPOT_CHECKS: dict[str, dict[str, str]] = {
         "use_claim_status": "supported_for_phq9_sociodemographic_measurement_invariance_context_after_author_name_correction",
         "remaining_submission_check": "confirm venue style and capitalization against final bibliography format",
     },
+    "putnick2016measurement": {
+        "verification_status": "spot_checked_primary_source",
+        "checked_source_url": "https://pubmed.ncbi.nlm.nih.gov/27942093/;https://doi.org/10.1016/j.dr.2016.06.004",
+        "checked_fields": "title;authors;year;journal;volume;pages;doi;measurement_invariance_step_terminology",
+        "use_claim_status": "supported_for_configural_metric_scalar_terminology_and_reporting_context",
+        "remaining_submission_check": "confirm final ACM style for Developmental Review article entries",
+    },
     "pdchrepository2026": {
         "verification_status": "spot_checked_primary_source",
         "checked_source_url": "https://github.com/Miraclemarvel55/PDCH",
@@ -377,6 +384,13 @@ SPOT_CHECKS: dict[str, dict[str, str]] = {
         "checked_fields": "title;authors;year;journal;volume;issue;pages;doi;measurement_invariance_review_use_claim",
         "use_claim_status": "supported_for_measurement_invariance_review_and_decision_rule_context",
         "remaining_submission_check": "confirm venue style and capitalization against final bibliography format",
+    },
+    "vanCalster2019calibration": {
+        "verification_status": "spot_checked_primary_source",
+        "checked_source_url": "https://pubmed.ncbi.nlm.nih.gov/31842878/;https://doi.org/10.1186/s12916-019-1466-7",
+        "checked_fields": "title;authors;year;journal;volume;article_number;doi;clinical_prediction_calibration_use_claim",
+        "use_claim_status": "supported_for_calibration_in_the_large_slope_and_curve_framing",
+        "remaining_submission_check": "confirm final ACM style for BMC article-number entries",
     },
     "zhang2025qwen3embedding": {
         "verification_status": "spot_checked_primary_source",

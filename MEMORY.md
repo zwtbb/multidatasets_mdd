@@ -124,6 +124,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_104_remote_github_cleanup.md`
   - `/root/autodl-tmp/memory/sessions/session_105_acm_framework_gap_planning.md`
   - `/root/autodl-tmp/memory/sessions/session_106_mv28_mv29_mv30_reviewer_response.md`
+  - `/root/autodl-tmp/memory/sessions/session_107_target_validity_audit_revision.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -199,8 +200,9 @@ MPDD 2025 is intentionally out of scope for current auditing.
   is legacy/diagnostic because E-DAIC MV07 used a Chinese BGE encoder on
   English transcripts and the available transcript contract lacks speaker
   roles. Label-only MV10/MV11/MV19 are the primary PHQ measurement layer:
-  substantial common PHQ structure, repeated C02/C06 threshold-shift signals,
-  sparse loading DIF, uncertain global model selection, and an explicit
+  substantial common PHQ structure, recurrent C02/C06 threshold-shift
+  candidates with finite-sample uncertainty, sparse loading DIF, uncertain
+  global model selection, and an explicit
   observed-N finite-sample downgrade. The narrow corrected MV13/MV14 `mirt`
   rerun is complete: E-DAIC/CMDC reference/focal order, manual anchor linking,
   graded `d1-d3` threshold/intercept constraints, and focal mean/variance
@@ -360,14 +362,11 @@ MPDD 2025 is intentionally out of scope for current auditing.
   gates before strong pooling/generalization claims. Treat it as a proposed
   framework grounded in psychometrics and ML shift/calibration literature, not
   as permission to start full M0/M1/M2/M3 construction or new experiments.
-  After user review, the draft was repositioned more assertively as a
-  measurement-aware framework paper rather than only a benchmark-validity
-  audit. The title is now `Before Aligning Representations, Validate the
-  Target: A Measurement-Aware Framework for Cross-Corpus Depression Detection`;
-  Results are explicitly organized as three main experiments; RQ3 stress-test
-  results are framed as validity stress-test evidence; and limitations were
-  rewritten as scope choices. Negative/bounded results should be presented as
-  contribution-bearing stress tests where appropriate, not as a list of defects.
+  This 2026-08-xx method-forward positioning has been superseded by the
+  2026-09-03 session-107 revision: the current title is `Validate the Target
+  Before Aligning Representations: A Target-Validity Audit of Cross-Corpus
+  Depression Detection`, and measurement-aware ordinal modeling is now a
+  constructive instantiation rather than the paper identity.
   In response to the foundation-model validation critique, the manuscript and
   framework note now position the solution as foundation-backbone compatible:
   strong text/audio/video/multimodal encoders feed a shared depression
@@ -419,10 +418,12 @@ MPDD 2025 is intentionally out of scope for current auditing.
   Discussion, Scope, and Conclusion sections have now been rewritten within the
   measurement-aware benchmark-validity frame.
   Figure/table integration now covers five main figures, Table 1 dataset-role
-  summary, Table 2 validity-gate summary, and a two-panel Table 3 for the MV24
-  co-primary main result. Binary endpoint metrics are now Supplementary Table
-  S3; the latent-target transfer and evidence-localization figures are
-  generated as supplementary/backup figures rather than main-text anchors. A
+  summary, Table 2 validity-gate summary, and, after session 107, a two-panel
+  repeated-split target-calibrated Table 3 where target-only direct calibration
+  is the main reconstruction comparator. Binary endpoint metrics are now
+  Supplementary Table S3; the latent-target transfer and evidence-localization
+  figures are generated as supplementary/backup figures rather than main-text
+  anchors. A
   2026-08-29 structure/claim-alignment pass compressed
   the former Section 7 into Discussion, made the MV25 raw-to-controlled identity
   probe the main Figure 3, kept the raw identity heatmap as Supplementary Figure
@@ -432,7 +433,10 @@ MPDD 2025 is intentionally out of scope for current auditing.
   strong, but residual identity after length and severity controls is
   contrast-dependent. It also compressed DAIC-WOZ/E-DAIC to a provenance sanity
   control, downgraded CMDC/PDCH HAMD to a bounded exploratory same-scale check,
-  and made Macro Item MAE plus Calibration MAE the co-primary MV24 metrics; the
+  and made Macro Item MAE plus Calibration MAE the then-current co-primary MV24
+  metrics; session 107 supersedes this by making Macro Item MAE the main
+  reconstruction metric, CITL/slope the main calibration audit, and binned
+  calibration MAE a secondary curve summary. The
   reconstruction-plus-calibration sum is now only a compact summary. A
   2026-08-30 RQ3 slimming pass then reordered Section 6.3 around the formal
   measurement-aware ordinal model and Table 3 first, made zero-target-label
@@ -1573,9 +1577,10 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
 4. Use the Phase 5 full-method gate audit and consolidation inventory as the
    active claim boundary. MV09 revises identity-gate semantics,
    MV10/MV11/MV19/MV21/MV29 provide the primary PHQ measurement evidence:
-   substantial common structure, stable C01/C04/C05/C07 anchors with strict
-   threshold caveats, stable C02/C06 threshold-shift readings under tolerance
-   sensitivity, and observed-N finite-sample limits. Corrected MV13/MV14
+   substantial common structure, recurrent C01/C04/C05/C07 anchor candidates
+   with strict threshold caveats, recurrent C02/C06 threshold-shift candidates
+   under tolerance sensitivity, and observed-N finite-sample limits. Corrected
+   MV13/MV14
    provide anchor-linked external `mirt` corroboration with convergence and
    finite-sample caveats. MV25/MV30 provide the current representation-gate
    wording: raw corpus identity is strong, but E-DAIC/CMDC residual identity is
@@ -1595,7 +1600,11 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    MV24 default-budget checks, target-only direct calibration is the strongest
    Macro Item MAE comparator, source-plus-target calibrated rows can improve
    calibration-in-the-large, and corpus-specific ordinal heads do not show
-   independent overall performance gains;
+   independent overall performance gains. Session 107 integrates this into the
+   formal manuscript as a target-validity audit: the title, abstract,
+   contributions, calibration definitions, RQ2 terminology, RQ1 wording, Table
+   3, Discussion, Scope, Conclusion, Word export, and bibliography artifacts
+   have been updated;
    early weak or superseded MV rows are retired from the active experiment
    queue. Old M0/M1/M2/M3 full method construction remains blocked, but MV24
    is the current formal PHQ shared-item method result with MV28-bounded

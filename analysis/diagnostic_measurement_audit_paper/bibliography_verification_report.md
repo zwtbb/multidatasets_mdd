@@ -1,12 +1,12 @@
 # Bibliography Primary-Source Verification Ledger
 
-Generated: `2026-09-03T02:37:12+00:00`
+Generated: `2026-09-03T03:30:46+00:00`
 
 ## Decision
 
 - This is a manuscript-editing verification ledger, not a new experiment.
-- References in registry: `51`.
-- Manually spot-checked: `51` (`51` primary, `0` partial).
+- References in registry: `53`.
+- Manually spot-checked: `53` (`53` primary, `0` partial).
 - Pending submission-grade primary-source checks: `0`.
 - Primary-source checks are complete in this ledger; M002 remains open for current-prose citation coverage confirmation, target-venue style, and final pre-submission refreshes.
 
@@ -50,6 +50,7 @@ Generated: `2026-09-03T02:37:12+00:00`
 | nguyen2022improving | spot_checked_primary_source | title;authors;year;venue;pages;doi;questionnaire_grounding_use_claim | supported_for_phq9_questionnaire_grounding_and_ood_generalization_positioning | confirm venue style and capitalization against final bibliography format |
 | patel2019measurement | spot_checked_primary_source | title;authors;year;journal;volume;issue;pages;doi;phq9_sociodemographic_invariance_use_claim | supported_for_phq9_sociodemographic_measurement_invariance_context_after_author_name_correction | confirm venue style and capitalization against final bibliography format |
 | pdchrepository2026 | spot_checked_primary_source | repository_title;dataset_scope;audio_text_modalities;hamd17_labeling;consultation_count;pdch_use_claim | supported_for_pdch_consultation_hamd_dataset_context | replace repository placeholder author/year if a peer-reviewed PDCH dataset paper becomes available before submission |
+| putnick2016measurement | spot_checked_primary_source | title;authors;year;journal;volume;pages;doi;measurement_invariance_step_terminology | supported_for_configural_metric_scalar_terminology_and_reporting_context | confirm final ACM style for Developmental Review article entries |
 | qwen2024qwen25 | spot_checked_primary_source | project_page_title;date;model_family;context_claim;license_caveat;llm_extension_use_claim | supported_for_design_compatible_instruction_tuned_llm_extension_source | capture exact model revision/hash if required by venue reproducibility checklist |
 | sagawa2019groupdro | spot_checked_primary_source | title;authors;submission_date;arxiv_id;worst_group_use_claim | supported_for_group_dro_worst_group_robustness_baseline_positioning | confirm venue style and capitalization against final bibliography format |
 | samejima1969graded | spot_checked_primary_source | title;author;year;monograph_number;publisher;graded_response_model_use_claim | supported_for_ordinal_graded_response_model_source | confirm monograph formatting against final bibliography format |
@@ -58,6 +59,7 @@ Generated: `2026-09-03T02:37:12+00:00`
 | teng2026depressionllm | spot_checked_primary_source | title;authors;year;journal;volume;article_number;doi;foundation_model_depression_use_claim | supported_for_foundation_model_depression_detection_positioning | confirm final publisher page display if target venue requires publisher-rendered metadata |
 | tong2022videomae | spot_checked_primary_source | title;authors;submission_date;arxiv_id;videomae_use_claim | supported_for_future_videomae_video_backbone_sensitivity_context | confirm venue style and capitalization against final bibliography format |
 | uscict2026daic | spot_checked_primary_source | dataset_page_title;daic_woz_scope;extended_daic_scope;access_restrictions;daic_access_use_claim | supported_for_daic_woz_and_extended_daic_access_release_boundary_wording | update accessed date if final submission occurs after the current manuscript preparation window |
+| vanCalster2019calibration | spot_checked_primary_source | title;authors;year;journal;volume;article_number;doi;clinical_prediction_calibration_use_claim | supported_for_calibration_in_the_large_slope_and_curve_framing | confirm final ACM style for BMC article-number entries |
 | vandenberg2000review | spot_checked_primary_source | title;authors;year;journal;volume;issue;pages;doi;measurement_invariance_review_use_claim | supported_for_measurement_invariance_review_and_decision_rule_context | confirm venue style and capitalization against final bibliography format |
 | wang2024multilinguale5 | spot_checked_primary_source | model_id;authors;embedding_size;prefix_contract;supported_languages;technical_report_link | supported_for_multilingual_e5_sensitivity_encoder_contract | capture exact model revision/hash if required by venue reproducibility checklist |
 | zhang2025interviewer | spot_checked_primary_source | title;authors;year;venue;pages;doi;interviewer_bias_use_claim | supported_for_question_type_and_context_as_protocol_nuisance_positioning | confirm venue style and capitalization against final bibliography format |

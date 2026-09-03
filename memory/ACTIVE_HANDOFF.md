@@ -1,6 +1,6 @@
 # Active Handoff
 
-Last updated: 2026-09-02 UTC
+Last updated: 2026-09-03 UTC
 
 This file is the short working-memory entrypoint for the main-agent thread.
 It does not replace `MEMORY.md` or session memories. Read order for future
@@ -24,8 +24,8 @@ The current Codex task has taken over as main-agent orchestration from legacy
 thread `019fcd77-cf81-7c11-a53e-f37e776d9e1d`. Its session memory is
 `/root/autodl-tmp/memory/sessions/session_69_main_takeover_manuscript_orchestration.md`.
 
-The paper direction is now target measurement validity plus a formal
-measurement-aware PHQ shared-item method. The old full M0/M1/M2/M3
+The paper direction is now a target-validity audit plus a formal
+measurement-aware PHQ shared-item instantiation. The old full M0/M1/M2/M3
 cross-scale construction remains blocked by the Phase 5 full-method gate, but
 the user-approved MV24 contract is now the current formal method route for the
 E-DAIC<->CMDC PHQ shared-item setting.
@@ -44,7 +44,7 @@ E-DAIC<->CMDC PHQ shared-item setting.
 Allowed current framing:
 
 - Label-only MV10/MV11/MV19/MV21 PHQ measurement evidence: substantial common
-  structure and repeated C02/C06 threshold-shift signals, with MV19
+  structure and recurrent C02/C06 threshold-shift candidates, with MV19
   finite-sample downgrade at the observed E-DAIC/CMDC N and MV21 shared-item
   descriptive/severity-conditioned reinforcement.
 - Corrected MV13/MV14 external `mirt` outputs as anchor-linked qualitative and
@@ -77,18 +77,16 @@ Blocked claims:
 
 Main next task:
 
-- Finalize manuscript review after the MV17a/MV18/MV19/MV20 completion line,
-  user-directed MV21 descriptive reinforcement,
-  and the corrected MV13/MV14 `mirt` rerun:
-  C02/C06 are repeated but finite-sample-bounded dataset-group threshold-shift
-  signals, not robust standalone DIF; MV17a makes BGE-M3 the primary
+- Continue manuscript finalization after the target-validity audit rewrite:
+  C02/C06 are recurrent threshold-shift candidates with finite-sample
+  uncertainty, not robust standalone DIF; MV17a makes BGE-M3 the primary
   feature-contract consequence layer with multilingual-E5 as encoder
   sensitivity; MV20 is a bounded negative CMDC-only criterion-overlap stress
   test; MV21 supplies the PHQ shared-item descriptive analysis, CMDC/PDCH HAMD
   exploratory same-scale analysis, and DAIC-WOZ/E-DAIC same-lineage PHQ-8
   control.
-- Primary-source bibliography verification is complete in the session-101
-  ledger: 48/48 references have manual primary-source spot checks and zero
+- Primary-source bibliography verification is complete in the current ledger:
+  53/53 references have manual primary-source spot checks and zero
   pending source-verification rows. Remaining M002 work is current-prose
   citation coverage confirmation, target-venue citation style, and a final
   pre-submission metadata refresh.
@@ -103,12 +101,13 @@ Main next task:
   invariance model.
 - Do not rerun MV16 unless the multilingual MV17a results are explicitly
   reviewed and a new need is identified.
-- Continue manuscript editing only within the target-measurement-validity frame.
-- A measurement-aware cross-corpus depression detection framework is now
-  integrated into the RQ-reframed draft as a solution scaffold. It has been
-  retuned for the foundation-model era: strong text/audio/video/multimodal
+- Continue manuscript editing only within the target-validity audit frame.
+- A target-validity audit framework is now integrated into the RQ-reframed
+  draft as the main paper identity. The measurement-aware ordinal architecture
+  is a constructive instantiation: strong text/audio/video/multimodal
   backbones feed a shared depression representation, a latent symptom layer,
-  and corpus-specific measurement heads.
+  and audited ordinal measurement heads whose sharing structure is tested
+  rather than assumed.
 - MV22 foundation-backbone validation has executed its first text slice at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv22_foundation_backbone_validation/`.
   It uses frozen Qwen3-Embedding-0.6B text features for E-DAIC/CMDC/PDCH,
@@ -147,7 +146,7 @@ Main next task:
   ordinal parameterization as an independent performance source. MV24 now also includes targeted
   item-level analysis: shared ordinal and corpus-specific ordinal heads are near
   tied on all shared PHQ items and on the measurement-gate `C02/C06`
-  threshold-shift item set (`0.004` and `0.002` C02/C06 deltas with intervals
+  threshold-shift candidate item set (`0.004` and `0.002` C02/C06 deltas with intervals
   crossing zero). A fixed-latent companion simulation shows only weak item-local
   mechanism consistency under planted `C02/C06` threshold DIF (`0.002` and
   `0.011` C02/C06-set deltas; `301/500` and `311/500` lower-error draws), while
@@ -181,14 +180,14 @@ Main next task:
 - MV29 PHQ measurement-sensitivity audit has executed at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv29_phq_measurement_sensitivity/`.
   It supports bounded anchor/threshold interpretation: C01/C04/C05/C07 are
-  stable anchors with strict-threshold caveats, C02/C06 are stable
-  threshold-shift signals across the tolerance grid, and all outputs are
+  recurrent anchor candidates with strict-threshold caveats, C02/C06 are
+  recurrent threshold-shift candidates across the tolerance grid, and all outputs are
   aggregate-only with hygiene passed.
 - MV30 representation-control sensitivity has executed at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv30_representation_control_sensitivity/`.
-  It shows E-DAIC/CMDC linear identity is largely explained by aligned
-  length/acquisition controls, not severity-only controls, but nonlinear Qwen3
-  text probing still recovers high controlled identity. Use this as a
+  It shows length-associated directions account for most E-DAIC/CMDC linear
+  separability, not severity-only controls, but nonlinear Qwen3 text probing
+  still recovers high controlled identity. Use this as a
   control- and probe-dependent representation-gate result.
 - MV25 provenance and controlled identity diagnostics have executed at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv25_provenance_controlled_identity/`.
@@ -225,10 +224,12 @@ Main next task:
   It is now updated to cover MV22, MV23, and MV24; WavLM Large, HuBERT Large,
   VideoMAE, and fully end-to-end multimodal fine-tuning remain future scope
   under a separate compute contract.
-- The latest manuscript positioning is more method-facing: title the paper as
-  a measurement-aware framework, keep the Results around three main
-  experiments, and present bounded/negative prediction outcomes as
-  transfer-validity stress-test evidence rather than as a defect list.
+- The latest manuscript positioning is target-validity-audit-first: title the
+  paper as `Validate the Target Before Aligning Representations: A
+  Target-Validity Audit of Cross-Corpus Depression Detection`, keep Results
+  around representation, measurement, and prediction gates, and present
+  bounded/negative prediction outcomes as evidence about target calibration and
+  attribution rather than as method failure.
 - The older reframed-RQ figure package remains available as historical design
   material:
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/figures_reframed_rq/`.
@@ -281,10 +282,11 @@ Main next task:
 - Sections 7-9 have now been polished. The former standalone Section 7
   adaptation recipe has been compressed into Discussion, while Scope and
   Conclusion have been shortened and made more strategic.
-- Figure/table integration now covers the main paper figures and MV24 tables.
+- Figure/table integration now covers the main paper figures and the
+  repeated-split target-calibrated Table 3.
   The manuscript embeds five main figures, Table 1 dataset-role summary, Table
-  2 validity-gate summary, and a two-panel Table 3 for the MV24 co-primary main
-  result. Binary endpoint metrics are now Supplementary Table S3; the
+  2 validity-gate summary, and a two-panel Table 3 where target-only direct
+  calibration is the main reconstruction comparator. Binary endpoint metrics are now Supplementary Table S3; the
   latent-target transfer and evidence-localization figures remain generated but
   are recommended as supplementary/backup rather than main-text anchors. A
   hand-drawn total figure guide is saved at
@@ -318,15 +320,17 @@ Main next task:
   For future manuscript collaboration, use `docs +fetch` before targeted
   `docs +update`.
 
-- A 2026-08-30 evidence-rank alignment pass is complete. The current manuscript
+- A 2026-08-30 evidence-rank alignment pass is complete. This wording is partly
+  superseded by the 2026-09-03 session-107 target-validity audit revision. The current manuscript
   no longer presents RQ1 as blanket "strong representation heterogeneity."
   It now says raw corpus identity is strong but residual identity is
   contrast-dependent after length and severity controls; E-DAIC/CMDC drops near
   chance while DAIC-lineage signatures remain visible. DAIC-WOZ/E-DAIC is
   compressed to a same-lineage provenance sanity control, CMDC/PDCH HAMD is
-  downgraded to a bounded exploratory same-scale check, and MV24 now treats
-  Macro Item MAE plus Calibration MAE as co-primary metrics, with
-  reconstruction-plus-calibration retained only as a compact summary. The local
+  downgraded to a bounded exploratory same-scale check. Session 107 now treats
+  Macro Item MAE as the main reconstruction metric, CITL/slope as the main
+  calibration audit, binned calibration MAE as a secondary curve summary, and
+  reconstruction-plus-calibration only as a compact supplementary summary. The local
   Markdown source, both Word exports, and the Feishu wiki doc were updated
   through targeted edits; Feishu was verified at revision 166. Session memory:
   `/root/autodl-tmp/memory/sessions/session_95_manuscript_evidence_rank_alignment.md`.
@@ -419,6 +423,18 @@ Main next task:
   control- and probe-dependent, with nonlinear Qwen3 residual identity retained.
   Session memory:
   `/root/autodl-tmp/memory/sessions/session_106_mv28_mv29_mv30_reviewer_response.md`.
+
+- A 2026-09-03 target-validity audit manuscript revision is complete locally
+  and not yet synced to Feishu. It implements the latest review advice by
+  changing the title and identity from measurement-aware framework first to
+  target-validity audit first, promoting repeated-split target-only and
+  matched calibrated baselines into main Table 3, moving zero-label/fixed-split
+  rows to supplementary context, defining CITL and calibration slope in
+  Methods, demoting binned calibration MAE to a secondary curve summary,
+  renaming the heuristic RQ2 layer to structural compatibility screen, and
+  cleaning formal-manuscript `MVxx`/reviewer-facing/Strongest-foundation
+  language. The Word exports have been regenerated. Session memory:
+  `/root/autodl-tmp/memory/sessions/session_107_target_validity_audit_revision.md`.
 
 - MV27 four-domain binary benchmark has been completed locally but not
   committed. The user flagged two fairness problems in the first version, and
@@ -614,11 +630,11 @@ Secondary optional task:
   MV07/MV12/MV15 reruns, and lightweight multimodal fusion completion are
   complete and aggregate-only. Do not claim full WavLM Large/HuBERT
   Large/VideoMAE/end-to-end multimodal validation from these slices.
-- The draft has been retuned after user review to avoid over-conservative
-  self-critique: the title now foregrounds the measurement-aware framework,
-  RQ3 includes an explicit modular loss/head/gate formulation, the Results
-  section is organized into three main experiments, and the limitation section
-  is written as scope and design choices.
+- This older method-forward draft note is superseded by session 107: the title
+  now foregrounds target-validity audit, RQ3 uses repeated-split target-only
+  and matched calibrated baselines as the main result, and the measurement-aware
+  ordinal architecture is a constructive instantiation rather than a
+  standalone method-superiority claim.
 - Reframed-RQ figures have been generated from aggregate artifacts only. The
   package at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/figures_reframed_rq/`

@@ -1,12 +1,12 @@
 # Diagnostic Paper Bibliography Report
 
-Generated: `2026-09-03T02:37:12+00:00`
+Generated: `2026-09-03T03:30:37+00:00`
 
 ## Decision
 
 - Bibliography status: `ready_for_manuscript_citation_editing`.
 - Source-context rows mapped: `56`.
-- Unique bibliography entries: `51`.
+- Unique bibliography entries: `53`.
 - Unmapped source-context rows: `0`.
 - Artifact hygiene passed: `True`.
 
@@ -147,6 +147,8 @@ These are available for future paper edits but are not currently referenced by t
 | key | year | title |
 | --- | --- | --- |
 | chen2025leavingnone | 2025 | Leaving None Behind: Data-Free Domain Incremental Learning for Major Depressive Disorder Detection |
+| putnick2016measurement | 2016 | Measurement Invariance Conventions and Reporting: The State of the Art and Future Directions for Psychological Research |
+| vanCalster2019calibration | 2019 | Calibration: The Achilles Heel of Predictive Analytics |
 
 ## Outputs
 
