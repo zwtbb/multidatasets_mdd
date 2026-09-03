@@ -98,16 +98,17 @@ to evidence to modeling implication.
 ### Table 3: Supervision-Aware Main Result
 
 Placed in Section 6.3. Keep zero-target-label baselines and target-calibrated
-rows visually separated. The fair claim is same-budget: the measurement-aware
-ordinal family improves over the corpus-specific-head ablation under the same
-target calibration label budget. Do not write this as a zero-target-label win
-over all baselines.
+rows visually separated. The fair claim is now bounded: the frozen
+corpus-specific-head ablation is a weak legacy comparator, and MV28 target-only
+repeated-split audits show that target-label calibration regime, not
+corpus-specific ordinal parameterization, is the robust factor. Do not write
+Table 3 as a zero-target-label win or as a measurement-aware superiority table.
 
 ### Table 4: Secondary Clinical Endpoint
 
 Placed after Table 3. Use it to connect with MDD detection literature and to
-show direction asymmetry. Keep Macro Item MAE and Calibration MAE as the
-primary evidence.
+show direction asymmetry. Keep Macro Item MAE and binned item calibration MAE
+as the primary evidence.
 
 ## Regeneration
 

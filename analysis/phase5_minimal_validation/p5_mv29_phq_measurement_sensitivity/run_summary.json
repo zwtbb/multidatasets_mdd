@@ -1,0 +1,48 @@
+{
+  "run_id": "P5_MV29_phq_measurement_sensitivity",
+  "generated_at": "2026-09-02T17:22:06+00:00",
+  "git_commit": "eeb3b24",
+  "status": "complete",
+  "mv10_source": "p5_mv10_psychometric_invariance_baseline",
+  "mv14_source": "p5_mv14_measurement_uncertainty_bootstrap",
+  "loading_tolerances": [
+    0.15,
+    0.2,
+    0.25
+  ],
+  "threshold_tolerances": [
+    0.25,
+    0.35,
+    0.45
+  ],
+  "min_anchor_counts": [
+    3,
+    4,
+    5
+  ],
+  "default_anchor_set": [
+    "C01",
+    "C04",
+    "C05",
+    "C07"
+  ],
+  "default_threshold_shift_items": [
+    "C02",
+    "C06"
+  ],
+  "gate_status": "supports_bounded_anchor_shift_interpretation",
+  "stable_anchor_items": [
+    "C01",
+    "C04",
+    "C05",
+    "C07"
+  ],
+  "stable_threshold_shift_items": [
+    "C02",
+    "C06"
+  ],
+  "default_anchor_set_exact_rate": 0.3333333333333333,
+  "c02_c06_threshold_shift_retained_rate": 1.0,
+  "interpretation_handle": "The default anchors are exact in 0.33 of tolerance-grid rows, while C02/C06 remain threshold-free in 1.00 of rows. MV14 bootstrap support identifies stable anchors C01;C04;C05;C07 and stable threshold-shift signals C02;C06. This supports bounded item-level target-contract heterogeneity, with category-sparsity and MV19 finite-sample limits still foregrounded.",
+  "aggregate_outputs_only": true
+}

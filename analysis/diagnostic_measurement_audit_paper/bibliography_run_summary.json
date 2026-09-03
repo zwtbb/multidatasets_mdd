@@ -4,7 +4,7 @@
     "bibliography_status": "ready_for_manuscript_citation_editing",
     "short_read": "Formal citation registry and BibTeX references now cover all current source-context rows; manuscript prose still needs venue-specific citation placement."
   },
-  "generated_at": "2026-09-01T15:48:04+00:00",
+  "generated_at": "2026-09-03T02:37:12+00:00",
   "input_contract": {
     "aggregate_source_context_tables_read": true,
     "private_review_material_read": false,
@@ -12,9 +12,9 @@
     "row_level_outputs_read": false
   },
   "outputs": {
-    "reference_rows": 48,
-    "source_context_references_used": 47,
-    "source_context_rows": 53,
+    "reference_rows": 51,
+    "source_context_references_used": 50,
+    "source_context_rows": 56,
     "tracked_outputs": [
       "bibliography_artifact_hygiene_audit.json",
       "bibliography_report.md",

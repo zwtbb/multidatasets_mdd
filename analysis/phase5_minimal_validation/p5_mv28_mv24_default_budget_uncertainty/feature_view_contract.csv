@@ -1,0 +1,2 @@
+view_id,modality_set,assets,role,input_columns_total,pca_components,large_artifact_policy
+qwen3_wavlm_openface_official,text_audio_video,text_qwen3;audio_wavlm_base_plus;video_openface_common,official MV24 representation reused for MV28 label-budget uncertainty,1996,128,read-only feature cache; aggregate outputs only

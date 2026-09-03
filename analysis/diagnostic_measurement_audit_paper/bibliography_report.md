@@ -1,12 +1,12 @@
 # Diagnostic Paper Bibliography Report
 
-Generated: `2026-09-01T15:48:04+00:00`
+Generated: `2026-09-03T02:37:12+00:00`
 
 ## Decision
 
 - Bibliography status: `ready_for_manuscript_citation_editing`.
-- Source-context rows mapped: `53`.
-- Unique bibliography entries: `48`.
+- Source-context rows mapped: `56`.
+- Unique bibliography entries: `51`.
 - Unmapped source-context rows: `0`.
 - Artifact hygiene passed: `True`.
 
@@ -33,6 +33,9 @@ Recommended insertion points:
 | literature_positioning:interviewer_bias_emnlp_2025 | Zhang and Poellabauer 2025, Findings of EMNLP | zhang2025interviewer | primary_acl_anthology |
 | literature_positioning:burdisso2024daicprompts | Burdisso et al. 2024, ClinicalNLP | burdisso2024daicprompts | primary_acl_anthology |
 | literature_positioning:multi_probe_audit_2026 | Ishikawa and Duke 2026, arXiv | ishikawa2026multiprobe | primary_arxiv_preprint |
+| literature_positioning:medical_llm_construct_validity_icml_2025 | Alaa et al. 2025, ICML | alaa2025medicalconstruct | primary_pmlr_page |
+| literature_positioning:llm_benchmark_construct_validity_neurips_2025 | Bean et al. 2025, NeurIPS Datasets and Benchmarks | bean2025measuring | primary_neurips_page |
+| literature_positioning:ml_benchmarking_epistemology_2025 | Freiesleben and Zezulka 2025, arXiv | freiesleben2025benchmarking | primary_arxiv_preprint |
 | literature_positioning:questionnaire_grounding_acl_2022 | Nguyen et al. 2022, ACL | nguyen2022improving | primary_acl_anthology |
 | literature_positioning:phq_hamd_irt_2021 | Ma et al. 2021, Frontiers in Psychiatry | ma2021phqhamd | primary_publisher_page |
 | literature_positioning:phq9_invariance_helius_2017 | Galenkamp et al. 2017, BMC Psychiatry | galenkamp2017measurement | primary_fulltext_pmc |
@@ -86,10 +89,12 @@ Recommended insertion points:
 
 | key | year | title | contexts |
 | --- | --- | --- | --- |
+| alaa2025medicalconstruct | 2025 | Position: Medical Large Language Model Benchmarks Should Prioritize Construct Validity | 1 |
 | arjovsky2019irm | 2019 | Invariant Risk Minimization | 1 |
 | baai2026bgem3 | 2026 | {BAAI/bge-m3} Model Card | 1 |
 | baai2026bgesmallzh | 2026 | {BAAI/bge-small-zh-v1.5} Model Card | 1 |
 | baevski2020wav2vec2 | 2020 | {wav2vec 2.0}: A Framework for Self-Supervised Learning of Speech Representations | 1 |
+| bean2025measuring | 2025 | Measuring What Matters: Construct Validity in Large Language Model Benchmarks | 1 |
 | bulut2017detecting | 2017 | Detecting Multidimensional Differential Item Functioning with the Multiple Indicators Multiple Causes Model, the Item Response Theory Likelihood Ratio Test, and Logistic Regression | 1 |
 | burdisso2024daicprompts | 2024 | {DAIC-WOZ}: On the Validity of Using the Therapist's Prompts in Automatic Depression Detection from Clinical Interviews | 1 |
 | cai2020modma | 2022 | A Multi-modal Open Dataset for Mental-disorder Analysis | 1 |
@@ -100,6 +105,7 @@ Recommended insertion points:
 | chen2025scd | 2026 | Towards Stable Cross-Domain Depression Recognition under Missing Modalities | 1 |
 | deduro2026nlppsychometrics | 2026 | Natural Language Processing Psychometrics | 1 |
 | delamain2024measurement | 2024 | Measurement Invariance and Differential Item Functioning of the {PHQ-9} and {GAD-7} in a Large Primary Care Sample | 2 |
+| freiesleben2025benchmarking | 2025 | The Benchmarking Epistemology: Construct Validity for Evaluating Machine Learning Models | 1 |
 | fu2025mpddchallenge | 2025 | The First {MPDD} Challenge: Multimodal Personality-aware Depression Detection | 2 |
 | fu2026p3hf | 2026 | Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection | 1 |
 | galenkamp2017measurement | 2017 | Measurement Invariance Testing of the {PHQ-9} in a Multi-Ethnic Population in Europe: The {HELIUS} Study | 1 |

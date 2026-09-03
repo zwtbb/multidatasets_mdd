@@ -1,0 +1,138 @@
+{
+  "run_id": "P5_MV28_target_label_budget_uncertainty",
+  "generated_at": "2026-09-03T02:19:36+00:00",
+  "git_commit": "eeb3b24",
+  "status": "complete",
+  "device": "cuda",
+  "official_view_id": "qwen3_wavlm_openface_official",
+  "directions": [
+    "edaic_to_cmdc_phq_shared",
+    "cmdc_to_edaic_phq_shared"
+  ],
+  "methods": [
+    "target_only_direct_mlp",
+    "target_only_ordinal",
+    "direct_target_finetune",
+    "direct_multitask_shared_head",
+    "shared_head_joint_adaptation",
+    "generic_target_mlp_head",
+    "full_without_mmd"
+  ],
+  "budget_ids": [
+    "k4",
+    "k8",
+    "k12",
+    "k16",
+    "k24"
+  ],
+  "target_budgets": [
+    4,
+    8,
+    12,
+    16,
+    24
+  ],
+  "include_mv24_default_budget": false,
+  "split_count": 30,
+  "participant_bootstrap_draws": 200,
+  "parallel_workers": 8,
+  "primary_uncertainty_unit": "subject-level repeated calibration/evaluation splits",
+  "participant_bootstrap_policy": "paired bootstrap over evaluation subjects, summarized only as aggregate delta intervals",
+  "primary_question": "whether source-plus-target calibrated adaptation beats target-only training under matched labeled target budgets",
+  "co_primary_metrics": [
+    "target_macro_item_mae",
+    "target_total_mae",
+    "total_calibration_in_the_large_abs",
+    "total_calibration_slope_abs_error"
+  ],
+  "legacy_metric_relabel": "MV24 target_calibration_mae is reported here as target_binned_item_calibration_mae",
+  "best_rows": [
+    {
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "budget_id": "k12",
+      "target_calibration_count": 12,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.8334422673060531,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "budget_id": "k16",
+      "target_calibration_count": 16,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.8107247176185791,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "budget_id": "k24",
+      "target_calibration_count": 24,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.8135687434540017,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "budget_id": "k4",
+      "target_calibration_count": 4,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.8013263266639682,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "cmdc_to_edaic_phq_shared",
+      "budget_id": "k8",
+      "target_calibration_count": 8,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.8100159540393276,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "budget_id": "k12",
+      "target_calibration_count": 12,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.6399025674572372,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "budget_id": "k16",
+      "target_calibration_count": 16,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.6484258768507001,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "budget_id": "k24",
+      "target_calibration_count": 24,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.6452182577296155,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "budget_id": "k4",
+      "target_calibration_count": 4,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.7611968656289959,
+      "best_training_regime": "target_only"
+    },
+    {
+      "transfer_id": "edaic_to_cmdc_phq_shared",
+      "budget_id": "k8",
+      "target_calibration_count": 8,
+      "best_macro_item_method": "target_only_direct_mlp",
+      "best_macro_item_mae": 0.663172821775597,
+      "best_training_regime": "target_only"
+    }
+  ],
+  "label_budget_table_rows": 70,
+  "target_only_delta_table_rows": 180,
+  "measurement_aware_delta_table_rows": 150,
+  "calibration_table_rows": 70,
+  "bootstrap_summary_rows": 550,
+  "interpretation_handle": "Across repeated label-budget splits, source-plus-target calibrated rows beat the target-only direct MLP on mean macro item MAE in 0/50 method-budget-direction cells. The measurement-aware ordinal row beats its matched alternatives on mean macro item MAE in 3/50 cells. Use these counts as reviewer-facing uncertainty evidence, not as a universal architecture superiority claim.",
+  "aggregate_outputs_only": true
+}

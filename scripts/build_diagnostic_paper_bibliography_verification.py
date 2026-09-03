@@ -112,6 +112,27 @@ SPOT_CHECKS: dict[str, dict[str, str]] = {
         "use_claim_status": "supported_for_question_type_and_context_as_protocol_nuisance_positioning",
         "remaining_submission_check": "confirm venue style and capitalization against final bibliography format",
     },
+    "alaa2025medicalconstruct": {
+        "verification_status": "spot_checked_primary_source",
+        "checked_source_url": "https://proceedings.mlr.press/v267/alaa25a.html",
+        "checked_fields": "title;authors;year;venue;volume;pages;medical_benchmark_construct_validity_use_claim",
+        "use_claim_status": "supported_for_medical_ai_benchmark_construct_validity_positioning",
+        "remaining_submission_check": "confirm final ACM style for PMLR proceedings entries",
+    },
+    "bean2025measuring": {
+        "verification_status": "spot_checked_primary_source",
+        "checked_source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/1967e0fc3aa6cbbace562f5cb8e3954e-Abstract-Datasets_and_Benchmarks_Track.html",
+        "checked_fields": "title;authors;year;venue;doi;llm_benchmark_construct_validity_use_claim",
+        "use_claim_status": "supported_for_general_llm_benchmark_construct_validity_positioning",
+        "remaining_submission_check": "confirm final ACM style for long NeurIPS author list",
+    },
+    "freiesleben2025benchmarking": {
+        "verification_status": "spot_checked_primary_source",
+        "checked_source_url": "https://arxiv.org/abs/2510.23191",
+        "checked_fields": "title;authors;submission_date;arxiv_id;doi;ml_benchmark_construct_validity_use_claim",
+        "use_claim_status": "supported_for_general_ml_benchmark_construct_validity_positioning",
+        "remaining_submission_check": "check for later peer-reviewed venue before submission",
+    },
     "deduro2026nlppsychometrics": {
         "verification_status": "spot_checked_primary_source",
         "checked_source_url": "https://arxiv.org/abs/2608.07316",

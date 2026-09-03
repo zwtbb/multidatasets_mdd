@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-09-02 UTC
+Last updated: 2026-09-03 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -123,6 +123,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_103_mv24_targeted_item_and_dif_simulation.md`
   - `/root/autodl-tmp/memory/sessions/session_104_remote_github_cleanup.md`
   - `/root/autodl-tmp/memory/sessions/session_105_acm_framework_gap_planning.md`
+  - `/root/autodl-tmp/memory/sessions/session_106_mv28_mv29_mv30_reviewer_response.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -1571,25 +1572,34 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    server-working branch history.
 4. Use the Phase 5 full-method gate audit and consolidation inventory as the
    active claim boundary. MV09 revises identity-gate semantics,
-   MV10/MV11/MV19/MV21 provide the primary label-only PHQ measurement evidence,
-   corrected MV13/MV14 provide anchor-linked external `mirt` corroboration with
-   convergence and finite-sample caveats, MV12/MV15/MV16 remain bounded or negative
-   prediction-consequence evidence, MV17a is the canonical
-   prediction-consequence layer with BGE-M3
-   primary and multilingual-E5 sensitivity, MV18 gives exploratory same-HAMD
-   context-shift support without formal invariance claims, MV20 closes the
-   bounded protocol-label-overlap stress as negative/no-excess evidence, and
-   MV21 also supplies the same-lineage DAIC-WOZ/E-DAIC PHQ-8 control and
-   descriptive same-HAMD reinforcement, while MV24 supplies the formal
+   MV10/MV11/MV19/MV21/MV29 provide the primary PHQ measurement evidence:
+   substantial common structure, stable C01/C04/C05/C07 anchors with strict
+   threshold caveats, stable C02/C06 threshold-shift readings under tolerance
+   sensitivity, and observed-N finite-sample limits. Corrected MV13/MV14
+   provide anchor-linked external `mirt` corroboration with convergence and
+   finite-sample caveats. MV25/MV30 provide the current representation-gate
+   wording: raw corpus identity is strong, but E-DAIC/CMDC residual identity is
+   control- and probe-dependent. MV12/MV15/MV16 remain bounded or negative
+   prediction-consequence evidence, MV17a is the canonical prediction-consequence
+   layer with BGE-M3 primary and multilingual-E5 sensitivity, MV18 gives
+   exploratory same-HAMD context-shift support without formal invariance claims,
+   MV20 closes the bounded protocol-label-overlap stress as negative/no-excess
+   evidence, and MV21 also supplies the same-lineage DAIC-WOZ/E-DAIC PHQ-8
+   control and descriptive same-HAMD reinforcement. MV24 supplies the formal
    measurement-aware ordinal method table with a failed fair shared-layer
    calibrated ablation gate, a real-data targeted item analysis showing
    shared-head versus corpus-specific-head near ties on `C02/C06`, and a
    companion fixed-latent DIF simulation that supports only weak item-local
-   mechanism consistency under planted threshold shift;
+   mechanism consistency under planted threshold shift. MV28 supersedes the
+   stronger old RQ3 attribution: under repeated target-label budget splits and
+   MV24 default-budget checks, target-only direct calibration is the strongest
+   Macro Item MAE comparator, source-plus-target calibrated rows can improve
+   calibration-in-the-large, and corpus-specific ordinal heads do not show
+   independent overall performance gains;
    early weak or superseded MV rows are retired from the active experiment
    queue. Old M0/M1/M2/M3 full method construction remains blocked, but MV24
-   is the current formal PHQ shared-item method result with bounded,
-   direction-dependent architecture attribution. The next active task is
+   is the current formal PHQ shared-item method result with MV28-bounded
+   architecture attribution. The next active task is
    current-prose citation coverage confirmation, target-venue formatting, and
    final pre-submission metadata refresh around the already verified bibliography.
    Parallel writing work may continue, but the manuscript must

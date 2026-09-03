@@ -1,12 +1,12 @@
 # Bibliography Primary-Source Verification Ledger
 
-Generated: `2026-09-01T15:55:06+00:00`
+Generated: `2026-09-03T02:37:12+00:00`
 
 ## Decision
 
 - This is a manuscript-editing verification ledger, not a new experiment.
-- References in registry: `48`.
-- Manually spot-checked: `48` (`48` primary, `0` partial).
+- References in registry: `51`.
+- Manually spot-checked: `51` (`51` primary, `0` partial).
 - Pending submission-grade primary-source checks: `0`.
 - Primary-source checks are complete in this ledger; M002 remains open for current-prose citation coverage confirmation, target-venue style, and final pre-submission refreshes.
 
@@ -14,10 +14,12 @@ Generated: `2026-09-01T15:55:06+00:00`
 
 | key | status | checked fields | use claim | remaining |
 | --- | --- | --- | --- | --- |
+| alaa2025medicalconstruct | spot_checked_primary_source | title;authors;year;venue;volume;pages;medical_benchmark_construct_validity_use_claim | supported_for_medical_ai_benchmark_construct_validity_positioning | confirm final ACM style for PMLR proceedings entries |
 | arjovsky2019irm | spot_checked_primary_source | title;authors;submission_date;arxiv_id;invariant_risk_use_claim | supported_for_invariant_risk_baseline_positioning | confirm venue style and capitalization against final bibliography format |
 | baai2026bgem3 | spot_checked_primary_source | model_id;organization;license;multilinguality;long_context_claim | supported_for_bge_m3_multilingual_primary_feature_contract | capture exact model revision/hash if required by venue reproducibility checklist |
 | baai2026bgesmallzh | spot_checked_primary_source | model_id;organization;language_tag;model_list_language;legacy_caveat_use_claim | supported_for_old_chinese_bge_feature_contract_caveat | capture exact model revision/hash if required by venue reproducibility checklist |
 | baevski2020wav2vec2 | spot_checked_primary_source | title;authors;submission_date;arxiv_id;speech_foundation_use_claim | supported_for_wav2vec2_speech_foundation_sensitivity_contract | confirm venue style and capitalization against final bibliography format |
+| bean2025measuring | spot_checked_primary_source | title;authors;year;venue;doi;llm_benchmark_construct_validity_use_claim | supported_for_general_llm_benchmark_construct_validity_positioning | confirm final ACM style for long NeurIPS author list |
 | bulut2017detecting | spot_checked_primary_source | title;authors;year;journal;volume;doi;dif_method_use_claim | supported_for_irt_lr_and_logistic_dif_method_context | confirm Frontiers article-number formatting against target venue style |
 | burdisso2024daicprompts | spot_checked_primary_source | title;authors;year;venue;pages;doi;therapist_prompt_use_claim | supported_for_daic_prompt_validity_and_protocol_leakage_positioning | confirm venue style and capitalization against final bibliography format |
 | cai2020modma | spot_checked_primary_source | title;authors;year;journal;volume;article_number;doi;dataset_access_page;modma_use_claim | supported_for_modma_controlled_task_dataset_context_after_switch_to_scientific_data_descriptor | citation key still encodes the original 2020 preprint year; rename only if final manuscript citation-key hygiene requires it |
@@ -29,6 +31,7 @@ Generated: `2026-09-01T15:55:06+00:00`
 | chen2025scd | spot_checked_primary_source | title;authors;year;journal;volume;article_number;doi;scd_mllm_use_claim | supported_for_generic_cross_domain_missing_modality_positioning | confirm final publisher page display if venue requires publisher page screenshots rather than DOI metadata |
 | deduro2026nlppsychometrics | spot_checked_primary_source | title;authors;submission_date;arxiv_id;doi;nlp_psychometrics_use_claim | supported_for_emerging_nlp_psychometrics_framing | check for later arXiv version or peer-reviewed venue before submission |
 | delamain2024measurement | spot_checked_primary_source | title;authors;year;journal;volume;pages;doi;phq_gad_invariance_use_claim | supported_for_active_phq9_gad7_measurement_invariance_and_dif_context | confirm final publisher page display if target venue requires publisher-rendered metadata |
+| freiesleben2025benchmarking | spot_checked_primary_source | title;authors;submission_date;arxiv_id;doi;ml_benchmark_construct_validity_use_claim | supported_for_general_ml_benchmark_construct_validity_positioning | check for later peer-reviewed venue before submission |
 | fu2025mpddchallenge | spot_checked_primary_source | title;authors;year;venue;pages;doi;challenge_metrics;mpdd_use_claim | supported_for_mpdd_challenge_and_individual_difference_benchmark_framing_after_title_correction | confirm final ACM style and whether to preserve author diacritics in BibTeX |
 | fu2026p3hf | spot_checked_primary_source | title;authors;year;venue;volume;issue;pages;doi;personality_aware_use_claim | supported_for_personality_aware_mpdd_young_method_positioning | confirm AAAI bibliography style for proceedings-as-journal entries |
 | galenkamp2017measurement | spot_checked_primary_source | title;authors;year;journal;volume;article_number;doi;ethnicity_language_mode_invariance_use_claim | supported_for_classical_phq9_measurement_invariance_template | confirm BMC article-number formatting against target venue style |

@@ -1,0 +1,801 @@
+probe_id,comparison_family,view_id,modality_set,probe_model,control_strategy,control_column_count,control_alignment,seed,source_n,target_n,feature_columns,pca_components,cv_splits,balanced_accuracy,fold_balanced_accuracy_std,severity_basis
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,0,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,1,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,2,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,3,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,4,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,5,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,6,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,7,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,8,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,raw,0,subject_aligned,9,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,0,219,77,1024,128,5,0.48408738548273433,0.09332578268215341,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,1,219,77,1024,128,5,0.48888213530655394,0.07941544173008645,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,2,219,77,1024,128,5,0.5046405919661734,0.08920008122287179,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,3,219,77,1024,128,5,0.4865636011275546,0.07498910844461415,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,4,219,77,1024,128,5,0.4957619802677942,0.06629277715390469,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,5,219,77,1024,128,5,0.5085253699788584,0.04550052677318699,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,6,219,77,1024,128,5,0.506631430584919,0.16317342649956856,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,7,219,77,1024,128,5,0.4782302677942213,0.07484957119971404,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,8,219,77,1024,128,5,0.5001013037350247,0.06341898838948572,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,9,219,77,1024,128,5,0.4921476391825229,0.05992326661714964,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,0,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,1,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,2,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,3,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,4,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,5,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,6,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,7,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,8,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,9,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,0,219,77,1024,128,5,0.485177942212826,0.09283000439470632,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,1,219,77,1024,128,5,0.4939429175475687,0.06639253589138862,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,2,219,77,1024,128,5,0.5096027131782945,0.08084683433699129,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,3,219,77,1024,128,5,0.4928743833685695,0.08883616023323483,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,4,219,77,1024,128,5,0.5052158210007047,0.05311066838187064,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,5,219,77,1024,128,5,0.4756166314305849,0.023040496885212935,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,6,219,77,1024,128,5,0.5127827695560253,0.17782056289033704,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,7,219,77,1024,128,5,0.46774577167019027,0.05567032370436638,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,8,219,77,1024,128,5,0.5113662790697674,0.07287547596130603,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,9,219,77,1024,128,5,0.48331395348837203,0.06807738036773511,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,0,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,1,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,2,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,3,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,4,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,5,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,6,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,7,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,8,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,9,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,0,219,77,1024,128,5,0.9933333333333334,0.014907119849998594,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,1,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,2,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,3,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,4,219,77,1024,128,5,0.99375,0.013975424859373685,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,5,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,6,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,7,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,8,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,9,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,0,219,77,1024,128,5,0.9737500000000001,0.014701898970314455,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,1,219,77,1024,128,5,0.9670833333333334,0.02358863309119693,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,2,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,3,219,77,1024,128,5,0.9866666666666667,0.029814239699997188,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,4,219,77,1024,128,5,0.9914772727272727,0.013624521373047498,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,5,219,77,1024,128,5,0.984810606060606,0.02133537648403081,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,6,219,77,1024,128,5,0.9866666666666667,0.018257418583505533,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,7,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,8,219,77,1024,128,5,0.99375,0.013975424859373685,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,9,219,77,1024,128,5,0.9933333333333334,0.014907119849998594,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,0,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,1,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,2,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,3,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,4,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,5,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,6,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,7,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,8,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,9,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,0,219,77,1024,128,5,0.9866666666666667,0.018257418583505533,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,1,219,77,1024,128,5,0.9804166666666667,0.01789727632909544,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,2,219,77,1024,128,5,0.9933333333333334,0.014907119849998594,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,3,219,77,1024,128,5,0.9800000000000001,0.029814239699997188,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,4,219,77,1024,128,5,0.99375,0.013975424859373685,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,5,219,77,1024,128,5,0.9804166666666667,0.01789727632909544,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,6,219,77,1024,128,5,0.9866666666666667,0.018257418583505533,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,7,219,77,1024,128,5,0.984810606060606,0.016303507301234164,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,8,219,77,1024,128,5,0.9875,0.01711632992203644,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,9,219,77,1024,128,5,0.9933333333333334,0.014907119849998594,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,0,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,1,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,2,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,3,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,4,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,5,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,6,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,7,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,8,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_qwen3_text_cross_language,E-DAIC_vs_CMDC,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,9,219,77,1024,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,0,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,1,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,2,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,3,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,4,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,5,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,6,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,7,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,8,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,9,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,0,219,77,768,128,5,0.503359760394644,0.04368527241994108,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,1,219,77,768,128,5,0.5178594080338267,0.04322577861804943,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,2,219,77,768,128,5,0.4069520789288231,0.07487736849623766,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,3,219,77,768,128,5,0.4765415785764623,0.06835982280537099,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,4,219,77,768,128,5,0.518950845665962,0.023244277114407685,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,5,219,77,768,128,5,0.4908597603946441,0.06644516340923301,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,6,219,77,768,128,5,0.45314041578576464,0.06356104699844393,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,7,219,77,768,128,5,0.47226127554615926,0.07158953171301094,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,8,219,77,768,128,5,0.48810958421423534,0.046544327575239956,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,9,219,77,768,128,5,0.48476832276250875,0.1071829674058579,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,0,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,1,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,2,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,3,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,4,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,5,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,6,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,7,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,8,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,9,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,0,219,77,768,128,5,0.5085791050035235,0.053591146487839775,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,1,219,77,768,128,5,0.5290715292459478,0.034564653396204285,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,2,219,77,768,128,5,0.40747445384073294,0.07018212024734213,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,3,219,77,768,128,5,0.4854809725158562,0.06551506232762015,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,4,219,77,768,128,5,0.48964852008456666,0.030436296738179044,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,5,219,77,768,128,5,0.4843974630021141,0.07075688014817541,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,6,219,77,768,128,5,0.4701330162085976,0.03469271796810769,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,7,219,77,768,128,5,0.49892001409443265,0.07213448649106549,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,8,219,77,768,128,5,0.4953972868217054,0.06152974061458366,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,9,219,77,768,128,5,0.49122269203664554,0.10268606064817278,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,0,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,1,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,2,219,77,768,128,5,0.9976744186046511,0.0052001580872088225,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,3,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,4,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,5,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,6,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,7,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,8,219,77,768,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,9,219,77,768,128,5,0.9977272727272727,0.005081972676135881,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,0,219,77,768,128,5,0.96125,0.027067302948186187,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,1,219,77,768,128,5,0.9604166666666668,0.028028383431403556,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,2,219,77,768,128,5,0.9683333333333334,0.03126388580384012,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,3,219,77,768,128,5,0.9670833333333334,0.02358863309119693,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,4,219,77,768,128,5,0.9675,0.022126530078919588,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,5,219,77,768,128,5,0.9652272727272727,0.023991286177331293,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,6,219,77,768,128,5,0.9523106060606061,0.04851672425194818,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,7,219,77,768,128,5,0.9523106060606061,0.03179855996704821,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,8,219,77,768,128,5,0.9608333333333334,0.026938716458741022,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,9,219,77,768,128,5,0.95375,0.038199494615621395,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,0,219,77,768,128,5,0.5893939393939394,0.05751404687287386,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,1,219,77,768,128,5,0.6231289640591966,0.0434417581248318,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,2,219,77,768,128,5,0.6206289640591967,0.09831047177753834,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,3,219,77,768,128,5,0.6168939393939393,0.08456745854503277,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,4,219,77,768,128,5,0.5904166666666667,0.039791121287711076,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,5,219,77,768,128,5,0.6108183579985906,0.07542918576415215,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,6,219,77,768,128,5,0.5992045454545455,0.06258006808838369,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,7,219,77,768,128,5,0.582310606060606,0.016740538766723833,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,8,219,77,768,128,5,0.5568410852713178,0.031999738473134705,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,9,219,77,768,128,5,0.613265503875969,0.07721679985525838,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,0,219,77,768,128,5,0.96125,0.027067302948186187,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,1,219,77,768,128,5,0.9670833333333334,0.04083545912833871,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,2,219,77,768,128,5,0.9558333333333333,0.04726458475668883,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,3,219,77,768,128,5,0.9670833333333334,0.02358863309119693,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,4,219,77,768,128,5,0.9683333333333334,0.03126388580384012,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,5,219,77,768,128,5,0.9675,0.0011410886614690921,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,6,219,77,768,128,5,0.9545833333333335,0.04895611697110881,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,7,219,77,768,128,5,0.96125,0.0413424889053488,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,8,219,77,768,128,5,0.9648106060606061,0.027821060745925306,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,9,219,77,768,128,5,0.9604166666666668,0.028028383431403556,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,0,219,77,768,128,5,0.6196212121212121,0.0668635179118494,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,1,219,77,768,128,5,0.6170833333333333,0.03651483716701107,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,2,219,77,768,128,5,0.6556818181818181,0.044197217395239866,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,3,219,77,768,128,5,0.6248484848484848,0.0801634766880774,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,4,219,77,768,128,5,0.6014772727272727,0.04090040943237044,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,5,219,77,768,128,5,0.6206439393939394,0.0673598390060981,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,6,219,77,768,128,5,0.5792045454545455,0.06773930474100856,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,7,219,77,768,128,5,0.5893939393939394,0.06015471735045651,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,8,219,77,768,128,5,0.6151744186046512,0.047977513373254344,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,9,219,77,768,128,5,0.6158333333333333,0.08266135315584638,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,0,219,77,768,128,5,0.9433712121212121,0.01825073743431303,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,1,219,77,768,128,5,0.9777272727272728,0.02830333852275234,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,2,219,77,768,128,5,0.9679166666666668,0.022126530078919588,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,3,219,77,768,128,5,0.9514772727272728,0.04231342059492008,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,4,219,77,768,128,5,0.9741666666666667,0.026418112473578927,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,5,219,77,768,128,5,0.978560606060606,0.02003345672119975,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,6,219,77,768,128,5,0.9500378787878787,0.03158520859112252,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,7,219,77,768,128,5,0.946060606060606,0.03042895238503436,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,8,219,77,768,128,5,0.9456439393939394,0.04647643920123879,PHQ shared total score
+edaic_cmdc_wavlm_audio_nontext,E-DAIC_vs_CMDC,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,9,219,77,768,128,5,0.9514244186046511,0.03489050994444824,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,0,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,1,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,2,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,3,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,4,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,5,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,6,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,7,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,8,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,raw,0,subject_aligned,9,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,0,219,44,204,128,5,0.48116044162555793,0.09464867302309575,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,1,219,44,204,128,5,0.5292665022316185,0.0544230799395487,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,2,219,44,204,128,5,0.5399665257223397,0.10845788424031898,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,3,219,44,204,128,5,0.5209331688982852,0.1523152525156772,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,4,219,44,204,128,5,0.499236551562133,0.11544464481293264,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,5,219,44,204,128,5,0.501773549447968,0.11613954438074135,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,6,219,44,204,128,5,0.5015415785764623,0.06271835934001993,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,7,219,44,204,128,5,0.5129375146817008,0.09717140742020389,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,8,219,44,204,128,5,0.5055819826168664,0.11265733748941874,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_only,1,subject_aligned,9,219,44,204,128,5,0.4911762978623445,0.174113808596321,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,0,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,1,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,2,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,3,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,4,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,5,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,6,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,7,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,8,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,9,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,0,219,44,204,128,5,0.5015210241954428,0.06403004422374117,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,1,219,44,204,128,5,0.5429028658679821,0.04607272129181624,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,2,219,44,204,128,5,0.5221429410382898,0.1221721193966119,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,3,219,44,204,128,5,0.5252260981912145,0.15382867888302068,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,4,219,44,204,128,5,0.5170601362461827,0.13464122272979132,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,5,219,44,204,128,5,0.5132957481794691,0.1362376889393303,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,6,219,44,204,128,5,0.49265034061545687,0.046982728796692554,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,7,219,44,204,128,5,0.4958920601362462,0.08951854231336148,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,8,219,44,204,128,5,0.5281095842142354,0.10340843976275352,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity,2,subject_aligned,9,219,44,204,128,5,0.502340263096077,0.17780252484772943,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,0,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,1,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,2,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,3,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,4,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,5,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,6,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,7,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,8,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,linear_logistic,length_severity_shuffled,2,shuffled,9,219,44,204,128,5,1.0,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,0,219,44,204,128,5,0.7861111111111111,0.06775728287583592,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,1,219,44,204,128,5,0.888888888888889,0.13028932666176193,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,2,219,44,204,128,5,0.7472222222222221,0.08806037491192974,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,3,219,44,204,128,5,0.8333333333333333,0.12422599874998833,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,4,219,44,204,128,5,0.8416666666666666,0.0434790995624959,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,5,219,44,204,128,5,0.7138888888888888,0.13594093670269056,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,6,219,44,204,128,5,0.7125,0.10435168753478796,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,7,219,44,204,128,5,0.8180555555555555,0.060619869007764414,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,8,219,44,204,128,5,0.898611111111111,0.08151961439349549,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,9,219,44,204,128,5,0.7722222222222223,0.10467468711898208,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,0,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,1,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,2,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,3,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,4,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,5,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,6,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,7,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,8,219,44,204,128,5,0.5125,0.02795084971874737,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_only,1,subject_aligned,9,219,44,204,128,5,0.5111111111111111,0.024845199749997673,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,0,219,44,204,128,5,0.8180555555555555,0.046168805940540694,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,1,219,44,204,128,5,0.8666666666666666,0.10092167846991638,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,2,219,44,204,128,5,0.7722222222222221,0.041201102706087,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,3,219,44,204,128,5,0.7972222222222222,0.05859728641591384,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,4,219,44,204,128,5,0.7972222222222222,0.10559209893749003,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,5,219,44,204,128,5,0.6680555555555555,0.08567316951828408,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,6,219,44,204,128,5,0.7375,0.08789592962387074,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,7,219,44,204,128,5,0.7847222222222222,0.10508851354459409,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,8,219,44,204,128,5,0.8541666666666667,0.07250212853410103,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,9,219,44,204,128,5,0.8430555555555556,0.08941899223788817,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,0,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,1,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,2,219,44,204,128,5,0.5111111111111111,0.024845199749997673,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,3,219,44,204,128,5,0.5111111111111111,0.024845199749997673,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,4,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,5,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,6,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,7,219,44,204,128,5,0.5111111111111111,0.024845199749997673,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,8,219,44,204,128,5,0.5,0.0,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity,2,subject_aligned,9,219,44,204,128,5,0.5088383838383839,0.019763227073861793,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,0,219,44,204,128,5,0.8444444444444444,0.12044157438154889,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,1,219,44,204,128,5,0.9222222222222222,0.06334307917217437,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,2,219,44,204,128,5,0.7611111111111111,0.08240220541217402,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,3,219,44,204,128,5,0.7527777777777779,0.10412036007772948,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,4,219,44,204,128,5,0.6986111111111111,0.13640133457585402,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,5,219,44,204,128,5,0.7013888888888888,0.1259608135223406,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,6,219,44,204,128,5,0.7583333333333333,0.09602436676357558,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,7,219,44,204,128,5,0.8069444444444445,0.08339118362376706,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,8,219,44,204,128,5,0.8430555555555556,0.1190319103392546,PHQ shared total score
+edaic_cmdc_openface_video_nontext,E-DAIC_vs_CMDC,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,2,shuffled,9,219,44,204,128,5,0.8652777777777777,0.09962313244682942,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,0,189,30,1024,128,5,0.8226647700331909,0.011265315833184294,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,1,189,30,1024,128,5,0.8420341394025603,0.07232637631120731,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,2,189,30,1024,128,5,0.8560692271218586,0.12382362331277584,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,3,189,30,1024,128,5,0.8421052631578949,0.1078804725986741,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,4,189,30,1024,128,5,0.8366998577524892,0.10923581324994543,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,5,189,30,1024,128,5,0.8032954006638218,0.05862586428479583,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,6,189,30,1024,128,5,0.8368421052631578,0.07413448470245888,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,7,189,30,1024,128,5,0.8446657183499289,0.09278449858783815,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,8,189,30,1024,128,5,0.8254385964912279,0.06449009219548356,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,raw,0,subject_aligned,9,189,30,1024,128,5,0.8366998577524892,0.10641873653746299,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,0,189,30,1024,128,5,0.8420341394025603,0.04313078986140916,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,1,189,30,1024,128,5,0.8367709815078236,0.10645208486541663,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,2,189,30,1024,128,5,0.8253674727358937,0.10496576808989842,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,3,189,30,1024,128,5,0.8228070175438598,0.1258473893441573,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,4,189,30,1024,128,5,0.8174727358937884,0.12778277737386176,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,5,189,30,1024,128,5,0.848032242769085,0.03297041900553972,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,6,189,30,1024,128,5,0.8228070175438598,0.059218647916035566,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,7,189,30,1024,128,5,0.8034376481744904,0.11158962997836672,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,8,189,30,1024,128,5,0.8280701754385964,0.05936464672171448,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_only,5,subject_aligned,9,189,30,1024,128,5,0.8253674727358937,0.09681464573398534,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,0,189,30,1024,128,5,0.839402560455192,0.036294937760719244,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,1,189,30,1024,128,5,0.8280701754385964,0.06381541267146248,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,2,189,30,1024,128,5,0.8420341394025606,0.11040999322426746,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,3,189,30,1024,128,5,0.8254385964912281,0.0996010045672398,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,4,189,30,1024,128,5,0.8226647700331912,0.14243776296410948,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,5,189,30,1024,128,5,0.8225936462778567,0.07083078390759531,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,6,189,30,1024,128,5,0.8368421052631578,0.07413448470245888,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,7,189,30,1024,128,5,0.8279990516832623,0.059376681716527414,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,8,189,30,1024,128,5,0.8421052631578947,0.09381249840441863,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,9,189,30,1024,128,5,0.8226647700331909,0.1053177080149542,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,0,189,30,1024,128,5,0.8421052631578947,0.0361675932071725,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,1,189,30,1024,128,5,0.8446657183499289,0.07156761493124066,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,2,189,30,1024,128,5,0.8279990516832623,0.1049679969807242,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,3,189,30,1024,128,5,0.8421052631578947,0.14850879783628962,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,4,189,30,1024,128,5,0.8367709815078236,0.13704971244334815,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,5,189,30,1024,128,5,0.848032242769085,0.03297041900553972,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,6,189,30,1024,128,5,0.8201754385964912,0.06408613682544942,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,7,189,30,1024,128,5,0.8253674727358937,0.10754560932338159,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,8,189,30,1024,128,5,0.8087719298245613,0.0722420480873141,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity,6,subject_aligned,9,189,30,1024,128,5,0.8586296823138928,0.13842997548051764,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,0,189,30,1024,128,5,0.8226647700331909,0.011265315833184294,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,1,189,30,1024,128,5,0.8252963489805595,0.0601446458242143,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,2,189,30,1024,128,5,0.8200331910858226,0.10555957010526763,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,3,189,30,1024,128,5,0.8227358937885254,0.05922281210301683,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,4,189,30,1024,128,5,0.8366998577524892,0.07420666525260142,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,5,189,30,1024,128,5,0.8173304883831201,0.05051629777805943,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,6,189,30,1024,128,5,0.8341394025604553,0.07066179793195744,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,7,189,30,1024,128,5,0.8420341394025603,0.12726357291468804,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,8,189,30,1024,128,5,0.8394736842105261,0.07421228897579005,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,linear_logistic,length_severity_shuffled,6,shuffled,9,189,30,1024,128,5,0.8227358937885253,0.10223397633777961,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,0,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,1,189,30,1024,128,5,0.55,0.07453559924999298,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,2,189,30,1024,128,5,0.5333333333333333,0.07453559924999298,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,3,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,4,189,30,1024,128,5,0.5666666666666667,0.06972166887783962,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,5,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,6,189,30,1024,128,5,0.55,0.07453559924999298,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,7,189,30,1024,128,5,0.5666666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,8,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,9,189,30,1024,128,5,0.55,0.07453559924999298,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,0,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,1,189,30,1024,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,2,189,30,1024,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,3,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,4,189,30,1024,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,5,189,30,1024,128,5,0.55,0.04564354645876386,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,6,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,7,189,30,1024,128,5,0.5333333333333333,0.07453559924999298,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,8,189,30,1024,128,5,0.5333333333333333,0.07453559924999298,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_only,5,subject_aligned,9,189,30,1024,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,0,189,30,1024,128,5,0.55,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,1,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,2,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,3,189,30,1024,128,5,0.6,0.06972166887783961,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,4,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,5,189,30,1024,128,5,0.55,0.04564354645876386,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,6,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,7,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,8,189,30,1024,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,9,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,0,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,1,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,2,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,3,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,4,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,5,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,6,189,30,1024,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,7,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,8,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity,6,subject_aligned,9,189,30,1024,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,0,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,1,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,2,189,30,1024,128,5,0.55,0.04564354645876386,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,3,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,4,189,30,1024,128,5,0.5666666666666667,0.09128709291752767,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,5,189,30,1024,128,5,0.5666666666666667,0.06972166887783962,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,6,189,30,1024,128,5,0.55,0.11180339887498947,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,7,189,30,1024,128,5,0.5333333333333334,0.04564354645876387,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,8,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_qwen3_text_lineage,E-DAIC_internal_lineage,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,6,shuffled,9,189,30,1024,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,0,189,30,768,128,5,0.898103366524419,0.0598665195891687,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,1,189,30,768,128,5,0.9174727358937884,0.024745178916673476,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,2,189,30,768,128,5,0.9096491228070176,0.04790549972250229,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,3,189,30,768,128,5,0.9288762446657184,0.08309481678048576,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,4,189,30,768,128,5,0.8813655761024183,0.10080614171132435,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,5,189,30,768,128,5,0.8982456140350876,0.13016048289744014,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,6,189,30,768,128,5,0.9174727358937884,0.06666966381302443,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,7,189,30,768,128,5,0.8647700331910858,0.12246933904566427,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,8,189,30,768,128,5,0.9007349454717876,0.08492923762370508,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,9,189,30,768,128,5,0.8789473684210526,0.11312899127669374,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,0,189,30,768,128,5,0.9147700331910859,0.033031520531519754,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,1,189,30,768,128,5,0.9315078236130867,0.058935484372727,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,2,189,30,768,128,5,0.8842105263157893,0.0760051147620393,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,3,189,30,768,128,5,0.9148411569464201,0.07948243632263965,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,4,189,30,768,128,5,0.8926979611190138,0.0860557598869853,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,5,189,30,768,128,5,0.8675438596491227,0.12375884273134301,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,6,189,30,768,128,5,0.8842105263157893,0.09430334543533156,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,7,189,30,768,128,5,0.8621384542437175,0.13305067279036578,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,8,189,30,768,128,5,0.9174016121384542,0.07872873747653354,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_only,4,subject_aligned,9,189,30,768,128,5,0.862280701754386,0.0980044816532923,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,0,189,30,768,128,5,0.8621384542437174,0.073880508141088,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,1,189,30,768,128,5,0.9008060692271218,0.045108746228462365,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,2,189,30,768,128,5,0.8763157894736843,0.07413448470245887,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,3,189,30,768,128,5,0.9148411569464201,0.07948243632263965,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,4,189,30,768,128,5,0.8454006638217166,0.13093913083122885,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,5,189,30,768,128,5,0.8956140350877192,0.12837472800755073,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,6,189,30,768,128,5,0.9008060692271218,0.059089662255552684,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,7,189,30,768,128,5,0.8288051209103839,0.06421659630292142,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,8,189,30,768,128,5,0.8954006638217165,0.061232819377824765,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,9,189,30,768,128,5,0.8956140350877192,0.0878507786565213,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,0,189,30,768,128,5,0.9007349454717876,0.04971047936950055,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,1,189,30,768,128,5,0.8981744902797534,0.014971930608122965,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,2,189,30,768,128,5,0.8956140350877192,0.06632820360924102,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,3,189,30,768,128,5,0.9147700331910859,0.08342092734409369,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,4,189,30,768,128,5,0.876031294452347,0.11861073611878221,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,5,189,30,768,128,5,0.9008771929824562,0.1213732088747919,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,6,189,30,768,128,5,0.8868421052631579,0.09470028534445567,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,7,189,30,768,128,5,0.8621384542437175,0.08851022809448301,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,8,189,30,768,128,5,0.898103366524419,0.07310907607701277,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity,5,subject_aligned,9,189,30,768,128,5,0.881578947368421,0.06913983671243178,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,0,189,30,768,128,5,0.9147700331910859,0.03431685366663326,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,1,189,30,768,128,5,0.9314366998577525,0.04080772593787309,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,2,189,30,768,128,5,0.8903508771929826,0.06453482004193933,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,3,189,30,768,128,5,0.92624466571835,0.08089006625970765,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,4,189,30,768,128,5,0.8260312944523471,0.14488095469667633,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,5,189,30,768,128,5,0.8789473684210526,0.11063591057672587,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,6,189,30,768,128,5,0.9367709815078238,0.040159527384883785,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,7,189,30,768,128,5,0.8595068752963491,0.13039652567839458,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,8,189,30,768,128,5,0.8814366998577526,0.07376817971513111,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,linear_logistic,length_severity_shuffled,5,shuffled,9,189,30,768,128,5,0.8982456140350876,0.08467298091198873,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,0,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,1,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,2,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,3,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,4,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,5,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,6,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,7,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,8,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,9,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,0,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,1,189,30,768,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,2,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,3,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,4,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,5,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,6,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,7,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,8,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_only,4,subject_aligned,9,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,0,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,1,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,2,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,3,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,4,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,5,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,6,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,7,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,8,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,9,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,0,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,1,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,2,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,3,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,4,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,5,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,6,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,7,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,8,189,30,768,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity,5,subject_aligned,9,189,30,768,128,5,0.5166666666666667,0.03726779962499651,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,0,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,1,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,2,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,3,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,4,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,5,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,6,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,7,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,8,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_wavlm_audio_lineage,E-DAIC_internal_lineage,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,5,shuffled,9,189,30,768,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,0,189,30,204,128,5,0.586628733997155,0.0759155813215164,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,1,189,30,204,128,5,0.6180654338549076,0.10918278313776679,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,2,189,30,204,128,5,0.6118539592223803,0.08922298012100374,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,3,189,30,204,128,5,0.5598150782361307,0.04676410200416656,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,4,189,30,204,128,5,0.627714556661925,0.1205253482648696,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,5,189,30,204,128,5,0.6559981033665243,0.14178930865453687,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,6,189,30,204,128,5,0.5759601706970129,0.11820532529043333,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,7,189,30,204,128,5,0.6759601706970128,0.08557908372109142,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,8,189,30,204,128,5,0.6285206258890469,0.09540192756794517,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,raw,0,subject_aligned,9,189,30,204,128,5,0.6365576102418208,0.1410674688489867,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,0,189,30,204,128,5,0.5700331910858226,0.10619180661686148,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,1,189,30,204,128,5,0.6207681365576102,0.11362625582027497,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,2,189,30,204,128,5,0.6372214319582741,0.10998569440322535,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,3,189,30,204,128,5,0.5957799905168326,0.05158072979038118,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,4,189,30,204,128,5,0.6389758179231864,0.08153325152666371,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,5,189,30,204,128,5,0.653366524419156,0.18370065729230242,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,6,189,30,204,128,5,0.5952584163110479,0.08472275182899078,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,7,189,30,204,128,5,0.6759601706970128,0.08557908372109142,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,8,189,30,204,128,5,0.603959222380275,0.11320307629758898,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_only,2,subject_aligned,9,189,30,204,128,5,0.6198198198198198,0.13626345002388662,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,0,189,30,204,128,5,0.5813655761024182,0.08147122776282423,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,1,189,30,204,128,5,0.6180654338549075,0.10878563800776139,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,2,189,30,204,128,5,0.6119250829777145,0.08213722025392128,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,3,189,30,204,128,5,0.5597439544807965,0.051482974500968656,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,4,189,30,204,128,5,0.6083451872925557,0.11363740370807263,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,5,189,30,204,128,5,0.653366524419156,0.1143508198750256,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,6,189,30,204,128,5,0.5978899952584162,0.124777417844092,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,7,189,30,204,128,5,0.6839260312944524,0.07847269972143786,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,8,189,30,204,128,5,0.6258890469416786,0.0911487376847222,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,severity_only,1,subject_aligned,9,189,30,204,128,5,0.6339260312944524,0.14671599405791635,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,0,189,30,204,128,5,0.5674016121384543,0.1096894060535884,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,1,189,30,204,128,5,0.6014698909435751,0.13889375628993703,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,2,189,30,204,128,5,0.6206258890469417,0.0816210988172378,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,3,189,30,204,128,5,0.5904457088667614,0.04979664714392443,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,4,189,30,204,128,5,0.6144144144144145,0.07665825377228226,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,5,189,30,204,128,5,0.6454006638217165,0.10094607147606384,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,6,189,30,204,128,5,0.614556661925083,0.08223306049853146,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,7,189,30,204,128,5,0.6785917496443812,0.08457534495259655,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,8,189,30,204,128,5,0.62325746799431,0.07263268184163771,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity,3,subject_aligned,9,189,30,204,128,5,0.6417496443812233,0.12737335401696498,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,0,189,30,204,128,5,0.5787339971550498,0.0852361243803206,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,1,189,30,204,128,5,0.5961356092935041,0.10900526043287538,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,2,189,30,204,128,5,0.5960644855381697,0.07367317193950289,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,3,189,30,204,128,5,0.5791133238501659,0.07519936285993813,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,4,189,30,204,128,5,0.6172593646277857,0.12180588850658726,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,5,189,30,204,128,5,0.6480322427690848,0.07775607240046156,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,6,189,30,204,128,5,0.5646277856804173,0.14981930611110725,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,7,189,30,204,128,5,0.6725936462778568,0.06349457931217647,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,8,189,30,204,128,5,0.6205547652916075,0.09425973659807035,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,linear_logistic,length_severity_shuffled,3,shuffled,9,189,30,204,128,5,0.6584874348032244,0.0951151893368412,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,0,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,1,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,2,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,3,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,4,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,5,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,6,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,7,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,8,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,raw,0,subject_aligned,9,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,0,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,1,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,2,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,3,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,4,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,5,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,6,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,7,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,8,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_only,2,subject_aligned,9,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,0,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,1,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,2,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,3,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,4,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,5,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,6,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,7,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,8,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,severity_only,1,subject_aligned,9,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,0,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,1,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,2,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,3,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,4,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,5,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,6,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,7,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,8,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity,3,subject_aligned,9,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,0,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,1,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,2,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,3,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,4,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,5,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,6,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,7,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,8,189,30,204,128,5,0.5,0.0,PHQ shared total score
+edaic_internal_openface_video_lineage,E-DAIC_internal_lineage,openface_video_common,video,nonlinear_random_forest,length_severity_shuffled,3,shuffled,9,189,30,204,128,5,0.5,0.0,PHQ shared total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,0,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,1,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,2,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,3,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,4,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,5,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,6,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,7,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,8,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,raw,0,subject_aligned,9,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,0,25,99,1024,99,5,0.5523684210526316,0.11389524151070213,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,1,25,99,1024,99,5,0.5528947368421052,0.09636035782185944,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,2,25,99,1024,99,5,0.5576315789473685,0.08158637487409864,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,3,25,99,1024,99,5,0.5878947368421052,0.11250346255059249,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,4,25,99,1024,99,5,0.5728947368421053,0.11131298988640778,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,5,25,99,1024,99,5,0.5426315789473685,0.13361775700164097,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,6,25,99,1024,99,5,0.5773684210526315,0.1226560005048012,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,7,25,99,1024,99,5,0.5621052631578947,0.07428910546732768,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,8,25,99,1024,99,5,0.5776315789473685,0.13285239033502005,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_only,3,subject_aligned,9,25,99,1024,99,5,0.5781578947368422,0.05082082479345426,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,0,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,1,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,2,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,3,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,4,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,5,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,6,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,7,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,8,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,severity_only,1,subject_aligned,9,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,0,25,99,1024,99,5,0.5621052631578948,0.11903859450031076,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,1,25,99,1024,99,5,0.5931578947368421,0.072913022597242,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,2,25,99,1024,99,5,0.5771052631578948,0.05246354756127993,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,3,25,99,1024,99,5,0.5981578947368421,0.11948571119617359,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,4,25,99,1024,99,5,0.5278947368421052,0.1326319705508003,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,5,25,99,1024,99,5,0.5276315789473685,0.12592455860487978,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,6,25,99,1024,99,5,0.5923684210526315,0.12803584916092878,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,7,25,99,1024,99,5,0.5368421052631579,0.09805942570466689,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,8,25,99,1024,99,5,0.5673684210526316,0.1358274630661697,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity,4,subject_aligned,9,25,99,1024,99,5,0.6078947368421053,0.08389641251710943,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,0,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,1,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,2,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,3,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,4,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,5,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,6,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,7,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,8,25,99,1024,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,linear_logistic,length_severity_shuffled,4,shuffled,9,25,99,1024,99,5,0.9949999999999999,0.011180339887498959,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,0,25,99,1024,99,5,0.8800000000000001,0.08366600265340754,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,1,25,99,1024,99,5,0.9400000000000001,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,2,25,99,1024,99,5,0.9800000000000001,0.04472135954999578,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,3,25,99,1024,99,5,0.8400000000000001,0.15165750888103102,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,4,25,99,1024,99,5,0.96,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,5,25,99,1024,99,5,0.96,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,6,25,99,1024,99,5,0.9199999999999999,0.08366600265340753,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,7,25,99,1024,99,5,0.9400000000000001,0.1341640786499874,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,8,25,99,1024,99,5,0.9400000000000001,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,raw,0,subject_aligned,9,25,99,1024,99,5,0.96,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,0,25,99,1024,99,5,0.595,0.1279648389206973,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,1,25,99,1024,99,5,0.58,0.08366600265340754,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,2,25,99,1024,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,3,25,99,1024,99,5,0.5147368421052632,0.049006755145199074,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,4,25,99,1024,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,5,25,99,1024,99,5,0.52,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,6,25,99,1024,99,5,0.58,0.08366600265340754,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,7,25,99,1024,99,5,0.575,0.08291561975888498,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,8,25,99,1024,99,5,0.515,0.04873397172404481,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_only,3,subject_aligned,9,25,99,1024,99,5,0.54,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,0,25,99,1024,99,5,0.8400000000000001,0.15165750888103102,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,1,25,99,1024,99,5,0.9800000000000001,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,2,25,99,1024,99,5,0.96,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,3,25,99,1024,99,5,0.8,0.12247448713915891,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,4,25,99,1024,99,5,0.96,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,5,25,99,1024,99,5,0.9,0.07071067811865474,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,6,25,99,1024,99,5,0.9199999999999999,0.1095445115010332,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,7,25,99,1024,99,5,0.9800000000000001,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,8,25,99,1024,99,5,0.96,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,severity_only,1,subject_aligned,9,25,99,1024,99,5,0.9400000000000001,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,0,25,99,1024,99,5,0.54,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,1,25,99,1024,99,5,0.5147368421052632,0.049006755145199074,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,2,25,99,1024,99,5,0.54,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,3,25,99,1024,99,5,0.56,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,4,25,99,1024,99,5,0.5599999999999999,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,5,25,99,1024,99,5,0.52,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,6,25,99,1024,99,5,0.52,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,7,25,99,1024,99,5,0.595,0.09420721840708386,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,8,25,99,1024,99,5,0.5147368421052632,0.049006755145199074,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity,4,subject_aligned,9,25,99,1024,99,5,0.535,0.060207972893961466,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,0,25,99,1024,99,5,0.9,0.07071067811865474,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,1,25,99,1024,99,5,0.9199999999999999,0.130384048104053,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,2,25,99,1024,99,5,0.96,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,3,25,99,1024,99,5,0.9400000000000001,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,4,25,99,1024,99,5,0.9,0.07071067811865474,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,5,25,99,1024,99,5,0.86,0.1673320053068151,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,6,25,99,1024,99,5,0.8800000000000001,0.10954451150103325,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,7,25,99,1024,99,5,0.9400000000000001,0.1341640786499874,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,8,25,99,1024,99,5,0.9199999999999999,0.08366600265340754,HAMD-17 total score
+cmdc_pdch_qwen3_text_same_language_hamd,CMDC_vs_PDCH,qwen3_text,text,nonlinear_random_forest,length_severity_shuffled,4,shuffled,9,25,99,1024,99,5,0.96,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,0,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,1,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,2,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,3,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,4,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,5,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,6,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,7,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,8,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,raw,0,subject_aligned,9,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,0,25,99,768,99,5,0.5223684210526316,0.051794327436222594,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,1,25,99,768,99,5,0.5526315789473685,0.11195814413780339,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,2,25,99,768,99,5,0.5215789473684211,0.12411250034699274,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,3,25,99,768,99,5,0.5236842105263158,0.1461977704639939,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,4,25,99,768,99,5,0.528421052631579,0.11381236684844681,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,5,25,99,768,99,5,0.5636842105263158,0.2094764116458249,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,6,25,99,768,99,5,0.5723684210526316,0.16849299450326088,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,7,25,99,768,99,5,0.5426315789473684,0.030214491762486636,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,8,25,99,768,99,5,0.5684210526315789,0.15120991719517524,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_only,3,subject_aligned,9,25,99,768,99,5,0.5273684210526316,0.15339927172283754,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,0,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,1,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,2,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,3,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,4,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,5,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,6,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,7,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,8,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,severity_only,1,subject_aligned,9,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,0,25,99,768,99,5,0.5173684210526316,0.15499921811973288,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,1,25,99,768,99,5,0.6076315789473684,0.08542706792064213,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,2,25,99,768,99,5,0.5068421052631579,0.12188429984405891,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,3,25,99,768,99,5,0.5128947368421053,0.10688066454833461,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,4,25,99,768,99,5,0.5584210526315789,0.1649141470592411,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,5,25,99,768,99,5,0.6139473684210526,0.1658876067129242,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,6,25,99,768,99,5,0.5723684210526316,0.16379068714879946,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,7,25,99,768,99,5,0.5931578947368421,0.08103276414059887,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,8,25,99,768,99,5,0.578421052631579,0.11897021787986385,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity,4,subject_aligned,9,25,99,768,99,5,0.5876315789473685,0.1826569829138821,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,0,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,1,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,2,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,3,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,4,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,5,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,6,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,7,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,8,25,99,768,99,5,0.9949999999999999,0.011180339887498959,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,linear_logistic,length_severity_shuffled,4,shuffled,9,25,99,768,99,5,1.0,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,0,25,99,768,99,5,0.5800000000000001,0.1095445115010332,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,1,25,99,768,99,5,0.54,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,2,25,99,768,99,5,0.54,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,3,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,4,25,99,768,99,5,0.54,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,5,25,99,768,99,5,0.54,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,6,25,99,768,99,5,0.56,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,7,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,8,25,99,768,99,5,0.5599999999999999,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,raw,0,subject_aligned,9,25,99,768,99,5,0.6599999999999999,0.15165750888103102,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,0,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,1,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,2,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,3,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,4,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,5,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,6,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,7,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,8,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_only,3,subject_aligned,9,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,0,25,99,768,99,5,0.52,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,1,25,99,768,99,5,0.5599999999999999,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,2,25,99,768,99,5,0.58,0.08366600265340754,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,3,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,4,25,99,768,99,5,0.54,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,5,25,99,768,99,5,0.52,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,6,25,99,768,99,5,0.56,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,7,25,99,768,99,5,0.52,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,8,25,99,768,99,5,0.5599999999999999,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,severity_only,1,subject_aligned,9,25,99,768,99,5,0.58,0.08366600265340754,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,0,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,1,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,2,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,3,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,4,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,5,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,6,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,7,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,8,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity,4,subject_aligned,9,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,0,25,99,768,99,5,0.6199999999999999,0.130384048104053,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,1,25,99,768,99,5,0.52,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,2,25,99,768,99,5,0.5599999999999999,0.08944271909999157,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,3,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,4,25,99,768,99,5,0.52,0.04472135954999579,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,5,25,99,768,99,5,0.5599999999999999,0.0547722557505166,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,6,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,7,25,99,768,99,5,0.5,0.0,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,8,25,99,768,99,5,0.58,0.08366600265340754,HAMD-17 total score
+cmdc_pdch_wavlm_audio_same_language_hamd,CMDC_vs_PDCH,wavlm_audio,audio,nonlinear_random_forest,length_severity_shuffled,4,shuffled,9,25,99,768,99,5,0.58,0.08366600265340754,HAMD-17 total score

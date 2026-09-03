@@ -18,20 +18,22 @@ common structure but imperfect item behavior; and the CMDC/PDCH same-HAMD
 contrast provides exploratory support that measurement differences are not
 only a PHQ-form issue. We then instantiate a measurement-aware model on frozen
 multimodal foundation representations and audit it against calibrated baselines
-that match the target-label budget and allow target labels to update the same
-shared layers. This fair ablation changes the interpretation of the original
-large gain over a frozen corpus-specific-head comparator: target-supervised
-representation adaptation explains much of that improvement. Under matched
-target-label exposure, target-calibrated shared-layer adaptation consistently
-improves over frozen source representations. The ordinal measurement-aware
-pathway is competitive, with benefits over generic or direct calibrated heads
-in one transfer direction, but corpus-specific ordinal parameterization is not
-uniformly superior to a shared ordinal head or direct multitask adaptation.
-Item-targeted and fixed-latent simulation analyses further show that
-corpus-specific heads are at most a bounded, item-local mechanism under the
-current calibration budgets. Stronger encoders remain useful, but
-cross-corpus depression models should not treat representation alignment,
-target calibration, or measurement modeling as interchangeable evidence.
+that match the target-label budget, trainable capacity, and optimization
+exposure. This fair ablation changes the interpretation of the original large
+gain over a frozen corpus-specific-head comparator: the main effect is the
+target-label calibration regime, not an independently verified
+corpus-specific measurement pathway. At the MV24 default budgets and across a
+k=4--24 target-label budget sweep, a target-only direct MLP is the lowest-error
+Macro Item MAE model; source-plus-target calibrated rows more often improve
+calibration-in-the-large than item reconstruction. The ordinal
+measurement-aware pathway remains a constructive framework instance, but it is
+not uniformly superior to target-only, generic calibrated, shared-ordinal, or
+direct multitask alternatives. Item-targeted and fixed-latent simulation
+analyses further show that corpus-specific heads are at most a bounded,
+item-local mechanism under the current calibration budgets. Stronger encoders
+remain useful, but cross-corpus depression models should not treat
+representation alignment, target calibration, or measurement modeling as
+interchangeable evidence.
 
 ## 1 Introduction
 
@@ -185,10 +187,9 @@ The contributions of this paper are:
    acquisition and population stress views.
 3. We instantiate a fixed measurement-aware ordinal model with strong frozen
    foundation representations, a shared symptom layer, and corpus-specific
-   cumulative-logit item heads, then use matched calibrated ablations to show
-   that the robust empirical gain is target calibration with shared-layer
-   adaptation, while corpus-specific ordinal parameterization remains bounded
-   and direction-dependent.
+   cumulative-logit item heads, then use matched calibrated ablations and
+   repeated target-label budget splits to show that calibration regime, not
+   corpus-specific ordinal parameterization, is the empirically robust factor.
 
 <!-- Replace this image with the final hand-drawn overview if available. -->
 ![Figure 1. Measurement-aware benchmark-validity framework for cross-corpus depression detection. The visual center is the target contract: scale, shared item content, response categories, rater or self-report source, language, and protocol. The proposed model routes frozen multimodal representations into shared symptom evidence and then through audited ordinal measurement heads whose sharing structure is tested empirically.](analysis/diagnostic_measurement_audit_paper/figures_core7/fig1_framework_overview.png){width=100%}
@@ -259,6 +260,19 @@ they are used as anchors for transfer.
 
 ### 2.3 Benchmark Validity and Protocol Shortcuts
 
+Benchmark construct validity is now an active topic in machine learning and
+medical AI evaluation. Alaa et al. argue that medical LLM benchmarks should be
+evaluated as construct-validity problems rather than treated as neutral
+leaderboards [@alaa2025medicalconstruct]. Bean et al. review LLM benchmarks
+through the same measurement lens [@bean2025measuring], and Freiesleben and
+Zezulka frame predictive benchmark scores as claims that require explicit
+assumptions about the task, evaluation function, and data distribution
+[@freiesleben2025benchmarking]. We therefore do not claim that importing
+construct validity into AI benchmarking is new. Our contribution is narrower
+and more empirical: we operationalize target-contract validity for
+cross-corpus depression detection, where clinical labels are scale-based
+measurements rather than generic class names.
+
 Benchmark-validity work in depression detection has shown that high scores can
 come from unintended cues. Burdisso et al. analyze DAIC-WOZ therapist prompts
 and show that interviewer-side prompts can provide discriminative shortcuts
@@ -268,10 +282,9 @@ learning to reduce question-type bias in multimodal depression detection
 [@zhang2025interviewer]. Multi-probe audit work broadens this concern by
 examining split stability, external validation, and symptom-dense versus
 symptom-light regions in clinical-interview benchmarks
-[@ishikawa2026multiprobe].
-Related criterion-contamination audits make the same warning sharper: models
-can appear clinically meaningful when the target criterion is mirrored in the
-input evidence [@li2025mirror].
+[@ishikawa2026multiprobe]. Related criterion-contamination audits make the
+same warning sharper: models can appear clinically meaningful when the target
+criterion is mirrored in the input evidence [@li2025mirror].
 
 This work changes the burden of evidence: a depression benchmark is an
 interaction protocol, not just a table of samples and labels. Our paper follows
@@ -325,8 +338,10 @@ we test common structure, item-level response behavior, severity-conditioned
 differences, anchors, and finite-sample uncertainty before using the target for
 prediction. This is the missing layer between symptom-grounded representation
 learning and clinical target transfer. Existing work asks how to learn more
-transferable depression representations. We ask whether the targets used to
-supervise those representations are themselves comparable across corpora.
+transferable depression representations, or how to validate benchmarks in
+general. We ask whether the depression targets used to supervise those
+representations are themselves comparable across corpora, and how that audit
+changes calibrated transfer claims.
 
 ## 3 Measurement-Aware Benchmark-Validity Framework
 
@@ -449,7 +464,7 @@ $$
 
 Training follows the target-contract logic: warm-start the projector,
 symptom layer, and source ordinal head on the source corpus; initialize the
-target ordinal head from the source head; then adapt the target measurement
+target ordinal head from the source head; then adapt the target-side ordinal
 path using a labeled calibration subset. The ablations remove exactly one
 piece of this design: latent-only uses the source head in the target corpus,
 and corpus-specific-head fits only the target ordinal head while freezing the
@@ -458,8 +473,8 @@ trainable while replacing the corpus-specific ordinal head with a shared
 ordinal head or a generic target MLP head. The auxiliary MMD variant is
 evaluated separately and is not part of the definition of measurement-aware
 transfer. The substantive design is the shared symptom representation plus an
-explicit target-calibrated ordinal measurement pathway; whether the ordinal
-head must be corpus-specific is evaluated empirically.
+explicit target-calibrated ordinal prediction path; whether the ordinal head
+must be corpus-specific is evaluated empirically.
 
 ### 3.3 Target-Contract Decisions
 
@@ -584,6 +599,18 @@ identity recovery is interpreted as corpus imprinting, not as proof that a
 feature is useless. The modeling implication is simply that pooled or aligned
 representations need downstream target validation.
 
+Because the main E-DAIC/CMDC probe drops sharply after controls, we report the
+residualization protocol explicitly. Controls are applied inside each
+cross-validation fold: training-fold medians impute features, training-fold
+standardization is applied, ordinary least-squares residualization is fitted on
+the training fold with an intercept, and the held-out fold is transformed using
+only those training-fold quantities. We decompose the control effect into
+length-only, severity-only, length-plus-severity, and a shuffled-control
+sensitivity that preserves covariate marginals while breaking subject-level
+alignment. We also repeat the identity probe with a nonlinear random-forest
+classifier after the same fold-internal preprocessing to test whether
+near-chance controlled identity is specific to linear-probe capacity.
+
 ### 5.2 RQ2: Measurement-Discrepancy Design
 
 The measurement audit asks whether nominally aligned clinical targets preserve
@@ -637,6 +664,14 @@ world and reports false-localization, recovery, and anchor-recovery rates. This
 bounds the evidential weight of localized threshold shifts under the observed
 sample sizes.
 
+Finally, because the approximate invariance thresholds are heuristic screening
+rules rather than universal psychometric standards, we report a sensitivity
+grid over loading-difference tolerances 0.15, 0.20, and 0.25, threshold
+tolerances 0.25, 0.35, and 0.45, and minimum-anchor requirements of 3, 4, and
+5 items. The sensitivity grid is paired with the bootstrap item-DIF stability
+summary, so anchor and threshold-shift readings are treated as robust only when
+they recur across both sources of uncertainty.
+
 **CMDC to PDCH** is the exploratory same-HAMD comparison. Both corpora provide
 HAMD-17 item supervision, but the CMDC HAMD sample is small. We therefore use
 item distributions, item-excluded severity-conditioned responses, and
@@ -685,7 +720,7 @@ jointly optimizes source ordinal reconstruction and target calibration ordinal
 reconstruction with corpus-specific cumulative-logit ordinal heads after source
 warm-start and target-head initialization. `Measurement-aware + MMD` adds the
 auxiliary shared-symptom MMD term. The co-primary metrics are
-Macro Item MAE and Calibration MAE. Their sum is reported as a compact
+Macro Item MAE and binned item calibration MAE. Their sum is reported as a compact
 reconstruction-plus-calibration summary, but the interpretation does not rely
 on a new clinical scale or on a claimed 1:1 trade-off between item error and
 calibration gap; this is separate from neural probability calibration in the
@@ -698,10 +733,10 @@ $$
 \left|\hat{y}_{ik}-y_{ik}\right|.
 $$
 
-Calibration MAE bins subjects into five equal-frequency predicted-severity
-bins using predicted total score $\hat{t}_i=\sum_k \hat{y}_{ik}$, then
-computes the weighted absolute gap between predicted and observed mean total
-score:
+Binned item calibration MAE bins subjects into five equal-frequency
+predicted-severity bins using predicted total score
+$\hat{t}_i=\sum_k \hat{y}_{ik}$, then computes the weighted absolute gap
+between predicted and observed mean total score:
 
 $$
 \mathrm{CalMAE} =
@@ -734,6 +769,15 @@ literature, we also threshold the predicted shared PHQ total at 10 and report
 Macro-F1, Balanced Accuracy, AUROC, AUPRC, Sensitivity, and Specificity as a
 secondary clinical endpoint.
 
+For the reviewer-facing calibration analysis, we add a target-label budget
+study with repeated subject-level calibration/evaluation splits. Target budgets
+are varied while the frozen Qwen3+WavLM+OpenFace representation, source data,
+trainable shared layers, and target evaluation protocol are held fixed. This
+analysis also reports participant-bootstrap paired deltas for observed-scale
+reconstruction and calibration metrics, so small architecture differences are
+treated as uncertainty-bounded evidence rather than seed-level superiority
+claims.
+
 This design makes bounded results interpretable. If a method reduces output
 identity but leaves feature identity high, it has changed the target pathway
 without making the representation invariant. If a feature-alignment baseline
@@ -748,10 +792,9 @@ representation adaptation rather than corpus-specific measurement modeling. We
 therefore treat target-pathway claims as supported only where the
 measurement-aware model also improves over calibrated baselines with matched
 target labels, trainable shared layers, and optimization exposure. Seed-level
-paired tests on the reconstruction-plus-calibration score are used as
-descriptive stress checks; participant-level or repeated-split uncertainty
-would be needed before turning small differences into primary superiority
-evidence.
+paired tests on the reconstruction-plus-calibration score are treated only as
+descriptive stress checks; the repeated-split and participant-bootstrap budget
+study is the primary uncertainty evidence for calibrated architecture claims.
 
 ## 6 Results
 
@@ -765,9 +808,9 @@ generalization story.
 
 | Gate | Main evidence | Modeling implication |
 | --- | --- | --- |
-| Representation gate | Raw corpus-identity probes are strong screens, but residual identity is contrast-dependent. E-DAIC/CMDC drops near chance after length and severity controls, while DAIC-lineage identity remains high. | Representation auditing is necessary, but raw corpus identity alone cannot decide target validity. |
+| Representation gate | Raw corpus-identity probes are strong screens, but residual identity is control- and probe-dependent. In E-DAIC/CMDC, aligned length/acquisition controls explain the linear-probe signal, while nonlinear Qwen text probing still recovers identity. | Representation auditing is necessary, but raw corpus identity alone cannot decide target validity. |
 | Measurement gate | DAIC-WOZ/E-DAIC shows near-identical same-lineage PHQ-8 behavior, E-DAIC/CMDC shows shared but imperfect PHQ item behavior, and CMDC/PDCH shows exploratory same-HAMD differences. | Shared symptom evidence can be useful, but observed labels require target contracts; whether the measurement head should be shared or corpus-specific must be tested rather than assumed. |
-| Prediction gate | Qwen3 and lightweight multimodal stress tests show that stronger features do not erase target-mapping needs; fair calibrated ablations show that the large gain over a frozen-head comparator is largely target-supervised adaptation, while the measurement-aware ordinal pathway is competitive but not uniformly best. | Stronger encoders and feature-alignment baselines should be paired with explicit target contracts, calibrated adaptation baselines, and calibration-aware evaluation before assigning gains to measurement modeling. |
+| Prediction gate | Qwen3 and lightweight multimodal stress tests show that stronger features do not erase target-mapping needs; fair calibrated ablations and repeated target-budget splits show that the frozen-head gain is largely a calibration-regime effect, while target-only direct calibration is the strongest Macro Item MAE competitor. | Stronger encoders and feature-alignment baselines should be paired with explicit target contracts, target-only and source-plus-target calibrated baselines, and calibration-aware evaluation before assigning gains to measurement modeling. |
 
 ### 6.1 Representation Gate: Raw Identity Is Strong, Residual Identity Is Contrast-Dependent
 
@@ -782,25 +825,39 @@ shared-item models, reaching 0.932 for BGE-M3, 0.993 for multilingual-E5, and
 Supplementary Figure S2, but the main text relies on the more informative
 controlled probes.
 
-Figure 3 shows what happens after fold-internal length and severity
-residualization. The cross-language E-DAIC/CMDC contrast drops from raw
-near-perfect identity to chance-level balanced accuracy in Qwen3 text (0.497),
-WavLM audio (0.484), and OpenFace video (0.522). After controlling for length
-and severity, the E-DAIC/CMDC identity signal approaches chance, indicating
-that the raw near-perfect probe was strongly coupled to these corpus-linked
-factors rather than reflecting a stable residual corpus signature.
+Figure 3 shows the original fold-internal linear-probe result after length and
+severity residualization. The cross-language E-DAIC/CMDC contrast drops from
+raw near-perfect identity to chance-level balanced accuracy in Qwen3 text
+(0.497), WavLM audio (0.484), and OpenFace video (0.522). MV30 decomposes this
+drop: severity-only control leaves the linear identity probe near 1.000, while
+length-only control already reduces it to 0.495 in Qwen3 text, 0.481 in WavLM
+audio, and 0.508 in OpenFace. Shuffling the length-plus-severity controls
+returns the linear probe to near-perfect identity, showing that the reduction
+depends on subject-aligned corpus-linked length/acquisition structure rather
+than residualization mechanically erasing any signal.
 
-![Figure 3. Control-dependent corpus identity. Points report balanced accuracy before and after fold-internal length plus severity residualization. E-DAIC/CMDC drops near chance after controls, while DAIC-lineage identity remains high, showing why raw corpus identity is a useful screen but not the final RQ1 evidence.](analysis/diagnostic_measurement_audit_paper/figures_core7/fig3_controlled_identity_probe.png){width=100%}
+The same sensitivity also exposes a real caveat. With a nonlinear random-forest
+probe after the same preprocessing, controlled identity remains high for Qwen3
+text (0.987) and modest for WavLM audio (0.614), while OpenFace remains near
+chance (0.504). Thus the correct RQ1 conclusion is not that E-DAIC/CMDC has no
+residual corpus signature. It is that raw identity is strongly coupled to
+length/acquisition structure under a linear probe, but higher-capacity probes
+can still recover residual corpus information from some foundation feature
+views. This is exactly why representation auditing is useful but insufficient:
+the target-validity question cannot be settled by a single corpus-identity
+number.
+
+![Figure 3. Control-dependent corpus identity under the linear probe. Points report balanced accuracy before and after fold-internal length plus severity residualization. E-DAIC/CMDC drops near chance under the linear probe, while DAIC-lineage identity remains high; nonlinear sensitivity is reported separately.](analysis/diagnostic_measurement_audit_paper/figures_core7/fig3_controlled_identity_probe.png){width=100%}
 
 The same controlled audit also shows that corpus identity is not merely an
 English-versus-Chinese classifier. Within E-DAIC itself, DAIC-WOZ-lineage
 sessions and extended-lineage sessions remain identifiable after the same
-controls, with balanced accuracy 0.839 for Qwen3 text and 0.897 for WavLM
-audio. A Chinese same-scale control, CMDC versus PDCH HAMD, is more modest but
-still above chance in the Qwen3 text view (0.572). Thus, residual corpus
-identity is not uniform: it weakens sharply for the main E-DAIC/CMDC contrast,
-but persists in some lineage and clinical-setting contrasts after length and
-severity shortcuts are removed.
+linear controls, with balanced accuracy 0.839 for Qwen3 text and 0.897 for
+WavLM audio. A Chinese same-scale control, CMDC versus PDCH HAMD, is more
+modest but still above chance in the Qwen3 text view (0.572). Thus, residual
+corpus identity is not uniform: it depends on contrast, controls, modality, and
+probe capacity, and it can persist in lineage or clinical-setting contrasts
+after length and severity shortcuts are removed.
 
 The pattern also persists under stronger feature views. The Qwen3 text slice is
 a foundation-style backbone, WavLM-derived speech features retain lineage
@@ -856,6 +913,17 @@ targeted calibration checks, and fair tests of whether measurement parameters
 should be shared or corpus-specific; it is not necessary to overclaim universal
 item-level DIF.
 
+The sensitivity grid makes this claim boundary clearer. Across loading
+tolerances of 0.15--0.25, threshold tolerances of 0.25--0.45, and
+minimum-anchor requirements of 3--5 items, the default C01/C04/C05/C07 anchor
+set is exactly recovered in only one third of grid rows and retained in two
+thirds. By contrast, C02 and C06 remain threshold-free in every grid row.
+Combining this grid with bootstrap DIF stability yields four stable anchor
+items with strict-threshold caveats (C01, C04, C05, C07) and two stable
+threshold-shift signals (C02, C06). This strengthens the audit as a bounded
+target-contract result while preserving the finite-sample caution, especially
+for sparse response categories.
+
 **Same-HAMD exploratory control.** CMDC/PDCH has one bounded role: it checks
 whether the measurement concern is obviously reducible to the PHQ-8 versus
 PHQ-9 form difference. The available HAMD sample is asymmetric, with 25 CMDC
@@ -885,19 +953,19 @@ that baseline uses the same number of target labels but does not allow target
 labels to update the shared symptom representation. We therefore add calibrated
 baselines that match target-label budget, trainable shared layers, and
 optimization exposure. The co-primary metrics are Macro Item MAE and
-Calibration MAE; Total MAE is shown as a severity-scale summary. The
+binned item calibration MAE; Total MAE is shown as a severity-scale summary. The
 reconstruction-plus-calibration score is used only as a supplementary compact
 summary, so the main claim does not depend on a composite metric.
 
 **Table 3. Supervision-aware cross-corpus PHQ shared-item result under the
 official foundation representation. Values are means with 95 percent CIs over
 five seeds. The panel blocks separate zero-target-label context from the
-same-budget target-calibrated comparison; significance is discussed only within
-target-calibrated rows.**
+same-budget source-plus-target calibrated comparison. Repeated-split
+target-only calibration audits are reported immediately after the table.**
 
 **Panel A. CMDC -> E-DAIC.**
 
-| Method | Regime | n_cal | Item MAE ↓ | Calibration MAE ↓ | Total MAE ↓ |
+| Method | Regime | n_cal | Item MAE ↓ | Binned Item Calib. MAE ↓ | Total MAE ↓ |
 | --- | --- | ---: | ---: | ---: | ---: |
 | **Zero-target-label context** |  |  |  |  |  |
 | ERM | zero-label | 0 | 1.039 [0.983, 1.094] | 0.734 [0.673, 0.795] | 5.724 [5.436, 6.012] |
@@ -917,7 +985,7 @@ target-calibrated rows.**
 
 **Panel B. E-DAIC -> CMDC.**
 
-| Method | Regime | n_cal | Item MAE ↓ | Calibration MAE ↓ | Total MAE ↓ |
+| Method | Regime | n_cal | Item MAE ↓ | Binned Item Calib. MAE ↓ | Total MAE ↓ |
 | --- | --- | ---: | ---: | ---: | ---: |
 | **Zero-target-label context** |  |  |  |  |  |
 | ERM | zero-label | 0 | 1.151 [0.970, 1.331] | 0.911 [0.794, 1.029] | 7.469 [6.070, 8.867] |
@@ -939,65 +1007,71 @@ The supervision regime is deliberately explicit. ERM, CORAL, MMD-style
 alignment, DANN, the strongest direct foundation baseline, and latent-only
 serve as zero-target-label representation-adaptation context. They answer a
 different question: how far feature alignment and direct transfer can go
-without target clinical labels. Within the calibrated block, the old
-`Corpus-specific head` row is useful but insufficient: it freezes the
+without target clinical labels. Within the source-plus-target calibrated block,
+the old `Corpus-specific head` row is useful but insufficient: it freezes the
 source-trained symptom layer, so the very large improvements over that row
-identify the value of target calibration and shared-layer adaptation, not the
+identify a target-calibration and shared-layer adaptation effect, not the
 unique value of a corpus-specific ordinal measurement head.
 
-The fair calibrated ablations give the claim boundary. The strongest result is
-target calibration with shared-layer adaptation. In both directions, the frozen
-`Corpus-specific head` baseline is much worse than calibrated variants that
-allow target labels to update the projector and shared symptom layer. Thus the
-large original changes, from `0.967` to `0.818` Item MAE in CMDC-to-E-DAIC and
-from `1.346` to `0.645` in E-DAIC-to-CMDC, should be read mainly as evidence
-for target-supervised shared-layer adaptation rather than as proof of a
-corpus-specific measurement head.
+MV28 adds the missing target-only and repeated-split comparison. At the MV24
+default budgets, the target-only direct MLP has the lowest Macro Item MAE in
+both directions: `0.840` for CMDC-to-E-DAIC at `k=66`, compared with `0.873`
+for Measurement-aware, and `0.645` for E-DAIC-to-CMDC at `k=24`, compared with
+`0.674` for Measurement-aware. Extending the audit to `k=4,8,12,16,24`
+target-label budgets gives the same primary reconstruction result: target-only
+direct calibration is the best Macro Item MAE row in all ten
+direction-by-budget cells, and source-plus-target calibrated rows beat it in
+`0/50` method-budget-direction cells. Participant-bootstrap deltas do not
+produce a Macro Item MAE interval that favors source-plus-target calibration.
 
-The second result is narrower. In CMDC-to-E-DAIC, the core measurement-aware
-model improves over direct target fine-tuning (`0.851/0.482` to `0.818/0.433`
-for Item MAE/Calibration MAE) and over the generic target MLP head
-(`0.884/0.455` to `0.818/0.433`), with paired compact score tests significant
-at $p<.05$ for both comparisons. This supports a direction-dependent ordinal
-inductive-bias reading. It does not support a universal architecture claim:
-the same advantage is absent in E-DAIC-to-CMDC, where direct target fine-tuning
-and direct source-plus-target multitask adaptation match or slightly beat the
-measurement-aware row.
+This does not mean source labels are useless. The repeated-split calibration
+metrics show a tradeoff: source-plus-target calibrated rows reduce absolute
+calibration-in-the-large in `46/50` cells and sometimes reduce binned item
+calibration error in E-DAIC-to-CMDC, even while target-only direct calibration
+keeps the best item reconstruction. The prediction-gate conclusion is
+therefore not that measurement-aware transfer wins a leaderboard, but that
+calibration regime, reconstruction, and calibration should be reported as
+separate target-validity quantities.
 
-The direct test of corpus-specific ordinal parameterization is the comparison
-between `Shared ordinal head` and `Measurement-aware`. That comparison is
-essentially tied. The compact reconstruction-plus-calibration score is `1.252`
-versus `1.251` in CMDC-to-E-DAIC and `0.988` versus `0.987` in
-E-DAIC-to-CMDC. A targeted item analysis reaches the same conclusion. For the
-measurement-gate C02/C06 threshold-shift set, the shared-head minus
-measurement-aware delta is only `0.004` MAE in CMDC-to-E-DAIC and `0.002` MAE
-in E-DAIC-to-CMDC, with confidence intervals spanning zero in both directions.
-The C01/C04/C05/C07 anchor set is also near tied. Thus Table 3 does not prove
-that corpus-specific measurement parameterization is an independent source of
-performance improvement.
+The direct test of corpus-specific ordinal parameterization remains negative.
+In the original Table 3 default split, `Shared ordinal head` and
+`Measurement-aware` are essentially tied. MV28 preserves that conclusion under
+repeated splits: the shared-head minus measurement-aware Macro Item MAE delta
+is near zero at the MV24 default budgets (`0.002` in CMDC-to-E-DAIC and
+approximately `0.000` in E-DAIC-to-CMDC), with participant-bootstrap intervals
+spanning zero. Across the `k=4--24` budget sweep, the measurement-aware ordinal
+row beats matched alternatives on mean Macro Item MAE in only `3/50` cells,
+and no participant-bootstrap interval supports a uniform measurement-aware
+advantage. Thus the corpus-specific ordinal head is a tested framework
+component, not an independently supported source of overall improvement.
 
-A fixed-latent companion simulation clarifies what this negative result does
-and does not mean. When the latent severity coordinate is given directly to the
-measurement head, a scalar-invariant world shows no benefit from adding
-corpus-specific ordinal thresholds. Under a planted C02/C06 threshold-DIF
-world, the C02/C06 item-set delta becomes positive in both transfer directions
-(`0.002` and `0.011` MAE in favor of the corpus-specific head), while anchor
-items do not improve. This is weak item-local mechanism consistency, not a
-large practical gain at the observed calibration budgets. The correct
-interpretation is therefore: measurement audits can identify where target
-mechanisms should be checked, but detected heterogeneity does not automatically
-mean that every corpus needs a fully separate measurement head in the real
-multimodal transfer setting. Adding MMD changes the compact score only
-slightly and is treated as an auxiliary variant rather than the definition of
-the method.
+A targeted item analysis reaches the same conclusion. For the measurement-gate
+C02/C06 threshold-shift set, the shared-head minus measurement-aware delta is
+only `0.004` MAE in CMDC-to-E-DAIC and `0.002` MAE in E-DAIC-to-CMDC, with
+confidence intervals spanning zero in both directions. The C01/C04/C05/C07
+anchor set is also near tied. A fixed-latent companion simulation clarifies
+what this negative result does and does not mean. When the latent severity
+coordinate is given directly to the measurement head, a scalar-invariant world
+shows no benefit from adding corpus-specific ordinal thresholds. Under a
+planted C02/C06 threshold-DIF world, the C02/C06 item-set delta becomes
+positive in both transfer directions (`0.002` and `0.011` MAE in favor of the
+corpus-specific head), while anchor items do not improve. This is weak
+item-local mechanism consistency, not a large practical gain at the observed
+calibration budgets. Measurement audits can identify where target mechanisms
+should be checked, but detected heterogeneity does not automatically mean that
+every corpus needs a fully separate measurement head in the real multimodal
+transfer setting. Adding MMD changes the compact score only slightly and is
+treated as an auxiliary variant rather than the definition of the method.
 
 The strongest direct and alignment baselines remain useful. CORAL and
-MMD-style alignment lower some transfer errors, and direct calibrated adaptation
-is a strong competitor once it is allowed to update the same shared layers. This
-is exactly why target-label exposure and trainable-capacity controls matter:
-under a strong frozen multimodal foundation representation, clinical target
-calibration changes the result, but the specific measurement parameterization
-must earn its contribution against fair calibrated alternatives.
+MMD-style alignment lower some transfer errors, target-only direct calibration
+is a strong small-budget reconstruction baseline, and source-plus-target
+calibrated adaptation can improve calibration-in-the-large even when it does
+not improve Macro Item MAE. This is exactly why target-label exposure,
+trainable-capacity controls, and calibration metrics matter: under a strong
+frozen multimodal foundation representation, clinical target calibration
+changes the result, but the specific measurement parameterization must earn its
+contribution against fair calibrated alternatives.
 
 Foundation-representation and multimodal stress tests support the same bounded
 reading. Stronger Qwen text features and fused text-audio-video representations
@@ -1064,18 +1138,21 @@ stated at the right strength. Measurement heterogeneity means the target
 mapping should be made explicit and audited; it does not by itself prove that
 each corpus needs an independent measurement head. The fair ablation shows why
 this distinction matters. Much of the large gain over a frozen target-head
-baseline comes from allowing target calibration labels to update the shared
-layers. In the formal PHQ shared-item model, corpus-specific cumulative-logit
-heads remain a principled and competitive way to encode different ordinal
-response processes, and the fixed-latent simulation shows weak item-local
-benefit under planted C02/C06 threshold shift. But the real-data
+baseline comes from the target calibration regime, including the ability of
+target labels to update trainable layers. But when target-only direct
+calibration is added at matched budgets, it becomes the strongest Macro Item
+MAE comparator at both MV24 default budgets and throughout the small-budget
+sweep. Corpus-specific cumulative-logit heads remain a principled way to encode
+different ordinal response processes, and the fixed-latent simulation shows
+weak item-local benefit under planted C02/C06 threshold shift. The real-data
 Shared-ordinal-head versus Measurement-aware comparison is essentially tied,
 including on the targeted C02/C06 item set. The present evidence therefore
 supports the architecture as a constructive target-contract instantiation, not
 as a universally superior method. The proposed model addresses calibrated
 cross-corpus transfer rather than zero-target-label domain generalization: the
 small labeled target calibration subset is part of the problem definition, not
-an accidental advantage.
+an accidental advantage, and target-only calibration must be reported beside
+source-plus-target calibration.
 
 For benchmark practice, the paper suggests a simple reporting discipline.
 Cross-corpus depression results should state the scale and item contract, the
@@ -1115,13 +1192,12 @@ representation-adaptation context, while architecture-level claims are made only
 against calibrated baselines with the same target labels and comparable shared
 adaptation exposure.
 
-Sixth, the current uncertainty summaries are seed-level and split-level
-descriptive checks. The paired tests over five seeds are useful for detecting
+Sixth, the paired tests over the original five seeds are useful for detecting
 large fairness failures, but they are not sufficient as the main evidence for
 small architecture superiority, especially in the E-DAIC-to-CMDC direction
-where the target evaluation set contains 20 subjects. Participant-level or
-repeated-split uncertainty should be used before making stronger superiority
-claims from small differences.
+where the target evaluation set is small. We therefore treat the repeated
+target-calibration splits and participant-bootstrap deltas as the relevant
+uncertainty layer for calibrated architecture claims.
 
 ## 9 Conclusion
 
@@ -1138,12 +1214,13 @@ shared-item differences; CMDC/PDCH adds exploratory same-HAMD support.
 The resulting lesson is direct: before aligning representations, validate the
 target. A measurement-aware framework gives future systems a practical way to
 do that, and the fair ordinal-head ablation shows both the promise and the
-claim boundary. The robust empirical lesson is that target calibration and
-shared-layer adaptation matter; ordinal measurement modeling can help in a
-direction-dependent way; and corpus-specific ordinal heads have not yet shown
-an independent overall advantage over a shared ordinal head in the real
+claim boundary. The robust empirical lesson is that target-label calibration
+and adaptation regime matter; target-only direct calibration is a strong and
+often lower-error baseline; and corpus-specific ordinal heads have not yet
+shown an independent overall advantage over a shared ordinal head in the real
 E-DAIC/CMDC transfer setting. Strong encoders and multimodal foundation models
-can still do what they do well, but clinical measurement contracts, target
-calibration, shared-layer adaptation, and corpus-specific measurement
-parameterization must be reported separately. This makes cross-corpus
-depression benchmarks harder to overread, but easier to trust.
+can still do what they do well, but clinical measurement contracts,
+target-only calibration, source-plus-target calibration, shared-layer
+adaptation, and corpus-specific measurement parameterization must be reported
+separately. This makes cross-corpus depression benchmarks harder to overread,
+but easier to trust.

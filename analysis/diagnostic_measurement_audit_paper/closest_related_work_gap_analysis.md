@@ -3,7 +3,7 @@
 Generated: 2026-08-25 UTC
 Project basis: latest GitHub/local HEAD `32bc69d9cfc865462fbfe78d3ff01f3f9e0c859a`
 
-This note compares the current paper against the closest 20 papers or benchmark
+This note compares the current paper against the closest papers and benchmark
 sources. The purpose is not to write a generic related-work survey. It is to
 identify exactly what nearby work already proves, where its assumptions remain
 open, and what our measurement-aware audit/framework contributes.
@@ -14,14 +14,17 @@ Most nearby depression-detection work tries to improve or audit
 `P_D(X | theta)`: representation quality, modality fusion, interviewer/protocol
 shortcuts, evidence grounding, missing modalities, or foundation backbones. Our
 paper adds the missing target-validity layer: whether nominally aligned clinical
-labels preserve comparable `P_D(Y | theta)` across corpora, and how models
-should use corpus-specific measurement heads when they do not.
+labels preserve comparable `P_D(Y | theta)` across corpora, and when models
+should share or separate measurement-head parameters.
 
 ## Closest Papers And Gaps
 
 | # | Paper / source | Main finding or contribution | Remaining gap / vulnerability | What our paper solves or clarifies |
 | ---: | --- | --- | --- | --- |
-| 1 | [Nguyen et al., ACL 2022, questionnaire-grounded depression detection](https://aclanthology.org/2022.acl-long.578/) | Uses PHQ-9 symptom grounding to improve out-of-domain depression detection over social-media datasets. Shows symptom grounding can help generalization. | Assumes the questionnaire symptom meanings are stable enough across datasets; does not audit item-response mechanisms or corpus-specific scale behavior. | We agree that symptoms are the right abstraction, but add item-level PHQ shared-item audits, severity-conditioned response analysis, IRT/finite-sample caveats, and corpus-specific measurement heads. |
+| CV1 | [Alaa et al., ICML 2025, medical LLM benchmark construct validity](https://proceedings.mlr.press/v267/alaa25a.html) | Argues that medical LLM benchmarks should be empirically evaluated for construct validity using psychometric ideas. | This is the closest high-level medical-AI framing, so we should not claim the general construct-validity analogy as novel. | We operationalize target-contract validity for cross-corpus depression detection: real corpora, item-level PHQ/HAMD evidence, target-label regimes, and prediction consequences. |
+| CV2 | [Bean et al., NeurIPS 2025 Datasets and Benchmarks, LLM benchmark construct validity](https://proceedings.neurips.cc/paper_files/paper/2025/hash/1967e0fc3aa6cbbace562f5cb8e3954e-Abstract-Datasets_and_Benchmarks_Track.html) | Reviews LLM benchmarks through construct validity and argues that benchmark scores need explicit support for what they claim to measure. | Broad LLM benchmark audit; not specific to mental-health clinical scales or cross-corpus depression targets. | We provide the clinical-measurement instantiation: shared item contracts, anchor/threshold sensitivity, and calibrated transfer ablations. |
+| CV3 | [Freiesleben and Zezulka, arXiv 2025, construct validity for ML benchmarks](https://arxiv.org/abs/2510.23191) | Develops a general construct-validity account for predictive ML benchmarks and the inferences they support. | Conceptual benchmark epistemology rather than a runnable depression-detection audit. | We turn the target-measurement assumption into concrete depression benchmark gates and model comparisons. |
+| 1 | [Nguyen et al., ACL 2022, questionnaire-grounded depression detection](https://aclanthology.org/2022.acl-long.578/) | Uses PHQ-9 symptom grounding to improve out-of-domain depression detection over social-media datasets. Shows symptom grounding can help generalization. | Assumes the questionnaire symptom meanings are stable enough across datasets; does not audit item-response mechanisms or corpus-specific scale behavior. | We agree that symptoms are the right abstraction, but add item-level PHQ shared-item audits, severity-conditioned response analysis, IRT/finite-sample caveats, and fair tests of whether measurement-head parameters should be shared or corpus-specific. |
 | 2 | [Mandal et al., CLPsych 2025, QuestMF](https://aclanthology.org/2025.clpsych-1.4/) | Predicts E-DAIC PHQ item/question scores with question-wise modality fusion and ordinal loss, improving interpretability within a single benchmark. | Item-level modeling is within E-DAIC; it does not ask whether item scores from another corpus are comparable targets. | We shift item-level modeling from within-corpus interpretability to cross-corpus target comparability. |
 | 3 | [Zhang et al., Findings ACL 2025, RED](https://aclanthology.org/2025.findings-acl.517/) | Retrieval-augmented explanations ground depression predictions in clinical interview evidence and reduce hallucinated post-hoc explanations. | Evidence grounding does not prove the clinical target is comparable across corpora or scales. | Our MV06 evidence work becomes a credibility layer, while the main novelty is target measurement validity and comparability gates. |
 | 4 | [Burdisso et al., ClinicalNLP 2024, DAIC-WOZ therapist prompts](https://aclanthology.org/2024.clinicalnlp-1.8/) | Shows models can exploit therapist/interviewer prompts in DAIC-WOZ and may learn shortcut regions rather than participant evidence. | Strong protocol-shortcut audit, but still mostly about the input/acquisition side. It does not audit PHQ/HAMD target measurement comparability. | We use similar benchmark-validity instinct but extend it from prompt leakage in `X` to clinical label comparability in `Y`. |
@@ -73,7 +76,8 @@ Best response:
   change transfer tradeoffs but do not remove the target-validity gate.
 - The claim is not "small models beat foundation models." The claim is:
   foundation models still require measurement-aware target contracts and
-  corpus-specific heads.
+  explicit tests of whether the measurement head should be shared or
+  corpus-specific.
 
 ### 3. "PHQ has known measurement invariance, so your PHQ result is suspect."
 
@@ -134,8 +138,9 @@ The clean contribution statement after this comparison should be:
 > assumption unresolved: nominally aligned clinical labels may not preserve the
 > same response mechanism across corpora. We provide a registry-governed
 > empirical audit and a measurement-aware framework that separates shared
-> symptom evidence from corpus-specific measurement heads, making cross-corpus
-> depression detection more measurement-valid in the foundation-model era.
+> symptom evidence from audited measurement heads whose sharing structure is
+> tested empirically, making cross-corpus depression detection more
+> measurement-valid in the foundation-model era.
 
 ## What We Should Avoid Claiming
 

@@ -73,17 +73,17 @@
   - `X -> Y_D`
 - Measurement-aware path：
   - `X_D -> H_D -> S -> Y_D`
-  - `Foundation encoder -> shared representation -> latent symptom layer -> corpus-specific ordinal head`
+  - `Foundation encoder -> shared representation -> latent symptom layer -> audited ordinal head`
 - 正式模型：
   - frozen Qwen3 text + WavLM speech + OpenFace video
   - shared eight-symptom layer
-  - corpus-specific cumulative-logit ordinal heads
+  - corpus-specific cumulative-logit ordinal heads, with shared-head and generic-head ablations
 - Loss 放一行即可：
   - source ordinal reconstruction + target calibration ordinal reconstruction + mild MMD regularizer
 
 逐字稿：
 
-方法上，我们把传统的 direct transfer 改成 measurement-aware transfer。传统模型直接从输入 X 预测某个 corpus 的标签 Y。我们的框架在中间加了一个 shared symptom layer，先学习可以共享的 symptom evidence，再通过 corpus-specific ordinal head 映射到具体 corpus 的 PHQ item response。正式实验里，我们没有同时讲很多可选 head，而是固定为一个清楚架构：Qwen3、WavLM、OpenFace 的 frozen foundation representation，接一个八维 PHQ shared symptom layer，再接每个 corpus 自己的 cumulative-logit ordinal item head。MMD 只是 mild regularizer，不是方法核心；核心是 shared symptom evidence 和 corpus-specific measurement pathway。
+方法上，我们把传统的 direct transfer 改成 measurement-aware transfer。传统模型直接从输入 X 预测某个 corpus 的标签 Y。我们的框架在中间加了一个 shared symptom layer，先学习可以共享的 symptom evidence，再通过可审计的 ordinal head 映射到具体 corpus 的 PHQ item response。正式实验里，Qwen3、WavLM、OpenFace 的 frozen foundation representation 接一个八维 PHQ shared symptom layer，再比较 corpus-specific ordinal head、shared ordinal head、generic target MLP head、direct target fine-tune 和 source+target multitask。MMD 只是 mild regularizer，不是方法核心；核心不是宣称某一种 head 一定赢，而是把 target calibration、shared-layer adaptation 和 measurement parameterization 拆开检验。
 
 ## 第 6 页：结果一，表示差异不是消失了
 
@@ -145,14 +145,15 @@
   - measurement-aware
 - 指标只放 `Recon + Calibration Score` 和一句解释：越低越好，等于 item reconstruction + calibration error。
 - 关键结果：
-  - CMDC -> E-DAIC：Measurement-aware 1.251 vs corpus-specific head 1.565；+MMD 辅助变体为 1.243。
-  - E-DAIC -> CMDC：Measurement-aware 0.987 vs corpus-specific head 2.405；+MMD 辅助变体同为 0.987。
-  - Measurement-aware 与 +MMD 非常接近，说明主要增益来自 ordinal measurement pathway，而不是 MMD。
-- 加一句公平性说明：zero-target-label baselines 与 target-calibrated rows 不做 same-budget 显著性比较。
+  - 原 frozen corpus-specific head 是弱 comparator，大幅差异主要说明 target calibration/adaptation regime 重要。
+  - MV28 在 MV24 default budgets 和 k=4/8/12/16/24 小预算 repeated splits 中，target-only direct MLP 是 Macro Item MAE 最强 baseline。
+  - Source+target calibrated rows 在 Macro Item MAE 上没有超过 target-only direct MLP，但常改善 calibration-in-the-large。
+  - Shared ordinal head 与 Measurement-aware corpus-specific ordinal head 基本打平，MMD 只是辅助项。
+- 加一句公平性说明：zero-target-label、target-only calibration、source+target calibration 是不同问题，不能混成一个 leaderboard。
 
 逐字稿：
 
-最后是正式 measurement-aware ordinal model 的主结果。这里一定要注意公平性叙事：ERM、CORAL、MMD、DANN 和 strongest foundation baseline 都是不使用目标域临床标签的 zero-target-label rows；而 corpus-specific head、measurement-aware 和 measurement-aware + MMD 使用相同的 target calibration split。所以我们不写成 measurement-aware 显著优于所有 baseline，而是写成两个层次。第一，zero-target-label baselines 说明普通 feature alignment 只能作为 representation adaptation context。第二，在同样使用 target calibration labels 的 same-budget comparison 里，核心 measurement-aware 明显优于 corpus-specific head：CMDC 到 E-DAIC 从 1.565 降到 1.251，E-DAIC 到 CMDC 从 2.405 降到 0.987。Measurement-aware + MMD 与核心模型非常接近，一个方向只小幅变好，另一个方向持平；所以真正起作用的是 target-calibrated ordinal measurement pathway，而不是把 MMD 当作方法主角。
+最后是正式 measurement-aware ordinal model 的主结果。这里一定要注意公平性叙事：ERM、CORAL、MMD、DANN 和 strongest foundation baseline 是 zero-target-label rows；target-only calibration 和 source+target calibration 又是两个不同问题。加入公平 ablation 后，原来 Measurement-aware 相比 frozen corpus-specific head 的大幅改善不能被写成 corpus-specific measurement pathway 的独立贡献。MV28 进一步说明，在相同 frozen foundation representation 和 matched target-label budget 下，target-only direct MLP 在 Macro Item MAE 上是最强 baseline；source+target calibrated rows 更常改善 calibration-in-the-large，而不是改善 item reconstruction。Shared ordinal head 与 Measurement-aware 几乎打平，MMD 也只是轻微辅助。所以这页真正要讲的是：framework 让我们知道每个收益来自哪里，也让负结果变成 target-validity audit 的一部分。
 
 ## 第 10 页：结论与下一步
 
@@ -161,7 +162,7 @@
 - Take-home message：
   - Cross-corpus depression detection is not only representation transfer.
   - Clinical targets are measurement contracts.
-  - Strong encoders should be paired with corpus-specific measurement heads and calibration-aware evaluation.
+  - Strong encoders should be paired with target-only/source-plus-target calibration baselines and calibration-aware evaluation.
 - 当前论文贡献：
   - benchmark validity audit
   - measurement heterogeneity evidence
@@ -173,7 +174,7 @@
 
 逐字稿：
 
-总结一下，这篇论文的最终信息不是“我们做了一个新的抑郁检测 SOTA”，而是更适合当前证据的主张：跨语料抑郁检测不仅是 representation transfer，也包含 target measurement validity。PHQ、HAMD 这些标签不能只因为名字相近就被当成同一个预测目标。我们的贡献是给出系统的 empirical evidence：表示层有 corpus signatures，测量层有 corpus-conditioned response behavior，而预测层显示普通 alignment 和强 backbone 都不能单独解决这个问题。对应的解决方案是 measurement-aware framework：强 encoder 负责表征，shared symptom layer 负责可共享症状证据，corpus-specific ordinal heads 负责量表和语料特定的测量映射。后续工作我建议不再扩实验，而是集中做论文精修、图表压缩、引文核验和 supplement 整理。
+总结一下，这篇论文的最终信息不是“我们做了一个新的抑郁检测 SOTA”，而是更适合当前证据的主张：跨语料抑郁检测不仅是 representation transfer，也包含 target measurement validity。PHQ、HAMD 这些标签不能只因为名字相近就被当成同一个预测目标。我们的贡献是给出系统的 empirical evidence：表示层有 corpus signatures，测量层有 corpus-conditioned response behavior，而预测层显示普通 alignment 和强 backbone 都不能单独解决这个问题。对应的解决方案是 measurement-aware framework：强 encoder 负责表征，shared symptom layer 负责可共享症状证据，measurement head 的共享/分离结构要被实证检验。现在的负结果也很重要：target-only direct calibration 是强基线，corpus-specific ordinal heads 还没有独立 overall 优势。后续重点应是论文精修、图表压缩、引文核验和 supplement 整理。
 
 ## 备用页 A：公式页
 

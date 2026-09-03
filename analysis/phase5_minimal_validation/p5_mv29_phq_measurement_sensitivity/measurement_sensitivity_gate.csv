@@ -1,0 +1,7 @@
+gate,status,metric,value,criterion
+anchor_grid_sensitivity,supports_bounded_anchor_shift_interpretation,default_anchor_set_exact_rate,0.3333333333333333,"descriptive, exact anchor set need not be invariant across all heuristic tolerances"
+anchor_grid_sensitivity,supports_bounded_anchor_shift_interpretation,default_anchor_retained_rate,0.6666666666666666,default anchors should usually remain anchors across tolerance grid
+threshold_shift_sensitivity,supports_bounded_anchor_shift_interpretation,c02_c06_threshold_shift_retained_rate,1.0,C02/C06 should remain threshold-free under the tolerance grid
+partial_invariance_screen,supports_bounded_anchor_shift_interpretation,min4_anchor_pass_rate,0.6666666666666666,at least four anchors should remain available in most grid settings
+item_level_reading,supports_bounded_anchor_shift_interpretation,stable_anchor_item_count,4.0,stable anchors use grid frequency plus MV14 bootstrap support
+item_level_reading,supports_bounded_anchor_shift_interpretation,stable_threshold_shift_item_count,2.0,stable threshold-shift signals use grid frequency plus MV14 bootstrap DIF frequency

@@ -1,0 +1,23 @@
+{
+  "run_id": "P5_MV30_representation_control_sensitivity",
+  "generated_at": "2026-09-02T17:42:41+00:00",
+  "git_commit": "eeb3b24",
+  "status": "complete",
+  "probe_count": 8,
+  "probe_models": [
+    "linear_logistic",
+    "nonlinear_random_forest"
+  ],
+  "control_strategies": [
+    "raw",
+    "length_only",
+    "severity_only",
+    "length_severity",
+    "length_severity_shuffled"
+  ],
+  "seed_count": 10,
+  "primary_edaic_cmdc_rows": 6,
+  "primary_min_aligned_length_severity_ba": 0.486,
+  "primary_min_shuffled_minus_aligned_ba": 0.013,
+  "aggregate_outputs_only": true
+}

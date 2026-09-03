@@ -141,9 +141,10 @@ Main next task:
   fair shared-layer calibrated ablation gate is
   `not_passed_uniform_measurement_pathway_superiority`: the large gain over
   frozen corpus-specific-head cannot be uniquely attributed to the
-  measurement-aware target pathway. Treat target calibration/shared-layer
-  adaptation as the robust finding and the corpus-specific ordinal pathway as
-  competitive and direction-dependent. MV24 now also includes targeted
+  measurement-aware target-side ordinal pathway. MV28 supersedes the earlier attribution
+  wording: treat target-label calibration/adaptation regime as the robust
+  factor, not source-plus-target shared-layer adaptation or corpus-specific
+  ordinal parameterization as an independent performance source. MV24 now also includes targeted
   item-level analysis: shared ordinal and corpus-specific ordinal heads are near
   tied on all shared PHQ items and on the measurement-gate `C02/C06`
   threshold-shift item set (`0.004` and `0.002` C02/C06 deltas with intervals
@@ -161,6 +162,34 @@ Main next task:
   Treat MV24 as the current main method table
   for the PHQ shared-item manuscript story, not as a zero-target-label win over
   every baseline.
+- MV28 target-label budget and uncertainty audits have executed at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv28_target_label_budget_uncertainty/`
+  and
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv28_mv24_default_budget_uncertainty/`.
+  Both are aggregate-only and pass hygiene. The primary k=4/8/12/16/24 sweep
+  uses 30 subject-level repeated target calibration/evaluation splits and 200
+  participant-bootstrap draws per split; target-only direct MLP is the lowest
+  Macro Item MAE row in all 10 direction-budget cells, source-plus-target
+  calibrated rows beat it in 0/50 Macro Item MAE cells, and measurement-aware
+  beats matched alternatives in 3/50 Macro Item MAE cells. The MV24 default
+  extension gives the same claim boundary at k=66 for CMDC-to-E-DAIC and k=24
+  for E-DAIC-to-CMDC: target-only direct MLP is lowest Macro Item MAE
+  (`0.840` and `0.645`), while Measurement-aware is `0.873` and `0.674`.
+  Source-plus-target rows often improve absolute calibration-in-the-large, so
+  report reconstruction and calibration separately rather than as an
+  architecture-superiority claim.
+- MV29 PHQ measurement-sensitivity audit has executed at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv29_phq_measurement_sensitivity/`.
+  It supports bounded anchor/threshold interpretation: C01/C04/C05/C07 are
+  stable anchors with strict-threshold caveats, C02/C06 are stable
+  threshold-shift signals across the tolerance grid, and all outputs are
+  aggregate-only with hygiene passed.
+- MV30 representation-control sensitivity has executed at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv30_representation_control_sensitivity/`.
+  It shows E-DAIC/CMDC linear identity is largely explained by aligned
+  length/acquisition controls, not severity-only controls, but nonlinear Qwen3
+  text probing still recovers high controlled identity. Use this as a
+  control- and probe-dependent representation-gate result.
 - MV25 provenance and controlled identity diagnostics have executed at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv25_provenance_controlled_identity/`.
   DAIC-WOZ/E-DAIC is now explicitly demoted to a same-lineage PHQ-8 sanity
@@ -357,8 +386,9 @@ Main next task:
   ordinal head, and generic target MLP head baselines under the same target
   calibration split and shared-layer adaptation exposure. The fair gate is
   `not_passed_uniform_measurement_pathway_superiority`; manuscript wording now
-  foregrounds target calibration/shared-layer adaptation and keeps the ordinal
-  measurement pathway as competitive and direction-dependent. Session memory:
+  treats the original gain as a calibration/adaptation-regime effect and keeps
+  the ordinal measurement pathway as a tested but not independently supported
+  mechanism. Session memory:
   `/root/autodl-tmp/memory/sessions/session_102_mv24_fair_ablation_gate.md`.
 
 - A 2026-09-02 MV24 targeted-item and fixed-latent DIF-simulation pass is
@@ -375,6 +405,20 @@ Main next task:
   than an architecture-SOTA paper, and leave MV27's four-domain binary negative
   result out of the main paper. Session memory:
   `/root/autodl-tmp/memory/sessions/session_105_acm_framework_gap_planning.md`.
+
+- A 2026-09-03 MV28/MV29/MV30 reviewer-response execution pass is complete
+  locally and not yet synced to Feishu. MV28 adds target-only direct and
+  ordinal baselines, target-label budget sweeps, MV24 default-budget repeated
+  splits, and participant-bootstrap paired deltas. The new RQ3 wording is:
+  target-only direct calibration is the strongest Macro Item MAE comparator,
+  source-plus-target calibrated rows can improve calibration-in-the-large, and
+  corpus-specific ordinal heads do not show independent overall gains over a
+  shared ordinal head or target-only/direct calibrated alternatives. MV29
+  stabilizes C01/C04/C05/C07 anchors and C02/C06 threshold-shift readings
+  under heuristic tolerance sensitivity. MV30 makes RQ1 representation identity
+  control- and probe-dependent, with nonlinear Qwen3 residual identity retained.
+  Session memory:
+  `/root/autodl-tmp/memory/sessions/session_106_mv28_mv29_mv30_reviewer_response.md`.
 
 - MV27 four-domain binary benchmark has been completed locally but not
   committed. The user flagged two fairness problems in the first version, and
