@@ -1,0 +1,3 @@
+dataset,diagnostic,status,detail,count_1_name,count_1_value,count_2_name,count_2_value
+E-DAIC,speaker_resolved_controls,blocked_no_speaker_role,"The manifest speaker field is empty and transcript CSV column sets are Start_Time/End_Time/Text/Confidence, so participant-only and interviewer-only transcript controls are not identifiable.",manifest_speaker_non_null_rows,0,transcript_speaker_column_sets,0
+E-DAIC,qwen3_prompt_proxy_controls,completed_proxy_not_speaker_resolved,"Qwen3 embeddings were regenerated for full transcript, position slices, train repeated-turn removal, and train repeated-turn-only proxy variants.",train_repeated_turn_types,52,variant_rows,1314

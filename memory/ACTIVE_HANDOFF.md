@@ -1,6 +1,6 @@
 # Active Handoff
 
-Last updated: 2026-09-03 UTC
+Last updated: 2026-09-04 UTC
 
 This file is the short working-memory entrypoint for the main-agent thread.
 It does not replace `MEMORY.md` or session memories. Read order for future
@@ -24,8 +24,8 @@ The current Codex task has taken over as main-agent orchestration from legacy
 thread `019fcd77-cf81-7c11-a53e-f37e776d9e1d`. Its session memory is
 `/root/autodl-tmp/memory/sessions/session_69_main_takeover_manuscript_orchestration.md`.
 
-The paper direction is now a target-validity audit plus a formal
-measurement-aware PHQ shared-item instantiation. The old full M0/M1/M2/M3
+The paper direction is now a target-comparability / measurement-contract audit
+plus a formal measurement-aware PHQ shared-item instantiation. The old full M0/M1/M2/M3
 cross-scale construction remains blocked by the Phase 5 full-method gate, but
 the user-approved MV24 contract is now the current formal method route for the
 E-DAIC<->CMDC PHQ shared-item setting.
@@ -77,16 +77,17 @@ Blocked claims:
 
 Main next task:
 
-- Continue manuscript finalization after the target-validity audit rewrite:
-  C02/C06 are recurrent threshold-shift candidates with finite-sample
-  uncertainty, not robust standalone DIF; MV17a makes BGE-M3 the primary
+- Continue manuscript finalization after the target-comparability audit
+  rewrite: C02/C06 are hypothesis-generating recurrent threshold-shift
+  candidates with finite-sample uncertainty, not robust standalone DIF; MV17a
+  makes BGE-M3 the primary
   feature-contract consequence layer with multilingual-E5 as encoder
   sensitivity; MV20 is a bounded negative CMDC-only criterion-overlap stress
   test; MV21 supplies the PHQ shared-item descriptive analysis, CMDC/PDCH HAMD
   exploratory same-scale analysis, and DAIC-WOZ/E-DAIC same-lineage PHQ-8
   control.
 - Primary-source bibliography verification is complete in the current ledger:
-  53/53 references have manual primary-source spot checks and zero
+  55/55 references have manual primary-source spot checks and zero
   pending source-verification rows. Remaining M002 work is current-prose
   citation coverage confirmation, target-venue citation style, and a final
   pre-submission metadata refresh.
@@ -101,8 +102,9 @@ Main next task:
   invariance model.
 - Do not rerun MV16 unless the multilingual MV17a results are explicitly
   reviewed and a new need is identified.
-- Continue manuscript editing only within the target-validity audit frame.
-- A target-validity audit framework is now integrated into the RQ-reframed
+- Continue manuscript editing only within the target-comparability /
+  measurement-contract audit frame.
+- A target-comparability audit framework is now integrated into the RQ-reframed
   draft as the main paper identity. The measurement-aware ordinal architecture
   is a constructive instantiation: strong text/audio/video/multimodal
   backbones feed a shared depression representation, a latent symptom layer,
@@ -224,10 +226,10 @@ Main next task:
   It is now updated to cover MV22, MV23, and MV24; WavLM Large, HuBERT Large,
   VideoMAE, and fully end-to-end multimodal fine-tuning remain future scope
   under a separate compute contract.
-- The latest manuscript positioning is target-validity-audit-first: title the
-  paper as `Validate the Target Before Aligning Representations: A
-  Target-Validity Audit of Cross-Corpus Depression Detection`, keep Results
-  around representation, measurement, and prediction gates, and present
+- The latest manuscript positioning is target-comparability-audit-first: title
+  the paper as `Audit Target Comparability Before Aligning Representations: A
+  Cross-Corpus Measurement Audit of Depression Detection`, keep Results around
+  representation, measurement, and prediction gates, and present
   bounded/negative prediction outcomes as evidence about target calibration and
   attribution rather than as method failure.
 - The older reframed-RQ figure package remains available as historical design
@@ -255,8 +257,9 @@ Main next task:
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_reframed_rq_draft.md`
   and regenerated to
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/manuscript_reframed_rq_draft.docx`.
-  The opening now foregrounds the target-validity gap in the foundation-model
-  era and condenses the contribution list to three bullets.
+  Session 108 supersedes the broad target-validity wording: the opening now
+  foregrounds cross-corpus target comparability in the foundation-model era and
+  condenses the contribution list to three bullets.
 - `pandoc-citeproc` is now installed locally (`0.17.0.1`). Regenerate the Word
   draft with rendered author-year citations using:
   `pandoc --filter pandoc-citeproc --bibliography=analysis/diagnostic_measurement_audit_paper/references.bib analysis/diagnostic_measurement_audit_paper/manuscript_reframed_rq_draft.md -o analysis/diagnostic_measurement_audit_paper/manuscript_reframed_rq_draft.docx`.
@@ -321,7 +324,7 @@ Main next task:
   `docs +update`.
 
 - A 2026-08-30 evidence-rank alignment pass is complete. This wording is partly
-  superseded by the 2026-09-03 session-107 target-validity audit revision. The current manuscript
+  superseded by the 2026-09-04 session-108 target-comparability audit revision. The current manuscript
   no longer presents RQ1 as blanket "strong representation heterogeneity."
   It now says raw corpus identity is strong but residual identity is
   contrast-dependent after length and severity controls; E-DAIC/CMDC drops near
@@ -436,6 +439,19 @@ Main next task:
   language. The Word exports have been regenerated. Session memory:
   `/root/autodl-tmp/memory/sessions/session_107_target_validity_audit_revision.md`.
 
+- A 2026-09-04 target-comparability and leakage-sensitivity revision is
+  complete locally and not yet synced to Feishu. It narrows the title and
+  abstract from broad target-validity language to cross-corpus
+  score-comparability / measurement-contract auditing, states that the paper
+  does not validate PHQ/HAMD/SDS construct, criterion, or clinical validity,
+  rewrites Section 3.2 so the $P_D(X,Y|\theta)$ factorization is a
+  local-independence approximation rather than a data-generating identity,
+  downgrades C02/C06 to hypothesis-generating localized threshold-shift
+  candidates, adds GRM/MGRM sample-size citations, and integrates MV31 Qwen3
+  prompt-proxy sensitivity plus MV20 criterion-overlap stress as bounded
+  contamination checks. Session memory:
+  `/root/autodl-tmp/memory/sessions/session_108_target_comparability_and_leakage_revision.md`.
+
 - MV27 four-domain binary benchmark has been completed locally but not
   committed. The user flagged two fairness problems in the first version, and
   the current script fixes them: `GraphTargetAwareNet` now uses
@@ -476,6 +492,7 @@ Useful inputs:
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv21_measurement_discrepancy_gradient/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv24_measurement_aware_ordinal_model/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv24_measurement_head_dif_simulation/`
+- `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv31_qwen_prompt_proxy_sensitivity/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mirt_parameterization_correctness_audit/`
 - `/root/autodl-tmp/analysis/phase5_minimal_validation/experiment_consolidation/`
 - `/root/autodl-tmp/memory/sessions/session_56_diagnostic_manuscript_draft.md`
@@ -511,6 +528,7 @@ Useful inputs:
 - `/root/autodl-tmp/memory/sessions/session_101_bibliography_primary_verification.md`
 - `/root/autodl-tmp/memory/sessions/session_102_mv24_fair_ablation_gate.md`
 - `/root/autodl-tmp/memory/sessions/session_103_mv24_targeted_item_and_dif_simulation.md`
+- `/root/autodl-tmp/memory/sessions/session_108_target_comparability_and_leakage_revision.md`
 
 Secondary optional task:
 
@@ -527,9 +545,10 @@ Secondary optional task:
   and `1.000` PDCH. Bootstrap 95 percent CIs are `0.922-1.000` overall,
   `0.885-1.000` CMDC, `0.595-1.000` E-DAIC, and `1.000-1.000` PDCH.
 - MV10/MV11/MV19/MV21 are the primary item-level PHQ measurement-shift evidence:
-  anchors `C01/C04/C05/C07`, threshold DIF concentrated on `C02/C06`, sparse
-  loading DIF, uncertain global model selection, observed-N finite-sample
-  downgrade, and descriptive item-level/severity-conditioned reinforcement.
+  anchors `C01/C04/C05/C07`, hypothesis-generating threshold-shift candidates
+  concentrated on `C02/C06`, sparse loading DIF, uncertain global model
+  selection, observed-N finite-sample downgrade, and descriptive
+  item-level/severity-conditioned reinforcement.
 - MV13/MV14 `mirt` corrected rerun is complete. Threshold-constrained models
   now pass anchor items plus `free_means/free_var` through `invariance`, so
   E-DAIC is reference, CMDC is focal, anchor/threshold linking is explicit, and
@@ -574,8 +593,9 @@ Secondary optional task:
   both-flag false rate is `0.208`; H0 top-two false-localization is `0.034`;
   H1 C02/C06 both-flag recovery is `0.662`; H1 top-two recovery is `0.222`;
   H1 anchor subset recovery is `0.178`. Treat this as a finite-sample
-  downgrade: C02/C06 are repeated localized dataset-group threshold-shift
-  signals, not robust standalone DIF at the observed N.
+  downgrade: C02/C06 are hypothesis-generating repeated localized
+  dataset-group threshold-shift candidates, not robust standalone DIF at the
+  observed N.
 - MV20 criterion-overlap stress is complete. It used CMDC because Q1-Q12
   question-position units are available; PDCH was excluded because available
   units are coarse consultation segments; E-DAIC was excluded because true
@@ -586,6 +606,16 @@ Secondary optional task:
   `no_excess_criterion_overlap_evidence`. Multilingual-E5 sensitivity has the
   same no-excess gate. Treat MV20 as a bounded negative stress test and stop
   overlap-threshold tuning or contamination-aware model work.
+- MV31 Qwen3 prompt-proxy sensitivity is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv31_qwen_prompt_proxy_sensitivity/`.
+  It verifies that true E-DAIC participant-only/interviewer-only controls
+  remain blocked by missing speaker roles, then re-embeds six transcript
+  variants with Qwen3-Embedding-0.6B. Stable reading:
+  `no_clear_qwen3_excess_loss_from_repeated_turn_removal`; repeated-turn-only
+  text does not match the full transcript for PHQ-8 MAE or binary Macro-F1,
+  and repeated-turn removal does not increase PHQ-8 MAE. Treat it as a bounded
+  prompt/protocol proxy sensitivity, not proof that interviewer leakage is
+  absent.
 - MV21 measurement-discrepancy contrast audit is complete. It uses only
   aggregate label payloads: E-DAIC/CMDC PHQ shared items (`219`/`77`
   subjects), CMDC/PDCH HAMD (`25`/`99` subjects), and DAIC-WOZ/E-DAIC
@@ -606,7 +636,7 @@ Secondary optional task:
   or local workflow boundaries. Tracked aggregate outputs should not be
   physically deleted by default.
 - Bibliography verification is now tracked in a separate ledger:
-  48/48 references have manual primary-source spot checks, including zero
+  55/55 references have manual primary-source spot checks, including zero
   pending source-verification rows, and the bibliography verification hygiene
   audit passes. M002 remains blocking only for current-prose citation coverage
   confirmation, target-venue citation style, and final pre-submission metadata
@@ -630,11 +660,11 @@ Secondary optional task:
   MV07/MV12/MV15 reruns, and lightweight multimodal fusion completion are
   complete and aggregate-only. Do not claim full WavLM Large/HuBERT
   Large/VideoMAE/end-to-end multimodal validation from these slices.
-- This older method-forward draft note is superseded by session 107: the title
-  now foregrounds target-validity audit, RQ3 uses repeated-split target-only
-  and matched calibrated baselines as the main result, and the measurement-aware
-  ordinal architecture is a constructive instantiation rather than a
-  standalone method-superiority claim.
+- This older method-forward draft note is superseded by session 108: the title
+  now foregrounds target comparability, RQ3 uses repeated-split target-only and
+  matched calibrated baselines as the main result, and the measurement-aware
+  ordinal architecture is a constructive instantiation rather than a standalone
+  method-superiority claim.
 - Reframed-RQ figures have been generated from aggregate artifacts only. The
   package at
   `/root/autodl-tmp/analysis/diagnostic_measurement_audit_paper/figures_reframed_rq/`
@@ -752,6 +782,7 @@ python scripts/phase5_run_mv17a_multilingual_feature_contract.py
 python scripts/phase5_run_mv18_cmdc_pdch_hamd_same_scale_control.py
 python scripts/phase5_run_mv19_phq_finite_sample_simulation.py
 python scripts/phase5_run_mv20_criterion_overlap_stress.py
+python scripts/phase5_run_mv31_qwen_prompt_proxy_sensitivity.py --device auto
 python scripts/phase5_consolidate_experiment_inventory.py
 python scripts/build_diagnostic_paper_manuscript_draft.py
 python scripts/build_paper_reframed_rq_figures.py

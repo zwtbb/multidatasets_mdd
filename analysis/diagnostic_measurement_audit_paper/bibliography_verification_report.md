@@ -1,12 +1,12 @@
 # Bibliography Primary-Source Verification Ledger
 
-Generated: `2026-09-03T03:30:46+00:00`
+Generated: `2026-09-03T17:15:48+00:00`
 
 ## Decision
 
 - This is a manuscript-editing verification ledger, not a new experiment.
-- References in registry: `53`.
-- Manually spot-checked: `53` (`53` primary, `0` partial).
+- References in registry: `55`.
+- Manually spot-checked: `55` (`55` primary, `0` partial).
 - Pending submission-grade primary-source checks: `0`.
 - Primary-source checks are complete in this ledger; M002 remains open for current-prose citation coverage confirmation, target-venue style, and final pre-submission refreshes.
 
@@ -39,7 +39,9 @@ Generated: `2026-09-03T03:30:46+00:00`
 | gratch2014distress | spot_checked_primary_source | title;authors;year;venue;pages;publisher;corpus_use_claim | supported_for_daic_clinical_interview_multimodal_context | confirm venue style and capitalization against final bibliography format |
 | guo2017calibration | spot_checked_primary_source | title;authors;year;venue;volume;pages;calibration_use_claim | supported_for_observed_scale_and_probability_calibration_context | confirm venue style and capitalization against final bibliography format |
 | hsu2021hubert | spot_checked_primary_source | title;authors;submission_date;arxiv_id;speech_foundation_use_claim | supported_for_hubert_speech_foundation_sensitivity_context | confirm venue style and capitalization against final bibliography format |
+| ikeda2026grmsamplesize | spot_checked_primary_source | title;author;year;journal;volume;issue;doi;grm_sample_size_range_and_recommendation | supported_for_grm_finite_sample_caveat_and_item_parameter_recovery_context | confirm final ACM style for PLOS article-number formatting |
 | ishikawa2026multiprobe | spot_checked_primary_source | title;authors;submission_date;arxiv_id;doi;benchmark_audit_use_claim | supported_for_nearby_clinical_interview_benchmark_audit_positioning | check for later arXiv version or peer-reviewed venue before submission |
+| jiang2016mgrmsamplesize | spot_checked_primary_source | title;authors;year;journal;volume;doi;mgrm_item_parameter_sample_size_context | supported_for_multidimensional_grm_item_parameter_finite_sample_caveat | confirm Frontiers article-number formatting against target venue style |
 | li2025mirror | spot_checked_primary_source | title;authors;submission_date;arxiv_id;doi;criterion_contamination_use_claim | supported_for_mirror_model_criterion_contamination_positioning | check for later arXiv version or peer-reviewed venue before submission |
 | lipton2018labelshift | spot_checked_primary_source | title;authors;year;venue;volume;pages;label_shift_use_claim | supported_for_label_shift_framing | confirm venue style and capitalization against final bibliography format |
 | long2015dan | spot_checked_primary_source | title;authors;year;venue;volume;pages;deep_adaptation_mmd_use_claim | supported_for_mmd_dan_distribution_alignment_baseline_positioning | confirm venue style and capitalization against final bibliography format |

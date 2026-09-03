@@ -1,0 +1,32 @@
+{
+  "artifact_hygiene_passed": true,
+  "bootstrap_resamples": 200,
+  "dev_subjects": 56,
+  "encoder": {
+    "chunk_batch_size": 4,
+    "max_length": 2048,
+    "model_name": "Qwen/Qwen3-Embedding-0.6B",
+    "pooling": "last_token",
+    "slug": "qwen3_embedding_0_6b"
+  },
+  "generated_at": "2026-09-03T17:10:22+00:00",
+  "local_only_outputs": [
+    "local_qwen_variant_subject_features.csv",
+    "mv31_qwen_prompt_proxy_predictions.csv"
+  ],
+  "manifest_ref": "datasets/manifests/edaic_subjects.csv",
+  "prompt_proxy_reading": "no_clear_qwen3_excess_loss_from_repeated_turn_removal",
+  "run_id": "P5_MV31_qwen_prompt_proxy_sensitivity",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "speaker_resolved_controls": "blocked_no_speaker_role_in_manifest_or_transcript_csv",
+  "status": "complete_qwen3_prompt_proxy_sensitivity",
+  "train_repeated_turn_types": 52,
+  "train_subjects": 163,
+  "variant_rows": 1314
+}

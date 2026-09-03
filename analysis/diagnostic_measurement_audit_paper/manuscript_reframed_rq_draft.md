@@ -1,15 +1,17 @@
-# Validate the Target Before Aligning Representations: A Target-Validity Audit of Cross-Corpus Depression Detection
+# Audit Target Comparability Before Aligning Representations: A Cross-Corpus Measurement Audit of Depression Detection
 
 ## Abstract
 
 Cross-corpus depression detection is often treated as a representation-transfer
 problem: if linguistic, acoustic, visual, or multimodal features become
 stronger, depression predictions should transfer across datasets. We argue
-that this view leaves the clinical target unchecked. Depression scores are
-structured measurements, and nominally aligned PHQ or HAMD labels may not
-preserve the same response mechanism across corpora. We therefore study
-cross-corpus depression detection as a benchmark-validity problem: before
-aligning representations, validate the target.
+that this view leaves the comparability of the observed target unchecked.
+Depression scores are structured measurements, and nominally aligned PHQ or
+HAMD labels may not preserve the same response mechanism across corpora. We
+therefore study cross-corpus depression detection as a target-comparability and
+measurement-contract audit: before aligning representations, audit whether the
+target scores can support comparable interpretation. We do not test the
+construct, criterion, or clinical validity of PHQ, HAMD, or SDS themselves.
 
 Across our corpus suite, the audit is organized around three target-contract
 contrasts. The same-lineage DAIC-WOZ/E-DAIC PHQ-8 control is nearly identical;
@@ -18,8 +20,9 @@ common structure but imperfect item behavior; and the CMDC/PDCH same-HAMD
 contrast provides exploratory support that measurement differences are not
 only a PHQ-form issue. We then instantiate a measurement-aware ordinal model on
 frozen multimodal foundation representations and audit it against calibrated
-baselines that match the target-label budget, trainable shared layers, and
-optimization exposure. This fair ablation changes the interpretation of the
+baselines that match the target-label budget and trainable shared-layer access
+under fixed, comparable optimization schedules. This fair ablation changes the
+interpretation of the
 original large gain over a frozen corpus-specific-head comparator: the robust
 effect is target-label calibration with shared-layer adaptation, not an
 independently verified corpus-specific measurement pathway. Under repeated
@@ -104,12 +107,15 @@ where symptom evidence is converted into an observed label $Y$. A model can
 learn a useful behavioral representation and still fail to transfer clinically
 if the target score means something slightly different across corpora.
 
-We therefore study cross-corpus depression detection as a benchmark-validity
-problem for mental health AI. The claim is not that existing depression
-benchmarks are invalid, nor that all corpora measure different constructs. The
-claim is more useful: cross-corpus depression detection involves both
-representation discrepancies and potential measurement heterogeneity, and a
-paper that aligns only representations leaves the target-validity assumption
+We therefore study cross-corpus depression detection as a target-comparability
+problem for mental health AI. Recent benchmark-validity work already argues
+that medical AI benchmarks should be examined through construct-validity
+questions [@alaa2025medicalconstruct]. Our claim is narrower: we do not test
+the clinical construct, criterion, or clinical validity of the depression
+instruments themselves. We audit whether observed depression scores preserve
+comparable interpretation across corpora, using item structure, response
+thresholds, target-contract comparisons, and prediction consequences. A paper
+that aligns only representations leaves this target-comparability assumption
 unchecked. This distinction matters especially in the foundation-model era.
 Large backbones can improve the modeling of speech, language, and visual
 behavior, but they do not decide whether PHQ or HAMD scores from different
@@ -179,8 +185,8 @@ undifferentiated transfer score.
 
 The contributions of this paper are:
 
-1. We formulate cross-corpus depression detection as a benchmark-validity
-   problem that separates representation heterogeneity, target measurement
+1. We formulate cross-corpus depression detection as a target-comparability
+   audit that separates representation heterogeneity, target measurement
    heterogeneity, and downstream prediction consequences.
 2. We provide a structured audit centered on three pre-specified
    target-contract contrasts, with additional corpus families serving as
@@ -193,8 +199,7 @@ The contributions of this paper are:
    parameterization is not independently superior in the real E-DAIC/CMDC
    transfer setting.
 
-<!-- Replace this image with the final hand-drawn overview if available. -->
-![Figure 1. Measurement-aware benchmark-validity framework for cross-corpus depression detection. The visual center is the target contract: scale, shared item content, response categories, rater or self-report source, language, and protocol. The proposed model routes frozen multimodal representations into shared symptom evidence and then through audited ordinal measurement heads whose sharing structure is tested empirically.](analysis/diagnostic_measurement_audit_paper/figures_core7/fig1_framework_overview.png){width=100%}
+![Figure 1. Measurement-aware target-comparability audit for cross-corpus depression detection. The visual center is the target contract: scale, shared item content, response categories, rater or self-report source, language, and protocol. The proposed model routes frozen multimodal representations into shared symptom evidence and then through audited ordinal measurement heads whose sharing structure is tested empirically.](analysis/diagnostic_measurement_audit_paper/figures_core7/fig1_framework_overview.png){width=100%}
 
 ## 2 Related Work
 
@@ -271,9 +276,9 @@ Zezulka frame predictive benchmark scores as claims that require explicit
 assumptions about the task, evaluation function, and data distribution
 [@freiesleben2025benchmarking]. We therefore do not claim that importing
 construct validity into AI benchmarking is new. Our contribution is narrower
-and more empirical: we operationalize target-contract validity for
-cross-corpus depression detection, where clinical labels are scale-based
-measurements rather than generic class names.
+and more empirical: we operationalize cross-corpus score-comparability and
+target-contract auditing for depression detection, where clinical labels are
+scale-based measurements rather than generic class names.
 
 Benchmark-validity work in depression detection has shown that high scores can
 come from unintended cues. Burdisso et al. analyze DAIC-WOZ therapist prompts
@@ -345,7 +350,7 @@ general. We ask whether the depression targets used to supervise those
 representations are themselves comparable across corpora, and how that audit
 changes calibrated transfer claims.
 
-## 3 Target-Validity Audit Framework
+## 3 Target-Comparability Audit Framework
 
 The central object in this paper is not a pooled depression dataset, but a
 corpus-specific target contract. A target contract specifies what clinical
@@ -393,17 +398,26 @@ treated as an ordinary interchangeable label.
 
 ### 3.2 Measurement-Aware Transfer
 
-We separate the input and target mechanisms:
+We use a working abstraction that distinguishes two mechanisms rather than
+asserting that they are conditionally independent in the data. The
+representation component addresses $P_D(X \mid \theta)$: how latent symptom
+state is expressed in language, speech, facial behavior, gait, or other
+observable signals. The measurement component addresses $P_D(Y \mid \theta)$:
+how symptom evidence is converted into item responses, total scores, or
+severity labels under a corpus-specific assessment contract. In a strictly
+local-independent model this decomposition could be written as
 
 $$
 P_D(X,Y \mid \theta)=P_D(X \mid \theta)P_D(Y \mid \theta).
 $$
 
-The representation component addresses $P_D(X \mid \theta)$: how latent
-symptom state is expressed in language, speech, facial behavior, gait, or other
-observable signals. The measurement component addresses $P_D(Y \mid \theta)$:
-how symptom evidence is converted into item responses, total scores, or
-severity labels under a corpus-specific assessment contract.
+Clinical-interview corpora need not satisfy this exactly. Interview questions
+may be selected or phrased around symptoms, participant language can repeat
+questionnaire criteria, and interviewer protocol can share residual structure
+with the observed score [@burdisso2024daicprompts; @zhang2025interviewer;
+@li2025mirror]. We therefore use the decomposition as an audit map: it tells
+us to check representation, protocol, and measurement mechanisms separately,
+not to assume a verified data-generating factorization.
 
 This leads to a measurement-aware prediction path:
 
@@ -433,9 +447,9 @@ $$
 $$
 
 The framework therefore does not compete with foundation or multimodal fusion
-work as a generic performance architecture. It adds the target-validity layer
-that such systems need before cross-corpus clinical labels can be interpreted
-as comparable.
+work as a generic performance architecture. It adds the target-comparability
+layer that such systems need before cross-corpus clinical labels can be
+interpreted as comparable.
 
 For the executable method in this paper, we test one concrete instantiation
 rather than leaving the layer as a family of possible heads. The frozen
@@ -503,7 +517,7 @@ measurement invariance.
 
 These decisions are part of the framework. They specify which claims the data
 support and which model component should carry the corpus-specific part of the
-clinical target.
+observed target contract.
 
 ### 3.4 Validity Gates
 
@@ -525,7 +539,7 @@ shared, head-specific, or exploratory.
 explicitly. Direct prediction, feature-alignment baselines, latent-target
 prediction, localized calibration, and measurement-aware heads are evaluated
 not only by raw error, but also by output identity, feature identity,
-observed-scale reconstruction, and transfer validity.
+observed-scale reconstruction, and target-contract transfer.
 
 These gates define the appropriate strength of a cross-corpus claim. A bounded
 prediction result is diagnostically informative when it reveals where
@@ -573,8 +587,8 @@ participant leakage.
 
 The experiments instantiate the three gates from Section 3. They are not a
 leaderboard sequence. Each experiment tests a different assumption that a
-cross-corpus depression model needs before its predictions can be read as
-clinically meaningful transfer.
+cross-corpus depression model needs before its predictions can support an
+observed-score transfer claim.
 
 ### 5.1 RQ1: Representation Heterogeneity Audit
 
@@ -612,6 +626,23 @@ sensitivity that preserves covariate marginals while breaking subject-level
 alignment. We also repeat the identity probe with a nonlinear random-forest
 classifier after the same fold-internal preprocessing to test whether
 near-chance controlled identity is specific to linear-probe capacity.
+
+We treat interviewer leakage and criterion contamination as explicit boundary
+checks. The available E-DAIC transcript contract does not expose speaker roles:
+the manifest speaker field is empty and the transcript CSV files contain time,
+text, and confidence fields but no interviewer or participant label. We
+therefore do not claim a participant-only or interviewer-only E-DAIC control.
+Instead, we run two bounded proxy checks that target the most plausible
+shortcut surface available from the current data. First, the text
+protocol-control audit compares full transcripts with front, middle, and back
+transcript slices and repeated-turn removed or repeated-turn only variants.
+Second, a Qwen3 prompt-proxy sensitivity re-embeds the same E-DAIC transcript
+variants and fits fixed Ridge and Logistic heads on the official train/dev
+split. Separately, the CMDC criterion-overlap stress deletes question-position
+segments with the highest semantic overlap to PHQ item text and compares that
+loss with matched random deletion. These analyses cannot prove absence of
+leakage, but they test whether the most accessible prompt-like or PHQ-overlap
+content is the dominant shortcut under the available data contract.
 
 ### 5.2 RQ2: Measurement-Discrepancy Design
 
@@ -655,19 +686,25 @@ anchors.
 We then fit a label-only multi-group graded-response confirmation over the same
 eight shared items. The model ladder is where we reserve the formal
 configural, metric, scalar/threshold, and partial-anchor terminology common in
-measurement-invariance reporting [@putnick2016measurement]. Item-level DIF is
-flagged only when freeing an item's loading or thresholds improves fit by both
-the likelihood-ratio criterion ($p<0.01$) and a BIC improvement greater than
-2.0.
-The implementation uses `mirt` multiple-group estimation and anchor constraints
+measurement-invariance reporting [@putnick2016measurement]. Because the
+primary shared-PHQ analysis has 219 E-DAIC and 77 CMDC item-labeled subjects
+over only eight four-category items, it sits far below sample-size ranges used
+in recent graded-response-model parameter-recovery simulations and below
+recommendations for precise item-parameter recovery
+[@ikeda2026grmsamplesize; @jiang2016mgrmsamplesize]. We therefore use the
+multi-group graded-response model as bounded confirmation of the
+target-comparability audit, not as definitive item-level DIF inference. An
+item is marked as a hypothesis-generating localization candidate only when
+freeing its loading or thresholds improves fit by both the likelihood-ratio
+criterion ($p<0.01$) and a BIC improvement greater than 2.0. The implementation
+uses `mirt` multiple-group estimation and anchor constraints
 [@chalmers2026mirtmultiplegroup].
-Because the observed E-DAIC/CMDC item-labeled sample sizes are modest and
-imbalanced, we also run a finite-sample simulation that preserves each
-corpus's observed sample size and severity composition. The simulation
-contrasts a scalar invariant world with an observed-like C02/C06 threshold-DIF
-world and reports false-localization, recovery, and anchor-recovery rates. This
-bounds the evidential weight of localized threshold shifts under the observed
-sample sizes.
+We also run a finite-sample simulation that preserves each corpus's observed
+sample size and severity composition. The simulation contrasts a scalar
+invariant world with an observed-like C02/C06 threshold-DIF world and reports
+false-localization, recovery, and anchor-recovery rates. This bounds the
+evidential weight of localized threshold shifts under the observed sample
+sizes.
 
 Finally, because the approximate invariance thresholds are heuristic screening
 rules rather than universal psychometric standards, we report a sensitivity
@@ -837,7 +874,8 @@ frozen `Corpus-specific head`, the gain may reflect target-supervised
 representation adaptation rather than corpus-specific measurement modeling. We
 therefore treat target-pathway claims as supported only where the
 measurement-aware model also improves over calibrated baselines with matched
-target labels, trainable shared layers, and optimization exposure. Seed-level
+target labels and trainable shared-layer access under fixed, comparable
+optimization schedules. Seed-level
 paired tests on the reconstruction-plus-calibration score are treated only as
 descriptive stress checks; the repeated-split and participant-bootstrap budget
 study is the primary uncertainty evidence for calibrated architecture claims.
@@ -854,7 +892,7 @@ generalization story.
 
 | Gate | Main evidence | Modeling implication |
 | --- | --- | --- |
-| Representation gate | Raw corpus-identity probes are strong screens, but residual identity is control- and probe-dependent. In E-DAIC/CMDC, length-associated directions account for most linear separability, while nonlinear Qwen text probing still recovers substantial residual identity. | Representation auditing is necessary, but raw corpus identity alone cannot decide target validity. |
+| Representation gate | Raw corpus-identity probes are strong screens, but residual identity is control- and probe-dependent. In E-DAIC/CMDC, length-associated directions account for most linear separability, while nonlinear Qwen text probing still recovers substantial residual identity. | Representation auditing is necessary, but raw corpus identity alone cannot decide target comparability. |
 | Measurement gate | DAIC-WOZ/E-DAIC shows near-identical same-lineage PHQ-8 behavior, E-DAIC/CMDC shows shared but imperfect PHQ item behavior, and CMDC/PDCH shows exploratory same-HAMD differences. | Shared symptom evidence can be useful, but observed labels require target contracts; whether the measurement head should be shared or corpus-specific must be tested rather than assumed. |
 | Prediction gate | Qwen3 and lightweight multimodal stress tests show that stronger features do not erase target-mapping needs; fair calibrated ablations and repeated target-budget splits show that the frozen-head gain is largely a calibration-regime effect, while target-only direct calibration is the strongest Macro Item MAE competitor. | Stronger encoders and feature-alignment baselines should be paired with explicit target contracts, target-only and source-plus-target calibrated baselines, and calibration-aware evaluation before assigning gains to measurement modeling. |
 
@@ -892,7 +930,8 @@ can still recover residual corpus information from some foundation feature
 views. This is exactly why representation auditing is useful but insufficient:
 length-associated directions account for most linear separability in this
 contrast, but substantial nonlinear corpus information remains, and the
-target-validity question cannot be settled by a single corpus-identity number.
+target-comparability question cannot be settled by a single corpus-identity
+number.
 
 ![Figure 3. Control-dependent corpus identity under the linear probe. Points report balanced accuracy before and after fold-internal length plus severity residualization. E-DAIC/CMDC drops near chance under the linear probe, while DAIC-lineage identity remains high; nonlinear sensitivity is reported separately.](analysis/diagnostic_measurement_audit_paper/figures_core7/fig3_controlled_identity_probe.png){width=100%}
 
@@ -909,9 +948,22 @@ after length and severity shortcuts are removed.
 The pattern also persists under stronger feature views. The Qwen3 text slice is
 a foundation-style backbone, WavLM-derived speech features retain lineage
 structure, and protocol diagnostics expose interview-position and
-question-position signatures. The modeling implication is direct:
-representation alignment is a necessary audit target, but it cannot by itself
-certify clinical target transfer.
+question-position signatures. The leakage sensitivity is intentionally
+bounded: E-DAIC speaker-resolved controls remain unavailable because neither
+the manifest nor transcript CSV files expose populated speaker roles. Under the
+Qwen3 prompt-proxy stress test, repeated-turn-only text does not match the full
+transcript for PHQ-8 severity (MAE 4.806 versus 4.801) or binary depression
+classification (Macro-F1 0.576 versus 0.665), and removing repeated turns does
+not increase PHQ-8 error (4.577 versus 4.801), although binary Macro-F1 drops
+modestly (0.614 versus 0.665). The CMDC criterion-overlap deletion stress is
+similarly bounded: deleting high PHQ-overlap question-position segments is not
+clearly worse than matched random deletion under the primary BGE-M3 view
+(excess MAE 0.150, 95 percent interval -0.320 to 0.671). These checks do not
+prove absence of criterion contamination, but they reduce the risk that the
+main audit is driven only by the simplest accessible prompt or PHQ-overlap
+shortcut. The modeling implication is direct: representation alignment is a
+necessary audit target, but it cannot by itself certify clinical target
+comparability.
 
 ### 6.2 Measurement Gate: A Graded Empirical Pattern Across Target Contracts
 
@@ -938,7 +990,7 @@ loading congruence is 0.998, and 7 of 8 items pass the approximate
 metric-loading screen. At the
 same time, scalar and threshold behavior is not fully interchangeable. C01,
 C04, C05, and C07 recur as candidate anchors, while C02 and C06 recur as
-localized threshold-shift items.
+hypothesis-generating localized threshold-shift candidates.
 
 The descriptive item-level analysis makes the clinical shape of this result
 visible. After conditioning on item-excluded total severity, the largest
@@ -950,17 +1002,16 @@ automatic score interchangeability.
 
 ![Figure 4. PHQ shared-item response patterns in E-DAIC and CMDC. Panel A compares item means over the eight shared PHQ symptoms. Panels B and C condition endorsement on item-excluded severity tertiles for C02 and C06, illustrating that shared item names can retain common symptom structure while still showing corpus-conditioned response behavior.](analysis/diagnostic_measurement_audit_paper/figures_core7/fig4_phq_shared_item_measurement_analysis.png){width=100%}
 
-The formal and simulation checks support the same interpretation. Corrected
-external `mirt` replication preserves the qualitative anchor and
-threshold-shift pattern. Under the observed E-DAIC/CMDC sample sizes and
-severity distributions, C02/C06 both-flag recovery is 0.662 under the planted
-shift world, while the H0 both-flag false rate is 0.208. We therefore treat
-C02/C06 as recurrent threshold-shift candidates with finite-sample
-uncertainty. For the
-model, this is enough to justify explicit target-measurement modeling,
-targeted calibration checks, and fair tests of whether measurement parameters
-should be shared or corpus-specific; it is not necessary to overclaim universal
-item-level DIF.
+The formal and simulation checks support the same bounded interpretation.
+Corrected external `mirt` replication preserves the qualitative localization
+pattern, but the sample-size caveat is substantial. Under the observed
+E-DAIC/CMDC sample sizes and severity distributions, C02/C06 both-flag recovery
+is 0.662 under the planted shift world, while the H0 both-flag false rate is
+0.208. We therefore treat C02/C06 as hypothesis-generating recurrent
+threshold-shift candidates with finite-sample uncertainty. For the model, this
+is enough to justify explicit target-measurement modeling, targeted calibration
+checks, and fair tests of whether measurement parameters should be shared or
+corpus-specific; it is not evidence for definitive item-level DIF.
 
 The sensitivity grid makes this claim boundary clearer. Across loading
 tolerances of 0.15--0.25, threshold tolerances of 0.25--0.45, and
@@ -969,10 +1020,10 @@ set is exactly recovered in only one third of grid rows and retained in two
 thirds. By contrast, C02 and C06 fail the threshold-support criterion across
 all grid settings. Combining this grid with bootstrap DIF stability yields four
 recurrent anchor candidates with strict-threshold caveats (C01, C04, C05, C07)
-and two recurrent threshold-shift candidates with finite-sample uncertainty
-(C02, C06). This strengthens the audit as a bounded target-contract result
-while preserving the finite-sample caution, especially for sparse response
-categories.
+and two hypothesis-generating recurrent threshold-shift candidates with
+finite-sample uncertainty (C02, C06). This strengthens the audit as a bounded
+target-contract result while preserving the finite-sample caution, especially
+for sparse response categories.
 
 **Same-HAMD exploratory control.** CMDC/PDCH has one bounded role: it checks
 whether the measurement concern is obviously reducible to the PHQ-8 versus
@@ -1104,7 +1155,7 @@ ordinal parameterization has not shown an independent overall advantage over a
 shared ordinal head or direct target-calibrated alternatives. MMD, localized
 few-shot calibration, close depression-specific baselines, and binary clinical
 endpoints are reported as supplementary stress views: they sharpen the same
-claim boundary without changing the main result that target validity,
+claim boundary without changing the main result that target comparability,
 calibration regime, and measurement-head sharing must be evaluated separately.
 
 ### 6.4 Supporting Clinical Grounding and Stress Views
@@ -1197,6 +1248,26 @@ where the target evaluation set is small. We therefore treat the repeated
 target-calibration splits and participant-bootstrap deltas as the relevant
 uncertainty layer for calibrated architecture claims.
 
+Seventh, the audit is about cross-corpus score interpretation and
+target-comparability, not about proving the construct, criterion, or clinical
+validity of PHQ, HAMD, or SDS. The instruments are treated as the available
+benchmark targets, and the question is whether those targets can be compared
+across corpus contracts.
+
+Eighth, the E-DAIC/CMDC shared-PHQ psychometric layer is intentionally
+evidence-bounded. The main item-level analysis uses 219 E-DAIC and 77 CMDC
+subjects over eight four-category items, so C02/C06 are
+hypothesis-generating localized threshold-shift candidates, not definitive DIF
+discoveries. The stronger conclusion is that exact observed-score
+interchangeability is unsupported under the current audit.
+
+Ninth, interviewer leakage and criterion contamination remain only partially
+controlled. E-DAIC participant-only and interviewer-only transcript controls
+are blocked by the available transcript contract. The repeated-turn Qwen3
+prompt-proxy and CMDC criterion-overlap deletion analyses are useful
+stress tests, but they do not prove that prompt or questionnaire-like content
+has no effect.
+
 ## 9 Conclusion
 
 Cross-corpus depression detection should not begin by assuming that all
@@ -1209,16 +1280,16 @@ DAIC-WOZ/E-DAIC provides the low-difference PHQ-8 control; E-DAIC/CMDC reveals
 cross-language PHQ
 shared-item differences; CMDC/PDCH adds exploratory same-HAMD support.
 
-The resulting lesson is direct: before aligning representations, validate the
-target. A target-validity audit framework gives future systems a practical way
-to do that, and the fair ordinal-head ablation shows both the promise and the
-claim boundary. The robust empirical lesson is that target-label calibration
-and adaptation regime matter; target-only direct calibration is a strong and
-often lower-error baseline; and corpus-specific ordinal heads have not yet
-shown an independent overall advantage over a shared ordinal head in the real
-E-DAIC/CMDC transfer setting. Strong encoders and multimodal foundation models
-can still do what they do well, but clinical measurement contracts,
-target-only calibration, source-plus-target calibration, shared-layer
-adaptation, and corpus-specific measurement parameterization must be reported
-separately. This makes cross-corpus depression benchmarks harder to overread,
-but easier to trust.
+The resulting lesson is direct: before aligning representations, audit target
+comparability. A target-comparability audit framework gives future systems a
+practical way to do that, and the fair ordinal-head ablation shows both the
+promise and the claim boundary. The robust empirical lesson is that
+target-label calibration and adaptation regime matter; target-only direct
+calibration is a strong and often lower-error baseline; and corpus-specific
+ordinal heads have not yet shown an independent overall advantage over a shared
+ordinal head in the real E-DAIC/CMDC transfer setting. Strong encoders and
+multimodal foundation models can still do what they do well, but clinical
+measurement contracts, target-only calibration, source-plus-target
+calibration, shared-layer adaptation, and corpus-specific measurement
+parameterization must be reported separately. This makes cross-corpus
+depression benchmarks harder to overread, but easier to trust.

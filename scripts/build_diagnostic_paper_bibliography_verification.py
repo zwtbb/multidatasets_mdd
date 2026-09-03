@@ -84,6 +84,20 @@ SPOT_CHECKS: dict[str, dict[str, str]] = {
         "use_claim_status": "supported_for_mv13_multiple_group_irt_workflow_documentation",
         "remaining_submission_check": "capture package version/session info if final reproducibility appendix requires it",
     },
+    "ikeda2026grmsamplesize": {
+        "verification_status": "spot_checked_primary_source",
+        "checked_source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0347684",
+        "checked_fields": "title;author;year;journal;volume;issue;doi;grm_sample_size_range_and_recommendation",
+        "use_claim_status": "supported_for_grm_finite_sample_caveat_and_item_parameter_recovery_context",
+        "remaining_submission_check": "confirm final ACM style for PLOS article-number formatting",
+    },
+    "jiang2016mgrmsamplesize": {
+        "verification_status": "spot_checked_primary_source",
+        "checked_source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.00109/full",
+        "checked_fields": "title;authors;year;journal;volume;doi;mgrm_item_parameter_sample_size_context",
+        "use_claim_status": "supported_for_multidimensional_grm_item_parameter_finite_sample_caveat",
+        "remaining_submission_check": "confirm Frontiers article-number formatting against target venue style",
+    },
     "chen2022wavlm": {
         "verification_status": "spot_checked_primary_source",
         "checked_source_url": "https://arxiv.org/abs/2110.13900",

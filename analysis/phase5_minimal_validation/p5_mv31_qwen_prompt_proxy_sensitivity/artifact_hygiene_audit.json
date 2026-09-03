@@ -1,0 +1,11 @@
+{
+  "artifact_hygiene_passed": true,
+  "audit_id": "P5_MV31_qwen_prompt_proxy_sensitivity_hygiene",
+  "generated_at": "2026-09-03T17:10:22+00:00",
+  "issues": [],
+  "participant_level_feature_cache": "local_only_ignored_by_git",
+  "raw_prompt_text_written": false,
+  "raw_text_written": false,
+  "row_level_predictions": "local_only_ignored_by_git",
+  "source_paths_written": false
+}

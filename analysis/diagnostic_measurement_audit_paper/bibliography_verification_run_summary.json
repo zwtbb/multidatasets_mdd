@@ -2,15 +2,15 @@
   "counts": {
     "partial_spot_checked_rows": 0,
     "pending_rows": 0,
-    "primary_spot_checked_rows": 53,
-    "reference_rows": 53,
-    "spot_checked_rows": 53
+    "primary_spot_checked_rows": 55,
+    "reference_rows": 55,
+    "spot_checked_rows": 55
   },
   "decision": {
     "m002_blocking_status": "source_verification_complete_style_and_citation_coverage_refresh_pending",
     "short_read": "Primary-source checks are complete in the bibliography ledger; current-prose citation coverage confirmation, target-venue style, and final pre-submission refreshes remain."
   },
-  "generated_at": "2026-09-03T03:30:46+00:00",
+  "generated_at": "2026-09-03T17:15:48+00:00",
   "input": "analysis/diagnostic_measurement_audit_paper/citation_registry.csv",
   "outputs": [
     "bibliography_verification_hygiene_audit.json",

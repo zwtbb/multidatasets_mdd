@@ -1,6 +1,6 @@
 # MASTER MEMORY
 
-Last updated: 2026-09-03 UTC
+Last updated: 2026-09-04 UTC
 
 This is the master memory for the cross-scale depression modeling project. Keep
 it short, current, and decision-oriented. Detailed history belongs in
@@ -125,6 +125,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_105_acm_framework_gap_planning.md`
   - `/root/autodl-tmp/memory/sessions/session_106_mv28_mv29_mv30_reviewer_response.md`
   - `/root/autodl-tmp/memory/sessions/session_107_target_validity_audit_revision.md`
+  - `/root/autodl-tmp/memory/sessions/session_108_target_comparability_and_leakage_revision.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -200,9 +201,9 @@ MPDD 2025 is intentionally out of scope for current auditing.
   is legacy/diagnostic because E-DAIC MV07 used a Chinese BGE encoder on
   English transcripts and the available transcript contract lacks speaker
   roles. Label-only MV10/MV11/MV19 are the primary PHQ measurement layer:
-  substantial common PHQ structure, recurrent C02/C06 threshold-shift
-  candidates with finite-sample uncertainty, sparse loading DIF, uncertain
-  global model selection, and an explicit
+  substantial common PHQ structure, hypothesis-generating recurrent C02/C06
+  threshold-shift candidates with finite-sample uncertainty, sparse loading
+  DIF, uncertain global model selection, and an explicit
   observed-N finite-sample downgrade. The narrow corrected MV13/MV14 `mirt`
   rerun is complete: E-DAIC/CMDC reference/focal order, manual anchor linking,
   graded `d1-d3` threshold/intercept constraints, and focal mean/variance
@@ -233,8 +234,9 @@ MPDD 2025 is intentionally out of scope for current auditing.
   complete: under the observed E-DAIC/CMDC PHQ N and severity distributions,
   H0 C02/C06 both-flag false rate is `0.208`, H1 C02/C06 both-flag recovery is
   `0.662`, H1 top-two recovery is `0.222`, and H1 anchor subset recovery is
-  `0.178`. Treat C02/C06 as repeated but finite-sample-bounded
-  dataset-group threshold-shift evidence, not robust standalone DIF. MV21
+  `0.178`. Treat C02/C06 as hypothesis-generating repeated but
+  finite-sample-bounded dataset-group threshold-shift evidence, not robust
+  standalone DIF. MV21
   descriptive measurement-discrepancy contrast audit is complete as user-directed
   manuscript reinforcement: DAIC-WOZ/E-DAIC is a same-lineage PHQ-8 control
   with tiny paired/conditioned item differences, E-DAIC/CMDC supplies PHQ
@@ -363,10 +365,10 @@ MPDD 2025 is intentionally out of scope for current auditing.
   framework grounded in psychometrics and ML shift/calibration literature, not
   as permission to start full M0/M1/M2/M3 construction or new experiments.
   This 2026-08-xx method-forward positioning has been superseded by the
-  2026-09-03 session-107 revision: the current title is `Validate the Target
-  Before Aligning Representations: A Target-Validity Audit of Cross-Corpus
-  Depression Detection`, and measurement-aware ordinal modeling is now a
-  constructive instantiation rather than the paper identity.
+  2026-09-04 session-108 revision: the current title is `Audit Target
+  Comparability Before Aligning Representations: A Cross-Corpus Measurement
+  Audit of Depression Detection`, and measurement-aware ordinal modeling is now
+  a constructive instantiation rather than the paper identity.
   In response to the foundation-model validation critique, the manuscript and
   framework note now position the solution as foundation-backbone compatible:
   strong text/audio/video/multimodal encoders feed a shared depression
@@ -1056,6 +1058,17 @@ MPDD 2025 is intentionally out of scope for current auditing.
   is `0.150` with 95 percent CI `-0.320` to `0.671`. Multilingual-E5
   sensitivity also has `no_excess_criterion_overlap_evidence`. Treat MV20 as a
   bounded negative stress test, not a new method-development route.
+- Phase 5 `P5_MV31 qwen_prompt_proxy_sensitivity` is complete at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv31_qwen_prompt_proxy_sensitivity/`.
+  It re-embeds E-DAIC transcript variants with Qwen3-Embedding-0.6B and fits
+  fixed Ridge/Logistic heads on the official train/dev split. E-DAIC
+  participant-only and interviewer-only controls remain blocked because the
+  available manifest and transcript CSV contract exposes no populated speaker
+  roles. Treat MV31 as a prompt/protocol proxy sensitivity, not a
+  speaker-resolved leakage proof. The stable reading is
+  `no_clear_qwen3_excess_loss_from_repeated_turn_removal`: repeated-turn-only
+  text does not match full dialogue for PHQ-8 MAE or binary Macro-F1, and
+  repeated-turn removal does not increase PHQ-8 MAE.
 
 Phase 2 gate status:
 
@@ -1578,8 +1591,9 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    active claim boundary. MV09 revises identity-gate semantics,
    MV10/MV11/MV19/MV21/MV29 provide the primary PHQ measurement evidence:
    substantial common structure, recurrent C01/C04/C05/C07 anchor candidates
-   with strict threshold caveats, recurrent C02/C06 threshold-shift candidates
-   under tolerance sensitivity, and observed-N finite-sample limits. Corrected
+   with strict threshold caveats, hypothesis-generating recurrent C02/C06
+   threshold-shift candidates under tolerance sensitivity, and observed-N
+   finite-sample limits. Corrected
    MV13/MV14
    provide anchor-linked external `mirt` corroboration with convergence and
    finite-sample caveats. MV25/MV30 provide the current representation-gate
@@ -1600,11 +1614,12 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    MV24 default-budget checks, target-only direct calibration is the strongest
    Macro Item MAE comparator, source-plus-target calibrated rows can improve
    calibration-in-the-large, and corpus-specific ordinal heads do not show
-   independent overall performance gains. Session 107 integrates this into the
-   formal manuscript as a target-validity audit: the title, abstract,
-   contributions, calibration definitions, RQ2 terminology, RQ1 wording, Table
-   3, Discussion, Scope, Conclusion, Word export, and bibliography artifacts
-   have been updated;
+   independent overall performance gains. Session 108 integrates this into the
+   formal manuscript as a target-comparability / measurement-contract audit:
+   the title, abstract, contributions, Section 3.2 local-independence wording,
+   calibration definitions, RQ2 finite-sample terminology, RQ1 leakage
+   sensitivity, Table 3, Discussion, Scope, Conclusion, Word export, MV31
+   prompt-proxy artifacts, and bibliography artifacts have been updated;
    early weak or superseded MV rows are retired from the active experiment
    queue. Old M0/M1/M2/M3 full method construction remains blocked, but MV24
    is the current formal PHQ shared-item method result with MV28-bounded
@@ -1612,6 +1627,6 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    current-prose citation coverage confirmation, target-venue formatting, and
    final pre-submission metadata refresh around the already verified bibliography.
    Parallel writing work may continue, but the manuscript must
-   use target measurement-validity framing, corrected bibliography metadata,
+   use target-comparability framing, corrected bibliography metadata,
    the session-101 primary-source verification ledger, and the session-102
    fair-ablation claim boundary before submission.

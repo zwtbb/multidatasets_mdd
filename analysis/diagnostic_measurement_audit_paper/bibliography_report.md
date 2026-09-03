@@ -1,12 +1,12 @@
 # Diagnostic Paper Bibliography Report
 
-Generated: `2026-09-03T03:30:37+00:00`
+Generated: `2026-09-03T17:15:29+00:00`
 
 ## Decision
 
 - Bibliography status: `ready_for_manuscript_citation_editing`.
 - Source-context rows mapped: `56`.
-- Unique bibliography entries: `53`.
+- Unique bibliography entries: `55`.
 - Unmapped source-context rows: `0`.
 - Artifact hygiene passed: `True`.
 
@@ -20,7 +20,7 @@ Recommended insertion points:
 
 - Introduction and related work: cite `gratch2014distress`, `nguyen2022improving`, `zhang2025interviewer`, `ishikawa2026multiprobe`, `uscict2026daic`, `deduro2026nlppsychometrics`, and `li2025mirror` where the draft motivates dataset governance, questionnaire grounding, protocol bias, nearby benchmark-audit positioning, psychometric framing, and the completed MV20 criterion-overlap stress framing.
 - Data Governance and Label Contracts: cite `zou2023cmdc`, `pdchrepository2026`, `cai2020modma`, `shen2022automatic`, and `fu2025mpddchallenge` where dataset roles are introduced.
-- Psychometric methods: cite `samejima1969graded`, `chalmers2012mirt`, `chalmers2026mirtmultiplegroup`, `bulut2017detecting`, `galenkamp2017measurement`, `patel2019measurement`, `ma2021phqhamd`, `delamain2024measurement`, and `zhou2026depression` around invariance, IRT, DIF, PHQ/HAMD differences, and cross-scale linking.
+- Psychometric methods: cite `samejima1969graded`, `chalmers2012mirt`, `chalmers2026mirtmultiplegroup`, `ikeda2026grmsamplesize`, `jiang2016mgrmsamplesize`, `bulut2017detecting`, `galenkamp2017measurement`, `patel2019measurement`, `ma2021phqhamd`, `delamain2024measurement`, and `zhou2026depression` around invariance, IRT, DIF, sample-size caveats, PHQ/HAMD differences, and cross-scale linking.
 - Feature-contract sensitivity: cite `baai2026bgesmallzh`, `baai2026bgem3`, and `wang2024multilinguale5` when explaining why the old BGE-linked MV07-MV16 chain is legacy/diagnostic and how MV17a tests the paper-critical chain with multilingual encoders.
 - Crowded modeling baselines: cite `mandal2025questmf`, `chen2024gnnsda`, `zhang2025red`, `chen2025scd`, `chen2025leavingnone`, and `fu2026p3hf` when explaining why item-level E-DAIC fusion, semi-supervised graph adaptation, evidence retrieval, generic cross-domain or domain-incremental robustness, and personality-aware fusion are not the paper's novelty.
 
@@ -147,6 +147,8 @@ These are available for future paper edits but are not currently referenced by t
 | key | year | title |
 | --- | --- | --- |
 | chen2025leavingnone | 2025 | Leaving None Behind: Data-Free Domain Incremental Learning for Major Depressive Disorder Detection |
+| ikeda2026grmsamplesize | 2026 | A Monte Carlo Simulation Study of Sample Size Requirements for the Graded Response Model |
+| jiang2016mgrmsamplesize | 2016 | Sample Size Requirements for Estimation of Item Parameters in the Multidimensional Graded Response Model |
 | putnick2016measurement | 2016 | Measurement Invariance Conventions and Reporting: The State of the Art and Future Directions for Psychological Research |
 | vanCalster2019calibration | 2019 | Calibration: The Achilles Heel of Predictive Analytics |
 
