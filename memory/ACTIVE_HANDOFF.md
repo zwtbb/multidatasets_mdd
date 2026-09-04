@@ -36,10 +36,13 @@ E-DAIC<->CMDC PHQ shared-item setting.
   `/root/autodl-tmp/analysis/phase5_minimal_validation/full_method_gate_audit/`
 - Historical gate status: `blocked_but_publishable_diagnostic_direction`
 - Historical `full_method_allowed=false`
-- Current method route: MV24 formal measurement-aware ordinal model at
-  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv24_measurement_aware_ordinal_model/`.
+- Current method route: MV24 formal measurement-aware ordinal model and MV32
+  Target-Contract Partial Sharing at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv24_measurement_aware_ordinal_model/`
+  and
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv32_tcps_partial_sharing/`.
 - Use the old gate to block overbroad M0/M1/M2/M3 cross-scale claims, not to
-  suppress the now-completed MV24 PHQ shared-item method result.
+  suppress the now-completed MV24/MV32 PHQ shared-item method results.
 
 Allowed current framing:
 
@@ -54,6 +57,8 @@ Allowed current framing:
 - Negative or bounded multimodal results under the legacy BGE/lightweight-head
   contract, now supported by MV17a multilingual feature-contract sensitivity
   for the MV07/MV12/MV15 chain.
+- MV32 TCPS as an audit-guided partial-sharing ordinal instantiation, with
+  bounded real-data claims and simulation-backed mechanism evidence.
 - First-round aggregate evidence-localization credibility from MV06, with
   sampling and one-candidate incompleteness caveats.
 
@@ -67,6 +72,9 @@ Blocked claims:
 - Robust standalone `mirt` DIF or bootstrap-stability claims from MV13/MV14
   that ignore the configural convergence warning or MV19 finite-sample
   downgrade.
+- Stable real-data superiority claims for TCPS over shared ordinal,
+  fully corpus-specific ordinal, target-only, generic target MLP, or direct
+  multitask baselines; the participant bootstrap does not support that wording.
 - Positive EATD SDS generalization.
 - Valence-adversarial method from current EATD evidence.
 - Naive personality/context conditioning as a supported RQ3 method.
@@ -86,6 +94,13 @@ Main next task:
   test; MV21 supplies the PHQ shared-item descriptive analysis, CMDC/PDCH HAMD
   exploratory same-scale analysis, and DAIC-WOZ/E-DAIC same-lineage PHQ-8
   control.
+- After MV32, the ICASSP-facing rewrite should foreground TCPS as a learnable
+  partial-sharing measurement mechanism: shared ordinal and fully
+  corpus-specific heads become extremes, TCPS learns sparse target threshold
+  residuals between them, and the measurement audit supplies candidate item
+  structure. The central claim must be bounded: TCPS is competitive and
+  mechanism-aligned, but participant-bootstrap intervals do not establish
+  stable real-data superiority.
 - Primary-source bibliography verification is complete in the current ledger:
   55/55 references have manual primary-source spot checks and zero
   pending source-verification rows. Remaining M002 work is current-prose
@@ -160,9 +175,23 @@ Main next task:
   Accuracy, AUROC, AUPRC, Sensitivity, and Specificity. The lambda-MMD sweep is
   nearly flat, so present MMD as a mild regularizer and do not conflate target
   calibration/shared-layer adaptation with ordinal measurement parameterization.
-  Treat MV24 as the current main method table
-  for the PHQ shared-item manuscript story, not as a zero-target-label win over
-  every baseline.
+  Treat MV24 as the current fairness and attribution baseline table for the
+  PHQ shared-item manuscript story, not as a zero-target-label win over every
+  baseline.
+- MV32 TCPS partial-sharing has executed at
+  `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv32_tcps_partial_sharing/`.
+  It turns the fixed shared-vs-corpus-specific ordinal head choice into a
+  sparse learnable partial-sharing mechanism over target threshold residuals.
+  The clean default fits PCA on source plus target calibration subjects only,
+  reports a fixed primary `lambda_group=1.0` plus lambda sensitivity,
+  targeted item-error deltas, residual support, and paired participant
+  bootstrap. Final gate:
+  `borderline_audit_guided_algorithm_candidate`. Real-data split-level support
+  is partial, participant bootstrap is not interval-stable, shared ordinal is
+  stronger on held-out ordinal NLL/RPS, and audit-weighted TCPS gives the
+  cleanest sparse residual evidence centered mainly on `C06`. Use MV32 as the
+  ICASSP-facing candidate method only with bounded mechanism/competitiveness
+  wording.
 - MV28 target-label budget and uncertainty audits have executed at
   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv28_target_label_budget_uncertainty/`
   and
@@ -723,6 +752,9 @@ Keep local-only:
     simulation; real data shows shared ordinal and corpus-specific ordinal
     heads are near tied on `C02/C06`, while simulation supports only weak
     item-local mechanism consistency under planted threshold DIF.
+  - I083: closed_bounded by MV32 TCPS partial sharing; use TCPS as an
+    audit-guided ICASSP method instantiation with bounded mechanism and
+    competitiveness wording, not as stable real-data superiority.
 
 ## Fast Verification Commands
 
@@ -745,5 +777,6 @@ OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 python scripts/phase5_run_mv25_provenance_controlled_identity.py --clean
 python scripts/phase5_run_mv26_depression_specific_baselines.py --clean
 python scripts/phase5_run_mv26_scd_mllm_baseline.py --clean
+python scripts/phase5_run_mv32_tcps_partial_sharing.py --clean --device cpu --parallel-workers 12
 python scripts/phase5_full_method_gate_audit.py
 ```

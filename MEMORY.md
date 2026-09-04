@@ -126,6 +126,7 @@ session-level memory files under `memory/sessions/`.
   - `/root/autodl-tmp/memory/sessions/session_106_mv28_mv29_mv30_reviewer_response.md`
   - `/root/autodl-tmp/memory/sessions/session_107_target_validity_audit_revision.md`
   - `/root/autodl-tmp/memory/sessions/session_108_target_comparability_and_leakage_revision.md`
+  - `/root/autodl-tmp/memory/sessions/session_109_tcps_partial_sharing_icassp.md`
   - `/root/autodl-tmp/memory/sessions/session_master_orchestration.md`
 - Template for future sessions:
   - `/root/autodl-tmp/memory/templates/session_memory_template.md`
@@ -1619,12 +1620,30 @@ remote branch instead of treating memory prose as an immutable SHA ledger.
    sensitivity, Table 3, Discussion, Scope, Conclusion, Word export, MV31
    prompt-proxy artifacts, and bibliography artifacts have been updated. The
    user Feishu manuscript has also been synced and verified at revision 235.
+   MV32 TCPS partial-sharing has executed at
+   `/root/autodl-tmp/analysis/phase5_minimal_validation/p5_mv32_tcps_partial_sharing/`
+   and is tracked by
+   `/root/autodl-tmp/memory/sessions/session_109_tcps_partial_sharing_icassp.md`.
+   It uses the MV24 frozen Qwen3+WavLM+OpenFace representation, repeated
+   target-calibration splits, clean PCA fitted on source plus target
+   calibration subjects only, fixed primary `lambda_group=1.0` with
+   lambda-path sensitivity, targeted item-error analysis, and paired
+   participant-bootstrap deltas. The final gate is
+   `borderline_audit_guided_algorithm_candidate`: TCPS is a plausible
+   ICASSP-facing audit-guided partial-sharing method if written with bounded
+   claims, but participant-bootstrap deltas do not provide stable
+   interval-level real-data superiority. Shared ordinal remains stronger on
+   held-out NLL/RPS, audit-weighted TCPS gives the cleanest sparse residual
+   signal centered mainly on `C06`, and the fixed-latent simulation supports
+   the mechanism only weakly/moderately under planted sparse threshold DIF.
    Early weak or superseded MV rows are retired from the active experiment
    queue. Old M0/M1/M2/M3 full method construction remains blocked, but MV24
-   is the current formal PHQ shared-item method result with MV28-bounded
-   architecture attribution. The next active task is
-   current-prose citation coverage confirmation, target-venue formatting, and
-   final pre-submission metadata refresh around the already verified bibliography.
+   and MV32 are the current formal PHQ shared-item method results with
+   MV28/MV32-bounded architecture attribution. The next active task is an
+   ICASSP-style manuscript rewrite around TCPS as bounded audit-guided
+   partial-sharing, plus current-prose citation coverage confirmation,
+   target-venue formatting, and final pre-submission metadata refresh around
+   the already verified bibliography.
    Parallel writing work may continue, but the manuscript must
    use target-comparability framing, corrected bibliography metadata,
    the session-101 primary-source verification ledger, and the session-102

@@ -1,0 +1,313 @@
+transfer_id,budget_id,target_calibration_count,target_evaluation_count,method,method_rank,lambda_group,analysis_level,item_set_id,item_display,item_ids,item_count,audit_role,item_order,split_count,item_mae_mean,item_mae_ci95_low,item_mae_ci95_high
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item,C01,C01,C01,1,anchor,1,30,0.6722604090211401,0.6300505633594821,0.7266452339738039
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item,C02,C02,C02,1,threshold_shift,2,30,0.7673736898089998,0.711371086192092,0.8462314799006075
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item,C03,C03,C03,1,other,3,30,1.001895971923705,0.9303977663623431,1.06454364462997
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item,C04,C04,C04,1,anchor,4,30,0.9049308313304875,0.8187523787347387,1.0362195424190563
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item,C05,C05,C05,1,anchor,5,30,0.9319853709679136,0.8562271319995466,1.0371052566177192
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item,C06,C06,C06,1,threshold_shift,6,30,0.8605301029713008,0.7860674614287431,0.9436935732323701
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item,C07,C07,C07,1,anchor,7,30,0.7980154023700011,0.708510795503118,0.9016222537054858
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item,C08,C08,C08,1,other,8,30,0.43387585612738094,0.36038435282428394,0.5768999763383506
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.796358454315116,0.7624677283694932,0.8520448883176093
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8267980034223855,0.7827352656747613,0.8826193754658425
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8139518963901502,0.7540451095815074,0.8825810293239401
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_direct_mlp,0,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7178859140255429,0.6637172858380869,0.7820844612628887
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item,C01,C01,C01,1,anchor,1,30,0.6891983990891144,0.6467189978050777,0.7760943442199473
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item,C02,C02,C02,1,threshold_shift,2,30,0.7888237128992529,0.740709735089988,0.8809429476949423
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item,C03,C03,C03,1,other,3,30,1.0226311831315849,0.9519293455548229,1.0977401453271374
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item,C04,C04,C04,1,anchor,4,30,0.9380563351330572,0.845043753545642,1.0887425322014066
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item,C05,C05,C05,1,anchor,5,30,0.9607479432549706,0.862163379870441,1.0782017169607157
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item,C06,C06,C06,1,threshold_shift,6,30,0.8760424499749,0.7909935971435562,0.9747559450508029
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item,C07,C07,C07,1,anchor,7,30,0.8012376749503861,0.7050508108469695,0.9098721351611726
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item,C08,C08,C08,1,other,8,30,0.4190607067205573,0.3521235394464207,0.528741973148584
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8119748006442278,0.7731615169782268,0.8667011101594868
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8473100881068819,0.7964831179156441,0.9013327598016204
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8324330814370764,0.7753386009365693,0.9176424056694494
+cmdc_to_edaic_phq_shared,mv24_default,66,153,target_only_ordinal,1,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7208459449260709,0.6676425320677605,0.7857387294000324
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item,C01,C01,C01,1,anchor,1,30,0.6908373835957875,0.6309838571450849,0.7594689964399876
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item,C02,C02,C02,1,threshold_shift,2,30,0.7789389463319352,0.6974740008809307,0.8917415773026945
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item,C03,C03,C03,1,other,3,30,1.0195236289210567,0.9669060970268143,1.0921824469319807
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item,C04,C04,C04,1,anchor,4,30,0.9053981889582866,0.807256769164301,1.0121201705884528
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item,C05,C05,C05,1,anchor,5,30,0.9413978062764873,0.8747220803967483,1.0358113639429563
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item,C06,C06,C06,1,threshold_shift,6,30,0.8578351729418563,0.7862322552389088,0.9255030421593242
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item,C07,C07,C07,1,anchor,7,30,0.8057462166763256,0.7409001478019515,0.8969555972627835
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item,C08,C08,C08,1,other,8,30,0.44935340722441874,0.37671992903027296,0.5338589733776119
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8061288438657692,0.7761098335300927,0.8575041025500886
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8358448988767218,0.7853978719037692,0.881633807772861
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8183870596368956,0.7454201715977629,0.9027676438304681
+cmdc_to_edaic_phq_shared,mv24_default,66,153,direct_multitask_shared_head,2,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7344385180727379,0.6951856242658901,0.7984733502665134
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item,C01,C01,C01,1,anchor,1,30,0.6960839520059643,0.6436986143116097,0.7565912062825719
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item,C02,C02,C02,1,threshold_shift,2,30,0.7708149782360657,0.6978282414815006,0.8623413830313806
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item,C03,C03,C03,1,other,3,30,1.0134016864046158,0.92697675628405,1.0832160867020195
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item,C04,C04,C04,1,anchor,4,30,0.8749831646116807,0.7914644679407669,0.9825437954889739
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item,C05,C05,C05,1,anchor,5,30,0.935267837467874,0.8684930738266042,1.029696293097306
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item,C06,C06,C06,1,threshold_shift,6,30,0.8797085132107351,0.7860512198133563,0.9691558881753095
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item,C07,C07,C07,1,anchor,7,30,0.849780751559009,0.7644052150300115,0.9529312911960813
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item,C08,C08,C08,1,other,8,30,0.48898233243255296,0.4129184952841275,0.5674208680983462
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8136279019910622,0.7706802131607858,0.8536511517059582
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.839028926411132,0.7834090776186269,0.8833000110327425
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8252617457234003,0.7498679092163755,0.8845545841247038
+cmdc_to_edaic_phq_shared,mv24_default,66,153,shared_ordinal_head,3,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7511920094185844,0.7084141457846042,0.8002651216206597
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item,C01,C01,C01,1,anchor,1,30,0.6958610948449083,0.6477145173483425,0.7560511594504313
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item,C02,C02,C02,1,threshold_shift,2,30,0.7700185285581889,0.7026041581447607,0.8476307836038615
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item,C03,C03,C03,1,other,3,30,1.0115387680693044,0.933089457354904,1.0909312176575263
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item,C04,C04,C04,1,anchor,4,30,0.8821336571669965,0.7949503512943492,0.9855109787188977
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item,C05,C05,C05,1,anchor,5,30,0.9432810371581912,0.8883679156307301,1.027994274050971
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item,C06,C06,C06,1,threshold_shift,6,30,0.878070843156671,0.7901233322187966,0.9655673401161421
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item,C07,C07,C07,1,anchor,7,30,0.8598558940306187,0.7797850512990765,0.9485951406893387
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item,C08,C08,C08,1,other,8,30,0.48934756783010774,0.40922496257195196,0.5672563792833315
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8162634238518733,0.7817947643980147,0.8512240972427485
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8452829208001787,0.8020252372192986,0.8832925405313488
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8240446858574302,0.7604743355726885,0.8808343767340666
+cmdc_to_edaic_phq_shared,mv24_default,66,153,fully_corpus_specific_ordinal,4,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7504431679497061,0.6868910014762243,0.8086327769568064
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item,C01,C01,C01,1,anchor,1,30,0.691841769650724,0.6373929758039546,0.7654041096694414
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item,C02,C02,C02,1,threshold_shift,2,30,0.755597201136016,0.6994700980844095,0.8378107410595368
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item,C03,C03,C03,1,other,3,30,0.9871755461263203,0.9055942628860589,1.0453073222849067
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item,C04,C04,C04,1,anchor,4,30,0.8602110900513587,0.7797356703285176,0.9476939588791258
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item,C05,C05,C05,1,anchor,5,30,0.9225565356970046,0.852446900172086,0.999176113589398
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item,C06,C06,C06,1,threshold_shift,6,30,0.8490127964692508,0.778235321028288,0.9296099335432052
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item,C07,C07,C07,1,anchor,7,30,0.8062021144661901,0.7291514417206558,0.9078470996028984
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item,C08,C08,C08,1,other,8,30,0.48684655532496923,0.42131773902293107,0.5623326308022935
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.7949304511152293,0.7632222353075654,0.8389943625381282
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8202028774663195,0.7758206606343319,0.8668975301842761
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8023049988026332,0.7447359780924849,0.883710337301371
+cmdc_to_edaic_phq_shared,mv24_default,66,153,generic_target_mlp_head,5,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7370110507256449,0.6835851138426977,0.7858888639050721
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item,C01,C01,C01,1,anchor,1,30,0.6856342498606388,0.6429381075931351,0.7374883052802724
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item,C02,C02,C02,1,threshold_shift,2,30,0.7457890175288361,0.6923047936808199,0.8169450135114942
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item,C03,C03,C03,1,other,3,30,0.9909959864306629,0.9059663762135161,1.0920006230913688
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item,C04,C04,C04,1,anchor,4,30,0.8515821115399754,0.7758848658087206,0.9453991611943107
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item,C05,C05,C05,1,anchor,5,30,0.9179864657940463,0.8589316944995314,1.0116195971021902
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item,C06,C06,C06,1,threshold_shift,6,30,0.855333395204157,0.7677389784894256,0.9220969638607438
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item,C07,C07,C07,1,anchor,7,30,0.8330797850651286,0.764513502647891,0.9140046799998047
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item,C08,C08,C08,1,other,8,30,0.49599468274735875,0.43135069437328816,0.5780627728540525
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.7970494617713507,0.7705343765412274,0.8436013131309815
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8220706530649473,0.7787539591139323,0.8741058216467579
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8005612063664965,0.7337357504010259,0.8556554294055265
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7434953345890111,0.697173395492937,0.8092786432921464
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item,C01,C01,C01,1,anchor,1,30,0.6905604385772306,0.6348659064142048,0.7676649962282253
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item,C02,C02,C02,1,threshold_shift,2,30,0.7505455622364725,0.6839420123232153,0.8332981745990681
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item,C03,C03,C03,1,other,3,30,0.9961961593051376,0.9132738626833552,1.082337570952081
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item,C04,C04,C04,1,anchor,4,30,0.8610681041354916,0.7797874335370032,0.9766102070645389
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item,C05,C05,C05,1,anchor,5,30,0.9205649875029773,0.8343311375123942,1.0138405231332863
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item,C06,C06,C06,1,threshold_shift,6,30,0.8567115659836303,0.7392503168002643,0.9359411745847517
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item,C07,C07,C07,1,anchor,7,30,0.8377958249354961,0.747749867500292,0.9313584732632374
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item,C08,C08,C08,1,other,8,30,0.48408591092692366,0.4057521393628131,0.5774222252742303
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.7996910692004201,0.7416667477425581,0.8576161598933912
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.827497338787799,0.7704954382081312,0.8982089983790276
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8036285641100512,0.7235343566776294,0.8724109142617921
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,0.3,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7401410351160306,0.6900941197260656,0.7891704285718236
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item,C01,C01,C01,1,anchor,1,30,0.7002519471660508,0.65064352480999,0.7565138728667026
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item,C02,C02,C02,1,threshold_shift,2,30,0.7714200241439966,0.7103073998311766,0.8489075622917001
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item,C03,C03,C03,1,other,3,30,1.0099061081322154,0.9298314643646377,1.0955253201150894
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item,C04,C04,C04,1,anchor,4,30,0.8785159761248962,0.7916801944277645,0.9811197084060568
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item,C05,C05,C05,1,anchor,5,30,0.9358563530755182,0.8777353493606342,1.0259688548118362
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item,C06,C06,C06,1,threshold_shift,6,30,0.8718729867515526,0.7939773179838144,0.9502873239794274
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item,C07,C07,C07,1,anchor,7,30,0.8533124858845433,0.7319861603725453,0.9482156416559532
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item,C08,C08,C08,1,other,8,30,0.49318191160589697,0.4133816790736579,0.6066117299745676
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8142897241105836,0.7743602709869551,0.8585207760254492
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8419841905627521,0.796067903697296,0.8941501605472261
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8216465054477744,0.7606889264969076,0.87944254247249
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,1.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.751544009869056,0.6843606504496016,0.8164348949007777
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item,C01,C01,C01,1,anchor,1,30,0.7097921915392829,0.6521037852452471,0.7760474867610234
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item,C02,C02,C02,1,threshold_shift,2,30,0.7731711721037829,0.7123318716201907,0.861935530330231
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item,C03,C03,C03,1,other,3,30,1.014588678030487,0.9207867637347296,1.0911642402994866
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item,C04,C04,C04,1,anchor,4,30,0.8816662989549153,0.7924650985138868,0.9826627185044725
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item,C05,C05,C05,1,anchor,5,30,0.9491201683129492,0.8859049589415781,1.0402615940108069
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item,C06,C06,C06,1,threshold_shift,6,30,0.8827027181517201,0.7984495580001594,0.9666986461593899
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item,C07,C07,C07,1,anchor,7,30,0.8595077609653061,0.7671683476676353,0.95390458976716
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item,C08,C08,C08,1,other,8,30,0.4920569874541775,0.4160896381718111,0.5948010732902607
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8203257469390777,0.7863470143510722,0.8657466976158684
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8500216049431132,0.8023537724674528,0.8965065261133016
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8279369451277516,0.7643394485213398,0.8929107725133303
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,3.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7533228327423321,0.6975412370682885,0.8048438147525222
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item,C01,C01,C01,1,anchor,1,30,0.7095797876828347,0.6521037852452471,0.7852927765591038
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item,C02,C02,C02,1,threshold_shift,2,30,0.7749547001001501,0.7123318716201907,0.861935530330231
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item,C03,C03,C03,1,other,3,30,1.0153641468214594,0.9220985408383001,1.0963958434392944
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item,C04,C04,C04,1,anchor,4,30,0.8817663673088042,0.7924650985138868,0.9826627185044725
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item,C05,C05,C05,1,anchor,5,30,0.9502374639579989,0.8859049589415781,1.0402615940108069
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item,C06,C06,C06,1,threshold_shift,6,30,0.8828400034632601,0.7984495580001594,0.9666986461593899
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item,C07,C07,C07,1,anchor,7,30,0.8563006816619819,0.7625930670019105,0.95390458976716
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item,C08,C08,C08,1,other,8,30,0.49105180564757056,0.4160896381718111,0.5948010732902607
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8202618695805074,0.7863470143510722,0.8657466976158684
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8494710751529049,0.8023537724674528,0.8942246262837575
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8288973517817051,0.7643394485213398,0.8929107725133303
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold,6,10.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7532079762345149,0.6928521199312069,0.8048438147525222
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item,C01,C01,C01,1,anchor,1,30,0.702877499865595,0.6466109573770469,0.8038655694569438
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item,C02,C02,C02,1,threshold_shift,2,30,0.7692879751348516,0.7101290205432699,0.8820341104651758
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item,C03,C03,C03,1,other,3,30,1.0156882379430774,0.9301250851816601,1.0882421173593666
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item,C04,C04,C04,1,anchor,4,30,0.8807333466303242,0.7915853747160606,0.9721237630236382
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item,C05,C05,C05,1,anchor,5,30,0.9446979895693681,0.880277630355623,1.0499356114458085
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item,C06,C06,C06,1,threshold_shift,6,30,0.8763775707747911,0.7811488092612292,0.9652696237030141
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item,C07,C07,C07,1,anchor,7,30,0.8563891836270618,0.7641860502935385,0.9582038235086088
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item,C08,C08,C08,1,other,8,30,0.4872936081970612,0.4189880949324136,0.5718065957325735
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8166681764677665,0.7838868701241714,0.8732427619906574
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8461745049230874,0.7991205346034048,0.9154572649204437
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8228327729548213,0.7596738827462287,0.9044557733528882
+cmdc_to_edaic_phq_shared,mv24_default,66,153,tcps_threshold_slope,7,1.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7514909230700693,0.7060290588567124,0.7969655675340743
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item,C01,C01,C01,1,anchor,1,30,0.6993641116957355,0.6489050917925447,0.7553569215460031
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item,C02,C02,C02,1,threshold_shift,2,30,0.7727726800672354,0.7105911197420818,0.8623254803598761
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item,C03,C03,C03,1,other,3,30,1.0155200210217328,0.9353099021938891,1.095516602040695
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item,C04,C04,C04,1,anchor,4,30,0.8836270137420142,0.7946440190271614,0.9844166761422469
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item,C05,C05,C05,1,anchor,5,30,0.9521338255483305,0.8832645908387659,1.0579310364732204
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item,C06,C06,C06,1,threshold_shift,6,30,0.8746138980939726,0.7687578560126274,0.9585805344354853
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item,C07,C07,C07,1,anchor,7,30,0.8578907464448187,0.7714814291289288,0.9526781020795597
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item,C08,C08,C08,1,other,8,30,0.48607278367040224,0.4083223912091566,0.5695585018669077
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.8177493850355303,0.7732939536627137,0.8687911319497615
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.8482539243577247,0.8017170692848808,0.9055541854179014
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.8236932890806039,0.7536099271486726,0.8921163123096497
+cmdc_to_edaic_phq_shared,mv24_default,66,153,audit_weighted_tcps_threshold,8,1.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.7507964023460673,0.699535993917825,0.7995385424422672
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item,C01,C01,C01,1,anchor,1,30,0.7239373027370068,0.5368688890282647,0.9379613335232713
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item,C02,C02,C02,1,threshold_shift,2,30,0.5981202912309286,0.45409439999377355,0.8216046049424038
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item,C03,C03,C03,1,other,3,30,0.7184167533269009,0.49443870463204803,0.9018953486345708
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item,C04,C04,C04,1,anchor,4,30,0.631283466433136,0.4435856031719595,0.8363754774257539
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item,C05,C05,C05,1,anchor,5,30,0.6433292321396706,0.48358814131090183,0.8433791093377294
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item,C06,C06,C06,1,threshold_shift,6,30,0.5207369607220363,0.3450869226401619,0.650898105591259
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item,C07,C07,C07,1,anchor,7,30,0.7584476701296384,0.6256085828813502,0.9512881544281844
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item,C08,C08,C08,1,other,8,30,0.6157429684529014,0.4519080641690016,0.8182571465266846
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6512518306465274,0.553544682095761,0.7646194045523463
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6892494178598629,0.575915304015516,0.8220658446357082
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5594286259764826,0.4485673119213061,0.6642235969078865
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_direct_mlp,0,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6670798608899011,0.543267973113266,0.7818705531429837
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item,C01,C01,C01,1,anchor,1,30,0.728924840734815,0.5331017210180856,0.937542097127878
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item,C02,C02,C02,1,threshold_shift,2,30,0.5961336123335861,0.46555656491748865,0.8204644812442285
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item,C03,C03,C03,1,other,3,30,0.720375037978034,0.524968852032408,0.9662384054550115
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item,C04,C04,C04,1,anchor,4,30,0.6369681566223647,0.45010792571328584,0.8421050554613358
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item,C05,C05,C05,1,anchor,5,30,0.6251745701372262,0.4396779283985732,0.8284260795523188
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item,C06,C06,C06,1,threshold_shift,6,30,0.5454194059999767,0.3616854865051944,0.6991719910519684
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item,C07,C07,C07,1,anchor,7,30,0.7641804709580787,0.6275575752805023,0.9503697189401781
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item,C08,C08,C08,1,other,8,30,0.6174942281464202,0.4450993647521632,0.842312079085607
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6543337903638126,0.5592848815091425,0.7732782821723175
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6888120096131212,0.5685305076585637,0.8271334725186706
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5707765091667814,0.4565127409168577,0.6902305322758061
+edaic_to_cmdc_phq_shared,mv24_default,24,20,target_only_ordinal,1,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.668934633062227,0.5580079703610487,0.7930320628271688
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item,C01,C01,C01,1,anchor,1,30,0.7479626550574904,0.5784481003132532,1.0322882150072836
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item,C02,C02,C02,1,threshold_shift,2,30,0.6306612037853726,0.4864808229394839,0.8325960653892251
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item,C03,C03,C03,1,other,3,30,0.741772937990645,0.5599572748833452,0.9291631380858596
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item,C04,C04,C04,1,anchor,4,30,0.6267888619644023,0.4424025069747586,0.8303646530467085
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item,C05,C05,C05,1,anchor,5,30,0.6323252051941622,0.46133334997983183,0.8043192040106806
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item,C06,C06,C06,1,threshold_shift,6,30,0.5101122924939622,0.399049943897885,0.653169552967156
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item,C07,C07,C07,1,anchor,7,30,0.7420216061577473,0.6315973271333496,0.8894023823230963
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item,C08,C08,C08,1,other,8,30,0.5674140833037806,0.3448123281674407,0.7738636181784112
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6498823557434453,0.5543345912501974,0.7702243384098801
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6872745820934506,0.5602373578014521,0.8157058747489918
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5703867481396675,0.48285904796649676,0.7032454117126327
+edaic_to_cmdc_phq_shared,mv24_default,24,20,direct_multitask_shared_head,2,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6545935106472129,0.5270856474841821,0.7687254555269465
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item,C01,C01,C01,1,anchor,1,30,0.7542769534389179,0.5697393720597028,0.9656787175685168
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item,C02,C02,C02,1,threshold_shift,2,30,0.6469082207481066,0.42430517219007013,0.9138406597822905
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item,C03,C03,C03,1,other,3,30,0.8005100896026972,0.6074440192431212,1.0441865707933902
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item,C04,C04,C04,1,anchor,4,30,0.6581586315234502,0.4448777075111866,0.9026334745436907
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item,C05,C05,C05,1,anchor,5,30,0.6588361041744549,0.46514671079814435,0.9488451412320134
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item,C06,C06,C06,1,threshold_shift,6,30,0.5160267610647576,0.3973065816882672,0.6166971823099675
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item,C07,C07,C07,1,anchor,7,30,0.7233627891573453,0.5871552550792695,0.8577441118657588
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item,C08,C08,C08,1,other,8,30,0.5670117044509168,0.31832692680140523,0.7858307119429945
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.665636406770081,0.5715303500471017,0.7925221487850858
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6986586195735421,0.5634215279854834,0.8444416775740683
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5814674909064321,0.4736239938050926,0.7272669985517859
+edaic_to_cmdc_phq_shared,mv24_default,24,20,shared_ordinal_head,3,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6837608970268069,0.5413864305142144,0.8305792469265116
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item,C01,C01,C01,1,anchor,1,30,0.753507374425729,0.5687025184184312,0.9711671215295792
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item,C02,C02,C02,1,threshold_shift,2,30,0.6460737852255503,0.4298517990112305,0.9128324993699789
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item,C03,C03,C03,1,other,3,30,0.8005116835302398,0.6056208267062902,1.044897385984659
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item,C04,C04,C04,1,anchor,4,30,0.6571373717983563,0.4438314660638571,0.8970255380123854
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item,C05,C05,C05,1,anchor,5,30,0.6557172243793805,0.4641769555956125,0.9425397231429812
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item,C06,C06,C06,1,threshold_shift,6,30,0.5157257631717421,0.39734184741973877,0.6233894842389645
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item,C07,C07,C07,1,anchor,7,30,0.7228504064712069,0.58944262675941,0.8612025197595357
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item,C08,C08,C08,1,other,8,30,0.5689266168999825,0.3197922988005322,0.7878377090838966
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6650562782377735,0.5713371835251257,0.7930519224212376
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6973030942686684,0.5657512121647597,0.8463150152750313
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5808997741986462,0.4752849041433842,0.7237607723474502
+edaic_to_cmdc_phq_shared,mv24_default,24,20,fully_corpus_specific_ordinal,4,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.684719150215111,0.5393542906168679,0.8272934626013381
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item,C01,C01,C01,1,anchor,1,30,0.7785901590218419,0.5888380744189635,0.9998445114408968
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item,C02,C02,C02,1,threshold_shift,2,30,0.6538380132896902,0.4993187483551446,0.8493177555184229
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item,C03,C03,C03,1,other,3,30,0.763466226667224,0.579769126012543,0.9580925053969687
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item,C04,C04,C04,1,anchor,4,30,0.6454761147729974,0.4890398631093558,0.7933360151923261
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item,C05,C05,C05,1,anchor,5,30,0.6770726328990653,0.5240296291330014,0.8933292488736333
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item,C06,C06,C06,1,threshold_shift,6,30,0.4654133571763042,0.311732466579241,0.610438295507829
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item,C07,C07,C07,1,anchor,7,30,0.728195552925475,0.5931501629247214,0.9205536569043214
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item,C08,C08,C08,1,other,8,30,0.5586318340724017,0.42392771288676157,0.7852922602267369
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6588354863531249,0.5605120619405246,0.7920026520072683
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.7073336149048448,0.5789458990329922,0.8482521664169371
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5596256852329973,0.43342618821513723,0.6818595870499302
+edaic_to_cmdc_phq_shared,mv24_default,24,20,generic_target_mlp_head,5,,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6610490303698128,0.5563105891360278,0.7965001447060256
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item,C01,C01,C01,1,anchor,1,30,0.7582952120966364,0.57610913633971,0.9764748690277337
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item,C02,C02,C02,1,threshold_shift,2,30,0.6547182902496933,0.4489482009441144,0.9197420484539726
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item,C03,C03,C03,1,other,3,30,0.7920645950498967,0.5798180496424539,1.04042540974915
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item,C04,C04,C04,1,anchor,4,30,0.6824893931642995,0.506113443742288,0.8911374516040086
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item,C05,C05,C05,1,anchor,5,30,0.6634913939237717,0.48598056192397054,0.9315959310531615
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item,C06,C06,C06,1,threshold_shift,6,30,0.5043032828368791,0.4176264929403783,0.5937691305308408
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item,C07,C07,C07,1,anchor,7,30,0.7113240086037966,0.5803539380941629,0.8276257304439605
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item,C08,C08,C08,1,other,8,30,0.5489902561212611,0.3559463160349935,0.7570238705499457
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6644595540057793,0.5840595113652637,0.7834138459423593
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.7039000019471261,0.5788013370325666,0.8240432842888787
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5795107865432864,0.4679764361160642,0.737743427065542
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6705274255855789,0.5251602770979701,0.8221421361389488
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item,C01,C01,C01,1,anchor,1,30,0.7569602913788428,0.5726015376261421,0.9711968129873275
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item,C02,C02,C02,1,threshold_shift,2,30,0.6495913494495473,0.4340838666260243,0.9131902553853252
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item,C03,C03,C03,1,other,3,30,0.7941654154888541,0.5738410287827356,1.0439435731619595
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item,C04,C04,C04,1,anchor,4,30,0.6746659401987564,0.49517707400023936,0.8830665975064039
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item,C05,C05,C05,1,anchor,5,30,0.6606781983375671,0.48148283049464224,0.9386762724816797
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item,C06,C06,C06,1,threshold_shift,6,30,0.5061622323854725,0.4175543955384069,0.597654747116785
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item,C07,C07,C07,1,anchor,7,30,0.713423066276746,0.5789825857941651,0.8328858262174071
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item,C08,C08,C08,1,other,8,30,0.5548082499000021,0.34976199659590407,0.77228636590287
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6638068429269735,0.5799105421353067,0.7807937145521731
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.701431874047978,0.5793179096029007,0.8279519856044009
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5778767909175099,0.46635716199909893,0.7338323872601348
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,0.3,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6744868326944281,0.5280407120545538,0.8222040686993347
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item,C01,C01,C01,1,anchor,1,30,0.7570862612128259,0.5657388420403004,0.9682560930401086
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item,C02,C02,C02,1,threshold_shift,2,30,0.641270385980606,0.4114690618962049,0.9002436966449021
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item,C03,C03,C03,1,other,3,30,0.8005894635285463,0.5900457186996937,1.0524205492436884
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item,C04,C04,C04,1,anchor,4,30,0.6609492244323094,0.4818974896520376,0.8750261840224265
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item,C05,C05,C05,1,anchor,5,30,0.6575714614987374,0.47030462831258774,0.9587571111321447
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item,C06,C06,C06,1,threshold_shift,6,30,0.5136833167988706,0.4218414868354489,0.6087448260158476
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item,C07,C07,C07,1,anchor,7,30,0.7201333470409025,0.5783961015909426,0.8643991013587355
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item,C08,C08,C08,1,other,8,30,0.5683875604958083,0.33144897912818805,0.7984506948263617
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6649588776235759,0.5729779151835729,0.7906759627875813
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6989350735461937,0.5662650492228568,0.8458169150606647
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5774768513897383,0.4647653689728645,0.7328468937411992
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,1.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6844885120121773,0.5392067545314653,0.8260771425919432
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item,C01,C01,C01,1,anchor,1,30,0.757722901403904,0.5613078783452511,0.97214639313519
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item,C02,C02,C02,1,threshold_shift,2,30,0.6397689966360729,0.41172085098922256,0.8973670288920401
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item,C03,C03,C03,1,other,3,30,0.8038040318157541,0.6023286347091198,1.0501096314936875
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item,C04,C04,C04,1,anchor,4,30,0.6575384292999903,0.4840775538980961,0.8748814338445663
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item,C05,C05,C05,1,anchor,5,30,0.6576230144500733,0.46880424790084363,0.9603440380841491
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item,C06,C06,C06,1,threshold_shift,6,30,0.5148360288538265,0.4223385238647461,0.6119006986916065
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item,C07,C07,C07,1,anchor,7,30,0.7218162913255445,0.577906938046217,0.8768954776198506
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item,C08,C08,C08,1,other,8,30,0.571451075175838,0.3282669806219337,0.80365888163161
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6655700961201255,0.5712372123983545,0.7944001035515748
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6986751591198781,0.5630997457355261,0.8540193014473572
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5773025127449497,0.4637391654537828,0.7297241540253162
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,3.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6876275534957961,0.5406516782466138,0.8249327773213866
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item,C01,C01,C01,1,anchor,1,30,0.757722901403904,0.5613078783452511,0.97214639313519
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item,C02,C02,C02,1,threshold_shift,2,30,0.6397689966360729,0.41172085098922256,0.8973670288920401
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item,C03,C03,C03,1,other,3,30,0.8038040318157541,0.6023286347091198,1.0501096314936875
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item,C04,C04,C04,1,anchor,4,30,0.6575384292999903,0.4840775538980961,0.8748814338445663
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item,C05,C05,C05,1,anchor,5,30,0.6576230144500733,0.46880424790084363,0.9603440380841491
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item,C06,C06,C06,1,threshold_shift,6,30,0.5148360288538265,0.4223385238647461,0.6119006986916065
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item,C07,C07,C07,1,anchor,7,30,0.7218162913255445,0.577906938046217,0.8768954776198506
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item,C08,C08,C08,1,other,8,30,0.571451075175838,0.3282669806219337,0.80365888163161
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6655700961201255,0.5712372123983545,0.7944001035515748
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6986751591198781,0.5630997457355261,0.8540193014473572
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5773025127449497,0.4637391654537828,0.7297241540253162
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold,6,10.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6876275534957961,0.5406516782466138,0.8249327773213866
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item,C01,C01,C01,1,anchor,1,30,0.7571699036161105,0.5649050034582614,0.9683382129669189
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item,C02,C02,C02,1,threshold_shift,2,30,0.6407925573984782,0.4108263834565878,0.8998199833929538
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item,C03,C03,C03,1,other,3,30,0.8003846536244479,0.5902841319143772,1.0515459338575601
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item,C04,C04,C04,1,anchor,4,30,0.6604624230662981,0.4814825765043497,0.8751553134620189
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item,C05,C05,C05,1,anchor,5,30,0.65728196511666,0.47028557524085046,0.9584909295290706
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item,C06,C06,C06,1,threshold_shift,6,30,0.5135342465789843,0.4214491937994649,0.6097527917444882
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item,C07,C07,C07,1,anchor,7,30,0.7201637531616281,0.5788526762991659,0.8651157345593811
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item,C08,C08,C08,1,other,8,30,0.5682218376355379,0.3308921745904149,0.7980493024708004
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.664751417524768,0.5725348980733442,0.7909202067707606
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6987695112401742,0.5657340736687183,0.8460703781315043
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.5771634019887313,0.46477590886220016,0.7324856065571396
+edaic_to_cmdc_phq_shared,mv24_default,24,20,tcps_threshold_slope,7,1.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.684303245629993,0.5396257840131743,0.8256001702429551
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item,C01,C01,C01,1,anchor,1,30,0.7568350806832314,0.5669703025370837,0.966162770986557
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item,C02,C02,C02,1,threshold_shift,2,30,0.6394430595636368,0.4126622664183378,0.8950752381980418
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item,C03,C03,C03,1,other,3,30,0.8034198968708007,0.5990326929837465,1.0568944293260574
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item,C04,C04,C04,1,anchor,4,30,0.6604143075148265,0.47841795057058334,0.8709853400290012
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item,C05,C05,C05,1,anchor,5,30,0.6574903467297554,0.46977509632706643,0.9629041272401807
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item,C06,C06,C06,1,threshold_shift,6,30,0.5032670466063872,0.4096779941946397,0.6033612319289933
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item,C07,C07,C07,1,anchor,7,30,0.7227017710737937,0.5775384695827961,0.8772150383115649
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item,C08,C08,C08,1,other,8,30,0.5717199639638121,0.33491865490753076,0.8071099895210073
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item_set,all_shared_items,C01-C08,C01-C08,8,all shared PHQ items,101,30,0.6644114341257804,0.571838932370579,0.791269361066539
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item_set,anchor_items,C01/C04/C05/C07,C01/C04/C05/C07,4,measurement-gate anchor items,102,30,0.6993603765004016,0.5677146268822253,0.8471083694764331
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item_set,threshold_shift_items,C02/C06,C02/C06,2,measurement-gate threshold-shift items,103,30,0.571355053085012,0.45954466587487103,0.7250255584282707
+edaic_to_cmdc_phq_shared,mv24_default,24,20,audit_weighted_tcps_threshold,8,1.0,item_set,other_items,C03/C08,C03/C08,2,non-anchor non-primary-shift items,104,30,0.6875699304173063,0.5391720820117557,0.8300643348664283

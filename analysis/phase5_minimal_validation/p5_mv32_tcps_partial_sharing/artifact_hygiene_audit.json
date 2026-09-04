@@ -1,0 +1,8 @@
+{
+  "audit_id": "P5_MV32_tcps_partial_sharing_hygiene",
+  "generated_at": "2026-09-04T08:37:40+00:00",
+  "files_checked": 31,
+  "artifact_hygiene_passed": true,
+  "violation_count": 0,
+  "violations": []
+}

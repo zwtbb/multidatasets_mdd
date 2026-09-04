@@ -1,0 +1,4 @@
+world_id,description
+H0_invariant,No corpus-specific threshold offsets; TCPS should shrink item residuals and stay close to shared ordinal.
+H_sparse_C02_C06_threshold_DIF,Only C02 and C06 receive target-corpus threshold shifts; TCPS should select these items more often than anchors.
+H_dense_threshold_DIF,Most items receive threshold shifts; fully specific or low-sparsity TCPS should become competitive.

@@ -1,0 +1,43 @@
+{
+  "run_id": "P5_MV32_tcps_partial_sharing",
+  "method_name": "Target-Contract Partial Sharing (TCPS)",
+  "backbone_contract": "Reuses MV24 frozen Qwen3+WavLM+OpenFace subject-level representation.",
+  "primary_method": "threshold residual with proximal group-lasso item sparsity",
+  "primary_lambda_group": 1.0,
+  "lambda_grid": [
+    0.0,
+    0.3,
+    1.0,
+    3.0,
+    10.0
+  ],
+  "lambda_policy": "Primary lambda is fixed before real-data interpretation; the full grid is reported as sensitivity and is not used to pick the main result from held-out evaluation metrics.",
+  "pca_fit_scope": "source_target_calibration",
+  "participant_bootstrap_draws": 200,
+  "fair_comparison_contract": "Shared ordinal, fully corpus-specific ordinal, and TCPS use the same backbone, symptom layer, ordinal loss, optimizer family, epochs, target-label split, and target-label budget.",
+  "audit_weighted_variant": "Uses only source labels and the target calibration subset to weight item residual penalties.",
+  "metrics": [
+    "target_macro_item_mae",
+    "target_total_mae",
+    "target_total_rmse",
+    "target_total_ccc",
+    "ordinal_nll",
+    "ranked_probability_score",
+    "target_binned_item_calibration_mae",
+    "total_calibration_in_the_large",
+    "total_calibration_in_the_large_abs",
+    "total_calibration_slope",
+    "total_calibration_slope_abs_error",
+    "target_binary_macro_f1",
+    "target_binary_balanced_accuracy",
+    "target_binary_auroc",
+    "target_binary_auprc",
+    "specificity_ratio"
+  ],
+  "external_method_basis": [
+    "regularized DIF and anchor selection",
+    "group pairwise penalty / partial invariance",
+    "QuestMF item-wise ordinal depression modeling",
+    "cumulative-link ordinal regression"
+  ]
+}
